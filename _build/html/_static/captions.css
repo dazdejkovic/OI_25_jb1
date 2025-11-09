@@ -1,0 +1,6 @@
+/* Sakrij permalink (#/¶) u figcaption/table caption */
+figcaption .headerlink,
+.figure .headerlink,
+table caption .headerlink {
+  display: none !important;
+}
