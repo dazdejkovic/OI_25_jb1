@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -68,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'uvod';</script>
     <link rel="index" title="Индекс" href="genindex.html" />
     <link rel="search" title="Претрага" href="search.html" />
-    <link rel="next" title="Osnovne napomene" href="OI_25_01_uvod.html" />
+    <link rel="next" title="Python okruženje" href="OI_25_02/OI_25_02_Python_instalacija_clean2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sr"/>
   </head>
@@ -177,11 +178,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Osnove Pajtona</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_01_uvod.html">Osnovne napomene</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija_clean2.html">Python okruženje</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
 </ul>
 
     </div>
@@ -354,7 +354,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -370,6 +372,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi">Ciljevi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zasto-python">Zašto Python ?</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -385,6 +396,25 @@ document.write(`
 <p>Prvi deo knjige su osnove Pajtona.</p>
 <p>Predmet drugog dela su dodatne bibliteke Pajtona kao što su Numpy, Pandas, Matplotlib i Scipy koje će nam pomoći u rešavanju raznih problema iz Operacionih istraživanja. U ovom delu rešavamo probleme linearnog programiranja i mešovitog linearnog programiranja, primenjujemo Monte Karlo simulacije i istražujemo  skupove podataka. Većina problema je orijentisana ka ekonomiji.</p>
 <p>Sastavni deo svakog poglavlja su zadaci i problemi, kao i testovi za proveru znanja.</p>
+<section id="ciljevi">
+<h2>Ciljevi</h2>
+<ul class="simple">
+<li><p>Učenje programiranja u Python-u studenata ekonomije koji pre toga nisu imali nikakava iskustva u programiranju</p></li>
+<li><p>Uvod u različite analitičke alate koji su korisni u rešavanju ekonomskih i biznis problema</p></li>
+<li><p>Poslovne simulacije</p></li>
+<li><p>Uvod u osnovne optimizacione tehnike korišćenjem Python-a</p></li>
+</ul>
+</section>
+<section id="zasto-python">
+<h2>Zašto Python ?</h2>
+<ul class="simple">
+<li><p>Trenutno ubedljivo najpopularniji „data science” programski jezik uz R</p></li>
+<li><p>Razlika u odnosu na R: Python je jezik opšte namene koji nas vodi ka velikom broju primena</p></li>
+<li><p>Besplatan je (open source)</p></li>
+<li><p>Postoji velika zajednica korisnika koja ga podržava, ostavljajući veliki broj uputstava, biblioteka i podataka javno dostupnim</p></li>
+<li><p>Jednostavan je za učenje (user friendly)</p></li>
+</ul>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -420,11 +450,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="OI_25_01_uvod.html"
+       href="OI_25_02/OI_25_02_Python_instalacija_clean2.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">напред</p>
-        <p class="prev-next-title">Osnovne napomene</p>
+        <p class="prev-next-title">Python okruženje</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -434,6 +464,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi">Ciljevi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zasto-python">Zašto Python ?</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

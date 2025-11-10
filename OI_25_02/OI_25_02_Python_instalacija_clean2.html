@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../_static/captions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -70,7 +71,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_02/OI_25_02_Python_instalacija_clean2';</script>
     <link rel="index" title="Индекс" href="../genindex.html" />
     <link rel="search" title="Претрага" href="../search.html" />
-    <link rel="prev" title="Osnovne napomene" href="../OI_25_01_uvod.html" />
+    <link rel="next" title="Osnovni elementi Pajton jezika" href="../OI_25_03.html" />
+    <link rel="prev" title="Uvod" href="../uvod.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sr"/>
   </head>
@@ -177,11 +179,10 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Osnove Pajtona</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../OI_25_01_uvod.html">Osnovne napomene</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Python okruženje</a></li>
-
+<li class="toctree-l1"><a class="reference internal" href="../OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
 </ul>
 
     </div>
@@ -377,31 +378,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python okruženje</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-i-pokretanje-python-a">Instalacija i pokretanje Python-a</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idle">IDLE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izvrsavanje-jedne-ili-vise-naredbi-istovremeno-skripte-py-datoteke">Izvršavanje jedne ili više naredbi istovremeno [Skripte (.py - datoteke)]</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter notebook</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-prvo-pokretanje">Jupyter - prvo pokretanje</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-novog-notebooka">Kreiranje novog notebooka</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-celije">Jupyter Notebook ćelije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pisanje-teksta-i-izvrsavanje-koda-u-jupyteru">Pisanje teksta i izvršavanje koda u Jupyteru</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komandne-code-celije">Komandne (Code)  ćelije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-markdown-celije">Tekst (Markdown) ćelije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skracenice-sa-tastature">Skraćenice sa tastature</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-i-pokretanje-python-a">Instalacija i pokretanje Python-a</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idle">IDLE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izvrsavanje-jedne-ili-vise-naredbi-istovremeno-skripte-py-datoteke">Izvršavanje jedne ili više naredbi istovremeno [Skripte (.py - datoteke)]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-prvo-pokretanje">Jupyter - prvo pokretanje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-novog-notebooka">Kreiranje novog notebooka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-celije">Jupyter Notebook ćelije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pisanje-teksta-i-izvrsavanje-koda-u-jupyteru">Pisanje teksta i izvršavanje koda u Jupyteru</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komandne-code-celije">Komandne (Code)  ćelije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-markdown-celije">Tekst (Markdown) ćelije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skracenice-sa-tastature">Skraćenice sa tastature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instaliranje-eksternih-paketa">Instaliranje eksternih paketa</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pokretanje-skripti-eksternog-koda">Pokretanje skripti (eksternog koda)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksterni-resursi">Eksterni resursi</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -412,7 +403,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="python-okruzenje">
+  <section id="python-okruzenje">
 <h1>Python okruženje</h1>
 <p>Na ovom času obradićemo sledeće teme:</p>
 <ul class="simple">
@@ -427,8 +418,9 @@ document.write(`
 <li><p>Kada na svoj računar instalirate Python 3, dobijate i jedno jednostavno ali upotrebljivo okruženje poznato kao IDLE.</p></li>
 <li><p>Postoji mnogo načina da se izvršava Python kod (upoznaćete još jedno na ovom kursu), IDLE je sve što vam je potrebno kada tek počinjete</p></li>
 </ul>
+</section>
 <section id="idle">
-<h3>IDLE</h3>
+<h2>IDLE</h2>
 <ul class="simple">
 <li><p>Pokretanjem IDLE-a dobijamo prozor kao na slici</p></li>
 </ul>
@@ -472,7 +464,7 @@ document.write(`
 </div>
 </section>
 <section id="izvrsavanje-jedne-ili-vise-naredbi-istovremeno-skripte-py-datoteke">
-<h3>Izvršavanje jedne ili više naredbi istovremeno [Skripte (.py - datoteke)]</h3>
+<h2>Izvršavanje jedne ili više naredbi istovremeno [Skripte (.py - datoteke)]</h2>
 <ul class="simple">
 <li><p>Pokrenite IDLE, a zatim upotrebite opciju menija <em>File… -&gt; NewFile</em> da otvorite  nov prozor za uređivanje.</p></li>
 <li><p>Kad smo to uradili na našem računaru, dobili smo dva prozora, jedan se zove Python Shell, a drugi Untitled:</p></li>
@@ -513,10 +505,8 @@ document.write(`
 <a class="reference internal image-reference" href="../_images/poruka_o_gresci.png"><img alt="../_images/poruka_o_gresci.png" src="../_images/poruka_o_gresci.png" style="width: 600px;" /></a>
 </figure>
 </section>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="jupyter-notebook">
-<h1>Jupyter notebook</h1>
+<section id="jupyter-notebook">
+<h2>Jupyter notebook</h2>
 <ul class="simple">
 <li><p>Jupyter notebook je open-source web aplikacija koja nam omogućava da kreiramo i delimo dokumente koji sadrže live kod, jednačine, vizuelizaciju  i narativni tekst.</p></li>
 <li><p>Moguća je samostalna instalacija, ali mi ćemo ga preuzeti iz besplatne aplikacije <strong>Anaconda</strong> koja se može skinuti sa adrese
@@ -530,6 +520,7 @@ https://www.anaconda.com/products/individual-d
 <p><span class="caption-number">Slika 3. </span><span class="caption-text">Anaconda</span></p>
 </figcaption>
 </figure>
+</section>
 <section id="jupyter-prvo-pokretanje">
 <h2>Jupyter - prvo pokretanje</h2>
 <ul class="simple">
@@ -539,8 +530,9 @@ https://www.anaconda.com/products/individual-d
 <figure class="align-center">
 <a class="reference internal image-reference" href="../_images/jupyter_dashboard.png"><img alt="../_images/jupyter_dashboard.png" src="../_images/jupyter_dashboard.png" style="width: 1000px;" /></a>
 </figure>
+</section>
 <section id="kreiranje-novog-notebooka">
-<h3>Kreiranje novog notebooka</h3>
+<h2>Kreiranje novog notebooka</h2>
 <ul class="simple">
 <li><p>U našem slučaju biramo u meniju <code class="docutils literal notranslate"><span class="pre">New</span></code> … <code class="docutils literal notranslate"><span class="pre">Notebook:Python</span> <span class="pre">3</span></code></p></li>
 </ul>
@@ -559,7 +551,7 @@ https://www.anaconda.com/products/individual-d
 <p>Napomena: Ako u meniju <code class="docutils literal notranslate"><span class="pre">New</span></code> izaberemo file, možemo da kreiramo različite tekstualne datoteke. (.txt, .py, .csv … )</p>
 </section>
 <section id="jupyter-notebook-celije">
-<h3>Jupyter Notebook ćelije</h3>
+<h2>Jupyter Notebook ćelije</h2>
 <ul>
 <li><p>Sadržaj notebook-a uređuje se ćelijama.</p></li>
 <li><p>Tip ćelije može biti: <code class="docutils literal notranslate"><span class="pre">Code,</span> <span class="pre">Markdown,</span> <span class="pre">Raw</span></code> (kod, uređeni tekst, sirov tekst)</p></li>
@@ -578,7 +570,7 @@ https://www.anaconda.com/products/individual-d
 </ul>
 </section>
 <section id="pisanje-teksta-i-izvrsavanje-koda-u-jupyteru">
-<h3>Pisanje teksta i izvršavanje koda u Jupyteru</h3>
+<h2>Pisanje teksta i izvršavanje koda u Jupyteru</h2>
 <ul class="simple">
 <li><p>Ćelija je u Edit modu ako je njen okvir obojen u zeleno. Tada možemo da menjamo njen sadržaj.</p></li>
 <li><p>Ćelija je u komandnom modu ako je njen okvir obojen plavo. Tada možemo da prevodimo njen sadržaj ili izvršavamo kod u njoj.</p></li>
@@ -594,7 +586,7 @@ https://www.anaconda.com/products/individual-d
 </ul>
 </section>
 <section id="komandne-code-celije">
-<h3>Komandne (Code)  ćelije</h3>
+<h2>Komandne (Code)  ćelije</h2>
 <ul class="simple">
 <li><p>U komandnoj ćeliji pišemo jednu ili više Python naredbi ili čak cele programe.</p></li>
 <li><p>Izvršavamo ih preko menija ili preko tool-bara jednostavno klikom na dugme ►</p></li>
@@ -613,7 +605,7 @@ https://www.anaconda.com/products/individual-d
 </div>
 </section>
 <section id="tekst-markdown-celije">
-<h3>Tekst (Markdown) ćelije</h3>
+<h2>Tekst (Markdown) ćelije</h2>
 <ul class="simple">
 <li><p>To su ćelije u kojima pišemo tekst vezan za problem koji rešavamo</p></li>
 <li><p>Koristimo sintaksu Markdown-a, html-a i LaTeX-a</p></li>
@@ -636,7 +628,7 @@ https://www.anaconda.com/products/individual-d
 </ul>
 </section>
 <section id="skracenice-sa-tastature">
-<h3>Skraćenice sa tastature</h3>
+<h2>Skraćenice sa tastature</h2>
 <ul class="simple">
 <li><p>Čuvanje notebook-a: <code class="docutils literal notranslate"><span class="pre">s</span></code></p></li>
 <li><p>Promena tipa ćelije: <code class="docutils literal notranslate"><span class="pre">y,</span> <span class="pre">m,</span> <span class="pre">1-6,</span> <span class="pre">t</span></code></p></li>
@@ -644,7 +636,6 @@ https://www.anaconda.com/products/individual-d
 <li><p>Editovanje ćelije: <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">c,</span> <span class="pre">v,</span> <span class="pre">d,</span> <span class="pre">z</span></code></p></li>
 <li><p>Kernel operacije: <code class="docutils literal notranslate"><span class="pre">i,</span> <span class="pre">0</span></code> (pritisnuti dva puta)</p></li>
 </ul>
-</section>
 </section>
 <section id="instaliranje-eksternih-paketa">
 <h2>Instaliranje eksternih paketa</h2>
@@ -749,13 +740,22 @@ Note: you may need to restart the kernel to use updated packages.
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../OI_25_01_uvod.html"
+       href="../uvod.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">назад</p>
-        <p class="prev-next-title">Osnovne napomene</p>
+        <p class="prev-next-title">Uvod</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../OI_25_03.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">напред</p>
+        <p class="prev-next-title">Osnovni elementi Pajton jezika</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -773,31 +773,21 @@ Note: you may need to restart the kernel to use updated packages.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Python okruženje</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-i-pokretanje-python-a">Instalacija i pokretanje Python-a</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#idle">IDLE</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#izvrsavanje-jedne-ili-vise-naredbi-istovremeno-skripte-py-datoteke">Izvršavanje jedne ili više naredbi istovremeno [Skripte (.py - datoteke)]</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter notebook</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-prvo-pokretanje">Jupyter - prvo pokretanje</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-novog-notebooka">Kreiranje novog notebooka</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-celije">Jupyter Notebook ćelije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pisanje-teksta-i-izvrsavanje-koda-u-jupyteru">Pisanje teksta i izvršavanje koda u Jupyteru</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#komandne-code-celije">Komandne (Code)  ćelije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-markdown-celije">Tekst (Markdown) ćelije</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skracenice-sa-tastature">Skraćenice sa tastature</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-i-pokretanje-python-a">Instalacija i pokretanje Python-a</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#idle">IDLE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izvrsavanje-jedne-ili-vise-naredbi-istovremeno-skripte-py-datoteke">Izvršavanje jedne ili više naredbi istovremeno [Skripte (.py - datoteke)]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook">Jupyter notebook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-prvo-pokretanje">Jupyter - prvo pokretanje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-novog-notebooka">Kreiranje novog notebooka</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-celije">Jupyter Notebook ćelije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pisanje-teksta-i-izvrsavanje-koda-u-jupyteru">Pisanje teksta i izvršavanje koda u Jupyteru</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komandne-code-celije">Komandne (Code)  ćelije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-markdown-celije">Tekst (Markdown) ćelije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#skracenice-sa-tastature">Skraćenice sa tastature</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instaliranje-eksternih-paketa">Instaliranje eksternih paketa</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pokretanje-skripti-eksternog-koda">Pokretanje skripti (eksternog koda)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksterni-resursi">Eksterni resursi</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
