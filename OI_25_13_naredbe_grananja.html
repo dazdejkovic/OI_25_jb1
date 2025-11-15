@@ -1,0 +1,851 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Naredbe grananja &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=49ea3705" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_13_naredbe_grananja';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="next" title="Petlje" href="OI_25_14_petlje.html" />
+    <link rel="prev" title="Stringovi" href="OI_25_05_stringovi.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_petlje.html">Petlje</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_13_naredbe_grananja.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_25_13_naredbe_grananja.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Naredbe grananja</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-naredbe">IF-ELSE naredbe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugnezdene-naredbe">Ugneždene naredbe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ternarni-operatori">Ternarni operatori</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="naredbe-grananja">
+<h1>Naredbe grananja</h1>
+<p>Naredbe grananja koristimo da kreiramo strukturu odlučivanja, koja dozvoljava programu da ima više od jedne putanje izvršavanja.</p>
+<section id="if-else-naredbe">
+<h2>IF-ELSE naredbe</h2>
+<ul class="simple">
+<li><p>Naredba grananja, <strong>if-else</strong>, ili <strong>if</strong> naredba kratko, je kod konstruisan da izvršava blok koda samo ako su ispunjeni određeni uslovi</p></li>
+<li><p>Ti uslovi su reprezentovani kao logički iskazi</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title"><strong>Pseudo kod jednostavne IF naredbe</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">logicki_izraz</span><span class="p">:</span>
+    <span class="n">blok</span> <span class="n">koda</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Reč <code class="docutils literal notranslate"><span class="pre">if</span></code> je <em>ključna reč</em></p></li>
+<li><p>Kada Pajton „vidi” neku <code class="docutils literal notranslate"><span class="pre">if</span></code> naredbu, on će proveriti da li je odgovarajući logički izraz tačan</p>
+<ul>
+<li><p>Ako je tačan, izvršiće se blok koda koji sledi i završiti <code class="docutils literal notranslate"><span class="pre">if</span></code> naredbu</p></li>
+<li><p>Ako nije tačan, blok koda koji sledi se preskače i završiti <code class="docutils literal notranslate"><span class="pre">if</span></code> naredbu</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>Primetimo da je blok koda koji sledi <code class="docutils literal notranslate"><span class="pre">if</span></code> naredbu uvučen. Generalno, kad god se neka naredba u Pajtonu završava dvotačkom, sledi blok koda koji je uvučen i delovanje te naredbe je ograničeno na taj kod. Jedna od najčešćih grešaka prilikom kompajliranja u startu je da zaboravite da ispoštujete ovo pravilo. Neka vam ovo stalno bude na pameti.</p>
+<p>Blok koda mora biti uvučen za tačno četiri razmaka inače će prevodilac javiti grešku.</p>
+<div class="tip admonition">
+<p class="admonition-title">Primer 1.</p>
+<p>Napisati program koji će uraditi sledeći zadatak: Ukoliko je vrednost promenljive veća od nule, promeniti joj vrednost u 1.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite jedan broj:&quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title"><strong>Pseudo kod jednostavne if-else naredbe</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">logicki_izraz</span><span class="p">:</span>
+    <span class="n">blok</span> <span class="n">koda</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">blok</span> <span class="n">koda</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<p>Kada Pajton „vidi” neku <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredbu, on će proveriti da li je odgovarajući logički izraz tačan.</p>
+<ul class="simple">
+<li><p>Ako je tačan, izvršiće se prvi blok koda koji sledi i završiti <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredba</p></li>
+<li><p>Ako nije tačan izvršiće se drugi blok koda i završiti <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredba.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Primer 2.</p>
+<p>Korisnik unosi jedan broj. Napisati kod koji će izračunavati vrednosti funkcije:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \begin{cases} 1 &amp;\text{, ako je $x \ge 0$} \cr   -1 &amp;\text{, ako je $x&lt;0$} \end{cases}\]</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite realni broj:&quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">) = 1&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;f(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">) = -1&quot;</span><span class="p">)</span>
+<span class="c1"># Razlikujte značenje za dva f koja se pojavljuju u ovom primeru.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Primer 3.</p>
+<p>Napisati program koji će uraditi sledeći zadatak: Korisnik unosi string. Ukoliko string počinje malim slovom, izmeniti ga tako da počinje velikim slovom. Ukoliko string počinje velikim slovom, izmeniti ga da počinje malim.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite string:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()[</span><span class="mi">0</span><span class="p">]:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span> <span class="c1"># Ne može samo s.capitalize() jer metoda onda neće promeniti sam string</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Pseudo kod proširene if-else naredbe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">logicki</span> <span class="n">izraz</span> <span class="n">P</span><span class="p">:</span>
+    <span class="n">blok</span> <span class="n">koda</span> <span class="mi">1</span>
+<span class="k">elif</span> <span class="n">logicki</span> <span class="n">izraz</span> <span class="n">Q</span><span class="p">:</span>
+    <span class="n">blok</span> <span class="n">koda</span> <span class="mi">2</span>
+<span class="k">elif</span> <span class="n">logicki</span> <span class="n">izraz</span> <span class="n">R</span><span class="p">:</span>
+    <span class="n">blok</span> <span class="n">koda</span> <span class="mi">3</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">blok</span> <span class="n">koda</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<p>U prethodnom pseudokodu Pajton će:</p>
+<ul class="simple">
+<li><p>Prvo proveriti da li je <code class="docutils literal notranslate"><span class="pre">P</span></code> tačno. Ako je <code class="docutils literal notranslate"><span class="pre">P</span></code> tačno, izvršiće se blok koda 1 i završiće se <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredba. Drugim rečima, Pajton <em>neće</em> proveravati ostale iskaze kad pronađe prvi tačan iskaz.</p></li>
+<li><p>Ako je <code class="docutils literal notranslate"><span class="pre">P</span></code> netačno, tada će Pajton proveriti da li je <code class="docutils literal notranslate"><span class="pre">Q</span></code> tačno. Ako je <code class="docutils literal notranslate"><span class="pre">Q</span></code> tačno, izvršava se blok koda 2 i završava <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredba.</p></li>
+<li><p>Ako su <code class="docutils literal notranslate"><span class="pre">P</span></code> i <code class="docutils literal notranslate"><span class="pre">Q</span></code> netačni, tada će Pajton proveriti da li je <code class="docutils literal notranslate"><span class="pre">R</span></code> tačno. Ako je <code class="docutils literal notranslate"><span class="pre">R</span></code> tačno, izvršava se blok koda 3 i završava <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredba.</p></li>
+<li><p>I konačno, ako su <code class="docutils literal notranslate"><span class="pre">P</span></code>, <code class="docutils literal notranslate"><span class="pre">Q</span></code> i <code class="docutils literal notranslate"><span class="pre">R</span></code> netačni, izvršava se blok koda 4 i završava <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredba.</p></li>
+</ul>
+<div class="caution admonition">
+<p class="admonition-title">Napomena:</p>
+<ul class="simple">
+<li><p>Možemo da imamo proizvoljan broj <code class="docutils literal notranslate"><span class="pre">elif</span></code> naredbi (ili nijednu) dok god imamo barem jednu naredbu <code class="docutils literal notranslate"><span class="pre">if</span></code> (prva naredba)</p></li>
+<li><p>Nije neophodna <code class="docutils literal notranslate"><span class="pre">else</span></code> naredba, ali možemo da imamo najviše jednu naredbu<code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Primer 4.</p>
+<p>Korisnik unosi dve vrednosti <code class="docutils literal notranslate"><span class="pre">temp</span></code> i <code class="docutils literal notranslate"><span class="pre">trazena_temp</span></code>. Napisati kod koji će poslati poruku  <code class="docutils literal notranslate"><span class="pre">&quot;Toplo&quot;</span></code> ako je <code class="docutils literal notranslate"><span class="pre">temp</span></code> za barem 5 stepeni veća od <code class="docutils literal notranslate"><span class="pre">trazena_temp</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;Hladno&quot;</span></code> ako je barem <code class="docutils literal notranslate"><span class="pre">temp</span></code> za 5 stepeni manja od <code class="docutils literal notranslate"><span class="pre">trazena_temp</span></code>, i <code class="docutils literal notranslate"><span class="pre">&quot;Normal&quot;</span></code> u ostalim slučajevima.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite trenutnu temperaturu:&quot;</span><span class="p">))</span>
+<span class="n">trazena_temp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite traženu temperaturu:&quot;</span><span class="p">))</span>
+<span class="k">if</span> <span class="n">temp</span> <span class="o">-</span> <span class="n">trazena_temp</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Toplo&quot;</span>
+<span class="k">elif</span> <span class="n">temp</span> <span class="o">-</span> <span class="n">trazena_temp</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">5</span><span class="p">:</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Hladno&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">status</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Normal
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 1.</p>
+<p>Šta će biti vrednost od <code class="docutils literal notranslate"><span class="pre">y</span></code> posle izvršenja sledećeg koda?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a - 2</span>
+<span class="c1"># b - 4</span>
+<span class="c1"># c - 6</span>
+<span class="c1"># d - Error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 2.</p>
+<p>Šta će biti vrednost promenljive <code class="docutils literal notranslate"><span class="pre">y</span></code> posle izvršenja sledećeg koda:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">elif</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a - 2</span>
+<span class="c1"># b - 4</span>
+<span class="c1"># c - 6</span>
+<span class="c1"># d - Error</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primetite da ako želimo napišemo logički iskaz <span class="math notranslate nohighlight">\(a&lt;x&lt;b\)</span>, to možemo da uradimo sa dva uslovna iskaza, <span class="math notranslate nohighlight">\(a&lt;x\)</span> i <span class="math notranslate nohighlight">\(x&lt;b\)</span>. Pajton
+dozvoljava i kod <code class="docutils literal notranslate"><span class="pre">a&lt;x&lt;b</span></code>. Na primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="k">elif</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ugnezdene-naredbe">
+<h2>Ugneždene naredbe</h2>
+<ul class="simple">
+<li><p>Naredba je <strong>ugneždena</strong> ako se cela nalazi unutar druge naredbe istog tipa kao i ona sama.</p></li>
+<li><p>Na primer, <strong>ugneždena if naredba</strong> je neka if naredba koja se cela nalazi unutar klauzule druge if naredbe</p></li>
+</ul>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 3.</p>
+<p>Razmislite o tome šta će se desiti pošto se izvrši sledeći kod. Koji su sve mogući ishodi u zavisnosti od vrednosti
+x i y? Šta će biti odgovori za sledeća dva para brojeva: (5,-2) i (1,2)?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">y</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a - 3</span>
+<span class="c1"># b - 7</span>
+<span class="c1"># c - -10 </span>
+<span class="c1"># d - 0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Primer 4.</p>
+<p>Napišite kod koja vraća <code class="docutils literal notranslate"><span class="pre">'nepar'</span></code> ako je ulazni podatak neparan broj, a <code class="docutils literal notranslate"><span class="pre">'par'</span></code> ako je
+paran. Pretpostaviti  da će na ulazu biti pozitivan ceo broj. Pokušajte ovo da uradite u par narednih minuta.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Unesite jedan prirodan broj:&#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">k</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Prirodan broj </span><span class="si">{}</span><span class="s1"> je paran&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prirodan broj </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s1"> je neparan&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Primer 5.</p>
+<p>Napišite program koja uzima broj, <code class="docutils literal notranslate"><span class="pre">r</span></code>, i string <code class="docutils literal notranslate"><span class="pre">mera</span></code>, kao ulazne argumente. Pretpostavite da
+je <code class="docutils literal notranslate"><span class="pre">r</span></code> pozitivan, i da je <code class="docutils literal notranslate"><span class="pre">mera</span></code> ili string <code class="docutils literal notranslate"><span class="pre">'povrsina'</span></code> ili string <code class="docutils literal notranslate"><span class="pre">'obim'</span></code>. Program treba da izračunava površinu kruga
+poluprečnika <code class="docutils literal notranslate"><span class="pre">r</span></code>, ako je string <code class="docutils literal notranslate"><span class="pre">mera</span></code> jednak <code class="docutils literal notranslate"><span class="pre">'povrsina'</span></code>, a obim kruga poluprečnika <code class="docutils literal notranslate"><span class="pre">r</span></code> ako je string <code class="docutils literal notranslate"><span class="pre">mera</span></code> jednak <code class="docutils literal notranslate"><span class="pre">'obim'</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite poluprečnik kruga:&quot;</span><span class="p">))</span>
+<span class="n">mera</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ako želite da izračunate površinu kruga unesite P, a ako želite da izračunate obim kruga unesite O:&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">mera</span> <span class="o">==</span> <span class="s2">&quot;P&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Površina kruga poluprečnika r=</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">, iznosi </span><span class="si">{</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">mera</span> <span class="o">==</span> <span class="s2">&quot;O&quot;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Obim kruga poluprečnika r=</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2">, iznosi </span><span class="si">{</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">*</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Površina kruga poluprečnika r=2.0, iznosi 12.57
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ternarni-operatori">
+<h2>Ternarni operatori</h2>
+<p><strong>Ternarni operatori</strong> ili <strong>uslovne naredbe</strong> nam obezbeđuju upotrebu koda u jednoj liniji da izračunamo prvi izraz ako je
+uslov istinit; u suprotnom izračunava se drugi izraz.</p>
+<div class="important admonition">
+<p class="admonition-title">Pseudo kod za ternarnog operatora</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">izraz_ako_istina</span> <span class="k">if</span> <span class="n">uslov</span> <span class="k">else</span> <span class="n">izraz_ako_laz</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">status_student</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">osoba</span> <span class="o">=</span> <span class="s2">&quot;student&quot;</span> <span class="k">if</span> <span class="n">status_student</span> <span class="k">else</span> <span class="s1">&#39;nije student&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">osoba</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nije student
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ternarni operatori omogućavaju jednostavan način za grananje i mogu učiniti naš kod jasnijim. Videćemo uskoro
+njihovu ulogu u objašnjavajućim listama (<em>comprehension list</em>).</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_05_stringovi.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Stringovi</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="OI_25_14_petlje.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">напред</p>
+        <p class="prev-next-title">Petlje</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-naredbe">IF-ELSE naredbe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugnezdene-naredbe">Ugneždene naredbe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ternarni-operatori">Ternarni operatori</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
