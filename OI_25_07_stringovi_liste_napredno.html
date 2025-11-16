@@ -1,0 +1,1017 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Još malo o stringovima i listama &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=49ea3705" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_07_stringovi_liste_napredno';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="next" title="Naredbe grananja" href="OI_25_13_naredbe_grananja.html" />
+    <link rel="prev" title="Liste" href="OI_25_06_liste_uvod.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Još malo o stringovima i listama</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_13_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_petlje.html">Petlje</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_07_stringovi_liste_napredno.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_25_07_stringovi_liste_napredno.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Još malo o stringovima i listama</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-upper-i-lower">Metode <code class="docutils literal notranslate"><span class="pre">upper()</span></code> i <code class="docutils literal notranslate"><span class="pre">lower()</span></code>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-split">Metod <code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-join">Metod <code class="docutils literal notranslate"><span class="pre">join()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-find">Metod <code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-strip-rstrip-lstrip">Metode <code class="docutils literal notranslate"><span class="pre">strip()</span></code>, <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code>, <code class="docutils literal notranslate"><span class="pre">lstrip()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatiranje-stringova">Formatiranje stringova</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-format">Metod <code class="docutils literal notranslate"><span class="pre">format()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-stringovi">f-stringovi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kopiranje-listi">Kopiranje listi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="jos-malo-o-stringovima-i-listama">
+<h1>Još malo o stringovima i listama</h1>
+<section id="metode-upper-i-lower">
+<h2>Metode <code class="docutils literal notranslate"><span class="pre">upper()</span></code> i <code class="docutils literal notranslate"><span class="pre">lower()</span></code>.</h2>
+<p>Pretvaraju string u string sa svim velikim, odnosno svim malim slovima:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;neki kratak niz&quot;</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="s2">&quot;DRUGI NIZ&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s2</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="n">s1</span> <span class="c1"># Metoda nije promenila vrednost stringa s1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NEKI KRATAK NIZ
+drugi niz
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;neki kratak niz&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metod-split">
+<h2>Metod <code class="docutils literal notranslate"><span class="pre">split()</span></code></h2>
+<p>String pretvara u listu (podrazumevana vrednost za paramater <code class="docutils literal notranslate"><span class="pre">sep</span></code> je praznina tj. <code class="docutils literal notranslate"><span class="pre">sep='</span> <span class="pre">'</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;neki&#39;, &#39;kratak&#39;, &#39;niz&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metod-join">
+<h2>Metod <code class="docutils literal notranslate"><span class="pre">join()</span></code></h2>
+<p>Spaja u jedan string proizvoljan broj stringova unutar jedne liste. Pozivamo ga na sledeći način:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="s2">&quot;char&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Promenljivom <code class="docutils literal notranslate"><span class="pre">char</span></code> označavamo kako želimo da unutar stringa razdvojimo elemente liste (char predstavlja razmak ili bilo koji drugi karakter koji razdvajmo elemente liste). Ako želimo da ne ostavimo razmak pišemo samo <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> .</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;neki kratak niz&quot;</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1"># Primetite kako metode bez problema vezujemo jednu na drugu</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="n">spojeno</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spojeno</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;NEKI&#39;, &#39;KRATAK&#39;, &#39;NIZ&#39;]
+NEKIKRATAKNIZ
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spojeno</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spojeno</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NEKI KRATAK NIZ
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spojeno</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">spojeno</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NEKI
+KRATAK
+NIZ
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako nam je nekada od interesa da svaki karakter pretvorimo u listu, to možemo jednostavimo da uradimo koristeći funkciju <code class="docutils literal notranslate"><span class="pre">list</span></code>. Na ovaj način, u listi se nalaze i specijalni karakteri, razmaci, itd.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;neki kratak</span>
+<span class="s2">niz&quot;&quot;&quot;</span>
+<span class="n">lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="n">lista</span> <span class="c1"># primetite kako je tu i novi red, sa oznakom \n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;n&#39;, &#39;e&#39;, &#39;k&#39;, &#39;i&#39;, &#39; &#39;, &#39;k&#39;, &#39;r&#39;, &#39;a&#39;, &#39;t&#39;, &#39;a&#39;, &#39;k&#39;, &#39;\n&#39;, &#39;n&#39;, &#39;i&#39;, &#39;z&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Kviz 1.</strong> Šta će biti izlaz sledećeg koda?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="mi">1235</span>
+<span class="n">l1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+<span class="n">l1</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje</p>
+<p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code> - Pajton će javiti grešku, jer <code class="docutils literal notranslate"><span class="pre">b</span></code> nije string (ili neki iterabilni objekat, o čemu ćemo kasnije), već ceo broj.</p>
+</div>
+</section>
+<section id="metod-find">
+<h2>Metod <code class="docutils literal notranslate"><span class="pre">find()</span></code></h2>
+<p>Vraća kao vrednost najniži indeks stringa za koji smo našli podstring koji nas interesuje. Opcioni parametar je da kažemo interpreteru odakle da počne sa pretragom. Ako ga ne navedemo traži se prvo pojavljivanje.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="s2">&quot;Velika je nesreća kad čovek ne zna šta hoće, a prava katastrofa kad ne zna šta može.&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ne&#39;</span><span class="p">))</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Kviz 2.</strong>  Probajte da nađete indeks gde se „ne” pojavljuje drugi put.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ne&quot;</span><span class="p">,</span><span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ne&quot;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Naravno, ovde koristimo informaciju koju smo dobili malopre</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="metode-strip-rstrip-lstrip">
+<h2>Metode <code class="docutils literal notranslate"><span class="pre">strip()</span></code>, <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code>, <code class="docutils literal notranslate"><span class="pre">lstrip()</span></code></h2>
+<p>Metod <code class="docutils literal notranslate"><span class="pre">strip()</span></code> vraća novi string iz koga su uklonjeni početni i krajnji prazni prostori (razmaci, tabovi, novi red) ili, po potrebi, bilo koji zadati skup karaktera. Ne menja originalni string, već vraća kopiju.</p>
+<p>Metode <code class="docutils literal notranslate"><span class="pre">rstrip</span></code> i <code class="docutils literal notranslate"><span class="pre">lstrip</span></code> rade isto samo sa desne, odnosno leve strane, respektivno.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s2">&quot;     Pajton &quot;</span>
+<span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Pajton&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Parametri unutar poziva metode znači da uklanjamo sve karaktere koje smo naveli sa kraja teksta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heading</span> <span class="o">=</span> <span class="s1">&#39;Deo I. Poglavlje #15.....&#39;</span>
+<span class="n">heading</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Deo I. Poglavlje #15&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heading</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;.5#1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Deo I. Poglavlje &#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="formatiranje-stringova">
+<h2>Formatiranje stringova</h2>
+<p>Često nam je potrebno da string sadrži brojeve, vrlo verovatno i promenljive koje će zavisiti od inputa korisnika. Proći ćemo dva načina:</p>
+<ol class="arabic simple">
+<li><p>Metod <code class="docutils literal notranslate"><span class="pre">format()</span></code></p></li>
+<li><p>f-stringovi</p></li>
+</ol>
+<section id="metod-format">
+<h3>Metod <code class="docutils literal notranslate"><span class="pre">format()</span></code></h3>
+<ul class="simple">
+<li><p>Vraća formatiranu vrednost stringa za koji dozvoljava delove koje će zameniti promenljivama.</p></li>
+<li><p>Vitičaste zagrade služe da ukažu da tu treba da ide neka vrednost koja se nalazi kao argument <code class="docutils literal notranslate"><span class="pre">.format</span></code> metode</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ime</span> <span class="o">=</span> <span class="s1">&#39;Petar&#39;</span>
+<span class="n">starost</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="s2">&quot;Zdravo, ovo je </span><span class="si">{}</span><span class="s2">, i ima </span><span class="si">{}</span><span class="s2"> godine.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ime</span><span class="p">,</span> <span class="n">starost</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Zdravo, ovo je Petar, i ima 23 godine.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako naznačimo o kojim promenljivama je reč, unutar poziva metode format ne moramo voditi računa o redosledu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{quantity}</span><span class="s1"> </span><span class="si">{item}</span><span class="s1"> cost $</span><span class="si">{price}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">price</span> <span class="o">=</span> <span class="mf">1.74</span><span class="p">,</span> <span class="n">quantity</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">item</span> <span class="o">=</span> <span class="s1">&#39;bananas&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 bananas cost $1.74
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternativno, možemo i unutar stringa definisati redosled indeksiranjem argumenata metode format.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{1}</span><span class="s1"> </span><span class="si">{2}</span><span class="s1"> cost $</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">1.74</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;bananas&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 bananas cost $1.74
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kod složenijih ispisa se često može desiti da vam se broj argumenata i zagrada ne poklapa i zato je bolje imenovati vrednosti u zagradama.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;</span><span class="si">{}{}{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;</span><span class="si">{}{}{}{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: Replacement index 3 out of range for positional args tuple
+</pre></div>
+</div>
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Istraži</p>
+<ul class="simple">
+<li><p>Ako želite da saznate više o <code class="docutils literal notranslate"><span class="pre">format()</span></code> metodi, preporučujemo sledeće tekstove:</p>
+<ul>
+<li><p>Dokumentacija klase <code class="docutils literal notranslate"><span class="pre">string</span></code>: https://docs.python.org/3/library/string.html</p></li>
+<li><p>Zanimljiv vodič na RealPython: https://realpython.com/python-formatted-output/</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="f-stringovi">
+<h3>f-stringovi</h3>
+<p>Najnoviji način zapisivanja stringova. Pojavio se sa Python 3.6 verzijom. Rešio je niz nekih nedoslednosti i uveo funkcionalnosti koje nisu postojale kod .format() metode.</p>
+<p>Iako format metod zgodan, ume da bude jako težak za čitanje kod složenijih zapisa. Primer, i najveći deo priče o f-stringovima preuzeli smo sa sledećeg <a class="reference external" href="https://realpython.com/python-f-strings/">SAJTA</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Eric&quot;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;Idle&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">78</span>
+<span class="n">profession</span> <span class="o">=</span> <span class="s2">&quot;comedian&quot;</span>
+<span class="n">affiliation</span> <span class="o">=</span> <span class="s2">&quot;Monty Python&quot;</span>
+<span class="nb">print</span><span class="p">((</span><span class="s2">&quot;Hello, </span><span class="si">{first_name}</span><span class="s2"> </span><span class="si">{last_name}</span><span class="s2">. You are </span><span class="si">{age}</span><span class="s2">. &quot;</span> <span class="o">+</span> 
+       <span class="s2">&quot;You are a </span><span class="si">{profession}</span><span class="s2">. You were a member of </span><span class="si">{affiliation}</span><span class="s2">.&quot;</span><span class="p">)</span> \
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="n">ime</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="n">last_name</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="n">age</span><span class="p">,</span> \
+         <span class="n">profession</span><span class="o">=</span><span class="n">profession</span><span class="p">,</span> <span class="n">affiliation</span><span class="o">=</span><span class="n">affiliation</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Eric Idle. You are 78. You are a comedian. You were a member of Monty Python.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>f-stringovi započinju slovom f i imaju olakšanu formu pa bi isti kod izgledao sada ovako:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_name</span> <span class="o">=</span> <span class="s2">&quot;Eric&quot;</span>
+<span class="n">last_name</span> <span class="o">=</span> <span class="s2">&quot;Idle&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">78</span>
+<span class="n">profession</span> <span class="o">=</span> <span class="s2">&quot;comedian&quot;</span>
+<span class="n">affiliation</span> <span class="o">=</span> <span class="s2">&quot;Monty Python&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">first_name</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">last_name</span><span class="si">}</span><span class="s2">. You are </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2">.&quot;</span> 
+      <span class="sa">f</span><span class="s2">&quot;You are a </span><span class="si">{</span><span class="n">profession</span><span class="si">}</span><span class="s2">. You were a member of </span><span class="si">{</span><span class="n">affiliation</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Eric Idle. You are 78.You are a comedian. You were a member of Monty Python.
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Specifikacija ispisa brojeva:</p></li>
+</ul>
+<p>Nekada nam je važno da brojevi budu ispisani u specifičnom formatu. Na primer, imamo broj sa pokretnim zarezom, ali nas interesuje da ga zapišemo sa dve decimale. Koncept <code class="docutils literal notranslate"><span class="pre">f</span></code> string nam omogućava lako baratanje sa zapisom.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Iako je u math modulu pi ispisano kao </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="si">}</span><span class="s2">, možemo ga zapisati i sa dve decimale </span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iako je u math modulu pi ispisano kao 3.141592653589793, možemo ga zapisati i sa dve decimale 3.14
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>f-stringovi omogućavaju i poziv metoda za promenljive unutar zagrada</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Marija&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ne pričamo o specifičnoj osobi, možda je smislenije reći </span><span class="si">{</span><span class="n">ime</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">)</span>
+<span class="c1"># Probajte da razmislite, šta bi se desilo da nismo stavili zagrade posle lower?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ne pričamo o specifičnoj osobi, možda je smislenije reći marija?
+</pre></div>
+</div>
+</div>
+</div>
+<div class="seealso admonition">
+<p class="admonition-title">Istraži</p>
+<ul class="simple">
+<li><p>Igrajte se sa stringovima i ispitajte njihovu funkcionalnost</p></li>
+<li><p>Na sledećem <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings" style="color:#1a73e8;">
+linku </a> možete pogledati zvaničnu dokumentaciju o f-stringovima.</p></li>
+<li><p>Koristeći onlajn materijale saznajte šta radi <code class="docutils literal notranslate"><span class="pre">!r</span></code>, gde i kako se koristi u f-stringovima.</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="kopiranje-listi">
+<h2>Kopiranje listi</h2>
+<p>Najveći deo priče o kopiranju listi preuzet je iz knjige <a href="https://www.tomasbeuzen.com/python-programming-for-data-science/README.html" style="color:#1a73e8;"> Python Programming for Data Science </a> . Veoma je zanimljiva jer ćemo na predmetu pokriti najveći deo tema koje se nalaze u njoj pa je možete baš često koristiti i vraćati joj se.</p>
+<p>Podestimo se: Ako se jednoj promenljivoj tipa liste dodeli druga lista, onda one dele isti memorijski prostor. Videli smo da se taj problem može prevaziće primenom metoda listi <code class="docutils literal notranslate"><span class="pre">copy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+[1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ali šta ako je unutar jedne lista druga lista? Da li će to biti problem? Šta će biti izlaz sledećeg koda?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">]]</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;good bye&quot;</span>  <span class="c1"># Umesto &#39;hi&#39; hoćemo &#39;good bye&#39;</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;good bye&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<p>Dakle, metod copy() ne radi isto kao što je to bilo na prethodnom primeru. Metod copy() pravi plitku kopiju liste (shallow copy).
+To znači:</p>
+<ul class="simple">
+<li><p>napravi se nova lista u memoriji,</p></li>
+<li><p>elementi se samo referenciraju, ne kopiraju dubinski.</p></li>
+</ul>
+<p>Drugim rečima, <code class="docutils literal notranslate"><span class="pre">copy()</span></code> kopira strukturu liste, ali ne i objekte unutar nje.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/lista_shallow_copy.png"><img alt="_images/lista_shallow_copy.png" src="_images/lista_shallow_copy.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 6. </span><span class="caption-text">Metod copy() pravi plitku kopiju liste (shallow copy)</span></p>
+</figcaption>
+</figure>
+<p>Kako prevazilazimo ovaj problem?</p>
+<p>Odgovor koji ćemo često koristiti - importujemo modul koji je rešio ovaj nedostak. Modul <code class="docutils literal notranslate"><span class="pre">copy</span></code> sadrži dve korisne funkcije:</p>
+<ul class="simple">
+<li><p>Funkcija <code class="docutils literal notranslate"><span class="pre">copy</span></code> ima iste funkcionalnosti kao i ugrađena funkcija.</p></li>
+<li><p>Funkcija <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code> koja rešava problem koji smo uočili</p></li>
+</ul>
+<p>Pokušaćemo sada isti kod da pokrenemo, ali koristeći modul <code class="docutils literal notranslate"><span class="pre">copy</span></code> i njegov metod <code class="docutils literal notranslate"><span class="pre">deepcopy</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">]]</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;pikachu&quot;</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1], [2, 99], [3, &#39;hi&#39;]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Na ovaj način dobili smo možda i očekivanu strukturu</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/lista_deep_copy.png"><img alt="_images/lista_deep_copy.png" src="_images/lista_deep_copy.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 7. </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">deepcopy()</span></code> → pravi potpuno nezavisnu (duboku) kopiju celog stabla objekata.</span></p>
+</figcaption>
+</figure>
+<p>Koncepti plitke i duboke kopije vrlo su netrivijalni i često se zanemare prilikom primene. Igrajte se i pokušajte da napravite što zanimljivije primere.</p>
+<div class="note admonition">
+<p class="admonition-title">Kviz 2.</p>
+<p>Pokušajte da date odgovor na pitanje šta je izaz sledećeg koda, a da ne pokrećete sam kod?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">]]</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">]]</span>
+<span class="p">[[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">],</span> <span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_06_liste_uvod.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Liste</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="OI_25_13_naredbe_grananja.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">напред</p>
+        <p class="prev-next-title">Naredbe grananja</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-upper-i-lower">Metode <code class="docutils literal notranslate"><span class="pre">upper()</span></code> i <code class="docutils literal notranslate"><span class="pre">lower()</span></code>.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-split">Metod <code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-join">Metod <code class="docutils literal notranslate"><span class="pre">join()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-find">Metod <code class="docutils literal notranslate"><span class="pre">find()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-strip-rstrip-lstrip">Metode <code class="docutils literal notranslate"><span class="pre">strip()</span></code>, <code class="docutils literal notranslate"><span class="pre">rstrip()</span></code>, <code class="docutils literal notranslate"><span class="pre">lstrip()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatiranje-stringova">Formatiranje stringova</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-format">Metod <code class="docutils literal notranslate"><span class="pre">format()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#f-stringovi">f-stringovi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kopiranje-listi">Kopiranje listi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
