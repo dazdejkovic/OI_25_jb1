@@ -1,0 +1,1798 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Funkcije &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=49ea3705" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_12_funkcije';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="prev" title="Petlje" href="OI_25_11_petlje.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funkcije</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_12_funkcije.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_25_12_funkcije.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Funkcije</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugradene-built-in-funkcije">Ugrađene (built-in) funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisanje-sopstvenih-funkcija">Definisanje sopstvenih funkcija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prva-funkcija">Prva funkcija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primena-funkcije">Primena funkcije</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#budimo-interpreter-izvrsavajmo-naredbu-po-naredbu">Budimo interpreter (Izvršavajmo naredbu po naredbu):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pozivanje-pomoci-oko-funkcije">Pozivanje pomoći oko funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saveti-pri-pisanju-funkcija">Saveti pri pisanju funkcija.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-sa-vise-izlaznih-parametara">Funkcija sa više izlaznih parametara</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specijalna-vrednost-none">Specijalna vrednost <code class="docutils literal notranslate"><span class="pre">None</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumenti-funkcije">Argumenti funkcije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pozicioni-argumenti">Pozicioni argumenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcije-sa-keyword-parametrima-imenovani-argumenti">Funkcije sa keyword parametrima - imenovani argumenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podrazumevane-vrednosti-parametara">Podrazumevane vrednosti parametara</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupisanje-pozicionih-argumenata-uz">Grupisanje pozicionih argumenata uz <code class="docutils literal notranslate"><span class="pre">*</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupisanje-kljucnih-reci-uz">Grupisanje ključnih reči uz <code class="docutils literal notranslate"><span class="pre">**</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokalne-promenljive-i-globalne-promenljive">Lokalne promenljive i globalne promenljive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametar-global">Parametar global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugnezdene-funkcije">Ugneždene funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-funkcije">Lambda funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-kao-argument-funkcije">Funkcija kao argument funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekurzivne-funkcije">Rekurzivne funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jos-jedna-magicna-komanda">Još jedna magična komanda</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="funkcije">
+<h1>Funkcije</h1>
+<p>U jednoj velikoj trgovinskoj kompaniji, direktor analitike Marko svakog jutra dobija iste zahtеve:
+„Kolika nam je bruto marža za ovaj proizvod?“
+„Izračunaj nam tačku preloma za novi model.“
+„Možemo li dobiti projekciju profita ako se cena poveća za 3%?“</p>
+<p>Marko strpljivo otvara Excel ili Python, unosi formule, kopira ih, prilagođava za svaki novi proizvod, svaku novu nedelju, svako novo tržište. Jedan dan shvati sledeće: Već tri meseca piše iste formule iznova — samo sa drugim brojevima. Umoran od rutine, stane i pomisli: „Ako bi ovo bila fabrika, ja bih već odavno automatizovao liniju… Zašto onda u kodu stalno ponavljam iste operacije?“</p>
+<p>I tu mu sine ono što pravi razliku između početnika i pravog analitičara: u programiranju, kao i u ekonomiji, ponavljanje je trošak. Svaki put kada ponoviš isti blok koda, ti: trošiš vreme, povećavaš verovatnoću greške, i praviš sistem koji se teško održava.</p>
+<p>A onda je Marko otkrio funkcije — ekonomsku logiku pretočenu u kod. Funkcija postaje standardizovana formula, kao račun poslovnog prihoda ili obračun amortizacije: definišeš je jednom, pozivaš je beskonačno puta, koristiš je u svim delovima analize, i ako nešto menjaš — menjaš na jednom mestu.</p>
+<p>Marko napravi funkcije <code class="docutils literal notranslate"><span class="pre">marza(cena,</span> <span class="pre">nabavna_cena)</span></code>,  <code class="docutils literal notranslate"><span class="pre">break_even(fiksni,</span> <span class="pre">varijabilni,</span> <span class="pre">cena)</span></code> i <code class="docutils literal notranslate"><span class="pre">projekcija_profita(potrošnja,</span> <span class="pre">rast)</span></code>. I odjednom, njegova „ručna proizvodnja“ finansijskih proračuna postaje automatizovana linija. Umesto mnoštva tabela i ad hoc formula, sada ima uredan, robustan i skalabilan sistem. Isto kao što se kompanija razvija prelaskom sa zanatske na industrijsku proizvodnju, tako i Markov kod napreduje prelaskom sa haotičnog ponavljanja na dobro organizovane funkcije.</p>
+<p>U tom trenutku, on postaje ne samo programer — već ekonomista koji zna da vreme, resursi i urednost imaju svoju cenu.</p>
+<div class="important admonition">
+<p class="admonition-title">Funkcija</p>
+<p>U programiranju <strong>funkcija</strong> je imenovani niz instrukcija koje obavljaju neki zadatak. Funkcija referiše na blok koda koji se može pokrenuti kada se pozove.</p>
+</div>
+<p>Možemo slobodno reći da je funkcija objekat prve kategorije u Pajtonu. Funkcija može da ima <strong>ulazne argumente</strong>, koje korisnik (entitet koji poziva funkciju) može učiniti dostupnim. Funkcije imaju i <strong>izlazni parametar</strong> ili <strong>izlazne parametre</strong>. To su rezultati funkcije, kada ona kompletira svoj zadatak.</p>
+<p>Definicija funkcije može se pojaviti bilo gde u programu, ali se ona ne može pozvati pre nego što je definisana. Funkcije mogu biti i <em>ugneždene</em>, ali funkcije definisane unutar druge funkcije nisu (direktno) dostupne izvan te funkcije.</p>
+<p>Funkcija <code class="docutils literal notranslate"><span class="pre">math.sin</span></code> ima jedan ulazni argument - ugao u radijanima, i jedan izlazni argument - aproksimaciju funkcije izračunatu za dati ulazni ugao. Niz instrukcija kojim izračunavamo ovu aproksimaciju čini <strong>telo funkcije</strong>, koje ćemo definisati u sledećoj sekciji.</p>
+<section id="ugradene-built-in-funkcije">
+<h2>Ugrađene (built-in) funkcije</h2>
+<p>Jedan deo funkcija već je ugrađen u Pajton, i neke smo opisali, kao na primer <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">len</span></code>. Kao dodatak, uveli smo i neke funkcije dostupne iz različitih paketa, na primer, <code class="docutils literal notranslate"><span class="pre">math.sin,</span> <span class="pre">random.sample</span></code> itd.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="n">a</span><span class="o">=</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">([</span><span class="s1">&#39;crvena&#39;</span><span class="p">,</span> <span class="s1">&#39;plava&#39;</span><span class="p">,</span> <span class="s1">&#39;bela&#39;</span><span class="p">,</span><span class="s1">&#39;zelena&#39;</span><span class="p">,</span> <span class="s1">&#39;žuta&#39;</span><span class="p">],</span> <span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+[&#39;žuta&#39;, &#39;bela&#39;, &#39;zelena&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za proveru da li je neka funkcija ugrađena u Pajton koristimo funkciju <code class="docutils literal notranslate"><span class="pre">type</span></code>. Na primer, odgovor na pitanje  da li je funkcija <code class="docutils literal notranslate"><span class="pre">len</span></code> ugrađena u Pajton?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>builtin_function_or_method
+</pre></div>
+</div>
+</div>
+</div>
+<p>Proverite da li je <code class="docutils literal notranslate"><span class="pre">random.sample</span></code> ugrađena funkcija primenom funkcije <code class="docutils literal notranslate"><span class="pre">type</span></code>.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Istraži</p>
+<p>Šta sve modul random poseduje i kako se koristi random.sample</p>
+</div>
+<p>Podsetimo se, metod je funkcija povezana sa nekom klasom. Funkcija definisana unutar neke klase definiše njeno ponašanje. Na instanci te klase, obično se poziva tako što se posle instance te klase stavi tačka, a zatim sledi poziv te funkcije. Na primer,  sa <code class="docutils literal notranslate"><span class="pre">'Beograde'.pop()</span></code> pozivamo funkciju bez argumenata <code class="docutils literal notranslate"><span class="pre">pop</span></code> koja pripada klasi string koja će datom stringu obrisati poslednji karakter i vratiti taj karakter.</p>
+</section>
+<section id="definisanje-sopstvenih-funkcija">
+<h2>Definisanje sopstvenih funkcija</h2>
+<p>Jedna od najvažnijih stvari u programiranju je kreiranje sopstvenih funkcija. Funkcije se mogu specifikovati na više načina. Najpogodniji način da definišemo funkciju je tako što joj damo ime primenom ključne reči <code class="docutils literal notranslate"><span class="pre">def</span></code>, kako je to pokazano u narednom kodu:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">parametar1</span><span class="p">,</span> <span class="n">parametar2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(opciono) dokumentacioni string – opis funkcije&quot;&quot;&quot;</span>
+    <span class="n">naredba_1</span>
+    <span class="n">naredba_2</span>
+    <span class="o">...</span>
+    <span class="k">return</span> <span class="n">vrednost</span>   <span class="c1"># opciono</span>
+    <span class="err">```</span>
+</pre></div>
+</div>
+<p>Definisanje funkcija u Pajtonu zahteva sledeće dve komponente</p>
+<ol class="arabic simple">
+<li><p><strong>Zaglavlje funkcije</strong> koje počinje ključnom rečju <code class="docutils literal notranslate"><span class="pre">def</span></code>, za kojim sledi par zagrada sa ulaznim parametrima između njih, i završava se dvotačkom <code class="docutils literal notranslate"><span class="pre">:</span></code></p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">function_name</span><span class="p">(</span><span class="n">parametar_1</span><span class="p">,</span> <span class="n">parametar_2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Telo funkcije</strong> čini uvučeni blok (tačnoo 4 praznine) indicirajući na glavno telo funkcije. On sadrži tri dela:</p>
+<ul class="simple">
+<li><p><em>Dokumentacioni (opisni) string</em>, je string koji opisuje funkciju i koji se može dobiti funkcijom <code class="docutils literal notranslate"><span class="pre">help()</span></code> ili pomoću magične komande <code class="docutils literal notranslate"><span class="pre">?</span></code>. Trostruki jednostruki ili dvostruki navodi pokazuju nam gde da postavimo dokumentacioni string. Između navodnika možete da napišete bilo koji string u jednoj ili više linija.</p></li>
+<li><p><em>Naredbe funkcije</em>, su korak-po-korak instrukcije koje će funkcija izvršiti kad bude bila pozvana.</p></li>
+<li><p><em>Naredba <code class="docutils literal notranslate"><span class="pre">return</span></code></em> može sadržati neke parametre koje treba vratiti kad se funkcija izvrši. Kasnije ćemo videti, da se može vratiti bilo koji tip, čak i funkcija.</p></li>
+</ul>
+</li>
+</ol>
+<div class="note admonition">
+<p class="admonition-title">Ulazni parametar i argument.</p>
+<ul class="simple">
+<li><p><em>Parametar</em> je promenljiva koju definiše funkcija i koji dobija vrednost kada se funkcija pozove.</p></li>
+<li><p><em>Argument</em> je vrednost koja je prosleđena funkciji kada je pozvana.</p></li>
+</ul>
+</div>
+<p>Na primer, ako definišemo funkciju <code class="docutils literal notranslate"><span class="pre">pozdrav(ime</span></code>), tada je <code class="docutils literal notranslate"><span class="pre">ime</span></code> ulazni parametar. Kada pozovemo funkciju, i prosledimo joj vrednost <code class="docutils literal notranslate"><span class="pre">Natalija</span></code>, tada je ova vrednost ulazni argument. Zbog ove suptilne razlike, u preostalom delu nećemo se truditi da pravimo tu razliku.</p>
+<p>Kada vaš kod postane sve duži i komplikovaniji, komentari mogu da pomognu vama i onima koji čitaju vaš kod kako bi ga bolje razumeli. Navika da često komentarišete vaš kod je prevencija od grešaka u kodiranju, razumevanje gde vaš kod ide kada ga pišete i asistira vam u pronalaženju grešaka. Iako je opciono, ipak je poželjno da se stavi opis funkcije, autor kao i datum kreiranja u opisnom stringu u zaglavlju funkcije.</p>
+<p>Preporučujemo da komentarišete sopstveni kod. Istražite kako izgleda lepo i ispravno komentarisanje koda.</p>
+</section>
+<section id="prva-funkcija">
+<h2>Prva funkcija</h2>
+<p>Definišimo funkciju pod imenom <code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> koje uzima tri broja i nalazi njihovu sumu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">moje_sabiranje</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Funkcija koja sabira tri broja</span>
+<span class="sd">    Ulaz: 3 broja a, b, c</span>
+<span class="sd">    Izlaz: zbir brojeva a, 2b i 4c</span>
+<span class="sd">    Autor:</span>
+<span class="sd">    Datum:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># Ovo je sumiranje</span>
+    
+    <span class="n">izlaz</span> <span class="o">=</span> <span class="n">a</span>  <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">b</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">c</span>
+    
+    <span class="k">return</span> <span class="n">izlaz</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako ne uvučete vaš kod kada definišete funkciju, dobićete poruku o grešci:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">moje_sabiranje</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Funkcija koja sabira tri broja</span>
+<span class="sd">Ulaz: 3 broja a, b, c</span>
+<span class="sd">Izlaz: zbir brojeva a, 2b i 4c</span>
+<span class="sd">Autor:</span>
+<span class="sd">Datum:</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># Ovo je sumiranje</span>
+
+<span class="n">izlaz</span> <span class="o">=</span> <span class="n">a</span>  <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">b</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">c</span>
+
+<span class="k">return</span> <span class="n">izlaz</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    ^</span>
+<span class="ne">IndentationError</span>: expected an indented block after function definition on line 1
+</pre></div>
+</div>
+</div>
+</div>
+<section id="primena-funkcije">
+<h3>Primena funkcije</h3>
+<p>Iskoristimo funkciju <code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> da izračunamo zbir nekoliko brojeva:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">moje_sabiranje</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">f</span> <span class="o">=</span> <span class="n">moje_sabiranje</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">f</span>
+
+<span class="ne">NameError</span>: name &#39;moje_sabiranje&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Parametri funkcije <code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> su <code class="docutils literal notranslate"><span class="pre">a</span></code>,<code class="docutils literal notranslate"><span class="pre">b</span></code> i <code class="docutils literal notranslate"><span class="pre">c</span></code>. Argumenti koje smo zadali prilikom poziva bili su 1, 2 i 3.</p>
+<section id="budimo-interpreter-izvrsavajmo-naredbu-po-naredbu">
+<h4>Budimo interpreter (Izvršavajmo naredbu po naredbu):</h4>
+<ol class="arabic simple">
+<li><p>Pajton pronalazi funkciju <code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> uzima za prvi ulazni argument vrednost 1 i dodeljuje ga promenljivoj sa imenom <code class="docutils literal notranslate"><span class="pre">a</span></code> (prvo ime promenljive u ulaznoj listi argumenata)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> uzima za drugi ulazni argument vrednost 2 i dodeljuje ga promenljivoj sa imenom <code class="docutils literal notranslate"><span class="pre">b</span></code> (drugo ime promenljive u ulaznoj listi argumenata)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> uzima za treći ulazni argument vrednost 3 i dodeljuje ga promenljivoj sa imenom <code class="docutils literal notranslate"><span class="pre">c</span></code> (treće ime promenljive u ulaznoj listi argumenata)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> izračunava zbir <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">2b</span></code> i <code class="docutils literal notranslate"><span class="pre">4c</span></code>, što je <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">2*2</span> <span class="pre">+</span> <span class="pre">4*3</span> <span class="pre">=</span> <span class="pre">17</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> dodeljuje vrednost 17 promenljivoj <code class="docutils literal notranslate"><span class="pre">izlaz</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> je sada ekvivalentno vrednosti 17, i ova vrednost se dodeljuje promenljivoj <code class="docutils literal notranslate"><span class="pre">f</span></code></p></li>
+<li><p>Prikazuje se vrednost promenljive <code class="docutils literal notranslate"><span class="pre">f</span></code></p></li>
+</ol>
+<p>Broj argumenata ovakve funkcije mora odgovarati broju parametara (argumenata) koji smo predvideli prilikom kreiranja te funkcije. Dakle, naša funkcija moje_sabiranje očekuje tri argumenta, i svako drugačije pozivanje dovešće do greške:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moje_sabiranje</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">moje_sabiranje</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: moje_sabiranje() missing 1 required positional argument: &#39;c&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 1.</p>
+<p>Šta će biti izlaz ako pozovemo sledeću funkciju:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">moje_sabiranje</span><span class="p">(</span><span class="s2">&quot;pesma&quot;</span><span class="p">,</span> <span class="s2">&quot;slika&quot;</span><span class="p">,</span> <span class="s2">&quot;muzika&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;pesmaslikaslikamuzikamuzikamuzikamuzika&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 2.</p>
+<p>Šta će biti izlaz ako pozovemo sledeću funkciju:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">moje_sabiranje</span><span class="p">(</span><span class="s2">&quot;pesma&quot;</span><span class="p">,</span> <span class="s2">&quot;slika&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 3.</p>
+<p>Šta će biti izlaz ako pozovemo sledeću funkciju:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">moje_sabiranje</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 4.</p>
+<p>Šta će biti izlaz ako pozovemo sledeću funkciju:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">moje_sabiranje</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ne">TypeError</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="pozivanje-pomoci-oko-funkcije">
+<h2>Pozivanje pomoći oko funkcije</h2>
+<p>Dokumentacioni string nam pomaže da dobijemo informacije o funkciji. Njemu pristupate pozivom funkcije <code class="docutils literal notranslate"><span class="pre">help</span></code> ili magičnom komandom <code class="docutils literal notranslate"><span class="pre">?</span></code> na ime funkcije. Na primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">moje_sabiranje</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function moje_sabiranje in module __main__:
+
+moje_sabiranje(a, b, c)
+    Funkcija koja sabira tri broja
+    Ulaz: 3 broja a, b, c
+    Izlaz: zbir brojeva a, 2b i 4c
+    Autor:
+    Datum:
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>moje_sabiranje<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> moje_sabiranje(a, b, c)
+<span class=" -Color -Color-Red">Docstring:</span>
+Funkcija koja sabira tri broja
+Ulaz: 3 broja a, b, c
+Izlaz: zbir brojeva a, 2b i 4c
+Autor:
+Datum:
+<span class=" -Color -Color-Red">File:</span>      c:\users\dragan azdejkovic\appdata\local\temp\ipykernel_41312\1664104178.py
+<span class=" -Color -Color-Red">Type:</span>      function
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Zadatak 1.</p>
+<ul class="simple">
+<li><p>Primenite funkciju <code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code> da izračunate zbir <span class="math notranslate nohighlight">\(\sin(\pi)+ 2\cos(\pi) +4\tan(\pi)\)</span></p></li>
+<li><p>Upotrebite matematičke izraze kao ulaze za <code class="docutils literal notranslate"><span class="pre">moje_sabiranje</span></code>i proverite da li funkcija izvodi operacije korektno.</p></li>
+</ul>
+</div>
+</section>
+<section id="saveti-pri-pisanju-funkcija">
+<h2>Saveti pri pisanju funkcija.</h2>
+<ol class="arabic simple">
+<li><p>Ručno kucane 4 praznine je prvi nivo uvlačenja koji ćete videti kada kucate funkcije. Viši nivoi uvlačenja su neophodni, ako imamo ugneždene funkcije ili <code class="docutils literal notranslate"><span class="pre">if</span></code> naredbe. Nekad treba da uvučemo ili povučemo blok koda. To možemo da uradimo tako što prvo selektujemo sve linije u bloku koda, a zatim koristimo <code class="docutils literal notranslate"><span class="pre">&lt;Tab&gt;</span></code> ili <code class="docutils literal notranslate"><span class="pre">&lt;Shift&gt;</span> <span class="pre">+</span> <span class="pre">&lt;Tab&gt;</span></code> da uvećamo ili smanjimo nivo uvlačenja.</p></li>
+<li><p>Izgradite dobru praksu pri kodiranju dajući promenljivim i funkcijama opisna imena, komentarišite često i izbegavajte
+nepotrebne linije koda.</p></li>
+<li><p>Imena promenljivih i funkcijama neka počinju malim slovima, sa rečima odvojenim donjom crtom <code class="docutils literal notranslate"><span class="pre">_</span></code> kako bi povećali čitljivost.</p></li>
+<li><p>Dobra je praksa da često sačuvate dokument dok pišete funkcije.</p></li>
+</ol>
+</section>
+<section id="funkcija-sa-vise-izlaznih-parametara">
+<h2>Funkcija sa više izlaznih parametara</h2>
+<p>Funkcije u Pajtonu mogu da imaju više izlaznih parametara. Funkcija će formalno vratiti višestruki izlaz kao torku, koju zatim možemo da raspakujemo.</p>
+<div class="tip admonition">
+<p class="admonition-title">Primer 1.</p>
+<p>Napišite kod za funkciju <code class="docutils literal notranslate"><span class="pre">moja_trig_suma</span></code> koja će računati dva zbira: sinusa i kosinusa kao i kosinusa i sinusa ulaznih parametara.</p>
+<ul class="simple">
+<li><p>Testirajte fukciju za ulazne parametre <span class="math notranslate nohighlight">\(\pi\)</span> i <span class="math notranslate nohighlight">\(0\)</span>.</p></li>
+<li><p>Za ulazne parametre <span class="math notranslate nohighlight">\(\pi\)</span> i <span class="math notranslate nohighlight">\(\frac\pi4\)</span> dodelite prvi izlazni parametar promenljivoj <code class="docutils literal notranslate"><span class="pre">a</span></code>, a drugi izlazni parametar promenljivoj <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">moja_trig_suma</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    funkcija koja demonstrira višestruki izlaz</span>
+<span class="sd">    author</span>
+<span class="sd">    date</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">izlaz_1</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">izlaz_2</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">m</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">izlaz_1</span><span class="p">,</span> <span class="n">izlaz_2</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moja_trig_suma</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0000000000000002, -1.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">moja_trig_suma</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7071067811865477
+-0.2928932188134524
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="specijalna-vrednost-none">
+<h2>Specijalna vrednost <code class="docutils literal notranslate"><span class="pre">None</span></code></h2>
+<p>Nije neophodno da funkcija eksplicitno vrati neki objekat. Funkcije koje ne dođu do kraja svog uvučenog bloka bez dostizanja <code class="docutils literal notranslate"><span class="pre">return</span></code> naredbe vratiće Pajtonovu specijalnu vrednost <code class="docutils literal notranslate"><span class="pre">None</span></code>. Interesantno je da njoj odgovara logička vrednost <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Možemo definisati funkciju bez ulaznih parametara i naredbe <code class="docutils literal notranslate"><span class="pre">return</span></code>. Na primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_zdravo</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zdravo :-)&quot;</span><span class="p">)</span>
+    
+<span class="n">a</span><span class="o">=</span><span class="n">print_zdravo</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zdravo :-)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primetite da nema ulaznih argumenata, kada se poziva funkcija, ali su zagrade obavezne. Ovo je slučaj kad funkcija vraća `None’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Da li možemo da pretpostavimo šta će biti izlaz sledećeg koda?</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">print_zdravo</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zdravo :-)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NoneType
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako nekada funkcija vrati <code class="docutils literal notranslate"><span class="pre">None</span></code>, to često može biti indikator greške. Više o ovome možete pročitati recimo <a class="reference external" href="https://realpython.com/null-in-python/">OVDE</a></p>
+</section>
+<section id="argumenti-funkcije">
+<h2>Argumenti funkcije</h2>
+<p>Python nudi izuzetno fleksibilan sistem za prosleđivanje argumenata. Zahvaljujući tome, ista funkcija može da se poziva na više načina, sa različitim tipovima i brojem ulaza. Ideja je da programer ima slobodu, a funkcija čitljivo i precizno ponašanje.</p>
+<p>Postoje četiri osnovna načina zadavanja argumenata u Pythonu:</p>
+<ul class="simple">
+<li><p>Pozicioni argumenti – redosled je važan</p></li>
+<li><p>Imenovani (keyword) argumenti – redosled nije važan</p></li>
+<li><p>Podrazumevane vrednosti parametara – omogućavaju da argument bude opcioni</p></li>
+<li><p>Promenljivi broj argumenata (*args i **kwargs) – hvataju višak pozicionih i imenovanih argumenata</p></li>
+</ul>
+<p>Ovaj sistem omogućava da funkcija bude jednostavna kad treba, ali i moćna kad je poziv složen. U praksi to znači da isti zadatak možemo rešiti sa više stilova poziva – što čini kod fleksibilnijim, čitljivijim i prilagođenijim složenim problemima programiranja i analize podataka.</p>
+<section id="pozicioni-argumenti">
+<h3>Pozicioni argumenti</h3>
+<p>Pajton rukuje argumentima funkcije na način koji je neobično fleksiblan, u poređenju sa drugim jezicima. Najčešći tipovi argumenata su <em>pozicioni argumenti</em>, čije se vrednosti kopiraju po redu u njihove odgovarajuće parametre.</p>
+<p>Sledeća funkcija pravi rečnik od svojih pozicionih parametara za unošenje i vraća ga:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">menu</span><span class="p">(</span><span class="n">vino</span><span class="p">,</span> <span class="n">predjelo</span><span class="p">,</span> <span class="n">dezert</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;vino&#39;</span><span class="p">:</span> <span class="n">vino</span><span class="p">,</span> <span class="s1">&#39;predjelo&#39;</span><span class="p">:</span> <span class="n">predjelo</span><span class="p">,</span> <span class="s1">&#39;dezert&#39;</span><span class="p">:</span><span class="n">dezert</span><span class="p">}</span>
+
+<span class="n">menu</span><span class="p">(</span><span class="s1">&#39;Chardonnay&#39;</span><span class="p">,</span> <span class="s1">&#39;piletina&#39;</span><span class="p">,</span> <span class="s1">&#39;kolač&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;vino&#39;: &#39;Chardonnay&#39;, &#39;predjelo&#39;: &#39;piletina&#39;, &#39;dezert&#39;: &#39;kolač&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Premda su vrlo česti, mana pozicionih argumenata je što morate pamtiti značenje svake pozicije. Ako bismo zaboravili, i pozvali <code class="docutils literal notranslate"><span class="pre">menu()</span></code> sa vinom kao poslednjim elementom, umesto kao prvim, obrok bi bio drugačiji:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s1">&#39;biftek&#39;</span><span class="p">,</span> <span class="s1">&#39;torta&#39;</span><span class="p">,</span> <span class="s1">&#39;Merlot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;vino&#39;: &#39;biftek&#39;, &#39;predjelo&#39;: &#39;torta&#39;, &#39;dezert&#39;: &#39;Merlot&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funkcije-sa-keyword-parametrima-imenovani-argumenti">
+<h3>Funkcije sa keyword parametrima - imenovani argumenti</h3>
+<p>Kako biste izbegli konfuziju sa pozicionim argumentima, možemo odrediti argumente prema imenima njihovih odgovarajućih parametara, čak i u drugačijem redosledu od onoga u telu funkcije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="n">predjelo</span> <span class="o">=</span><span class="s1">&#39;biftek&#39;</span><span class="p">,</span> <span class="n">dezert</span> <span class="o">=</span><span class="s1">&#39;kolač&#39;</span><span class="p">,</span> <span class="n">vino</span> <span class="o">=</span><span class="s1">&#39;bordo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;vino&#39;: &#39;bordo&#39;, &#39;predjelo&#39;: &#39;biftek&#39;, &#39;dezert&#39;: &#39;kolač&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Možete kombinovati pozicione argumente i imenovane argumente. Hajde da najpre odredimo <code class="docutils literal notranslate"><span class="pre">vino</span></code>, ali da za <code class="docutils literal notranslate"><span class="pre">predjelo</span></code> i <code class="docutils literal notranslate"><span class="pre">dezert</span></code> upotrebimo ključne reči</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s1">&#39;Roze&#39;</span><span class="p">,</span> <span class="n">dezert</span> <span class="o">=</span> <span class="s1">&#39;pita&#39;</span><span class="p">,</span> <span class="n">predjelo</span><span class="o">=</span><span class="s1">&#39;riba&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;vino&#39;: &#39;Roze&#39;, &#39;predjelo&#39;: &#39;riba&#39;, &#39;dezert&#39;: &#39;pita&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ukoliko pozovete funkciju i sa pozicionim i imenovanim argumentima, pozicioni argumenti treba da dođu na prvo mesto.</p>
+</section>
+<section id="podrazumevane-vrednosti-parametara">
+<h3>Podrazumevane vrednosti parametara</h3>
+<p>Možete odrediti podrazumevane vrednosti za neke parametre. Podrazumevane vrednosti se koriste onda kada pozivalac ne dostavlja odgovarajući argument. Ova mogućnost zapravo je veoma korisna i koristi se jako često.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">menu</span><span class="p">(</span><span class="n">vino</span><span class="p">,</span> <span class="n">predjelo</span><span class="p">,</span> <span class="n">dezert</span><span class="o">=</span><span class="s1">&#39;puding&#39;</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;vino&#39;</span><span class="p">:</span> <span class="n">vino</span><span class="p">,</span> <span class="s1">&#39;predjelo&#39;</span><span class="p">:</span> <span class="n">predjelo</span><span class="p">,</span> <span class="s1">&#39;dezert&#39;</span><span class="p">:</span><span class="n">dezert</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovoga puta pozivamo funkciju <code class="docutils literal notranslate"><span class="pre">menu()</span></code> bez argumenta <code class="docutils literal notranslate"><span class="pre">dezert</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s1">&#39;Vranac&#39;</span><span class="p">,</span> <span class="s1">&#39;piletina&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;vino&#39;: &#39;Vranac&#39;, &#39;predjelo&#39;: &#39;piletina&#39;, &#39;dezert&#39;: &#39;puding&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ukoliko dostavite i argument on se koristi umesto podrazumevane vrednosti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">menu</span><span class="p">(</span><span class="s1">&#39;Tamjanika&#39;</span><span class="p">,</span> <span class="s1">&#39;patka&#39;</span><span class="p">,</span> <span class="s1">&#39;krofna&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;vino&#39;: &#39;Tamjanika&#39;, &#39;predjelo&#39;: &#39;patka&#39;, &#39;dezert&#39;: &#39;krofna&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Napomena.</p>
+<p>Podrazumevana vrednost parametra se izračunava samo jednom — u trenutku definisanja funkcije, a ne pri svakom pozivu.</p>
+<p>To znači: ako je podrazumevana vrednost mutabilan objekat (lista, rečnik, skup), ona se deli između svih poziva funkcije, a to može da dovede do neželjenog ponašanja.</p>
+</div>
+<p>U sledećem testu, funkcija <code class="docutils literal notranslate"><span class="pre">bocni_efekat</span></code> bi trebalo da se pokrene sa novom praznom <code class="docutils literal notranslate"><span class="pre">rez</span></code> listom, doda joj argument <code class="docutils literal notranslate"><span class="pre">arg</span></code>, i zatim ispiše listu od jednog elementa. Međutim, postoji greška: ona je prazna samo dok se poziva prvi put. Pri drugom pozivu ona će sadržati već jedan element iz prethodnog poziva:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bocni_efekat</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">rez</span> <span class="o">=</span> <span class="p">[]):</span>
+    <span class="n">rez</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rez</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Šta će biti izlaz sledeće linije koda?</span>
+<span class="n">bocni_efekat</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Šta će biti izlaz sledeće linije koda?</span>
+<span class="n">bocni_efekat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kako možemo da popravimo kod?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">efekat</span><span class="p">(</span><span class="n">arg</span><span class="p">):</span>
+    <span class="n">rez</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">rez</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">rez</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">efekat</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;a&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">efekat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako ipak želimo ili moramo da imamo podrazumevanu vrednost, taj problem možemo da rešimo na sledeći način:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">bez_bocnog_efekta</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">rez</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">rez</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">rez</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">rez</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rez</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bez_bocnog_efekta</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[11]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bez_bocnog_efekta</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[111]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="grupisanje-pozicionih-argumenata-uz">
+<h3>Grupisanje pozicionih argumenata uz <code class="docutils literal notranslate"><span class="pre">*</span></code></h3>
+<p>Zamislite sledeći problem: želim da napišem funkciju ali ne znam koliko će parametara imati.</p>
+<p>Kada se koristi unutar funkcije sa parametrom, zvezdica grupiše varijabilni broj pozicionih argumenata u n-torku vrednosti parametara. U sledećem primeru, <code class="docutils literal notranslate"><span class="pre">args</span></code> je n-torka parametara koju je rezultat argumenata koji su prosleđeni u funkciju <code class="docutils literal notranslate"><span class="pre">print_args</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_args</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pozicioni argumenti u n-torci&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ukoliko je pozovete bez argumenata, ništa nećete dobiti u <code class="docutils literal notranslate"><span class="pre">*args</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_args</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pozicioni argumenti u n-torci ()
+</pre></div>
+</div>
+</div>
+</div>
+<p>Šta god da joj date, biće ispisano kao <code class="docutils literal notranslate"><span class="pre">args</span></code> n-torka:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_args</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="s1">&#39;Denver&#39;</span><span class="p">,</span> <span class="s1">&#39;Nuggets&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pozicioni argumenti u n-torci (1, 2, 3, 4, 5, &#39;...&#39;, &#39;Denver&#39;, &#39;Nuggets&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovo je korisno za pisanje funkcija poput naredne. Ukoliko su vašoj funkciji neophodni i pozicioni argumenti, <code class="docutils literal notranslate"><span class="pre">*args</span></code> ide na kraj i preuzima ostatak argumenata koje u uneti u funkciju:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">stampa</span><span class="p">(</span><span class="n">zahtev1</span><span class="p">,</span> <span class="n">zahtev2</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Neophodna mi je&#39;</span><span class="p">,</span> <span class="n">zahtev1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kao i&#39;</span><span class="p">,</span><span class="n">zahtev2</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Sve preostalo nije neophodno&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stampa</span><span class="p">(</span><span class="s1">&#39;kapa&#39;</span><span class="p">,</span><span class="s1">&#39;rukavice&#39;</span><span class="p">,</span><span class="s1">&#39;marama&#39;</span><span class="p">,</span> <span class="s1">&#39;peškir&#39;</span><span class="p">,</span> <span class="s1">&#39;štap&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Neophodna mi je kapa
+kao i rukavice .
+Sve preostalo nije neophodno (&#39;marama&#39;, &#39;peškir&#39;, &#39;štap&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kada koristite *, ne morate pozivati parametar n-torke <code class="docutils literal notranslate"><span class="pre">args</span></code>, ali se to u Pajtonu često radi.</p>
+</section>
+<section id="grupisanje-kljucnih-reci-uz">
+<h3>Grupisanje ključnih reči uz <code class="docutils literal notranslate"><span class="pre">**</span></code></h3>
+<p>Možete da upotrebite dve zvezdice (<code class="docutils literal notranslate"><span class="pre">**</span></code>) za grupisanje argumenata u rečnik, gde su imena argumenat ključevi, a njihove vrednosti odgovarajuće podrazumevane vrednosti. U sledećem primeru se definiše funkcija <code class="docutils literal notranslate"><span class="pre">stampa_kwargs</span></code> tako da ispisuje svoje ključne reči (argumente) i njihove vrednosti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">stampa_kwargs</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Argumenti sa ključnim rečima&#39;</span><span class="p">,</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hajde sada da pokušamo da pozovemo funkciju sa nekim ključnim rečima argumentima.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stampa_kwargs</span><span class="p">(</span><span class="n">vino</span><span class="o">=</span><span class="s1">&#39;vranac&#39;</span><span class="p">,</span> <span class="n">predjelo</span><span class="o">=</span><span class="s1">&#39;musaka&#39;</span><span class="p">,</span> <span class="n">dezert</span><span class="o">=</span><span class="s1">&#39;mafini&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unutar funkcije, <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> je rečnik.</p>
+<p>Ukoliko kombinujete pozicioni parametar <code class="docutils literal notranslate"><span class="pre">*args</span></code> i <code class="docutils literal notranslate"><span class="pre">**kwargs</span></code>, oni će se nalaziti u tom redosledu. Kao i sa <code class="docutils literal notranslate"><span class="pre">args</span></code>, ne morate pozivati ovaj parametar ključne reči <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>, ali se to često radi.</p>
+</section>
+</section>
+<section id="lokalne-promenljive-i-globalne-promenljive">
+<h2>Lokalne promenljive i globalne promenljive</h2>
+<p>Funkcije imaju svoj memorijski blok koji je rezervisan za promenljive kreirane unutar funkcije. Ovaj blok se ne deli sa memorijom celog notebook-a. Iz tog razloga, promenljive sa istim imenom mogu postojati unutar i izvan funkcije bez konflikta. Memorijski blok dodeljen funkciji se otvara svaki put kad se primeni funkcija. Izlaz sledećeg koda je saglasan sa tim principima:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sabiranje</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+    <span class="n">izlaz</span> <span class="o">=</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">c</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vrednost promenljive izlaz unutar funkcije je&quot;</span><span class="p">,</span> <span class="n">izlaz</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adresa promenljive unutar funkcije je&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">izlaz</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">izlaz</span>
+
+<span class="n">izlaz</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">sabiranje</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vrednost promenljive izlaz izvan funkcije je&quot;</span><span class="p">,</span> <span class="n">izlaz</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adresa promenljive izvan funkcije je&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">izlaz</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vrednost promenljive izlaz unutar funkcije je 6
+Adresa promenljive unutar funkcije je 140734693286984
+Vrednost promenljive izlaz izvan funkcije je 1
+Adresa promenljive izvan funkcije je 140734693286824
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 1.</p>
+<p>Šta će biti vrednosti <code class="docutils literal notranslate"><span class="pre">a,b,x,y</span></code> i <code class="docutils literal notranslate"><span class="pre">z</span></code> posle izvršenja sledećeg koda?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kviz_1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unutar funkcije: a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, z=</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">kviz_1</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Izvan funkcije: a= </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, z=</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Unutar</span> <span class="n">funkcije</span><span class="p">:</span> <span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">Izvan</span> <span class="n">funkcije</span><span class="p">:</span> <span class="n">a</span><span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 2.</p>
+<p>Šta će biti vrednosti <code class="docutils literal notranslate"><span class="pre">a,b,x,y</span></code> i <code class="docutils literal notranslate"><span class="pre">z</span></code> posle izvršenja sledećeg koda?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kviz_2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unutar funkcije: a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, z=</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span><span class="p">,</span><span class="n">a</span> <span class="o">=</span> <span class="n">kviz_2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Izvan funkcije: a= </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, z=</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Unutar</span> <span class="n">funkcije</span><span class="p">:</span> <span class="n">a</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">24</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">8</span>
+<span class="n">Izvan</span> <span class="n">funkcije</span><span class="p">:</span> <span class="n">a</span><span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Zašto je <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">1</span></code>?</p>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 3.</p>
+<p>Šta će biti izlaz u narednom kodu?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kviz_3</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unutar funkcije: a=</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2">, b=</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2">, x=</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2">, z=</span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">kviz_3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
+     <span class="mi">12</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+     <span class="mi">13</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">kviz_3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="o">---&gt;</span> <span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;n&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Neka je promenljiva <code class="docutils literal notranslate"><span class="pre">n</span></code> definisana unutar funkcije. Pokušajmo sada da joj promenimo vrednost <code class="docutils literal notranslate"><span class="pre">n</span></code> unutar funkcije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unutar funkcije: n je </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>    
+<span class="n">fun</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Izvan funkcije: vrednost n je </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unutar funkcije: n je 3
+Izvan funkcije: vrednost n je 42
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parametar-global">
+<h2>Parametar global</h2>
+<p>Neka je promenljiva n definisana unutar funkcije. Pokušajmo sada da joj promenimo vrednost n unutar funkcije:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unutar funkcije: n je </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>    
+<span class="n">fun</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Izvan funkcije: vrednost n je </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovo je posledica činjenice da funkcije imaju svoj memorijski blok u okviru koga se sve izvršava.</p>
+<p>Da omogućimo funkciji da menja promenljivu unutar koda moramo da primenimo ključnu reč (keyword) <strong>global</strong> da Python zna da je ova promenljiva <strong>globalna promenljiva</strong> i da se može koristiti kako izvan tako i unutar funkcije.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">fun</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">n</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unutar funkcije: n je </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unutar funkcije: n je promenjeno na </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">fun</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Izvan funkcije: vrednost n je </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Unutar funkcije: n je 42
+Unutar funkcije: n je promenjeno na 3
+Izvan funkcije: vrednost n je 3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ugnezdene-funkcije">
+<h2>Ugneždene funkcije</h2>
+<p>Kada jednom kreiramo i sačuvamo novu funkciju, ona se ponaša kao i svaka druga ugrađena Python funkcija. Možemo da je pozovemo bilo gde u notebook-u.</p>
+<p><strong>Ugneždena funkcija</strong> je funkcija definisana unutar druge funkcije - <strong>funkcije roditelja</strong>.  Samo funkcija roditelj može da pozove ugneždenu funkciju. Ugneždena funkcija preuzima odvojeni memorijski blok svoje roditelj funkcije.</p>
+<p>Posmatrajmo sledeću funkciju:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sqrt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">rastojanje_3</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    ulaz: x,y,z (2D koordinate sadržane u torki)</span>
+<span class="sd">    izlaz: d - lista, gde je</span>
+<span class="sd">    d[0] - rastojanje između x i y</span>
+<span class="sd">    d[1] - rastojanje između x i z</span>
+<span class="sd">    d[2] - rastojanje između y i x</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">e_rastojanje</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        podfunkcija funkcije rastojanje_3</span>
+<span class="sd">        izlaz: rastojanje između x i y, primenom formule za euklidsko rastojanje              </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">izlaz</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">izlaz</span>
+    <span class="n">d0</span><span class="o">=</span><span class="n">e_rastojanje</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">d1</span><span class="o">=</span><span class="n">e_rastojanje</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">d2</span><span class="o">=</span><span class="n">e_rastojanje</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">d0</span><span class="p">,</span><span class="n">d1</span><span class="p">,</span><span class="n">d2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primetimo da se promenljive <code class="docutils literal notranslate"><span class="pre">x</span></code> i <code class="docutils literal notranslate"><span class="pre">y</span></code> pojavljuju u obe funkcije. To je dozvoljeno, jer ugneždene funkcije koriste odvojeni memorijski blok od funkcije roditelja.</p>
+<p>Pozovimo funkciju <code class="docutils literal notranslate"><span class="pre">rastojanje_3</span></code> za <code class="docutils literal notranslate"><span class="pre">x=(0,0)</span></code>, <code class="docutils literal notranslate"><span class="pre">y=(0,1)</span></code>, <code class="docutils literal notranslate"><span class="pre">z=(1,1)</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">rastojanje_3</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 1.4142135623730951, 1.0]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lambda-funkcije">
+<h2>Lambda funkcije</h2>
+<p>Ponekad nije optimalno definisati funkciju na uobičajeni način, posebno ako naša funkcija ima samo jednu liniju. U tom slučaju, koristimo anonimne funkcije u Pajtonu, što je u stvari funkcija bez imena.</p>
+<p>Ovakav tip funkcije se takođe zove <strong>lambda funkcija</strong>, jer se definišu koristeći ključnu reč <code class="docutils literal notranslate"><span class="pre">lambda</span></code>. Tipična lambda funkcija se definiše na sledeći način:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">lambda</span> <span class="n">argumenti</span><span class="p">:</span> <span class="n">naredba</span>
+</pre></div>
+</div>
+<p>Ona može da ima proizvoljan broj argumenata, ali samo jednu naredbu.</p>
+<div class="tip admonition">
+<p class="admonition-title">Primer 1.</p>
+<p>Definišimo funkciju koja kvadrira ulazni broj i pozovimo je sa ulazima 2 i 5.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kvadrat</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kvadrat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Primer 2.</p>
+<p>Definišimo funkciju koja sabira brojeve <code class="docutils literal notranslate"><span class="pre">x</span></code> i <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sabiranje</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sabiranje</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">32</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="funkcija-kao-argument-funkcije">
+<h2>Funkcija kao argument funkcije</h2>
+<p>Sve do sada, dodeljivali smo različite strukture podataka kao parametre promenljivih. Ponekad je korisno imati mogućnost da prosledimo i ime funkcije kao argument. Drugim rečima, ulaz za neke funkcije mogu biti i druge funkcije.</p>
+<p>Dodelite funkciju <code class="docutils literal notranslate"><span class="pre">max</span></code> promenljivoj <code class="docutils literal notranslate"><span class="pre">f</span></code>. Proverite tip od <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">max</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;builtin_function_or_method&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Odredite maksimalnu vrednost iz liste <code class="docutils literal notranslate"><span class="pre">[22,41,11]</span></code> primenom funkcije <code class="docutils literal notranslate"><span class="pre">f</span></code>. Proverite da li je rezultat isti ako se koristi <code class="docutils literal notranslate"><span class="pre">max</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">11</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span><span class="mi">41</span><span class="p">,</span><span class="mi">11</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41
+41
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Primer 3.</p>
+<p>Napišite funkciju <code class="docutils literal notranslate"><span class="pre">plus_jedan</span></code> koja uzima funkcijski objekat, <code class="docutils literal notranslate"><span class="pre">f</span></code>, i realni broj <code class="docutils literal notranslate"><span class="pre">x</span></code> kao argumente. Funkcija treba da računa‚ vrednost funkcije <code class="docutils literal notranslate"><span class="pre">f</span></code> u tački <code class="docutils literal notranslate"><span class="pre">x</span></code> i na taj rezulat  dodaje jedinicu. Odnosno, <code class="docutils literal notranslate"><span class="pre">plus_jedan(x)</span> <span class="pre">=</span> <span class="pre">f(x)</span> <span class="pre">+</span> <span class="pre">1</span></code></p>
+<p>Proverite da ona radi za različite funkcije i vrednosti <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">exp</span><span class="p">,</span> <span class="n">pi</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">plus_jedan</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">plus_jedan</span><span class="p">(</span><span class="n">sin</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus_jedan</span><span class="p">(</span><span class="n">cos</span><span class="p">,</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus_jedan</span><span class="p">(</span><span class="n">sqrt</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">plus_jedan</span><span class="p">(</span><span class="n">exp</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+1.0
+6.0
+2.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rekurzivne-funkcije">
+<h2>Rekurzivne funkcije</h2>
+<p><strong>Rekurzivna</strong> funkcija je funkcija koja može da pozove samu sebe. Rekurzija radi slično kao petlje. Postoje određene primene kada je bolje koristiti rekurziju nego petlje. Svaka rekurzivna funkcija ima dve komponente, <em>osnovni slučaj</em> i <em>rekurzivni korak</em>.</p>
+<ul class="simple">
+<li><p><strong>Osnovni slučaj</strong> je obično „najmanji” ulaz i ima jednostavno rešenje. To je obično i mehanizam koji zaustavlja funkciju da ne poziva samu sebe neograničen broj puta.</p></li>
+<li><p><strong>Rekurzivni korak</strong> je skup svih slučajeva kada imamo <strong>rekurzivni poziv</strong>, ili kada funkcija poziva samu sebe.</p></li>
+</ul>
+<div class="tip admonition">
+<p class="admonition-title">Primer 4.</p>
+<p>Kao primer, demonstriraćemo kako se rekurzija može iskoristiti da definišemo i izračunamo faktorijel prirodnih brojeva. Faktorijel prirodnog broja <span class="math notranslate nohighlight">\(n\)</span> je vrednost izraza <span class="math notranslate nohighlight">\(1\cdot 2\cdot 3 \cdot \ldots n\cdot(n-1)\cdot n\)</span>. Rekurzivnu definiciju možemo zapisati na sledeći način:</p>
+<div class="math notranslate nohighlight">
+\[f(n) = \begin{cases} 1 &amp;\text{ako je $n=1$,} \cr n\cdot f(n-1) &amp;\text{u ostalim slučajevima} \end{cases}\]</div>
+<p>Testirajte funkciju tako što ćete izračunati vrednost za <span class="math notranslate nohighlight">\(3!\)</span></p>
+<p>Pre nego što krenemo sa kodom, pokušajte da razmislite kako biste izgradili algoritam ovog problema.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">faktorijel</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Izračunava i vraća faktorijel prirodnog broja n</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># osnovni slučaj</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># rekurzivni korak</span>
+        <span class="k">return</span> <span class="n">n</span><span class="o">*</span><span class="n">faktorijel</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>   <span class="c1">#Rekurzivni poziv</span>
+<span class="n">faktorijel</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Kako radi kompajler?</strong></p>
+<p>Podsetimo se prvo da kada Python izvršava funkciju, on kreira radni prostor za promenljive kreirane u  funkciji. Kad god funkcija pozove drugu funkciju, ona će čekati dok ta funkcija ne vrati odgovor pre nego nastavi. U programiranju to se zove stek. Slično je redu ispred šaltera, elementi se dodaju na stek i izlaze  iz steka po LIFO principu.</p>
+<p>Na primer, <code class="docutils literal notranslate"><span class="pre">sin(tan(x))</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code> mora čekati dok <code class="docutils literal notranslate"><span class="pre">tan</span></code> vrati odgovor kako bi mogla da se izračuna. Isto se pravilo primenjuje i kad funkcija pozove samu sebe (rekurzija).</p>
+<p><strong>Kako radi kompajler u našem primeru?</strong></p>
+<ol class="arabic simple">
+<li><p>Poziv je upućen ka <code class="docutils literal notranslate"><span class="pre">faktorijel(3)</span></code>, pa se stoga otvara novi radni prostor za izračunavanje <code class="docutils literal notranslate"><span class="pre">faktorijel(3)</span></code></p></li>
+<li><p>Ulazni argument ima vrednost 3 i ona se poredi sa 1. Kako one nisu jednake, izvršava se naredba <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p>Treba izračunati <code class="docutils literal notranslate"><span class="pre">3*faktorijel(2)</span></code>. Otvara se novi radni prostor za izračunavanje <code class="docutils literal notranslate"><span class="pre">faktorijel(2)</span></code>.</p></li>
+<li><p>Ulazni argument ima vrednost 2 i ona se poredi sa 1. Kako one nisu jednake, izvršava se naredba <code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+<li><p>Treba izračunati <code class="docutils literal notranslate"><span class="pre">2*faktorijel(1)</span></code>. Otvara se novi radni prostor za izračunavanje <code class="docutils literal notranslate"><span class="pre">faktorijel(1)</span></code>.</p></li>
+<li><p>Ulazni argument ima vrednost 1 i ona se poredi sa 1. One su jednake, izvršava se naredba <code class="docutils literal notranslate"><span class="pre">if</span></code></p></li>
+<li><p>Izlaznoj promenljivoj se dodeljuje vrednost 1. <code class="docutils literal notranslate"><span class="pre">faktorijel(1)</span></code> se završava sa izlazom 1.</p></li>
+<li><p>Može se izračunati <code class="docutils literal notranslate"><span class="pre">2*faktorijel(1)</span></code>, <span class="math notranslate nohighlight">\(2\cdot 1 =2\)</span>. Izlaznoj promenljivoj se dodeljuje vrednost 2. <code class="docutils literal notranslate"><span class="pre">faktorijel(2)</span></code> se završava sa izlazom 2.</p></li>
+<li><p>Može se izračunati <code class="docutils literal notranslate"><span class="pre">3*faktorijel(2)</span></code>, <span class="math notranslate nohighlight">\(3\cdot 2 =6\)</span>. Izlaznoj promenljivoj se dodeljuje vrednost 6. <code class="docutils literal notranslate"><span class="pre">faktorijel(3)</span></code> se završava sa izlazom 6.</p></li>
+</ol>
+<p>Redosled rekurzivnih poziva možemo opisati rekurzivnim drvetom. Rekurzivno drvo je dijagram poziva funkcije povezanih numerisanim usmerenim granama koje opisuju poredak u kom se ti pozivi vrše.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/rekurzija_faktorijel.png"><img alt="_images/rekurzija_faktorijel.png" src="_images/rekurzija_faktorijel.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 8. </span><span class="caption-text">Rekurzivno drvo za izračunavanje faktorijela.</span></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Primer 5.</p>
+<p>Fibonačijevi brojevi su originalno razvijeni kao model idealizovanog rasta populacije zečeva (istražite na ovu temu). Otada, prokazano je da su bitni
+i u drugim prirodnim fenomenima. Fibonačijevi brojevi mogu se generisati primenom rekurzivne formule koja sledi. Primetimo da rekurzivni sadrži da rekurzivna poziva i da takođe imamo dva osnovna slučaja (odnosno, slučaja koja uzokuju zaustavljanje rekurzije)</p>
+<div class="math notranslate nohighlight">
+\[F(n) = \begin{cases} 1 &amp;\text{ako je $n=1$},\cr 1 &amp;\text{ako je $n=2$},\cr F(n-1)+F(n-2) &amp;\text{ako je $n&gt;2$}. \end{cases}\]</div>
+<ul class="simple">
+<li><p>Napisati <strong>rekurzivnu</strong> funkciju koja izračunava <span class="math notranslate nohighlight">\(n\)</span>- ti član Fibonačijevog niza</p></li>
+<li><p>Iskoristite tu funkciju da odredite prvih 10 članova tog niza.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Izračunava n-ti član fibonačijevog niza</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>  <span class="c1"># prvi bazični slučaj</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span> <span class="c1"># drugi bazični slučaj</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># rekurzivni korak</span>
+        <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1,1,2,3,5,8,13,21,34,55
+</pre></div>
+</div>
+</div>
+</div>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/rekurzija_fibonacci.png"><img alt="_images/rekurzija_fibonacci.png" src="_images/rekurzija_fibonacci.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 9. </span><span class="caption-text">Rekurzivno drvo za izračunavanje Fibonačijevog niza.</span></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Primer 6.</p>
+<ul class="simple">
+<li><p>Napisati <strong>funkciju</strong> koja koristeći <em>petlje</em> iterativnim metodom određuje n-ti član Fibonačijevog niza.</p></li>
+<li><p>Iskoristite tu funkciju da odredite 10 člana tog niza.</p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fib_iter</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Izračunava n-ti član fibonačijevog niza iterativnim putem</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>  
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>  
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span>
+        <span class="k">return</span> <span class="n">b</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fib_iter</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="jos-jedna-magicna-komanda">
+<h2>Još jedna magična komanda</h2>
+<p>Interesantno pitanje u programiranju, i vrlo važno. Koja je funkcija brža? To možemo testirati magičnom komandom <code class="docutils literal notranslate"><span class="pre">timeit</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timeit</span> <span class="n">fib</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.8 ms ± 49.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">timeit</span> fib_iter(20)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>997 ns ± 9.21 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_11_petlje.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Petlje</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugradene-built-in-funkcije">Ugrađene (built-in) funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisanje-sopstvenih-funkcija">Definisanje sopstvenih funkcija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prva-funkcija">Prva funkcija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primena-funkcije">Primena funkcije</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#budimo-interpreter-izvrsavajmo-naredbu-po-naredbu">Budimo interpreter (Izvršavajmo naredbu po naredbu):</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pozivanje-pomoci-oko-funkcije">Pozivanje pomoći oko funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#saveti-pri-pisanju-funkcija">Saveti pri pisanju funkcija.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-sa-vise-izlaznih-parametara">Funkcija sa više izlaznih parametara</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specijalna-vrednost-none">Specijalna vrednost <code class="docutils literal notranslate"><span class="pre">None</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#argumenti-funkcije">Argumenti funkcije</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pozicioni-argumenti">Pozicioni argumenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcije-sa-keyword-parametrima-imenovani-argumenti">Funkcije sa keyword parametrima - imenovani argumenti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podrazumevane-vrednosti-parametara">Podrazumevane vrednosti parametara</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupisanje-pozicionih-argumenata-uz">Grupisanje pozicionih argumenata uz <code class="docutils literal notranslate"><span class="pre">*</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupisanje-kljucnih-reci-uz">Grupisanje ključnih reči uz <code class="docutils literal notranslate"><span class="pre">**</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lokalne-promenljive-i-globalne-promenljive">Lokalne promenljive i globalne promenljive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametar-global">Parametar global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugnezdene-funkcije">Ugneždene funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-funkcije">Lambda funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-kao-argument-funkcije">Funkcija kao argument funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rekurzivne-funkcije">Rekurzivne funkcije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jos-jedna-magicna-komanda">Još jedna magična komanda</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
