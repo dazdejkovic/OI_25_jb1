@@ -1,0 +1,1045 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rad sa datotekama &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=49ea3705" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_14_rad_sa_datotekama';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="prev" title="Funkcije" href="OI_25_12_funkcije.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Rad sa datotekama</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_14_rad_sa_datotekama.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_25_14_rad_sa_datotekama.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Rad sa datotekama</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upisivanje-u-datoteku">Upisivanje u datoteku</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citanje-datoteke">Čitanje datoteke</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rad-sa-datotekama-koje-sadrze-specijalne-karaktere">Rad sa datotekama koje sadrže specijalne karaktere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apsolutno-referenciranje">Apsolutno referenciranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativno-referenciranje">Relativno referenciranje</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upotreba-with">Upotreba with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ucitavanje-csv-fajlova">Učitavanje .csv fajlova</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ucitavanje-json-fajlova">Učitavanje .json fajlova</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datoteke-tipa-pickle">Datoteke tipa <code class="docutils literal notranslate"><span class="pre">Pickle</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zapisivanje-u-pickle-datoteku">Zapisivanje u <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteku</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citanje-pickle-datoteke">Čitanje <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteke</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="rad-sa-datotekama">
+<h1>Rad sa datotekama</h1>
+<p>Do sada su podaci bili kodirani u naše Pajton programe, a izlaz je bio na konzolu (terminal, ekran). Naravno, često će biti potrebno unositi podatke iz spoljne datoteke kao i da podatke zapisujemo u izlaznu datoteku. Da bi to postigao, Pajton ima  objekat <code class="docutils literal notranslate"><span class="pre">file</span></code> za rad sa datotekama.</p>
+<p>Datotečni objekat se kreira otvaranjem datoteke čije ime unesemo, i odgovarajućim režimom datoteke (<code class="docutils literal notranslate"><span class="pre">mode</span></code>). Ime datoteke je string i može biti dato kao apsolutna putanja ili kao putanja relativna u odnosu na direktorijum u kome se program izvršava. Vrednosti za parametar <code class="docutils literal notranslate"><span class="pre">mode</span></code> su date u sledećoj tabeli:</p>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="tbl-primer">
+<caption><span class="caption-number">Tabela 1. </span><span class="caption-text">Režimi datoteke</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> argumenti</p></th>
+<th class="head text-left"><p>Tip datoteke i režim</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>r</strong></p></td>
+<td class="text-left"><p>Text, samo čitanje datoteke (podrazumevana vrednost)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>w</strong></p></td>
+<td class="text-left"><p>Text, upisivanje u datoteku (ako postoji datoteka sa istim imenom, biće obrisana)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>x</strong></p></td>
+<td class="text-left"><p>Text, upisivanje u datoteku (ako postoji datoteka sa istim imenom, javiće se greška)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>a</strong></p></td>
+<td class="text-left"><p>Text, upisivanje na kraj datoteke</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>r+</strong></p></td>
+<td class="text-left"><p>Text, pisanje i čitanje</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>rb</strong></p></td>
+<td class="text-left"><p>Binarna, samo čitanje datoteke (podrazumevana vrednost)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>wb</strong></p></td>
+<td class="text-left"><p>Binarna, upisivanje u datoteku (ako postoji datoteka sa istim imenom, biće obrisana)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>ab</strong></p></td>
+<td class="text-left"><p>Binarna, upisivanje na kraj datoteke</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>rb+</strong></p></td>
+<td class="text-left"><p>Binarna, pisanje i čitanje</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Na primer, da biste otvorili datoteku za pisanje u tekstualnom režimu, i u isto vreme kreirali datotečni objekat <code class="docutils literal notranslate"><span class="pre">f</span></code>, to činite naredbom:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;moja_datoteka.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Objekti datoteke se zatvaraju metodom <code class="docutils literal notranslate"><span class="pre">close</span></code>: na primer, <code class="docutils literal notranslate"><span class="pre">f.close()</span></code></p></li>
+<li><p>Python zatvara bilo koji otvoreni objekt datoteke automatski kada se program završi</p></li>
+</ul>
+<section id="upisivanje-u-datoteku">
+<h2>Upisivanje u datoteku</h2>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">write</span></code> upisuje string u tesktualnu datoteku i vraća broj upisanih karaktera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;moja_datoteka.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Pozdrav svima!</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1">#\n je komanda da se pređe u novi red</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ugrađena funkcija <code class="docutils literal notranslate"><span class="pre">print</span></code> koju smo često koristili može da ima kao argument ime datotečnog objekata, gde može da preusmeri izlaz iz nekog koda, tako da se rezultat upiše u datoteku. Na primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Novembar&#39;</span><span class="p">,</span> <span class="mi">2023</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Upisuje <code class="docutils literal notranslate"><span class="pre">'5,</span> <span class="pre">Novembar,</span> <span class="pre">2023\n'</span></code> u datoteku otvorenu kao objekat datoteke <code class="docutils literal notranslate"><span class="pre">f</span></code> umesto na ekran. Primetite escape sekvencu <code class="docutils literal notranslate"><span class="pre">\n</span></code>, za prelazak u novi red.</p>
+<p>Datoteku zatvaramo metodom <code class="docutils literal notranslate"><span class="pre">close</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Probajte da pronađete novokreiranu datoteku u vašem radnom direktorijumu</p>
+<div class="tip admonition">
+<p class="admonition-title">Vežba 1.</p>
+<p>Napisati kod koji će u datoteci <code class="docutils literal notranslate"><span class="pre">stepeni.txt</span></code> upisati prva tri stepena prirodnih brojeva manjih od 100. Za svaki prirodan broj, rezultate upisati u jednom redu, odvojene zarezom.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;stepeni.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="citanje-datoteke">
+<h2>Čitanje datoteke</h2>
+<p>Da biste pročitali <code class="docutils literal notranslate"><span class="pre">n</span></code> bajtova (znakova) iz objekta datoteke, pozovite <code class="docutils literal notranslate"><span class="pre">f.read(n)</span></code>. Ako je <code class="docutils literal notranslate"><span class="pre">n</span></code> izostavljeno, ceo fajl se čita. Metod <code class="docutils literal notranslate"><span class="pre">readline()</span></code> čita jedan red iz datoteke do znaka novog reda (uključujući i njega). Sledeći poziv <code class="docutils literal notranslate"><span class="pre">readline()</span></code> čita u sledećem redu, i tako dalje. I <code class="docutils literal notranslate"><span class="pre">read()</span></code> i <code class="docutils literal notranslate"><span class="pre">readline()</span></code> vraćaju prazan string kada stignu do kraja datoteke. Da biste odjednom pročitali sve redove u listu stringova, koristite <code class="docutils literal notranslate"><span class="pre">f.readlines()</span></code>.
+Objekti datoteke su iteratabilni, a petlja preko (tekstualne) datoteke vraća njene redove jedan po jedan.</p>
+<p>Metod <code class="docutils literal notranslate"><span class="pre">read</span></code> datotečnog objekta vraća celokupan sadržaj datoteke kao jedan string.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;moja_datoteka.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>  <span class="c1"># Otvaramo datoteku za čitanje</span>
+<span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>                            <span class="c1"># Cela datoteka je sada string</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Pozdrav svima!\n5, Novembar, 2023\n&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prirodnije je da sadržaj datoteke prikažemo dodavanjem <code class="docutils literal notranslate"><span class="pre">print</span></code> naredbe posle čitanja datoteke, ali pre toga moramo pokazivač datotečnog objekta vratiti na početak datoteke:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>         <span class="c1"># Kako nismo zatvorili datoteku, pokazivač je na kraju. </span>
+                  <span class="c1"># Metod seek sa argumentom 0 nas vraća na početak datoteke. </span>
+                  <span class="c1"># Istražite koje još argument može da ima seek.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>   <span class="c1"># Prirodniji prikaz celog sadržaja </span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>         <span class="c1"># Zatvaramo datoteku</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Datotečni objekti su iterabilni pa možemo da iteriramo preko njega ili stringa koji čuva njen sadržaj:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;moja_datoteka.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">):</span>    <span class="c1"># char referiše na karakter u stringu</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>                       <span class="c1"># string ima escape karaktere za novi red, pa štampamo ne formirajući nove redove</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pozdrav svima!
+5, Novembar, 2023
+</pre></div>
+</div>
+</div>
+</div>
+<p>Metodom <code class="docutils literal notranslate"><span class="pre">readline()</span></code> možemo datoteku da čitamo red po red:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;moja_datoteka.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># Otvaramo datoteku za čitanje</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>        <span class="c1"># Štampamo prvi red</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">(),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>        <span class="c1"># Štampamo drugi red</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>      
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pozdrav svima!
+5, Novembar, 2023
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kako simbol <code class="docutils literal notranslate"><span class="pre">''</span></code> odgovara logičkoj konstanti <code class="docutils literal notranslate"><span class="pre">False</span></code>, while petljom možemo pročitati sve redove, red po red:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;moja_datoteka.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># Otvaramo datoteku za čitanje</span>
+<span class="n">red</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>                 <span class="c1"># Učitavamo prvi red</span>
+<span class="k">while</span> <span class="n">red</span><span class="p">:</span>                         <span class="c1"># Sve dok ne dođemo do praznog reda</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>             <span class="c1"># Štampamo red; Red ima escape karaktere za novi red, pa štampamo ne formirajući nove redove</span>
+    <span class="n">red</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>              <span class="c1"># Učitavamo novi red</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                          <span class="c1"># Zatvaramo datoteku  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pozdrav svima!
+5, Novembar, 2023
+</pre></div>
+</div>
+</div>
+</div>
+<p>Metod <code class="docutils literal notranslate"><span class="pre">readlines()</span></code> sve redove datoteke čuva u listi, tako što je svaki element te liste jedan string koji sadrži sve podatke iz jednog reda:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;moja_datoteka.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="c1"># Otvaramo datoteku za čitanje</span>
+<span class="n">redovi</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>             <span class="c1"># Učitavamo sve redove i svaki red je element liste</span>
+<span class="k">for</span> <span class="n">red</span> <span class="ow">in</span> <span class="n">redovi</span><span class="p">:</span>                 <span class="c1"># Iteriramo po listi redova</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>             <span class="c1"># Štampamo red; Red ima escape karaktere za novi red, pa štampamo ne formirajući nove redove</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>                          <span class="c1"># Zatvaramo datoteku  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pozdrav svima!
+5, Novembar, 2023
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Vežba 2.</p>
+<p>Pročitati brojeve iz datoteke stepeni.txt generisane u u prethodnoj vežbi.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje:</p>
+<p>Da biste pročitali brojeve iz datoteke stepeni.txt, kolone se moraju konvertovati u liste celih brojeva. Da biste to uradili, svaka linija mora biti podeljena na svoja polja i svako polje eksplicitno konvertovano u <code class="docutils literal notranslate"><span class="pre">int</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;stepeni.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">kvadrati</span><span class="p">,</span> <span class="n">kubovi</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">linija</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+   <span class="c1"># print(linija) # Otkricemo ovu liniju koda i želimo da pogodimo šta će se ispisati</span>
+    <span class="n">polja</span> <span class="o">=</span> <span class="n">linija</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+   <span class="c1"># print(polja) # Isto to ćemo posle uraditi i za polja</span>
+    <span class="n">kvadrati</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">polja</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="n">kubovi</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">polja</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Test 1: </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kvadrati</span><span class="p">)</span>
+<span class="c1"># Test 2</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s1">&#39;na treći stepen je&#39;</span><span class="p">,</span> <span class="n">kubovi</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="docutils">
+</div>
+</div>
+</section>
+<section id="rad-sa-datotekama-koje-sadrze-specijalne-karaktere">
+<h2>Rad sa datotekama koje sadrže specijalne karaktere</h2>
+<p>Pokušajmo da otvorimo i prikažemo u datoteku <code class="docutils literal notranslate"><span class="pre">datoteka.txt</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datoteka.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">d</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">UnicodeDecodeError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datoteka.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">d</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nn">File ~\Miniconda3\Lib\encodings\cp1252.py:23,</span> in <span class="ni">IncrementalDecoder.decode</span><span class="nt">(self, input, final)</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="k">def</span><span class="w"> </span><span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">23</span>     <span class="k">return</span> <span class="n">codecs</span><span class="o">.</span><span class="n">charmap_decode</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">errors</span><span class="p">,</span><span class="n">decoding_table</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="ne">UnicodeDecodeError</span>: &#39;charmap&#39; codec can&#39;t decode byte 0x90 in position 14: character maps to &lt;undefined&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Razlog zbog kojeg se javlja greška je što trenutno Python ne prepoznaje naše slovne oznake. Problem rešavamo parametrom <code class="docutils literal notranslate"><span class="pre">encoding=&quot;utf8&quot;</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datoteka.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="c1"># sklonili smo &quot;r&quot; jer je podrazumevano</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">d</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Драган Аздејковић
+Младен Стаменковић
+Јована Милеуснић
+</pre></div>
+</div>
+</div>
+</div>
+<section id="apsolutno-referenciranje">
+<h3>Apsolutno referenciranje</h3>
+<p>Često nam datoteka neće biti u folderu u kojem se nalazi .py fajl. Aposlutno referenciranje zahteva da znamo adresu fajla koji otvaramo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Dragan Azdejkovic\OI_25_jb1\Podaci\datoteka.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Драган Аздејковић
+Младен Стаменковић
+Јована Милеуснић
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="relativno-referenciranje">
+<h3>Relativno referenciranje</h3>
+<p>Apsolutno referenciranje problematično je zbog toga što je ova adresa relevantna samo na kompjuteru na kojem je napisan kod. Relativno referenciranje otvara biblioteku u zavisnosti od pozicije radnog direktorijuma. Metod <code class="docutils literal notranslate"><span class="pre">getcwd</span></code> iz standardne biblioteke <code class="docutils literal notranslate"><span class="pre">os</span></code> nam može prikazati koji je to naš radni direktorijum u kojem se nalazimo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;C:\\Users\\Dragan Azdejkovic\\Desktop\\Nastava - OI 25&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Vežba 3.</p>
+<p>Vratiti se jedan korak unazad u hijerarhiji u odnosu na trenutni folder, a zatim otvoriti/kreirati folder „Podaci” i nekim editorom, recimo Notepad++, kreirati datoteku <code class="docutils literal notranslate"><span class="pre">datoteka2.txt</span></code> sa sledećim sadržajem:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Daglas</span> <span class="pre">Adams</span> <span class="pre">(Kembridž,</span> <span class="pre">11.</span> <span class="pre">mart</span> <span class="pre">1952</span> <span class="pre">—</span> <span class="pre">Santa</span> <span class="pre">Barbara,</span> <span class="pre">11.</span> <span class="pre">maj</span> <span class="pre">2001)</span> <span class="pre">je</span> <span class="pre">bio</span> <span class="pre">britanski</span> <span class="pre">radio-dramaturg</span> <span class="pre">i</span> <span class="pre">pisac</span> <span class="pre">najpoznatiji</span> <span class="pre">po</span> <span class="pre">seriji</span> <span class="pre">knjiga</span> <span class="pre">Vodič</span> <span class="pre">kroz</span> <span class="pre">Galaksiju</span> <span class="pre">za</span> <span class="pre">autostopere.</span> <span class="pre">Za</span> <span class="pre">njegovog</span> <span class="pre">života,</span> <span class="pre">ovaj</span> <span class="pre">serijal</span> <span class="pre">je</span> <span class="pre">bio</span> <span class="pre">prodan</span> <span class="pre">u</span> <span class="pre">više</span> <span class="pre">od</span> <span class="pre">petnaest</span> <span class="pre">miliona</span> <span class="pre">primeraka.</span></code></p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../Podaci/datoteka2.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="c1"># sa ../ vraćamo se unazad jedan korak</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dat</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="upotreba-with">
+<h2>Upotreba with</h2>
+<p>Komanda <code class="docutils literal notranslate"><span class="pre">with</span></code> korisna je kod otvaranja datoteka i ima sledeću sintaksu</p>
+<div class="python docutils">
+<p>with <objekat> as &lt;neko_ime&gt;:
+komanda</p>
+</div>
+<p>Naredba <code class="docutils literal notranslate"><span class="pre">with</span></code> će automatski zatvoriti datoteku nakon ugnežđenog bloka koda. Prednost korišćenja naredbe <code class="docutils literal notranslate"><span class="pre">with</span></code> je u tome što se garantuje zatvaranje datoteke bez obzira na to kako se izlazi iz ugnežđenog bloka. Ako se izuzetak dogodi pre kraja bloka, on će zatvoriti datoteku pre nego što izuzetak bude uhvaćen od strane spoljnog rukovaoca izuzetkom. Ako bi ugnežđeni blok sadržao naredbu <code class="docutils literal notranslate"><span class="pre">return</span></code>, ili naredbu <code class="docutils literal notranslate"><span class="pre">continue</span></code> ili <code class="docutils literal notranslate"><span class="pre">break</span></code>, naredba <code class="docutils literal notranslate"><span class="pre">with</span></code> bi automatski zatvorila datoteku i u tim slučajevima. Na primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fajl</span> <span class="o">=</span> <span class="s2">&quot;datoteka.txt&quot;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datoteka.txt&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Драган Аздејковић
+Младен Стаменковић
+Јована Милеуснић
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ucitavanje-csv-fajlova">
+<h2>Učitavanje .csv fajlova</h2>
+<p>CSV fajlovi (<em>comma-separated value</em>) predstavlja tekstualnu datoteku za skladištenje tabelarnih fajlova, obično kreiranih u ekselu. Svaki red tabele zapisuje se u zasebnom redu tekstualne datoteke. Vrednosti unutar jednog reda razdvajaju se obično zarezom. Prvi red fajla najčešće predstavlja zaglavlje sa opisom podataka unutar tabele.</p>
+<p>Evo kako izgleda csv fajl otvoren kao .txt dokument:</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/happiness2019csv.png"><img alt="_images/happiness2019csv.png" src="_images/happiness2019csv.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 10. </span><span class="caption-text">Početni deo csv datoteke</span></p>
+</figcaption>
+</figure>
+<p>Datoteke tipa <code class="docutils literal notranslate"><span class="pre">csv</span></code> učitavamo koristeći modul <code class="docutils literal notranslate"><span class="pre">csv</span></code> i metodu <code class="docutils literal notranslate"><span class="pre">.reader()</span></code>, koja kreira iterabilni objekat:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Podaci\happiness2019.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_citaj</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">csv_citaj</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;_csv.reader&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Metod <code class="docutils literal notranslate"><span class="pre">csv_reader</span></code> kreira iterabilni objekat kroz csv fajl. Svaki red tabele sada je jedan korak naše iteracije.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Podaci\happiness2019.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_citaj</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">linija</span> <span class="ow">in</span> <span class="n">csv_citaj</span><span class="p">:</span> <span class="c1"># Primetite da je for petlja unutar with jer se fajl odmah zatvara po završetku with komande</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">linija</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">linija</span><span class="p">))</span> <span class="c1"># Svaka linija sada je lista podataka, tj jedan red naše tabele</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ili koristeći sagledavanje (comprehensions):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Podaci\happiness2019.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+    <span class="n">csv_citaj</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">linija</span><span class="p">)</span> <span class="k">for</span> <span class="n">linija</span> <span class="ow">in</span> <span class="n">csv_citaj</span><span class="p">]</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">DicReader</span></code> kreira iterabilni objekat iz <code class="docutils literal notranslate"><span class="pre">csv</span></code> datoteke koji generiše rečnike za svaki red sem prvog. Atribut <code class="docutils literal notranslate"><span class="pre">filednames</span></code> tog iterabilnog objekta sadrži elemente zaglavlja datoteke i formira ključeve za rečnike:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Podaci\happiness2019.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">d_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+                                    
+    <span class="n">headers</span> <span class="o">=</span> <span class="n">d_reader</span><span class="o">.</span><span class="n">fieldnames</span>         <span class="c1"># Dobija imena ključeva iz objekta DictReader i čuva ih u listi                             </span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">d_reader</span><span class="p">:</span>                 <span class="c1"># linija referiše na rečnik sa ključevima iz headers</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="s1">&#39;Country or region&#39;</span><span class="p">])</span>  <span class="c1"># Štampa vrednost rečnika sa datim ključem</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ucitavanje-json-fajlova">
+<h2>Učitavanje .json fajlova</h2>
+<p>JSON (<em>JavaScript Object Notation</em>) predstavlja jedan od čestih načina skladištenja podataka.-JSON format je najčešći oblik za prenos podataka modernih aplikacija. Python ima modul <code class="docutils literal notranslate"><span class="pre">json</span></code> koji omogućava rad sa ovakvim podacima. Mi ćemo koristiti ovde metode <code class="docutils literal notranslate"><span class="pre">loads</span></code> i <code class="docutils literal notranslate"><span class="pre">dumps</span></code>. Metod  <code class="docutils literal notranslate"><span class="pre">json.loads()</span></code> uzima string kao input i kreira od njega listu rečnika.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="n">f</span> <span class="o">=</span> <span class="nb">open</span> <span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Podaci\stanovnistvo.json&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">data</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Metod .dumps() radi inverznu stvar. Uzima listu ili rečnik i pretvara ga u string u .json formatu</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="datoteke-tipa-pickle">
+<h2>Datoteke tipa <code class="docutils literal notranslate"><span class="pre">Pickle</span></code></h2>
+<p>U određenim situacijama želimo da sašuvamo rečnike, torke, liste ili bilo koji drugi tip  podataka na disk i koristimo ga kasnije ili pošaljemo kolegama. Tu imamo modul <code class="docutils literal notranslate"><span class="pre">pickle</span></code>: on može zapakovati Python objekat tako da ga možemo sačuvati na disk u obliku datoteke i kasnije po potrebi preouzeti.</p>
+<section id="zapisivanje-u-pickle-datoteku">
+<h3>Zapisivanje u <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteku</h3>
+<p>Kako bi primenili <code class="docutils literal notranslate"><span class="pre">pickle</span></code> za pakovanje nekog objekta, koristimo <code class="docutils literal notranslate"><span class="pre">pickle.dump</span></code> funkciju koja ima dva argumenta:</p>
+<ul class="simple">
+<li><p>prvi je Python objekat koji treba sačuvati</p></li>
+<li><p>drugi je datotečni objekat dobijen preko <code class="docutils literal notranslate"><span class="pre">open</span></code> funkcije</p></li>
+</ul>
+<p>Na primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+
+<span class="n">recnik_a</span> <span class="o">=</span><span class="p">{</span><span class="s2">&quot;Dragan&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Mladen&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Jovana&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">recnik_a</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Podaci/test.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="citanje-pickle-datoteke">
+<h3>Čitanje <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteke</h3>
+<p>Sada, metodom <code class="docutils literal notranslate"><span class="pre">load</span></code> pozivamo pickle datoteku koju smo upravo sačuvali na disku.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moj_recnik</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;Podaci/test.pkl&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">))</span>
+<span class="n">moj_recnik</span>                         
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Dragan&#39;: 1, &#39;Mladen&#39;: 2, &#39;Jovana&#39;: 3}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_12_funkcije.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Funkcije</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upisivanje-u-datoteku">Upisivanje u datoteku</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citanje-datoteke">Čitanje datoteke</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rad-sa-datotekama-koje-sadrze-specijalne-karaktere">Rad sa datotekama koje sadrže specijalne karaktere</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apsolutno-referenciranje">Apsolutno referenciranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relativno-referenciranje">Relativno referenciranje</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#upotreba-with">Upotreba with</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ucitavanje-csv-fajlova">Učitavanje .csv fajlova</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ucitavanje-json-fajlova">Učitavanje .json fajlova</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datoteke-tipa-pickle">Datoteke tipa <code class="docutils literal notranslate"><span class="pre">Pickle</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zapisivanje-u-pickle-datoteku">Zapisivanje u <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteku</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citanje-pickle-datoteke">Čitanje <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteke</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
