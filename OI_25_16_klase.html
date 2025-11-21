@@ -1,0 +1,1398 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Klase &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=85f71a35" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_16_klase';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="prev" title="Upravljanje greškama" href="OI_25_15_upravljanje_greskama.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Klase</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_16_klase.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_25_16_klase.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Klase</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicija-klase-u-pajtonu">Definicija klase u Pajtonu.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pajton-objekti">Pajton objekti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-klase">Metodi klase.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruktor-init">Konstruktor  <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributi-klase-i-atributi-instanci">Atributi klase i atributi instanci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specijalne-metode">Specijalne metode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nasledivanje">Nasleđivanje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutacija-premoscavanje-nadvladivanje-metoda">Mutacija (premošćavanje, nadvlađivanje metoda)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-super-u-nasledivanju">Metod <code class="docutils literal notranslate"><span class="pre">super</span></code> u nasleđivanju</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkapsulacija">Enkapsulacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfizam">Polimorfizam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="klase">
+<h1>Klase</h1>
+<p>Zamislite da radite u velikoj fabrici igračaka. Svakog dana treba da se proizvede na hiljade istih modela – recimo, plišanih medveda. Svaki medved treba da ima ime, boju krzna, broj godina (ako baš hoćete da bude realističan), kao i nekoliko tipičnih ponašanja: može da se predstavi, da kaže koliko ima godina i, naravno, da mahne šapom.</p>
+<p>Sad zamislite kako bi izgledalo kada bi svaki radnik pravio medvede po svom osećaju. Jedan bi zaboravio da doda boju, drugi bi pogrešno napisao ime, treći bi pustio medveda bez šape… Totalni haos.</p>
+<p>Da bi se izbegla takva zbrka, fabrika uvodi nacrt proizvodnje – dokument koji tačno propisuje kako izgleda svaki medved i šta svaki medved ume. Taj nacrt ne proizvodi nijednog medveda direktno; on samo opisuje kakav bi svaki medved trebalo da bude. Tek kad se nacrt upotrebi u proizvodnji, nastane stvarni medved – potpuno funkcionalna igračka sa svim predviđenim osobinama.</p>
+<p>U programiranju, taj nacrt zovemo klasa, a medvedi napravljeni na osnovu nacrta su objekti. Definisanjem sopstvenih klasa, programer uvodi nove tipove podataka koji precizno modeluju specifične pojave ili entitete iz realnog sveta.</p>
+<p>Klasa definiše:</p>
+<ul class="simple">
+<li><p>koje podatke svaki objekat ima (npr. ime, boja, godine),</p></li>
+<li><p>koje funkcije svaki objekat ume da izvrši (npr. predstavi_se(), mahni()).</p></li>
+</ul>
+<p>Objekat je konkretan primerak — pravi, jedinstveni „medved“ sa stvarnim vrednostima tih podataka. Na primer, možemo imati klasu Medved, a njene instance mogu biti:</p>
+<ul class="simple">
+<li><p>Bobi, braon, star 3 godine,</p></li>
+<li><p>Luna, bela, stara 1 godinu,</p></li>
+<li><p>Grizli, tamno braon, star 5 godina.</p></li>
+</ul>
+<p>Svi potiču iz iste klase, ali svaki je svoj, različit i nezavisan.</p>
+<p>I baš kao u fabrici igračaka, klase nam omogućavaju da u Pajtonu pravimo sopstvene „modela“ podataka: čiste, standardizovane i lako ponovljive. Od tog trenutka, kreiranje novih objekata postaje jednostavno kao pokretanje proizvodne trake.</p>
+<div class="important admonition">
+<p class="admonition-title">Važno.</p>
+<p>Objektno orijentisano programiranje (OOP) je programski pristup u kojem se softver organizuje oko objekata koji kombinuju podatke (atribute) i ponašanja (metode), čime se omogućava modeliranje složenih sistema na način sličan realnom svetu.</p>
+</div>
+<p>Od velikog broja dobrih stvari koje dobijamo primenom OOP izdvajamo:</p>
+<ul class="simple">
+<li><p>Obezbeđuje jasnu modularnu strukturu za programe što poboljšava ponovnu upotrebu koda.</p></li>
+<li><p>Pruža jednostavan način za rešavanje kompleksnih problema.</p></li>
+<li><p>Pomaže da definišemo apstraktnije tipove podataka kako bi modelirali scenarija iz realnog sveta.</p></li>
+<li><p>Sakrivaju se detalji implementacije, ostavljajući jasno definisan interfejs (okruženje).</p></li>
+<li><p>Kombinuje podatke i operacije.</p></li>
+</ul>
+<p>Postoje i druge prednosti primene OOP u velikim projektima. U ovom trenutku, možda ne razumete potpuno prednosti OOP, i to će
+biti tako sve dok ne budete uključeni u neki kompleksni veliki projekat. Nastavićemo da učimo još o OOP na ovom kursu, i onda
+će njegova nekorisnost biti samo prividna.</p>
+<section id="definicija-klase-u-pajtonu">
+<h2>Definicija klase u Pajtonu.</h2>
+<p>Za kreiranje klase u Pajtonu koristimo ključnu reč <code class="docutils literal notranslate"><span class="pre">class</span></code>. Na primer:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ImeKlase</span><span class="p">:</span>
+    <span class="c1"># definicija klase</span>
+</pre></div>
+</div>
+<p>kreira klasu sa imenom <code class="docutils literal notranslate"><span class="pre">ImeKlase</span></code></p>
+<p>Sledećim kodom kreirana je jedna klasa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zaposleni</span><span class="p">:</span>
+    <span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">plata</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Gde je,</p>
+<ul class="simple">
+<li><p>Zaposleni - ime klase</p></li>
+<li><p>ime/plata - promenljive u klasi sa podrazumevanim vrednostima <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">0</span></code> tim redom</p></li>
+</ul>
+<p>Promenljive unutar klase nazivamo atributima.</p>
+<section id="pajton-objekti">
+<h3>Pajton objekti</h3>
+<p>Objekat je instanca klase. Na primer, pretpostavimo da je <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code> klasa, tada možemo da kreiramo dva objekta poput <code class="docutils literal notranslate"><span class="pre">z1</span></code>, <code class="docutils literal notranslate"><span class="pre">z2</span></code>, itd iz te klase.</p>
+<p>Sledi sintaksa za kreiranje objekata</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">objectIme</span> <span class="o">=</span> <span class="n">Imeklase</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Na primer, pretpostavimo da je <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code> klasa, tada možemo da kreiramo dva objekta poput <code class="docutils literal notranslate"><span class="pre">z1</span></code>, <code class="docutils literal notranslate"><span class="pre">z2</span></code>, itd iz te klase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kreiranje klase</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Zaposleni</span><span class="p">:</span>
+    <span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="n">plata</span> <span class="o">=</span> <span class="mi">0</span>
+    
+<span class="c1"># kreiranja objekta iz klase Zaposleni</span>
+<span class="n">z1</span> <span class="o">=</span> <span class="n">Zaposleni</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovde, <code class="docutils literal notranslate"><span class="pre">z1</span></code> je objekat klase. Sada možemo da upotrebimo ovaj objekat da pristupimo atribitima klase. Koristimo notaciju sa <code class="docutils literal notranslate"><span class="pre">.</span></code> da pristupimo objektima klase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modifikovanje vrednosti atributa</span>
+<span class="n">z1</span><span class="o">.</span><span class="n">ime</span>  <span class="o">=</span> <span class="s1">&#39;Marković Marko&#39;</span>
+<span class="n">z1</span><span class="o">.</span><span class="n">plata</span><span class="o">=</span> <span class="mi">110000</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sada možemo da ih koristimo u kod kao i sve druge objekte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Upotreba novih atributa</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">z1</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2"> ima platu od </span><span class="si">{</span><span class="n">z1</span><span class="o">.</span><span class="n">plata</span><span class="si">}</span><span class="s2"> dinara&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marković Marko ima platu od 110000 dinara
+</pre></div>
+</div>
+</div>
+</div>
+<p>Možemo da kreiramo više objekata iz iste klase</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># kreiranje drugog objekta u klasi zaposleni</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">Zaposleni</span><span class="p">()</span>
+
+<span class="c1"># pristup atributima objekta z2</span>
+<span class="n">z2</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="s1">&#39;Jovanović Jelena&#39;</span>
+<span class="n">z2</span><span class="o">.</span><span class="n">plata</span> <span class="o">=</span> <span class="mi">120000</span>
+
+
+<span class="c1"># pristup atributima objekata z1 i z2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">z1</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2"> ima platu od </span><span class="si">{</span><span class="n">z1</span><span class="o">.</span><span class="n">plata</span><span class="si">}</span><span class="s2"> dinara&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">z2</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2"> ima platu od </span><span class="si">{</span><span class="n">z2</span><span class="o">.</span><span class="n">plata</span><span class="si">}</span><span class="s2"> dinara&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Marković Marko ima platu od 110000 dinara
+Jovanović Jelena ima platu od 120000 dinara
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metodi-klase">
+<h3>Metodi klase.</h3>
+<p>Unutar klase možemo definisati funkcije. Pajton funkcije unutar klase se nazivaju metodi. Pogledajmo primer,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kreiranje klase</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Soba</span><span class="p">:</span>
+    <span class="n">dužina</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">širina</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
+<span class="c1"># metod za izračunavanje površine</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">površina</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Površina sobe =&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">dužina</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">širina</span><span class="p">)</span>
+
+<span class="c1"># kreiranje objekta klase Soba</span>
+<span class="n">kuhinja</span> <span class="o">=</span> <span class="n">Soba</span><span class="p">()</span>
+
+<span class="c1"># dodeljivanje vrednosti svim atributima</span>
+<span class="n">kuhinja</span><span class="o">.</span><span class="n">dužina</span> <span class="o">=</span> <span class="mf">3.4</span>
+<span class="n">kuhinja</span><span class="o">.</span><span class="n">širina</span> <span class="o">=</span> <span class="mf">2.8</span>
+
+<span class="c1"># pristup metodu unutar klase</span>
+<span class="n">kuhinja</span><span class="o">.</span><span class="n">površina</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Površina sobe = 9.52
+</pre></div>
+</div>
+</div>
+</div>
+<p>U prethodnom primeru, kreirali smo klasu sa imenom <code class="docutils literal notranslate"><span class="pre">Soba</span></code>  sa</p>
+<ul class="simple">
+<li><p><strong>Atributima</strong>: <code class="docutils literal notranslate"><span class="pre">dužina</span></code> i <code class="docutils literal notranslate"><span class="pre">širina</span></code></p></li>
+<li><p><strong>Metodom</strong>: <code class="docutils literal notranslate"><span class="pre">površina</span></code></p></li>
+</ul>
+<p>Kreirali smo objekat sa imenom <code class="docutils literal notranslate"><span class="pre">kuhinja</span></code> iz klase <code class="docutils literal notranslate"><span class="pre">Soba</span></code>. Zatim smo iskoristili taj objekat da dodelimo vrednosti atributima: <code class="docutils literal notranslate"><span class="pre">dužina</span></code> i <code class="docutils literal notranslate"><span class="pre">širina</span></code>. Takođe, upotrebili smo objekat da pozovemo metod iz klase <code class="docutils literal notranslate"><span class="pre">kuhinja.površina()</span></code>, gde smo iskoristili notaciju sa <code class="docutils literal notranslate"><span class="pre">.</span></code> za pozivanje metoda.</p>
+<p>Primetite neobično ime argumenta <code class="docutils literal notranslate"><span class="pre">self</span></code> u metodu. To ime nije rezervisana reč, ali je uobičajeno i koristi se da ukaže na sam objekat!</p>
+</section>
+<section id="konstruktor-init">
+<h3>Konstruktor  <code class="docutils literal notranslate"><span class="pre">__init__</span></code></h3>
+<p>U prethodnim primerima dodeljivali smo podrazumevane vrednosti za atribute klase. Međutim, vrednosti možemo da inicijalizujemo primenom specijalnog metoda <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. Na primer,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zaposleni</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">plata</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plata</span> <span class="o">=</span> <span class="n">plata</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovde je <code class="docutils literal notranslate"><span class="pre">__init__()</span></code> specijalna funkcija (funkcija konstruktor) koja se poziva kadgod se novi objekat iz klase instancira. Konstruktor iznad instancira vrednosti atributa <code class="docutils literal notranslate"><span class="pre">ime</span></code> i <code class="docutils literal notranslate"><span class="pre">plata</span></code>. Upotrebili smo <code class="docutils literal notranslate"><span class="pre">self.ime</span></code> i <code class="docutils literal notranslate"><span class="pre">self.plata</span></code> da referišemo na atribute <code class="docutils literal notranslate"><span class="pre">ime</span></code> i <code class="docutils literal notranslate"><span class="pre">plata</span></code> objekata iz klase <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code>.</p>
+<p>Ako koristimo konstruktor da inicijalizujemo vrednosti unutar klase, tada je neophodno prolediti odgovarajuću vrednost za vreme kreiranja objekta iz klase:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z3</span> <span class="o">=</span> <span class="n">Zaposleni</span><span class="p">(</span><span class="s1">&#39;Ilić Jovan&#39;</span><span class="p">,</span> <span class="mi">130000</span><span class="p">)</span>
+<span class="n">z3</span><span class="o">.</span><span class="n">ime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ilić Jovan&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovde, <code class="docutils literal notranslate"><span class="pre">'Ilić</span> <span class="pre">Jovan'</span></code> se prosleđuje parametru <code class="docutils literal notranslate"><span class="pre">ime</span></code>, a 130000 parametru <code class="docutils literal notranslate"><span class="pre">plata</span></code> konstruktor funkciji <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>.</p>
+<div class="important admonition">
+<p class="admonition-title">Važno.</p>
+<p>Pajton stil je da imena specijalnih metoda i atributa počinju i završavaju sa jednom ili dve donje crte. Kasnije ćemo se upoznati sa još nekim specijalnim metodama i atributima kod klasa.</p>
+</div>
+</section>
+<section id="atributi-klase-i-atributi-instanci">
+<h3>Atributi klase i atributi instanci</h3>
+<p>Atributi, prikazani u prethodnom primeru su u stvari atributi instanci, što znači da oni pripadaju samo specifičnoj instanci. Kada ih koristimo, neophodno da upotrebimo <code class="docutils literal notranslate"><span class="pre">self.atribut</span></code> unutar klase.</p>
+<p>Atributi klase se dodelju svim instancama kreiranim u toj klasi. Njima možemo pristupiti na dva načina: <code class="docutils literal notranslate"><span class="pre">ImeKlase.atribut</span></code> ili <code class="docutils literal notranslate"><span class="pre">ImeObjekta.atribut</span></code>.</p>
+<p>Ako ponovo pogledamo prvi primer gde smo definisali prvu klasu primetićemo da smo tamo definisali atribute klase. Instance iz te klase preuzele su te atribute, pa smo onda morali da ih modifikujemo u okviru svake instance. Očigledno, to je malo komplikovano, zato postoji <code class="docutils literal notranslate"><span class="pre">__init__</span></code> metod koji postupak incijalizacije rešava vrlo efikasno.</p>
+<p>Atributi klase u principu imaju drugu namenu. Pogledajmo na jednom primeru kako možemo da definišemo i upotrebimo atribute klase.</p>
+<div class="tip admonition">
+<p class="admonition-title">Primer 2.</p>
+<p>Definišite klasu <code class="docutils literal notranslate"><span class="pre">Zaposleni</span></code> sa atributima <code class="docutils literal notranslate"><span class="pre">ime</span></code>, <code class="docutils literal notranslate"><span class="pre">plata</span></code>, <code class="docutils literal notranslate"><span class="pre">ime_kompanije</span> <span class="pre">=</span> <span class="pre">&quot;MTS&quot;</span></code> i <code class="docutils literal notranslate"><span class="pre">broj_zaposlenih</span></code> i metodima koji će dati osnovne informacije o zaposlenom, i ukupan broj zaposlenih. Testirajte klasu.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Zaposleni</span><span class="p">:</span>
+    <span class="c1"># atributi (promenljive) klase</span>
+    <span class="n">ime_kompanije</span> <span class="o">=</span> <span class="s1">&#39;MTS&#39;</span>
+    <span class="n">broj_zaposlenih</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># Konstruktor za incijalizaciju objekta</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">plata</span><span class="p">):</span>
+        <span class="c1"># atributi (promenjive) instance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plata</span> <span class="o">=</span> <span class="n">plata</span>
+        <span class="n">Zaposleni</span><span class="o">.</span><span class="n">broj_zaposlenih</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="c1"># metod instance</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zaposleni </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2"> radi u kompaniji </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime_kompanije</span><span class="si">}</span><span class="s2"> i ima platu </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">plata</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        
+    <span class="c1"># metod klase</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ukupno</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;U kompaniji radi </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">broj_zaposlenih</span><span class="si">}</span><span class="s2"> radnika&quot;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Kreiranje prvog objekta</span>
+<span class="n">zap1</span> <span class="o">=</span> <span class="n">Zaposleni</span><span class="p">(</span><span class="s2">&quot;Marko&quot;</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)</span>
+<span class="n">zap1</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">zap1</span><span class="o">.</span><span class="n">ukupno</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zaposleni Marko radi u kompaniji MTS i ima platu 120000.
+U kompaniji radi 1 radnika
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Kreiranje drugog objekta</span>
+<span class="n">zap2</span> <span class="o">=</span> <span class="n">Zaposleni</span><span class="p">(</span><span class="s2">&quot;Ivan&quot;</span><span class="p">,</span> <span class="mi">120000</span><span class="p">)</span>
+<span class="n">zap2</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="n">zap2</span><span class="o">.</span><span class="n">ukupno</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zaposleni Ivan radi u kompaniji MTS i ima platu 120000.
+U kompaniji radi 2 radnika
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="specijalne-metode">
+<h3>Specijalne metode</h3>
+<p>Kada ukucate <code class="docutils literal notranslate"><span class="pre">x=2+3</span></code>, kako <code class="docutils literal notranslate"><span class="pre">integer</span></code> objekti sa vrednostima 2 i 3 znaju kako se implementira +? Takođe kako zna da upotrebi = da se dođe do rezultata? Do ovih znakova operacija možete doći koristeći  Pythonove specijalne metode.</p>
+<p>Imena ovih metoda počinju i završavaju se sa duplm donjim crtama (<code class="docutils literal notranslate"><span class="pre">__</span></code>). Jedan smo već videli: <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, pokreće novostvoreni objekat iz definicije njegove klase i sve argumente koji su prosleđeni unutra.</p>
+<p>Pretpostavimo da imamo jednostavnu klasu <code class="docutils literal notranslate"><span class="pre">Reč</span></code> i da želimo da proverimo da li su dve reči jednake ignorišući veličinu slova.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Reč</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">reč2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="n">reč2</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da vidimo da li radi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">Reč</span><span class="p">(</span><span class="s1">&#39;Ah&#39;</span><span class="p">)</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">Reč</span><span class="p">(</span><span class="s1">&#39;ah&#39;</span><span class="p">)</span>
+<span class="n">r3</span> <span class="o">=</span> <span class="n">Reč</span><span class="p">(</span><span class="s1">&#39;Aha&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="o">==</span><span class="n">r2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="o">==</span><span class="n">r3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pored <code class="docutils literal notranslate"><span class="pre">__init__()</span></code>, najviše se koriste metodi <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> i <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code>. Radi se o tome kako se ispisuje objekat prilikom štampe ili posle izvršavanja neke naredbe. Ukoliko ih ne definišete, Pajton će vam automatski dati string verziju vašeg objekta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Reč at 0x2417c634c20&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hajde da dodamo i <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> i <code class="docutils literal notranslate"><span class="pre">__repr__()</span></code> metode u klasu <code class="docutils literal notranslate"><span class="pre">Reč</span></code> kako bi je ulepšali:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Reč</span><span class="p">():</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">reč2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">==</span><span class="n">reč2</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;Reč(&#39;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">+</span><span class="s1">&#39;)&#39;</span>    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span><span class="o">=</span><span class="n">Reč</span><span class="p">(</span><span class="s2">&quot;Студент&quot;</span><span class="p">)</span>
+<span class="n">r1</span>  <span class="c1">#koristi __repr__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reč(Студент)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span> <span class="c1">#koristi __str__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Студент
+</pre></div>
+</div>
+</div>
+</div>
+<p>U tabelama koje slede opisane su sve specijalne (neko kže i magične metode).</p>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="tbl-primer-1">
+<caption><span class="caption-number">Tabela 2. </span><span class="caption-text">Magične metode matematičkih operacija</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>metod</p></th>
+<th class="head text-left"><p>operacija</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__add__(self,</span> <span class="pre">drugo)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">+</span> <span class="pre">drugo</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__sub__(self,</span> <span class="pre">drugo)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">-</span> <span class="pre">drugo</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__mul__(self,</span> <span class="pre">drugo)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">*</span> <span class="pre">drugo</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__floordiv__(self,</span> <span class="pre">drugo)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">//</span> <span class="pre">drugo</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__truediv__(self,</span> <span class="pre">drugo)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">/</span> <span class="pre">drugo</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__mod__(self,</span> <span class="pre">drugo)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">%</span> <span class="pre">drugo</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__pow__(self,</span> <span class="pre">drugo)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">self</span> <span class="pre">**</span> <span class="pre">drugo</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="tbl-primer-2">
+<caption><span class="caption-number">Tabela 3. </span><span class="caption-text">Druge metode</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>metod</p></th>
+<th class="head text-left"><p>operacija</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__str__(self)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">str(self)</span></code></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__repr__(self)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">repr(self)</span></code></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><code class="docutils literal notranslate"><span class="pre">__len__(self)</span></code></p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">len(self)</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="nasledivanje">
+<h2>Nasleđivanje</h2>
+<p>Nasleđivanje nam omogućava da definišemo klasu koja će naslediti sve metode i atribute iz neke druge klase. Konvencionalno, za novu klasu tog tipa koristimo termin <em>klasa dete</em> (child class), dok klasu koju ona nasleđuje zovemo <em>klasa roditelj</em> (parent class) ili <em>super klasa</em>. Nasleđivanje izgrađuje relaciju između klase dece i klase roditelja. Obično, klasa roditelja je opšteg tipa dok je klasa dece specifičnog tipa.</p>
+<p>Sledi pseudo kod initakse nasleživanja u Python-u</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definicija superklase</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">super_klasa</span><span class="p">:</span>
+    <span class="c1"># definicija atributa i metoda</span>
+
+<span class="c1"># nasleđivanje</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">pod_klasa</span><span class="p">(</span><span class="n">super_klasa</span><span class="p">):</span>
+    <span class="c1"># atributi i metodi super_klase</span>
+    <span class="c1"># atributi i metod pod_klase</span>
+</pre></div>
+</div>
+<p>Ilustrujmo nasleđivanje primerom:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mogu da se hranim.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Nasleđivanje iz klase Animal</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Pas</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="c1"># novi metod u podklasi</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># pristup atributu ime iz super klase primenom self</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Moje ime je  </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kreiranje objekta u podklasi</span>
+<span class="n">labrador</span> <span class="o">=</span> <span class="n">Pas</span><span class="p">(</span><span class="s2">&quot;Roki&quot;</span><span class="p">)</span>  <span class="c1"># Koristi metod __init__ iz super klase</span>
+<span class="n">labrador</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>          <span class="c1"># Koristi metod eat super klase</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mogu da se hranim.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># poziv metoda podklase</span>
+<span class="n">labrador</span><span class="o">.</span><span class="n">display</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Moje ime je  Roki.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="mutacija-premoscavanje-nadvladivanje-metoda">
+<h3>Mutacija (premošćavanje, nadvlađivanje metoda)</h3>
+<p>U prethodnom primeru, videli smo da objekat u podklasi pristupa metodi iz super klase. Međutim, šta ako isti metod postoji u superklasi i podklasi? Tada, metod podklase nadjačava metod superklase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
+
+    <span class="c1"># atributi i metodi klase roditelja     </span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mogu da se hranim.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Nasleđivanje iz klase Animal</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Pas</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="c1"># novi metod u podklasi</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># pristup atributu ime iz super klase primenom self</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Moje ime je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        
+     <span class="c1"># nadjačavanje metoda superklase   </span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volim da jedem koske.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kreiranje objekta u podklasi</span>
+<span class="n">labrador</span> <span class="o">=</span> <span class="n">Pas</span><span class="p">(</span><span class="s2">&quot;Roki&quot;</span><span class="p">)</span>  
+<span class="n">labrador</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volim da jedem koske.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="metod-super-u-nasledivanju">
+<h3>Metod <code class="docutils literal notranslate"><span class="pre">super</span></code> u nasleđivanju</h3>
+<p>Malopre smo videli da metod iz podklase nadjačava metod iz superklase. Međutim, ako nam treba metod sa istim imenom iz superklase, tada koristimo metod <code class="docutils literal notranslate"><span class="pre">super()</span></code>. Na primer,</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Animal</span><span class="p">:</span>
+
+    <span class="c1"># atributi i metodi klase roditelja     </span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mogu da se hranim.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Nasleđivanje iz klase Animal</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Pas</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="c1"># novi metod u podklasi</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># pristup atributu ime iz super klase primenom self</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Moje ime je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># nadjačavanje metoda superklase   </span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volim da jedem koske.&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># poziv metoda iz super klase</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kreiranje objekta u podklasi</span>
+<span class="n">labrador</span> <span class="o">=</span> <span class="n">Pas</span><span class="p">(</span><span class="s2">&quot;Roki&quot;</span><span class="p">)</span>  
+<span class="n">labrador</span><span class="o">.</span><span class="n">eat</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Volim da jedem koske.
+Mogu da se hranim.
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Napomena</em>: Vrlo često se premošćava <code class="docutils literal notranslate"><span class="pre">__init__</span></code> metod.</p>
+</section>
+</section>
+<section id="enkapsulacija">
+<h2>Enkapsulacija</h2>
+<p><em>Enkapsulacija</em> je jedan od bazičnih koncepata u OOP. Ona opisuje ideju restrikcije pristupa metodima i atributima u klasi. Enkapsulacija sakriva kompleksne detalje od korisnika i prevencija je promene podataka nekim incidentom. U Pajtonu to se postiže upotrebom privatnih metoda ili atributa koristeći donju crtu kao prefiks, odnosno, jedna „_”  ili dve „__”, kako je to pokazano u sledećem primeru.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">lokacija</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_lokacija</span> <span class="o">=</span> <span class="n">lokacija</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__verzija</span> <span class="o">=</span> <span class="s1">&#39;1.0&#39;</span>
+    
+    <span class="c1"># a getter funkcija</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Verzija senzora je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__verzija</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># a setter funkcija</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verzija</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__verzija</span> <span class="o">=</span> <span class="n">verzija</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor1</span> <span class="o">=</span> <span class="n">Sensor</span><span class="p">(</span><span class="s1">&#39;Acc&#39;</span><span class="p">,</span> <span class="s1">&#39;Beograd&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor1</span><span class="o">.</span><span class="n">ime</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor1</span><span class="o">.</span><span class="n">_lokacija</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sensor1</span><span class="o">.</span><span class="n">__verzija</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Acc
+Beograd
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">96</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="n">sensor1</span><span class="o">.</span><span class="n">ime</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">sensor1</span><span class="o">.</span><span class="n">_lokacija</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">sensor1</span><span class="o">.</span><span class="n">__verzija</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;Sensor&#39; object has no attribute &#39;__verzija&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prethodni primer pokazuje kako radi enkapsulacija:</p>
+<ul class="simple">
+<li><p>Sa jednom donjom crtom, mi definišemo privatnu promenljivu kojoj se ne može direktno pristupiti. Primetite da je ovo konvencija i ništa vas ne sprečava da joj konkretno pristupite.</p></li>
+<li><p>Sa dve  donje crte, vidimo da se atributu <code class="docutils literal notranslate"><span class="pre">__verzija__</span></code> ne može direktno ni pristupiti ni modifikovati.</p></li>
+</ul>
+<p>Kako bi pristupili atributima ćije ime počinje sa dve donje crte, neophodno je da upotrebimo takozvane <code class="docutils literal notranslate"><span class="pre">getter</span></code> i <code class="docutils literal notranslate"><span class="pre">setter</span></code> funkcije kako bi im interno pristupili.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor1</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Verzija senzora je 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sensor1</span><span class="o">.</span><span class="n">set_version</span><span class="p">(</span><span class="s1">&#39;2.0&#39;</span><span class="p">)</span>
+<span class="n">sensor1</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Verzija senzora je 2.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="polimorfizam">
+<h2>Polimorfizam</h2>
+<p><em>Polimorfizam</em> je još jedan osnovni koncept u OOP, koji bukvalno znači višestruke forme. Polimorfizam nam dozvoljava da koristimo jedno okruženje u suštinski različitim formama, kao što su tipovi podataka ili klase. Možemo da imamo metod sa zajedničkim imenom u različitim klasama i njihovim potomcima. Već smo videli jedan takav primer, kada smo prevladali metod <code class="docutils literal notranslate"><span class="pre">eat</span></code>. I klasa roditelj i klasa naslednik mogu da imaju metod pod istim imenom, ali on je implementiran na drugačiji način.</p>
+<p>Mogućnost upotrebe jednog imena u više formi sa različitim delovanjem u različitim situacijama u mnogome redukuje kompleksnost. Nećemo širiti ovu diskusiju o polimorfizmu, ako vas to interesuje, možete na mreži naći detaljnija objašnjenja.</p>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1.</p>
+<p>Konstruišite klasu Medvedi iz uvoda ovog poglavlja.</p>
+<p>Testirajte vašu klasu.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Medvedi</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">starost</span><span class="p">,</span> <span class="n">boja</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">starost</span> <span class="o">=</span> <span class="n">starost</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">boja</span> <span class="o">=</span> <span class="n">boja</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">pozdrav</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pozdrav, ja sam medved &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="p">)</span>
+
+<span class="n">medved_1</span> <span class="o">=</span> <span class="n">Medvedi</span><span class="p">(</span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Bobi&quot;</span><span class="p">,</span> <span class="n">starost</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">boja</span> <span class="o">=</span> <span class="s2">&quot;Braon&quot;</span><span class="p">)</span>
+<span class="n">medved_1</span><span class="o">.</span><span class="n">pozdrav</span><span class="p">()</span>
+
+<span class="n">medved_2</span> <span class="o">=</span> <span class="n">Medvedi</span><span class="p">(</span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Luna&quot;</span><span class="p">,</span> <span class="n">starost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">boja</span> <span class="o">=</span> <span class="s2">&quot;Bela&quot;</span><span class="p">)</span>
+<span class="n">medved_2</span><span class="o">.</span><span class="n">pozdrav</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">medved_2</span><span class="o">.</span><span class="n">boja</span><span class="p">,</span> <span class="n">medved_2</span><span class="o">.</span><span class="n">ime</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2.</p>
+<p>Definišite klasu studenata sa Ekonomskog fakulteta u Beogradu <code class="docutils literal notranslate"><span class="pre">Student</span></code> sa sledećim zahtevima:</p>
+<ul class="simple">
+<li><p>atributi:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">indeks</span></code> (broj indeksa studenta)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ime</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prosek</span></code></p></li>
+</ul>
+</li>
+<li><p>metodama:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">predstavi_se</span></code> koji će prikazati ime studenta i fakultet koji studira</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">izvestaj</span></code> koji ne štampa samo ime studenta, već i broj njegovog indeksa kao i prosečnu ocenu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">broj_studenta</span></code> koji će štampati broj kreiranih objekata iz klase Student pri svakom kreiranju novog objekta.</p></li>
+</ul>
+</li>
+</ul>
+<p>Testirajte vašu klasu.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">():</span>
+
+    <span class="n">ime_fakulteta</span> <span class="o">=</span> <span class="s1">&#39;Ekonomski fakultet - Univerziteta u Beogradu&#39;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># brojač instanci klase</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indeks</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prosek</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indeks</span> <span class="o">=</span> <span class="n">indeks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prosek</span> <span class="o">=</span> <span class="n">prosek</span>
+        
+        <span class="n">Student</span><span class="o">.</span><span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Broj upisanih studenata je </span><span class="si">{</span><span class="n">Student</span><span class="o">.</span><span class="n">n</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">predstavi_se</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ja sam student </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s1">. Upisan sam na </span><span class="si">{</span><span class="n">Student</span><span class="o">.</span><span class="n">ime_fakulteta</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">izvestaj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ja sam </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s1">. Moj broj indeksa je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indeks</span><span class="si">}</span><span class="s1">, a prosečna ocena mi je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">prosek</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">student_1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;230234&quot;</span><span class="p">,</span> <span class="s2">&quot;Marković Marko&quot;</span><span class="p">,</span> <span class="mf">9.54</span><span class="p">)</span>
+<span class="n">student_2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;220042&quot;</span><span class="p">,</span> <span class="s2">&quot;Ilić Jelena&quot;</span><span class="p">,</span> <span class="mf">8.75</span><span class="p">)</span>
+
+<span class="n">student_1</span><span class="o">.</span><span class="n">predstavi_se</span><span class="p">()</span>
+<span class="n">student_2</span><span class="o">.</span><span class="n">izvestaj</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3.</p>
+<p>Pretpostavimo sa smo definisali klasu <code class="docutils literal notranslate"><span class="pre">Tacka2D</span></code> koja se inicijalizuje sa dva realna broja na sledeći način:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Tacka2D</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>Dodajmo predhodnoj klasi dve specijalne metode koje će na prirodan način prikazivati objekte, ispitivati njihovu jednakost i reprezentovati njihovu prirodu.</p>
+<p>Testirati novu klasu.</p>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Rešenje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Tacka2D</span><span class="p">:</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                         <span class="c1"># String reprezentacija objekta</span>
+        <span class="k">return</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">drugi</span><span class="p">):</span>                   <span class="c1"># Definicija kad su dva objekta jednaka</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">==</span><span class="n">drugi</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">==</span><span class="n">drugi</span><span class="o">.</span><span class="n">y</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                        <span class="c1"># Prikazuje način nastanka objekta</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Tacka2D(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">)&#39;</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">Tacka2D</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">Tacka2D</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">Tacka2D</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># Primenjuje str</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">B</span><span class="p">)</span>  <span class="c1"># primenjuje proveru jednakosti</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">C</span><span class="p">)</span>
+
+<span class="n">A</span>   <span class="c1"># Primenjuje repr</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Problem 1.</p>
+<ul class="simple">
+<li><p>Definisati klasu <code class="docutils literal notranslate"><span class="pre">BankovniRacun</span></code> sa atributima koji referišu na broj računa, stanje na računu i ime i prezime vlasnika računa. Klasa treba da ima metode koji će omogućavati podizanje, ulaganje novca i proveru stanja na računu.</p></li>
+<li><p>Definisati potklasu <code class="docutils literal notranslate"><span class="pre">Stednja</span></code> klase <code class="docutils literal notranslate"><span class="pre">BankovniRacun</span></code> sa dodatnim atributom koji ukazuje na kamatnu stopu i metodom koji dodaje interes na uloženi novac.</p></li>
+<li><p>Definisati potklasu <code class="docutils literal notranslate"><span class="pre">TekuciRacun</span></code> klase <code class="docutils literal notranslate"><span class="pre">BankovniRacun</span></code> sa dodatnim atributom koji ukazuje na troškove održavanje računa i atributom koji referiše na maksimalan dozvoljen iznos koji se može podići jednokratno sa računa. Podklasa treba da ima modifikovan metod za podizanje novca u skladu sa svim ograničenjima, kao i metod koji će primeniti troškove održavanja računa.</p></li>
+</ul>
+<p>Testirati sve delove koda.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Problem 2.</p>
+<p>Kreirati klasu <code class="docutils literal notranslate"><span class="pre">Kapital</span></code> sa atributima koji referišu na novčanu vrednost kapitala i kamatnu stopa. Klasa treba da ima metode koji će određivati sadašnju vrednost kapitala, buduću vrednost kapitala, kao i anuitetni plan za otplatu tog kapitala u zavisnosti od dužine vremena.</p>
+<p>Tetsirati sve delove koda.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">✏️ Vežba</p>
+<p>Neka je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Kreirajte instance klase <code class="docutils literal notranslate"><span class="pre">MyClass</span></code> sa imenima <code class="docutils literal notranslate"><span class="pre">p1</span></code> i <code class="docutils literal notranslate"><span class="pre">p2</span></code></p></li>
+<li><p>Prikažite vrednost atributa <code class="docutils literal notranslate"><span class="pre">x</span></code> na obe instance.</p>
+<ul>
+<li><p>Promenite vrednost atributa <code class="docutils literal notranslate"><span class="pre">x</span></code> unutar instance <code class="docutils literal notranslate"><span class="pre">p1</span></code>.</p></li>
+<li><p>Proverite vrednost ovog atributa unutar obe instance.</p></li>
+</ul>
+</li>
+<li><p>Definišite i prikažite vrednost atributa <code class="docutils literal notranslate"><span class="pre">y</span></code> na obe instance.</p>
+<ul>
+<li><p>Promenite vrednost atributa <code class="docutils literal notranslate"><span class="pre">y</span></code> unutar instance <code class="docutils literal notranslate"><span class="pre">p1</span></code>.</p></li>
+<li><p>Proverite vrednost ovog atributa unutar obe instance.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_15_upravljanje_greskama.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Upravljanje greškama</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definicija-klase-u-pajtonu">Definicija klase u Pajtonu.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pajton-objekti">Pajton objekti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-klase">Metodi klase.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruktor-init">Konstruktor  <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#atributi-klase-i-atributi-instanci">Atributi klase i atributi instanci</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#specijalne-metode">Specijalne metode</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nasledivanje">Nasleđivanje</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutacija-premoscavanje-nadvladivanje-metoda">Mutacija (premošćavanje, nadvlađivanje metoda)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-super-u-nasledivanju">Metod <code class="docutils literal notranslate"><span class="pre">super</span></code> u nasleđivanju</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkapsulacija">Enkapsulacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfizam">Polimorfizam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

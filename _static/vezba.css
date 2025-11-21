@@ -1,0 +1,16 @@
+/* globalni brojač */
+:root {
+  counter-reset: vezba;
+}
+
+/* dodaj broj POSLE teksta "Vežba" u headeru */
+.admonition.exercise > .admonition-title::after {
+  counter-increment: vezba;
+  content: " " counter(vezba) ".";
+}
+
+/* povećaj visinu gornjeg dela */
+.admonition.exercise > .admonition-title {
+  padding-top: 0.8rem;
+  padding-bottom: 0.7rem;
+}
