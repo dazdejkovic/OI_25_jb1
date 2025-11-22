@@ -1,15 +1,20 @@
-/* globalni brojač */
+/* Reset brojača */
 :root {
   counter-reset: vezba;
 }
 
-/* dodaj broj POSLE teksta "Vežba" u headeru */
+/* Sakrij default plavu ikonicu koju JB ubacuje u ::before */
+.admonition.exercise > .admonition-title::before {
+  content: "";
+}
+
+/* Dodaj broj POSLE teksta "Vežba" */
 .admonition.exercise > .admonition-title::after {
   counter-increment: vezba;
   content: " " counter(vezba) ".";
 }
 
-/* povećaj visinu gornjeg dela */
+/* Prostor u headeru */
 .admonition.exercise > .admonition-title {
   padding-top: 0.8rem;
   padding-bottom: 0.7rem;
