@@ -1,0 +1,1942 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vizuelizacija podataka sa Matplotlib-om &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_18_Matplotlib';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="prev" title="Uvod u NumPy" href="OI_25_17_NumPy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OI_25_17_NumPy.html">Uvod u NumPy</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vizuelizacija podataka sa Matplotlib-om</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_18_Matplotlib.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_25_18_Matplotlib.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Vizuelizacija podataka sa Matplotlib-om</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opsti-saveti-za-matplotlib">Opšti saveti za Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uvoz-matplotlib-a">Uvoz matplotlib-a</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opsti-koncepti">Opšti koncepti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osnovni-metod-plot">Osnovni metod: <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podesavanje-podrazumevanih-vrednosti">Podešavanje podrazumevanih vrednosti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuvanje-figura-u-datoteci">Čuvanje Figura u datoteci</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dva-interfejsa">Dva interfejsa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-stil-interfejs">MATLAB - stil interfejs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objektno-orijentisan-interfejs">Objektno orijentisan interfejs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jednostavni-grafikoni-sa-linijama">Jednostavni grafikoni sa linijama</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podesavanje-grafika-boje-linija-i-stilovi">Podešavanje grafika: Boje linija i stilovi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podesavanje-grafika-limitiranje-osa">Podešavanje grafika: limitiranje osa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labeliranje-grafikona">Labeliranje grafikona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-stil-i-objektno-orijentisani-stil">Matlab stil i Objektno orijentisani stil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jednostavni-dijagram-rasturanja">Jednostavni dijagram rasturanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dijagram-rasturanja-sa-plt-plot">Dijagram rasturanja sa plt.plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dijagrami-rasturanja-sa-plt-scatter">Dijagrami rasturanja sa <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogrami-korpe-i-gustina">Histogrami, korpe i gustina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prilagodavanje-legendi-figure">Prilagođavanje legendi figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visestruki-podgrafici">Višestruki podgrafici</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-subplot-jednostrana-resetka-podgrafika"><code class="docutils literal notranslate"><span class="pre">plt.subplot</span></code>: Jednostrana rešetka podgrafika</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-subplots-cela-resetka-u-jednom-potezu">plt.subplots: cela rešetka u jednom potezu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-stubicastih-dijagrama-bar-plot-funkcija-bar">Kreiranje stubičastih dijagrama (bar plot) - funkcija <code class="docutils literal notranslate"><span class="pre">bar()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stekovani-stubicasti-dijagram-dijagram-naslagane-trake">Stekovani stubičasti dijagram (Dijagram naslagane trake)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dijagram-pita-pie-chart">Dijagram pita (pie chart)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-dijagram-sa-brkovima">Box plot (dijagram sa brkovima)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-i-anotacija">Tekst i anotacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anotacija">Anotacija</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popunjavanje-oblasti-izmedu-dve-horizontalne-krive">Popunjavanje oblasti između dve horizontalne krive.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="vizuelizacija-podataka-sa-matplotlib-om">
+<h1>Vizuelizacija podataka sa Matplotlib-om</h1>
+<p>U Pythonu, jedan od najboljih paketa za grafičko prikazivanja podataka je <strong>matplotlib</strong>. Ako posetite <a class="reference external" href="https://www.matplotlib.org/gallery/index#gallery">Matplotlib galeriju</a> možete da vidite šta se sve može napraviti.</p>
+<section id="opsti-saveti-za-matplotlib">
+<h2>Opšti saveti za Matplotlib</h2>
+<section id="uvoz-matplotlib-a">
+<h3>Uvoz matplotlib-a</h3>
+<p>Kao što koristimo np skraćenicu za NumPy i pd skraćenicu za Pandas, tako koristimo i neke standardne skraćenice za uvoz iz Matplotliba.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpl</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="opsti-koncepti">
+<h3>Opšti koncepti</h3>
+<p>Postoje neki opšti koncepti koje bi trebalo razumeti kako bi krenuli sa praktičnim primerima i zadacima. Objekat <em>figure</em> kreiran matpolotlib-om ima veliki broj elemenata i ovde ćemo diskutovati o tim elementima.</p>
+<ol class="arabic simple">
+<li><p><strong>Figure</strong> je <em>platno</em>*(ceo prozor) na kojem se stvaraju različiti crteži i dodatni elementi. Objekat figure sadrži jedan ili više axes/plot(subplots) (osnova/crteža) objekata. Sintaksa funkcije figure</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">figsize</span><span class="p">,</span> <span class="n">dpi</span><span class="p">,</span> <span class="n">facecolor</span><span class="p">,</span> <span class="n">edgecolor</span><span class="p">,</span> <span class="n">frameon</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Axes</strong>(Osnova, nosač) Oblast slike sa podacima je Axes objekat. Uz pomoć Axes objekta možemo da crtamo u bilo kom delu figure (to omogućava i kreiranje pod grafika). Svaka figura može imati mnogo axes objekata, ali dati axes objekat može postojati samo u jednoj figuri. U dve dimenzije, axes sadrži dva axis objekta, a u slučaju 3D tri axis objekta. Kako bi dodali axes objekat u figuru treba samo pozvati metod <code class="docutils literal notranslate"><span class="pre">add_axes()</span></code>:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">levo</span><span class="p">,</span> <span class="n">dole</span><span class="p">,</span> <span class="n">širina</span><span class="p">,</span> <span class="n">visina</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Axis (Osa)</strong> u Matplotlib figuri se koristi za generisanje ograničenja grafikona i u osnovi je kao brojna linija. Može postojati X osa, Y osa i Z osa za grafikone do 3 dimenzije.</p></li>
+<li><p><strong>Artist</strong> (Umetnik) je sve što se može videti na figuri. Većina umetnika je vezana za Axes objekte. Oni su poput tekstualnih objekata, Line2D objekti i još mnogo toga.</p></li>
+</ol>
+<p>API <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> je u osnovi kolekcija funkcija komandnog stila čija je namena izrada  interaktivnog grafika. Svaka funkcija u pyplot-u pravi neke izmene na slici, na primer, postoji funkcija da stvori figuru, funkcija koja stvara oblast(i) za iscrtavanje u figuri, za iscrtavanje nekih linija u oblasti za crtanje, kao i za ukrašavanje grafika etiketama.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/anatomy_mpl.png"><img alt="_images/anatomy_mpl.png" src="_images/anatomy_mpl.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 13. </span><span class="caption-text">Anatomija slike u matplotlib-u</span></p>
+</figcaption>
+</figure>
+</section>
+<section id="osnovni-metod-plot">
+<h3>Osnovni metod: <code class="docutils literal notranslate"><span class="pre">plot</span></code></h3>
+<p>Osnovni metod za crtanje je <code class="docutils literal notranslate"><span class="pre">plot.</span></code> Njegova sintaksa je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">scalex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">scaley</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>ili, u nešto jednostavnijem obliku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">fmt</span><span class="p">],</span> <span class="p">[</span><span class="n">x2</span><span class="p">],</span> <span class="n">y2</span><span class="p">,</span> <span class="p">[</span><span class="n">fmt2</span><span class="p">],</span> <span class="o">...</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>gde su <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> koordinate tačaka (ili čvorovi) koje treba spojiti, a <code class="docutils literal notranslate"><span class="pre">fmt</span></code> opcioni parametri za razna podešavanja</p>
+<div class="tip admonition">
+<p class="admonition-title">Primer 1.</p>
+<p>Linijskim dijagramom prikazati podatke o dnevnoj temperaturi, ako su podaci o temperaturi sačuvani u listi
+<code class="docutils literal notranslate"><span class="pre">temperatura</span> <span class="pre">=</span> <span class="pre">[36.6,</span> <span class="pre">37,</span> <span class="pre">37.7,39,40.1,43,43.4,45,45.6,40.1,44,45,46.8,47,47.8]</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temperatura</span> <span class="o">=</span> <span class="p">[</span><span class="mf">36.6</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mf">37.7</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mf">40.1</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mf">43.4</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mf">45.6</span><span class="p">,</span><span class="mf">40.1</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mf">46.8</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mf">47.8</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temperatura</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d677a1a2f4395f7c92a6d82fb7634cd6fe8690a20b393a6c5f188d02e993cbc6.png" src="_images/d677a1a2f4395f7c92a6d82fb7634cd6fe8690a20b393a6c5f188d02e993cbc6.png" />
+</div>
+</div>
+<p>Podsetimo se: magičnom komandom ? posle imena metoda možemo uvek da potražimo pomoć u vezi sintakse.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.figure<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sad možemo malo da doteramo dijagram, tako da se vidi o čemu se radi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s1">&#39;Prvi dijagram&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">temperatura</span> <span class="o">=</span> <span class="p">[</span><span class="mf">36.6</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mf">37.7</span><span class="p">,</span><span class="mi">39</span><span class="p">,</span><span class="mf">40.1</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mf">43.4</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mf">45.6</span><span class="p">,</span><span class="mf">40.1</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="mf">46.8</span><span class="p">,</span><span class="mi">47</span><span class="p">,</span><span class="mf">47.8</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">temperatura</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Temperatura&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2c2d4acb3e17d04891fda10f21ab114546e52b642af74e72f29c38a39630c2d6.png" src="_images/2c2d4acb3e17d04891fda10f21ab114546e52b642af74e72f29c38a39630c2d6.png" />
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Primer 2.</p>
+<p>Skicirajte grafike funkcija <span class="math notranslate nohighlight">\(f(x) = x^2+2\)</span> i <span class="math notranslate nohighlight">\(g(x)=\cosh(x)= \dfrac{e^{x}+e^{-x}}2\)</span> za <span class="math notranslate nohighlight">\(-1 \le x \le 1\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">g</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>   <span class="c1"># Lančanica ili cosinus hiperbolikus</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">g</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ecc84684593c366100029ec2632f91c6f0af070511f3eb582d0da59f19a71c7b.png" src="_images/ecc84684593c366100029ec2632f91c6f0af070511f3eb582d0da59f19a71c7b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s1">&#39;Kvadratna funkcija i lančanica&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span> <span class="c1"># Kreira numpy ndarray, tako što u intervalu [-2,2] umetne 200 jedanko razmaknutih tačaka</span>
+<span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">g</span><span class="o">=</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>   <span class="c1"># Lančanica ili cosinus hiperbolikus</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Kvadratna funkcija $f(x) = x^2+2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;Lančanica $g(x)=\cosh(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dve funkcije na istom grafiku&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5821dee6c91715b2bea950c01464096ffa750f49505e6d129105506703b1c3f1.png" src="_images/5821dee6c91715b2bea950c01464096ffa750f49505e6d129105506703b1c3f1.png" />
+</div>
+</div>
+</section>
+<section id="podesavanje-podrazumevanih-vrednosti">
+<h3>Podešavanje podrazumevanih vrednosti</h3>
+<p>Matplotlib se pokreće sa skupom podrazumevanih postavki. Možemo da kontrolišemo podrazumevane vrednosti skoro svakog svojstva u matplotlib-u kao što je veličina figure, dpi, širina linije, boja linije, stil linije, osnove, svojstva osnove i mreže, svojstva teksta i fonta i tako dalje. Prethodni grafik napravili smo koristeći podrazumevane vrednosti.</p>
+<p>Ako želimo da promenimo neku podrazumevanu vrednost moramo inctancirati figuru. U skripti ispod smo instancirali (i komentarisali) neke postavke figure koje utiču na izgled. Podešavanja su eksplicitno podešena, ali sada možete interaktivno da se igrate sa vrednostima i istražite njihov uticaj.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>  <span class="c1"># Kreira figuru veličine 4x3 inča, sa rezolucijom 100 tačaka po inču</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span><span class="p">)</span>  
+<span class="c1"># linijski grafik isprekidanom crvenom linijom debljine 3 pointa (umesto color može stojati i samo c)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span> <span class="c1"># Markeri na x-osi</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>  <span class="c1">#Prikaži grafik</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/69c76515aec377d76831a0c19ebbe42a25dfb7ca5ec3257f0d767c041b8cc20d.png" src="_images/69c76515aec377d76831a0c19ebbe42a25dfb7ca5ec3257f0d767c041b8cc20d.png" />
+</div>
+</div>
+<p>Kasnije ćemo pokazati kako se može promeniti bilo koji deo figure ili dodati neki element, kao što su na primer labela ose, naslov, legenda, tip grafika … Međutim, postoji i neki predefinisani stilovi koji automatski definišu stil. Evo liste tih stilova.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Solarize_Light2&#39;, &#39;_classic_test_patch&#39;, &#39;_mpl-gallery&#39;, &#39;_mpl-gallery-nogrid&#39;, &#39;bmh&#39;, &#39;classic&#39;, &#39;dark_background&#39;, &#39;fast&#39;, &#39;fivethirtyeight&#39;, &#39;ggplot&#39;, &#39;grayscale&#39;, &#39;seaborn-v0_8&#39;, &#39;seaborn-v0_8-bright&#39;, &#39;seaborn-v0_8-colorblind&#39;, &#39;seaborn-v0_8-dark&#39;, &#39;seaborn-v0_8-dark-palette&#39;, &#39;seaborn-v0_8-darkgrid&#39;, &#39;seaborn-v0_8-deep&#39;, &#39;seaborn-v0_8-muted&#39;, &#39;seaborn-v0_8-notebook&#39;, &#39;seaborn-v0_8-paper&#39;, &#39;seaborn-v0_8-pastel&#39;, &#39;seaborn-v0_8-poster&#39;, &#39;seaborn-v0_8-talk&#39;, &#39;seaborn-v0_8-ticks&#39;, &#39;seaborn-v0_8-white&#39;, &#39;seaborn-v0_8-whitegrid&#39;, &#39;tableau-colorblind10&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Standardni stil možemo promeniti primenom funkcije <code class="docutils literal notranslate"><span class="pre">plt.style.use</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;seaborn-v0_8-muted&quot;</span><span class="p">)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/edda2f032535fad3f010388af5b126aace361140df31171cc48cbf0c560562e7.png" src="_images/edda2f032535fad3f010388af5b126aace361140df31171cc48cbf0c560562e7.png" />
+</div>
+</div>
+<p>Za povratak na podrazumevani stil koristimo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cuvanje-figura-u-datoteci">
+<h3>Čuvanje Figura u datoteci</h3>
+<p>Jedna lepa karakteristika Matplotliba je sposobnost čuvanja figura u najrazličitijim formatima. Možete sačuvati figuru pomoću naredbe <code class="docutils literal notranslate"><span class="pre">savefig().</span></code> Na primer, da biste sačuvali prethodnu sliku kao PNG datoteku, možete pokrenuti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;my_figure.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sada imamo datoteku koja se zove <em>my_figure.png</em> u trenutnom radnom direktorijumu.</p>
+<p>U metodu <code class="docutils literal notranslate"><span class="pre">savefig()</span></code>, format datoteke se određuje iz ekstenzije datog imena datoteke. Spisak podržanih tipova datoteka za vaš sistem možete pronaći pomoću sledećeg metoda objekta figure <code class="docutils literal notranslate"><span class="pre">canvas</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">get_supported_filetypes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;eps&#39;: &#39;Encapsulated Postscript&#39;,
+ &#39;jpg&#39;: &#39;Joint Photographic Experts Group&#39;,
+ &#39;jpeg&#39;: &#39;Joint Photographic Experts Group&#39;,
+ &#39;pdf&#39;: &#39;Portable Document Format&#39;,
+ &#39;pgf&#39;: &#39;PGF code for LaTeX&#39;,
+ &#39;png&#39;: &#39;Portable Network Graphics&#39;,
+ &#39;ps&#39;: &#39;Postscript&#39;,
+ &#39;raw&#39;: &#39;Raw RGBA bitmap&#39;,
+ &#39;rgba&#39;: &#39;Raw RGBA bitmap&#39;,
+ &#39;svg&#39;: &#39;Scalable Vector Graphics&#39;,
+ &#39;svgz&#39;: &#39;Scalable Vector Graphics&#39;,
+ &#39;tif&#39;: &#39;Tagged Image File Format&#39;,
+ &#39;tiff&#39;: &#39;Tagged Image File Format&#39;,
+ &#39;webp&#39;: &#39;WebP Image Format&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dva-interfejsa">
+<h2>Dva interfejsa</h2>
+<p>Potencijalno zbunjujuća karakteristika Matplotliba su njegovi dvostruki interfejsi: prvi, sistem zasnovan na MATLAB stilu i drugi, moćniji, objektno orijentisani interfejs. Ovde ćemo brzo istaknuti razlike između njih.</p>
+<section id="matlab-stil-interfejs">
+<h3>MATLAB - stil interfejs</h3>
+<p>Matplotlib je prvobitno napisan kao Python alternativa za korisnike MATLAB-a i veći deo njegove sintakse odražava tu činjenicu. Alati u stilu MATLAB nalaze se u <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>(<code class="docutils literal notranslate"><span class="pre">plt</span></code>) interfejsu. Na primer, sledeći kod će verovatno izgledati prilično poznato korisnicima MATLAB-a:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1"># kreira figuru</span>
+
+<span class="c1"># kreira prvi od dva panela i postavlja trenutnu osu</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># (redovi, kolone, broj panela)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="c1"># kreira drugi od dva panela postavlja trenutnu osu</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/eb6855d297723e4fea3e3ab365793687166d1884a1bd8ae6c533b096b15f2932.png" src="_images/eb6855d297723e4fea3e3ab365793687166d1884a1bd8ae6c533b096b15f2932.png" />
+</div>
+</div>
+<p>Važno je napomenuti da ovaj interfejs sadrži <em>status</em>: on prati ,,trenutnu’’ figuru i osnovu, gde se primenjuju sve <code class="docutils literal notranslate"><span class="pre">plt</span></code> komande. Možete dobiti referencu na ove elemente pomoću <code class="docutils literal notranslate"><span class="pre">plt.gcf()</span></code> (dobijate trenutnu cifru) i <code class="docutils literal notranslate"><span class="pre">plt.gca()</span></code> (dobijte trenutne osnove) rutine.</p>
+<p>Iako je ovaj interfejs sa statusom brz i prikladan za jednostavne crteže, lako je pokrenuti probleme. Na primer, kada se kreira drugi panel, kako se možemo vratiti i dodati nešto prvom? To je moguće u interfejsu u stilu MATLAB, ali pomalo nezgrapno. Srećom, postoji bolji način.</p>
+</section>
+<section id="objektno-orijentisan-interfejs">
+<h3>Objektno orijentisan interfejs</h3>
+<p>Objektno orijentisani interfejs je dostupan za složenije situacije, kada želimo veću kontrolu nad svojom figurom. Umesto da zavisi od pojma ,,aktivne’’ figure ili ose, u objektno orijentisanom interfejsu funkcije crtanja su metode eksplicitnih objekata <code class="docutils literal notranslate"><span class="pre">Figure</span></code>i <code class="docutils literal notranslate"><span class="pre">Axes.</span></code> Da biste ponovo kreirali prethodni grafik koristeći ovaj stil crtanja, uradimo sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># prvo kreiramo grid grafikona</span>
+<span class="c1"># ax će biti neki array od dva Axes objekta</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Pozivanje plot() metoda na odgovarajućim objektima</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/524a4ecc254f5bd087b3561d85c106c8dc7dccee9ea0c6053869de493d2199b0.png" src="_images/524a4ecc254f5bd087b3561d85c106c8dc7dccee9ea0c6053869de493d2199b0.png" />
+</div>
+</div>
+<p>Za jednostavnije grafike, izbor stila je uglavnom stvar preferencija, ali objektno orijentisani pristup može postati potreba kako grafici postaju sve više komplikovaniji. Kroz ovo poglavlje ćemo se prebacivati između MATLAB stila i objektno orijentisanog interfejsa, u zavisnosti od toga šta je najpogodnije. U većini slučajeva, razlika je mala kao i prebacivanje <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> na <code class="docutils literal notranslate"><span class="pre">ax.plot</span> <span class="pre">()</span></code>, ali ima nekoliko dogovora koje ćemo istaknuti kad se pojave u sledećim odeljcima.</p>
+</section>
+</section>
+<section id="jednostavni-grafikoni-sa-linijama">
+<h2>Jednostavni grafikoni sa linijama</h2>
+<p>Sve Matplotlib grafikone započinjemo sa stvaranjem figure i osnove (Axes). U njihovim najjednostavnijim obliku, figura i osnova mogu se kreirati na sledeći način:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>  <span class="c1"># prazan prozor bez Nosača (Axes)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e33fb370b51b5b19998aaa7c8ab98f4cdbebf4c6bd4f46d4726f21bf4b73056d.png" src="_images/e33fb370b51b5b19998aaa7c8ab98f4cdbebf4c6bd4f46d4726f21bf4b73056d.png" />
+</div>
+</div>
+<p>ili, alternativno u jednom potezu</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e33fb370b51b5b19998aaa7c8ab98f4cdbebf4c6bd4f46d4726f21bf4b73056d.png" src="_images/e33fb370b51b5b19998aaa7c8ab98f4cdbebf4c6bd4f46d4726f21bf4b73056d.png" />
+</div>
+</div>
+<p>U Matplotlibu, <em>figura</em> (instanca klase <code class="docutils literal notranslate"><span class="pre">plt.Figure</span></code>) može se smatrati za pojedinačni kontejner koji sadrži sve objekte koji predstavljaju osnove, grafiku, tekst i etikete. <em>Osnove (axes)</em> (instanca klase  <code class="docutils literal notranslate"><span class="pre">plt.Axes</span></code>) je ono što vidimo gore iznad na slici: ograničenje okvira sa tikovima i labelama, koja će na kraju sadržati grafikon. Ime promenljive <code class="docutils literal notranslate"><span class="pre">fig</span></code> se odnosi na instancu figure, a <code class="docutils literal notranslate"><span class="pre">ax</span></code> se odnosi na instancu osnove ili grupu instanci osnova.</p>
+<p>Jednom kada smo kreirali osnovu, možemo koristiti funkciju <code class="docutils literal notranslate"><span class="pre">ax.plot</span></code> za crtanje nekih podataka. Počnimo sa jednostavnom sinusoidom:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4061334c5fb552ce0ee8148a4cbdf8184b2156df7437366706118680ad2b4986.png" src="_images/4061334c5fb552ce0ee8148a4cbdf8184b2156df7437366706118680ad2b4986.png" />
+</div>
+</div>
+<p>Alternativno, možemo koristiti pylab interfejs i dozvoliti da se kreiraju slika i ose u pozadini:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/dfe173865fc4e3fc4a6d665dfa4fe9bf3d6b37b9800b0eb6a780b597632d5b9c.png" src="_images/dfe173865fc4e3fc4a6d665dfa4fe9bf3d6b37b9800b0eb6a780b597632d5b9c.png" />
+</div>
+</div>
+<p>Tipično, kreiramo novu figuru preko jedne od sledećih funkcija</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>             <span class="c1"># Prazna figura bez nosača(Axes)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>       <span class="c1"># Figura sa jednim nosačem</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># figura sa rešetkom 2x2  nosača</span>
+<span class="c1"># Figura sa jednim nosačem levo i dva desno:</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot_mosaic</span><span class="p">([[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right_top&#39;</span><span class="p">],</span>
+                               <span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right_bottom&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+</pre></div>
+</div>
+<img alt="_images/c303b91fb10dfa518f954a8cd0c02662d2bf3135264b176c54473bce049501f1.png" src="_images/c303b91fb10dfa518f954a8cd0c02662d2bf3135264b176c54473bce049501f1.png" />
+<img alt="_images/e89cac0efab1efbb94e30a40ac2ab283768474ef524454dfba93f311e4d7173c.png" src="_images/e89cac0efab1efbb94e30a40ac2ab283768474ef524454dfba93f311e4d7173c.png" />
+<img alt="_images/dc204e3a02afe46f8ab3b4f99840b01a10194b886205816a1f82c815927e1c5f.png" src="_images/dc204e3a02afe46f8ab3b4f99840b01a10194b886205816a1f82c815927e1c5f.png" />
+</div>
+</div>
+<section id="podesavanje-grafika-boje-linija-i-stilovi">
+<h3>Podešavanje grafika: Boje linija i stilovi</h3>
+<p>Prvo podešavanje koje biste možda želeli da napravite na grafikonu je upravljanje bojama linija i stilova. Funkcija <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code> uzima dodatne argumente koji se mogu koristiti za specificiranje. Da biste prilagodili boju, možete koristiti ključnu reč <code class="docutils literal notranslate"><span class="pre">color</span></code> (ili samo <code class="docutils literal notranslate"><span class="pre">c</span></code>) koja prihvata string argument i koji predstavlja praktično bilo koju zamislivu boju. Boja se može navesti na raznovrsne načine:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> <span class="c1"># specifikacija boje po imenu</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span> <span class="c1"># kratki kod boje (rgbcmyk)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">2</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;0.75&#39;</span><span class="p">)</span> <span class="c1"># Grayscale od 0 do 1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">3</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;#FFDD44&#39;</span><span class="p">)</span> <span class="c1"># Hex code (RRGGBB od 00 do FF)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.3</span><span class="p">))</span> <span class="c1"># RGB torka, sa vrednostima od 0  do 1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">5</span><span class="p">),</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;chartreuse&#39;</span><span class="p">);</span> <span class="c1"># podržana su i sva HTML imena boja</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0d60991d3fb25466f7ede40bc914878aa6aee3246580e5a261d3cb504b7fedc6.png" src="_images/0d60991d3fb25466f7ede40bc914878aa6aee3246580e5a261d3cb504b7fedc6.png" />
+</div>
+</div>
+<p>Ako nije navedena boja, Matplotlib će automatski proći kroz podrazumevani skup boja za više linija. Slično tome, stil linije možete prilagoditi pomoću ključne reči <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> (ili samo <code class="docutils literal notranslate"><span class="pre">ls</span></code>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;solid&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashdot&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dotted&#39;</span><span class="p">);</span>
+
+<span class="c1"># Možemo da koristimo i skraćene kodove:</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="c1"># solid</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span> <span class="c1"># dashed</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;-.&#39;</span><span class="p">)</span> <span class="c1"># dashdot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">7</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">);</span> <span class="c1"># dotted</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/52ebef88d3eb17e7ffbe771105f534ba0f46927d0c7e9f9f7d76f1455b265adf.png" src="_images/52ebef88d3eb17e7ffbe771105f534ba0f46927d0c7e9f9f7d76f1455b265adf.png" />
+</div>
+</div>
+<p>Ako želite da budete izuzetno kratki, <code class="docutils literal notranslate"><span class="pre">linestyle</span></code> i <code class="docutils literal notranslate"><span class="pre">color</span></code> kodovi mogu se kombinovati u jedan neključni argument za funkciju <code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;-g&#39;</span><span class="p">)</span> <span class="c1"># solid green</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;--c&#39;</span><span class="p">)</span> <span class="c1"># dashed cyan</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;-.k&#39;</span><span class="p">)</span> <span class="c1"># dashdot black</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;:r&#39;</span><span class="p">);</span> <span class="c1"># dotted red</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f5ac6edd07a6649690caac1d4f17d61f18832cf2d145d439f3755b3dae29aa6d.png" src="_images/f5ac6edd07a6649690caac1d4f17d61f18832cf2d145d439f3755b3dae29aa6d.png" />
+</div>
+</div>
+<p>Ovi jednoznakovni kodovi boja odražavaju standardne skraćenice u RGB-u (Crvena/Zelena/Plava) i CMYK (Cijan/Magenta/Žuta/crna) sistem boja, obično se koristi za digitalnu grafiku u boji.</p>
+<p>Kako bi promenili marker ili liniju, dodajemo treći ulazni argument u plot, string koji specifikuje boju i stil linije koje će se koristiti na grafiku. Na primer, <code class="docutils literal notranslate"><span class="pre">plot(x,y,'ro')</span></code> će skicirati tačke koristeći crvenu boju (<code class="docutils literal notranslate"><span class="pre">r</span></code>), kružićima (<code class="docutils literal notranslate"><span class="pre">o</span></code>). Moguće specifikacije prikazane su tabeli koja sledi.</p>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="id2">
+<caption><span class="caption-number">Tabela 4. </span><span class="caption-text">Specifikacije atributa tačaka</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Simbol</p></th>
+<th class="head text-left"><p>Opis</p></th>
+<th class="head text-left"><p>Simbol</p></th>
+<th class="head text-left"><p>Opis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>b</p></td>
+<td class="text-left"><p>plava</p></td>
+<td class="text-left"><p>T</p></td>
+<td class="text-left"><p>T</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>g</p></td>
+<td class="text-left"><p>zelena</p></td>
+<td class="text-left"><p>s</p></td>
+<td class="text-left"><p>kvadrat</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>r</p></td>
+<td class="text-left"><p>crvena</p></td>
+<td class="text-left"><p>d</p></td>
+<td class="text-left"><p>deltoid</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>c</p></td>
+<td class="text-left"><p>cyan</p></td>
+<td class="text-left"><p>v</p></td>
+<td class="text-left"><p>trougao (na dole)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>m</p></td>
+<td class="text-left"><p>magenta</p></td>
+<td class="text-left"><p>^</p></td>
+<td class="text-left"><p>trougao (na gore</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>y</p></td>
+<td class="text-left"><p>žuta</p></td>
+<td class="text-left"><p>&lt;</p></td>
+<td class="text-left"><p>trougao (na levo)</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>k</p></td>
+<td class="text-left"><p>crna</p></td>
+<td class="text-left"><p>&gt;</p></td>
+<td class="text-left"><p>trougao (na desno)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>w</p></td>
+<td class="text-left"><p>bela</p></td>
+<td class="text-left"><p>p</p></td>
+<td class="text-left"><p>pentagram</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>.</p></td>
+<td class="text-left"><p>tačka</p></td>
+<td class="text-left"><p>h</p></td>
+<td class="text-left"><p>heksagram</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>o</p></td>
+<td class="text-left"><p>krug</p></td>
+<td class="text-left"><p>-</p></td>
+<td class="text-left"><p>puna linija</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>x</p></td>
+<td class="text-left"><p>x</p></td>
+<td class="text-left"><p>:</p></td>
+<td class="text-left"><p>dvotačka</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>+</p></td>
+<td class="text-left"><p>plus</p></td>
+<td class="text-left"><p>-.</p></td>
+<td class="text-left"><p>isprekidano + tačke</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>*</p></td>
+<td class="text-left"><p>zvezda</p></td>
+<td class="text-left"><p>–</p></td>
+<td class="text-left"><p>isprekidano</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="podesavanje-grafika-limitiranje-osa">
+<h3>Podešavanje grafika: limitiranje osa</h3>
+<p>Matplotlib pristojno radi na odabiru zadatih ograničenja osa za vaš grafikon, ali ponekad lepo je imati finiju kontrolu. Najosnovniji način podešavanja ograničenja osa je upotreba metoda <code class="docutils literal notranslate"><span class="pre">plt.xlim()</span></code> i <code class="docutils literal notranslate"><span class="pre">plt.ylim()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1.5, 1.5)
+</pre></div>
+</div>
+<img alt="_images/4bf1513f60ad76343e3ed9c0ce89dd7d3e5ff0388b6bde0bd0b44e8a2dbd6a85.png" src="_images/4bf1513f60ad76343e3ed9c0ce89dd7d3e5ff0388b6bde0bd0b44e8a2dbd6a85.png" />
+</div>
+</div>
+<p>Ako iz nekog razloga želite da se bilo koja osa prikazuje unazad, možete jednostavno obrnuti redosled argumenata:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">1.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/34a2412198d3a9ef0169aa3d5b4a01d2cf1c23eeac22dc8fb249ee91c1d99cda.png" src="_images/34a2412198d3a9ef0169aa3d5b4a01d2cf1c23eeac22dc8fb249ee91c1d99cda.png" />
+</div>
+</div>
+<p>Korisna srodna metoda je <code class="docutils literal notranslate"><span class="pre">plt.axis()</span></code> (ovde imajte na umu potencijalnu zabunu između <em>axes</em> sa <em>e</em>, a <em>axis</em> sa <em>i</em>). Metoda <code class="docutils literal notranslate"><span class="pre">plt.axis()</span></code> vam omogućava da postavite <code class="docutils literal notranslate"><span class="pre">x</span></code> i <code class="docutils literal notranslate"><span class="pre">y</span></code> ograničenja jednim pozivom, prosleđivanjem liste koja navodi <code class="docutils literal notranslate"><span class="pre">[xmin,</span> <span class="pre">xmax,</span> <span class="pre">ymin,</span> <span class="pre">ymax]</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4bf1513f60ad76343e3ed9c0ce89dd7d3e5ff0388b6bde0bd0b44e8a2dbd6a85.png" src="_images/4bf1513f60ad76343e3ed9c0ce89dd7d3e5ff0388b6bde0bd0b44e8a2dbd6a85.png" />
+</div>
+</div>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">plt.axis()</span></code> ide i dalje od ovoga, omogućavajući vam da stvari radite automatski stežući granice oko trenutnog grafikona:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4061334c5fb552ce0ee8148a4cbdf8184b2156df7437366706118680ad2b4986.png" src="_images/4061334c5fb552ce0ee8148a4cbdf8184b2156df7437366706118680ad2b4986.png" />
+</div>
+</div>
+<p>Omogućava čak i specifikacije višeg nivoa, kao što je osiguravanje jednakog odnosa širine i visine tj., da je na vašem ekranu jedna jedinica u <code class="docutils literal notranslate"><span class="pre">x</span></code> jednaka jedinici u <code class="docutils literal notranslate"><span class="pre">y</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/342527daf737b527395c4d4c508ba00c826a9e6896a66f8a8f2984d206a5bd9b.png" src="_images/342527daf737b527395c4d4c508ba00c826a9e6896a66f8a8f2984d206a5bd9b.png" />
+</div>
+</div>
+<p>Za više informacija o ograničenjima osi i ostalim mogućnostima <code class="docutils literal notranslate"><span class="pre">plt.axis()</span></code> metoda, pogledajte docstring <code class="docutils literal notranslate"><span class="pre">plt.axis().</span></code></p>
+</section>
+<section id="labeliranje-grafikona">
+<h3>Labeliranje grafikona</h3>
+<p>Kao poslednji deo ovog odeljka, ukratko ćemo se osvrnuti na označavanje grafikona kao što su: naslovi, labele osa i jednostavne legende. Naslovi i oznake osa su najjednostavnije takve oznake i postoje metode koje se mogu koristiti da biste ih brzo postavili:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Grafik funkcije $y=\sin x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$y$&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/99e3e3f18e8af71aca7687eaf6855101195b2dc87262103cf0d2c72af660beb4.png" src="_images/99e3e3f18e8af71aca7687eaf6855101195b2dc87262103cf0d2c72af660beb4.png" />
+</div>
+</div>
+<p>Možete da prilagodite položaj, veličinu i stil ovih nalepnica koristeći opcione argumente funkcija. Za više informacija pogledajte Matplotlib dokumentaciju i docstrings svake od ovih funkcija.</p>
+<p>Kada se u okviru jednog axes objekta prikazuje više linija, može biti korisno napraviti legendu grafika koja označava svaki tip linije. Opet, Matplotlib ima ugrađeni način da brzo stvori takvu legendu. To se vrši metodom (pogađate) <code class="docutils literal notranslate"><span class="pre">plt.legend().</span></code>  Iako postoji nekoliko valjanih načina da se ovo koristi, najlakše je odrediti oznaku svakog reda pomoću ključne reči label funkcije plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;-g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$sin x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;:b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$cos x$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ca95222b8df781fcd7e841729a52dcb08e6181f827674979c5950699acc725e8.png" src="_images/ca95222b8df781fcd7e841729a52dcb08e6181f827674979c5950699acc725e8.png" />
+</div>
+</div>
+<p>Kao što vidite, funkcija <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> prati stil linije i boju, i podudara ih sa tačnom oznakom. Više informacija o specificiranju i formatiranju Legende grafikona mogu se naći u docstringu <code class="docutils literal notranslate"><span class="pre">plt.legend().</span></code></p>
+</section>
+<section id="matlab-stil-i-objektno-orijentisani-stil">
+<h3>Matlab stil i Objektno orijentisani stil</h3>
+<p>Dok se većina <code class="docutils literal notranslate"><span class="pre">plt</span></code> funkcija direktno prevodi u <code class="docutils literal notranslate"><span class="pre">ax</span></code> metode (kao što je <code class="docutils literal notranslate"><span class="pre">plt.plot()</span> <span class="pre">→</span> <span class="pre">ax.plot()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> → ax.legend()` itd.), to nije slučaj za sve naredbe. Konkretno, funkcije za postavljanje
+ograničenja, oznaka i naslova su malo izmenjene. Za prelazak između funkcija u stilu MATLAB i objektno orijentisanih metoda, izvršite sledeće promene:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="err">•</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">()</span> <span class="err">→</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">()</span>
+<span class="err">•</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">()</span> <span class="err">→</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">()</span>
+<span class="err">•</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">()</span> <span class="err">→</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">()</span>
+<span class="err">•</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">()</span> <span class="err">→</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">()</span>
+<span class="err">•</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">()</span> <span class="err">→</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="jednostavni-dijagram-rasturanja">
+<h2>Jednostavni dijagram rasturanja</h2>
+<p>Drugi često korišćeni tip grafika je jednostavan dijagram rasturanja, bliski rođak linijskog dijagrama. Umesto da se tačke spajaju segmentima linija, ovde su tačke predstavljene pojedinačno tačkom, krugom ili drugim oblikom. Počećemo sa podešavanjem beležnice za crtanje i uvozom funkcija koje ćemo koristiti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="dijagram-rasturanja-sa-plt-plot">
+<h3>Dijagram rasturanja sa plt.plot</h3>
+<p>U prethodnom odeljku smo pogledali <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> / <code class="docutils literal notranslate"><span class="pre">ax.plot</span></code> da bismo proizveli linijske dijagrame. Ista funkcija može proizvesti i dijagrame rasturanja:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2022</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span> <span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/18749020407b5a0d16a2a665fe5d5f81e15ea76f3ccb28cc8e725c8f79d45603.png" src="_images/18749020407b5a0d16a2a665fe5d5f81e15ea76f3ccb28cc8e725c8f79d45603.png" />
+</div>
+</div>
+<p>Treći argument u pozivu funkcije je znak koji predstavlja vrstu simbola koristi se za crtanje. Kao što možete odrediti opcije poput ’-’ i ’-’ za kontrolu stila linije, stil markera ima svoj skup kodova sa kratkim stringovima. Cela lista dostupnih simbola mogu se videti u dokumentaciji <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> ili u Matplotlib-ovoj dokumentacija na mreži. Većina mogućnosti je prilično intuitivna, a mi ćemo pokazati neke od najčešćih:</p>
+</section>
+<section id="dijagrami-rasturanja-sa-plt-scatter">
+<h3>Dijagrami rasturanja sa <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code></h3>
+<p>Druga, snažnija metoda za stvaranje dijagrama rasturanja je funkcija <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code>, koja se može koristiti vrlo slično funkciji <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x13f04ee8050&gt;
+</pre></div>
+</div>
+<img alt="_images/27e749a6340bccb9a3d11bb377b8302bb2c7c938f7543d578bd2e99138ead611.png" src="_images/27e749a6340bccb9a3d11bb377b8302bb2c7c938f7543d578bd2e99138ead611.png" />
+</div>
+</div>
+<p>Primarna razlika <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code> u odnosu na <code class="docutils literal notranslate"><span class="pre">plt.plot</span></code> je u tome što se može koristiti za stvaranje dijagrama rasturanja gde se svojstva svake pojedinačne tačke (veličina, boja lica, boja ivica, itd.) mogu pojedinačno kontrolisati ili mapirati.</p>
+<p>Pokažimo ovo stvaranjem slučajnog dijagrama rasturanja sa tačkama u mnogo boja i veličina. Da bismo bolje videli preklapajuće rezultate, koristićemo i ključnu reč <code class="docutils literal notranslate"><span class="pre">alfa</span></code>  za podešavanje nivoa transparentnosti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2022</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sizes</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">();</span> <span class="c1"># prikaži skalu boja</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/18f21f54c369f198988f91da46e6318ea2178b59ca1759e973e69497d073c0e9.png" src="_images/18f21f54c369f198988f91da46e6318ea2178b59ca1759e973e69497d073c0e9.png" />
+</div>
+</div>
+<p>Primetite da se argument boje automatski preslikava na skalu boja (prikazano ovde naredbom <code class="docutils literal notranslate"><span class="pre">colorbar()</span></code> ), a argument veličine dat je u pikselima. Na ovaj način, boja i veličina tačaka mogu se koristiti za prenos informacija u vizualizaciji, odnosno kako bi ilustrovali višedimenzionalne podatke.</p>
+</section>
+</section>
+<section id="histogrami-korpe-i-gustina">
+<h2>Histogrami, korpe i gustina</h2>
+<p>Jednostavan histogram može biti odličan prvi korak u razumevanju skupa podataka.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;classic&#39;</span><span class="p">)</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2022</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([  7.,  38., 108., 206., 234., 215., 128.,  51.,  12.,   1.]),
+ array([-2.9574 , -2.31475, -1.6721 , -1.02945, -0.3868 ,  0.25585,
+         0.8985 ,  1.54115,  2.1838 ,  2.82645,  3.4691 ]),
+ &lt;BarContainer object of 10 artists&gt;)
+</pre></div>
+</div>
+<img alt="_images/0fcda48f5beffb5c17c4a44deffd0d9830223d635922be87f9f2276badb6b8a7.png" src="_images/0fcda48f5beffb5c17c4a44deffd0d9830223d635922be87f9f2276badb6b8a7.png" />
+</div>
+</div>
+<p>Funkcija <code class="docutils literal notranslate"><span class="pre">hist()</span></code> ima mnogo opcija za podešavanje i izračunavanja i prikaza; evo primera prilagođenijeg histograma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;steelblue&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 4.,  1.,  2.,  4., 18., 16., 22., 40., 46., 44., 71., 91., 74.,
+        81., 79., 70., 85., 60., 53., 52., 23., 23., 14., 14.,  7.,  3.,
+         2.,  0.,  0.,  1.]),
+ array([-2.9574    , -2.74318333, -2.52896667, -2.31475   , -2.10053333,
+        -1.88631667, -1.6721    , -1.45788333, -1.24366667, -1.02945   ,
+        -0.81523333, -0.60101667, -0.3868    , -0.17258333,  0.04163333,
+         0.25585   ,  0.47006667,  0.68428333,  0.8985    ,  1.11271667,
+         1.32693333,  1.54115   ,  1.75536667,  1.96958333,  2.1838    ,
+         2.39801667,  2.61223333,  2.82645   ,  3.04066667,  3.25488333,
+         3.4691    ]),
+ [&lt;matplotlib.patches.Polygon at 0x13f04ab9ee0&gt;])
+</pre></div>
+</div>
+<img alt="_images/baa30b67eae02ca63773b69db22d0e0a6078777f050a222f58e820b10fa527b6.png" src="_images/baa30b67eae02ca63773b69db22d0e0a6078777f050a222f58e820b10fa527b6.png" />
+</div>
+</div>
+<p>Dokumentacija <code class="docutils literal notranslate"><span class="pre">plt.hist</span></code> sadrži više informacija o drugim dostupnim opcijama prilagođavanja. Smatram da je ova kombinacija <code class="docutils literal notranslate"><span class="pre">histtype</span> <span class="pre">=</span> <span class="pre">'stepfilled'</span></code> zajedno sa izvesnom transparentnošću <code class="docutils literal notranslate"><span class="pre">alfa</span></code> veoma korisna pri upoređivanju histograma nekoliko distribucija:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2022</span><span class="p">)</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+
+<span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">histtype</span><span class="o">=</span><span class="s1">&#39;stepfilled&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 2.,  2.,  2.,  5., 11.,  4., 11., 16., 23., 25., 23., 43., 50.,
+        47., 60., 52., 58., 72., 69., 58., 54., 50., 42., 44., 35., 29.,
+        27., 19., 19., 17.,  8.,  7.,  5.,  4.,  1.,  1.,  0.,  2.,  1.,
+         2.]),
+ array([-2.61861565, -2.30666399, -1.99471233, -1.68276067, -1.37080902,
+        -1.05885736, -0.7469057 , -0.43495404, -0.12300238,  0.18894927,
+         0.50090093,  0.81285259,  1.12480425,  1.4367559 ,  1.74870756,
+         2.06065922,  2.37261088,  2.68456253,  2.99651419,  3.30846585,
+         3.62041751,  3.93236917,  4.24432082,  4.55627248,  4.86822414,
+         5.1801758 ,  5.49212745,  5.80407911,  6.11603077,  6.42798243,
+         6.73993409,  7.05188574,  7.3638374 ,  7.67578906,  7.98774072,
+         8.29969237,  8.61164403,  8.92359569,  9.23554735,  9.547499  ,
+         9.85945066]),
+ [&lt;matplotlib.patches.Polygon at 0x13f04ae6810&gt;])
+</pre></div>
+</div>
+<img alt="_images/8a7e0a3d6df3f40a6cb5d156d103141a6c4876db8bbda60364966f329c61ee18.png" src="_images/8a7e0a3d6df3f40a6cb5d156d103141a6c4876db8bbda60364966f329c61ee18.png" />
+</div>
+</div>
+</section>
+<section id="prilagodavanje-legendi-figure">
+<h2>Prilagođavanje legendi figure</h2>
+<p>Legende grafika daju značenje vizuelizaciji, dodeljujući oznake različitim elementima.  Ranije smo videli kako stvoriti jednostavnu legendu; ovde ćemo pogledati prilagođavanje mesta i estetiku legende u Matplotlibu.</p>
+<p>Najjednostavnija legenda se može stvoriti pomoću komande <code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code> koja automatski kreira legendu za bilo koji označeni element grafika:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;-b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\sin x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;--r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\cos x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6a22e61c3308d4abea60b4c5634172b67d6fd981292116bcc1f29c41b61c4bfa.png" src="_images/6a22e61c3308d4abea60b4c5634172b67d6fd981292116bcc1f29c41b61c4bfa.png" />
+</div>
+</div>
+<p>Postoji mnogo načina na koje bismo želeli da prilagodimo takvu legendu. Na primer, možemo odrediti lokaciju i isključiti okvir:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">fig</span> <span class="c1"># primetite da fig sadrži sve prethodne objekte kao super klasa</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a0d8987395a4a01bc3da7f6ef3b5185dd7fd6d99b4d8d0f23e4e50b30db48bc0.png" src="_images/a0d8987395a4a01bc3da7f6ef3b5185dd7fd6d99b4d8d0f23e4e50b30db48bc0.png" />
+</div>
+</div>
+<p>Komandom <code class="docutils literal notranslate"><span class="pre">ncol</span></code> možemo da odredimo broj kolona u legendi:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower center&#39;</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d2e7587c9aa6705043fabab6e35ca1f9aae8dc7ef7e8307283197f59c4336fe5.png" src="_images/d2e7587c9aa6705043fabab6e35ca1f9aae8dc7ef7e8307283197f59c4336fe5.png" />
+</div>
+</div>
+<p>Možemo koristiti zaobljeni okvir (<code class="docutils literal notranslate"><span class="pre">fancybox</span></code>) ili dodati senku, promeniti prozirnost (alfa vrednost) okvira ili promenite pozadinu (padding) oko teksta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fancybox</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">framealpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">borderpad</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/374759cb872efc22e79ff76bfa19cfad123e4189e27e7d2c6261501e66798178.png" src="_images/374759cb872efc22e79ff76bfa19cfad123e4189e27e7d2c6261501e66798178.png" />
+</div>
+</div>
+<p>Za više informacija o dostupnim opcijama legende pogledajte docstring <code class="docutils literal notranslate"><span class="pre">plt.legend</span></code>.</p>
+</section>
+<section id="visestruki-podgrafici">
+<h2>Višestruki podgrafici</h2>
+<p>Ponekad je korisno upoređivati različite poglede na podatke uporedo. U tom cilju, Matplotlib ima koncept <em>podgrafika</em>: grupa manjih grafika koje mogu postojati zajedno unutar jedne figure. Ovi podgrafici
+mogu biti umetci, rešetke grafika ili neki drugi složeni izlazi. U ovom odeljku ćemo istražiti četiri rutine za kreiranje potgrafika u Matplotlibu. Započećemo sa podešavanjem beležnice za crtanje i uvoz
+funkcija koje ćemo koristiti:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;tableau-colorblind10&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="plt-subplot-jednostrana-resetka-podgrafika">
+<h3><code class="docutils literal notranslate"><span class="pre">plt.subplot</span></code>: Jednostrana rešetka podgrafika</h3>
+<p>Poravnate kolone ili redovi potplota (podgrafika) su dovoljno česta potreba. Matplotlib ima  nekoliko pogodnih rutina koje ih čine jednostavnim za stvaranje. Najniži nivo je <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code>, koji kreira jedan podplot unutar mreže. Kao što vidite, ova naredba uzima tri celobrojna argumenta - broj redova, broj kolona, i indeks parcele koja će se kreirati u ovoj šemi, a koja se kreće od gore levo dole desno:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">str</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4a9439f131fdcced8b20da8ab465ca9f6c35a22c065844d55f9eb11e2e997a00.png" src="_images/4a9439f131fdcced8b20da8ab465ca9f6c35a22c065844d55f9eb11e2e997a00.png" />
+</div>
+</div>
+<p>Komanda <code class="docutils literal notranslate"><span class="pre">plt.subplots_adjust</span></code> može se koristiti za podešavanje razmaka između ove parcele. Sledeći kod (čiji je rezultat prikazan na sledećoj slici) koristi ekvivalentna objektno orijentisana naredba, <code class="docutils literal notranslate"><span class="pre">fig.add_subplot()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">str</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="p">)),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3ba9e822fe5dba7514306067ec14f1f13a93e170fb3ae9a787011e2ee2f584b4.png" src="_images/3ba9e822fe5dba7514306067ec14f1f13a93e170fb3ae9a787011e2ee2f584b4.png" />
+</div>
+</div>
+<p>Koristili smo <code class="docutils literal notranslate"><span class="pre">hspace</span></code> i <code class="docutils literal notranslate"><span class="pre">vspace</span></code> argumente <code class="docutils literal notranslate"><span class="pre">plt.subplots_adjust</span></code>, koji preciziraju razmak duž visine i širine slike, u jedinicama veličine podgrafika (u u ovom slučaju prostor je 40% širine i visine
+podgrafika).</p>
+</section>
+<section id="plt-subplots-cela-resetka-u-jednom-potezu">
+<h3>plt.subplots: cela rešetka u jednom potezu</h3>
+<p>Upravo opisani pristup može postati prilično dosadan kada pravite veliku mreža podrafika, posebno ako želite da sakrijete oznake osa <code class="docutils literal notranslate"><span class="pre">x</span></code>- i <code class="docutils literal notranslate"><span class="pre">y</span></code> na unutrašnjoj strani parcele. U tu svrhu je <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> lakši alat za upotrebu (primetite <code class="docutils literal notranslate"><span class="pre">s</span></code> na kraju <code class="docutils literal notranslate"><span class="pre">subplots</span></code>). Umesto da kreira jedan potplot, ova funkcija kreira punu mrežu potplotova u jednom redu, vraćajući ih u NumPy array. Argumenti su broj redova i broj kolona, zajedno sa opcionalnim ključnim rečima <code class="docutils literal notranslate"><span class="pre">sharex</span></code> i <code class="docutils literal notranslate"><span class="pre">sharey</span></code>, koji vam omogućavaju da odredite odnose između različitih osa.</p>
+<p>Ovde ćemo napraviti <span class="math notranslate nohighlight">\(2\times 3\)</span> mrežu podplotova, gde sve ose u istom redu dele svoje skala ose <span class="math notranslate nohighlight">\(x\)</span>, a sve ose u istoj koloni dele svoju skalu ose <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="s1">&#39;col&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2e787754d18abcf878461baac3ed87949b9a65fe10b20bca5efbb56ef2760313.png" src="_images/2e787754d18abcf878461baac3ed87949b9a65fe10b20bca5efbb56ef2760313.png" />
+</div>
+</div>
+<p>Imajte na umu da smo specificiranjem <code class="docutils literal notranslate"><span class="pre">sharex</span></code> i <code class="docutils literal notranslate"><span class="pre">sharey</span></code> automatski uklonili unutrašnje oznake na mreži da bi parcela bila čistija. Dobijena mreža instanci osa se vraća unutar NumPy niza, omogućavajući pogodnu specifikaciju željenih osa pomoću notacija indeksiranja standardnog niza:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># axes are in a two-dimensional array, indexed by [row, col]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="n">ax</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">str</span><span class="p">((</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/3816754d8952ca2f9e9b419566d325927818877d43134d45b2489890ac24a2e8.png" src="_images/3816754d8952ca2f9e9b419566d325927818877d43134d45b2489890ac24a2e8.png" />
+</div>
+</div>
+<p>U poređenju sa <code class="docutils literal notranslate"><span class="pre">plt.subplot()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code> je konzistentniji sa Pithonovim konvencionalnim indeksiranjem zasnovanim na 0.</p>
+</section>
+</section>
+<section id="kreiranje-stubicastih-dijagrama-bar-plot-funkcija-bar">
+<h2>Kreiranje stubičastih dijagrama (bar plot) - funkcija <code class="docutils literal notranslate"><span class="pre">bar()</span></code></h2>
+<p>Stubičaste dijagrame koristimo da reprezentujemo kategorijske podatke pravougaonicima čija je širina i visina proporcionalna  vrednostima koje reprezentujemo. Postoje horizonatalni i vertikalni stubičasti dijagrami. Uglavnom ih koristimo za poređenje  diskretnih kategorija podataka. Na jednoj osi se prikazuju kategorije, a na drugoj obično mera koja odgovara ovim kategorijama.</p>
+<p>Sintaksa:
+<code class="docutils literal notranslate"><span class="pre">python</span>&#160;&#160;&#160;&#160; <span class="pre">ax.bar(x,</span> <span class="pre">height,</span> <span class="pre">width,</span> <span class="pre">bottom,</span> <span class="pre">align)</span>&#160;&#160;&#160;&#160; </code></p>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="id3">
+<caption><span class="caption-number">Tabela 5. </span><span class="caption-text">Parametri metoda (<code class="docutils literal notranslate"><span class="pre">ax.bar</span></code>) koji kreira stubičasti dijagram i njihov opis.</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Parametar</p></th>
+<th class="head text-left"><p>Opis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td class="text-left"><p>Niz skalarnih vrednosti koje definišu x koordinate stubića (pravougaonika)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">height</span></code></p></td>
+<td class="text-left"><p>Skalar ili niz skalarnih vrednosti koje reprezentuju visinu stubića (pravougaonika)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">width</span></code></p></td>
+<td class="text-left"><p>Opcioni parametar. Skalar ili niz skalarnih vrednosti koje reprezentuju širinu stubića (pravougaonika). Podrazumevana vrednost je 0.8</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">bottom</span></code></p></td>
+<td class="text-left"><p>Opcioni parametar. Skalar ili niz skalarnih vrednosti. Podrazumevana vrednost je None</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">align</span></code></p></td>
+<td class="text-left"><p>Opcioni parametar. Vrednosti ovog parametra su: ’center’, ’edge’.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Funkcija <code class="docutils literal notranslate"><span class="pre">bar()</span></code> vraća matplotlib kontejner objekat sa svim stubićima. Detalje ove funkcije kao i primeri primene mogu se videti na veb adresi https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.bar.html</p>
+<div class="tip admonition">
+<p class="admonition-title">Primer 3.</p>
+<p>Napisati kod koji sledi generiše stubičasti dijagram, koji reprezentuje broj knjiga po temama, na bazi rečnika:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Pure Python&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Numpy&#39;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Matplotlib&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;Pandas&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Pure Python&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Numpy&#39;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;Matplotlib&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span><span class="s1">&#39;Pandas&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">}</span>
+<span class="n">teme</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="n">vrednosti</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">teme</span><span class="p">,</span> <span class="n">vrednosti</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Tema&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Broj knjiga po bibiliotekama&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Knjige po temama iz Pythona&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/829066d9332111a767ca287abd7c2a6c34152d3f8e7c8682f9436332d26624ce.png" src="_images/829066d9332111a767ca287abd7c2a6c34152d3f8e7c8682f9436332d26624ce.png" />
+</div>
+</div>
+<section id="stekovani-stubicasti-dijagram-dijagram-naslagane-trake">
+<h3>Stekovani stubičasti dijagram (Dijagram naslagane trake)</h3>
+<p>Naslagane trake se koriste za predstavljanje različitih grupa podataka. Visina šipke uglavnom zavisi od rezultujuće visine kombinacije rezultata grupa. Visina ide od dna do vrednosti umesto da ide od nule do vrednosti.</p>
+<p>Hajde sada da napravimo jedan naslagani dijagram. Kod je dat ispod.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">group_a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">56</span><span class="p">)</span>
+<span class="n">group_b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">29</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">22</span><span class="p">)</span>
+<span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1"># Lokacija grupe na x osi</span>
+<span class="n">width</span> <span class="o">=</span> <span class="mf">0.45</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">group_a</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="n">group_b</span><span class="p">,</span> <span class="n">width</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="n">group_a</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Rezultati&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Rezultati po grupama&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">ind</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;G1&#39;</span><span class="p">,</span> <span class="s1">&#39;G2&#39;</span><span class="p">,</span> <span class="s1">&#39;G3&#39;</span><span class="p">,</span> <span class="s1">&#39;G4&#39;</span><span class="p">,</span> <span class="s1">&#39;G5&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Grupa A&#39;</span><span class="p">,</span> <span class="s1">&#39;Grupa B&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">bottom</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b365452bf924a3d392b2343aa311fd8360a1f1c6c6a953262b1fe1ba8f0a487c.png" src="_images/b365452bf924a3d392b2343aa311fd8360a1f1c6c6a953262b1fe1ba8f0a487c.png" />
+</div>
+</div>
+<p>Evo još jednog primera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">],[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">17</span><span class="p">],[</span><span class="mi">35</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">19</span><span class="p">]]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.00</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.50</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">X</span> <span class="o">+</span> <span class="mf">0.25</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;London&#39;</span><span class="p">,</span> <span class="s1">&#39;Peking&#39;</span><span class="p">,</span> <span class="s1">&#39;Rio&#39;</span><span class="p">,</span> <span class="s1">&#39;Tokio&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">bottom</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/128c89ab8446c785fea8e123670d41dc96e0271b4753c3b5a18ed5b57d06a986.png" src="_images/128c89ab8446c785fea8e123670d41dc96e0271b4753c3b5a18ed5b57d06a986.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">women_pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">30.</span><span class="p">,</span> <span class="mf">45.</span><span class="p">,</span> <span class="mf">22.</span><span class="p">])</span>
+<span class="n">men_pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">25.</span><span class="p">,</span> <span class="mf">50.</span><span class="p">,</span> <span class="mf">20.</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">women_pop</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">-</span><span class="n">men_pop</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/db0a77f7ab8fd1842394aa5c401d460e6bc7a79af06b5af311989d57b5becea7.png" src="_images/db0a77f7ab8fd1842394aa5c401d460e6bc7a79af06b5af311989d57b5becea7.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="dijagram-pita-pie-chart">
+<h2>Dijagram pita (pie chart)</h2>
+<p>Matplotlib podržava kružne grafikone pomoću funkcije <code class="docutils literal notranslate"><span class="pre">pie().</span></code> Detalji ove funkcije kao i primeri mogu se videti na linku https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.pie.html.</p>
+<p>Kod u nastavku kreira kružni grafikon. Pored osnovnog kružnog grafikona, ovaj demo prikazuje nekoliko opcionih funkcija:</p>
+<ul class="simple">
+<li><p>nalepnice za kriške</p></li>
+<li><p>automatsko označavanje procenta</p></li>
+<li><p>nadoknaditi deo sa „eksplodirati”</p></li>
+<li><p>padajuća-senka</p></li>
+<li><p>prilagođeni početni ugao</p></li>
+</ul>
+<p>Napomena o prilagođenom startnom uglu:
+Podrazumevani početni ugao je 0, što bi započelo presek „Žabe” na pozitivnoj k-osi. Ovaj primer postavlja početni ugao = 90 tako da se sve rotira u smeru suprotnom od kazaljke na satu za 90 stepeni, a kriška žabe počinje na pozitivnoj i-osi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podaci za grafikon</span>
+<span class="n">labele</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;C++&#39;</span><span class="p">,</span> <span class="s1">&#39;SQL&#39;</span><span class="p">,</span> <span class="s1">&#39;Java&#39;</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mi">215</span><span class="p">,</span> <span class="mi">130</span><span class="p">,</span> <span class="mi">245</span><span class="p">,</span> <span class="mi">210</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;yellowgreen&#39;</span><span class="p">,</span> <span class="s1">&#39;lightcoral&#39;</span><span class="p">,</span> <span class="s1">&#39;lightskyblue&#39;</span><span class="p">]</span>
+<span class="n">explode</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># istakni prvu krišku</span>
+
+<span class="c1"># Plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labele</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7fc1e316b3b64961ecd32dcd03b32de1ed4acd79ffd01219ad8690a8b88b278c.png" src="_images/7fc1e316b3b64961ecd32dcd03b32de1ed4acd79ffd01219ad8690a8b88b278c.png" />
+</div>
+</div>
+<p>Legende dodajemo jednostavno funkciom <code class="docutils literal notranslate"><span class="pre">plt.legend</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Audi&#39;</span><span class="p">,</span> <span class="s1">&#39;Opel&#39;</span><span class="p">,</span> <span class="s1">&#39;Peugeot&#39;</span><span class="p">,</span> <span class="s1">&#39;Renault&#39;</span><span class="p">]</span>
+<span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="mf">38.4</span><span class="p">,</span> <span class="mf">40.6</span><span class="p">,</span> <span class="mf">20.7</span><span class="p">,</span> <span class="mf">10.3</span><span class="p">]</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;yellowgreen&#39;</span><span class="p">,</span> <span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="s1">&#39;lightskyblue&#39;</span><span class="p">,</span> <span class="s1">&#39;lightcoral&#39;</span><span class="p">]</span>
+<span class="n">patches</span><span class="p">,</span> <span class="n">texts</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">sizes</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">patches</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/51e6053d270ba7f222b1fbbf2022c5177eac2a3306d747abfc895a82a0f4c1c1.png" src="_images/51e6053d270ba7f222b1fbbf2022c5177eac2a3306d747abfc895a82a0f4c1c1.png" />
+</div>
+</div>
+<p>Ako želimo da prikažemo samo deo pite svi podaci moraju biti u intervalu [0,1], njihov zbir ne može preći 1, a parametar <code class="docutils literal notranslate"><span class="pre">normalize</span></code> postavljen na <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/75b6616b405e593e904fb720b27ed3243fce29200c25a6740427158b1f2a8296.png" src="_images/75b6616b405e593e904fb720b27ed3243fce29200c25a6740427158b1f2a8296.png" />
+</div>
+</div>
+</section>
+<section id="box-plot-dijagram-sa-brkovima">
+<h2>Box plot (dijagram sa brkovima)</h2>
+<p>Boksplotovi su deskriptivni dijagrami koji pomažu pri poređenju distribucije različitih serija podataka. Oni su deskriptivni jer pokazuju mere (npr. medijana) koje ne pretpostavljaju osnovnu distribuciju verovatnoće. Za detale videti https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html</p>
+<p>Najosnovniji primer boksplot-a u matplotlib-u može se postići samo prosleđivanjem podataka kao višedimenzionalnih nizova:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2024</span><span class="p">)</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/053103f221d0cd10991ad6d0c97310e7c9460ef8fcb4bb70b8f2818d8ce7abae.png" src="_images/053103f221d0cd10991ad6d0c97310e7c9460ef8fcb4bb70b8f2818d8ce7abae.png" />
+</div>
+</div>
+<p>Matplotlib ima sopstvenu implementaciju boxplot-a. Okvirni dijagram prikazuje medijanu (percentil 50%) sa crvenom linijom. Kutija predstavlja Q1 i Q3 (percentili 25 i 75), a brkovi daju predstavu o opsegu podataka (Q1 - 1.5IQR i Q3 + 1.5IQR, gde je IQR interkvartilna razlika). Takođe primetite da su uzorci izvan ovog opsega prikazani kao markeri (oni se nazivaju outieri (letači)).</p>
+</section>
+<section id="tekst-i-anotacija">
+<h2>Tekst i anotacija</h2>
+<p>Da bismo poboljšali razumevanje detalja grafikona, ponekad možemo dodati tekstualne napomene za objašnjenja. Možemo da dodamo tekst u našu grafiku tako što ćemo pozvati <code class="docutils literal notranslate"><span class="pre">plt.text(x,y,text)</span></code> gde su <code class="docutils literal notranslate"><span class="pre">x</span></code> i <code class="docutils literal notranslate"><span class="pre">y</span></code> koordinate pozicije na koju treba postaviti
+tekstualni niz <code class="docutils literal notranslate"><span class="pre">text</span></code>. Evo kratkog primera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="s2">&quot;Pozdrav svima&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">fontstyle</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">,</span> <span class="n">fontfamily</span><span class="o">=</span><span class="s1">&#39;arial&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/383b2aeed70775821fb661dbee7e5219df98099b9127ee0e51e63368c4074750.png" src="_images/383b2aeed70775821fb661dbee7e5219df98099b9127ee0e51e63368c4074750.png" />
+</div>
+</div>
+<section id="anotacija">
+<h3>Anotacija</h3>
+<p>Upotreba osnovnog <code class="docutils literal notranslate"><span class="pre">text()</span></code> će postaviti tekst na proizvoljnu poziciju na objektu Axes. Uobičajeni slučaj upotrebe teksta je da se označi neka karakteristika dijagrama, a metoda <code class="docutils literal notranslate"><span class="pre">annotate()</span></code> pruža pomoćnu funkcionalnost da bi se napomene učinile lakim. Za detalje videti https://matplotlib.org/stable/tutorials/text/annotations.html</p>
+<p>Sintaksa:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">xy</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Parameteri</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">text</span></code>: string, tekst za anotaciju.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xy</span></code>: (float, float), tačka (x, y) koja se anotira. Koordinatni sistem se određuje pomoću <code class="docutils literal notranslate"><span class="pre">xycoords</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xytext</span></code>: (float, float), pozicija na koju se smešta tekst</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xycoords</span></code>: definiše koordinatni sistem. Podrazumevano <code class="docutils literal notranslate"><span class="pre">data</span></code>, odnosno u skladu sa podacima.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;local max&#39;</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">1.57</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>  <span class="n">xycoords</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span>
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.63</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">),</span> <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;axes fraction&#39;</span><span class="p">,</span>
+            <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span> <span class="mf">0.01</span><span class="p">),</span>
+            <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span>
+            <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6e33c8ed75cc2b87b11b3a455301cab60143de9dc23106b3374572be6bb4a56f.png" src="_images/6e33c8ed75cc2b87b11b3a455301cab60143de9dc23106b3374572be6bb4a56f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="popunjavanje-oblasti-izmedu-dve-horizontalne-krive">
+<h2>Popunjavanje oblasti između dve horizontalne krive.</h2>
+<p>Neka su krive su definisane nizovima <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y1)</span></code> i <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y2)</span></code>. One stvaraju jednu ili više oblasti. Neke delove možemo isključiti naredbom <code class="docutils literal notranslate"><span class="pre">where</span></code>. Podrazumevano, ivice direktno povezuju date tačke. Koristite <code class="docutils literal notranslate"><span class="pre">step</span></code> (korak) ako punjenje treba da bude funkcija koraka, tj. konstanta između <code class="docutils literal notranslate"><span class="pre">x</span></code>. Sintaksa:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">pyplot</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">y2</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">interpolate</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="id4">
+<caption><span class="caption-number">Tabela 6. </span><span class="caption-text">Parametri metoda <code class="docutils literal notranslate"><span class="pre">fill_between</span></code> koji boji oblast između dve krive.</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Parametar</p></th>
+<th class="head text-left"><p>Tip, vrsta i značenje</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td class="text-left"><p>niz (dužine N). Koordinate x tačaka koji definišu krive.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">y1</span></code></p></td>
+<td class="text-left"><p>niz (dužine N) ili skalar. Koordinate tačaka definišu prvu krivu.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">y2</span></code></p></td>
+<td class="text-left"><p>niz (dužine N) ili skalar. Koordinate tačaka definišu drugu krivu.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>where</p></td>
+<td class="text-left"><p>bulov niz (dužine N), opcioni. Definišite gde da isključite neke horizontalne regione iz popunjavanja. Popunjeni regioni su definisani koordinatama <code class="docutils literal notranslate"><span class="pre">x[where]</span></code>. Tačnije, popunite između <code class="docutils literal notranslate"><span class="pre">x[i]</span></code> i <code class="docutils literal notranslate"><span class="pre">x[i+1]</span></code> ako je <code class="docutils literal notranslate"><span class="pre">where[i]</span></code> i <code class="docutils literal notranslate"><span class="pre">where[i+1]</span></code>. Imajte na umu da ova definicija implicira da izolovana vrednost <code class="docutils literal notranslate"><span class="pre">True</span></code> između dve vrednosti <code class="docutils literal notranslate"><span class="pre">False</span></code> neće rezultirati popunjavanjem. Obe strane pozicije <code class="docutils literal notranslate"><span class="pre">True</span></code> ostaju nepopunjene zbog susednih vrednosti <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">interpolate</span></code></p></td>
+<td class="text-left"><p>Bool, podrazumevano: False. Ova opcija je relevantna samo ako se koristi <code class="docutils literal notranslate"><span class="pre">where</span></code> i dve krive se ukrštaju. Semantički, gde se često koristi za <code class="docutils literal notranslate"><span class="pre">y1</span> <span class="pre">&gt;</span> <span class="pre">y2</span></code> ili slično. Podrazumevano, Tačke oblasti koji definišu popunjeni region biće postavljeni samo na pozicije u <code class="docutils literal notranslate"><span class="pre">x</span></code> nizu. Takva oblast ne može opisati gornjom semantikom blizu raskrsnice. Xs-preseci koji sadrže presek se jednostavno iseču. Postavljanje interpolacije na Tačno će izračunati stvarnu tačku preseka i proširiti popunjenu oblast do ove tačke.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">step</span></code></p></td>
+<td class="text-left"><p>vrednosti: {’before’, ’post’, ’mid’}, opciono. Definiše korak ako popunjavanje treba da bude funkcija koraka, tj. konstanta između <code class="docutils literal notranslate"><span class="pre">x</span></code>-ova. Vrednost određuje gde će se korak dogoditi: ’before’: vrednost i se nastavlja stalno ulevo od svake <code class="docutils literal notranslate"><span class="pre">x</span></code> pozicije, tj. interval <code class="docutils literal notranslate"><span class="pre">(x[i-1],</span> <span class="pre">x[i]]</span></code> ima vrednost <code class="docutils literal notranslate"><span class="pre">x[i]</span></code>. ’post’: <code class="docutils literal notranslate"><span class="pre">x</span></code> vrednost se nastavlja stalno udesno sa svake <code class="docutils literal notranslate"><span class="pre">x</span></code> pozicije, tj. interval <code class="docutils literal notranslate"><span class="pre">([x[i],</span> <span class="pre">x[i+1])</span></code> ima vrednost <code class="docutils literal notranslate"><span class="pre">x[i]</span></code>. ’mid: Koraci se javljaju na pola puta između <code class="docutils literal notranslate"><span class="pre">x</span></code> pozicija.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">X</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">([</span><span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">])</span> 
+<span class="c1"># markira deo figure u kojem smešta grafik, tj. pravougaonik dole, levo, gore, desno unutar jediničnog kvadrata</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.00</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/929730e98a47e9dabb2d0c723111348b2c27862f57e489e9130eafd4c8b53d02.png" src="_images/929730e98a47e9dabb2d0c723111348b2c27862f57e489e9130eafd4c8b53d02.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">Y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b964d9c820391dff50045ae2763f0521bd1897058b511cfe6a2ef42cb967afaf.png" src="_images/b964d9c820391dff50045ae2763f0521bd1897058b511cfe6a2ef42cb967afaf.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.00</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b3849c01d4af5523b4e83d8a9be06c21bfc39d0fd5746209c342ab94c10f379a.png" src="_images/b3849c01d4af5523b4e83d8a9be06c21bfc39d0fd5746209c342ab94c10f379a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/c3348d7d28d4b4da7406e5af09253d2e2ad69a66882ff4e979538afa0a165913.png" src="_images/c3348d7d28d4b4da7406e5af09253d2e2ad69a66882ff4e979538afa0a165913.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">Y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">Y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5c71960b6f56eb2dfefdbcc01686a85620e473a5db5b1c1cf65656ef5f1cb5cb.png" src="_images/5c71960b6f56eb2dfefdbcc01686a85620e473a5db5b1c1cf65656ef5f1cb5cb.png" />
+</div>
+</div>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<p><strong>1</strong>. Kirkland Industrija prodaje vazdušne kompresore proizvodnim preduzećima. U tabeli se nalazi količina prodaje kompresora u stotinama dolara, za svaki mesec. Prikažite dijagram rasturanja i stubičasti dijagram za date podatke.</p>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id5">
+<caption><span class="caption-number">Tabela 7. </span><span class="caption-text">Kirkland industrija</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+<th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Mesec</strong></p></td>
+<td class="text-center"><p>Jan</p></td>
+<td class="text-center"><p>Feb</p></td>
+<td class="text-center"><p>Mar</p></td>
+<td class="text-center"><p>Apr</p></td>
+<td class="text-center"><p>Maj</p></td>
+<td class="text-center"><p>Jun</p></td>
+<td class="text-center"><p>Jul</p></td>
+<td class="text-center"><p>Avg</p></td>
+<td class="text-center"><p>Sep</p></td>
+<td class="text-center"><p>Okt</p></td>
+<td class="text-center"><p>Nov</p></td>
+<td class="text-center"><p>Dec</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Prodaja</strong></p></td>
+<td class="text-center"><p>135</p></td>
+<td class="text-center"><p>145</p></td>
+<td class="text-center"><p>175</p></td>
+<td class="text-center"><p>180</p></td>
+<td class="text-center"><p>160</p></td>
+<td class="text-center"><p>135</p></td>
+<td class="text-center"><p>210</p></td>
+<td class="text-center"><p>175</p></td>
+<td class="text-center"><p>160</p></td>
+<td class="text-center"><p>120</p></td>
+<td class="text-center"><p>115</p></td>
+<td class="text-center"><p>120</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>2.</strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_17_NumPy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Uvod u NumPy</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opsti-saveti-za-matplotlib">Opšti saveti za Matplotlib</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uvoz-matplotlib-a">Uvoz matplotlib-a</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opsti-koncepti">Opšti koncepti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osnovni-metod-plot">Osnovni metod: <code class="docutils literal notranslate"><span class="pre">plot</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podesavanje-podrazumevanih-vrednosti">Podešavanje podrazumevanih vrednosti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuvanje-figura-u-datoteci">Čuvanje Figura u datoteci</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dva-interfejsa">Dva interfejsa</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-stil-interfejs">MATLAB - stil interfejs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objektno-orijentisan-interfejs">Objektno orijentisan interfejs</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jednostavni-grafikoni-sa-linijama">Jednostavni grafikoni sa linijama</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podesavanje-grafika-boje-linija-i-stilovi">Podešavanje grafika: Boje linija i stilovi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#podesavanje-grafika-limitiranje-osa">Podešavanje grafika: limitiranje osa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#labeliranje-grafikona">Labeliranje grafikona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-stil-i-objektno-orijentisani-stil">Matlab stil i Objektno orijentisani stil</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jednostavni-dijagram-rasturanja">Jednostavni dijagram rasturanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dijagram-rasturanja-sa-plt-plot">Dijagram rasturanja sa plt.plot</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dijagrami-rasturanja-sa-plt-scatter">Dijagrami rasturanja sa <code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#histogrami-korpe-i-gustina">Histogrami, korpe i gustina</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prilagodavanje-legendi-figure">Prilagođavanje legendi figure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visestruki-podgrafici">Višestruki podgrafici</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-subplot-jednostrana-resetka-podgrafika"><code class="docutils literal notranslate"><span class="pre">plt.subplot</span></code>: Jednostrana rešetka podgrafika</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plt-subplots-cela-resetka-u-jednom-potezu">plt.subplots: cela rešetka u jednom potezu</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-stubicastih-dijagrama-bar-plot-funkcija-bar">Kreiranje stubičastih dijagrama (bar plot) - funkcija <code class="docutils literal notranslate"><span class="pre">bar()</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stekovani-stubicasti-dijagram-dijagram-naslagane-trake">Stekovani stubičasti dijagram (Dijagram naslagane trake)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dijagram-pita-pie-chart">Dijagram pita (pie chart)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#box-plot-dijagram-sa-brkovima">Box plot (dijagram sa brkovima)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tekst-i-anotacija">Tekst i anotacija</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anotacija">Anotacija</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popunjavanje-oblasti-izmedu-dve-horizontalne-krive">Popunjavanje oblasti između dve horizontalne krive.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
