@@ -68,6 +68,7 @@
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
     <link rel="search" title="Претрага" href="search.html" />
+    <link rel="next" title="Uvod u analizu podataka - 🐼 Pandas" href="OI_25_20_Pandas.html" />
     <link rel="prev" title="Vizuelizacija podataka sa Matplotlib-om" href="OI_25_18_Matplotlib.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sr"/>
@@ -213,6 +214,7 @@
 <li class="toctree-l1"><a class="reference internal" href="OI_25_17_NumPy.html">Uvod u NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OI_25_18_Matplotlib.html">Vizuelizacija podataka sa Matplotlib-om</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Monte Karlo simulacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_20_Pandas.html">Uvod u analizu podataka - 🐼 Pandas</a></li>
 </ul>
 
     </div>
@@ -415,6 +417,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">⚡️ Zadatak 2.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">⚡️ Zadatak 3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">⚡️ Zadatak 4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-5">⚡️ Zadatak 5.</a></li>
 </ul>
 </li>
 </ul>
@@ -1146,6 +1149,18 @@ Menadžment želi da proceni kretanje broja korisnika i prihoda tokom narednih 1
 </pre></div>
 </div>
 </section>
+<section id="zadatak-5">
+<h3>⚡️ Zadatak 5.</h3>
+<p>Neka slučajna promenljiva <span class="math notranslate nohighlight">\(X\)</span> reprezentuje jedan događaj osiguranog gubitka (izražen novčanim iznosom). Prirodno, pretpostavljamo da je <span class="math notranslate nohighlight">\(X&gt;0\)</span>. Slučajna promenljiva <span class="math notranslate nohighlight">\(Y\)</span> reprezentuje iznos odštete ili ceo gubitak. Uobičajeno je da u slučajevima garancije i osiguranja <span class="math notranslate nohighlight">\(Y\)</span> bude striktno manje od <span class="math notranslate nohighlight">\(X\)</span>, kako bi osigurana osoba delila rizik gubitka  sa osiguravačem. To se postiže franšizom.</p>
+<p>Franšiza <em>ograničavajući prag</em> je vrednost, u oznaci <span class="math notranslate nohighlight">\(u\)</span>, koja se isplaćuje ukoliko gubitak premaši tu vrednost. Ako se pređe ograničavajući prag (odnosno <span class="math notranslate nohighlight">\(X&gt;u\)</span>), tada je iznos odštete <span class="math notranslate nohighlight">\(Y=u\)</span>, u suprotnom je jednak <span class="math notranslate nohighlight">\(X\)</span>. Primeri: Neka je <span class="math notranslate nohighlight">\(u = 50\)</span>. Ako je <span class="math notranslate nohighlight">\(X=40\)</span>, tada <span class="math notranslate nohighlight">\(Y=40\)</span>; ako je <span class="math notranslate nohighlight">\(X=400\)</span>, tada <span class="math notranslate nohighlight">\(Y=50=\min(X,50)\)</span></p>
+<p>Napraviti simulacioni model koji će rešiti sledeći zadatak:</p>
+<p>Zdravstvena  organizacija za izdržavanje i čuvanje bolesnih osoba trenutno plaća pune troškove korišćenja sobe za hitne slučajeve svim svojim klijentima. Kompanija procenjuje moguće uštede koje bi mogle da rezultiraju uvođenjem ograničavajućeg praga od 2000 po poseti sobe za hitne slučajeve koji bi se primenjivao na sve klijente. Pretpostavimo da su troškovi posete sobe za hitne slučajeve eksponencijalno raspoređeni sa srednjom vrednošću od 1000. Za koliko procenta se mogu očekivati uštede?</p>
+<p>Uputstvo:</p>
+<ul class="simple">
+<li><p>Kod eksponencijalne raspodele, <span class="math notranslate nohighlight">\(X:\mathcal{E}(\lambda)\)</span>, važi: <span class="math notranslate nohighlight">\(E(X)=\lambda\)</span> i <span class="math notranslate nohighlight">\(f(x;\lambda)=\begin{cases} \frac1\lambda e^{-\frac1\lambda x}, &amp; x\ge 0 \\ 0, &amp;x&lt;0\end{cases}\)</span></p></li>
+<li><p>Uzorak iz eksponencijalne raspodele dobija se pozivom funkcije <code class="docutils literal notranslate"><span class="pre">random.exponential</span></code> iz modula numpy.</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -1188,6 +1203,15 @@ Menadžment želi da proceni kretanje broja korisnika i prihoda tokom narednih 1
         <p class="prev-next-title">Vizuelizacija podataka sa Matplotlib-om</p>
       </div>
     </a>
+    <a class="right-next"
+       href="OI_25_20_Pandas.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">напред</p>
+        <p class="prev-next-title">Uvod u analizu podataka - 🐼 Pandas</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -1211,6 +1235,7 @@ Menadžment želi da proceni kretanje broja korisnika i prihoda tokom narednih 1
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">⚡️ Zadatak 2.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">⚡️ Zadatak 3.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">⚡️ Zadatak 4.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-5">⚡️ Zadatak 5.</a></li>
 </ul>
 </li>
 </ul>
