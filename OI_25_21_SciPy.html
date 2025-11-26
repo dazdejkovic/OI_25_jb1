@@ -1,0 +1,2050 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Optimizacija u Pajtonu - 🧪 modul SciPy &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=9b1a9c12" />
+    <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_21_SciPy';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="prev" title="Uvod u analizu podataka - 🐼 Pandas" href="OI_25_20_Pandas.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OI_25_17_NumPy.html">Uvod u NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_18_Matplotlib.html">Vizuelizacija podataka sa Matplotlib-om</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_19_Simulacije.html">Monte Karlo simulacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_20_Pandas.html">Uvod u analizu podataka - 🐼 Pandas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimizacija u Pajtonu - 🧪 modul SciPy</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_21_SciPy.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_25_21_SciPy.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Optimizacija u Pajtonu - 🧪 modul SciPy</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-azuriranje-modula-za-optimizaciju-scipy">Instalacija/ažuriranje modula za optimizaciju SciPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearno-programiranje-u-pithon-u">Linearno programiranje u Pithon-u</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-1">Primer 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-silver-emm">Primer 2. <em>Silver (EMM)</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-3-selekcija-portfolija">Primer 3. <em>Selekcija portfolija</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesoviti-problem-linearnog-programiranja">Mešoviti problem linearnog programiranja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-mlp">Model MLP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Primer 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-budzetiranje">Primer 2.  <em>Budžetiranje</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-3-fiksni-troskovi">Primer 3. Fiksni troškovi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">✍️ Zadatak 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resenje">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">✍️ Zadatak 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">✍️ Zadatak 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">✍️ Zadatak 4.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-5">✍️ Zadatak 5.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">✍️ Zadatak 5.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-6">✍️ Zadatak 6.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Rešenje:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">⚡️ Zadatak 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">⚡️ Zadatak 2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">🧩</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="optimizacija-u-pajtonu-modul-scipy">
+<h1>Optimizacija u Pajtonu - 🧪 modul SciPy</h1>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* дебља, јача линија испод заглавља */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* тања, светлија линија испод последњег реда */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
+</div>
+<p>SciPy je laboratorija za naučno računanje u Pajtonu. To je biblioteka napravljena kao „viši nivo” iznad NumPy-a — kao alat koji nam omogućava da rešavamo ozbiljne matematičke i inženjerske probleme bez potrebe da sami implementiramo komplikovane algoritme. Ako NumPy omogućava brzo računanje nad nizovima i matricama, onda SciPy donosi već gotove funkcije za statistiku, optimizaciju, interpolaciju, integrale, diferencijalne jednačine i još mnogo toga.</p>
+<p>SciPy je organizovan u podpakete koji pokrivaju različite domene računarstva. U sledećoj tabeli su neki od tih podpaketa:</p>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id12">
+<caption><span class="caption-number">Tabela 10. </span><span class="caption-text">Podpaketi bibliteke Scipy</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Podpaket</p></th>
+<th class="head text-left"><p>Opis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>cluster</p></td>
+<td class="text-left"><p>Algoritmi za klasifikaciju</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>integrate</p></td>
+<td class="text-left"><p>Integracija i diferencijalne jednačine</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>interpolate</p></td>
+<td class="text-left"><p>Interpolacija i glatki splajnovi</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>linalg</p></td>
+<td class="text-left"><p>Linearne algebra</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>optimize</p></td>
+<td class="text-left"><p>Optimizacija i rešavanje jednačina</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>stats</p></td>
+<td class="text-left"><p>Statističke raspodele i funkcije</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Naš fokus će biti na modulu <code class="docutils literal notranslate"><span class="pre">linprog</span></code> za linearno programiranje u podpaketu optimize.</p>
+<section id="instalacija-azuriranje-modula-za-optimizaciju-scipy">
+<h2>Instalacija/ažuriranje modula za optimizaciju SciPy</h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install ... → radi u notebooku</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>scipy<span class="w"> </span>
+
+<span class="c1"># pip install --upgrade --proxy http://proxy.ekof.bg.ac.rs:8080 scipy  # na racunarima koji imaju internet preko proxy servera ekof</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in c:\users\dragan azdejkovic\miniconda3\lib\site-packages (1.16.3)
+Requirement already satisfied: numpy&lt;2.6,&gt;=1.25.2 in c:\users\dragan azdejkovic\miniconda3\lib\site-packages (from scipy) (2.3.3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako je modul instaliran treba ga uvesti u radnu memoriju pre započinjenja rada u beležnici zajedno sa modulom NumPy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da  bi modul izvršavao programe korektno treba da imate instalirane na vašem sistemu najnovije verzije modula SciPy  i Numpy.   Informaciju o najnovijim verzijama modula možete dobiti ako u bilo kom pretraživaču otkucate u polju za pretragu, na primer, latest version numpy, odnosno latest version  scipy.  Verzija modula na vašem sistemu se proverava sa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>index<span class="w"> </span>versions<span class="w"> </span>scipy
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scipy (1.16.3)
+Available versions: 1.16.3, 1.16.2, 1.16.1, 1.16.0, 1.15.3, 1.15.2, 1.15.1, 1.15.0, 1.14.1, 1.14.0, 1.13.1, 1.13.0, 1.12.0, 1.11.4, 1.9.3, 1.9.2, 1.6.1, 1.6.0, 1.5.4, 1.5.3, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.2.3, 1.2.2, 1.2.1, 1.2.0, 1.1.0, 1.0.1, 1.0.0, 0.19.1, 0.19.0, 0.18.1, 0.18.0, 0.17.1, 0.17.0, 0.16.1, 0.16.0, 0.15.1, 0.15.0, 0.14.1, 0.14.0, 0.13.3, 0.13.2, 0.13.1, 0.13.0, 0.12.1, 0.12.0, 0.11.0, 0.10.1, 0.10.0, 0.9.0, 0.8.0
+  INSTALLED: 1.16.3
+  LATEST:    1.16.3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="linearno-programiranje-u-pithon-u">
+<h2>Linearno programiranje u Pithon-u</h2>
+<p>Rešavamo sledeći problem:
+$<span class="math notranslate nohighlight">\(\begin{aligned}  \min_x\, &amp;\,c^T x \\
+    \text{uz uslove:}\quad &amp;\, A_{ub} x \leq b_{ub},\\
+                     &amp;\, A_{eq} x = b_{eq},\\
+                     &amp;\, l \leq x \leq u,\end{aligned}\)</span>$</p>
+<p>gde je <span class="math notranslate nohighlight">\(x\)</span> vektor promenljivih; <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(b_{ub}\)</span>, <span class="math notranslate nohighlight">\(b_{eq}\)</span>, <span class="math notranslate nohighlight">\(l\)</span>, i <span class="math notranslate nohighlight">\(u\)</span> vektori, a <span class="math notranslate nohighlight">\(A_{ub}\)</span> i <span class="math notranslate nohighlight">\(A_{eq}\)</span> matrice.</p>
+<p>Kako bi rešili prethodni optimizacioni zadatak u Pythonu neophodan nam je modul SciPy, odnosno njegov metod <code class="docutils literal notranslate"><span class="pre">scipy.optimize.linprog</span></code>. Sledi njegova sintaksa, a sve detalje možemo videti sa linprog?.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">A_eq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">b_eq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;highs&#39;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id13">
+<caption><span class="caption-number">Tabela 11. </span><span class="caption-text">Značenje izlaznih parametara <code class="docutils literal notranslate"><span class="pre">linprog</span></code></span></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parametar</p></th>
+<th class="head"><p>Značenje</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">message</span></code></p></td>
+<td><p>Tekstualna poruka o statusu optimizacije</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">success</span></code></p></td>
+<td><p>Boolean – da li je optimalno rešenje pronađeno</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">status</span></code></p></td>
+<td><p>Numerički kod statusa (0 = OK, 2 = infeasible, 3 = unbounded…)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">fun</span></code></p></td>
+<td><p>Vrednost ciljne funkcije u optimumu</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">x</span></code></p></td>
+<td><p>Optimalne vrednosti promenljivih</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">nit</span></code></p></td>
+<td><p>Broj iteracija optimizacije</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lower/upper.residual</span></code></p></td>
+<td><p>Udaljenost rešenja od granica promenljivih</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lower/upper.marginals</span></code></p></td>
+<td><p>Marginalne vrednosti (cene u senci, dualne vrednosti) za granice</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ineqlin.residual</span></code></p></td>
+<td><p>vrednost dodatne promenljive za ograničenja tipa nejednakosti</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ineqlin.marginals</span></code></p></td>
+<td><p>Cene u senci (dualne promenljive, marginalne vrednosti) za ograničenja tipa nejednakosti</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">eqlin.residual</span></code></p></td>
+<td><p>Slack za ograničenja tipa jednakosti</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">eqlin.marginals</span></code></p></td>
+<td><p>Dualne promenljive za ograničenja tipa jednakosti</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mip_node_count</span></code></p></td>
+<td><p>Broj čvorova za MIP (celobrojno programiranje)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mip_gap</span></code></p></td>
+<td><p>Razlika između najbolje integer i relax rešenja</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mip_dual_bound</span></code></p></td>
+<td><p>Dualna granica za MIP</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">linprog</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>linprog<span class="o">?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="primer-1">
+<h3>Primer 1.</h3>
+<p>Rešimo sledeći optimizacioni problem:
+$<span class="math notranslate nohighlight">\(\begin{aligned}  \min_{x,y}\, -x+4y&amp;\\
+    \text{uz uslove:}\quad  -3x+y &amp;\le 6,\\
+                            -x-2y &amp;\ge -4,\\
+                              y &amp;\ge -3,\end{aligned}\)</span>$</p>
+<ul class="simple">
+<li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>              <span class="c1"># Funkcija cilja</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>    <span class="c1"># Matrica linearnih ograničenja. Sva moraju biti oblika &lt;= za matricu A_ub</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>               <span class="c1"># desna strana lineranih ograničenja</span>
+<span class="n">x_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>  <span class="c1"># granice za prvu promenljivu. Podrazumevana vrednost je da su promenljive nenegativne.</span>
+<span class="n">y_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Rešenje problema</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">[</span><span class="n">x_bounds</span><span class="p">,</span> <span class="n">y_bounds</span><span class="p">])</span>  
+<span class="c1"># Objekat sa atributima koji reprezentuju rešenje optimizacionog problema</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        message: Optimization terminated successfully. (HiGHS Status 7: Optimal)
+        success: True
+         status: 0
+            fun: -22.0
+              x: [ 1.000e+01 -3.000e+00]
+            nit: 0
+          lower:  residual: [       inf  0.000e+00]
+                 marginals: [ 0.000e+00  6.000e+00]
+          upper:  residual: [       inf        inf]
+                 marginals: [ 0.000e+00  0.000e+00]
+          eqlin:  residual: []
+                 marginals: []
+        ineqlin:  residual: [ 3.900e+01  0.000e+00]
+                 marginals: [-0.000e+00 -1.000e+00]
+ mip_node_count: 0
+ mip_dual_bound: 0.0
+        mip_gap: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Interpretacija rezultata (Zaključak)</strong></p>
+<p>Optimalna vrednost funkcije je <span class="math notranslate nohighlight">\(z_{min}=-22\)</span>. Postiže se za vrednosti <span class="math notranslate nohighlight">\((x,y)=(10,-3)\)</span>.</p>
+<p>Komentari:</p>
+<ul class="simple">
+<li><p>Marginalna promena resursa u drugoj nejednačini za 1 dovodi do marginalne promene u funkciji cilja za 1 (Dualne promenljive, <code class="docutils literal notranslate"><span class="pre">ineqlin:</span> <span class="pre">marginals</span></code>)</p></li>
+<li><p>Resursi koje su opisani drugom nejednačinom su maksimalno iskorišteni, a resursi opisani prvom nejednačinom imaju dodatne kapacitete u vrednosti od 39 (Dodatne promenljive, <code class="docutils literal notranslate"><span class="pre">slack</span></code>).</p></li>
+</ul>
+</section>
+<section id="primer-2-silver-emm">
+<h3>Primer 2. <em>Silver (EMM)</em></h3>
+<p>Preduzeće „Silver“ koje proizvodi dva proizvoda, A i B, treba da odredi optimalan godišnji plan proizvodnje. Ugovorene obaveze su takve da se godišnje mora proizvesti i isporučiti najviše 3.000 proizvoda A i najmanje 1.000 proizvoda B. Za proizvodnju jednog proizvoda A treba utrošiti 6 časova rada, a za proizvod B 5 radnih časova. Godišnji kapacitet proizvodnje je 30.000 radnih časova. Takođe, tehnološki uslovi ne dozvoljavaju obim proizvodnje manji od 2.000 jedinica oba proizvoda. Profit po jedinici proizvoda A je 50 a proizvoda B 200 novčanih jedinica.</p>
+<ul class="simple">
+<li><p>Postavka modela</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(x_1\)</span>- količina proizvoda A, <span class="math notranslate nohighlight">\(x_2\)</span>- količina proizvoda B
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\max{50x_1+200x_2}&amp; \\
+\text{pri uslovima:}\,\, x_1&amp;\le 3000 \\
+                         x_2&amp;\ge 1000 \\
+                  6x_1+5x_2 &amp;\le 30000 \\
+                    x_1+x_2 &amp;\ge 2000
+\end{aligned}\)</span>$</p>
+<ul class="simple">
+<li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="o">-</span><span class="mi">200</span><span class="p">]</span>
+<span class="n">A</span><span class="o">=</span><span class="p">[[</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">30000</span><span class="p">,</span><span class="o">-</span><span class="mi">2000</span><span class="p">]</span>
+<span class="n">x1_bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">)</span>
+<span class="n">x2_bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Rešenje problema</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">[</span><span class="n">x1_bounds</span><span class="p">,</span> <span class="n">x2_bounds</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        message: Optimization terminated successfully. (HiGHS Status 7: Optimal)
+        success: True
+         status: 0
+            fun: 800.0
+              x: [ 2.500e+02  1.000e+02]
+            nit: 2
+          lower:  residual: [ 1.250e+02  1.000e+02]
+                 marginals: [ 0.000e+00  0.000e+00]
+          upper:  residual: [       inf        inf]
+                 marginals: [ 0.000e+00  0.000e+00]
+          eqlin:  residual: []
+                 marginals: []
+        ineqlin:  residual: [ 0.000e+00  0.000e+00]
+                 marginals: [-1.000e+00 -4.000e+00]
+ mip_node_count: 0
+ mip_dual_bound: 0.0
+        mip_gap: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Zaključak.</strong> Optimalan profit 1,200,000. Postiže se proizvodnjom od 6000 jedinica proizvoda B. Proizvodi se 4000 jedinica iznad tehnološkog minimuma(<code class="docutils literal notranslate"><span class="pre">ineqllin.residual</span></code>). Povećanjem radnih sati za 1 jedinicu, profit bi se uvećao za 40 jedinica (<code class="docutils literal notranslate"><span class="pre">ineqlin.marginals</span></code>)</p>
+</section>
+<section id="primer-3-selekcija-portfolija">
+<h3>Primer 3. <em>Selekcija portfolija</em></h3>
+<p>Razmotrimo sluchaj WMF kompanije, koja je konvertovala akcije u keš od 100,000$, i sada traži nove mogućnosti u koje bi investirala dati keš. Analitičari su proporučili da nove investicije budu u naftnoj industriji, industriji čelika ili vladine obveznice. Oni su identifikovali 5 mogućnosti za investiranje kao i projektovane godišnje stope prinosa. Te investicije kao i stope prinosa date su u sledećoj tabeli:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Investicija</p></th>
+<th class="head text-right"><p>Projektovana stopa</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Atlantic Oil</p></td>
+<td class="text-right"><p>7.3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Pacific Oil</p></td>
+<td class="text-right"><p>10.3</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Midwest Steel</p></td>
+<td class="text-right"><p>6.4</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Huber Steel</p></td>
+<td class="text-right"><p>7.5</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Government bonds</p></td>
+<td class="text-right"><p>4.5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Menadžment WMF kompanije postavio je sledeće preporuke u vezi investicija:</p>
+<ul class="simple">
+<li><p>Ne ulagati vishe od 50,000$ u bilo koju industrijsku granu</p></li>
+<li><p>Iznos investiran u vladine akcije mora iznositi najmanje 25% investicije u industriju čelika</p></li>
+<li><p>Investicija u Pacific Oil je visoko rizična, i ne treba da iznosi vishe od 60% ukupnih investicija u naftnu industriju</p></li>
+</ul>
+<p>Preporučiti portfolio, odnosno, koje investicije odobrati i koje količine novca u njih uložiti, ako kompanija može da uloži 100, 000$</p>
+<p><strong>Rešenje:</strong></p>
+<ul class="simple">
+<li><p>matematički model</p></li>
+</ul>
+<p>Neka je <span class="math notranslate nohighlight">\(x_i\)</span> - količina novca uložena u investiciju <span class="math notranslate nohighlight">\(i \in \{1,2,3,4,5\}\)</span> redom iz tabele.
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\max{0.073x_1 + 0.103x_2 + 0.064x_3 + 0.075x_4 + 0.045x_5}&amp; \\
+     \text{pri uslovima:}\,\, x_1 + x_2 + x_3 + x_4 + x_5 &amp;\le 100000 \\
+                                                x_1 + x_2 &amp;\le 50000 \\
+                                                x_3 + x_4 &amp;\le 50000 \\
+                                                      x_5 &amp;\ge 0.25(x_3 + x_4) \\
+                                                      x_2 &amp;\le 0.6(x_1+x_2)\\
+                                                 \end{aligned}\)</span>$</p>
+<ul class="simple">
+<li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.073</span><span class="p">,</span> <span class="mf">0.103</span><span class="p">,</span> <span class="mf">0.064</span><span class="p">,</span> <span class="mf">0.075</span><span class="p">,</span> <span class="mf">0.045</span><span class="p">])</span>
+<span class="c1"># metod optimizuje samo problem minimuma, zato negativni znak u funkciji cilja</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Rešenje problema</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>  <span class="c1"># Nije potrebno imenovati parametre ako se unose redom</span>
+                  <span class="c1"># Podrazumeva se da su promenljive nenegativne</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        message: Optimization terminated successfully. (HiGHS Status 7: Optimal)
+        success: True
+         status: 0
+            fun: -8000.0
+              x: [ 2.000e+04  3.000e+04  0.000e+00  4.000e+04  1.000e+04]
+            nit: 3
+          lower:  residual: [ 2.000e+04  3.000e+04  0.000e+00  4.000e+04
+                              1.000e+04]
+                 marginals: [ 0.000e+00  0.000e+00  1.100e-02  0.000e+00
+                              0.000e+00]
+          upper:  residual: [       inf        inf        inf        inf
+                                    inf]
+                 marginals: [ 0.000e+00  0.000e+00  0.000e+00  0.000e+00
+                              0.000e+00]
+          eqlin:  residual: []
+                 marginals: []
+        ineqlin:  residual: [ 0.000e+00  0.000e+00  1.000e+04  0.000e+00
+                              0.000e+00]
+                 marginals: [-6.900e-02 -2.200e-02 -0.000e+00 -2.400e-02
+                             -3.000e-02]
+ mip_node_count: 0
+ mip_dual_bound: 0.0
+        mip_gap: 0.0
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Interpretacija rezultata.</p></li>
+</ul>
+<p><strong>Rezultati:</strong> Optimalna vrednost portfolija je 8000. Treba uložiti 20000, 30000, 0, 40000, 10000 redom u investicije iz tabele. Svi resursi osim ulaganja u industriju čelika su maksimalno iskorišćeni.</p>
+<br>
+</section>
+</section>
+<section id="mesoviti-problem-linearnog-programiranja">
+<h2>Mešoviti problem linearnog programiranja</h2>
+<p>Mešovito linearno programiranje (MILP) je proširenje standardnog linearnog programiranja u kojem neke promenljive mogu da budu decimalne ili realne vrednosti, dok druge moraju imati celobrojne vrednosti (npr. 0, 1, 2…). Takva situacija se javlja u mnogim realnim problemima gde se donose diskretne odluke: da li nešto uključiti ili isključiti, kupiti ili ne kupiti, izabrati ili odbaciti.</p>
+<p>Primeri realnih odluka koje zahtevaju celobrojne promenljive:</p>
+<ul class="simple">
+<li><p>broj zaposlenih (ne može biti 3.7 osobe),</p></li>
+<li><p>broj mašina ili kamiona,</p></li>
+<li><p>da li proizvodimo neki proizvod (1) ili ne (0),</p></li>
+<li><p>binarne odluke — ulagati ili ne,</p></li>
+<li><p>broj otvaranih objekata, skladišta, fabrika itd.</p></li>
+</ul>
+<p>MILP omogućava kombinovanje neprekidnih promenljivih (npr. količina proizvoda), celobrojnih promenljivih (npr. broj jedinica) i
+binarnih promenljivih (0 ili 1 — tipično za odluke).</p>
+<p>Zašto nam MILP treba?</p>
+<p>Standardni LP modeli su glatki, brzi i lepi za matematičku analizu, ali ne mogu da modeliraju odluke koje su diskretne. MILP rešava taj problem — uvodi „rigidnost“ odlučivanja.</p>
+<p>MILP je moćniji, ali i znatno teži za računanje od LP-a, jer uključuje kombinatornu eksploziju mogućih rešenja. Zbog toga moraju da se koriste napredni algoritmi.</p>
+<section id="model-mlp">
+<h3>Model MLP</h3>
+<p>Rešavamo problem oblika:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\min_{x}c^T&amp;x \\
+\text{uz uslove:}\qquad b_l &amp;\le Ax \le b_u,\\
+                      l &amp;\le x \le u,\\
+                    x_i &amp;\in\Bbb{Z}, i\in X_i\end{aligned}\end{split}\]</div>
+<p>gde je <span class="math notranslate nohighlight">\(x\)</span> vektor promenljivih; <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(b_l\)</span>, <span class="math notranslate nohighlight">\(b_u\)</span>, <span class="math notranslate nohighlight">\(l\)</span> i <span class="math notranslate nohighlight">\(u\)</span> vektori; <span class="math notranslate nohighlight">\(A\)</span> je matrica, i <span class="math notranslate nohighlight">\(X_i\)</span> je skup indeksa promenljivih koje moraju biti celobrojne (integralne).</p>
+</section>
+<section id="id1">
+<h3>Primer 1.</h3>
+<p>Sledi standardni primer problema ovog tipa sa Wikipedije.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\max_{x,y}\,\, &amp;y \\
+\quad\text{uz uslove:}\,   -x+y  &amp;\le 1,\\
+                          3x+2y &amp;\le 12,\\  
+                          2x+3y &amp;\le 12,\\
+                            x,y &amp;\ge 0,\\
+                            x,y &amp;\in\Bbb{Z} \end{aligned}\end{split}\]</div>
+<p>Zadatak ćemo rešiti metodom linprog specifikacijom parametra <code class="docutils literal notranslate"><span class="pre">integrality</span></code>. Naime, integrality je lista dužine jednake broju promenljivih u problemu, čije vrednosti ukazuju na tip svake promenljive.  Podrazumevana vrednost te liste su sve nule, odnosno da su sve promanljive realne. Ako se nekom elementu te liste dodeli 1, to znači da je ta promenljive celobrojna. Postoji i druge mogućnosti, koje se mogu videti preko <code class="docutils literal notranslate"><span class="pre">linprog?</span></code>.</p>
+<p>Na slici koja sledi je grafička interpretacija problema. Očigledno, problem ima optimalno rešenje 2 koje se postiže u tačkama (1,2) i (2,2).</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="_images/mlp.png"><img alt="_images/mlp.png" src="_images/mlp.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 15. </span><span class="caption-text">Grafička interpretacija problema (Izvor: Wikipedia)</span></p>
+</figcaption>
+</figure>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">linprog</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>          <span class="c1"># nije nam neophodan, ali je komotnije sa njim</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># vektor koji definiše funkciju cilja. Znak minus je ispred c, jer je podrazumevana minimizacija.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>  <span class="c1"># matrica ograničenja</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>              <span class="c1"># vektor gornjih ograničenja za svaki linearni uslov </span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celobrojnost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>         <span class="c1"># Sve promenljive su celobrojne  </span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Rešenje problema</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">celobrojnost</span><span class="p">)</span> <span class="c1"># objekat, referiše na rešenje optimizacionog problema</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>  <span class="c1"># preuzimamo samo rešenja jer dualnost kod mlp ne važi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-2.0, array([2., 2.]))
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Zaključak.</strong> Optimalno rešenje je <span class="math notranslate nohighlight">\(\max y = -(-2)=2\)</span> i postiže se za vrednosti promenljivih <span class="math notranslate nohighlight">\((x,y)=(2,2)\)</span></p>
+</section>
+<section id="primer-2-budzetiranje">
+<h3>Primer 2.  <em>Budžetiranje</em></h3>
+<p>Kompanija ICR razmatra investiranje u nekoliko projekata za koje je karakteristično da neophodan kapital varira u sledeće 4 godine. Suočen sa ograničenim kapitalom svake godine, menadžment želi da izabere najprofitabilnije projekte koje može da priušti. Procenjena NPV svakog projekta, zahtevi za kapitalom kao i dostupan kapital u toku 4 godine prikazan je u tabeli:</p>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id15">
+<caption><span class="caption-number">Tabela 12. </span><span class="caption-text">Procenjena NPV svakog projekta, zahtevi za kapitalom kao i dostupan kapital u toku 4 godine</span></caption>
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-right"><p>Proširenje fabrike</p></th>
+<th class="head text-right"><p>Novo sladište</p></th>
+<th class="head text-right"><p>Nove mašine</p></th>
+<th class="head text-right"><p>Nov proizvod</p></th>
+<th class="head text-right"><p>Ukupan kapital</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Sadašnja vrednost</p></td>
+<td class="text-right"><p>90,000</p></td>
+<td class="text-right"><p>40,000</p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>37,000</p></td>
+<td class="text-right"><p>Dostupno</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Neophodan kapital, 1.g.</p></td>
+<td class="text-right"><p>15,000</p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>15,000</p></td>
+<td class="text-right"><p>40,000</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Neophodan kapital, 2.g.</p></td>
+<td class="text-right"><p>20,000</p></td>
+<td class="text-right"><p>15,000</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>50,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Neophodan kapital, 3.g.</p></td>
+<td class="text-right"><p>25,000</p></td>
+<td class="text-right"><p>20,000</p></td>
+<td class="text-right"><p></p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>40,000</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Neophodan kapital, 4.g.</p></td>
+<td class="text-right"><p>15,000</p></td>
+<td class="text-right"><p>5,000</p></td>
+<td class="text-right"><p>4,000</p></td>
+<td class="text-right"><p>10,000</p></td>
+<td class="text-right"><p>35,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Kod budžetiranja kapitala, cilj kompanije je maksimiziranje ukupne neto sadašnje vrednosti svih projekata.</p>
+<p><strong>Rešenje:</strong></p>
+<ul class="simple">
+<li><p>matematički model</p></li>
+</ul>
+<p>Neka je <span class="math notranslate nohighlight">\(x_i \in \{0,1\}\)</span> - indikator da li je izabran projekat <span class="math notranslate nohighlight">\(i \in \{1,2,3,4\}\)</span> redom iz tabele.
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\max{90x_1+40x_2+10x_3+37x_4}&amp; \\
+\text{pri uslovima:}\,\, 15x_1+10x_2+10x_3+15x_4&amp;\le 40 \\
+                         20x_1+15x_2+      10x_4&amp;\le 50 \\
+                         25x_1+20x_2+     10x_4&amp;\le 40 \\
+                         15x_1+ 5x_2+  4x_3+10x_4&amp;\le 35\\
+                         x_1,x_2,x_3,x_4&amp;\in\{0,1\}
+\end{aligned}\)</span>$</p>
+<ul class="simple">
+<li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">37</span><span class="p">])</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span>
+<span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">35</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ogranicenja_promenljivih</span><span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))]</span>  <span class="c1"># ili [(0,1), (0,1),(0,1), (0,1) ]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celobrojnost</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Rešenje:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">celobrojnost</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">ogranicenja_promenljivih</span><span class="p">)</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-137.0, array([1., 0., 1., 1.]))
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Interpretacija rezultata:</p></li>
+</ul>
+<p>Treba budžetirati: Proširenje fabrike, nove mašine i nov proizvod. Neto efekat 137,000.</p>
+</section>
+<section id="primer-3-fiksni-troskovi">
+<h3>Primer 3. Fiksni troškovi</h3>
+<p>Posmatrajmo problem proizvodnje kompanije RMC. Ona koristi tri materijala kako bi proizvela tri proizvoda: aditiv za gorivo, bazu rastvarača i sredstvo za čišćenje tepiha. Profit po toni aditiva je <span class="math notranslate nohighlight">\(40\)</span>, po toni rastvarača <span class="math notranslate nohighlight">\(30\)</span> i <span class="math notranslate nohighlight">\(50\)</span> po toni sredstva za čišćenje tepiha. Za svaku tonu aditiva neophodno je <span class="math notranslate nohighlight">\(0.4t\)</span> materijala 1 i <span class="math notranslate nohighlight">\(0.6t\)</span> materijala 3. Za svaku tonu rastvarača neophodno je <span class="math notranslate nohighlight">\(0.5t\)</span> materijala 1, <span class="math notranslate nohighlight">\(0.2t\)</span> materijala 2 i <span class="math notranslate nohighlight">\(0.3t\)</span> materijala 3. Za svaku tonu sredstva za čišćenje neophodno je <span class="math notranslate nohighlight">\(0.6t\)</span> materijala 1, <span class="math notranslate nohighlight">\(0.1t\)</span> materijala 2 i <span class="math notranslate nohighlight">\(0.3t\)</span> materijala 3. RMC ima <span class="math notranslate nohighlight">\(20t\)</span> materijala 1, <span class="math notranslate nohighlight">\(5t\)</span> materijala 2 i <span class="math notranslate nohighlight">\(21t\)</span> materijala 3, a menadžment je zainteresovan za optimalan plan proizvodnje u sledećem periodu.</p>
+<p>U sledećoj tabeli dati su fiksni troškovi kao i maksimalne proizvodne mogućnosti kompanije RMC</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Proizvod</p></th>
+<th class="head text-center"><p>Fiksni troškovi</p></th>
+<th class="head text-center"><p>Maksimalna proizvodnja</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Aditiv</p></td>
+<td class="text-center"><p>200</p></td>
+<td class="text-center"><p>50</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Baza</p></td>
+<td class="text-center"><p>50</p></td>
+<td class="text-center"><p>25</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Sredstvo za č.</p></td>
+<td class="text-center"><p>400</p></td>
+<td class="text-center"><p>40</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Rešenje:</strong></p>
+<ul class="simple">
+<li><p>Matematički model.</p></li>
+</ul>
+<p>Neka su <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> i <span class="math notranslate nohighlight">\(x_3\)</span> nepoznate količine koje treba proizvesti, <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span> i <span class="math notranslate nohighlight">\(y_3\)</span> indikatori postojanja fiksnih fiksnih troškova, tada na osnovu podataka imamo sledeći model:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+\max{40x_1+30x_2+50x_3-200y_1-50y_2-400y_3}&amp; \\
+\text{pri uslovima:}\,\, 0.4x_1+0.5x_2+0.6x_3&amp;\le 20 \\
+                                0.2x_2+0.1x_3&amp;\le 5 \\
+                         0.6x_1+0.3x_2+0.3x_3&amp;\le 21 \\
+                                          x_1&amp;\le 50y_1 \\
+                                          x_2&amp;\le 25y_2 \\
+                                          x_3&amp;\le 40y_3\\
+                               x_1, x_2, x_3 &amp;\ge 0 \\                 
+                                  y_1,y_2,y_3&amp;\in\{0,1\}
+\end{aligned}\end{split}\]</div>
+<ul class="simple">
+<li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">])</span>   <span class="c1"># Funkcija cilja</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>         <span class="c1"># matrica linearnih uslova</span>
+            <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">]])</span>
+            
+<span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>                <span class="c1"># gornja ograničenja linearnih uslova</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Promenljive:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ogranicenja_promenljivih</span><span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="kc">None</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tip promenljivih:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celobrojnost</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Prve tri su realne promenljive, a poslednje tri celobrojne</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Rešenje problema.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">celobrojnost</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">ogranicenja_promenljivih</span><span class="p">)</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1350.0000000000002, array([25., 20., -0.,  1.,  1., -0.]))
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Interpretacija rezultata.</p></li>
+</ul>
+<p>Maksimalni dnevni profit je 1350$ i postiže se ako proizvodimo 25 tona aditiva i 20 tona baze.</p>
+<br>
+</section>
+</section>
+<section id="vezbanja">
+<h2>Vežbanja</h2>
+<section id="zadatak-1">
+<h3>✍️ Zadatak 1.</h3>
+<p>Kompanija M&amp;D Chemicals prodaje sirove hemikalije <span class="math notranslate nohighlight">\(A\)</span> i <span class="math notranslate nohighlight">\(B\)</span>. Ukupna mesečna proizvodnja mora da iznosi barem 350 galona. Ugovor sa jednim dobavljačem obavezuje ih da proizvode 125 galona hemikalije <span class="math notranslate nohighlight">\(A\)</span> na mesečnom nivou. Proizvod <span class="math notranslate nohighlight">\(A\)</span> zahteva 2 sata obrade, a proizvod <span class="math notranslate nohighlight">\(B\)</span> jedan sat. Mesečni kapaciteti su 600 radnih sati. Troškovi proizvodnje hemikalije <span class="math notranslate nohighlight">\(A\)</span> su 2 dolara po galonu, a hemikalije <span class="math notranslate nohighlight">\(B\)</span> $3 dolara po proizvedenom galonu.</p>
+<p>Minimiziraj troškove proizvodnje ove kompanije uzimajući u obzir njihove ugovorene obaveze.</p>
+<section id="resenje">
+<h4>Rešenje:</h4>
+<p>Optimizacioni model:</p>
+<p>Označimo sa <span class="math notranslate nohighlight">\(x_1\)</span> količinu proizvedene hemikalije A, a sa <span class="math notranslate nohighlight">\(x_2\)</span> količinu proizvedene hemikalije B. Tada važi:
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\min{2x_1+3x_2}&amp; \\
+\text{pri uslovima:}\,\, x_1&amp;\ge 125 \\
+                   2x_1+ x_2 &amp;\le 600 \qquad\text{(kapaciteti radnih sati)}\\
+                    x_1+x_2 &amp;\ge 350 \qquad \text{(minimalna proizvodnja)} \\
+                        x_1 &amp;\ge 125 \\
+\end{aligned}\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">A</span><span class="o">=</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">600</span><span class="p">,</span><span class="o">-</span><span class="mi">350</span><span class="p">]</span>
+<span class="n">x1_bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">125</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">x2_bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">[</span><span class="n">x1_bounds</span><span class="p">,</span><span class="n">x1_bounds</span><span class="p">])</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">ineqlin</span><span class="o">.</span><span class="n">marginals</span><span class="p">,</span>  <span class="n">res</span><span class="o">.</span><span class="n">ineqlin</span><span class="o">.</span><span class="n">residual</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(825.0, array([225., 125.]), array([-0., -2.]), array([25.,  0.]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interpretacija dobijenih inforamcija:</p>
+<ul class="simple">
+<li><p>Minimalni troškovi od 825, postižu se proizvodnjom 225 galona hemikalije A i 125 galona hemikalije B.</p></li>
+<li><p>Povećanjem/smanjenjem ograničenja u vezi minimalne proizvodnje za 1 galon dovodi do povećanja/smanjenja troškova za 2 jedinice. (dualne promenljive - marginals)</p></li>
+<li><p>Radna snaga nije maksimalno iskorišćena. Imamo 25 neangažovanih sati. Pa bi trebalo razmotriti povećanje proizvodnih kapaciteta. (dopunske promenljive - residual)</p></li>
+</ul>
+</section>
+</section>
+<section id="zadatak-2">
+<h3>✍️ Zadatak 2.</h3>
+<p>Adirondack Savings Bank (ASB) ima milion dolara novih sredstava koji moraju biti raspodeljena na stambene kredite, lične zajmove i automobilske kredite. Godišnje stope prinosa za tri vrste kredita su 7% za stambene kredite, 12% za lične kredite i 9% za automobilski krediti. Odbor je odlučio da najmanje 40% od novih sredstava mora biti izdvojeno za stambene kredite. Pored toga, odbor za planiranje ima precizirano da iznos koji se izdvaja za lične kredite ne može biti veći od 60% iznosa koji se izdvaja za automobilske kredite.</p>
+<p>Formulisati model linearnog programiranja koji se može koristiti za određivanje količine sredstva ASB treba da dodeli svakoj vrsti kredita kako bi se maksimizirao ukupan godišnji prinos za nova sredstva. Koliko treba izdvojiti za svaku vrstu kredita? Koliki je ukupan godišnji prinos?</p>
+<section id="id2">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">linprog</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.07</span><span class="p">,</span> <span class="mf">1.12</span><span class="p">,</span> <span class="mf">1.09</span><span class="p">])</span> <span class="c1"># x1 Stambeni kredit, x2 Lične krediti, x3 Automobilski krediti</span>
+
+<span class="n">A_ub</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">]]</span> <span class="c1"># x2 &lt;= 0.6 x3</span>
+<span class="n">b_ub</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">A_eq</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span> <span class="c1"># x1 + x2 + x3 = 1</span>
+<span class="n">b_eq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">x1_bounds</span><span class="o">=</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">x2_bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">x3_bounds</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A_ub</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b_ub</span><span class="p">,</span> <span class="n">A_eq</span><span class="o">=</span><span class="n">A_eq</span><span class="p">,</span> <span class="n">b_eq</span><span class="o">=</span><span class="n">b_eq</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="p">[</span><span class="n">x1_bounds</span><span class="p">,</span> <span class="n">x2_bounds</span><span class="p">,</span> <span class="n">x3_bounds</span><span class="p">])</span>
+<span class="n">res</span><span class="o">.</span><span class="n">x</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.4  , 0.225, 0.375])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za stambene, lične i automobilske kredite izdvajamo redom: <code class="docutils literal notranslate"><span class="pre">400000,</span> <span class="pre">225000,</span> <span class="pre">375000</span></code></p>
+</section>
+</section>
+<section id="zadatak-3">
+<h3>✍️ Zadatak 3.</h3>
+<p>Bolnica mora da rasporedi medicinske sestre tako da se pacijentima bolnice obezbedi adekvatna nega.  Na osnovu evidencije u prethodnim periodima, administratori mogu da projektuju minimumalan broj medicinskih sestara koje treba da budu na radnom mestu u zavisnosti od vremenskog razdoblja i dana u nedelji. Naš zadatak je da pronađemo minimalan ukupni  broj medicinskih sestara potrebnih za obezbeđivanje adekvatne nege. Medicinske sestre počinju sa radom na početku bilo koje smene od 4 sata i rade 8 sati ukupno. Formulisati i rešiti problem rasporeda medicinskih sestara kao celobrojni program za jedan dan koristeći podatke ispod.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Smena</p></th>
+<th class="head text-center"><p>Vreme</p></th>
+<th class="head text-center"><p>Minimalan broj sestara</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>1</p></td>
+<td class="text-center"><p>00-04</p></td>
+<td class="text-center"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>2</p></td>
+<td class="text-center"><p>04-08</p></td>
+<td class="text-center"><p>12</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>3</p></td>
+<td class="text-center"><p>08-12</p></td>
+<td class="text-center"><p>14</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>4</p></td>
+<td class="text-center"><p>12-16</p></td>
+<td class="text-center"><p>8</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>5</p></td>
+<td class="text-center"><p>18-20</p></td>
+<td class="text-center"><p>13</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
+<td class="text-center"><p>20-24</p></td>
+<td class="text-center"><p>10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="id3">
+<h4>Rešenje:</h4>
+<p>Optimizacioni model:</p>
+<p>Označimo sa <span class="math notranslate nohighlight">\(x_i\)</span> broj sestara u smenama <span class="math notranslate nohighlight">\(i\)</span> i <span class="math notranslate nohighlight">\(i+1\)</span>, <span class="math notranslate nohighlight">\(i=1,2,3,4,5\)</span>, i sa <span class="math notranslate nohighlight">\(x_6\)</span> broj sestara u smenama <span class="math notranslate nohighlight">\(6\)</span> i <span class="math notranslate nohighlight">\(1\)</span>. Tada treba optimizovati sledeći zadatak celobrojnog programiranja:
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\min{x_1+x_2+x_3+x_4+x_5+x_6}&amp; \\
+\text{pri uslovima:}\,\, x_1+x_2 &amp;\ge 5 \\
+                    \,\, x_2+x_3 &amp;\ge 12 \\
+                    \,\, x_3+x_4 &amp;\ge 14 \\
+                    \,\, x_4+x_5 &amp;\ge 8 \\
+                    \,\, x_5+x_6 &amp;\ge 13 \\
+                    \,\, x_6+x_1 &amp;\ge 10 \\
+                    x_1, x_2, x_3, x_4, x_5, x_6 &amp;\in \Bbb Z \\
+ \end{aligned}\)</span>$</p>
+<ul class="simple">
+<li><p>Parametri koji se prosleđuju metodu linprog</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="n">A</span><span class="o">=</span><span class="p">[[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+   <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">13</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">tip_p</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># sve promenljive su celobrojne</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Rešenje problema</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">tip_p</span><span class="p">)</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(37.0, array([10.,  0., 14.,  0., 13.,  0.]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interpretacija dobijenih rezultata:</p>
+<ul class="simple">
+<li><p>U prve dve smene treba da radi 10 sestara, u trećoj i četvrtoj smeni 14 sestara, a u petoj i šestoj 13 sestara. Minimalan broj sestara je 37.</p></li>
+</ul>
+</section>
+</section>
+<section id="zadatak-4">
+<h3>✍️ Zadatak 4.</h3>
+<p>Umetnička galerija razmatra uvođenje novog, naprednijeg, sistema kamera u svoje prostorije kako bi smanjila premiju osiguranja. Galerija se sastoji od osam soba unutar kojih su izložena umetnička dela, kao i od 13 otvorenih prolaza između njih kao što je i prikazano na skici. Kompanija zadužena za obezbeđenje galerije predložila je uvođenje sigurnosnih kamera sa mogućnošću prostornog snimanja. Te kamere, ako bi se locirale na prolazima između dve prostorije mogle bi da pokriju slikom obe prostorije. Primera radi, kamera instalirana pri vrhu prolaza 4 pokrila bi u potpunosti slikom i sobu 1 i sobu 4. Menadžment je takođe odlučio da se kamera ne nalazi na samom ulazu u galeriju.</p>
+<ul class="simple">
+<li><p>Kreirajte model pomoću kojeg ćete odrediti kako ugraditi kamere tako da one pokriju sve prostorije, uz minimalni broj instaliranih kamera.</p></li>
+<li><p>Najvredniji eksponat galerije nalazi se u sobi 7. Vlasnik je nakon uvida u prvo rešenje zahtevao da se stvar revidira tako da soba broj 7 bude pokrivena sa bar dve kamere. Modifikujte vaš model u novoj ćeliji i odredite optimalni raspored i optimalni broj kamera u tom sluchaju.</p></li>
+</ul>
+<p>Skica galerija predstavljena je na sledeći način:</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="_images/sobe.png"><img alt="_images/sobe.png" src="_images/sobe.png" style="width: 450px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 16. </span><span class="caption-text">Skica galerije</span></p>
+</figcaption>
+</figure>
+<section id="id4">
+<h4>Rešenje:</h4>
+<p>Optimizacioni model:</p>
+<p>Označimo sa <span class="math notranslate nohighlight">\(x_i\)</span>, <span class="math notranslate nohighlight">\(i=1, \ldots 13\)</span>, indikator da li je na otvorenom prolazu <span class="math notranslate nohighlight">\(i\)</span> postavljena kamera. Tada treba optimizovati sledeći zadatak 0-1 celobrojnog programiranja:
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\min{x_1+x_2+x_3+x_4+x_5+x_6+x_7+x_8+x_9+x_{10}+x_{11}+x_{12}+x_{13}}&amp; \\
+\text{pri uslovima:}\,\, x_1+x_4 + x_6   &amp;\ge 1 \,\,\text{(soba 1)}\\  
+                    \,\, x_6+x_8 +x_{12} &amp;\ge 1 \,\,\text{(soba 2)}\\
+                    \,\, x_1+x_2 + x_3 &amp;\ge 1 \,\,\text{(soba 3)}\\
+                    \,\, x_3+x_4 + x_5 &amp;\ge 1 \,\,\text{(soba 4)}\\
+                    \,\, x_7+x_8 + x_9+x_{10} &amp;\ge 1 \,\,\text{(soba 5)}\\
+                    \,\, x_{10}+x_{12} + x_{13} &amp;\ge 1 \,\,\text{(soba 6)}\\
+                    \,\, x_2+x_5 + x_9 + x_{11}&amp;\ge 1 \,\,\text{(soba 7)}\\
+                \,\, x_{11}+x_{13}  &amp;\ge 1 \,\,\text{(soba 8)}\\
+                      x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10}, x_{11}, x_{12} &amp;\in \{0,1\} \\
+ \end{aligned}\)</span>$</p>
+<p>Rešenje problema u Pythonu pomoću modula linprog:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>   <span class="c1">#soba 1</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>   <span class="c1">#soba 2</span>
+             <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>   <span class="c1">#soba 3</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>   <span class="c1">#soba 4</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>   <span class="c1">#soba 5 </span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>   <span class="c1">#soba 6</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>   <span class="c1">#soba 7</span>
+             <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>  <span class="c1">#soba 8</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">13</span><span class="p">)]</span>
+<span class="n">tip_prom</span> <span class="o">=</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">tip_prom</span><span class="p">)</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4.0, array([ 0.,  0.,  1., -0., -0.,  1.,  0., -0.,  0.,  1.,  1.,  0., -0.]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Interpretacija dobijenih rezultata:</p>
+<ul class="simple">
+<li><p>Treba postaviti kamere na prolaze broj 3, 6, 11 i 12</p></li>
+</ul>
+<p>Ako za sobu 7 treba 2 kamere, promenićemo uslov za tu sobu …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">=-</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="n">A</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="n">b</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">tip_prom</span><span class="p">)</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5.0, array([0., 1., 0., 0., 1., 1., 0., 0., 0., 1., 1., 0., 0.]))
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sada treba postaviti kamere na prolaze broj 2, 5, 6, 10 i 11</p>
+</section>
+</section>
+<section id="zadatak-5">
+<h3>✍️ Zadatak 5.</h3>
+<p>Telefonska kompanija proizvodi i prodaje dve vrste telefona, i to fiksne i mobilne telefone. Svaki tip telefona sastavlja i farba kompanija. Cilj je da se maksimizira profit, a kompanija mora da proizvede najmanje 100 komada svakog tipa telefona.</p>
+<p>Postoje ograničenja u pogledu proizvodnih kapaciteta kompanije, a kompanija mora da izračuna optimalan broj svakog tipa telefona za proizvodnju, a da ne premaši kapacitet fabrike. Vreme potrebno za proizvodnju fiksnog telefona je 20 minuta, dok je za mobilni potrebno 40min. Za farbanje mobilog telefona utroši se 40min, a za fiksni 50min.</p>
+<ul class="simple">
+<li><p>Raspoloživost mašine za farbanje: 490h</p></li>
+<li><p>Raspoloživost mašine za proizvodnju: 400h</p></li>
+<li><p>Zarada za fiksni telefon: 120 dolara</p></li>
+<li><p>Zarada za mobilni telefon: 200 dolara</p></li>
+</ul>
+<p>Pronađite optimalno rešenje gde će kompanija imati maksimalan profit i odredite koji je to optimalan broj mobilnih i fiksnih telefona.</p>
+<p><strong>Dodatak:</strong> Binarne promenljive se često koriste za modeliranje odluka da/ne.</p>
+<p>Razmotrite ponovo problem proizvodnje telefona. Kompanija razmatra zamenu mašine za sklapanje novijom mašinom koja zahteva manje vremena za mobilne telefone, odnosno 25 minuta po telefonu, ali više vremena za fiksne telefone, odnosno 15 minuta više po telefonu. Ova mašina je dostupna 430 sati, za razliku od 400 sati postojeće mašine za sklapanje, jer zahteva manje zastoja.</p>
+<p>Ograničenje mašine za farbanje je identično.
+Dva dodatna ograničenja izražavaju ukupnu proizvodnju kao zbir proizvodnje na dve mašine za proizvodnju.
+Svaki tip mašine za proizvodnju ima svoje ograničenje, u kome promenljiva z izražava isključivi izbor između njih.</p>
+<p>Dizajnirati i napisati model koji koristi binarne promenljive da pomogne kompaniji da izabere između dve mašine.</p>
+<p>Koraci za formulisanje mešovitog celobrojnog modela su:</p>
+<ul class="simple">
+<li><p>Dodajte četiri nove varijable (da biste naznačili proizvodnju na mašinama za sklapanje 1 i 2)</p></li>
+<li><p>Dodajte dva ograničenja da biste definisali ukupnu proizvodnju fiksnih i mobilnih da biste izjednačili zbir proizvodnje od dve mašine za sklapanje</p></li>
+<li><p>Ponovo napišite ograničenje za mašinu za proizvodnju 1 da biste koristili nove promenljive za tu mašinu</p></li>
+<li><p>Dodajte slično ograničenje za proizvodnju na mašini 2</p></li>
+<li><p>Definišite Bulovu promenljivu koja će da uzme vrednost 1 ako je izabrana mašina 1 i 0 ako je izabrana mašina 2</p></li>
+<li><p>Koristite z promenljivu da postavite proizvodnju na nulu za mašinu koja nije izabrana</p></li>
+</ul>
+<section id="id5">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">24000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">25800</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">29400</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">25800</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="o">-</span><span class="mi">100</span><span class="p">]</span>
+
+<span class="n">x1_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">x2_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">x3_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">x4_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span>
+<span class="n">x5_bounds</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">celobrojnost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">celobrojnost</span><span class="p">,</span> <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="n">x1_bounds</span><span class="p">,</span> <span class="n">x2_bounds</span><span class="p">,</span> <span class="n">x3_bounds</span><span class="p">,</span> <span class="n">x4_bounds</span><span class="p">,</span> <span class="n">x5_bounds</span><span class="p">])</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-134000.0, array([  0., 100.,   0., 610.,   0.]))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h3>✍️ Zadatak 5.</h3>
+<p>Razmatrate uređivačku šemu jedne televizije. U toku svog prajm termina oni razmatraju uži krug od devet pilot emisija (i serija). Vremenska ograničenja su takva da će morati da se odluče za pet koje će i započeti emitovanje. Devet emisija u razmatranju prikazane su u Excel fajlu <code class="docutils literal notranslate"><span class="pre">SciPy_Podaci/filmovi.xlsx</span></code>, njihov očekivani prihod kroz reklame, kao i kategorija. Emisije se po ranije definisanoj kategorizaciji svrstavaju u bar jednu od četiri kategorije: dokumentarna, horor, komedija, drama. Televizijska kuća odlučuje koje emisije da ubaci u program vodeći se isključivo idejom
+maksimizacije prihoda. Ipak, suočeni su i sa sledećim ograničenjima:</p>
+<ul class="simple">
+<li><p>Neophodno je da u ponudi bude dokumentarnih emisija, makar u istom obimu kao i horor serija.</p></li>
+<li><p>Fokus grupe su im pokazale da pokretanje dokumentarne emisije Loving Life treba da prati pokretanje najmanje jedne od sledećih emisija: Jarred ili Cincinnati Law.</p></li>
+<li><p>Odluka je da se puxta najviše jedna od serija koje su procenjene da će biti zanimljive mlađoj populaciji: Loving Life i Urban Sprawl.</p></li>
+<li><p>Procena je da uvođenje više od jedne horor serije donosi gubitak prihoda od 4 miliona zbog manjeg interesovanja pojedinih sponzora.</p></li>
+</ul>
+<p>(i) Ispišite model i objasnite svaku nejednačinu, probajte da svaki uslov postavite kao (ne)jednačinu.</p>
+<p>(ii) Odredite optimalnu selekciju emisija pomoću koje bi televizija maksimizirala svoje prihode.</p>
+<section id="id7">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;Scipy_Podaci/filmovi.xlsx&#39;</span><span class="p">,</span> <span class="n">skiprows</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Prihod </span><span class="se">\n</span><span class="s1">(u milionima)&#39;</span><span class="p">:</span> <span class="s1">&#39;Prihod (u milionima)&#39;</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="n">mapping</span><span class="p">)</span>
+
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Emisija</th>
+      <th>Prihod (u milionima)</th>
+      <th>Dokumentarac</th>
+      <th>Horor</th>
+      <th>Komedija</th>
+      <th>Drama</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Sam's Place</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Texas Oil</td>
+      <td>10</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Cincinnati Law</td>
+      <td>9</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Jarred</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Bob &amp; Mary</td>
+      <td>5</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Chainsaw</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Loving Life</td>
+      <td>6</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Islanders</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Urban Sprawl</td>
+      <td>8</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Prihod (u milionima)&#39;</span><span class="p">])</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># x1 - Sam&#39;s Place, x2 - Texas Oil, x3 - Cincinnati Law, x4 - Jarred, x5 - Bob &amp; Mary, x6 - Chainsaw, x7 - Loving Life, x8 - Islanders, x9 - Urban Sprawl	</span>
+
+<span class="c1"># Dodajem i varijablu x10 - Da li postoji više od jedne horor emisije?</span>
+
+<span class="c1"># To ograničenje će imati oblik. x2+x4+x6 &lt;= 2x10 + 1, i x10 ubacujem u f-ju cilja sa koeficijentom -4</span>
+
+<span class="n">A_ub</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">B_ub</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">A_eq</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">B_eq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">ograničenja</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="n">celobrojnost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">A_ub</span> <span class="o">=</span> <span class="n">A_ub</span><span class="p">,</span> <span class="n">b_ub</span> <span class="o">=</span> <span class="n">B_ub</span><span class="p">,</span> <span class="n">A_eq</span> <span class="o">=</span> <span class="n">A_eq</span><span class="p">,</span> <span class="n">b_eq</span> <span class="o">=</span> <span class="n">B_eq</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="n">celobrojnost</span><span class="p">,</span> <span class="n">bounds</span> <span class="o">=</span> <span class="n">ograničenja</span><span class="p">)</span>
+<span class="n">res</span><span class="o">.</span><span class="n">fun</span><span class="p">,</span> <span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-40.0, array([ 1.,  1.,  1.,  0., -0.,  0.,  0.,  1.,  1.,  0.]))
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="zadatak-6">
+<h3>✍️ Zadatak 6.</h3>
+<p>Kompanija poseduje fabriku u Sent Luisu sa godišnjim kapacitetom od 30 000 jedinica. Celokupna proizvodnja dešava se u tri veleprodajna centra i odatle dalje na tržište. Situacija je godinama bila takva da su veleprodajni centri u Bostonu, Atlanti i Hjustonu imali zahteve koje je ova proizvodnja od 30 000 jedinica zadovoljavala. Međutim, rast tražnje za proizvodom doveo je do zahteva koji je iznenadio kompaniju. Naime, u
+planu za sledeću godinu, oni su dobili sledeće projekcije tražnje po veleprodajnim centrima:</p>
+<ul class="simple">
+<li><p>Boston: 30 000 jedinica proizvoda</p></li>
+<li><p>Atlanta: 20 000 jedinica proizvoda</p></li>
+<li><p>Hjuston: 20 000 jedinica proizvoda</p></li>
+</ul>
+<p>Ovakav rast tražnje naterao je kompaniju da započne razmatranje dugo odlaganog plana otvaranja nove proizvodne linije. U prethodnom periodu već je urađen skrining četiri fabrike u različitim gradovima SAD sa kojima bi mogla da se sklopi saradnja i koje bi bile spremne da proizvode za našu kompaniju. Četiri kandidata nalaze se u Detroitu, Toledu, Denveru i Kanzas Sitiju.</p>
+<p>Procenjeni godišnji troškovi izdvajanja proizvodnje, kao i kapaciteti koji bi ta postrojenja imala prikazani su tabelom ispod. Takođe, poznati su troškovi prevoza robe iz fabrika-kandidata, kao i iz već postojeće fabrike u Sent Luisu ka veleprodajnim centrima. Troškovi prevoza definisani su kao po jedinici prevezene robe.</p>
+<p>(i) Odredite optimalno rešenje problema ove kompanije.</p>
+<p><strong>Tabela 1.</strong> Troškovi autosorsovanja proizvodnje i kapacitet u opticaju</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Fabrika</p></th>
+<th class="head text-right"><p>Godišnji trošak proizvodnje</p></th>
+<th class="head text-right"><p>Kapacitet</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Detroit</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(\$\)</span> 175,000</p></td>
+<td class="text-right"><p>10,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Toledo</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(\$\)</span> 300,000</p></td>
+<td class="text-right"><p>20,000</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Denver</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(\$\)</span> 375,000</p></td>
+<td class="text-right"><p>30,000</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Kanzas Siti</p></td>
+<td class="text-right"><p><span class="math notranslate nohighlight">\(\$\)</span> 500,000</p></td>
+<td class="text-right"><p>40,000</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tabela 2.</strong> Trošak transporta po jedinici prevezene robe</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Ponuda/Тražnja</p></th>
+<th class="head text-center"><p>Boston</p></th>
+<th class="head text-center"><p>Atlanta</p></th>
+<th class="head text-left"><p>Hjuston</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Detroit</p></td>
+<td class="text-center"><p>5</p></td>
+<td class="text-center"><p>2</p></td>
+<td class="text-left"><p>3</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Toledo</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-left"><p>4</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Denver</p></td>
+<td class="text-center"><p>9</p></td>
+<td class="text-center"><p>7</p></td>
+<td class="text-left"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Kanzas Siti</p></td>
+<td class="text-center"><p>10</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-left"><p>2</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Sent Luis</p></td>
+<td class="text-center"><p>8</p></td>
+<td class="text-center"><p>4</p></td>
+<td class="text-left"><p>3</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="id8">
+<h4>Rešenje:</h4>
+<p>Imam sledeće promenljive: <span class="math notranslate nohighlight">\(x_1\)</span> - prevoz Detroit - Boston, <span class="math notranslate nohighlight">\(x_2\)</span> - prevoz Detroit - Atlanta, <span class="math notranslate nohighlight">\(x_3\)</span> - prevoz Detroit - Hjuston, x4 - prevoz Toledo - Boston, i tako dalje sve do <span class="math notranslate nohighlight">\(x_{13}\)</span> - prevoz Sent Luis - Boston, <span class="math notranslate nohighlight">\(x_{14}\)</span> - prevoz Sent Luis - Atlanta, <span class="math notranslate nohighlight">\(x_{15}\)</span> - prevoz Sent Luis - Hjuston
+Ukupno 15 promenljivih koje se odnose na količine prevezene robe prema različitim rutama</p>
+<p>Takođe uvodim binarne promenljive, koje se odnose da li smo krenuli da proizvodimo u fabrikama Detroit, Toledo, Denver i Kanzas Siti, jer mi to stvara plaćanje fiksnih troškova pa imam, <span class="math notranslate nohighlight">\(x_{16}\)</span> - koristimo fabriku Detroit, <span class="math notranslate nohighlight">\(x_{17}\)</span> - koristimo fabriku Toledo, …, <span class="math notranslate nohighlight">\(x_{19}\)</span> - koristimo fabriku Kanzas Siti.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">175_000</span><span class="p">,</span> <span class="mi">300_000</span><span class="p">,</span> <span class="mi">375_000</span><span class="p">,</span> <span class="mi">500_000</span><span class="p">]</span>
+
+<span class="sd">&quot;&quot;&quot; Provaravam da li je tražnja jednaka ponudi: Tražnja = 70 000 jedinica, Ponuda = 100 000 jedinica</span>
+<span class="sd">Podatak da tražnja nije jednaka ponudi mi je bitna zbog znakova kod ograničenja: Sad znam da će mi znak kod ograničenja tražnje biti sa =, </span>
+<span class="sd">dok će ograničenja ponude imati znak &lt;=</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">A_eq</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">B_eq</span> <span class="o">=</span> <span class="p">[</span><span class="mi">30_000</span><span class="p">,</span> <span class="mi">20_000</span><span class="p">,</span> <span class="mi">20_000</span><span class="p">]</span>
+
+<span class="n">A_ub</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">20_000</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30_000</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">40_000</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span>
+<span class="n">B_ub</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30_000</span><span class="p">]</span>
+
+<span class="n">ograničenja_količina</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
+<span class="n">ograničenja_binarne</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">ograničenja</span> <span class="o">=</span> <span class="n">ograničenja_količina</span> <span class="o">+</span> <span class="n">ograničenja_binarne</span>
+
+<span class="n">celobrojnost_količina</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">)]</span>
+<span class="n">celobrojnost_binarne</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+<span class="n">celobrojnost</span> <span class="o">=</span> <span class="n">celobrojnost_količina</span> <span class="o">+</span> <span class="n">celobrojnost_binarne</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">linprog</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">A_ub</span> <span class="o">=</span> <span class="n">A_ub</span><span class="p">,</span> <span class="n">b_ub</span> <span class="o">=</span> <span class="n">B_ub</span><span class="p">,</span> <span class="n">A_eq</span> <span class="o">=</span> <span class="n">A_eq</span><span class="p">,</span> <span class="n">b_eq</span> <span class="o">=</span> <span class="n">B_eq</span><span class="p">,</span> <span class="n">integrality</span> <span class="o">=</span> <span class="n">celobrojnost</span><span class="p">,</span> <span class="n">bounds</span> <span class="o">=</span> <span class="n">ograničenja</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">fun</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>860000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.e+00,  0.e+00,  0.e+00, -0.e+00,  0.e+00,  0.e+00,  0.e+00,
+        0.e+00,  0.e+00,  0.e+00,  2.e+04,  2.e+04,  3.e+04, -0.e+00,
+       -0.e+00,  0.e+00,  0.e+00,  0.e+00,  1.e+00])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovde vidim da u optimalnom rešenju samo promenljive <span class="math notranslate nohighlight">\(x_{11}, x_{12}\)</span>, i <span class="math notranslate nohighlight">\(x_{13}\)</span> , to jeste koristimo rute Kanzas Siti - Atltanta, Kanzas Siti - Hjuston, Sent Luis - Boston, zbog čega je i promenljiva <span class="math notranslate nohighlight">\(x_{19}\)</span> jednaka jedan, jer koristimo fabriku Kanzas Siti</p>
+</section>
+</section>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<section id="id9">
+<h3>⚡️ Zadatak 1.</h3>
+</section>
+<section id="id10">
+<h3>⚡️ Zadatak 2.</h3>
+<br>
+</section>
+</section>
+<section id="studije-slucaja">
+<h2>Studije slučaja</h2>
+<section id="id11">
+<h3>🧩</h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_20_Pandas.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Uvod u analizu podataka - 🐼 Pandas</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-azuriranje-modula-za-optimizaciju-scipy">Instalacija/ažuriranje modula za optimizaciju SciPy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linearno-programiranje-u-pithon-u">Linearno programiranje u Pithon-u</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-1">Primer 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-silver-emm">Primer 2. <em>Silver (EMM)</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-3-selekcija-portfolija">Primer 3. <em>Selekcija portfolija</em></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesoviti-problem-linearnog-programiranja">Mešoviti problem linearnog programiranja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-mlp">Model MLP</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Primer 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-budzetiranje">Primer 2.  <em>Budžetiranje</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-3-fiksni-troskovi">Primer 3. Fiksni troškovi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">✍️ Zadatak 1.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resenje">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">✍️ Zadatak 2.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">✍️ Zadatak 3.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">✍️ Zadatak 4.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-5">✍️ Zadatak 5.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">✍️ Zadatak 5.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-6">✍️ Zadatak 6.</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Rešenje:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">⚡️ Zadatak 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">⚡️ Zadatak 2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">🧩</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* deblja, jača linija ispod zaglavlja */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* tanja, svetlija linija ispod poslednjeg reda */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}

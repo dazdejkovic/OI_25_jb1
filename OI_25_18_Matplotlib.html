@@ -32,12 +32,13 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=9b1a9c12" />
     <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -215,6 +216,7 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Vizuelizacija podataka sa Matplotlib-om</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OI_25_19_Simulacije.html">Monte Karlo simulacije</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OI_25_20_Pandas.html">Uvod u analizu podataka - 🐼 Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_21_SciPy.html">Optimizacija u Pajtonu - 🧪 modul SciPy</a></li>
 </ul>
 
     </div>
@@ -453,11 +455,16 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popunjavanje-oblasti-izmedu-dve-horizontalne-krive">Popunjavanje oblasti između dve horizontalne krive.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">🧩 Zadatak 1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">🧩 Zadatak 2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vezba-1">✍️ Vežba 1.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">⚡️ Zadatak 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">⚡️Zadatak 2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a></li>
 </ul>
             </nav>
         </div>
@@ -471,7 +478,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vizuelizacija-podataka-sa-matplotlib-om">
 <h1>Vizuelizacija podataka sa Matplotlib-om</h1>
-<p>U Pythonu, jedan od najboljih paketa za grafičko prikazivanja podataka je <strong>matplotlib</strong>. Ako posetite <a class="reference external" href="https://www.matplotlib.org/gallery/index#gallery">Matplotlib galeriju</a> možete da vidite šta se sve može napraviti.</p>
+<p>U Pajtonu, jedan od najboljih paketa za grafičko prikazivanja podataka je <strong>matplotlib</strong>. Ako posetite <a class="reference external" href="https://www.matplotlib.org/gallery/index#gallery">Matplotlib galeriju</a> možete da vidite šta se sve može napraviti.</p>
 <section id="opsti-saveti-za-matplotlib">
 <h2>Opšti saveti za Matplotlib</h2>
 <section id="uvoz-matplotlib-a">
@@ -1735,11 +1742,18 @@ tekstualni niz <code class="docutils literal notranslate"><span class="pre">text
 <img alt="_images/5c71960b6f56eb2dfefdbcc01686a85620e473a5db5b1c1cf65656ef5f1cb5cb.png" src="_images/5c71960b6f56eb2dfefdbcc01686a85620e473a5db5b1c1cf65656ef5f1cb5cb.png" />
 </div>
 </div>
+<br>
+</section>
+<section id="vezbanja">
+<h2>Vežbanja</h2>
+<section id="vezba-1">
+<h3>✍️ Vežba 1.</h3>
+</section>
 </section>
 <section id="zadaci-i-problemi">
 <h2>Zadaci i problemi</h2>
 <section id="zadatak-1">
-<h3>🧩 Zadatak 1.</h3>
+<h3>⚡️ Zadatak 1.</h3>
 <p>Kirkland Industrija prodaje vazdušne kompresore proizvodnim preduzećima. U tabeli se nalazi količina prodaje kompresora u stotinama dolara, za svaki mesec. Prikažite dijagram rasturanja i stubičasti dijagram za date podatke.</p>
 <div class="pst-scrollable-table-container"><table class="thin table table-center" id="id5">
 <caption><span class="caption-number">Tabela 7. </span><span class="caption-text">Kirkland industrija</span></caption>
@@ -1793,59 +1807,39 @@ tekstualni niz <code class="docutils literal notranslate"><span class="pre">text
 </div>
 </section>
 <section id="zadatak-2">
-<h3>🧩 Zadatak 2.</h3>
+<h3>⚡️Zadatak 2.</h3>
 <p>Meteorološka stanica je tokom meseca maja beležila prosečne dnevne temperature (°C) u Beogradu. Cilj je da se analiziraju podaci i prikažu osnovni pokazatelji i grafički trend promena temperature tokom meseca.</p>
-<p>🧮 Podaci: Temperatura po danima (1–30):</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
-    <span class="mf">16.2</span><span class="p">,</span> <span class="mf">17.5</span><span class="p">,</span> <span class="mf">19.8</span><span class="p">,</span> <span class="mf">21.1</span><span class="p">,</span> <span class="mf">22.4</span><span class="p">,</span> <span class="mf">20.9</span><span class="p">,</span> <span class="mf">18.3</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">,</span> <span class="mf">21.7</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span>
-    <span class="mf">25.1</span><span class="p">,</span> <span class="mf">27.3</span><span class="p">,</span> <span class="mf">28.0</span><span class="p">,</span> <span class="mf">29.2</span><span class="p">,</span> <span class="mf">30.4</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">,</span> <span class="mf">29.8</span><span class="p">,</span> <span class="mf">28.7</span><span class="p">,</span> <span class="mf">27.1</span><span class="p">,</span> <span class="mf">25.5</span><span class="p">,</span>
-    <span class="mf">24.8</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mf">21.6</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">,</span> <span class="mf">17.2</span><span class="p">,</span> <span class="mf">16.8</span><span class="p">,</span> <span class="mf">18.9</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">22.1</span>
-<span class="p">])</span>
+<p>Podaci: Temperatura po danima (1–30):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temperature</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">16.2</span><span class="p">,</span> <span class="mf">17.5</span><span class="p">,</span> <span class="mf">19.8</span><span class="p">,</span> <span class="mf">21.1</span><span class="p">,</span> <span class="mf">22.4</span><span class="p">,</span> <span class="mf">20.9</span><span class="p">,</span> <span class="mf">18.3</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">,</span> <span class="mf">21.7</span><span class="p">,</span> <span class="mf">23.5</span><span class="p">,</span> <span class="mf">25.1</span><span class="p">,</span> <span class="mf">27.3</span><span class="p">,</span> <span class="mf">28.0</span><span class="p">,</span> <span class="mf">29.2</span><span class="p">,</span> <span class="mf">30.4</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">,</span> <span class="mf">29.8</span><span class="p">,</span> <span class="mf">28.7</span><span class="p">,</span> <span class="mf">27.1</span><span class="p">,</span> <span class="mf">25.5</span><span class="p">,</span>
+    <span class="mf">24.8</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">,</span> <span class="mf">21.6</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">,</span> <span class="mf">18.0</span><span class="p">,</span> <span class="mf">17.2</span><span class="p">,</span> <span class="mf">16.8</span><span class="p">,</span> <span class="mf">18.9</span><span class="p">,</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">22.1</span> <span class="p">])</span>
 </pre></div>
 </div>
-<p>📋 Zahtevi</p>
 <ol class="arabic simple">
-<li><p>Izračunati i ispisati sledeće vrednosti:</p>
-<ul class="simple">
-<li><p>prosečnu mesečnu temperaturu,</p></li>
-<li><p>najvišu i najnižu dnevnu temperaturu,</p></li>
-<li><p>standardnu devijaciju temperatura.</p></li>
-</ul>
-</li>
-<li><p>Prikazati <strong>linijski grafikon</strong> koji pokazuje promenu temperature po danima:</p>
+<li><p>Izračunati i ispisati sledeće vrednosti: prosečnu mesečnu temperaturu, najvišu i najnižu dnevnu temperaturu, standardnu devijaciju temperatura.</p></li>
+<li><p>Prikazati linijski grafikon koji pokazuje promenu temperature po danima:</p>
 <ul class="simple">
 <li><p>x-osa: dani (1–30)</p></li>
 <li><p>y-osa: temperatura (°C)</p></li>
 <li><p>obeležiti najvišu i najnižu temperaturu drugačijim bojama i markerima</p></li>
 <li><p>dodati horizontalnu liniju prosečne temperature (npr. isprekidanu liniju).</p></li>
+<li><p>Na grafikonu jasno označiti naslov, nazive osa i mrežu (<code class="docutils literal notranslate"><span class="pre">grid</span></code>).</p></li>
 </ul>
 </li>
-<li><p>Na grafikonu jasno označiti naslov, nazive osa i mrežu (<code class="docutils literal notranslate"><span class="pre">grid</span></code>).</p></li>
+<li><p>Pronađi sve dane kada je temperatura bila iznad prosečne vrednosti i: označi te tačke crvenom bojom na grafikonu,
+prebroj koliko je bilo takvih dana, ispiši njihov procenat u odnosu na ukupan broj dana u mesecu.</p></li>
 </ol>
-<p>✅ Očekivani izlaz (primer)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Prosečna temperatura: 23.14°C  
-Najniža temperatura: 16.2°C  
-Najviša temperatura: 31.0°C  
-Standardna devijacija: 4.69°C
-</pre></div>
-</div>
-<p>💡 Napomena</p>
-<p>Koristiti sledeće funkcije iz biblioteka <code class="docutils literal notranslate"><span class="pre">numpy</span></code> i <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>:
-<code class="docutils literal notranslate"><span class="pre">np.mean()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.min()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.max()</span></code>, <code class="docutils literal notranslate"><span class="pre">np.std()</span></code>
-<code class="docutils literal notranslate"><span class="pre">plt.plot()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.scatter()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.axhline()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.title()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.xlabel()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.ylabel()</span></code>, <code class="docutils literal notranslate"><span class="pre">plt.grid()</span></code></p>
-<p>🎯 Dodatni izazov</p>
-<p>Pronađi sve dane kada je temperatura bila <strong>iznad prosečne vrednosti</strong> i:</p>
-<ul class="simple">
-<li><p>označi te tačke crvenom bojom na grafikonu,</p></li>
-<li><p>prebroj koliko je bilo takvih dana,</p></li>
-<li><p>ispiši njihov procenat u odnosu na ukupan broj dana u mesecu.</p></li>
-</ul>
-<p><strong>Savet:</strong> koristi booleovsku masku <code class="docutils literal notranslate"><span class="pre">temperature</span> <span class="pre">&gt;</span> <span class="pre">np.mean(temperature)</span></code> za filtriranje vrednosti.</p>
-<p>🧾 Očekivani rezultat izazova (primer)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dana</span> <span class="n">iznad</span> <span class="n">proseka</span><span class="p">:</span> <span class="mi">14</span> <span class="p">(</span><span class="mf">46.7</span><span class="o">%</span><span class="p">)</span>
-</pre></div>
-</div>
+<br>
 </section>
+</section>
+<section id="studije-slucaja">
+<h2>Studije slučaja</h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="err">🧩</span> 
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1956,11 +1950,16 @@ Standardna devijacija: 4.69°C
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#popunjavanje-oblasti-izmedu-dve-horizontalne-krive">Popunjavanje oblasti između dve horizontalne krive.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">🧩 Zadatak 1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">🧩 Zadatak 2.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vezba-1">✍️ Vežba 1.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">⚡️ Zadatak 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">⚡️Zadatak 2.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a></li>
 </ul>
   </nav></div>
 
