@@ -192,7 +192,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
@@ -430,15 +430,100 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="stringovi">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.core.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;style&gt;</span>
+
+<span class="s2"> /* ——— LINKOVI ——— */</span>
+<span class="s2">a[href^=&quot;http://&quot;],</span>
+<span class="s2">a[href^=&quot;https://&quot;] {</span>
+<span class="s2">    color: blue !important;</span>
+<span class="s2">}</span>
+
+
+<span class="s2">/* ——— TABELE ——— */</span>
+<span class="s2">table {</span>
+<span class="s2">    margin-left: auto !important;</span>
+<span class="s2">    margin-right: auto !important;</span>
+<span class="s2">    width: auto !important;</span>
+<span class="s2">    max-width: none !important;</span>
+<span class="s2">    table-layout: auto !important;</span>
+<span class="s2">    border-collapse: collapse !important;</span>
+<span class="s2">    font-family: &quot;Segoe UI&quot;, &quot;Calibri&quot;, sans-serif !important;</span>
+<span class="s2">    font-size: 12px !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">th, td {</span>
+<span class="s2">    padding: 8px 20px !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">/* дебља, јача линија испод заглавља */</span>
+<span class="s2">tr:first-child th {</span>
+<span class="s2">    border-bottom: 2px solid #222 !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">/* тања, светлија линија испод последњег реда */</span>
+<span class="s2">tr:last-child td {</span>
+<span class="s2">    border-bottom: 1px solid #aaa !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">&lt;/style&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+ /* ——— LINKOVI ——— */
+a[href^="http://"],
+a[href^="https://"] {
+    color: blue !important;
+}
+
+
+/* ——— TABELE ——— */
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* дебља, јача линија испод заглавља */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* тања, светлија линија испод последњег реда */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
+</div>
+<section id="stringovi">
 <h1>Stringovi</h1>
 <p>String (tip <code class="docutils literal notranslate"><span class="pre">str</span></code>) je niz znakova u Pajtonu — tekstualni podatak koji može da sadrži slova, cifre, razmake, simbole i čak emoji.
 String se uvek piše između navodnika: jednostrukih ’ ’ ili dvostrukih „ „.</p>
 <div class="important admonition">
 <p class="admonition-title">String</p>
-<p>String je nepromenljiva (immutable) sekvenca Unicode karaktera u Pythonu.
-Nepromjenljiv (immutable) znači da se sadržaj stringa ne može menjati nakon što je napravljen — svaka „promena“ stvara novi string.
-Unicode znači da Python podržava sve svetske jezike, dijakritike (č, ć, ž…), emoji itd.</p>
+<p>String je nepromenljiva (immutable) sekvenca Unicode karaktera u Pajtonu.
+Nepromjenljiv (immutable) znači da se sadržaj stringa ne može menjati nakon što je napravljen. Svaka „promena“ stvara novi string.
+Unicode znači da Pajton podržava sve svetske jezike, dijakritike (č, ć, ž…), emoji itd.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -461,25 +546,27 @@ Unicode znači da Python podržava sve svetske jezike, dijakritike (č, ć, ž�
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
-
 <span class="s1">Pored komentara, ovako možemo definisati i stringove</span>
-
 <span class="s1">Ovo je najlakša opcija kada nam treba string u više redova.</span>
-
 <span class="s1">&#39;&#39;&#39;</span>
-<span class="c1"># primetite sada razliku u autputu ova dva ispisa ovog stringa</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Primetite sada razliku u autputu ova dva ispisa ovog stringa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">z</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pored komentara, ovako možemo definisati i stringove
-
 Ovo je najlakša opcija kada nam treba string u više redova.
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\n\nPored komentara, ovako možemo definisati i stringove\n\nOvo je najlakša opcija kada nam treba string u više redova.\n\n&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;\nPored komentara, ovako možemo definisati i stringove\nOvo je najlakša opcija kada nam treba string u više redova.\n&#39;
 </pre></div>
 </div>
 </div>
@@ -701,50 +788,39 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 </div>
 <p>Vreme je za kviz</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Python</span>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 1.</p>
+<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-
-<span class="c1"># a - Pytho</span>
-<span class="c1"># b - on</span>
-<span class="c1"># c - ohtyP</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;on&#39;
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">on</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Python</span>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 2.</p>
+<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
-
-<span class="c1"># a - th</span>
-<span class="c1"># b - &#39;&#39;</span>
-<span class="c1"># c - Error</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;&#39;</span>
 </pre></div>
-</div>
 </div>
 </div>
 <p>Jedan od zanimljivih načina da dobijete ceo string, može biti sledeći:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># word = Python</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
 <span class="n">word</span><span class="p">[:]</span>
-
-<span class="c1"># a - Python</span>
-<span class="c1"># b - Error</span>
-<span class="c1"># c - :</span>
-<span class="c1"># d - &quot;&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -783,7 +859,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 <ul class="simple">
 <li><p>start – početni indeks (podrazumevano 0)</p></li>
 <li><p>stop – poslednji indeks koji se ne uključuje</p></li>
-<li><p>step – korak (podrazumevano 1); može biti i negativan kada se ispisuje unazad od stop ka start</p></li>
+<li><p>step – korak (podrazumevano 1); može biti i negativan kada se ispisuje unazad</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,75 +874,47 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;Jedan&quot;</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
-
-<span class="c1"># a - Jed</span>
-<span class="c1"># b - Je</span>
-<span class="c1"># c - Jdn</span>
-<span class="c1"># d - ea</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Jdn&#39;
-</pre></div>
-</div>
-</div>
-</div>
 <p>Ovo je verovatno i prva naprednija stvar koju smo spomenuli. Igrajte se sa ovim opcijama da dobro razumete kako funkcionišu.</p>
-<p><strong>Test pitanje 1.</strong> Šta će biti izlaz sledećeg koda?</p>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 3.</p>
+<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">Rešenje</p>
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Pto&#39;</span>
 </pre></div>
 </div>
 </div>
-<p><strong>Test pitanje 2.</strong> Šta će biti izlaz sledećeg koda?</p>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 4.</p>
+<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">Rešenje</p>
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;nohtyP&#39;</span>
 </pre></div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test pitanje 3</span>
-<span class="c1"># Šta će biti izlaz sledećeg koda?</span>
-<span class="n">word</span><span class="p">[:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># a - Pnohty</span>
-<span class="c1"># b - nohty</span>
-<span class="c1"># c - yP</span>
-<span class="c1"># d - Py</span>
-</pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;nohty&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>Test pitanje 3.</strong> Šta će biti izlaz sledećeg koda?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 5.</p>
+<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
 <span class="n">word</span><span class="p">[:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">Rešenje</p>
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;nohty&#39;</span>
 </pre></div>
+</div>
 </div>
 </div>
 <section id="operacije-sa-stringovima">
@@ -883,7 +931,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </pre></div>
 </div>
 <div class="dropdown admonition">
-<p class="admonition-title">Rešenje</p>
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pypypython</span>
 </pre></div>
 </div>
