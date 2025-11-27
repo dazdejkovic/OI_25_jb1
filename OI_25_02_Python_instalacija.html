@@ -64,6 +64,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_02_Python_instalacija';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
@@ -626,9 +628,10 @@ a[href^="https://"] {
 </div>
 <p>i prevedemo je sa <code class="docutils literal notranslate"><span class="pre">▶</span></code> dobićemo na izlazu:</p>
 <p>Ovo je formula napisana u LaTeX-u</p>
-<div class="highlight-math notranslate"><div class="highlight"><pre><span></span>\frac12 +\int_1^2\cos x\, dx
-</pre></div>
-</div>
+<div class="math notranslate nohighlight">
+\[
+\frac12 +\int_1^2\cos x\, dx
+\]</div>
 <p>Ako unesemo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Ovaj</span> <span class="n">tekst</span> <span class="n">sadrži</span> <span class="err">`</span><span class="n">html</span><span class="err">`</span> <span class="n">instrukcije</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">Ovo</span> <span class="n">je</span> <span class="n">vrlo</span> <span class="n">važno</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;/</span><span class="n">strong</span><span class="o">&gt;.</span>
 </pre></div>
@@ -652,7 +655,7 @@ uraditi pokretanjem  <code class="docutils literal notranslate"><span class="pre
 <li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> - instalira biblioteku <em>numpy</em> koja nije deo standardnog paketa Pythona na naš računar.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code> - instalira biblioteku <em>pandas</em> koja nije deo standardnog paketa Pythona na naš računar</p></li>
 </ul>
-<p>Napomena: Ako Python instaliramo preko Anaconde,  biblioteke Numpy, Pandas i Matplotlib su već instalirane</p>
+<p>Napomena: Ako Pajton instaliramo preko Anaconde,  biblioteke Numpy, Pandas i Matplotlib su već instalirane</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
@@ -671,7 +674,7 @@ uraditi pokretanjem  <code class="docutils literal notranslate"><span class="pre
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Datoteke  oblika <em>ime_datoteke.py</em> zovemo <em>skripte</em> i možemo da ih izvršimo iz komandne ćelije (pod uslovom da su u istom folderu kao i radna ipynb datoteka ili navođenjem kompletne putanje) sa:</p>
+<p>Datoteke  oblika <code class="docutils literal notranslate"><span class="pre">ime_datoteke.py</span></code> zovemo <code class="docutils literal notranslate"><span class="pre">skripte</span></code> i možemo da ih izvršimo iz komandne ćelije (pod uslovom da su u istom folderu kao i radna ipynb datoteka ili navođenjem kompletne putanje) sa:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">pozdrav</span><span class="o">.</span><span class="n">py</span><span class="err">`</span>
 </pre></div>
 </div>
