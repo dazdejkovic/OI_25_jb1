@@ -430,51 +430,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.core.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
-
-<span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">&lt;style&gt;</span>
-
-<span class="s2"> /* ——— LINKOVI ——— */</span>
-<span class="s2">a[href^=&quot;http://&quot;],</span>
-<span class="s2">a[href^=&quot;https://&quot;] {</span>
-<span class="s2">    color: blue !important;</span>
-<span class="s2">}</span>
-
-
-<span class="s2">/* ——— TABELE ——— */</span>
-<span class="s2">table {</span>
-<span class="s2">    margin-left: auto !important;</span>
-<span class="s2">    margin-right: auto !important;</span>
-<span class="s2">    width: auto !important;</span>
-<span class="s2">    max-width: none !important;</span>
-<span class="s2">    table-layout: auto !important;</span>
-<span class="s2">    border-collapse: collapse !important;</span>
-<span class="s2">    font-family: &quot;Segoe UI&quot;, &quot;Calibri&quot;, sans-serif !important;</span>
-<span class="s2">    font-size: 12px !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">th, td {</span>
-<span class="s2">    padding: 8px 20px !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">/* дебља, јача линија испод заглавља */</span>
-<span class="s2">tr:first-child th {</span>
-<span class="s2">    border-bottom: 2px solid #222 !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">/* тања, светлија линија испод последњег реда */</span>
-<span class="s2">tr:last-child td {</span>
-<span class="s2">    border-bottom: 1px solid #aaa !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">&lt;/style&gt;</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+  <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
