@@ -1,0 +1,4 @@
+a[href^="http"] {
+    color: #0055FF !important;
+    text-decoration: underline !important;
+}

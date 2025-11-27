@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
     <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=9b1a9c12" />
     <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
   
@@ -65,12 +66,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_03';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_03_Elementi_Pajtona';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
     <link rel="search" title="Претрага" href="search.html" />
     <link rel="next" title="Logičke promenljive" href="OI_25_04_logicke_input.html" />
-    <link rel="prev" title="Python okruženje" href="OI_25_02/OI_25_02_Python_instalacija.html" />
+    <link rel="prev" title="Python okruženje" href="OI_25_02_Python_instalacija.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sr"/>
   </head>
@@ -151,7 +152,7 @@
     
   
 
-<a class="navbar-brand logo" href="uvod.html">
+<a class="navbar-brand logo" href="OI_25_00_uvod.html">
   
   
   
@@ -183,15 +184,15 @@
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="uvod.html">
+                <a class="reference internal" href="OI_25_00_uvod.html">
                     Uvod
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_00_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="OI_25_02/OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Python okruženje</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
@@ -288,7 +289,7 @@
       
       
       
-      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_03.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_25_03_Elementi_Pajtona.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Отворите издање"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +319,7 @@
       
       
       
-      <li><a href="_sources/OI_25_03.ipynb" target="_blank"
+      <li><a href="_sources/OI_25_03_Elementi_Pajtona.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Преузми изворну датотеку"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -434,7 +435,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="osnovni-elementi-pajton-jezika">
+  <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+ /* ——— LINKOVI ——— */
+a[href^="http://"],
+a[href^="https://"] {
+    color: blue !important;
+}
+
+
+/* ——— TABELE ——— */
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* дебља, јача линија испод заглавља */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* тања, светлија линија испод последњег реда */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="osnovni-elementi-pajton-jezika">
 <h1>Osnovni elementi Pajton jezika</h1>
 <p>U ovom poglavlju upoznaćemo se osnovnim elementima Pajton jezika.</p>
 <section id="pajton-kako-kalkulator">
@@ -617,7 +659,6 @@ Za svaki tip podataka postoje pravila korišćenja kojim se bavi računar.</p>
 <li><p>Nedozvoljeno je koristiti razmak ili srednju crtu</p></li>
 <li><p>Specijalni karakteri ne mogu biti deo promenljivih (!, &#64;, #, $, %, \, :, ^,… )</p></li>
 </ul>
-<div style="max-width: 600px; margin: auto;">
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Ispravno ime promenljive</p></th>
@@ -640,7 +681,7 @@ Za svaki tip podataka postoje pravila korišćenja kojim se bavi računar.</p>
 </tbody>
 </table>
 </div>
-</div><p>U svakom programskom jeziku postoje <em>rezervisane reči</em> (keywords) koje se ne smeju koristiti kao imena promenljivih. Python 3 ima 33 ključne reči. Da ih prikažete ukucajte u ćeliju tipa <code class="docutils literal notranslate"><span class="pre">Code</span></code> sledeći sadržaj i pokrenite <code class="docutils literal notranslate"><span class="pre">Run</span></code>:</p>
+<p>U svakom programskom jeziku postoje <em>rezervisane reči</em> (keywords) koje se ne smeju koristiti kao imena promenljivih. Python 3 ima 33 ključne reči. Da ih prikažete ukucajte u ćeliju tipa <code class="docutils literal notranslate"><span class="pre">Code</span></code> sledeći sadržaj i pokrenite <code class="docutils literal notranslate"><span class="pre">Run</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">keyword</span>
@@ -686,7 +727,7 @@ Za svaki tip podataka postoje pravila korišćenja kojim se bavi računar.</p>
 </div>
 </div>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/OI_25_03_memorija.png"><img alt="_images/OI_25_03_memorija.png" src="_images/OI_25_03_memorija.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="_images/memorija.png"><img alt="_images/memorija.png" src="_images/memorija.png" style="width: 40%;" /></a>
 <figcaption>
 <p><span class="caption-number">Slika 4. </span><span class="caption-text">Šta se dešva u memoriji</span></p>
 </figcaption>
@@ -884,8 +925,10 @@ Za svaki tip podataka postoje pravila korišćenja kojim se bavi računar.</p>
 </div>
 </div>
 <p>O tipovima brojeva sada možete naći puno materijala na internetu. Najveća snaga Pajtona je da kao jezik otvorenog koda ima veoma jaku zajednicu koja sadržaj omogućava dostupnim. Verovatno je za svaki problem sa kojim se susretnete neko već postavio pitanje kako se on rešava.</p>
-<p>U nastavku je link o tipovima promenljivih koje Pajton podržava. Klikni <a class="reference external" href="https://www.tutorialsteacher.com/python/python-number-type">OVDE</a></p>
-<p>Ako vas zanima koje sve ugrađene funkcije ima Pajton možete pogledati <a class="reference external" href="https://docs.python.org/3/library/functions.html">OVDE</a></p>
+<ul class="simple">
+<li><p>U nastavku je link o tipovima promenljivih koje Pajton podržava. Klikni <a class="reference external" href="https://www.tutorialsteacher.com/python/python-number-type">OVDE</a></p></li>
+<li><p>Ako vas zanima koje sve ugrađene funkcije ima Pajton možete pogledati <a class="reference external" href="https://docs.python.org/3/library/functions.html">OVDE</a></p></li>
+</ul>
 <div class="seealso admonition">
 <p class="admonition-title">Istraži</p>
 <p>Pokušaj da proveriš koji je tip vrednosti <code class="docutils literal notranslate"><span class="pre">None</span></code> tako što ćeš u Pythonu pokrenuti:</p>
@@ -929,7 +972,7 @@ Za svaki tip podataka postoje pravila korišćenja kojim se bavi računar.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="OI_25_02/OI_25_02_Python_instalacija.html"
+       href="OI_25_02_Python_instalacija.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
