@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -190,7 +190,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
@@ -543,7 +543,9 @@ NIZ
 </div>
 </div>
 </div>
-<p><strong>Kviz 1.</strong> Šta će biti izlaz sledećeg koda?</p>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 1.</p>
+<p>Šta će biti izlaz sledećeg koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b1</span> <span class="o">=</span> <span class="mi">1235</span>
 <span class="n">l1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
 <span class="n">l1</span>
@@ -552,6 +554,7 @@ NIZ
 <div class="dropdown admonition">
 <p class="admonition-title">Rešenje</p>
 <p><code class="docutils literal notranslate"><span class="pre">TypeError</span></code> - Pajton će javiti grešku, jer <code class="docutils literal notranslate"><span class="pre">b</span></code> nije string (ili neki iterabilni objekat, o čemu ćemo kasnije), već ceo broj.</p>
+</div>
 </div>
 </section>
 <section id="metod-find">
@@ -575,11 +578,14 @@ NIZ
 </div>
 </div>
 </div>
-<p><strong>Kviz 2.</strong>  Probajte da nađete indeks gde se „ne” pojavljuje drugi put.</p>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 2.</p>
+<p>Ako je <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">&quot;Velika</span> <span class="pre">je</span> <span class="pre">nesreća</span> <span class="pre">kad</span> <span class="pre">čovek</span> <span class="pre">ne</span> <span class="pre">zna</span> <span class="pre">šta</span> <span class="pre">hoće,</span> <span class="pre">a</span> <span class="pre">prava</span> <span class="pre">katastrofa</span> <span class="pre">kad</span> <span class="pre">ne</span> <span class="pre">zna</span> <span class="pre">šta</span> <span class="pre">može.&quot;</span></code>. Napišite kod koji će odrediti indeks gde se <code class="docutils literal notranslate"><span class="pre">ne</span></code> pojavljuje drugi put u stringu <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Rešenje</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ne&quot;</span><span class="p">,</span><span class="n">d</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;ne&quot;</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Naravno, ovde koristimo informaciju koju smo dobili malopre</span>
 </pre></div>
+</div>
 </div>
 </div>
 </section>
@@ -636,10 +642,7 @@ NIZ
 </ol>
 <section id="metod-format">
 <h3>Metod <code class="docutils literal notranslate"><span class="pre">format()</span></code></h3>
-<ul class="simple">
-<li><p>Vraća formatiranu vrednost stringa za koji dozvoljava delove koje će zameniti promenljivama.</p></li>
-<li><p>Vitičaste zagrade služe da ukažu da tu treba da ide neka vrednost koja se nalazi kao argument <code class="docutils literal notranslate"><span class="pre">.format</span></code> metode</p></li>
-</ul>
+<p>Vraća formatiranu vrednost stringa za koji dozvoljava delove koje će zameniti promenljivama. Vitičaste zagrade služe da ukažu da tu treba da ide neka vrednost koja se nalazi kao argument <code class="docutils literal notranslate"><span class="pre">.format</span></code> metode</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ime</span> <span class="o">=</span> <span class="s1">&#39;Petar&#39;</span>

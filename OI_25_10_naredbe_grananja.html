@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -192,7 +192,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
@@ -432,12 +432,9 @@ document.write(`
 <p>Naredbe grananja koristimo da kreiramo strukturu odlučivanja, koja dozvoljava programu da ima više od jedne putanje izvršavanja.</p>
 <section id="if-else-naredbe">
 <h2>IF-ELSE naredbe</h2>
-<ul class="simple">
-<li><p>Naredba grananja, <strong>if-else</strong>, ili <strong>if</strong> naredba kratko, je kod konstruisan da izvršava blok koda samo ako su ispunjeni određeni uslovi</p></li>
-<li><p>Ti uslovi su reprezentovani kao logički iskazi</p></li>
-</ul>
+<p>Naredba grananja, <strong>if-else</strong>, ili <strong>if</strong> naredba kratko, je kod konstruisanada izvršava blok koda samo ako su ispunjeni određeni uslovi. Ti uslovi su reprezentovani kao logički iskazi.</p>
 <div class="important admonition">
-<p class="admonition-title"><strong>Pseudo kod jednostavne IF naredbe</strong></p>
+<p class="admonition-title">Apstraktna sintaksa jednostavne <code class="docutils literal notranslate"><span class="pre">IF</span></code> naredbe</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">logicki_izraz</span><span class="p">:</span>
     <span class="n">blok</span> <span class="n">koda</span>
 </pre></div>
@@ -474,7 +471,7 @@ document.write(`
 </div>
 </div>
 <div class="important admonition">
-<p class="admonition-title"><strong>Pseudo kod jednostavne if-else naredbe</strong></p>
+<p class="admonition-title">Apstraktna sintaksa kod jednostavne <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredbe</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">logicki_izraz</span><span class="p">:</span>
     <span class="n">blok</span> <span class="n">koda</span> <span class="mi">1</span>
 <span class="k">else</span><span class="p">:</span>
@@ -522,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="important admonition">
-<p class="admonition-title">Pseudo kod proširene if-else naredbe:</p>
+<p class="admonition-title">Apstraktna sintaksa proširene <code class="docutils literal notranslate"><span class="pre">if-else</span></code> naredbe:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">logicki</span> <span class="n">izraz</span> <span class="n">P</span><span class="p">:</span>
     <span class="n">blok</span> <span class="n">koda</span> <span class="mi">1</span>
 <span class="k">elif</span> <span class="n">logicki</span> <span class="n">izraz</span> <span class="n">Q</span><span class="p">:</span>
@@ -585,16 +582,15 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a - 2</span>
-<span class="c1"># b - 4</span>
-<span class="c1"># c - 6</span>
-<span class="c1"># d - Error</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 2.</p>
@@ -609,16 +605,15 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a - 2</span>
-<span class="c1"># b - 4</span>
-<span class="c1"># c - 6</span>
-<span class="c1"># d - Error</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 <p>Primetite da ako želimo napišemo logički iskaz <span class="math notranslate nohighlight">\(a&lt;x&lt;b\)</span>, to možemo da uradimo sa dva uslovna iskaza, <span class="math notranslate nohighlight">\(a&lt;x\)</span> i <span class="math notranslate nohighlight">\(x&lt;b\)</span>. Pajton
 dozvoljava i kod <code class="docutils literal notranslate"><span class="pre">a&lt;x&lt;b</span></code>. Na primer:</p>
@@ -639,14 +634,11 @@ dozvoljava i kod <code class="docutils literal notranslate"><span class="pre">a&
 </section>
 <section id="ugnezdene-naredbe">
 <h2>Ugneždene naredbe</h2>
-<ul class="simple">
-<li><p>Naredba je <strong>ugneždena</strong> ako se cela nalazi unutar druge naredbe istog tipa kao i ona sama.</p></li>
-<li><p>Na primer, <strong>ugneždena if naredba</strong> je neka if naredba koja se cela nalazi unutar klauzule druge if naredbe</p></li>
-</ul>
+<p>Naredba je <strong>ugneždena</strong> ako se cela nalazi unutar druge naredbe istog tipa kao i ona sama. Na primer, <strong>ugneždena if naredba</strong> je neka if naredba koja se cela nalazi unutar klauzule druge if naredbe</p>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 3.</p>
 <p>Razmislite o tome šta će se desiti pošto se izvrši sledeći kod. Koji su sve mogući ishodi u zavisnosti od vrednosti
-x i y? Šta će biti odgovori za sledeća dva para brojeva: (5,-2) i (1,2)?</p>
+x i y? Šta će biti odgovori za sledeća dva para brojeva: <code class="docutils literal notranslate"><span class="pre">(5,-2)</span></code> i <code class="docutils literal notranslate"><span class="pre">(1,2)</span></code>?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
 
@@ -663,13 +655,9 @@ x i y? Šta će biti odgovori za sledeća dva para brojeva: (5,-2) i (1,2)?</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># a - 3</span>
-<span class="c1"># b - 7</span>
-<span class="c1"># c - -10 </span>
-<span class="c1"># d - 0</span>
+<div class="dropdown note admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span>
 </pre></div>
 </div>
 </div>
@@ -721,7 +709,7 @@ poluprečnika <code class="docutils literal notranslate"><span class="pre">r</sp
 <p><strong>Ternarni operatori</strong> ili <strong>uslovne naredbe</strong> nam obezbeđuju upotrebu koda u jednoj liniji da izračunamo prvi izraz ako je
 uslov istinit; u suprotnom izračunava se drugi izraz.</p>
 <div class="important admonition">
-<p class="admonition-title">Pseudo kod za ternarnog operatora</p>
+<p class="admonition-title">Apstraktna sintaksa ternarnog operatora</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">izraz_ako_istina</span> <span class="k">if</span> <span class="n">uslov</span> <span class="k">else</span> <span class="n">izraz_ako_laz</span> 
 </pre></div>
 </div>

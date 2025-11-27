@@ -192,7 +192,7 @@
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Python okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
@@ -446,13 +446,12 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="petlje">
 <h1>Petlje</h1>
-<p>Petlja u Pythonu je konstrukcija koja omogućava да се neki blok koda ponavlja više puta, sve dok postoji neki uslov (kod while) ili dok ima elemenata koje treba obići (kod for).</p>
-<p>Drugim rečima: petlja služi da automatizuje ponavljanje — da ne pišeš isti kod deset, sto ili hiljadu puta, već da Python to radi umesto tebe.</p>
+<br><p>Petlja u Pajtonu je konstrukcija koja omogućava да се neki blok koda ponavlja više puta, sve dok postoji neki uslov (kod while) ili dok ima elemenata koje treba obići (kod for). Drugim rečima: petlja služi da automatizuje ponavljanje — da ne pišeš isti kod deset, sto ili hiljadu puta, već da Pajtonn to radi umesto tebe.</p>
 <section id="for-petlje">
 <h2>For petlje</h2>
 <p><strong>For petlja</strong> je skup instrukcija koje se ponavljaju, ili iteriraju, za svaku vrednost u iterabilnom objektu. Stringovi, liste i torke su primeri struktura podataka koje zovemo <em>iterabilni objekti</em>: to su uređeni nizovi predmeta (karakteri u slučaju stringova, ili proizvoljni objekati u slučaju listi i torki).</p>
 <div class="important admonition">
-<p class="admonition-title">Sintaksa for petlje</p>
+<p class="admonition-title">Apstraktna sintaksa for petlje</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">promenljiva_petlje</span> <span class="ow">in</span> <span class="n">iterabilni_objekat</span><span class="p">:</span>
     <span class="n">blok</span> <span class="n">koda</span>
 </pre></div>
@@ -467,8 +466,8 @@ document.write(`
 <section id="funkcija-range">
 <h3>Funkcija <code class="docutils literal notranslate"><span class="pre">range</span></code></h3>
 <p>Ako treba ponavljati neku radnju kroz niz (iterirati), koristimo ugrađenu funkciju <code class="docutils literal notranslate"><span class="pre">range</span></code>. Ona generiše aritmetičku progresiju. Pozivamo je na sledeći način:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
-</pre></div>
+<div class="python docutils">
+<p>range(start = 0, stop, step = 1)</p>
 </div>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> je prvi element progresije.</p></li>
@@ -493,13 +492,9 @@ document.write(`
 <p>Šta se dešava?</p>
 <ol class="arabic simple">
 <li><p>Prvo, funkcija <code class="docutils literal notranslate"><span class="pre">range(1,4)</span></code> generiše niz celih brojeva koji počinju od 1 i završavaju se sa 3.</p></li>
-<li><p>Promenljivoj <code class="docutils literal notranslate"><span class="pre">suma</span></code> se dodeljuje vrednost 0.</p></li>
-</ol>
-<ol class="arabic simple" start="3">
+<li><p>Promenljivoj <code class="docutils literal notranslate"><span class="pre">suma</span></code> se dodeljuje vrednost 0</p></li>
 <li><p>Promenljivoj <code class="docutils literal notranslate"><span class="pre">i</span></code> se dodeljuje vrednost 1.</p></li>
 <li><p>Promenljivoj <code class="docutils literal notranslate"><span class="pre">suma</span></code> se dodeljuje vrednost <code class="docutils literal notranslate"><span class="pre">suma</span> <span class="pre">+</span> <span class="pre">i</span></code> (0+1=1).</p></li>
-</ol>
-<ol class="arabic simple" start="5">
 <li><p>Promenljivoj <code class="docutils literal notranslate"><span class="pre">i</span></code> se dodeljuje vrednost 2.</p></li>
 <li><p>Promenljivoj <code class="docutils literal notranslate"><span class="pre">suma</span></code> se dodeljuje vrednost <code class="docutils literal notranslate"><span class="pre">sum</span> <span class="pre">+</span> <span class="pre">i</span></code> (1+2=3).</p></li>
 <li><p>Promenljivoj <code class="docutils literal notranslate"><span class="pre">i</span></code> se dodeljuje vrednost 3.</p></li>
@@ -508,7 +503,7 @@ document.write(`
 </ol>
 <div class="tip admonition">
 <p class="admonition-title">Primer 2.</p>
-<p>Odštampati sve karaktere iz stringa ’Jabuka’. Razdvojite ih tokom ispisa tačkom.</p>
+<p>Odštampati sve karaktere iz stringa <code class="docutils literal notranslate"><span class="pre">'Jabuka'</span></code>. Razdvojite ih tokom ispisa tačkom.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -575,11 +570,7 @@ document.write(`
 </section>
 <section id="petlje-i-recnici">
 <h2>Petlje i rečnici</h2>
-<ul class="simple">
-<li><p>Sada kada znamo da prolazimo iterabilno kroz strukturu podataka dobijamo puno novih mogućnosti koje su posebno interesantne za rečnike</p></li>
-<li><p>Podsetite se rečnika i istražite i sami šta sve mogu raditi petlje u rečnicima</p></li>
-<li><p>Proći ćemo metode <code class="docutils literal notranslate"><span class="pre">.values</span></code>, <code class="docutils literal notranslate"><span class="pre">.keys</span></code> i <code class="docutils literal notranslate"><span class="pre">.items</span></code> koje preporučujemo da sami dalje istražite i bolje razumete</p></li>
-</ul>
+<p>Sada kada znamo da prolazimo iterabilno kroz strukturu podataka dobijamo puno novih mogućnosti koje su posebno interesantne za rečnike. Podsetite se rečnika i istražite i sami šta sve mogu raditi petlje u rečnicima. Proći ćemo metode <code class="docutils literal notranslate"><span class="pre">.values</span></code>, <code class="docutils literal notranslate"><span class="pre">.keys</span></code> i <code class="docutils literal notranslate"><span class="pre">.items</span></code> koje preporučujemo da sami dalje istražite i bolje razumete.</p>
 <div class="tip admonition">
 <p class="admonition-title">Primer 5.</p>
 <p>Izračunati zbir svih vrednosti u rečniku <code class="docutils literal notranslate"><span class="pre">recnik_a</span> <span class="pre">=</span> <span class="pre">{'A':</span> <span class="pre">1,</span> <span class="pre">'B':2,</span> <span class="pre">'C':</span> <span class="pre">5}</span></code>.</p>
@@ -595,10 +586,7 @@ document.write(`
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>U primeru, koristimo prvo metod <code class="docutils literal notranslate"><span class="pre">values</span></code>da dobijemo sve vrednosti.</p></li>
-<li><p>Zatim, iteriramo preko niza vrednosti.</p></li>
-</ul>
+<p>U primeru, koristimo prvo metod <code class="docutils literal notranslate"><span class="pre">values</span></code>da dobijemo sve vrednosti. Zatim, iteriramo preko niza vrednosti.</p>
 <p>Alternativno, možemo zadatak rešiti pristupajući nizu ključeva</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -619,12 +607,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Pretpostavimo da sada želimo da štampamo sve ključeve i vrednosti iz prethodnog rečnika.</p>
-<ul class="simple">
-<li><p>Koristimo metod <code class="docutils literal notranslate"><span class="pre">items</span></code> u rečniku</p></li>
-<li><p>On vraća objekat čiji je sadržaj torka parova ključeva i vrednosti.</p></li>
-<li><p>Možemo ih dodeliti simultano dvema promenljivim (dodeljivanje torki); pogledaj kod koji sledi …</p></li>
-</ul>
+<p>Pretpostavimo da sada želimo da štampamo sve ključeve i vrednosti iz prethodnog rečnika. Koristimo metod <code class="docutils literal notranslate"><span class="pre">items</span></code> u rečniku. On vraća objekat čiji je sadržaj torka parova ključeva i vrednosti. Možemo ih dodeliti simultano dvema promenljivim (dodeljivanje torki); pogledaj kod koji sledi …</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">recnik_a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
@@ -634,11 +617,7 @@ document.write(`
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Primetite da smo dodelili vrednosti dvema promenljivima u petlji u isto vreme</p></li>
-<li><p>Postoje i drugi slučajevi gde možemo simultano dodeliti poslove. Na primer, ako imamo dve liste iste dužine i želimo petlju
-kroz njih simultano, tada koristimo <code class="docutils literal notranslate"><span class="pre">zip</span></code> funkciju. Pogledajmo primer koji sledi.</p></li>
-</ul>
+<p>Primetite da smo dodelili vrednosti dvema promenljivima u petlji u isto vreme. Postoje i drugi slučajevi gde možemo simultano dodeliti poslove. Na primer, ako imamo dve liste iste dužine i želimo petlju kroz njih simultano, tada koristimo <code class="docutils literal notranslate"><span class="pre">zip</span></code> funkciju. Pogledajmo primer koji sledi.</p>
 </section>
 <section id="funkcija-zip">
 <h2>Funkcija zip</h2>
@@ -661,7 +640,7 @@ C 3
 </div>
 </div>
 </div>
-<div class="admonition-vise-zip-funkciji admonition">
+<div class="note admonition">
 <p class="admonition-title">Više zip funkciji</p>
 <p>Više o ovoj funkciji, razlozima njenog nastanka i upotrebi možete pročitati <a class="reference external" href="https://realpython.com/python-zip-function/">OVDE</a></p>
 </div>
@@ -709,9 +688,7 @@ C 3
 </section>
 <section id="komanda-break">
 <h2>Komanda break</h2>
-<ul class="simple">
-<li><p>Ako se izvrši komanda <code class="docutils literal notranslate"><span class="pre">break</span></code> unutar bloka koda <code class="docutils literal notranslate"><span class="pre">for</span></code> petlje momentalno se izlazi iz petlje.</p></li>
-</ul>
+<p>Ako se izvrši komanda <code class="docutils literal notranslate"><span class="pre">break</span></code> unutar bloka koda <code class="docutils literal notranslate"><span class="pre">for</span></code> petlje momentalno se izlazi iz petlje.</p>
 <div class="tip admonition">
 <p class="admonition-title">Primer 6.</p>
 <p>Korisnik unosi string. Odrediti da li string ima cifru u svom zapisu. Ispisati prvu cifru koja se pojavljuje, ako postoji. Ako ne postoji cifra u zapisu, ispisati da string nema cifara. Razmislite i prodiskutujmo kako bismo kreirali ovaj kod.</p>
@@ -752,10 +729,8 @@ C 3
 </section>
 <section id="komanda-continue">
 <h2>Komanda continue</h2>
-<ul class="simple">
-<li><p>Ako se izvrši komanda <code class="docutils literal notranslate"><span class="pre">continue</span></code>, preskače se preostali kod u trenutnoj iteraciji <code class="docutils literal notranslate"><span class="pre">for</span></code> petlje, i nastavlja sa sledećim
-elementom iterabilnog objekta koji je u petlji.</p></li>
-</ul>
+<p>Ako se izvrši komanda <code class="docutils literal notranslate"><span class="pre">continue</span></code>, preskače se preostali kod u trenutnoj iteraciji <code class="docutils literal notranslate"><span class="pre">for</span></code> petlje, i nastavlja sa sledećim
+elementom iterabilnog objekta koji je u petlji.</p>
 <p>U sledećem primeru koristimo naredbu <code class="docutils literal notranslate"><span class="pre">continue</span></code> da funkcija <code class="docutils literal notranslate"><span class="pre">print</span></code> preskoči štampanje broja 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -810,17 +785,6 @@ saberete sve elemente te liste. Pokušajte u narednih 5 minuta. Proverite vaš k
 <li><p>Unutrašnja petlja se prekida.</p></li>
 <li><p>Spoljašnja petlja se prekida, sa <code class="docutils literal notranslate"><span class="pre">sum</span> <span class="pre">=</span> <span class="pre">4</span></code>.</p></li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">a</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
-
-<span class="n">m</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-        <span class="nb">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>
-<span class="nb">sum</span>
-</pre></div>
-</div>
 <div class="hint admonition">
 <p class="admonition-title">QA time</p>
 <p>Šta biste zamerili kod ispisanom gore? Kako da to popravimo?</p>
@@ -859,9 +823,12 @@ saberete sve elemente te liste. Pokušajte u narednih 5 minuta. Proverite vaš k
 <section id="while-petlje">
 <h2>While petlje</h2>
 <p><strong>While petlja</strong> je skup instrukcija koje se ponavljaju sve dokle je odgovarajući logički izraz istinit. Sledi apstraktna sintaksa <code class="docutils literal notranslate"><span class="pre">while</span></code> petlje</p>
+<div class="important admonition">
+<p class="admonition-title">Apstraktna sintaksa <code class="docutils literal notranslate"><span class="pre">while</span></code> petlje</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">logicki_izraz</span><span class="p">:</span>
     <span class="n">blok</span> <span class="n">koda</span>
 </pre></div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Kad Python dođe do bloka while petlje, on prvo proverava da li je logički izraz while petlje istinit ili lažan.</p></li>
@@ -919,10 +886,7 @@ saberete sve elemente te liste. Pokušajte u narednih 5 minuta. Proverite vaš k
 </ol>
 <section id="komanda-else">
 <h3>Komanda <code class="docutils literal notranslate"><span class="pre">else</span></code></h3>
-<ul class="simple">
-<li><p>Posle <code class="docutils literal notranslate"><span class="pre">for</span></code> i <code class="docutils literal notranslate"><span class="pre">while</span></code> petlji može da sledi <code class="docutils literal notranslate"><span class="pre">else</span></code> blok naredbi, koji se izvršava samo ako se petlje završe „normalno”, (odnosno bez intervencije komande <code class="docutils literal notranslate"><span class="pre">break</span></code>).</p></li>
-<li><p>Za <code class="docutils literal notranslate"><span class="pre">for</span></code> petlje, to znači da će se naredbe izvršiti kad petlja dostigne kraj niza preko koga se iterira; Za <code class="docutils literal notranslate"><span class="pre">while</span></code> petlje, one se izvršavaju kad uslov <code class="docutils literal notranslate"><span class="pre">while</span></code> postane <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
-</ul>
+<p>Posle <code class="docutils literal notranslate"><span class="pre">for</span></code> i <code class="docutils literal notranslate"><span class="pre">while</span></code> petlji može da sledi <code class="docutils literal notranslate"><span class="pre">else</span></code> blok naredbi, koji se izvršava samo ako se petlje završe „normalno”, (odnosno bez intervencije komande <code class="docutils literal notranslate"><span class="pre">break</span></code>). Za <code class="docutils literal notranslate"><span class="pre">for</span></code> petlje, to znači da će se naredbe izvršiti kad petlja dostigne kraj niza preko koga se iterira; Za <code class="docutils literal notranslate"><span class="pre">while</span></code> petlje, one se izvršavaju kad uslov <code class="docutils literal notranslate"><span class="pre">while</span></code> postane <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>Posmatrajmo program koji pronalazi prvo pojavljivanje negativnog broja u listi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -940,34 +904,26 @@ saberete sve elemente te liste. Pokušajte u narednih 5 minuta. Proverite vaš k
 </section>
 <section id="beskonacna-petlja">
 <h3>Beskonačna petlja</h3>
-<ul class="simple">
-<li><p><em>”Šta se dešava ako je logički izraz istinit i nikad se ne menja?”</em></p></li>
-</ul>
+<p><em>”Šta se dešava ako je logički izraz istinit i nikad se ne menja?”</em></p>
 <p>Ako je logički iskaz uvek istinit i ništa u kodu <code class="docutils literal notranslate"><span class="pre">while</span></code> petlje ne menja vrednost tog izraza, to dovodi do toga da je naš kod ušao u <strong>beskonačnu petlju</strong>.</p>
-<ul class="simple">
-<li><p>Beskonačna petlja se izvršava zauvek, ili dok se ne ugasi kompjuter ili potroši sva memorija.</p></li>
-<li><p>Ovo će se dešavati i ne treba da vas plaši</p></li>
-<li><p>U Jupyter-u možete prekinuti ovakve linije koda koristeći putanju Kernel -&gt; Interupt</p></li>
-</ul>
-<p><strong>Zadatak</strong> Napišite <code class="docutils literal notranslate"><span class="pre">while</span></code> petlju koja prouzrokuje beskonačnu petlju, pa je prekinite kada se uverite da ste uspeli u svojoj nameri.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">0</span>
+<p>Beskonačna petlja se izvršava zauvek, ili dok se ne ugasi kompjuter ili potroši sva memorija. Ovo će se dešavati i ne treba da vas plaši. U Jupyter-u možete prekinuti ovakve linije koda koristeći putanju <code class="docutils literal notranslate"><span class="pre">Kernel</span> <span class="pre">-&gt;</span> <span class="pre">Interupt</span></code></p>
+<div class="hint admonition">
+<p class="admonition-title">Zadatak 1.</p>
+<p>Napišite <code class="docutils literal notranslate"><span class="pre">while</span></code> petlju koja prouzrokuje beskonačnu petlju, pa je prekinite kada se uverite da ste uspeli u svojoj nameri.</p>
+<div class="dropdown note admonition">
+<p class="admonition-title">Rešenje:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">while</span> <span class="n">n</span><span class="o">&gt;-</span><span class="mi">1</span><span class="p">:</span>
     <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
 </pre></div>
 </div>
+<p>Kako je <code class="docutils literal notranslate"><span class="pre">n</span></code> uvek veće od <code class="docutils literal notranslate"><span class="pre">-1</span></code>, bez obzira koliko se puta petlja ponavljala, izvršavanje ovog koda se neće nikad završiti jer je uslov (<code class="docutils literal notranslate"><span class="pre">n&gt;-1</span></code>) uvek istinit .</p>
 </div>
 </div>
-<p>Kako je <code class="docutils literal notranslate"><span class="pre">n</span></code> uvek veće od 1, bez obzira koliko se puta petlja ponavljala, ovaj kod se neće nikad završiti.</p>
-<p>Možemo da prekinemo beskonačnu petlju ručno pritiskom na <code class="docutils literal notranslate"><span class="pre">interupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> - dugme na tool baru u obliku crnog kvadrata ili
+<p>Beskonačnu petlju možemo da prekinemo ručno pritiskom na <code class="docutils literal notranslate"><span class="pre">interupt</span> <span class="pre">the</span> <span class="pre">kernel</span></code> - dugme na tool baru u obliku crnog kvadrata ili
 preko padajućeg menija Kernel –&gt; Interrupt.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-Možete li da promenite jedan karakter tako da se while petlja u prethodnom kodu pokrene bar jednom, ali da ne napravi 
-beskonačnu petlju?
-
-</pre></div>
-</div>
+<p>Možete li da promenite jedan karakter tako da se while petlja u prethodnom kodu pokrene bar jednom, ali da ne napravi
+beskonačnu petlju?</p>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 1.</p>
 <p>Koja od while petlji uzrokuje beskonačnu petlju?</p>
@@ -985,23 +941,23 @@ beskonačnu petlju?
         <span class="n">n</span><span class="o">=</span><span class="mi">1</span>
 </pre></div>
 </div>
-<div class="dropdown admonition">
+<div class="dropdown note admonition">
 <p class="admonition-title">Rešenje</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Malo neobično ali samo Petlja 2. Istražite šta se dešava u Petlji 1.
-</pre></div>
-</div>
+<p>Malo neobično, ali samo Petlja 2. Istražite šta se dešava u Petlji 1.</p>
 </div>
 </div>
 </section>
 </section>
 <section id="sagledavanja-comprehensions-jezgrovite-for-if-petlje">
 <h2>Sagledavanja (Comprehensions, Jezgrovite <code class="docutils literal notranslate"><span class="pre">for-if</span></code> petlje )</h2>
-<p>U Pajtonu, postoje i drugi načini da napravimo iteracije; Sagledavanja listi, rečnika i skupova su vrlo popularna zbog svoje elegancije i kratkoće.</p>
-<p>Sagledavanja dozvoljavaju kreiranje novih nizovnih objekata iz datih nizovnih objekata primenom vrlo kompaktne sintakse.</p>
-<p><b>Sagledavanje (comprehension)</b></p>
+<p>U Pajtonu, postoje i drugi načini da napravimo iteracije; Sagledavanja listi, rečnika i skupova su vrlo popularna zbog svoje elegancije i kratkoće. Sagledavanja dozvoljavaju kreiranje novih nizovnih objekata iz datih nizovnih objekata primenom vrlo kompaktne sintakse.</p>
+<div class="important admonition">
+<p class="admonition-title">Apstraktna sintaksa sagledavajuće petlje</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ulazni_niz</span> <span class="k">if</span> <span class="n">uslov</span> <span class="p">]</span>  
 </pre></div>
 </div>
+</div>
+<p>gde je:</p>
 <ul class="simple">
 <li><p>f(x) - formula koju koristimo</p></li>
 <li><p>ulazni_niz - iterabilna struktura (niz)</p></li>
@@ -1018,12 +974,17 @@ beskonačnu petlju?
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 8, 27, 64, 125]
+</pre></div>
 </div>
-<div class="hint admonition">
+</div>
+</div>
+<div class="tip admonition">
 <p class="admonition-title">Zadatak 1.</p>
 <p>Koristeći sagledavanje konstruišite listu <code class="docutils literal notranslate"><span class="pre">y</span></code> koja sadrži kubove prvih 10 prirodnih brojeva, ali samo neparnih brojeva. Iskoristite prethodni kod.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Rešenje</p>
+<div class="dropdown note admonition">
+<p class="admonition-title">Rešenje:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">y</span>
 </pre></div>
@@ -1033,7 +994,7 @@ beskonačnu petlju?
 <section id="ugnezdena-sagledavanja">
 <h3>Ugneždena sagledavanja</h3>
 <p>Ako imamo dva ugneždena nivoa petlje, tada takođe možemo da primenimo sagledavajuće liste.</p>
-<p>Na primer, ako imamo sledeća dva nivoa for petlji tada to isto možemo sprovesti primenom sagledavanja listi.</p>
+<p>Na primer, ako imamo dva nivoa for petlji tada to isto možemo sprovesti primenom sagledavanja listi:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="p">[]</span>
@@ -1041,9 +1002,11 @@ beskonačnu petlju?
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
         <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="c1"># Šta će biti izlaz sledećeg koda? Dajte predloge odgovora</span>
-<span class="c1"># a - </span>
-<span class="c1"># b -  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 2, 3]
 </pre></div>
 </div>
 </div>
@@ -1055,6 +1018,11 @@ beskonačnu petlju?
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 1, 2, 2, 3]
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="sagledavanje-recnika">
@@ -1062,13 +1030,18 @@ beskonačnu petlju?
 <p>Slično, možemo da napravimo i <strong>sagledavanje rečnika</strong>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Primer 11.</p>
-<p>Od rečnika <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">{&quot;x&quot;:1,</span> <span class="pre">&quot;y&quot;:2,</span> <span class="pre">&quot;z&quot;:3,</span> <span class="pre">&quot;t&quot;:4}</span> </code> konstruisati novi rečnik sa istim ključevima, a vrednosti koje odgovaraju  ključevima neka budu kvadrirane.</p>
+<p>Od rečnika <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">{'x':1,</span> <span class="pre">'y':2,</span> <span class="pre">'z':3,</span> <span class="pre">'t':4}</span> </code> konstruisati novi rečnik sa istim ključevima, a vrednosti koje odgovaraju  ključevima neka budu kvadrirane.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;z&#39;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;t&#39;</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
 <span class="n">b</span><span class="o">=</span><span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">v</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">a</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 1, &#39;y&#39;: 8, &#39;z&#39;: 27, &#39;t&#39;: 64}
 </pre></div>
 </div>
 </div>
