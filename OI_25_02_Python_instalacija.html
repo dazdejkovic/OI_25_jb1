@@ -64,8 +64,6 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_02_Python_instalacija';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
@@ -476,9 +474,12 @@ a[href^="https://"] {
 <p><span class="caption-number">Slika 1. </span><span class="caption-text">Idle</span></p>
 </figcaption>
 </figure>
-<p>S obzirom da je Python intepreter (može da izvršava liniju po liniju koda), na mestu gde se vidi <strong>&gt;&gt;&gt;</strong> očekuje se da napišete prvu instrukciju. Poslednja verzija (u trenutku pisanja ovog slajda) je Python 3.11.5 .</p>
-<p>Pa krenimo …</p>
-<p>Ukucajte <code class="docutils literal notranslate"><span class="pre">print(&quot;Ovo</span> <span class="pre">je</span> <span class="pre">moj</span> <span class="pre">prvi</span> <span class="pre">kod</span> <span class="pre">u</span> <span class="pre">Pythonu&quot;)</span></code> i pritisnite taster <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
+<p>S obzirom da je Python intepreter (može da izvršava liniju po liniju koda), na mestu gde se vidi <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> očekuje se da napišete prvu instrukciju. Poslednja verzija (u trenutku pisanja ovog slajda) je Python 3.11.5 .</p>
+<p>Pa krenimo. Ukucajte</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ovo je moj prvi kod u Pythonu&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>i pritisnite taster <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ovo je moj prvi kod u Pythonu&quot;</span><span class="p">)</span>
@@ -506,22 +507,21 @@ a[href^="https://"] {
 </div>
 <section id="izvrsavanje-jedne-ili-vise-naredbi-istovremeno-skripte-py-datoteke">
 <h3>Izvršavanje jedne ili više naredbi istovremeno [Skripte (.py - datoteke)]</h3>
-<p>Pokrenite IDLE, a zatim upotrebite opciju menija <em>File… -&gt; NewFile</em> da otvorite  nov prozor za uređivanje. Kad smo to uradili na našem računaru, dobili smo dva prozora, jedan se zove <code class="docutils literal notranslate"><span class="pre">IDLE</span> <span class="pre">Shell</span></code>, a drugi <code class="docutils literal notranslate"><span class="pre">Untitled</span></code>:</p>
+<p>Pokrenite IDLE, a zatim upotrebite opciju menija <code class="docutils literal notranslate"><span class="pre">File...</span> <span class="pre">-&gt;</span> <span class="pre">NewFile</span></code> da otvorite  nov prozor za uređivanje. Kad smo to uradili na našem računaru, dobili smo dva prozora, jedan se zove <code class="docutils literal notranslate"><span class="pre">IDLE</span> <span class="pre">Shell</span></code>, a drugi <code class="docutils literal notranslate"><span class="pre">Untitled</span></code>:</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/idle-skripta.png"><img alt="Skripta" src="_images/idle-skripta.png" style="width: 600px;" /></a>
 <figcaption>
 <p><span class="caption-number">Slika 2. </span><span class="caption-text">Skripta</span></p>
 </figcaption>
 </figure>
-<p>Prvi prozor koristi se za izvršavanje isečaka Pajton koda, jednu po jednu naredbu. Prozor Untitled, je prozor za uređivanje teksta, koji može da se koristi za pisanje celih Pajton programa.</p>
+<p>Prvi prozor koristi se za izvršavanje isečaka Pajton koda, jednu po jednu naredbu. Prozor <code class="docutils literal notranslate"><span class="pre">Untitled</span></code>, je prozor za uređivanje teksta, koji može da se koristi za pisanje celih Pajton programa.</p>
 <p>Hajde da upišemo jedan mali Pajton program u drugom prozoru. Kad završite sa upisivanjem sledećeg koda, upotrebite opciju sa menija
-<em>File…-&gt; Save As</em> da sačuvate ovaj program pod imenom <em><a class="reference external" href="http://zdravo.py">zdravo.py</a></em></p>
+<code class="docutils literal notranslate"><span class="pre">File...-&gt;</span> <span class="pre">Save</span> <span class="pre">As</span></code> da sačuvate ovaj program pod imenom <code class="docutils literal notranslate"><span class="pre">zdravo.py</span></code></p>
 <p>Pazite da upišete kod kako ovde stoji:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/zdravo-py.png"><img alt="zdravo.py" src="_images/zdravo-py.png" style="width: 400px;" /></a>
 </figure>
-<p>Šta sad?</p>
-<p>Dovoljno je da pritisnete samo taster <code class="docutils literal notranslate"><span class="pre">F5</span></code> na tastaturi. Mogu se dogoditi različite stvari. Ako se vaš kod izvršava bez greške, rezultat se prikazuje u Shell-u:</p>
+<p>Šta sad? Dovoljno je da pritisnete samo taster <code class="docutils literal notranslate"><span class="pre">F5</span></code> na tastaturi. Mogu se dogoditi različite stvari. Ako se vaš kod izvršava bez greške, rezultat se prikazuje u Shell-u:</p>
 <figure class="align-center">
 <a class="reference internal image-reference" href="_images/zdravo-py-rez.png"><img alt="_images/zdravo-py-rez.png" src="_images/zdravo-py-rez.png" style="width: 600px;" /></a>
 </figure>
@@ -605,7 +605,7 @@ a[href^="https://"] {
 </section>
 <section id="markdown-celije">
 <h3>Markdown ćelije</h3>
-<p>Markdown ćelija omogućava pisanje formatiranog teksta u Jupyter-u koristeći Markdown sintaksu — lagani markup jezik. To znači da možeš pisati:</p>
+<p>Markdown ćelija omogućava pisanje formatiranog teksta u Jupyter-u koristeći Markdown sintaksu — lagani markap jezik. To znači da možeš pisati:</p>
 <ul class="simple">
 <li><p>naslove</p></li>
 <li><p>podebljano / kurziv</p></li>
@@ -617,7 +617,7 @@ a[href^="https://"] {
 <li><p>tabele</p></li>
 </ul>
 <p>Kako se pravi Markdown ćelija?</p>
-<p>U notebooku: klikneš ćeliju pritisneš M na tastaturi i ona postaje markdown ili iz menija  <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">→</span> <span class="pre">Cell</span> <span class="pre">Type</span> <span class="pre">→</span> <span class="pre">Markdown</span></code></p>
+<p>U notebooku: klikneš na ćeliju, pritisneš M na tastaturi i ona postaje markdown. Ili, iz menija  <code class="docutils literal notranslate"><span class="pre">Cell</span> <span class="pre">→</span> <span class="pre">Cell</span> <span class="pre">Type</span> <span class="pre">→</span> <span class="pre">Markdown</span></code>.</p>
 <section id="primeri-formatiranja">
 <h4>Primeri formatiranja</h4>
 <p>Ako u ćeliju unesemo:</p>
@@ -625,7 +625,10 @@ a[href^="https://"] {
 </pre></div>
 </div>
 <p>i prevedemo je sa <code class="docutils literal notranslate"><span class="pre">▶</span></code> dobićemo na izlazu:</p>
-<p>Ovo je formula napisana u LaTeX-u $<span class="math notranslate nohighlight">\(\frac12 +\int_1^2\cos x\, dx\)</span>$</p>
+<p>Ovo je formula napisana u LaTeX-u</p>
+<div class="highlight-math notranslate"><div class="highlight"><pre><span></span>\frac12 +\int_1^2\cos x\, dx
+</pre></div>
+</div>
 <p>Ako unesemo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Ovaj</span> <span class="n">tekst</span> <span class="n">sadrži</span> <span class="err">`</span><span class="n">html</span><span class="err">`</span> <span class="n">instrukcije</span><span class="p">:</span>  <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;&lt;</span><span class="n">em</span><span class="o">&gt;</span> <span class="n">Ovo</span> <span class="n">je</span> <span class="n">vrlo</span> <span class="n">važno</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;&lt;/</span><span class="n">strong</span><span class="o">&gt;.</span>
 </pre></div>
