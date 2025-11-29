@@ -64,6 +64,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_16_klase';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
@@ -426,6 +428,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkapsulacija">Enkapsulacija</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfizam">Polimorfizam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
@@ -711,7 +714,7 @@ U kompaniji radi 2 radnika
 </section>
 <section id="specijalne-metode">
 <h3>Specijalne metode</h3>
-<p>Kada ukucate <code class="docutils literal notranslate"><span class="pre">x=2+3</span></code>, kako <code class="docutils literal notranslate"><span class="pre">integer</span></code> objekti sa vrednostima 2 i 3 znaju kako se implementira +? Takođe kako zna da upotrebi = da se dođe do rezultata? Do ovih znakova operacija možete doći koristeći  Pythonove specijalne metode.</p>
+<p>Kada ukucate <code class="docutils literal notranslate"><span class="pre">x=2+3</span></code>, kako <code class="docutils literal notranslate"><span class="pre">integer</span></code> objekti sa vrednostima 2 i 3 znaju kako se implementira <code class="docutils literal notranslate"><span class="pre">+</span></code>? Takođe kako zna da upotrebi <code class="docutils literal notranslate"><span class="pre">=</span></code> da se dođe do rezultata? Do ovih znakova operacija možete doći koristeći  Pythonove specijalne metode.</p>
 <p>Imena ovih metoda počinju i završavaju se sa duplm donjim crtama (<code class="docutils literal notranslate"><span class="pre">__</span></code>). Jedan smo već videli: <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, pokreće novostvoreni objekat iz definicije njegove klase i sve argumente koji su prosleđeni unutra.</p>
 <p>Pretpostavimo da imamo jednostavnu klasu <code class="docutils literal notranslate"><span class="pre">Reč</span></code> i da želimo da proverimo da li su dve reči jednake ignorišući veličinu slova.</p>
 <div class="cell docutils container">
@@ -875,7 +878,8 @@ U kompaniji radi 2 radnika
 <section id="nasledivanje">
 <h2>Nasleđivanje</h2>
 <p>Nasleđivanje nam omogućava da definišemo klasu koja će naslediti sve metode i atribute iz neke druge klase. Konvencionalno, za novu klasu tog tipa koristimo termin <em>klasa dete</em> (child class), dok klasu koju ona nasleđuje zovemo <em>klasa roditelj</em> (parent class) ili <em>super klasa</em>. Nasleđivanje izgrađuje relaciju između klase dece i klase roditelja. Obično, klasa roditelja je opšteg tipa dok je klasa dece specifičnog tipa.</p>
-<p>Sledi pseudo kod initakse nasleživanja u Python-u</p>
+<div class="important admonition">
+<p class="admonition-title">Apstraktna sintaksa nasleđivanja</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># definicija superklase</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">super_klasa</span><span class="p">:</span>
     <span class="c1"># definicija atributa i metoda</span>
@@ -885,6 +889,7 @@ U kompaniji radi 2 radnika
     <span class="c1"># atributi i metodi super_klase</span>
     <span class="c1"># atributi i metod pod_klase</span>
 </pre></div>
+</div>
 </div>
 <p>Ilustrujmo nasleđivanje primerom:</p>
 <div class="cell docutils container">
@@ -900,7 +905,7 @@ U kompaniji radi 2 radnika
 <span class="c1"># Nasleđivanje iz klase Animal</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Pas</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
 
-    <span class="c1"># novi metod u podklasi</span>
+    <span class="c1"># Novi metod u podklasi</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="c1"># pristup atributu ime iz super klase primenom self</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Moje ime je  </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
@@ -1029,7 +1034,7 @@ Mogu da se hranim.
 </section>
 <section id="enkapsulacija">
 <h2>Enkapsulacija</h2>
-<p><em>Enkapsulacija</em> je jedan od bazičnih koncepata u OOP. Ona opisuje ideju restrikcije pristupa metodima i atributima u klasi. Enkapsulacija sakriva kompleksne detalje od korisnika i prevencija je promene podataka nekim incidentom. U Pajtonu to se postiže upotrebom privatnih metoda ili atributa koristeći donju crtu kao prefiks, odnosno, jedna „_”  ili dve „__”, kako je to pokazano u sledećem primeru.</p>
+<p><em>Enkapsulacija</em> je jedan od bazičnih koncepata u OOP. Ona opisuje ideju restrikcije pristupa metodima i atributima u klasi. Enkapsulacija sakriva kompleksne detalje od korisnika i prevencija je promene podataka nekim incidentom. U Pajtonu to se postiže upotrebom privatnih metoda ili atributa koristeći donju crtu kao prefiks, odnosno, jedna <code class="docutils literal notranslate"><span class="pre">_</span></code>  ili dve <code class="docutils literal notranslate"><span class="pre">__</span></code>, kako je to pokazano u sledećem primeru.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Sensor</span><span class="p">():</span>
@@ -1111,17 +1116,86 @@ Beograd
 <h2>Polimorfizam</h2>
 <p><em>Polimorfizam</em> je još jedan osnovni koncept u OOP, koji bukvalno znači višestruke forme. Polimorfizam nam dozvoljava da koristimo jedno okruženje u suštinski različitim formama, kao što su tipovi podataka ili klase. Možemo da imamo metod sa zajedničkim imenom u različitim klasama i njihovim potomcima. Već smo videli jedan takav primer, kada smo prevladali metod <code class="docutils literal notranslate"><span class="pre">eat</span></code>. I klasa roditelj i klasa naslednik mogu da imaju metod pod istim imenom, ali on je implementiran na drugačiji način.</p>
 <p>Mogućnost upotrebe jednog imena u više formi sa različitim delovanjem u različitim situacijama u mnogome redukuje kompleksnost. Nećemo širiti ovu diskusiju o polimorfizmu, ako vas to interesuje, možete na mreži naći detaljnija objašnjenja.</p>
+<br>
 </section>
-<section id="zadaci-i-problemi">
-<h2>Zadaci i problemi</h2>
-<div class="tip admonition">
-<p class="admonition-title">Zadatak 1.</p>
-<p>Konstruišite klasu Medvedi iz uvoda ovog poglavlja.</p>
-<p>Testirajte vašu klasu.</p>
+<section id="vezbanja">
+<h2>Vežbanja</h2>
+<div class="note admonition">
+<p class="admonition-title">Vežba 1.</p>
+<p>Neka je:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MojaKlasa</span><span class="p">:</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Rešenje:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Medvedi</span><span class="p">():</span>
+<p>Kreirajte instance klase <code class="docutils literal notranslate"><span class="pre">MojaKlasa</span></code> sa imenima <code class="docutils literal notranslate"><span class="pre">p_1</span></code> i <code class="docutils literal notranslate"><span class="pre">p_2</span></code>. <br />
+Prikažite vrednost atributa <code class="docutils literal notranslate"><span class="pre">x</span></code> na obe instance. <br />
+Promenite vrednost atributa <code class="docutils literal notranslate"><span class="pre">x</span></code> unutar instance <code class="docutils literal notranslate"><span class="pre">p_1</span></code>. <br />
+Proverite vrednost ovog atributa unutar obe instance.<br />
+Prikažite vrednost atributa <code class="docutils literal notranslate"><span class="pre">y</span></code> na obe instance. <br />
+Promenite vrednost atributa <code class="docutils literal notranslate"><span class="pre">y</span></code> unutar instance <code class="docutils literal notranslate"><span class="pre">p_1</span></code>. <br />
+Proverite vrednost ovog atributa unutar obe instance.</p>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MojaKlasa</span><span class="p">:</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_1</span> <span class="o">=</span> <span class="n">MojaKlasa</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="p">;</span> <span class="n">p_2</span> <span class="o">=</span> <span class="n">MojaKlasa</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="p">;</span> <span class="n">p_1</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p_2</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">p_2</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-4, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_1</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="o">-</span><span class="mi">44</span> <span class="p">;</span> <span class="n">p_1</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">p_2</span><span class="o">.</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-44, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Vežba 2.</p>
+<p>Konstruišite klasu Medvedi iz uvoda ovog poglavlja. Testirajte vašu klasu.</p>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Medvedi</span><span class="p">():</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">starost</span><span class="p">,</span> <span class="n">boja</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">starost</span> <span class="o">=</span> <span class="n">starost</span>
@@ -1129,8 +1203,13 @@ Beograd
         
     <span class="k">def</span><span class="w"> </span><span class="nf">pozdrav</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Pozdrav, ja sam medved &quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="p">)</span>
-
-<span class="n">medved_1</span> <span class="o">=</span> <span class="n">Medvedi</span><span class="p">(</span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Bobi&quot;</span><span class="p">,</span> <span class="n">starost</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">boja</span> <span class="o">=</span> <span class="s2">&quot;Braon&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">medved_1</span> <span class="o">=</span> <span class="n">Medvedi</span><span class="p">(</span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Bobi&quot;</span><span class="p">,</span> <span class="n">starost</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">boja</span> <span class="o">=</span> <span class="s2">&quot;Braon&quot;</span><span class="p">)</span>
 <span class="n">medved_1</span><span class="o">.</span><span class="n">pozdrav</span><span class="p">()</span>
 
 <span class="n">medved_2</span> <span class="o">=</span> <span class="n">Medvedi</span><span class="p">(</span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Luna&quot;</span><span class="p">,</span> <span class="n">starost</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">boja</span> <span class="o">=</span> <span class="s2">&quot;Bela&quot;</span><span class="p">)</span>
@@ -1140,8 +1219,16 @@ Beograd
 </pre></div>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Zadatak 2.</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pozdrav, ja sam medved Bobi
+Pozdrav, ja sam medved Luna
+Bela Luna
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Vežba 3.</p>
 <p>Definišite klasu studenata sa Ekonomskog fakulteta u Beogradu <code class="docutils literal notranslate"><span class="pre">Student</span></code> sa sledećim zahtevima:</p>
 <ul class="simple">
 <li><p>atributi:</p>
@@ -1161,10 +1248,10 @@ Beograd
 </ul>
 <p>Testirajte vašu klasu.</p>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Rešenje:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">():</span>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Student</span><span class="p">():</span>
 
     <span class="n">ime_fakulteta</span> <span class="o">=</span> <span class="s1">&#39;Ekonomski fakultet - Univerziteta u Beogradu&#39;</span>
     <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># brojač instanci klase</span>
@@ -1181,9 +1268,14 @@ Beograd
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ja sam student </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s1">. Upisan sam na </span><span class="si">{</span><span class="n">Student</span><span class="o">.</span><span class="n">ime_fakulteta</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
         
     <span class="k">def</span><span class="w"> </span><span class="nf">izvestaj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ja sam </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s1">. Moj broj indeksa je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indeks</span><span class="si">}</span><span class="s1">, a prosečna ocena mi je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">prosek</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="n">student_1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;230234&quot;</span><span class="p">,</span> <span class="s2">&quot;Marković Marko&quot;</span><span class="p">,</span> <span class="mf">9.54</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ja sam </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ime</span><span class="si">}</span><span class="s1">. Moj broj indeksa je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indeks</span><span class="si">}</span><span class="s1">, a prosečna ocena mi je </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">prosek</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;230234&quot;</span><span class="p">,</span> <span class="s2">&quot;Marković Marko&quot;</span><span class="p">,</span> <span class="mf">9.54</span><span class="p">)</span>
 <span class="n">student_2</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s2">&quot;220042&quot;</span><span class="p">,</span> <span class="s2">&quot;Ilić Jelena&quot;</span><span class="p">,</span> <span class="mf">8.75</span><span class="p">)</span>
 
 <span class="n">student_1</span><span class="o">.</span><span class="n">predstavi_se</span><span class="p">()</span>
@@ -1191,8 +1283,17 @@ Beograd
 </pre></div>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Zadatak 3.</p>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Broj upisanih studenata je 1.
+Broj upisanih studenata je 2.
+Ja sam student Marković Marko. Upisan sam na Ekonomski fakultet - Univerziteta u Beogradu.
+Ja sam Ilić Jelena. Moj broj indeksa je 220042, a prosečna ocena mi je 8.75
+</pre></div>
+</div>
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Vežba 4.</p>
 <p>Pretpostavimo sa smo definisali klasu <code class="docutils literal notranslate"><span class="pre">Tacka2D</span></code> koja se inicijalizuje sa dva realna broja na sledeći način:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Tacka2D</span><span class="p">:</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -1203,9 +1304,10 @@ Beograd
 <p>Dodajmo predhodnoj klasi dve specijalne metode koje će na prirodan način prikazivati objekte, ispitivati njihovu jednakost i reprezentovati njihovu prirodu.</p>
 <p>Testirati novu klasu.</p>
 </div>
-<div class="dropdown admonition">
-<p class="admonition-title">Rešenje:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Tacka2D</span><span class="p">:</span>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Tacka2D</span><span class="p">:</span>
     
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
@@ -1222,21 +1324,37 @@ Beograd
     
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>                        <span class="c1"># Prikazuje način nastanka objekta</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Tacka2D(</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">,</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">)&#39;</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">Tacka2D</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Tacka2D</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">B</span> <span class="o">=</span> <span class="n">Tacka2D</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">C</span> <span class="o">=</span> <span class="n">Tacka2D</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="c1"># Primenjuje str</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">B</span><span class="p">)</span>  <span class="c1"># primenjuje proveru jednakosti</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">B</span><span class="p">)</span>  <span class="c1"># Primenjuje proveru jednakosti</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">A</span><span class="o">==</span><span class="n">C</span><span class="p">)</span>
-
-<span class="n">A</span>   <span class="c1"># Primenjuje repr</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 2)
+&lt;class &#39;__main__.Tacka2D&#39;&gt;
+False
+True
+</pre></div>
+</div>
+</div>
+</div>
+<br>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
 <div class="tip admonition">
 <p class="admonition-title">Problem 1.</p>
 <ul class="simple">
@@ -1249,33 +1367,76 @@ Beograd
 <div class="tip admonition">
 <p class="admonition-title">Problem 2.</p>
 <p>Kreirati klasu <code class="docutils literal notranslate"><span class="pre">Kapital</span></code> sa atributima koji referišu na novčanu vrednost kapitala i kamatnu stopa. Klasa treba da ima metode koji će određivati sadašnju vrednost kapitala, buduću vrednost kapitala, kao i anuitetni plan za otplatu tog kapitala u zavisnosti od dužine vremena.</p>
-<p>Tetsirati sve delove koda.</p>
+<p>Testirati sve delove koda.</p>
 </div>
-<div class="exercise admonition">
-<p class="admonition-title">✏️ Vežba</p>
-<p>Neka je:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="p">:</span>
-    
-    <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-    
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-</pre></div>
-</div>
+<div class="tip admonition">
+<p class="admonition-title">Problem 3.</p>
+<p>Konstruisati klasu <code class="docutils literal notranslate"><span class="pre">Vreme</span></code> koja će se inicijalizovati brojevima <code class="docutils literal notranslate"><span class="pre">x</span></code> i <code class="docutils literal notranslate"><span class="pre">y</span></code> koji referišu na vremenski trenutak u jednom danu gde je <code class="docutils literal notranslate"><span class="pre">x</span></code> vreme u satima (od 0 do 23), a <code class="docutils literal notranslate"><span class="pre">y</span></code> vreme u minutima (od 0 do 59).</p>
+<p>Klasa treba da ima sledeće metode:</p>
 <ul class="simple">
-<li><p>Kreirajte instance klase <code class="docutils literal notranslate"><span class="pre">MyClass</span></code> sa imenima <code class="docutils literal notranslate"><span class="pre">p1</span></code> i <code class="docutils literal notranslate"><span class="pre">p2</span></code></p></li>
-<li><p>Prikažite vrednost atributa <code class="docutils literal notranslate"><span class="pre">x</span></code> na obe instance.</p>
-<ul>
-<li><p>Promenite vrednost atributa <code class="docutils literal notranslate"><span class="pre">x</span></code> unutar instance <code class="docutils literal notranslate"><span class="pre">p1</span></code>.</p></li>
-<li><p>Proverite vrednost ovog atributa unutar obe instance.</p></li>
+<li><p>Metod koji će proveravati da li je vreme korektno inicijalizovano.</p></li>
+<li><p>Metod koji će ispisati vreme u standardnom formatu <code class="docutils literal notranslate"><span class="pre">ab:cd</span></code> (Na primer: 15:05, 03:16, 23:02)</p></li>
+<li><p>Metod koji će odrediti vremenski interval između objekta iz date klase i drugog vremenskog trenutka u istom danu.</p></li>
 </ul>
-</li>
-<li><p>Definišite i prikažite vrednost atributa <code class="docutils literal notranslate"><span class="pre">y</span></code> na obe instance.</p>
-<ul>
-<li><p>Promenite vrednost atributa <code class="docutils literal notranslate"><span class="pre">y</span></code> unutar instance <code class="docutils literal notranslate"><span class="pre">p1</span></code>.</p></li>
-<li><p>Proverite vrednost ovog atributa unutar obe instance.</p></li>
+<p>Napravite dve instance iz date klase i testirajte metode klase.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Problem 4.</p>
+<p>Konstruisati klasu <code class="docutils literal notranslate"><span class="pre">Fazi_broj</span></code> koja će se inicijalizovati sa 3 broja, gde će prvi i treći argument imati podrazumevanu vrednost 1, a drugi podrazumevanu vrednost nula. Zahtevi:</p>
+<ul class="simple">
+<li><p>Klasa treba da se inicijalizuje ako i samo ako su prvi i treći argument nenegativni.</p></li>
+<li><p>Klasa treba da ima metod po imenu <code class="docutils literal notranslate"><span class="pre">pripadnost</span></code> koja će za dati realni broj i instancu klase izračunavati meru pripadnosti instanci klase. Mera pripadnosti klasi određuje se preko funkcije:</p></li>
 </ul>
-</li>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+  p(x)=\begin{cases} 0,                 &amp;\text{ako je}\,\, x\le c-l\,\, \text{ili}\,\, x\ge c+d \\
+                     \dfrac{x+l-c}{l}   &amp;\text{ako je}\,\, c-l&lt;x\le c \\
+                     \dfrac{c-x+d}{d}   &amp;\text{ako je}\,\, c&lt;x\le c+d
+\end{cases}
+\end{equation*}\]</div>
+<p>gde su <code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">d</span></code> brojevi kojima je klasa instancirana.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/fuzzy.png"><img alt="_images/fuzzy.png" src="_images/fuzzy.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">Fazi broj</span></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Implementirati jedan od specijalnih metoda <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> ili <code class="docutils literal notranslate"><span class="pre">__str__</span></code> koji reprezentuje odnosno daje stingovni prikaz instance klase.</p></li>
+<li><p>Ako se instance klase sabiraju tako što se saberu sve komponente i rezultat je nova instanca u istoj klasi, implementirati sabiranje instanci klase(specijalni metod <code class="docutils literal notranslate"><span class="pre">__add__</span></code>).</p></li>
+<li><p>Napravite dve instance ove klase i testirajte metode.</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Problem 5.</p>
+<p>Konstruisati klasu <code class="docutils literal notranslate"><span class="pre">Kapital</span></code> koja će se inicijalizovati sa tri realna broja: vrednost kapitala, kamatna stopa i vremenski period. Klasa treba da ima sledeće metode:</p>
+<ul class="simple">
+<li><p>Metod koji će odrediti buduću vrednost tog kapitala.</p></li>
+<li><p>Metod koji će odrediti sadašnju vrednost tog kapitala.</p></li>
+<li><p>Metod koji će odrediti anuitetni plan otplate tog kapitala. Metod treba da vrati anuitet i listu koja sadrži stanje duga u k-tom periodu.</p></li>
+</ul>
+<p>Napravite nekoliko instanci ove klase i testirajte metode.</p>
+<p>Formula neophodne za rešenje zadatka:</p>
+<ul class="simple">
+<li><p>Anuitet: <span class="math notranslate nohighlight">\(a=K\dfrac{r^n(r-1)}{r^n-1}\)</span>, gde je <span class="math notranslate nohighlight">\(r=1+\frac{p}{100}\)</span>, <span class="math notranslate nohighlight">\(p\)</span> kamatna stopa, a <span class="math notranslate nohighlight">\(n\)</span> period vraćanja kapitala <span class="math notranslate nohighlight">\(K\)</span>.</p></li>
+<li><p>Stanje duga posle uplate <span class="math notranslate nohighlight">\(k\)</span> anuiteta: <span class="math notranslate nohighlight">\(C_k = a \dfrac{r^{n-k}-1}{r^n(r-1)}\)</span></p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Problem 6.</p>
+<p>Konstruisati klasu <code class="docutils literal notranslate"><span class="pre">Outlier</span></code> koja će se inicijalizovati sa listom od n brojeva. Klasa treba da ima sledeće metode:</p>
+<ul class="simple">
+<li><p>Metod koji će odrediti prvi kvartil u seriji (<span class="math notranslate nohighlight">\(Q_1\)</span>)</p></li>
+<li><p>Metod koji će odrediti treći kvartil u seriji (<span class="math notranslate nohighlight">\(Q_3\)</span>)</p></li>
+<li><p>Metod koji će odrediti da li u seriji postoje ekstremni statistički podaci (eng. outlier) i ako postoje vratiti njihove vrednosti</p></li>
+</ul>
+<p>Napravite dve instance ove klase i testirajte metode.</p>
+<p><em>Uputstvo:</em></p>
+<ul class="simple">
+<li><p>Kako biste rešili zadatak treba da prvo sortirate niz. Postoji metod listi koji može da uradi ovaj zadatak.</p></li>
+<li><p>Tada je <span class="math notranslate nohighlight">\(Q_1\)</span> podatak iz serije koji je veći od <span class="math notranslate nohighlight">\(25\%\)</span> (1/4) svih podataka. To znači da u uređenoj listi treba pronaći podatak čiji je indeks <code class="docutils literal notranslate"><span class="pre">n//4+1</span></code>.</p></li>
+<li><p>Slično, <span class="math notranslate nohighlight">\(Q_3\)</span> podatak iz serije koji je veći od <span class="math notranslate nohighlight">\(75\%\)</span> (3/4) svih podataka.</p></li>
+<li><p>Konačno, neki podatak je autlajer ako je manji od <span class="math notranslate nohighlight">\(Q_1-1.5IQR\)</span> ili veći <span class="math notranslate nohighlight">\(Q_3+1.5IQR\)</span>, gde je <span class="math notranslate nohighlight">\(IQR=Q_3-Q1\)</span>.</p></li>
 </ul>
 </div>
 </section>
@@ -1360,6 +1521,7 @@ Beograd
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enkapsulacija">Enkapsulacija</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polimorfizam">Polimorfizam</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>
