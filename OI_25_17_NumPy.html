@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -445,6 +445,11 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretne-raspodele-verovatnoca">Diskretne raspodele verovatnoća</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniformna-raspodela">Uniformna raspodela</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalna-raspodela">Normalna raspodela</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">⚡️ Zadatak 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">⚡️ Zadatak 2.</a></li>
 </ul>
 </li>
 </ul>
@@ -979,7 +984,7 @@ nbytes:  32
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/numpy_slika_1.png"><img alt="_images/numpy_slika_1.png" src="_images/numpy_slika_1.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 11. </span><span class="caption-text">Emitovanje (<em>Izvor</em>: Python Data Science Handbook, Jake VanderPlas.)</span></p>
+<p><span class="caption-number">Slika 12. </span><span class="caption-text">Emitovanje (<em>Izvor</em>: Python Data Science Handbook, Jake VanderPlas.)</span></p>
 </figcaption>
 </figure>
 <p>Delu o emitovanju u toj knjizi možete pristupiti <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/02.05-computation-on-arrays-broadcasting.html">OVDE</a>.</p>
@@ -1518,7 +1523,7 @@ Tačan odgovor: d).</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/numpy_slika_2.png"><img alt="_images/numpy_slika_2.png" src="_images/numpy_slika_2.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 12. </span><span class="caption-text">NumPy_ose (<em>Izvor</em>: Zvanična veb-stranica NumPy biblioteke)</span></p>
+<p><span class="caption-number">Slika 13. </span><span class="caption-text">NumPy_ose (<em>Izvor</em>: Zvanična veb-stranica NumPy biblioteke)</span></p>
 </figcaption>
 </figure>
 <p>Stranici o indeksiranju i isecanju možete pristupiti <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#indexing-and-slicing">OVDE</a>.</p>
@@ -2402,6 +2407,34 @@ Odgovor</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
+<br> 
+</section>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<section id="zadatak-1">
+<h3>⚡️ Zadatak 1.</h3>
+<ol class="arabic simple">
+<li><p>Generišite slučajan niz oblika 4x4 iz normalne raspodele.</p></li>
+<li><p>Prikažite najlakši način za sabiranje vrednosti niza koje su pozitivne.</p></li>
+<li><p>Prikažite kumulativni zbir po kolonama.</p></li>
+<li><p>Primenite na niz sledeće uslove:</p>
+<ul class="simple">
+<li><p>brojevi manji od -1 dobijaju vrednost -1</p></li>
+<li><p>brojevi između -1 i 1 dobijaju vrednost 0</p></li>
+<li><p>brojevi veći od 1 dobijaju vrednost 1</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="zadatak-2">
+<h3>⚡️ Zadatak 2.</h3>
+<ol class="arabic simple">
+<li><p>Konstrušite kvadratnu matricu <span class="math notranslate nohighlight">\(A\)</span> dimenzije 3 čiji će elementi biti slučajni celi brojevi iz intervala <span class="math notranslate nohighlight">\([-3,3]\)</span></p></li>
+<li><p>Ispitati da li je u datoj matrici <span class="math notranslate nohighlight">\(\displaystyle\max_i\min_ja_{ij}= \min_j\max_ia_{ij}\)</span>. Ako je to tačno štampati poruku „Igra ima Nešovu ravnotežu”, u suprotnom štampati poruku „Igra nema Nešovu ravnotežu”.</p></li>
+<li><p>Ako je odgovor pod 2) tačan, poslati i poruku „Nešova ravnoteža je <span class="math notranslate nohighlight">\((\hat i, \hat j)\)</span>”, gde su <span class="math notranslate nohighlight">\(\hat i\)</span>, <span class="math notranslate nohighlight">\(\hat j\)</span> indeksi vrste odnosno kolone u kojima se postiže jednakost.</p></li>
+</ol>
+<p><em>Savet:</em> Pokušajte da neke delove organizujete u formi funkcija koje će izvršavati te delove.</p>
 </section>
 </section>
 </section>
@@ -2502,6 +2535,11 @@ Odgovor</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diskretne-raspodele-verovatnoca">Diskretne raspodele verovatnoća</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniformna-raspodela">Uniformna raspodela</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalna-raspodela">Normalna raspodela</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">⚡️ Zadatak 1.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">⚡️ Zadatak 2.</a></li>
 </ul>
 </li>
 </ul>

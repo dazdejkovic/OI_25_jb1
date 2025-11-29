@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -426,6 +426,30 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citanje-pickle-datoteke">Čitanje <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteke</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">✍️ Zadatak 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resenje">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">✍️ Zadatak 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">✍️ Zadatak 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">✍️ Zadatak 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-5">✍️ Zadatak 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Rešenje:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
         </div>
@@ -788,10 +812,10 @@ komanda</p>
 <h2>Učitavanje .csv fajlova</h2>
 <p>CSV fajlovi (<em>comma-separated value</em>) predstavlja tekstualnu datoteku za skladištenje tabelarnih fajlova, obično kreiranih u ekselu. Svaki red tabele zapisuje se u zasebnom redu tekstualne datoteke. Vrednosti unutar jednog reda razdvajaju se obično zarezom. Prvi red fajla najčešće predstavlja zaglavlje sa opisom podataka unutar tabele.</p>
 <p>Evo kako izgleda csv fajl otvoren kao .txt dokument:</p>
-<figure class="align-center" id="id1">
+<figure class="align-center" id="id5">
 <a class="reference internal image-reference" href="_images/happiness2019csv.png"><img alt="_images/happiness2019csv.png" src="_images/happiness2019csv.png" style="width: 500px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 10. </span><span class="caption-text">Početni deo csv datoteke</span></p>
+<p><span class="caption-number">Slika 11. </span><span class="caption-text">Početni deo csv datoteke</span></p>
 </figcaption>
 </figure>
 <p>Datoteke tipa <code class="docutils literal notranslate"><span class="pre">csv</span></code> učitavamo koristeći modul <code class="docutils literal notranslate"><span class="pre">csv</span></code> i metodu <code class="docutils literal notranslate"><span class="pre">.reader()</span></code>, koja kreira iterabilni objekat:</p>
@@ -927,7 +951,187 @@ komanda</p>
 </div>
 </div>
 </div>
+<br>
 </section>
+</section>
+<section id="vezbanja">
+<h2>Vežbanja</h2>
+<section id="zadatak-1">
+<h3>✍️ Zadatak 1</h3>
+<p>Napisati funkciju koja prima naziv tekstualnog fajla i vraća <strong>broj redova u tom fajlu</strong>.  Ako fajl ne postoji, funkcija treba da vrati informaciju o grešci u čitljivom obliku.</p>
+<p>Testiraj funkciju za datoteku <code class="docutils literal notranslate"><span class="pre">Podaci/imena.txt</span></code></p>
+<section id="resenje">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">broj_redova</span><span class="p">(</span><span class="n">fajl</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fajl</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Greška: fajl &#39;</span><span class="si">{</span><span class="n">fajl</span><span class="si">}</span><span class="s2">&#39; ne postoji.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fajl</span> <span class="o">=</span> <span class="s2">&quot;Podaci/imena.txt&quot;</span>
+<span class="n">broj_redova</span><span class="p">(</span><span class="n">fajl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="zadatak-2">
+<h3>✍️ Zadatak 2</h3>
+<p>Napisati funkciju koja prima dva fajla: <code class="docutils literal notranslate"><span class="pre">Podaci/izvor.txt</span></code> i <code class="docutils literal notranslate"><span class="pre">Podaci/kopija.txt</span></code>, čita sadržaj izvornog fajla i kopira ga u drugi fajl. Na kraju funkcija treba da ispiše koliko je karaktera kopirano.</p>
+<section id="id1">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kopiraj_fajl</span><span class="p">(</span><span class="n">izvor</span><span class="p">,</span> <span class="n">kopija</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">izvor</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">sadrzaj</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">kopija</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f2</span><span class="p">:</span>
+            <span class="n">f2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">sadrzaj</span><span class="p">)</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Uspešno kopirano </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">sadrzaj</span><span class="p">)</span><span class="si">}</span><span class="s2"> karaktera.&quot;</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Greška: fajl &#39;</span><span class="si">{</span><span class="n">izvor</span><span class="si">}</span><span class="s2">&#39; ne postoji.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">izvor</span> <span class="o">=</span> <span class="s2">&quot;Podaci/izvor.txt&quot;</span>
+<span class="n">kopija</span> <span class="o">=</span> <span class="s2">&quot;Podaci/kopija.txt&quot;</span>
+<span class="n">kopiraj_fajl</span><span class="p">(</span><span class="n">izvor</span><span class="p">,</span> <span class="n">kopija</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Uspešno kopirano 79 karaktera.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="zadatak-3">
+<h3>✍️ Zadatak 3</h3>
+<p>Napisati funkciju koja čita fajl <code class="docutils literal notranslate"><span class="pre">Podaci/brojevi</span></code> sa numeričkim vrednostima po jednoj u svakom redu, i vraća zbir svih brojeva. Ako se u fajlu nalaze linije koje nisu brojevi, funkcija treba da ih preskoči.</p>
+<section id="id2">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zbirovi</span><span class="p">(</span><span class="n">fajl</span><span class="p">):</span>
+    <span class="n">zbir</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fajl</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">linija</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">zbir</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">linija</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="k">continue</span>
+        <span class="k">return</span> <span class="n">zbir</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Greška: fajl &#39;</span><span class="si">{</span><span class="n">fajl</span><span class="si">}</span><span class="s2">&#39; ne postoji.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fajl</span> <span class="o">=</span> <span class="s2">&quot;Podaci/brojevi.txt&quot;</span>
+<span class="n">zbirovi</span><span class="p">(</span><span class="n">fajl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1099.94
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="zadatak-4">
+<h3>✍️ Zadatak 4</h3>
+<p>Napisati funkciju koja prima listu stringova i ime fajla, i zapisuje svaki string u novi red tog fajla.<br />
+Ako fajl već postoji, dati opciju korisniku da bira da li će da se prepiše ili dopuni.</p>
+<section id="id3">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">upisi_linije</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="n">fajl</span><span class="p">):</span>
+    <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">fajl</span><span class="p">):</span>
+        <span class="n">izbor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Fajl postoji. Upisati na kraj (A) ili prepisati (P)? &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">izbor</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;p&quot;</span><span class="p">:</span>
+            <span class="n">mode</span> <span class="o">=</span> <span class="s2">&quot;w&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fajl</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">linija</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">linija</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Домаћинство&#39;</span><span class="p">,</span>  <span class="s1">&#39;троши&#39;</span><span class="p">,</span>  <span class="s1">&#39;највише&#39;</span><span class="p">,</span> <span class="s1">&#39;на&#39;</span><span class="p">,</span> <span class="s1">&#39;храну&#39;</span><span class="p">,</span> <span class="s1">&#39;и&#39;</span><span class="p">,</span> <span class="s1">&#39;становање&#39;</span><span class="p">]</span> 
+<span class="n">upisi_linije</span><span class="p">(</span><span class="n">lista</span><span class="p">,</span> <span class="s2">&quot;Podaci/ekonomija.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="zadatak-5">
+<h3>✍️ Zadatak 5</h3>
+<p>Napisati funkciju koja prima ime fajla i string za pretragu, i vraća koliko puta se dati string pojavljuje u fajlu (bez obzira na velika i mala slova).</p>
+<p>Testirati program za datoteku <code class="docutils literal notranslate"><span class="pre">Podaci/imena.txt</span></code> i string <code class="docutils literal notranslate"><span class="pre">an</span></code>.</p>
+<section id="id4">
+<h4>Rešenje:</h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prebroj_pojave</span><span class="p">(</span><span class="n">fajl</span><span class="p">,</span> <span class="n">rec</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">fajl</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">sadrzaj</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">sadrzaj</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">rec</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Greška: fajl &#39;</span><span class="si">{</span><span class="n">fajl</span><span class="si">}</span><span class="s2">&#39; ne postoji.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prebroj_pojave</span><span class="p">(</span><span class="s2">&quot;Podaci/imena.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;an&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<br>
+</section>
+</section>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
 </section>
 </section>
 
@@ -1010,6 +1214,30 @@ komanda</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citanje-pickle-datoteke">Čitanje <code class="docutils literal notranslate"><span class="pre">pickle</span></code> datoteke</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-1">✍️ Zadatak 1</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#resenje">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">✍️ Zadatak 2</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">✍️ Zadatak 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">✍️ Zadatak 4</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Rešenje:</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-5">✍️ Zadatak 5</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Rešenje:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>
 
