@@ -39,8 +39,10 @@
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
-    <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=9b1a9c12" />
+    <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=c801bd93" />
     <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/linkovi-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/tabela-checkpoint.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
@@ -441,7 +443,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="klase">
+  <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* дебља, јача линија испод заглавља */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* тања, светлија линија испод последњег реда */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="klase">
 <h1>Klase</h1>
 <p>Zamislite da radite u velikoj fabrici igračaka. Svakog dana treba da se proizvede na hiljade istih modela – recimo, plišanih medveda. Svaki medved treba da ima ime, boju krzna, broj godina (ako baš hoćete da bude realističan), kao i nekoliko tipičnih ponašanja: može da se predstavi, da kaže koliko ima godina i, naravno, da mahne šapom.</p>
 <p>Sad zamislite kako bi izgledalo kada bi svaki radnik pravio medvede po svom osećaju. Jedan bi zaboravio da doda boju, drugi bi pogrešno napisao ime, treći bi pustio medveda bez šape… Totalni haos.</p>
