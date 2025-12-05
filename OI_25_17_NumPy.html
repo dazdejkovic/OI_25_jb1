@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -450,6 +450,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalna-raspodela">Normalna raspodela</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
@@ -463,6 +464,43 @@ document.write(`
                 <article class="bd-article">
                   
   <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+a[href^="http://"],
+a[href^="https://"] {
+    color: blue !important;
+}
+
+/* stil za sve tabele */
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* дебља, јача линија испод заглавља */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* тања, светлија линија испод последњег реда */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="uvod-u-numpy">
 <h1>Uvod u NumPy</h1>
@@ -559,6 +597,12 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2.3.3&#39;
 </pre></div>
 </div>
 </div>
@@ -582,8 +626,9 @@ document.write(`
 </div>
 <div class="note admonition">
 <p class="admonition-title">Napomena</p>
-<p>Objekat <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> je generički višedimenzionalni kontejner sa <strong>homogenim podacima</strong>. Svi njegovi elementi moraju biti istog tipa. Primetite da je kompajler sve podatke prilikom kreiranja ndarray niza zbog toga upisao kao float. Istražite šta bi se desilo da u <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> pokušate da prebacite listu od jednog broja i jednog stringa.</p>
+<p>Objekat <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> je generički višedimenzionalni kontejner sa <strong>homogenim podacima</strong>. Svi njegovi elementi moraju biti istog tipa.</p>
 </div>
+<p>Primetite da je kompajler sve podatke prilikom kreiranja ndarray niza zbog toga upisao kao float. Istražite šta bi se desilo da u <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> pokušate da prebacite listu od jednog broja i jednog stringa.</p>
 <p>Sve mogućnosti kretanja kroz nizove na koje ste se navikli za ugrađene liste važe i sada, od pristupanja delu liste, preko isecanja.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -670,13 +715,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[1.28868168e-311, 3.16202013e-322],
-        [0.00000000e+000, 0.00000000e+000],
-        [2.44029516e-312, 3.38121268e-057]],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[[0.00000000e+000, 0.00000000e+000],
+        [5.69163624e-321, 7.55920438e-322],
+        [6.50190390e-321, 1.31370875e-076]],
 
-       [[2.96125175e-032, 4.08594573e+179],
-        [1.82760908e+184, 1.00195501e+165],
-        [4.50625536e+174, 2.00331462e-076]]])
+       [[6.06712613e-321, 8.84698042e+165],
+        [3.69561103e-321, 1.27867829e+165],
+        [3.24107064e-321, 4.04096272e-037]]])
 </pre></div>
 </div>
 </div>
@@ -743,7 +788,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Metod <code class="docutils literal notranslate"><span class="pre">arange</span></code> ima jedan problem. Zbog ograničene preciznosti aritmetike sa realnim brojevima nije uvek moguće znati koliko će se elemenata kreirati. Iz tog razloga, i usled činjenice da nekada imamo potrebuo da i poslednji element bude u kreiranom nizu brojeva, koristimo metod <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>. Ovaj metod kreira niz sa zadatim brojem elemenata, prvi i poslednji član su mu zadate vrednosti intervala, a članovi između su brojevi tako da je razlika između svaka dva broja jednaka.</p>
+<p>Metod <code class="docutils literal notranslate"><span class="pre">arange</span></code> ima jedan problem. Zbog ograničene preciznosti aritmetike sa realnim brojevima nije uvek moguće znati koliko će se elemenata kreirati. Iz tog razloga, i usled činjenice da nekada imamo potrebu da i poslednji element bude u kreiranom nizu brojeva, koristimo metod <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code>. Ovaj metod kreira niz sa zadatim brojem elemenata, prvi i poslednji član su mu zadate vrednosti intervala, a članovi između su brojevi tako da je razlika između svaka dva broja jednaka.</p>
 <p>Na primer, želimo da kreiramo aritmetički niz sa pet elemenata sa vrednostima između 1 i 20 uključujući i njih:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -963,6 +1008,7 @@ nbytes:  64
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">a</span><span class="o">+</span><span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -973,21 +1019,9 @@ nbytes:  64
  [2]]
 </pre></div>
 </div>
-</div>
-</div>
-<div class="hint admonition">
-<p class="admonition-title">Kviz 1.</p>
-<p>Šta će biti izlaz prilikom pokretanja koda ispod?</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">a</span><span class="o">+</span><span class="n">b</span>
-</pre></div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Odgovor</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-       <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-       <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2],
+       [1, 2, 3],
+       [2, 3, 4]])
 </pre></div>
 </div>
 </div>
@@ -996,7 +1030,7 @@ nbytes:  64
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/numpy_slika_1.png"><img alt="_images/numpy_slika_1.png" src="_images/numpy_slika_1.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 12. </span><span class="caption-text">Emitovanje (<em>Izvor</em>: Python Data Science Handbook, Jake VanderPlas.)</span></p>
+<p><span class="caption-number">Slika 13. </span><span class="caption-text">Emitovanje (<em>Izvor</em>: Python Data Science Handbook, Jake VanderPlas.)</span></p>
 </figcaption>
 </figure>
 <p>Delu o emitovanju u toj knjizi možete pristupiti <a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/02.05-computation-on-arrays-broadcasting.html">OVDE</a>.</p>
@@ -1016,6 +1050,7 @@ nbytes:  64
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;M = &quot;</span><span class="p">,</span> <span class="n">M</span><span class="p">)</span> <span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a =&quot;</span> <span class="p">,</span> <span class="n">a</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrica M:&quot;</span><span class="p">,</span> <span class="n">M</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="s2">&quot;Matrica a:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">M</span><span class="o">+</span><span class="n">a</span>
 </pre></div>
 </div>
 </div>
@@ -1024,6 +1059,10 @@ nbytes:  64
  [4 5 6]]
 a = [1 2 3]
 Matrica M: (2, 3) Matrica a: (3,)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 4, 6],
+       [5, 7, 9]])
 </pre></div>
 </div>
 </div>
@@ -1052,45 +1091,7 @@ Matrica M: (2, 3) Matrica a: (3,)
 </pre></div>
 </div>
 <p>Sabiranje se sada realizuje na očekivan način i dobijamo rezultat koji je i prikazan iznad.</p>
-<div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-Pitanje</label><div class="sd-tab-content docutils">
-<br>
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">a</span><span class="o">+</span><span class="n">b</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">)</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> 
-          <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> 
-          <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
-          
-<span class="n">b</span><span class="p">)</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> 
-          <span class="p">[</span><span class="mi">3</span><span class="p">],</span> 
-          <span class="p">[</span><span class="mi">5</span><span class="p">]])</span>
-          
-<span class="n">c</span><span class="p">)</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
-
-<span class="n">d</span><span class="p">)</span> <span class="n">Error</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Odgovor</label><div class="sd-tab-content docutils">
-<p>Tačan odgovor: a).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
-       <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+<p>Probajmo da predvidimo šta će biti izlaz ako posle pokretanja sledećeg bloka želimo da izračunamo <code class="docutils literal notranslate"><span class="pre">a+b</span></code>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
@@ -1098,7 +1099,6 @@ Odgovor</label><div class="sd-tab-content docutils">
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrica a:&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrica b:&quot;</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="n">a</span><span class="o">+</span><span class="n">b</span>
 </pre></div>
 </div>
 </div>
@@ -1111,11 +1111,6 @@ Odgovor</label><div class="sd-tab-content docutils">
 
 Matrica a: (3, 1)
 Matrica b: (3,)
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2, 3],
-       [2, 3, 4],
-       [3, 4, 5]])
 </pre></div>
 </div>
 </div>
@@ -1141,7 +1136,7 @@ Matrica b: (3,)
        <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]))</span>
 </pre></div>
 </div>
-<p>Hajde sada da pkuđamo da damo odgovor na pitanje bez pokretanja koda: Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
+<p>Hajde sada da pokušamo da damo odgovor na pitanje bez pokretanja koda: Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">a</span><span class="o">+</span><span class="n">b</span>
@@ -1233,52 +1228,31 @@ oblik (shape) b: (3,)
 <h2>Kalkulacije sa NumPy nizovima</h2>
 <p>Numpy je važan modul jer nam omogućava rutinske operacije sa podacima bez pisanja velikog broja <code class="docutils literal notranslate"><span class="pre">for</span></code> petlji. Sve ono što ćete videti u nastavku možemo da uradimo i u osnovnom Pajtonu, ali bi nam za to bilo neophodno daleko više linija koda. Pre toga, jedno kviz pitanje da testirate sebe da li ste razumeli kako neki od osnovnih metoda NumPy biblioteke funkcionišu.</p>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
-Pitanje</label><div class="sd-tab-content docutils">
-<p><br />
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
+<p class="admonition-title">Kviz</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="linenos">2</span><span class="n">arr</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">)</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span><span class="p">]</span>
-    <span class="p">[</span><span class="mi">3</span> <span class="mi">4</span><span class="p">]</span>
-    <span class="p">[</span><span class="mi">5</span> <span class="mi">6</span><span class="p">]]</span>
-
-<span class="n">b</span><span class="p">)</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
-
-<span class="n">c</span><span class="p">)</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">7</span><span class="p">]</span>
-
-<span class="n">d</span><span class="p">)</span> <span class="p">[[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span><span class="p">]</span>
-    <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]]</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
-Odgovor</label><div class="sd-tab-content docutils">
-<p><br />
-Tačan odgovor: d).</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
+<p>Neka je:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 2 3]
- [4 5 6]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 2 1]
+ [6 5 4]]
 </pre></div>
 </div>
 </div>
@@ -1291,8 +1265,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2,  4,  6],
-       [ 8, 10, 12]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 6,  4,  2],
+       [12, 10,  8]])
 </pre></div>
 </div>
 </div>
@@ -1304,8 +1278,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1,  4,  9],
-       [16, 25, 36]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 9,  4,  1],
+       [36, 25, 16]])
 </pre></div>
 </div>
 </div>
@@ -1322,9 +1296,9 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[17, 22, 27],
-       [22, 29, 36],
-       [27, 36, 45]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[45, 36, 27],
+       [36, 29, 22],
+       [27, 22, 17]])
 </pre></div>
 </div>
 </div>
@@ -1345,8 +1319,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.  , 0.5 , 0.33],
-       [0.25, 0.2 , 0.17]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.33, 0.5 , 1.  ],
+       [0.17, 0.2 , 0.25]])
 </pre></div>
 </div>
 </div>
@@ -1358,8 +1332,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.79, 1.11, 1.25],
-       [1.33, 1.37, 1.41]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.25, 1.11, 0.79],
+       [1.41, 1.37, 1.33]])
 </pre></div>
 </div>
 </div>
@@ -1384,8 +1358,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.  , 0.69, 1.1 ],
-       [1.39, 1.61, 1.79]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.1 , 0.69, 0.  ],
+       [1.79, 1.61, 1.39]])
 </pre></div>
 </div>
 </div>
@@ -1397,8 +1371,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.  , 1.41, 1.73],
-       [2.  , 2.24, 2.45]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.73, 1.41, 1.  ],
+       [2.45, 2.24, 2.  ]])
 </pre></div>
 </div>
 </div>
@@ -1413,8 +1387,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[37 98 85 88 16 80]
-[19 18 12 19 17 14]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 6 74 87 25 40  6]
+[16 14 18 18 11 15]
 </pre></div>
 </div>
 </div>
@@ -1426,7 +1400,7 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 56, 116,  97, 107,  33,  94], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 22,  88, 105,  43,  51,  21], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -1438,7 +1412,7 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([37, 98, 85, 88, 17, 80], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([16, 74, 87, 25, 40, 15], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -1453,8 +1427,8 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.76 ms ± 150 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-42.7 μs ± 760 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.05 ms ± 605 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+42 μs ± 805 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1502,7 +1476,7 @@ Tačan odgovor: d).</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/numpy_slika_2.png"><img alt="_images/numpy_slika_2.png" src="_images/numpy_slika_2.png" style="width: 700px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 13. </span><span class="caption-text">NumPy_ose (<em>Izvor</em>: Zvanična veb-stranica NumPy biblioteke)</span></p>
+<p><span class="caption-number">Slika 14. </span><span class="caption-text">NumPy_ose (<em>Izvor</em>: Zvanična veb-stranica NumPy biblioteke)</span></p>
 </figcaption>
 </figure>
 <p>Stranici o indeksiranju i isecanju možete pristupiti <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html#indexing-and-slicing">OVDE</a>.</p>
@@ -1542,24 +1516,17 @@ Tačan odgovor: d).</p>
 </div>
 </div>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
-Pitanje</label><div class="sd-tab-content docutils">
+<p class="admonition-title">Kviz:</p>
 <p><br />
 Ako želimo da koristimo više od jedne ose unutar n-dimenzionog vektora, prilikom poziva neke funkcije, neophodno je ose predstaviti kao torku brojeva, kako smo i prikazali u kodu ispod. Šta će biti rezultat prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">niz3d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">niz3d</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
-Odgovor</label><div class="sd-tab-content docutils">
+<div class="dropdown note admonition">
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">24</span><span class="p">])</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1626,96 +1593,50 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 <p>Kroz narednih nekoliko kviz pitanja podsetićemo se na već naučene osobine listi, a zatim ćemo napraviti paralelu sa NumPy nizovima.</p>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-6">
-Pitanje</label><div class="sd-tab-content docutils">
-<br>
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?
+<p class="admonition-title">Kviz</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">deo</span> <span class="o">=</span> <span class="n">lista1</span>
 <span class="n">deo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">lista1</span>
-
-
-<span class="n">a</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">b</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">c</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">d</span><span class="p">)</span> <span class="n">Error</span>
+</pre></div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
-<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-7">
-Odgovor</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="docutils">
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
 </div>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-8">
-Pitanje</label><div class="sd-tab-content docutils">
-<br>
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?
+<p class="admonition-title">Kviz</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">deo</span> <span class="o">=</span> <span class="n">lista1</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">deo</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">lista1</span>
-
-<span class="n">a</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">b</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">c</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">d</span><span class="p">)</span> <span class="n">Error</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-9">
-Odgovor</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
 <div class="hint admonition">
 <p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-10">
-Pitanje</label><div class="sd-tab-content docutils">
-<br>
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?
+<p>Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">deo_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
 <span class="n">deo_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">b</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">c</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-<span class="n">d</span><span class="p">)</span> <span class="n">Error</span>
+<div class="admonition-odgovor admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
-</div>
-</div>
-<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-11">
-Odgovor</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="p">)</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1740,11 +1661,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-12">
-Pitanje</label><div class="sd-tab-content docutils">
+<p class="admonition-title">Kviz</p>
 <p>Da rezimiramo ovaj deo, postavljamo i poslednje pitanje za samostalno testiranje. Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">deo_arr</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
@@ -1752,21 +1669,18 @@ Pitanje</label><div class="sd-tab-content docutils">
 <span class="n">arr</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-13">
-Odgovor</label><div class="sd-tab-content docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
 <div class="important admonition">
 <p class="admonition-title">Napomena</p>
-<p>Logično pitanje se otvara: Ako NumPy radi ovako, kako da uzmem deo nekog niza i menjam ga a da ne pokvarim originalni skup podataka?</p>
+<p>Logično pitanje se otvara: Ako NumPy radi ovako, kako da uzmem deo nekog niza i menjam ga, a da ne pokvarim originalni skup podataka?</p>
 <p>Odgovor: koristimo NumPy metode <code class="docutils literal notranslate"><span class="pre">np.copy</span></code> i <code class="docutils literal notranslate"><span class="pre">np.view</span></code>.</p>
-<p>Metoda <code class="docutils literal notranslate"><span class="pre">np.copy</span></code> kreira duboku kopiju niza (podsetite se priče o plitkim i dubokim kopijama kod listi) i je upravo je metoda koju smo želeli. Metodom <code class="docutils literal notranslate"><span class="pre">np.view</span></code> sugerišemo da želimo da ostvarimo uvid u originalni niz i svaka promena tako kreiranog objekta, uticaće i na originalni niz.</p>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">np.copy</span></code> kreira duboku kopiju niza (podsetite se priče o plitkim i dubokim kopijama kod listi) i upravo je metoda koju smo želeli. Metodom <code class="docutils literal notranslate"><span class="pre">np.view</span></code> sugerišemo da želimo da ostvarimo uvid u originalni niz i svaka promena tako kreiranog objekta, uticaće i na originalni niz.</p>
 </div>
 <p>U primeru ispod, kreiraćemo (duboku) kopiju elemenata niza, i vidimo da menjanje <code class="docutils literal notranslate"><span class="pre">deo_arr</span></code> neće uticati na originalni niz.</p>
 <div class="cell docutils container">
@@ -1916,12 +1830,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 <div class="hint admonition">
 <p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-14">
-Pitanje</label><div class="sd-tab-content docutils">
-<p><br />
-Šta će biti rezultat prilikom pokretanja sledeće linije koda?</p>
+<p>Šta će biti rezultat prilikom pokretanja sledeće linije koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">niz3d</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:,:]</span>
 </pre></div>
 </div>
@@ -1932,21 +1841,17 @@ Pitanje</label><div class="sd-tab-content docutils">
 
        <span class="p">[[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]]])</span>
-        
+        <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]]])</span>    
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-15">
-Odgovor</label><div class="sd-tab-content docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[[</span> <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">],</span>
         <span class="p">[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]],</span>
 
        <span class="p">[[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
         <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">]]])</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -1973,8 +1878,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<p>Dobili smo vrednosti elemenata na pozicijama 3 (dvaput zaredom), vrednost elementa na poslednjoj poziciji i vrednost elementa sa indeskom 8.</p>
-<p>Iako je ovo kod direktno preuzet sa NumPy sajta, mi u stvari nismo ni morali da pravimo <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> prilikom poziva, već je dovoljno bilo da se pozovemo na listu elemenata:</p>
+<p>Dobili smo vrednosti elemenata na pozicijama 3 (dvaput zaredom), vrednost elementa na poslednjoj poziciji i vrednost elementa sa indeskom 8.1 Iako je ovo kod direktno preuzet sa NumPy sajta, mi u stvari nismo ni morali da pravimo <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> prilikom poziva, već je dovoljno bilo da se pozovemo na listu elemenata:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">[[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span>
@@ -2048,7 +1952,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <p>Ono što smo dobili su u stvari vrednosti elemenata na pozicijama (1,0), (1,-1) i (2,1).</p>
-<p>Emitovanje je aktivno i prilikom celobrojnog isecanja, tako da ovakav kod neće dovesti do greške već ćemo dobiti vrednosti na pozicijama (1,1), (1,1) i (2,1).</p>
+<p>Emitovanje je aktivno i prilikom celobrojnog isecanja, tako da sledeći kod neće dovesti do greške već ćemo dobiti vrednosti na pozicijama (1,1), (1,1) i (2,1).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">niz2d</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">1</span><span class="p">]</span>
@@ -2173,24 +2077,16 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 <p>Najpre smo napraviti logički (Bulov) niz svih vrednosti koje zadovoljavaju uslov (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">6</span></code>). Nakon toga, da bismo izabrali ove vrednosti iz niza, možemo ga jednostavno indeksirati ovim Bulovim nizom kao što smo i uradili. Ovo je poznato kao <strong>operacija maskiranja</strong>.</p>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-16">
-Pitanje</label><div class="sd-tab-content docutils">
-<p><br />
-Ovo pitanje preuzeli smo sa zvanične NumPy stranice, iz dela o indeksiranju dostupnom <a class="reference external" href="https://numpy.org/doc/stable/user/basics.indexing.html">OVDE</a>. Pitanje je složenije od dosadašnjih, dobro razmislite pre nego što date odgovor, pokušajte da odgovor kreirate deo po deo. Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
+<p class="admonition-title">Kviz</p>
+<p>Ovo pitanje preuzeli smo sa zvanične NumPy stranice, iz dela o indeksiranju dostupnom <a class="reference external" href="https://numpy.org/doc/stable/user/basics.indexing.html">OVDE</a>. Pitanje je složenije od dosadašnjih, dobro razmislite pre nego što date odgovor, pokušajte da odgovor kreirate deo po deo. Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">35</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="linenos">2</span><span class="n">b</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">20</span>
 <span class="linenos">3</span><span class="n">x</span><span class="p">[</span><span class="n">b</span><span class="p">[:,</span> <span class="mi">5</span><span class="p">],</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-17">
-Odgovor</label><div class="sd-tab-content docutils">
-<p><br />
-Ovo pitanje zaslužuje detaljnije obrazloženje. Prvo da razmislimo šta će dati ispis linije koda <code class="docutils literal notranslate"><span class="pre">b[:,</span> <span class="pre">5]</span></code>. Reč je o šestoj koloni (indeks 5) logičke matrice uslova <code class="docutils literal notranslate"><span class="pre">x&gt;20</span></code>. Rezultat je sledeći niz:</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<p>Ovo pitanje zaslužuje detaljnije obrazloženje. Prvo da razmislimo šta će dati ispis linije koda <code class="docutils literal notranslate"><span class="pre">b[:,</span> <span class="pre">5]</span></code>. Reč je o šestoj koloni (indeks 5) logičke matrice uslova <code class="docutils literal notranslate"><span class="pre">x&gt;20</span></code>. Rezultat je sledeći niz:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -2199,6 +2095,7 @@ Ovo pitanje zaslužuje detaljnije obrazloženje. Prvo da razmislimo šta će dat
        <span class="p">[</span><span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">]])</span>
 </pre></div>
 </div>
+<div class="```: docutils">
 </div>
 </div>
 </div>
@@ -2286,32 +2183,15 @@ Ovo pitanje zaslužuje detaljnije obrazloženje. Prvo da razmislimo šta će dat
 </div>
 </div>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-18">
-Pitanje</label><div class="sd-tab-content docutils">
-<p><br />
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
+<p class="admonition-title">Kviz</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrica</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">matrica</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">)</span> <span class="o">-</span><span class="mi">28</span>
-
-<span class="n">b</span><span class="p">)</span> <span class="mi">7</span>
-
-<span class="n">c</span><span class="p">)</span> <span class="n">Error</span>
-
-<span class="n">d</span><span class="p">)</span> <span class="n">Nijedan</span> <span class="n">od</span> <span class="n">ponuđenih</span> <span class="n">odgovora</span>
-</pre></div>
-</div>
-</div>
-<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-19">
-Odgovor</label><div class="sd-tab-content docutils">
-<p>b) 7</p>
-</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<p>7</p>
 </div>
 </div>
 <p>Da pojasnimo kako smo došli do takvog odgovora. Kod ispod možda može najviše pomogne. Uslov <code class="docutils literal notranslate"><span class="pre">matrica</span> <span class="pre">&lt;</span> <span class="pre">0</span></code> kreirao je masku sa vrednostima <code class="docutils literal notranslate"><span class="pre">True</span></code> i <code class="docutils literal notranslate"><span class="pre">False</span></code> i sumiranje takve matrice i dovelo je do toga da smo dobili opet identičan odgovor kao i iznad, broj elemenata koji su manji od 0.</p>
@@ -2358,49 +2238,35 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="hint admonition">
-<p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-20">
-Pitanje</label><div class="sd-tab-content docutils">
-<p><br />
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
+<p class="admonition-title">Kviz</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">matrica</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 <span class="linenos">2</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">matrica</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-21">
-Odgovor</label><div class="sd-tab-content docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
-</div>
 <div class="hint admonition">
 <p class="admonition-title">Kviz pitanje</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-11" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-22">
-Pitanje</label><div class="sd-tab-content docutils">
-<p><br />
-Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg bloka koda?</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">M</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="linenos">2</span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="n">M</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
 <span class="linenos">3</span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 <span class="linenos">4</span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)]</span>
 </pre></div>
 </div>
-</div>
-<input id="sd-tab-item-23" name="sd-tab-set-11" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-23">
-Odgovor</label><div class="sd-tab-content docutils">
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">5</span><span class="p">],</span>
        <span class="p">[</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
 </pre></div>
 </div>
+<div class="```: docutils">
 </div>
 </div>
 </div>
@@ -2544,7 +2410,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(3)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.int64(1)
 </pre></div>
 </div>
 </div>
@@ -2557,7 +2423,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 8, 1, 4, 1])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 1, 8, 2, 4])
 </pre></div>
 </div>
 </div>
@@ -2569,9 +2435,9 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8, 3],
-       [3, 8],
-       [4, 3]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 1],
+       [2, 3],
+       [2, 2]])
 </pre></div>
 </div>
 </div>
@@ -2598,7 +2464,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 2, 4])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([8, 4, 1])
 </pre></div>
 </div>
 </div>
@@ -2610,9 +2476,9 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[12, 14],
-       [12, 13],
-       [11, 13]], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[10, 11],
+       [11, 11],
+       [14, 10]], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -2620,7 +2486,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </section>
 <section id="uniformna-raspodela">
 <h3>Uniformna raspodela</h3>
-<p><strong>Primer.</strong>  Kreiranje matrice 3x3 čije su vrednosti iz <span class="math notranslate nohighlight">\(\mathcal{U}[-1,1]\)</span> raspodele:</p>
+<p>Kodom koje sledi kreiramo matricu 3x3 čije su vrednosti iz <span class="math notranslate nohighlight">\(\mathcal{U}[-1,1]\)</span> raspodele:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -2628,9 +2494,9 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.7529182 , -0.74030873,  0.88906634],
-       [-0.31295338,  0.57729764, -0.62143548],
-       [ 0.04075586,  0.56779331, -0.52373079]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.67477851, -0.62286758, -0.39457234],
+       [ 0.78708111,  0.82691678, -0.22441721],
+       [-0.20530699,  0.71358691, -0.07234566]])
 </pre></div>
 </div>
 </div>
@@ -2638,7 +2504,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 </section>
 <section id="normalna-raspodela">
 <h3>Normalna raspodela</h3>
-<p><strong>Primer.</strong> Kreiranje matrice 2x3 čije su vrednosti iz <span class="math notranslate nohighlight">\(\mathcal{N}[5,2^2]\)</span>. Važno je kod normalne raspodele konstatovati da su parametri pri pozivu funkcije <code class="docutils literal notranslate"><span class="pre">np.random.normal(loc=0.0,</span> <span class="pre">scale=1.0,</span> <span class="pre">size=None)</span></code> matematičko očekivanje (<code class="docutils literal notranslate"><span class="pre">loc</span></code>) i standardna devijacija (<code class="docutils literal notranslate"><span class="pre">scale</span></code>) što odstupa od standardnog zapisa normalne raspodele gde kao drugi parametar navodimo varijansu.</p>
+<p>Važno je kod normalne raspodele konstatovati da su parametri pri pozivu funkcije <code class="docutils literal notranslate"><span class="pre">np.random.normal(loc=0.0,</span> <span class="pre">scale=1.0,</span> <span class="pre">size=None)</span></code> matematičko očekivanje (<code class="docutils literal notranslate"><span class="pre">loc</span></code>) i standardna devijacija (<code class="docutils literal notranslate"><span class="pre">scale</span></code>) što odstupa od standardnog zapisa normalne raspodele gde kao drugi parametar navodimo varijansu. Kodom koji sledi kreiramo matricu 2x3 čije su vrednosti iz <span class="math notranslate nohighlight">\(\mathcal{N}[5,2^2]\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -2646,13 +2512,12 @@ Odgovor</label><div class="sd-tab-content docutils">
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[7.46567648, 8.56300251, 5.36652668],
-       [5.51405286, 3.02394528, 7.63890938]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[6.2074195 , 1.91730696, 6.29555793],
+       [7.37158711, 6.53617724, 2.01854798]])
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Primer.</strong> Kreiranje matrice 3x2 čije su vrednosti slučajni celi brojevi intervalu [10,15).</p>
 <p>Na kraju, navodimo najčešće primenjivane funkcije dostupne u <code class="docutils literal notranslate"><span class="pre">np.random</span></code></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -2700,8 +2565,670 @@ Odgovor</label><div class="sd-tab-content docutils">
 </tbody>
 </table>
 </div>
-<br> 
+<br>
 </section>
+</section>
+<section id="vezbanja">
+<h2>Vežbanja</h2>
+<div class="admonition-vezba-1 admonition">
+<p class="admonition-title">Vežba 1</p>
+<ol class="arabic simple">
+<li><p>Primenom odgovarajućih funkcija iz Numpy biblioteke: Nađite dimenziju, veličinu dimenzija i ukupan broj podataka iz sledeće dve liste
+<code class="docutils literal notranslate"><span class="pre">[[3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6],</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">6],</span> <span class="pre">[8,</span> <span class="pre">8,</span> <span class="pre">0,</span> <span class="pre">4]]</span></code> ;  <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">4,</span> <span class="pre">5,</span> <span class="pre">6]</span></code>.</p></li>
+<li><p>Pomoću funkcije napravite niz brojeva od 1 do 20.</p></li>
+<li><p>Napravite dva proizvoljna višedimenzionalna niza i nađite njihov proizvod.</p></li>
+<li><p>Napravite 7 elemenata aritmetičkog niza čiji je prvi član 3, a poslednji 21.</p></li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. </span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dimenzija je </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">ndim</span><span class="si">}</span><span class="s2">, </span><span class="se">\n</span><span class="s2"> Veličina dimenzije su </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> Ukupan broj podataka u nizu je  </span><span class="si">{</span><span class="n">v</span><span class="o">.</span><span class="n">size</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 4 5 6]
+ [1 2 5 6]
+ [8 8 0 4]]
+Dimenzija je 2, 
+ Veličina dimenzije su (3, 4) 
+ Ukupan broj podataka u nizu je  12
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="c1">#Ovako je definisan jednodimenzioni (1-D) niz</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">v1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3 4 5 6]
+1 (4,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#2 </span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19, 20])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#3</span>
+<span class="n">n1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[9 6 7 5 3]
+ [6 8 1 9 1]]
+[[3 8]
+ [9 8]
+ [3 9]
+ [9 8]
+ [2 2]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4</span>
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3,  6,  9, 12, 15, 18, 21])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-2 admonition">
+<p class="admonition-title">Vežba 2</p>
+<p>Neka je</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+         <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>Na datom nizu:</p>
+<ol class="arabic simple">
+<li><p>Izdvojite samo drugi red</p></li>
+<li><p>Promenite da u poslednjem redu budu sve jedinice</p></li>
+<li><p>Izdvojite presek prve dve kolone i poslednja dva reda</p></li>
+<li><p>Sada toj izvojenoj sekciji dodelite vrednosti 0 i prikažite konačan niz</p></li>
+<li><p>Na koji način možemo sekciju promeniti, a da to ne utiče na prvobitni niz?</p></li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 5, 6])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2</span>
+<span class="n">v</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># ili v[2]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 4 5 6]
+ [1 2 5 6]
+ [1 1 1 1]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:,:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 2],
+       [1, 1]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4</span>
+<span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:,:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 4 5 6]
+ [0 0 5 6]
+ [0 0 1 1]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">v</span><span class="p">[</span><span class="mi">1</span><span class="p">:,:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="p">;</span> <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 4 5 6]
+ [0 0 5 6]
+ [0 0 0 4]]
+[[3 4 5 6]
+ [1 2 5 6]
+ [8 8 0 4]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-3 admonition">
+<p class="admonition-title">Vežba 3</p>
+<ol class="arabic simple">
+<li><p>Napravite niz koji će se sastojati od imena članova vaše grupe.</p></li>
+<li><p>Napravite niz koji će sadržati vaše ocene iz osnova ekonomije, matematike, teorije cena, engleskog (npr. ako vas je dvoje u grupi, niz će biti tipa 2x4).</p></li>
+<li><p>Izdvojite ocene željene osobe iz grupe.</p></li>
+<li><p>Izdvojite za tu osobu samo ocenu iz matematike.</p></li>
+<li><p>Na kraju, umesto svih ocena koje su manje od 8 unesite ocenu 5.</p></li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1</span>
+<span class="n">imena</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="p">([</span><span class="s1">&#39;Anja&#39;</span><span class="p">,</span> <span class="s1">&#39;Luka&#39;</span><span class="p">,</span> <span class="s1">&#39;Jovana&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2</span>
+<span class="c1"># help(np.random.choice) POGLEDAJTE</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2025</span><span class="p">)</span>
+<span class="n">ocene</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">imena</span><span class="p">))])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ocene</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ocene</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">ocene</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">ocene</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 6 10 10  8]
+ [ 7  7  9  8]
+ [10 10  8 10]]
+2 (3, 4) 12
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3</span>
+<span class="n">ocene</span><span class="p">[</span><span class="n">imena</span> <span class="o">==</span> <span class="s1">&#39;Anja&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 6, 10, 10,  8]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4</span>
+<span class="n">ocene</span><span class="p">[</span><span class="n">imena</span><span class="o">==</span><span class="s1">&#39;Anja&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([10])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5</span>
+<span class="n">ocene</span><span class="p">[</span><span class="n">ocene</span><span class="o">&lt;</span><span class="mi">8</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ocene</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 5 10 10  8]
+ [ 5  5  9  8]
+ [10 10  8 10]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-4 admonition">
+<p class="admonition-title">Vežba 4</p>
+<ol class="arabic simple">
+<li><p>Napravite niz oblika 5x3 sastavljen od prvih 15 brojeva.</p></li>
+<li><p>Selektujte elemente na pozicijama: (1,0), (2,1) i (4,2) (posmatrajte kao indekse).</p></li>
+<li><p>Napravite kvadratnu matricu koja se dobija presecanjem 1. i 4. reda sa prve dve kolone (pogledajte sve funckije koje NumPy nudi).</p></li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1 </span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  2  3]
+ [ 4  5  6]
+ [ 7  8  9]
+ [10 11 12]
+ [13 14 15]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#2 </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s1</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 4  8 15]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3 </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])])</span> 
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s1</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  2]
+ [10 11]]
+&lt;class &#39;numpy.ndarray&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-5 admonition">
+<p class="admonition-title">Vežba 5</p>
+<ol class="arabic simple">
+<li><p>Generišite dva niza koja ce sadržati po 6 brojeva dobijenih slučajnim putem iz normalne raspodele.</p></li>
+<li><p>Izračunajte proizvod prvog i transponovanog drugog niza.</p></li>
+<li><p>Nađite maksimume (treba da ih je 6) iz oba niza, koristeći numpy funkciju..</p></li>
+<li><p>Saberite nizove pomoću numpy funkcije.</p></li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2025</span><span class="p">)</span>
+<span class="c1"># np.random.normal? POGLEDAJTE</span>
+<span class="n">niz1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span> <span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">niz2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">6</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">niz1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">niz2</span><span class="p">))</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">niz1</span><span class="p">,</span> <span class="n">niz2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(-5.8), np.float64(-5.8))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">niz1</span><span class="p">,</span> <span class="n">niz2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-5.8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">niz1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">niz2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.09  0.73 -1.44 -0.66 -0.1   2.15]
+[ 3.79  0.59  2.53  1.41 -1.08 -0.66]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">niz1</span><span class="p">,</span> <span class="n">niz2</span><span class="p">)</span>  <span class="c1"># Poredi elemente na istim pozicijama u 2 niza i bira onaj koji je veci</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.79,  0.73,  2.53,  1.41, -0.1 ,  2.15])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">niz1</span><span class="p">,</span> <span class="n">niz2</span><span class="p">)</span>  <span class="c1">#np.add? POGLEDAJTE</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.7 ,  1.32,  1.09,  0.75, -1.18,  1.49])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">niz1</span><span class="o">+</span><span class="n">niz2</span> <span class="c1"># Naravno, moze i ovako, ali se vama eksplicitno trazilo da ih saberete preko funkcije</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 3.7 ,  1.32,  1.09,  0.75, -1.18,  1.49])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-6 admonition">
+<p class="admonition-title">Vežba 6</p>
+<ol class="arabic simple">
+<li><p>Posmatramo nizove: <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">5,</span> <span class="pre">4,</span> <span class="pre">8,</span> <span class="pre">7,</span> <span class="pre">5]</span></code> i <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">9,</span> <span class="pre">3,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">0]</span></code></p></li>
+<li><p>Pomoću <code class="docutils literal notranslate"><span class="pre">numpy.where</span></code> funkcije napravite novi niz koji ce se sastojati od svakog drugog elementa prvog niza i preostalih elemenata iz drugog niza (dakle konačan niz treba da izgleda: [1, 5, 3, 8, 6, 5]</p></li>
+<li><p>Pokažite bulove indekse koji će ukazati na pripadnost brojeva 1 i 5 u novonastalom nizu</p></li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1 </span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span> 
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">uslov</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">uslov</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="c1">#np.where? POGLEDAJTE</span>
+<span class="n">r</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 5, 3, 8, 6, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Malo obješnjenja za <code class="docutils literal notranslate"><span class="pre">np.where</span></code>: <br />
+Forma: <code class="docutils literal notranslate"><span class="pre">np.where(uslov,</span> <span class="pre">niz1,</span> <span class="pre">niz2)</span></code> <br />
+Uslov se primenjuje na <code class="docutils literal notranslate"><span class="pre">niz1</span></code>. Ukoliko je uslov ispunjen rezultat je odgovarajući član niza <code class="docutils literal notranslate"><span class="pre">niz1</span></code>, u suprotnom rezultat je odgovarajući niza <code class="docutils literal notranslate"><span class="pre">niz2</span></code>.
+Na primer:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 5, 4, 5, 6, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<p>U ovom primeru, uslov <code class="docutils literal notranslate"><span class="pre">a&gt;5</span></code> vraća niz:  <code class="docutils literal notranslate"><span class="pre">[False,</span> <span class="pre">False,</span> <span class="pre">False,</span> <span class="pre">True,</span> <span class="pre">True,</span> <span class="pre">False]</span></code>.</p>
+<p>Ovaj niz predstavlja uslov, jer kada u funkciji <code class="docutils literal notranslate"><span class="pre">np.where</span></code> pišete uslov to mora biti neki objekat koji sadrzi logičke promenljive. Možda je zbunjujuće što uslov postavljamo za <code class="docutils literal notranslate"><span class="pre">a</span></code> (<code class="docutils literal notranslate"><span class="pre">a&gt;5</span></code>), a primenjujete ga na <code class="docutils literal notranslate"><span class="pre">b</span></code>, ali prosto to su nezavisne operacije.</p>
+<div class="admonition-vezba-7 admonition">
+<p class="admonition-title">Vežba 7</p>
+<ol class="arabic simple">
+<li><p>Generišite slučajan niz oblika 4x4 iz normalne raspodele</p></li>
+<li><p>Prikažite najlakši način za sabiranje vrednosti niza koje su pozitivne</p></li>
+<li><p>Prikažite kumulativni zbir po kolonama</p></li>
+<li><p>Primenite na niz sledeće uslove:</p>
+<ul class="simple">
+<li><p>brojevi manji od -1 dobijaju vrednost -1</p></li>
+<li><p>brojevi između -1 i 1 dobijaju vrednost 0</p></li>
+<li><p>brojevi veći od 1 dobijaju vrednost 1</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2025</span><span class="p">)</span>
+<span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[-0.09  0.73 -1.44 -0.66]
+ [-0.1   2.15  1.39 -0.21]
+ [ 0.76  0.21 -1.04 -0.83]
+ [-1.05 -0.09  0.16 -1.79]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2.</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">norm</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="c1">#ovo prikazuje koliko pozitivnih brojeva ima</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">norm</span><span class="p">[</span><span class="n">norm</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#ovo sabira pozitivne elemente</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. </span>
+<span class="n">norm</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># Kumulativne sume po kolonama</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.09,  0.73, -1.44, -0.66],
+       [-0.19,  2.88, -0.05, -0.87],
+       [ 0.57,  3.09, -1.09, -1.7 ],
+       [-0.48,  3.  , -0.93, -3.49]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">norm</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">norm</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  0, -1,  0],
+       [ 0,  1,  1,  0],
+       [ 0,  0, -1,  0],
+       [-1,  0,  0, -1]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-8 admonition">
+<p class="admonition-title">Vežba 8</p>
+<ol class="arabic simple">
+<li><p>Generišite niz <code class="docutils literal notranslate"><span class="pre">x</span></code> oblika <code class="docutils literal notranslate"><span class="pre">4x4</span></code> koji će se sastojati od nasumičnih brojeva od 1 do 10.</p></li>
+<li><p>Napraviti novi niz <code class="docutils literal notranslate"><span class="pre">y</span></code> koji predstavljati niz <code class="docutils literal notranslate"><span class="pre">x</span></code> ispisan unazad.</p></li>
+<li><p>Pomnožite dobijene nizove, a zatim po dijagonali dodajte 100 svakom elementu; to će biti novi niz <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
+<li><p>Pokušajte na najelegantniji način da napravite novi niz koja će da prikazuje:</p>
+<ul class="simple">
+<li><p>0 za vrednosti iz z koje su manje od 50</p></li>
+<li><p>1 za vrednosti iz z koje su između 50 i 100</p></li>
+<li><p>2 za vrednosti iz z koje su veće od 100</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1.</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">2025</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">16</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">ndim</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2 8 3 3]
+ [0 6 8 5]
+ [1 8 5 7]
+ [5 4 0 0]] 2 (4, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2.  </span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 4 5]
+ [7 5 8 1]
+ [5 8 6 0]
+ [3 3 8 2]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. </span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[180.  73. 114.  24.]
+ [ 97. 209. 136.  16.]
+ [102. 101. 254.  27.]
+ [ 28.  20.  52. 129.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span><span class="o">&gt;</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">z</span><span class="o">&lt;</span><span class="mi">50</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 1, 2, 0],
+       [1, 2, 2, 0],
+       [2, 2, 2, 0],
+       [0, 0, 1, 2]])
+</pre></div>
+</div>
+</div>
+</div>
+<br> 
 </section>
 <section id="zadaci-i-problemi">
 <h2>Zadaci i problemi</h2>
@@ -2724,8 +3251,8 @@ Odgovor</label><div class="sd-tab-content docutils">
 <p class="admonition-title">Zadatak 2</p>
 <ol class="arabic simple">
 <li><p>Konstrušite kvadratnu matricu <span class="math notranslate nohighlight">\(A\)</span> dimenzije 3 čiji će elementi biti slučajni celi brojevi iz intervala <span class="math notranslate nohighlight">\([-3,3]\)</span></p></li>
-<li><p>Ispitati da li je u datoj matrici <span class="math notranslate nohighlight">\(\displaystyle\max_i\min_ja_{ij}= \min_j\max_ia_{ij}\)</span>. Ako je to tačno štampati poruku „Igra ima Nešovu ravnotežu”, u suprotnom štampati poruku „Igra nema Nešovu ravnotežu”.</p></li>
-<li><p>Ako je odgovor pod 2) tačan, poslati i poruku „Nešova ravnoteža je <span class="math notranslate nohighlight">\((\hat i, \hat j)\)</span>”, gde su <span class="math notranslate nohighlight">\(\hat i\)</span>, <span class="math notranslate nohighlight">\(\hat j\)</span> indeksi vrste odnosno kolone u kojima se postiže jednakost.</p></li>
+<li><p>Ispitati da li je u datoj matrici <span class="math notranslate nohighlight">\(\displaystyle\max_i\min_ja_{ij}= \min_j\max_ia_{ij}\)</span>. Ako je to tačno štampati poruku <code class="docutils literal notranslate"><span class="pre">Igra</span> <span class="pre">ima</span> <span class="pre">Nešovu</span> <span class="pre">ravnotežu</span></code>, u suprotnom štampati poruku <code class="docutils literal notranslate"><span class="pre">Igra</span> <span class="pre">nema</span> <span class="pre">Nešovu</span> <span class="pre">ravnotežu</span></code>.</p></li>
+<li><p>Ako je odgovor pod 2) tačan, poslati i poruku <code class="docutils literal notranslate"><span class="pre">Nešova</span> <span class="pre">ravnoteža</span> <span class="pre">je</span></code> <span class="math notranslate nohighlight">\((\hat i, \hat j)\)</span>`, gde su <span class="math notranslate nohighlight">\(\hat i\)</span>, <span class="math notranslate nohighlight">\(\hat j\)</span> indeksi vrste odnosno kolone u kojima se postiže jednakost.</p></li>
 </ol>
 <p><em>Savet:</em> Pokušajte da neke delove organizujete u formi funkcija koje će izvršavati te delove.</p>
 </div>
@@ -2831,6 +3358,7 @@ Odgovor</label><div class="sd-tab-content docutils">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#normalna-raspodela">Normalna raspodela</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>
