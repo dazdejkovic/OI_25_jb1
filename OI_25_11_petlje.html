@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -435,6 +435,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sagledavanje-recnika">Sagledavanje rečnika</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a></li>
 </ul>
             </nav>
         </div>
@@ -1048,7 +1049,266 @@ beskonačnu petlju?</p>
 </div>
 </div>
 </div>
+<br>
 </section>
+</section>
+<section id="vezbanja">
+<h2>Vežbanja</h2>
+<div class="admonition-vezba-1 admonition">
+<p class="admonition-title">Vežba 1</p>
+<p>Probajte da odgovorite šta će biti vrednost promenljive <code class="docutils literal notranslate"><span class="pre">x</span></code> kada se izvrši sledeći kod?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span><span class="o">==</span><span class="n">j</span><span class="p">:</span>
+            <span class="n">x</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition-vezba-2 admonition">
+<p class="admonition-title">Vežba 2</p>
+<p>Metod <code class="docutils literal notranslate"><span class="pre">normalvariate</span></code> iz modula <code class="docutils literal notranslate"><span class="pre">random</span></code> može da generiše slučajan broj iz normalne raspodele <span class="math notranslate nohighlight">\(\mathcal{N}(\mu,\,\sigma^{2})\)</span>. Istražite kako taj metod funkcioniše i formirajte uzorak obima 10 iz raspodele <span class="math notranslate nohighlight">\(\mathcal{N}(5,\,1.25^2)\)</span> koji treba sačuvati u jednoj listi. Zatim napišite program čiji će izlaz biti broj elemenata koji su veći od 5 u tom nizu.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rešenje:</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">rnd</span>
+
+<span class="n">Lista</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">rnd</span><span class="o">.</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1.25</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dobijena lista: &#39;</span><span class="p">,</span> <span class="n">Lista</span><span class="p">)</span>
+
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Lista</span><span class="p">:</span> <span class="c1"># i uzima vrednosti elemenata u Listi u svakoj iteraciji (biće ih onoliko koliko imamo elemenata)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dobijena lista:  [7.38, 4.17, 6.48, 4.7, 5.37, 5.46, 5.34, 2.99, 5.18, 5.15]
+7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-3 admonition">
+<p class="admonition-title">Vežba 3</p>
+<p>Napišite program koji će Vam odštampate sledeći šablon (takođe dozvolite unos sa tastature koja ce vam biti visina „drveta”, kao i dužina i širina „stabla”). U primeru na slici visina drveta je 10, dimenzije stabla 3x2.</p>
+<pre>
+         *
+        ***
+       *****
+      *******
+     *********
+    ***********
+   *************
+  ***************
+ *****************
+*******************
+         **
+         **
+         **
+</pre>
+<p><strong>Uputstvo:</strong> „Stablo” ovog tzv. drveta uradite odvojeno, prvo napravite gornji deo a zatim donji</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rešenje:</span>
+
+<span class="n">visina</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite visinu vaseg drveta: &quot;</span><span class="p">))</span>
+<span class="n">sirina_st</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite sirinu stabla:&quot;</span><span class="p">))</span>  <span class="c1">#sirina &quot;stabla&quot; </span>
+<span class="n">visina_st</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Unesite duzinu stabla:&quot;</span><span class="p">))</span>  <span class="c1">#duzina&quot;stabla&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">visina</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="n">visina</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">visina_st</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">*</span><span class="p">(</span><span class="n">visina</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">*</span><span class="n">sirina_st</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       *
+      ***
+     *****
+    *******
+   *********
+  ***********
+ *************
+***************
+       **
+       **
+       **
+       **
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-4 admonition">
+<p class="admonition-title">Vežba 4</p>
+<p>Napravite program koji će vam omogućiti da odštampate sledeći šablon:</p>
+<p>1 <br>
+2   1 <br>
+4    2    1<br>
+8    4    2    1<br>
+16   8    4    2    1<br>
+32   16   8    4    2    1<br>
+64   32   16   8    4    2    1<br>
+128  64   32   16   8    4    2    1<br></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rešenje:</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">j</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 
+
+2 1 
+
+4 2 1 
+
+8 4 2 1 
+
+16 8 4 2 1 
+
+32 16 8 4 2 1 
+
+64 32 16 8 4 2 1 
+
+128 64 32 16 8 4 2 1 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-5 admonition">
+<p class="admonition-title">Vežba 5</p>
+<ol class="arabic simple">
+<li><p>Kreirajte rečnik <code class="docutils literal notranslate"><span class="pre">d</span></code> koji će imati informaciju o broju pojavljivanja svakog slova unutar zadatog stringa. Ključ treba da bude slovo, a vrednost je broj pojavljivanja tog slova unutar stringa.</p></li>
+<li><p>Sortirajte string po abecednom redu.</p></li>
+<li><p>Pronađite najmanje korišćeno slovo. Ukoliko ih ima više, ispišite ih sve.</p></li>
+</ol>
+<p>Pomoć:</p>
+<ul class="simple">
+<li><p>Pazite na mala i velika slova</p></li>
+<li><p>Po završenom zadatku očisitite kod od „ne-karaktera”. Ova procedura nije primarna, rešite zadatak isprva ne obazirući se na taj deo pa tek onda krenite sa ovim.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Čudno je, kako je malo potrebno da budemo srećni i jos čudnije, kako nam često baš to malo nedostaje.</span>
+
+<span class="sd">Ivo Andrić</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Čudno je, kako je malo potrebno da budemo srećni i jos čudnije, kako nam često baš to malo nedostaje.</span>
+
+<span class="s2">Ivo Andrić&quot;&quot;&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. </span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">slovo</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">slovo</span><span class="p">)</span> <span class="k">for</span> <span class="n">slovo</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">if</span> <span class="n">slovo</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;č&#39;: 3, &#39;u&#39;: 3, &#39;d&#39;: 6, &#39;n&#39;: 7, &#39;o&#39;: 13, &#39;j&#39;: 5, &#39;e&#39;: 9, &#39;k&#39;: 4, &#39;a&#39;: 9, &#39;m&#39;: 4, &#39;l&#39;: 2, &#39;p&#39;: 1, &#39;t&#39;: 4, &#39;r&#39;: 3, &#39;b&#39;: 3, &#39;s&#39;: 4, &#39;ć&#39;: 2, &#39;i&#39;: 5, &#39;š&#39;: 1, &#39;v&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2.</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="n">slovo</span><span class="p">:</span> <span class="n">s</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">slovo</span><span class="p">)</span> <span class="k">for</span> <span class="n">slovo</span> <span class="ow">in</span> <span class="n">s</span> <span class="k">if</span> <span class="n">slovo</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()}</span>
+<span class="n">x</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span> <span class="c1"># Pogledajte šta je output sorted(d.items()) i zašto dodajemo funkc dict() ispred</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;a&#39;: 9, &#39;b&#39;: 3, &#39;d&#39;: 6, &#39;e&#39;: 9, &#39;i&#39;: 5, &#39;j&#39;: 5, &#39;k&#39;: 4, &#39;l&#39;: 2, &#39;m&#39;: 4, &#39;n&#39;: 7, &#39;o&#39;: 13, &#39;p&#39;: 1, &#39;r&#39;: 3, &#39;s&#39;: 4, &#39;t&#39;: 4, &#39;u&#39;: 3, &#39;v&#39;: 1, &#39;ć&#39;: 2, &#39;č&#39;: 3, &#39;š&#39;: 1}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3.</span>
+
+<span class="n">minimum</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span> <span class="c1"># Kreiram listu sa svim vrednostima rečnika, i tražim minimum</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># Zapamtite ovaj metod i ovakav pristup, dosta ćete ga koristiti</span>
+    <span class="k">if</span> <span class="n">minimum</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Najmanje korišćeno slovo: &#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="c1"># Ako je vrednost ključa u određenoj iteraciji jednaka minimumu, odštampaj mi odgovarajući ključ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Najmanje korišćeno slovo:  p Najmanje korišćeno slovo:  š Najmanje korišćeno slovo:  v 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-vezba-6 admonition">
+<p class="admonition-title">Vežba 6</p>
+<p>Pretpostavimo da na vaš štedni račun na kraju godine, pa sve do kraja 2044. ulažete po 2000$. Koliko će vredeti ovaj iznos 2066. godine, ako je kamatna stopa sve vreme  7%?</p>
+<p>Učitajte klasu <code class="docutils literal notranslate"><span class="pre">date</span></code> iz modula <code class="docutils literal notranslate"><span class="pre">datatime</span></code>. Metod <code class="docutils literal notranslate"><span class="pre">year()</span></code> može vam preko svog atributa <code class="docutils literal notranslate"><span class="pre">year</span></code> dati godinu u kojoj se nalazimo.</p>
+<p><strong>Napomena</strong>: koristite petlje, a kao proveru možete iskoristiti formulu za složenu kamatu (nije neophodno)</p>
+</div>
+<p><strong>Rešenje:</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
+
+<span class="n">godina</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+ 
+<span class="n">D</span> <span class="o">=</span> <span class="mi">2000</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.07</span>
+<span class="n">suma1</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Prvo dolazimo u trenutak kraj 2044.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2044</span><span class="o">-</span><span class="n">godina</span><span class="p">):</span>
+    <span class="n">suma1</span> <span class="o">+=</span> <span class="n">D</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="n">i</span><span class="p">)</span>
+    
+<span class="c1"># Sada ovu vrednost treba dovesti u 2066.</span>
+<span class="n">s66</span> <span class="o">=</span> <span class="n">suma1</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">r</span><span class="p">)</span><span class="o">**</span><span class="mi">22</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Na kraju 2044. godine kada se završe isplate, njihova ukupna vrednost biće </span><span class="si">{</span><span class="n">suma1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, </span><span class="se">\</span>
+<span class="se">\n</span><span class="s2"> a ova vrednost će </span><span class="si">{</span><span class="mi">2066</span><span class="o">-</span><span class="n">godina</span><span class="si">}</span><span class="s2"> godine od danas, tj 2066. godine vredeti </span><span class="si">{</span><span class="n">s66</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Na kraju 2044. godine kada se završe isplate, njihova ukupna vrednost biće 74757.93, 
+ a ova vrednost će 41 godine od danas, tj 2066. godine vredeti 331207.66
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -1136,6 +1396,7 @@ beskonačnu petlju?</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sagledavanje-recnika">Sagledavanje rečnika</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vezbanja">Vežbanja</a></li>
 </ul>
   </nav></div>
 
