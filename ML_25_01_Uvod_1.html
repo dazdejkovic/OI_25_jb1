@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Uvod &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
+    <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=c801bd93" />
+    <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/linkovi-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/tabela-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ML_25_01_Uvod_1';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="prev" title="Optimizacija u Pajtonu - 🧪 modul SciPy" href="OI_25_21_SciPy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="OI_25_00_uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="OI_25_00_uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OI_25_17_NumPy.html">Uvod u NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_18_Matplotlib.html">Vizuelizacija podataka sa Matplotlib-om</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_19_Simulacije.html">Monte Karlo simulacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_20_Pandas.html">Uvod u analizu podataka - 🐼 Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_21_SciPy.html">Optimizacija u Pajtonu - 🧪 modul SciPy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Uvod</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FML_25_01_Uvod_1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ML_25_01_Uvod_1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Uvod</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razumevanje-kljucne-terminologije-masinskog-ucenja">Razumevanje ključne  terminologije mašinskog učenja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-pristupa-u-masinskom-ucenju">Klasifikacija pristupa u mašinskom učenju</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pristup-poglavlja-i-uvod-u-koncepte">Pristup poglavlja i uvod u koncepte.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moguci-problemi-i-prepreke-u-procesu-masinskog-ucenja">Mogući problemi i prepreke u procesu mašinskog učenja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prekomerno-prilagodavanje-engl-overfitting"><em>Prekomerno prilagođavanje (engl. Overfitting)</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedovoljno-prilagodavanje-engl-underfitting"><em>Nedovoljno prilagođavanje (engl. Underfitting)</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemi-koji-proizlaze-iz-gresaka-unutar-skupa-podataka">Problemi koji proizlaze iz grešaka unutar skupa podataka</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unakrsna-validacija">Unakrsna validacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priprema-i-obrada-podataka-za-modele-masinskog-ucenja">Priprema i obrada podataka za modele mašinskog učenja</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="uvod">
+<h1>Uvod</h1>
+<div class="note admonition">
+<p class="admonition-title">Šta ćemo saznati u ovom poglavlju? (ili Šta nas očekuje u ovom poglavlju)</p>
+<ul class="simple">
+<li><p>Šta podrazumevamo pod <strong>veštačkom inteligencijom</strong>?</p></li>
+<li><p>Šta je <strong>mašinsko učenje</strong>?</p></li>
+<li><p>Pregled koncepta veštačke inteligencije.</p></li>
+<li><p><strong>Osnovni koncepti i pojmovi</strong> o kojima ćemo pričati.</p></li>
+<li><p><strong>Polazne ideje i ključni pojmovi</strong> u oblasti mašinskog učenja.</p></li>
+<li><p>Najčešće primene veštačke inteligencije i mašinskog učenja.</p></li>
+<li><p>Glavni pristupi u mašinskom učenju.</p></li>
+<li><p>Izazovi u mašinskom učenju.</p></li>
+</ul>
+</div>
+<p>U današnje vreme, skoro pa i neprimetno, korisnici digitalnih tehnologija svakodnevno komuniciraju sa inteligentnim sistemima koji donose odluke, pružaju preporuke i prilagođavaju se njihovim individualnim navikama kao neizostavni deo svakodnevnice.</p>
+<p>Nakon uspešnog dana na poslu želite da se opustite uz muziku, a telefon vam predlaže novu pesmu koja vam se već na prvo slušanje izuzetno dopada. Pametni sistem u pozadini, analizirajući vašu istoriju slušanja, omiljene žanrove i izvođače, sam je zaključio koja pesma ima najveću verovatnoću da vam se svidi, i to bez vasih didatnih sugestija. U nastavku putovanja, navigacioni sistem daje preporuku za najefikasniju putanju kako biste izbegli zastoj. U toku voznje, auto je prepoznalo pešaka i automatski bezbednosni mehanizam aktivira kočnice, a vozilo usporava ili potpuno staje.</p>
+<p><em>Događaj koji je nagovestio  kako su računari počeli da kreiraju budućnost u mnogim oblastima .</em></p>
+<p>Iako potiče iz davnina, bogata istorija šaha svedoči o njegovom značajnom uticaju na razvoj intelektualnih i kognitivnih sposobnosti pojedinaca, usavršavanje taktičkog i strateškog planiranja, kao i sposobnosti donošenja ispravnih odluka. Da će u mnogim oblastima u budućnosti  računari dominirati možda je nagovestio događaj koji se odigrao u Njujorku u maja 1997. god. kada je računar pobedio tadašnjeg svetskog šampiona u šahu Garija Kasparova. Naime tada je ruski  velemajstoj G. Kasparov poražen u odlučujućoj partiji od računara Deep blue kompanije IBM, gde je jedan od inženjera te kompanije koji je sedeo sa druge strane stola naspram jednog od najboljih šahista sveta Kasparova, povlačio poteze koje mu sugerisao računar. Ovaj veliki događaj izazvao je veliku pažnju, iznenađenja i različite komentare. Čak je jedan  televizijski komentator bio toliko iznenađen da je to nazvao porazom čovečanstva. Mnogi su taj meč označili kao tehnoški izazov i novi put u budućnost nauke i svakodnevice.</p>
+<p>Ovo su samo neki od brojnih primera prisutnosti mašinskog učenja u svakodnevnim aktivnostima. Navedeni sistemi u sposobni da stiču znanje i formulišu izlazne zaključke i rešenja na osnovu učenja iz empirijskih podataka. Dok su ranije računari uglavnom izvršavali instrukcije koje im je čovek zadavao, u poslednjim decenijama oni dobijaju ulogu da sve češće samostalno stiču znanja i izvode zaključke direktno iz sirovih podataka.</p>
+<div class="seealso admonition">
+<p class="admonition-title">Koje su mogućnosti i granice mašinskog učenja, i kako ih mi možemo iskoristiti za unapređenje našeg znanja?</p>
+<p>Ovo poglavlje pruža uvod u ključne principe mašinskog učenja.
+Daje uvid u to kako se znanje može graditi iz podataka, kako se prepoznaju obrasci koji nisu uvek očigledni, i kako modeli greše, uče iz grešaka i postaju sve precizniji.</p>
+</div>
+<p>U savremenom okruženju u kojem je tehnološki razvoj brži nego ikada ranije i gde se svet neprestano menja, mašinsko učenje postaje izuzetno značajno u tehnološkoj revoluciji koja sve više oblikuje našu svakodnevicu. Mašinsko učenje omogućava računarima da samostalno uče iz dostupnih podataka, i da bez eksplicitnog programiranja rešavaju zadatke i donose odluke. Sa sve većim količinama podataka koji postaju dostupni u svakodnevnom aktivnostima, opravdano je očekivati da će pametna analiza podataka biti sve više prisutna i neophodna, ne samo u nauci, već i u širokom spektru profesionalnih i svakodnevnih zadataka.</p>
+<div class="important admonition">
+<p class="admonition-title">Napomena.</p>
+<p>U ovom poglavlju upoznaćemo se sa nekoliko osnovnih pojmova iz mašinskog učenja koje ćete upoznati dok učite o veštačkoj inteligenciji. Razumevanje ovih osnovnih koncepata pomaže da bolje shvatimo kako funkcionišu sistemi mašinskog učenja. Pre nego što nastavite dalje sa čitanjem ostatka knjige, potrudite se da jasno shvatite ove koncepte i upoznate se sa osnovnim pojmovima.</p>
+</div>
+<p><strong>Veštačka inteligencija</strong> (engl. Artificial Intelligence, AI) predstavlja oblast računarstva koja se bavi razvojem sposobnosti mašina da oponašaju ljudsku inteligenciju i način razmišljanja, uključujući učenje, zaključivanje, donošenje odluka, rešavanje problema, itd. Usled mogućnosti efikasne obrade velikih skupova podataka sistemi veštačke inteligencije mogu vremenom unapređivati svoje performanse, ali i generisati novi sadržaj zasnovan na naučenim pravilnostima.Veštačka inteligencija ima za cilj razvoj računarskih sistema koji, zahvaljujući svojoj sposobnosti da brzo obrađuju velike količine podataka, mogu efikasno rešavati kompleksne zadatke, u nekim slučajevima premašujući i ljudske kognitivne sposobnosti. Koncept veštačke inteligencije vuče korene iz 20 veka, kada su postavljene ključne teorijske i praktične osnove za njen razvoj, povezane sa imenima Allana Taringa, Džona Makartija i drugih pionira. U poslednjim godinama veštačka inteligencija dobija sve veću popularnost i dinamičan razvoj, kao i sve veću primenu u naučnim istraživanjima, ali i široku u svakodnevnom životu, čineći osnovu mnogih funkcija, aplikacija, tehnologija i servisa koje svakodnevno koristimo. Zanimljivo je da je Turing još u svom pionirskom radu iz 1950. godine ukazao da učenje treba da bude ključni element svakog inteligentnog sistema: „Umesto da pokušamo da napravimo program koji simulira um odraslog čoveka, zašto ne bismo radije pokušali da napravimo onaj koji simulira um deteta? Ako bi taj program zatim bio podvrgnut odgovarajućem kursu obuke, dobili bismo mozak odraslog čoveka.”</p>
+<p><strong>Mašinsko učenje</strong> (engl. Machine learning, ML) je podgrana veštačke inteligencije, koje je kao disciplina proizašlo iz kombinovanja više različitih naučnih oblasti, prvenstveno statistike, računarstva i neuro-nauke, ali i optimizacije, teorije odlučivanja i teorije igara. Mašinsko učenje predstavlja oblast računarstva koja se bavi razvojem algoritama sposobnih da prepoznaju obrasce u podacima i uče iz njih, radi donošenja odluka zasnovanih na samim podacima. Početkom XXI veka, došlo je do značajnog unapređenja u razvoju veštačke inteligencije zahvaljujući razvoju novih tehnologija, pre svega napretku u računarskom hardveru, koji je omogućio veću brzinu obrade, veći kapacitet memorije i sposobnost da se obrađuju, skladište i analiziraju znatno veće količine podataka. Mašinsko učenje omogućava upravljanje složenim sistemima i automatsko učenje iz podataka, čime prevazilazi ograničenja tradicionalnih metoda i nadmašuje ljudske sposobnosti u određenim oblastima u kojima su do skoro računari bili manje uspešni u poređenju sa ljudima.</p>
+<p>Tom Mišel (engl. Tom M. Mitchell) u svojoj knjizi („Machine Learning”, 1997) dao je jednu od najpoznatijih definicija pojma mašinskog učenja, koja glasi: „Kažemo da računski program uči iz iskustva E u odnosu na skup zadataka T i meru performansi P ako se njegovo izvođenje zadataka iz T, merеnо pomoću P, poboljšava sa iskustvom E.” (engl. „A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”), gde je:</p>
+<ul class="simple">
+<li><p>T – zadatak (jedan ili više) za koji se program obučava;</p></li>
+<li><p>E – iskustvo, tj. skup podataka iz kojih program uči;</p></li>
+<li><p>P – mera učinka, tj. mera performanse progresa u učenju.</p></li>
+</ul>
+<p>Ilustrovano na primeru, Mitchellova definicija se može razumeti na sledeći način: zadatak (T) je da program prepozna da li je nova e-pošta neželjena (engl. spam) ili legitimna (engl. ham) poruka. Iskustvo (E) predstavlja obuku na velikom broju prethodno klasifikovanih mejlova kao neželjena ili legitimna pošta. Mera performansi (P) najčešće je tačnost (engl. accuracy) koja predstavlja procenat ukupno ispravno klasifikovanih primera na testu. Ako model vremenom postiže sve bolju tačnost P kako dobija više označenih primera E (Obeleženih E-mailova), možemo reći da uspešno uči da obavlja svoj zadatak klasifikacije T.
+Drugi primer bi mogao da bude sledeći: zadatak (T) podrazumeva igranje šaha, gde je cilj da sistem nauči kako da donosi optimalne poteze u različitim pozicijama na tabli. Mera performansi (P) izražava se kroz procenat dobijenih partija protiv različitih protivnika i služi za procenu uspešnosti naučenih strategija. Iskustvo učenja (E) ogleda se u velikom broju trening-partija, pri čemu kroz ponavljanje i analizu ishoda unapređuje svoje odluke i postaje sve uspešniji.</p>
+<p>Jedno od prvih pominjanja termina mašinsko učenje datira iz 1959. godine, kada je Artur Samjuel (engl. Arthur Samuel), tokom svog istraživačkog rada na računarskom programu za igru dama, uočio da se performanse programa poboljšavaju kroz iskustvo, pa je to zapažanje formulisao u definiciju mašinskog učenja: „Mašinsko učenje je oblast koja računarima daje sposobnost da uče bez eksplicitnog programiranja.“ (engl. „Machine learning is the field of study that gives computers the ability to learn without being explicitly programmed.”)</p>
+<p>Prema autoru Murphy-ju (videti Murphy (2012, strana xxvii)), „cilj mašinskog učenja je da razvije metode koje mogu automatski detektovati obrasce u podacima, a zatim da koriste otkrivene obrasce za predviđanje budućih podataka ili drugih ishoda od interesa.”</p>
+<p>Dok čovek stiče znanja i veštine kroz direktno, lično iskustvo, uključujući emocionalne i kontekstualne dimenzije, modeli mašinskog učenja uče isključivo iz analize ogromnih skupova podataka. Pogledajte ilustraciju na slici koja prikazuje ovu razliku.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="_images/experience.PNG"><img alt="_images/experience.PNG" src="_images/experience.PNG" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 19. </span><span class="caption-text">Mašinsko učenje iskustvo (Izvor: bigdata.black, ili <a class="reference external" href="https://dwbimaster.com/what-is-machine-learning/">https://dwbimaster.com/what-is-machine-learning/</a> )</span></p>
+</figcaption>
+</figure>
+<p>Algoritmi mašinsko učenja postaju zastupljeni u različitim industrijama i menjaju način poslovanja i organizacije sistema. Revoluciju pokreću revolucionarni napredak u algoritmima i sve veća dostupnost podataka što rezultira eksponencijalni napredak algoritama mašinskog učenja, kao i intenzivnu ekspanziju primene u različitim domenima.</p>
+<p>Mašinsko učenje ima širok dijapazon primene u različitim oblastima, obuhvatajući nauku, industriju i svakodnevne aktivnosti. Neki od primera delatnosti i aktivnosti u kojima se modeli mašinskog učenja uspešno primenjuju:</p>
+<ul class="simple">
+<li><p>Prepoznavanje objekata i identifikaciju lica na fotografijama i video zapisima, kao i obrada govora i razumevanje prirodnog jezika (na primer, u interakciji sa digitalnim asistentima poput Siri ili Alexa).</p></li>
+<li><p>Upravljanje autonomnim sistemima: modeli za razvoj autonomnih vozila.</p></li>
+<li><p>Medicinska dijagnostika.</p></li>
+<li><p>Klasifikacija elektronske pošte i vesti.</p></li>
+<li><p>Analiza sentimenta.</p></li>
+<li><p>Kreiranje efikasnih sistema za preporuke sadržaja ili proizvoda (kao što su predlozi za gledanje na platformama za striming).</p></li>
+<li><p>Ekonomsko prognoziranje trendova na tržištu, analizu finansija i razumevanje ponašanja korisnika i kupaca.</p></li>
+<li><p>itd.</p></li>
+</ul>
+<p>U suštini, MU radi sve što uključuje pronaženje skrivenih obrazaca u velikim količinama podataka, a lista primena se širi svakog dana.
+U svetu gde brzina i preciznost informacija mogu odlučiti o uspehu, mašinsko učenje postaje ključni saveznik kompanijama, institucijama, kao i pojedincima u poslovnim aktivnostima.</p>
+<p><strong>Zašto mašinsko učenje?</strong></p>
+<p>Postoji nekoliko činjenica koje opravdavaju potrebu za dublje interesovanje za mašinsko učenje i značaj bavljenja ovom temom.</p>
+<ul class="simple">
+<li><p>U eri eksplozije podataka, svaka naša digitalna akcija ostavlja trag sa potencijalno vrednim informacijama. Zbog ogromnog obima i neverovatne brzine kojom se podaci generišu, postaje jasno da su nam potrebni novi pristupi, sistemi mašinskog učenja koji efikasno prepoznaju skrivene obrasce i donose zaključke zasnovane na algoritamskom rasuđivanju. U takvom masivnom skupu podataka, uloga algoritami prepoznaju veze i korelacije između različitih varijabli ili događaja nisu očigledne. Umesto da se pravila unapred eksplicitno definišu, algoritam sam uči iz podataka, prilagođava se drugačijim situacijama i iz poruke u poruku, i što ih više ima, njegova preciznost i korisnost rastu.</p></li>
+<li><p>Postoje klase problema koje je teško rešiti u smislu da ljudi, čak i kada imaju jasno zadate ulazne i izlazne podatke, često ne mogu odmah prepoznati pravilo koje povezuje instanci ulaznih podataka i odgovarajućih željenih izlaznih vrednosti. Cilj je da mašine same otkriju ovu vezu između podataka, omogućavajući tačna predviđanja i za nove, neviđene podatke.</p></li>
+<li><p>Mašinsko učenje omogućava sistemima da prate nove informacije i samostalno se prilagođavaju, kontinuirano poboljšavajući performanse kako dobijaju više podataka što omogućava automatsko procesiranje i ubrzavanje proces analize.</p></li>
+<li><p>itd.</p></li>
+</ul>
+<p><strong>Veštačka inteligencija, mašinsko učenje, dubokog učenja, u čemu je razlika?</strong></p>
+<p>Iako su veštačka inteligencija, mašinsko učenje, duboko učenje i neuronske mreže usko povezane tehnologije, ovi termini se nekada upotrebljavaju kao sinonimi, što izaziva zabunu oko njihovih razlike zbog pogrešnog poistovećivanja. Slika daje pregled hijerarhijskog odnosa između pojmova: veštačka inteligencija je najširi skup, mašinsko učenje je podskup veštačke inteligencije, dalje dubinsko učenje je podskup mašinskog učenja, a neuronske mreže čine okosnicu algoritama dubokog učenja.</p>
+<p>Veštačka Inteligencija (VI) obuhvata sisteme i mašine projektovane da oponašaju ljudsku inteligenciju i izvršavaju kognitivne funkcije. Mašinsko učenje predstavlja poddisciplinsku oblast veštačke inteligencije koja se bavi razvojem algoritama i modela za učenje iz podataka, pri čemu računari ne dobijaju eksplicitne instrukcije za svaki korak, već samostalno uče iz iskustva i vremenom poboljšavaju svoje performanse u obavljanju zadataka. Duboko učenje predstavlja podskup mašinskog učenja i razlikuje se od njega po načinu na koji algoritmi uče i količini podataka koju koriste. Duboko učenje podrazumeva upotrebu struktura sa više skrivenih slojeva da bi se automatski izvlačile karakteristike direktno iz sirovih podataka.</p>
+<figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="_images/AiDiffML.PNG"><img alt="_images/AiDiffML.PNG" src="_images/AiDiffML.PNG" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 20. </span><span class="caption-text">Mašinsko učenje i iskustvo(Izvor: <a class="reference external" href="https://rachana3073.medium.com/deep-learning-48a77b25615a">https://rachana3073.medium.com/deep-learning-48a77b25615a</a>)</span></p>
+</figcaption>
+</figure>
+<p>Veštačka inteligencija je značajno promenila industrije, donoseći napredak u tehnologiji, nauci i svakodnevnom životu. Na osnovu njenih sposobnosti i funkcionalnosti veštačka inteligencija se može svrstati u tri kategorije: Uska ili slaba veštačka inteligencija (engl. Artificial Narrow Intelligence, ANI), Opšta ili jaka veštačka inteligencija (engl. Artificial General Intelligence, AGI) i Superinteligentna veštačka inteligencija (engl. Artificial Superintelligence, ASI). Sistemi slabe veštačke inteligencije specijalizovani su da uspešno izvrši strogo određene zadatke, pri čemu njihove mogućnosti ostaju ograničene isključivo na domen za koji su razvijeni. U osnovu modernih VI aplikacija koje svakodnevno koristimo je slaba VI. Ona stoji iza GPS mapa, sistema za preporuku na platformama za striming, pokreće virtuelne asistente (npr. Siri, Alexa), zatim pokreće prepoznavanje lica i automatizovano prevođenje, pa čak i najsloženiji sistemi, poput automobila bez vozača, oslanjaju se na ovaj tip VI. Jaka veštačka inteligencija predstavlja hipotetički nivo veštačke inteligencije koji bi bio sposoban da apstraktno razmišlja i simulira opšte kognitivne sposobnosti. U ovom kontekstu, opšta veštačka inteligencija podrazumevala bi da mašina može da obavlja zadatke na istom nivou kao čovek, dok bi veštačka superinteligencija prevazišla sve ljudske intelektualne sposobnosti. Ipak poslednja dva navedena oblika VI,opšta i superinteligencija, ne postoje izvan teorije, i predmet su istraživanja, i trenutno još uvek nedostižan cilj moderne nauke o računarstvu.</p>
+<section id="razumevanje-kljucne-terminologije-masinskog-ucenja">
+<h2>Razumevanje ključne  terminologije mašinskog učenja</h2>
+<p>Mašinsko učenje predstavlja metodu za transformaciju sirovih podataka u korisno znanje. U ovom delu definisaćemo ključne pojmove neophodne za dalje razumevanje i primenu obrađenih koncepata.</p>
+<p><strong>Algoritam</strong> je set pravila ili postupak koja se koristi za kreiranje modela iz ulaznih podataka, tj. niz pravila koja se primenjuju na skup podataka za obuku u cilju učenja obrazaca, analize podataka i dolaska do rešenja. <strong>Model</strong> je rezultat učenja algoritma iz podataka, i predstavlja naučenu matematičku strukturu koja prepoznaje obrasce i odnose u ulaznim podacima. Nakon obuke, model je spreman da samostalno donosi predikcije ili klasifikacije na neviđenim ulaznim podacima. Na primer, model koji je treniran na istorijskim cenama nekretnina može, na osnovu informacija o novoj nekretnini poput lokacije, kvadrature i starosti, proceniti njenu vrednost.</p>
+<p><strong>Baza podataka</strong> (engl. dataset) je osnovna kolekcija informacija koja služi za obuku modela mašinskog učenja. U takvom skupu, ulazni podaci se sastoje od <span class="math notranslate nohighlight">\(N\)</span> pojedinačnih instanci (observacija) (<span class="math notranslate nohighlight">\(s^{(1)}\)</span> do <span class="math notranslate nohighlight">\(s^{(N)}\)</span>), gde svaka instanca predstavlja konkretan primer za učenje. Svaku observaciju opisuju <strong>karakteristike</strong> (engl. features), iz kojih model uči da prepozna obrasce i donosi predviđanja. Ove karakteristike predstavljaju atribute posmatranih opservacija koje obično označavamo kao <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_n\)</span>. One mogu biti numeričke vrednosti (npr. cena, temperatura, kilogrami), kategorijski podaci (npr. oblik, boja), tekstualne karakteristike (modeli ih koriste nakon transformacije u numerički format) ili vremenske karakteristike (npr. datum, vreme). Karakteristike predstavljaju ulazne podatke (engl. input) za model, stoga su njihov kvalitet i relevantnost ključni faktori za performanse. Ove instance daju ulaz algoritmu, a njihov željeni izlaz ili kategorija (označena sa <span class="math notranslate nohighlight">\(y\)</span> u poslednjoj koloni) služi kao referenca za učenje. U obeleženim podacima, željeni izlaz uzorka naziva se <strong>oznaka</strong> (engl. label). <strong>Obuka</strong> (engl. Training) je proces kreiranja modela mašinskog učenja iz postojećih podataka. Nakon obuke, model sprovodi zaključivanje (engl. Inference) i primenjuje naučene obrasce da bi efikasno predvideo ishode novih, nepoznatih ulaznih podataka. Nakon obuke i validicije na nepoznatim podacima, model se integriše u realno, operativno okruženje ili aplikaciju kako bi aktivno donosio odluke i predviđao ishode u realnom vremenu, dakle sledi faza puštanja u rad (engl. deployment), čime se ostvaruje finalna realizacija modela.</p>
+<figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="_images/PrimerBaze.PNG"><img alt="_images/PrimerBaze.PNG" src="_images/PrimerBaze.PNG" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 21. </span><span class="caption-text">Primer Baze</span></p>
+</figcaption>
+</figure>
+<p>Rezultati modela su direktno uslovljeni kvalitetom ulaznih podataka, jer nerelevantne ulazne karakteristike ograničavaju potencijal učenja i dovodi do netačnih predikcija. Veoma važan proces je <strong>kreiranje karakteristika</strong> (engl. Feature engineering) čiji je cilj transformacije sirovih podataka u skup korisnih karakteristika (atributa) kako bi se generisale nove, informativne i smislene karakteristika iz sirovih podataka koje su informativne za proces učenja i poboljšavaju sposobnost modela da efikasno uči i generalizuje.</p>
+<p>Obuka algoritma se sprovodi na <strong>trening skupu</strong> koji predstavlja osnovni skup podataka (iskustva) iz kojeg algoritam uči i obuhvata najveći deo podataka (obično 60% do 80%). Samim tim, ovaj skup ima presudan uticaj na uspešnost celog procesa učenja. U samom procesu treniranja, model obrađuje podatke kako bi stekao uvid u relevantne obrasce i naučio da predviđa ciljnu vrednost. <strong>Validacioni skup</strong> (obično 10% do 20%) koristi se za fino podešavanje hiperparametara modela tokom faze obuke, kako bi se pronašla optimalnija konfiguracija modela. Proces validacije služi kao prelazna faza nakon procesa učenja, koji se vrši na trening skupu, i pre nego što model ide na završni ispit, koji se vrši na skupu za testiranje. Validacija performansi podrazumeva da se obučeni model pusti da predvidi rezultate za primere iz testnog skupa, a zatim se ta predviđanja uporede sa njihovim stvarnim, već poznatim vrednostima. Model ne uči iz validacionih podataka, već se trenira sa različitim kombinacijama hiperparametara, nakon čega se mere performanse svake kombinacije. <strong>Test skup</strong> (preostalih 10% do 20%) je deo podataka koji služi za objektivnu i konačnu evaluaciju performansi modela na neviđenim podacima. Ovaj skup pruža ključnu procenu performansi modela u realnim uslovima, odnosno njegove uspešnosti na podacima koje ranije nije video.</p>
+</section>
+<section id="klasifikacija-pristupa-u-masinskom-ucenju">
+<h2>Klasifikacija pristupa u mašinskom učenju</h2>
+<p>Pristupi u mašinskom učenju mogu se kategorizovati prema mehanizmima na osnovu kojih algoritmi stiču znanje iz podataka i načinu na koji se koriste dostupni podaci. U okviru mašinskog učenja uobičajeno se izdvajaju četiri osnovna pristupa rešavanju problema:</p>
+<ul class="simple">
+<li><p>nadgledano učenje (engl. supervised learning),</p></li>
+<li><p>nenadgledano učenje (engl. unsupervised learning),</p></li>
+<li><p>učenje potkrepljivanjem (engl. reinforcement learning),</p></li>
+<li><p>polunadgledano učenje (engl. semisupervised learning).</p></li>
+</ul>
+<p>Svaki od ovih tipova učenja odlikuje se specifičnim pristupom korišćenju ulaznih podataka i povratnih informacija. Zapravo, u literaturi mašinsko učenje se najčešće deli na dve glavne kategorije: nadgledano i nenadgledano učenje. U širem kontekstu, u okviru osnovne podele mašinskog učenje mogu se i uvrstati i učenje potkrepljivanjem, kao i polunadgledano učenje, koji predstavljaju prelazne ili specifične oblike učenja u odnosu na pomenute osnovne kategorije.</p>
+<ul class="simple">
+<li><p><strong>Nadgledano učenje</strong> podrazumeva obučavanje modela na označenim podacima kako bi se vršila klasifikacija ili predviđanje novih, nepoznatih podataka. Tipičan primer nadgledanog učenja je automatska klasifikacija elektronske pošte na legitimnu (eng. ham) i neželjenu (eng. spam) poštu.  Primer modela nadgledanog učenja može biti i predikcija cene nekretnine na osnovu karakteristika nekretnina (kao lokacija, kvadratura, spratnost, broj soba, godina izgradnje, itd.).</p></li>
+<li><p><strong>Nenadgledano učenje</strong> ima za cilj da identifikuje skrivene obrasce u podacima bez pripadajućih izlaza (oznaka); cilj je obično da se pronađe neka zanimljiva, skrivena struktura unutar samog skupa podataka.</p></li>
+<li><p><strong>Polunadzorovano učenje</strong> ima za cilj da osmisli algoritme koji mogu da kombinuje malu količinu podataka sa oznakama sa velikim skupovima neoznačenih podataka.</p></li>
+<li><p><strong>Učenje potkrepljivanjem</strong> podrazumeva da agent stiče znanje kroz interakciju sa okruženjem dobijajući povratnu informaciju u obliku nagrada ili kazni. Za učenje potkrepljivanjem bitan je niz akcija koje se moraju preduzeti u okruženju. Za razliku od drugih pristupa, ovde model deluje bez eksplicitnih ulaza, već uči kroz interakciju i povratnu informaciju (nagradu/kaznu).</p></li>
+</ul>
+<p>Druga osnova za klasifikacija mašinskog učenja je na osnovu načina obrade podataka kroz vreme, tj. na osnovu toga da li model uči kontinuirano iz neprekidnog toka pristiglih podataka ili ne, i ta podela je na paketno i online učenje.</p>
+<ul class="simple">
+<li><p><strong>Paketno učenje (engl. Batch Learning)</strong> podrazumeva da model mašinskog učenja ne može da uči postepeno. Umesto toga, mora se istovremeno obučavati na celom skupu raspoloživih podataka. Ovaj proces je često izuzetno zahtevan i dugotrajan (kako vremenski, tako i u pogledu računarskih resursa), on se obično sprovodi oflajn (van mreže), pa otuda i naziv oflajn učenje (engl. Offline Learning).</p></li>
+<li><p><strong>Online učenje (engl. Online Learning)</strong> omogućava sistemu da uči postepeno i kontinuirano. Obuka se odvija tako što se modelu sekvencijalno prikazuju primeri, bilo pojedinačno ili u malim grupama podataka koji se nazivaju mini-paketima (engl. mini-batches), pri čemu nema potrebe za ponovnim treniranjem celog sistema od nule. Zbog ove sposobnosti da se prilagođava novim podacima onlajn učenje je idealno rešenje za sisteme koji rade u realnom vremenu ili situacije u kojima podaci stalno pristižu i menjaju se.</p></li>
+</ul>
+<p>Paketno učenje obezbeđuje modelu visoku stabilnost i preciznost jer se obučava na celokupnom skupu podataka istovremeno. Glavna mana ovog pristupa je što je spor i da bi se sistem ažurirao novim podacima, neophodno je ponovo ga obučiti ispočetka na celom skupu podataka. Iako se taj proces obuke može automatizovati, obuka na kompletnim podacima zahteva značajne računarske resurse, naročito kod velikih skupova podataka.</p>
+<p>Nasuprot tome, onlajn učenje je fleksibilno i efikasno za rad u realnom vremenu, jer sistem uči postepeno iz novih dolaznih podataka. Mana ovog tipa učenja je to što je osetljivo na loš kvalitet dolaznih podataka, što može izazvati postepeno pogoršanje performansi. Važan parametar sistema za onlajn učenje je brzina učenja (learning rate). Ukoliko je brzina učenja visoka, vaš sistem će se brzo prilagođavati novim podacima, ali će postojati rizik da brzo zaboravlja stare podatke.</p>
+<p>Da bismo zaista razumeli kako modeli mašinskog učenja funkcionišu, i gde su im granice, neophodno je poznavanje osnovnih algoritama koji stoje u njihovoj pozadini.</p>
+</section>
+<section id="pristup-poglavlja-i-uvod-u-koncepte">
+<h2>Pristup poglavlja i uvod u koncepte.</h2>
+<p>U nastavku cilj je da čitaocima koji nemaju praktično iskustvo s algoritmima mašinskog učenja predstavi osnovne koncepte, pruži praktične alate i razvije intuiciju za rešavanje realnih problema, kao i praktičnu implementaciju modela koristeći programski jezik Python. Razmotrićemo širok spektar tehnika uključujući tehnike i nadgledanog i nenadgledanog učenja, od od osnovnih, standardnih i najčešće upotrebljivanih do naprednijih metoda. S obzirom na to da su u Python okruženju već razvijene biblioteke za mašinsko učenje, namenjene efikasnom radu sa velikim skupovima podataka i implementaciji kompleksnih algoritama, knjiga se fokusira isključivo na njihovu primenu.</p>
+<ul class="simple">
+<li><p><em>Pandas</em> je biblioteka otvorenog koda za programski jezik Python, namenjena radu sa podacima, čiji je glavni cilj da pojednostavi njihovu obradu i analizu. Ona je nezaobilazan Python alat jer omogućava izuzetno efikasan rad sa strukturiranim podacima, kao što su tabele i vremenske serije, pomoću jednostavnih, ali moćnih struktura: DataFrame (za tabelarne podatke, slično bazama podataka ili Excelu) i Series (za jednodimenzionalne nizove). Pored toga, Pandas pruža bogat skup pratećih funkcija koje služe kao brz i efikasan način za učitavanje, čišćenje, transformisanje i manipulisanje podacima, podržavajući ključne operacije poput indeksiranja, poravnanja i spajanja skupova podataka.</p></li>
+<li><p><em>Scikit-Learn</em> (<a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>) je jedna od najkorišćenijihi izuzetno popularna Python biblioteka otvorenog koda za mašinsko učenje. Pogodna je i za početnike i za iskusne korisnike, jer pruža implementacije širokog spektra MU algoritama i predstavlja odličnu polaznu tačku za većinu projekata. Njena najveća prednost je dobar API i bogat skup funkcija koji obuhvata sve korake rada s podacima, od njihove pripreme i selekcije karakteristika do primene naprednih tehnika klasifikacije, regresije i klasterovanja. Dodatni plus je izvanredna kompatibilnost sa ključnim Python bibliotekama poput NumPy-a, Pandas-a i Matplotlib-a, što omogućava da se kompletan proces analize i modelovanja podataka obavi na jednom mestu.</p></li>
+<li><p><em>TensorFlow</em> je napredna biblioteka otvorenog koda razvijena od strane Google-a, primarno namenjena konstrukciji modela mašinskog i, posebno, modela dubokog učenja, uključujući i neuronske mreže. Njegova suština leži u efikasnom korišćenju tenzora (višedimenzionalnih nizova podataka) i računskih grafova za složene numeričke proračune. Zbog svoje skalabilnosti, TensorFlow arhitektura omogućava optimizaciju performansi u velikim distribuiranim sistemima, i izvršavanje na različitim platformama radi brzog obučavanja masivnih modela. Zbog ovih karakteristika, koristi se u naprednim projektima veštačke inteligencije, poput autonomnih vozila, obrade prirodnog jezika i prepoznavanja slika.</p></li>
+</ul>
+</section>
+<section id="moguci-problemi-i-prepreke-u-procesu-masinskog-ucenja">
+<h2>Mogući problemi i prepreke u procesu mašinskog učenja</h2>
+<p>Tokom obučavanja modela mašinskog učenja mogu se javiti različiti problemi koji utiču na sposobnost modela da vrši generalizaciju i tačna predviđanja nakon puštanja u rad. Najčešće su uzroci nezadovoljavajući ishoda u mašinskom učenju greške u podacima ili pogrešan izbor algoritma.</p>
+<p>U nastavku ćemo prvo razmotriti neke od najčešćih problema koji iz proizlaze ako odaberemo pogrešan algoritam za zadatak.</p>
+<section id="prekomerno-prilagodavanje-engl-overfitting">
+<h3><em>Prekomerno prilagođavanje (engl. Overfitting)</em></h3>
+<p>Overfitting je možda najčešći problem s kojim se susrećemo u mašinskom učenju, a događa se kada se model prekomerno prilagodi (engl. overfits) podacima, tako da prati pojedinačne detalje i šum iz skupa podataka. Međutim, ovo dovodi do problema jer zbog preteranog prilagođavanja modela podacima za treniranje, sposobnost modela da generalizuje na neviđene podatke je ograničena. Prekomerno prilagođavanje je tipično uzrokovano prevelikom kompleksnošću modela, što dovodi do niske pristrasnosti (engl. low bias=, što je očekivano jer model odgovara podacima za treniranje, ali i do visoke varijanse (engl. high variance). Visoka varijansa ukazuje na to da model memoriše podatke za treniranje umesto da uhvati opšte obrasce, što rezultira lošom sposobnošću generalizacije na neviđenim podacima.</p>
+<p>Predstavićemo jednostavan primer kroz priču/situaciju radi ilustracije fenomena prekomernog prilagođavanja u mašinskom učenju. Marko je kvantitativni trgovac koji je razvio izuzetno složen algoritam za trgovanje akcijama koji je postigao gotovo savršene rezultate na istorijskim podacima, ali je potpuno podbacio na novim, realnim tržišnim podacima. Model je bio previše prilagođen prošlosti i zapamtio je specifične obrasce‚, nasumične fluktuacije i šum iz prošlosti, umesto opštih principa, što je dovelo do gubitaka u stvarnom trgovanju. Algoritam, koji je bio podešen da reaguje na ekstremno specifične kombinacije cena i šuma koje su se pojavile u bazi za treniranje  modela, pa nije mogao da prepozna novi, opšti trend na tržištu. Kada je algoritam pušten na nove podatke, potpuno je zakazao i generisao gubitke. Ovo je jedan jasan primer overfittinga: model ima nizak bias i visoku varijansu, savršeno objašnjava podatke za treniranje, ali ne uspeva da generalizuje na nove podatke.</p>
+</section>
+<section id="nedovoljno-prilagodavanje-engl-underfitting">
+<h3><em>Nedovoljno prilagođavanje (engl. Underfitting)</em></h3>
+<p>S druge strane, nedovoljno prilagođavanje (engl. underfitting) nastaje kada je model mašinskog učenja previše jednostavan ili kada model nije uspeo da nauči obrasce iz skupa za treniranje, uključujući ni osnovnu vezu između ulaznih i izlaznih varijabli. Zbog toga, dolazi do visoke pristrasnosti (engl. high bias), s lošim performansama modela na oba skupa: i na podacima za obuku i na podacima za testiranje.
+Radi lakšeg razumevanja, sledi kratka priča/situacija koja služi kao ilustracija koncepta nedovoljnog prilagođavanja. Marko, kvantitativni trgovac, želeći da razvije algoritam za trgovanje akcijama, izabrao je veoma jednostavan pristup kako bi izbegao složenost. Umesto kompleksnih analiza, definisao je samo jedno pravilo: kupi akciju ako je zabeležila rast u prethodna dva posmatrana perioda. Primenjen na veliki skup istorijskih podataka, model je pokazao slabe rezultate, jedva bolje od slučajnog pogađanja, jer je zbog prevelike jednostavnosti propustio da prepozna važne tržišne trendove i odnose. Testiranje na novim podacima pokazalo je da model ne pravi drastične greške, ali da je u praksi neefikasan. Zbog prevelike jednostavnosti nije uspeo da uhvati ključne tržišne zakonitosti i ostvari značajan profit, što ukazuje na visoku pristrasnost modela.</p>
+</section>
+<section id="problemi-koji-proizlaze-iz-gresaka-unutar-skupa-podataka">
+<h3>Problemi koji proizlaze iz grešaka unutar skupa podataka</h3>
+<p>Dalje ćemo se fokusirati na neke od najuobičajenih problema koji proizlaze iz grešaka unutar skupa podataka.</p>
+<p><em>Nedovoljna količina raspoloživih podataka za obuku modela (engl. Data Scarcity)</em></p>
+<p>Većina algoritama mašinskog učenja zahteva veliku količinu podataka kako bi se uspešno uočili validne i relevantne obrasce. Model obučen na nedovoljnom obimu podataka suočava se sa značajnim izazovima: ne uspeva da formuliše generalizujuća pravila i postaje preterano osetljiv na šum u podacima i daje nestabilne i netačne rezultate u radu na novim podacima.</p>
+<p>Predstavićemo jednostavan primer kroz situaciju radi ilustracije problema nedovoljne količine podataka u mašinskom učenju. Marko, kvantitativni trgovac, razvijao je algoritam za predviđanje kretanja akcija nove kompanije. Izazov se sastojao u tome što je na raspolaganju imao podatke o cenama za samo dve sedmice, što predstavlja izuzetno ograničen skup za treniranje. U tom kratkom dvonedeljnom periodu dogodio se nasumičan skok cene (šum), nedostatak obimnijih podataka sprečio je model da ga ignoriše, pa ga je interpretirao kao ključno generalizujuće pravilo za predviđanje.</p>
+<p><em>Nereprezentativni podaci za obuku (engl. Non-representative Data)</em></p>
+<p>Kako bi model mašinskog učenja davao pouzdane prognoze, skup podataka za obuku mora reprezentovati realno okruženje u kojem će se model primenjivati. Ukoliko podaci ne obuhvataju sve relevantne situacije  ili daje preveliku težinu određenim  podskupovima, model postaje pristrasan i gubi na preciznosti, jer model nije u stanju da se adekvatno ponaša u susretu sa novim i drugačijim primerima.</p>
+<p>Predstavićemo jednostavan primer kroz situaciju radi ilustracije problema nereprezentativnih podataka u mašinskom učenju. Nakon što je uvideo važnost količine podataka, Marko, finansijski trgovac, je prikupio obiman skup podataka. Međutim, napravio je suštinsku grešku: algoritam za predviđanje kretanja akcija trenirao je isključivo na podacima iz perioda snažnog tržišnog rasta (tzv. „bull market”). Na osnovu tih podataka, model je usvojio zaključak da je neprekidan rast cena opšte i uvek važeće pravilo. Pošto tokom obuke nikada nije bio izložen primerima ekonomskog pada, model nije bio sposoban da prepozna rizike. Ovaj primer pokazuje da sama količina podataka ne obezbeđuje uspeh, nego da li ti podaci stvarno opisuju problem koji se rešava.</p>
+<p><em>Podaci loseg kvaliteta  (engl. Poor Data Quality</em></p>
+<p>Ukoliko baza podataka sadrži šum, grešake, anomalije ili nedostajuće informacije, model nije u stanju da adekvatno uoči obrasce, pa su i rezultati slabiji. Upravo zbog toga veoma je važno očistiti ili ispraviti bazu podataka pre samog procesa treniranja.</p>
+<p>U nastavku sledi primer koji ilustruje kako podaci lošeg kvaliteta direktno narušavaju performanse modela u mašinskom učenju. Iako je Marko, finansijski trgovac, prikupio veliku količinu raznovrsnih podataka i očekivao siguran uspeh, podaci su dolazili iz nepouzdanih i neproverenih izvora. Trening skup je sadržao nedostajuće podatke, anomalije i šum, pa je algoritam počeo da prepoznaje obrasce koji zapravo ne postoje. Tada je Marko shvatio da model neće raditi dok ne uloži vreme učišćenje i pripremu podataka.</p>
+<p>Postoji još niz drugih razloga koji mogu uticati na obučavanje modela, ali su ovde izdvojeni i primerima ilustrovani oni koji se u praksi najčešće javljaju.</p>
+</section>
+</section>
+<section id="unakrsna-validacija">
+<h2>Unakrsna validacija</h2>
+<p>Jedna od tehnika za rešavanje problema prekomernog prilagođavanja (engl. overfitting) je korišćenje unakrsne validacije (engl. cross-validation).</p>
+<p>Unakrsna validacija predstavlja statistička tehnika u mašinskom učenju koja se primenjuje da obezbedi pouzdanije performanse modela i njegovu sposobnost generalizacije na neviđene podatke, sa ciljem da ublaži rizik od prekomernog prilagođavanja (engl. overfittinga). Posebno je korisna u situacijama kada skup podataka nije dovoljno velik da bi se obezbedila pouzdana i reprezentativna podela na trening i test skup, kao i kada treba odabrati jedan od nekoliko ponudjenih modela za konkretan problem, i tokom optimizacije i odabira najbolje kombinacije hiperparametara.</p>
+<p>Jedna od najčešće primenjivanih metoda unakrsne validacije je K-unakrsna validacija (engl. K-Fold Cross-Validation). Unakrsna validacija pruža pouzdaniju i stabilniju procenu performansi, i omogućava da se svi dostupni podaci iskoriste i za učenje i za proveru, čime se postiže veća robustnost. Postupak K-unakrsne validacije:</p>
+<ol class="arabic simple">
+<li><p>Početni skup podataka se deli na <span class="math notranslate nohighlight">\(K\)</span> jednako velikih, disjunktnih (nepreklapajućih) podskupova (engl. fold).</p></li>
+<li><p>Na osnovu ovih podskupova formira se <span class="math notranslate nohighlight">\(K\)</span> različitih parova skupova za treniranje i testiranje. Proces se odvija u <span class="math notranslate nohighlight">\(K\)</span> iteracija, pri čemu se jedan podskup koristi kao skup za testiranje, a preostalih <span class="math notranslate nohighlight">\(K-1\)</span> podskupova se spajaju i koriste kao skup za treniranje modela.</p></li>
+<li><p>Model se trenira na skupu za treniranje, a zatim se evaluacija modela obavlja isključivo na preostalom, neviđenom, skupu za testiranje. Ovim se dobija pojedinačna metrika performansi (npr. tačnost ili greška) za svaki podskup (fold).</p></li>
+<li><p>Konačna performansa modela je aritmetička sredina svih <span class="math notranslate nohighlight">\(K\)</span> pojedinačnih rezultata testiranja.</p></li>
+</ol>
+<p>Slika (preuzeta sa <a class="reference external" href="https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f">https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f</a>) ilustruje princip K-unakrsne validacije, prikazujući kako se skup podataka deli na više delova koji se naizmenično koriste za treniranje i testiranje modela.</p>
+<figure class="align-center" id="id4">
+<a class="reference internal image-reference" href="_images/CrossValidation.PNG"><img alt="_images/CrossValidation.PNG" src="_images/CrossValidation.PNG" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-number">Slika 22. </span><span class="caption-text">Unakrsna validacija (Izvor <a class="reference external" href="https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f">https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f</a>
+)</span></p>
+</figcaption>
+</figure>
+<p>Pored standardne K-unakrsne validacije, u praksi se koriste i Stratifikovana K-Fold unakrsna validacija (engl. Stratified K-Fold) i pojedinačno unakrsno testiranje (engl. Leave-One-Out Cross-Validation). Stratifikovana K-Fold validacija se koristi kod neuravnoteženih skupova podataka (engl. imbalanced datasets) jer obezbeđuje da proporcija klasa u svakom od <span class="math notranslate nohighlight">\(K\)</span> podskupova odgovara raspodeli u celom početnom skupu, što doprinosi robustnosti i pouzdanosti dobijene metrike performansi. Pojedinačno unakrsno testiranje je oblik unakrsne validaije kod koga se u svakoj iteraciji testira samo jedan primer, dok se ostali koriste za treniranje; iako pruža procenu sa malom pristrasnošću, zbog velike računske složenosti i varijanse retko se primenjuje na velikim skupovima podataka.</p>
+<p>U nastavku je dat ilustrativan primer K-unakrsne validacije u Python-u (korišćenjem biblioteke scikit-learn), gde se posmatra skup podataka koji predstavlja nekoliko kompanija. Cilj primera je da se prikaže mehanizam podele podataka na trening i test skupove, nezavisno od konkretnog prediktivnog modela.
+Detaljni primeri implementacije navedenih metoda validacije u programskom jeziku Python možete pronaći ovde : <a class="reference external" href="https://scikit-learn.org/stable/modules/cross_validation.html">https://scikit-learn.org/stable/modules/cross_validation.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">KFold</span>
+
+<span class="c1"># Skup podataka (četiri kompanije)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;Kompanija A&quot;</span><span class="p">,</span> <span class="s2">&quot;Kompanija B&quot;</span><span class="p">,</span> <span class="s2">&quot;Kompanija C&quot;</span><span class="p">,</span> <span class="s2">&quot;Kompanija D&quot;</span><span class="p">])</span>
+
+<span class="c1"># K-unakrsna validacija sa K = 2</span>
+<span class="n">kPodskupova</span> <span class="o">=</span> <span class="n">KFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Prikaz podela na podskupove za treniranje i testiranje</span>
+<span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kPodskupova</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Trening skup:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="n">train_index</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Test skup:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="n">test_index</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Trening skup: [&#39;Kompanija C&#39; &#39;Kompanija D&#39;]
+Test skup: [&#39;Kompanija A&#39; &#39;Kompanija B&#39;]
+
+Trening skup: [&#39;Kompanija A&#39; &#39;Kompanija B&#39;]
+Test skup: [&#39;Kompanija C&#39; &#39;Kompanija D&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="priprema-i-obrada-podataka-za-modele-masinskog-ucenja">
+<h2>Priprema i obrada podataka za modele mašinskog učenja</h2>
+<p>Predobrada predstavlja kritičan korak u pripremi podataka i obuhvata čišćenje skupa podataka i njegovo transformisanje, često kroz numeričko kodiranje, kako bi se osiguralo da su podaci u formatu koji ML algoritam može efikasno da obradi i interpretira.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="OI_25_21_SciPy.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Optimizacija u Pajtonu - 🧪 modul SciPy</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razumevanje-kljucne-terminologije-masinskog-ucenja">Razumevanje ključne  terminologije mašinskog učenja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-pristupa-u-masinskom-ucenju">Klasifikacija pristupa u mašinskom učenju</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pristup-poglavlja-i-uvod-u-koncepte">Pristup poglavlja i uvod u koncepte.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moguci-problemi-i-prepreke-u-procesu-masinskog-ucenja">Mogući problemi i prepreke u procesu mašinskog učenja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prekomerno-prilagodavanje-engl-overfitting"><em>Prekomerno prilagođavanje (engl. Overfitting)</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedovoljno-prilagodavanje-engl-underfitting"><em>Nedovoljno prilagođavanje (engl. Underfitting)</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemi-koji-proizlaze-iz-gresaka-unutar-skupa-podataka">Problemi koji proizlaze iz grešaka unutar skupa podataka</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unakrsna-validacija">Unakrsna validacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priprema-i-obrada-podataka-za-modele-masinskog-ucenja">Priprema i obrada podataka za modele mašinskog učenja</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
