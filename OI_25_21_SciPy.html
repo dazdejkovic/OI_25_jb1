@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -427,7 +427,6 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesoviti-problem-linearnog-programiranja">Mešoviti problem linearnog programiranja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-mlp">Model MLP</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Primer 1.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-budzetiranje">Primer 2.  <em>Budžetiranje</em></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-3-fiksni-troskovi">Primer 3. Fiksni troškovi</a></li>
@@ -464,13 +463,9 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">⚡️ Zadatak 1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">⚡️ Zadatak 2.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">🧩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zahtev">Zahtev</a></li>
 </ul>
 </li>
 </ul>
@@ -527,8 +522,8 @@ tr:last-child td {
 <h1>Optimizacija u Pajtonu - 🧪 modul SciPy</h1>
 <p>SciPy je laboratorija za naučno računanje u Pajtonu. To je biblioteka napravljena kao „viši nivo” iznad NumPy-a — kao alat koji nam omogućava da rešavamo ozbiljne matematičke i inženjerske probleme bez potrebe da sami implementiramo komplikovane algoritme. Ako NumPy omogućava brzo računanje nad nizovima i matricama, onda SciPy donosi već gotove funkcije za statistiku, optimizaciju, interpolaciju, integrale, diferencijalne jednačine i još mnogo toga.</p>
 <p>SciPy je organizovan u podpakete koji pokrivaju različite domene računarstva. U sledećoj tabeli su neki od tih podpaketa:</p>
-<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id12">
-<caption><span class="caption-number">Tabela 11. </span><span class="caption-text">Podpaketi bibliteke Scipy</span></caption>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id9">
+<caption><span class="caption-text">Podpaketi bibliteke Scipy</span></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Podpaket</p></th>
 <th class="head text-left"><p>Opis</p></th>
@@ -568,14 +563,8 @@ tr:last-child td {
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in c:\users\dragan azdejkovic\miniconda3\lib\site-packages (1.16.3)
-Requirement already satisfied: numpy&lt;2.6,&gt;=1.25.2 in c:\users\dragan azdejkovic\miniconda3\lib\site-packages (from scipy) (2.3.3)
-</pre></div>
 </div>
-</div>
-</div>
-<p>Ako je modul instaliran treba ga uvesti u radnu memoriju pre započinjenja rada u beležnici zajedno sa modulom NumPy</p>
+<p>Ako je modul instaliran treba ga uvesti u radnu memoriju pre započinjanja rada u beležnici zajedno sa modulom NumPy</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
@@ -591,14 +580,6 @@ Requirement already satisfied: numpy&lt;2.6,&gt;=1.25.2 in c:\users\dragan azdej
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>scipy (1.16.3)
-Available versions: 1.16.3, 1.16.2, 1.16.1, 1.16.0, 1.15.3, 1.15.2, 1.15.1, 1.15.0, 1.14.1, 1.14.0, 1.13.1, 1.13.0, 1.12.0, 1.11.4, 1.9.3, 1.9.2, 1.6.1, 1.6.0, 1.5.4, 1.5.3, 1.5.2, 1.5.1, 1.5.0, 1.4.1, 1.4.0, 1.3.3, 1.3.2, 1.3.1, 1.3.0, 1.2.3, 1.2.2, 1.2.1, 1.2.0, 1.1.0, 1.0.1, 1.0.0, 0.19.1, 0.19.0, 0.18.1, 0.18.0, 0.17.1, 0.17.0, 0.16.1, 0.16.0, 0.15.1, 0.15.0, 0.14.1, 0.14.0, 0.13.3, 0.13.2, 0.13.1, 0.13.0, 0.12.1, 0.12.0, 0.11.0, 0.10.1, 0.10.0, 0.9.0, 0.8.0
-  INSTALLED: 1.16.3
-  LATEST:    1.16.3
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="linearno-programiranje-u-pithon-u">
@@ -609,12 +590,13 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}  \min_x\, &amp;\,c
                      &amp;\, A_{eq} x = b_{eq},\\
                      &amp;\, l \leq x \leq u,\end{aligned}\)</span>$</p>
 <p>gde je <span class="math notranslate nohighlight">\(x\)</span> vektor promenljivih; <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(b_{ub}\)</span>, <span class="math notranslate nohighlight">\(b_{eq}\)</span>, <span class="math notranslate nohighlight">\(l\)</span>, i <span class="math notranslate nohighlight">\(u\)</span> vektori, a <span class="math notranslate nohighlight">\(A_{ub}\)</span> i <span class="math notranslate nohighlight">\(A_{eq}\)</span> matrice.</p>
-<p>Kako bi rešili prethodni optimizacioni zadatak u Pythonu neophodan nam je modul SciPy, odnosno njegov metod <code class="docutils literal notranslate"><span class="pre">scipy.optimize.linprog</span></code>. Sledi njegova sintaksa, a sve detalje možemo videti sa linprog?.</p>
+<p>Kako bi rešili prethodni optimizacioni zadatak u Pajtonu neophodan nam je modul SciPy, odnosno njegov metod <code class="docutils literal notranslate"><span class="pre">scipy.optimize.linprog</span></code>. Sledi njegova sintaksa, a sve detalje možemo videti sa linprog?.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">linprog</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">A_ub</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">b_ub</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">A_eq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">b_eq</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;highs&#39;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">integrality</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id13">
-<caption><span class="caption-number">Tabela 12. </span><span class="caption-text">Značenje izlaznih parametara <code class="docutils literal notranslate"><span class="pre">linprog</span></code></span></caption>
+<p>Metod isporučuje objekat u obliku rečnika. U tabeli koja sledi su izlazni parametri i njihove značenje:</p>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id10">
+<caption><span class="caption-text">Značenje izlaznih parametara <code class="docutils literal notranslate"><span class="pre">linprog</span></code></span></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parametar</p></th>
 <th class="head"><p>Značenje</p></th>
@@ -640,19 +622,19 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}  \min_x\, &amp;\,c
 <td><p>Broj iteracija optimizacije</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">lower/upper.residual</span></code></p></td>
-<td><p>Udaljenost rešenja od granica promenljivih</p></td>
+<td><p>Udaljenost rešenja od granica promenljivih (<code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">lower/upper.marginals</span></code></p></td>
-<td><p>Marginalne vrednosti (cene u senci, dualne vrednosti) za granice</p></td>
+<td><p>Marginalne vrednosti (cene u senci, dualne vrednosti) za granice promenljivih (<code class="docutils literal notranslate"><span class="pre">l</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ineqlin.residual</span></code></p></td>
-<td><p>vrednost dodatne promenljive za ograničenja tipa nejednakosti</p></td>
+<td><p>Vrednost dodatne (slack) promenljive za ograničenja tipa nejednakosti</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ineqlin.marginals</span></code></p></td>
 <td><p>Cene u senci (dualne promenljive, marginalne vrednosti) za ograničenja tipa nejednakosti</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">eqlin.residual</span></code></p></td>
-<td><p>Slack za ograničenja tipa jednakosti</p></td>
+<td><p>Dodatne (slack) promenljive za ograničenja tipa jednakosti</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">eqlin.marginals</span></code></p></td>
 <td><p>Dualne promenljive za ograničenja tipa jednakosti</p></td>
@@ -661,7 +643,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}  \min_x\, &amp;\,c
 <td><p>Broj čvorova za MIP (celobrojno programiranje)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mip_gap</span></code></p></td>
-<td><p>Razlika između najbolje integer i relax rešenja</p></td>
+<td><p>Razlika između najboljeg celobrojnog i relax rešenja</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">mip_dual_bound</span></code></p></td>
 <td><p>Dualna granica za MIP</p></td>
@@ -685,11 +667,12 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}  \min_x\, &amp;\,c
 </div>
 <section id="primer-1">
 <h3>Primer 1.</h3>
-<p>Rešimo sledeći optimizacioni problem:
-$<span class="math notranslate nohighlight">\(\begin{aligned}  \min_{x,y}\, -x+4y&amp;\\
+<p>Rešimo sledeći optimizacioni problem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}  \min_{x,y}\, -x+4y&amp;\\
     \text{uz uslove:}\quad  -3x+y &amp;\le 6,\\
                             -x-2y &amp;\ge -4,\\
-                              y &amp;\ge -3,\end{aligned}\)</span>$</p>
+                              y &amp;\ge -3,\end{aligned}\end{split}\]</div>
 <ul class="simple">
 <li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
 </ul>
@@ -785,17 +768,17 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        message: Optimization terminated successfully. (HiGHS Status 7: Optimal)
         success: True
          status: 0
-            fun: 800.0
-              x: [ 2.500e+02  1.000e+02]
-            nit: 2
-          lower:  residual: [ 1.250e+02  1.000e+02]
-                 marginals: [ 0.000e+00  0.000e+00]
-          upper:  residual: [       inf        inf]
+            fun: -1200000.0
+              x: [ 0.000e+00  6.000e+03]
+            nit: 0
+          lower:  residual: [ 0.000e+00  5.000e+03]
+                 marginals: [ 1.900e+02  0.000e+00]
+          upper:  residual: [ 3.000e+03        inf]
                  marginals: [ 0.000e+00  0.000e+00]
           eqlin:  residual: []
                  marginals: []
-        ineqlin:  residual: [ 0.000e+00  0.000e+00]
-                 marginals: [-1.000e+00 -4.000e+00]
+        ineqlin:  residual: [ 0.000e+00  4.000e+03]
+                 marginals: [-4.000e+01 -0.000e+00]
  mip_node_count: 0
  mip_dual_bound: 0.0
         mip_gap: 0.0
@@ -835,9 +818,9 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 </div>
 <p>Menadžment WMF kompanije postavio je sledeće preporuke u vezi investicija:</p>
 <ul class="simple">
-<li><p>Ne ulagati vishe od 50,000$ u bilo koju industrijsku granu</p></li>
+<li><p>Ne ulagati više od 50,000$ u bilo koju industrijsku granu</p></li>
 <li><p>Iznos investiran u vladine akcije mora iznositi najmanje 25% investicije u industriju čelika</p></li>
-<li><p>Investicija u Pacific Oil je visoko rizična, i ne treba da iznosi vishe od 60% ukupnih investicija u naftnu industriju</p></li>
+<li><p>Investicija u Pacific Oil je visoko rizična, i ne treba da iznosi više od 60% ukupnih investicija u naftnu industriju</p></li>
 </ul>
 <p>Preporučiti portfolio, odnosno, koje investicije odobrati i koje količine novca u njih uložiti, ako kompanija može da uloži 100, 000$</p>
 <p><strong>Rešenje:</strong></p>
@@ -913,7 +896,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 </section>
 <section id="mesoviti-problem-linearnog-programiranja">
 <h2>Mešoviti problem linearnog programiranja</h2>
-<p>Mešovito linearno programiranje (MILP) je proširenje standardnog linearnog programiranja u kojem neke promenljive mogu da budu decimalne ili realne vrednosti, dok druge moraju imati celobrojne vrednosti (npr. 0, 1, 2…). Takva situacija se javlja u mnogim realnim problemima gde se donose diskretne odluke: da li nešto uključiti ili isključiti, kupiti ili ne kupiti, izabrati ili odbaciti.</p>
+<p>Mešovito linearno programiranje (MILP) je proširenje standardnog linearnog programiranja u kojem neke promenljive mogu da budu realne vrednosti, a druge imaju celobrojne vrednosti (npr. 0, 1, 2…). Takva situacija se javlja u mnogim realnim problemima gde se donose diskretne odluke: da li nešto uključiti ili isključiti, kupiti ili ne kupiti, izabrati ili odbaciti.</p>
 <p>Primeri realnih odluka koje zahtevaju celobrojne promenljive:</p>
 <ul class="simple">
 <li><p>broj zaposlenih (ne može biti 3.7 osobe),</p></li>
@@ -927,17 +910,6 @@ binarnih promenljivih (0 ili 1 — tipično za odluke).</p>
 <p>Zašto nam MILP treba?</p>
 <p>Standardni LP modeli su glatki, brzi i lepi za matematičku analizu, ali ne mogu da modeliraju odluke koje su diskretne. MILP rešava taj problem — uvodi „rigidnost“ odlučivanja.</p>
 <p>MILP je moćniji, ali i znatno teži za računanje od LP-a, jer uključuje kombinatornu eksploziju mogućih rešenja. Zbog toga moraju da se koriste napredni algoritmi.</p>
-<section id="model-mlp">
-<h3>Model MLP</h3>
-<p>Rešavamo problem oblika:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\min_{x}c^T&amp;x \\
-\text{uz uslove:}\qquad b_l &amp;\le Ax \le b_u,\\
-                      l &amp;\le x \le u,\\
-                    x_i &amp;\in\Bbb{Z}, i\in X_i\end{aligned}\end{split}\]</div>
-<p>gde je <span class="math notranslate nohighlight">\(x\)</span> vektor promenljivih; <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(b_l\)</span>, <span class="math notranslate nohighlight">\(b_u\)</span>, <span class="math notranslate nohighlight">\(l\)</span> i <span class="math notranslate nohighlight">\(u\)</span> vektori; <span class="math notranslate nohighlight">\(A\)</span> je matrica, i <span class="math notranslate nohighlight">\(X_i\)</span> je skup indeksa promenljivih koje moraju biti celobrojne (integralne).</p>
-</section>
 <section id="id1">
 <h3>Primer 1.</h3>
 <p>Sledi standardni primer problema ovog tipa sa Wikipedije.</p>
@@ -951,10 +923,10 @@ binarnih promenljivih (0 ili 1 — tipično za odluke).</p>
                             x,y &amp;\in\Bbb{Z} \end{aligned}\end{split}\]</div>
 <p>Zadatak ćemo rešiti metodom linprog specifikacijom parametra <code class="docutils literal notranslate"><span class="pre">integrality</span></code>. Naime, integrality je lista dužine jednake broju promenljivih u problemu, čije vrednosti ukazuju na tip svake promenljive.  Podrazumevana vrednost te liste su sve nule, odnosno da su sve promanljive realne. Ako se nekom elementu te liste dodeli 1, to znači da je ta promenljive celobrojna. Postoji i druge mogućnosti, koje se mogu videti preko <code class="docutils literal notranslate"><span class="pre">linprog?</span></code>.</p>
 <p>Na slici koja sledi je grafička interpretacija problema. Očigledno, problem ima optimalno rešenje 2 koje se postiže u tačkama (1,2) i (2,2).</p>
-<figure class="align-center" id="id14">
+<figure class="align-center" id="id11">
 <a class="reference internal image-reference" href="_images/mlp.png"><img alt="_images/mlp.png" src="_images/mlp.png" style="width: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 17. </span><span class="caption-text">Grafička interpretacija problema (Izvor: Wikipedia)</span></p>
+<p><span class="caption-text">Grafička interpretacija problema (Izvor: Wikipedia)</span></p>
 </figcaption>
 </figure>
 <div class="cell docutils container">
@@ -1011,8 +983,8 @@ binarnih promenljivih (0 ili 1 — tipično za odluke).</p>
 <section id="primer-2-budzetiranje">
 <h3>Primer 2.  <em>Budžetiranje</em></h3>
 <p>Kompanija ICR razmatra investiranje u nekoliko projekata za koje je karakteristično da neophodan kapital varira u sledeće 4 godine. Suočen sa ograničenim kapitalom svake godine, menadžment želi da izabere najprofitabilnije projekte koje može da priušti. Procenjena NPV svakog projekta, zahtevi za kapitalom kao i dostupan kapital u toku 4 godine prikazan je u tabeli:</p>
-<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id15">
-<caption><span class="caption-number">Tabela 13. </span><span class="caption-text">Procenjena NPV svakog projekta, zahtevi za kapitalom kao i dostupan kapital u toku 4 godine</span></caption>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id12">
+<caption><span class="caption-number">Tabela 11. </span><span class="caption-text">Procenjena NPV svakog projekta, zahtevi za kapitalom kao i dostupan kapital u toku 4 godine</span></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p></p></th>
 <th class="head text-right"><p>Proširenje fabrike</p></th>
@@ -1080,19 +1052,19 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">37</span><span class="p">])</span>
-<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">37</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
             <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
             <span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
             <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span>
-<span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">35</span><span class="p">])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">35</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ogranicenja_promenljivih</span><span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))]</span>  <span class="c1"># ili [(0,1), (0,1),(0,1), (0,1) ]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ogranicenja_promenljivih</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">c</span><span class="p">))]</span>  <span class="c1"># ili [(0,1), (0,1),(0,1), (0,1) ]</span>
 </pre></div>
 </div>
 </div>
@@ -1417,10 +1389,10 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <li><p>Najvredniji eksponat galerije nalazi se u sobi 7. Vlasnik je nakon uvida u prvo rešenje zahtevao da se stvar revidira tako da soba broj 7 bude pokrivena sa bar dve kamere. Modifikujte vaš model u novoj ćeliji i odredite optimalni raspored i optimalni broj kamera u tom sluchaju.</p></li>
 </ul>
 <p>Skica galerija predstavljena je na sledeći način:</p>
-<figure class="align-center" id="id16">
+<figure class="align-center" id="id13">
 <a class="reference internal image-reference" href="_images/sobe.png"><img alt="_images/sobe.png" src="_images/sobe.png" style="width: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 18. </span><span class="caption-text">Skica galerije</span></p>
+<p><span class="caption-text">Skica galerije</span></p>
 </figcaption>
 </figure>
 <section id="id4">
@@ -1745,7 +1717,7 @@ planu za sledeću godinu, oni su dobili sledeće projekcije tražnje po veleprod
 <p>Ovakav rast tražnje naterao je kompaniju da započne razmatranje dugo odlaganog plana otvaranja nove proizvodne linije. U prethodnom periodu već je urađen skrining četiri fabrike u različitim gradovima SAD sa kojima bi mogla da se sklopi saradnja i koje bi bile spremne da proizvode za našu kompaniju. Četiri kandidata nalaze se u Detroitu, Toledu, Denveru i Kanzas Sitiju.</p>
 <p>Procenjeni godišnji troškovi izdvajanja proizvodnje, kao i kapaciteti koji bi ta postrojenja imala prikazani su tabelom ispod. Takođe, poznati su troškovi prevoza robe iz fabrika-kandidata, kao i iz već postojeće fabrike u Sent Luisu ka veleprodajnim centrima. Troškovi prevoza definisani su kao po jedinici prevezene robe.</p>
 <p>(i) Odredite optimalno rešenje problema ove kompanije.</p>
-<p><strong>Tabela 1.</strong> Troškovi autosorsovanja proizvodnje i kapacitet u opticaju</p>
+<p><em>Tabela 1.</em> Troškovi autosorsovanja proizvodnje i kapacitet u opticaju</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Fabrika</p></th>
@@ -1773,7 +1745,7 @@ planu za sledeću godinu, oni su dobili sledeće projekcije tražnje po veleprod
 </tbody>
 </table>
 </div>
-<p><strong>Tabela 2.</strong> Trošak transporta po jedinici prevezene robe</p>
+<p><em>Tabela 2.</em> Trošak transporta po jedinici prevezene robe</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Ponuda/Тražnja</p></th>
@@ -1813,15 +1785,15 @@ planu za sledeću godinu, oni su dobili sledeće projekcije tražnje po veleprod
 </div>
 <section id="id8">
 <h4>Rešenje:</h4>
-<p>Imam sledeće promenljive: <span class="math notranslate nohighlight">\(x_1\)</span> - prevoz Detroit - Boston, <span class="math notranslate nohighlight">\(x_2\)</span> - prevoz Detroit - Atlanta, <span class="math notranslate nohighlight">\(x_3\)</span> - prevoz Detroit - Hjuston, x4 - prevoz Toledo - Boston, i tako dalje sve do <span class="math notranslate nohighlight">\(x_{13}\)</span> - prevoz Sent Luis - Boston, <span class="math notranslate nohighlight">\(x_{14}\)</span> - prevoz Sent Luis - Atlanta, <span class="math notranslate nohighlight">\(x_{15}\)</span> - prevoz Sent Luis - Hjuston
+<p>Imamo sledeće promenljive: <span class="math notranslate nohighlight">\(x_1\)</span> - prevoz Detroit - Boston, <span class="math notranslate nohighlight">\(x_2\)</span> - prevoz Detroit - Atlanta, <span class="math notranslate nohighlight">\(x_3\)</span> - prevoz Detroit - Hjuston, x4 - prevoz Toledo - Boston, i tako dalje sve do <span class="math notranslate nohighlight">\(x_{13}\)</span> - prevoz Sent Luis - Boston, <span class="math notranslate nohighlight">\(x_{14}\)</span> - prevoz Sent Luis - Atlanta, <span class="math notranslate nohighlight">\(x_{15}\)</span> - prevoz Sent Luis - Hjuston
 Ukupno 15 promenljivih koje se odnose na količine prevezene robe prema različitim rutama</p>
-<p>Takođe uvodim binarne promenljive, koje se odnose da li smo krenuli da proizvodimo u fabrikama Detroit, Toledo, Denver i Kanzas Siti, jer mi to stvara plaćanje fiksnih troškova pa imam, <span class="math notranslate nohighlight">\(x_{16}\)</span> - koristimo fabriku Detroit, <span class="math notranslate nohighlight">\(x_{17}\)</span> - koristimo fabriku Toledo, …, <span class="math notranslate nohighlight">\(x_{19}\)</span> - koristimo fabriku Kanzas Siti.</p>
+<p>Takođe uvodim0 binarne promenljive, koje se odnose da li smo krenuli da proizvodimo u fabrikama Detroit, Toledo, Denver i Kanzas Siti, jer nam to stvara plaćanje fiksnih troškova pa imamo, <span class="math notranslate nohighlight">\(x_{16}\)</span> - koristimo fabriku Detroit, <span class="math notranslate nohighlight">\(x_{17}\)</span> - koristimo fabriku Toledo, …, <span class="math notranslate nohighlight">\(x_{19}\)</span> - koristimo fabriku Kanzas Siti.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">175_000</span><span class="p">,</span> <span class="mi">300_000</span><span class="p">,</span> <span class="mi">375_000</span><span class="p">,</span> <span class="mi">500_000</span><span class="p">]</span>
 
-<span class="sd">&quot;&quot;&quot; Provaravam da li je tražnja jednaka ponudi: Tražnja = 70 000 jedinica, Ponuda = 100 000 jedinica</span>
-<span class="sd">Podatak da tražnja nije jednaka ponudi mi je bitna zbog znakova kod ograničenja: Sad znam da će mi znak kod ograničenja tražnje biti sa =, </span>
+<span class="sd">&quot;&quot;&quot; Provaravamo da li je tražnja jednaka ponudi: Tražnja = 70 000 jedinica, Ponuda = 100 000 jedinica</span>
+<span class="sd">Podatak da tražnja nije jednaka ponudi je bitna zbog znakova kod ograničenja: Sad znamo da će znak kod ograničenja tražnje biti sa =, </span>
 <span class="sd">dok će ograničenja ponude imati znak &lt;=</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
@@ -1876,24 +1848,252 @@ Ukupno 15 promenljivih koje se odnose na količine prevezene robe prema različi
 </div>
 </div>
 </div>
-<p>Ovde vidim da u optimalnom rešenju samo promenljive <span class="math notranslate nohighlight">\(x_{11}, x_{12}\)</span>, i <span class="math notranslate nohighlight">\(x_{13}\)</span> , to jeste koristimo rute Kanzas Siti - Atltanta, Kanzas Siti - Hjuston, Sent Luis - Boston, zbog čega je i promenljiva <span class="math notranslate nohighlight">\(x_{19}\)</span> jednaka jedan, jer koristimo fabriku Kanzas Siti</p>
+<p>Ovde vidimo da u optimalnom rešenju samo promenljive <span class="math notranslate nohighlight">\(x_{11}, x_{12}\)</span>, i <span class="math notranslate nohighlight">\(x_{13}\)</span> , to jeste koristimo rute Kanzas Siti - Atltanta, Kanzas Siti - Hjuston, Sent Luis - Boston, zbog čega je i promenljiva <span class="math notranslate nohighlight">\(x_{19}\)</span> jednaka jedan, jer koristimo fabriku Kanzas Siti</p>
 </section>
 </section>
 </section>
 <section id="zadaci-i-problemi">
 <h2>Zadaci i problemi</h2>
-<section id="id9">
-<h3>⚡️ Zadatak 1.</h3>
-</section>
-<section id="id10">
-<h3>⚡️ Zadatak 2.</h3>
+<p><strong>⚡️Zadatak 1.</strong></p>
+<p>Dunavska regionalna banka (DRB) raspolaže sa 2 miliona evra namenjenih za nove plasmane. Banka može da investira ova sredstva u tri vrste finansijskih proizvoda: Stambeni krediti, sa godišnjom stopom prinosa od 6,5%; Krediti malim i srednjim preduzećima, sa godišnjom stopom prinosa od 11%; Krediti za kupovinu vozila, sa godišnjom stopom prinosa od 8%.</p>
+<p>Poslovanje banke je ograničeno sledećim pravilima: Najmanje 35% ukupnih sredstava mora biti uloženo u stambene kredite; Iznos uložen u kredite malim i srednjim preduzećima ne sme biti veći od 70% iznosa uloženog u kredite za kupovinu vozila; Sva raspoloživa sredstva moraju biti u potpunosti uložena.</p>
+<p>Formirati model linearnog programiranja kojim se određuje optimalna raspodela sredstava tako da se maksimizuje ukupan godišnji prinos.</p>
+<p>Odgovoriti na sledeća pitanja:</p>
+<ul class="simple">
+<li><p>Koliko sredstava treba uložiti u svaki od navedenih finansijskih proizvoda?</p></li>
+<li><p>Koliki je maksimalan ukupan godišnji prinos?</p></li>
+</ul>
 <br>
-</section>
+<p><strong>⚡️ Zadatak 2.</strong></p>
+<p>Kompanija Javor dobila je ugovor da proizvodi police za velikog distributera. Ugovor predviđa proizvodnju ukupno 3600 standardnih i 3900 pojačanih polica u naredna dva meseca, uz sledeći raspored isporuke:</p>
+<p><em>Tabela 1.</em> Raspored isporuke</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tip police</p></th>
+<th class="head text-center"><p>Mesec 1</p></th>
+<th class="head text-center"><p>Mesec 2</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Standardne</p></td>
+<td class="text-center"><p>2000</p></td>
+<td class="text-center"><p>1600</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Pojačana</p></td>
+<td class="text-center"><p>1400</p></td>
+<td class="text-center"><p>2500</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Vreme proizvodnje je 0,6 sati po standardnoj polici i 1,1 sati po pojačanoj polici. Troškovi sirovina iznose 9€ po standardnoj i 13€ po pojačanoj polici. Cena rada je 24€ po satu u redovnom radu i 36€ po satu u prekovremenom radu.</p>
+<p>Kapaciteti rada su ograničeni na najviše 2500 sati redovnog rada mesečno i najviše 900 sati prekovremenog rada mesečno. Ako se u mesecu 1 proizvede više od tražnje za mesec 1, višak se može preneti i skladištiti uz trošak od 4€ po jedinici.</p>
+<p>Zadatak: Formulisati model linearnog programiranja i odrediti koliko polica svake vrste treba proizvesti u svakom mesecu u redovnom i u prekovremenom radu tako da se minimizuju ukupni troškovi proizvodnje i skladištenja, uz poštovanje isporuka i kapaciteta.</p>
+<br>
+<p><strong>⚡️ Zadatak 3.</strong></p>
+<p>Kompanija Balkan proizvodi diskove kočnica za standardni model i ojačani model vozila. Trošak koji nastaje u sedmici kada se proizvode diskovi za standardni model iznosi 1800€, dok trošak podešavanja (setup) proizvodne linije za proizvodnju diskova za ojačani model iznosi 3200€. Troškovi materijala su 14€ po disku za standardni model i 19€ po disku za ojačani model.</p>
+<p>Proizvodna linija tokom jedne sedmice može da proizvodi samo jednu vrstu diskova. Kompanija na početku svake sedmice odlučuje koji tip diska će se proizvoditi tokom cele sedmice. Ako je za prelazak sa jednog tipa na drugi potrebna promena podešavanja iz jedne sedmice u sledeću, vikend se koristi za rekonfiguraciju linije. Kada je linija podešena, nedeljni kapaciteti proizvodnje su: 7500 diskova za standardni model, 5200 diskova za ojačani model.</p>
+<p>Zadatak: Planirati proizvodnju po sedmicama uz izbor proizvoda koji se pravi svake sedmice, tako da se uz poštovanje kapaciteta minimizuju relevantni troškovi (setup + materijal).</p>
+<br>
+<p><strong>⚡️ Zadatak 4.</strong></p>
+<p>Kompanija Balkan Cloud Solutions upravlja sa više data-centara. Svaki data-centar ima servere namenjene za dve klase usluge: Secure (S) serveri i Ultra Secure (U) serveri</p>
+<p>Zbog rasta potražnje, kompanija razmatra nadogradnju kapaciteta u pojedinim data-centrima. Ako se data-centar nadogradi, kapaciteti za S i U servere se povećavaju prema tabeli ispod. Menadžment želi da: obezbedi ukupno povećanje kapaciteta od najmanje 100 Secure servera i najmanje 80 Ultra Secure servera; istovremeno minimizuje ukupan trošak nadogradnje.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data-centar</p></th>
+<th class="head text-right"><p>Trošak (mil. €)</p></th>
+<th class="head text-right"><p>Povećanje S (Secure)</p></th>
+<th class="head text-right"><p>Povećanje U (Ultra Secure)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Beograd</p></td>
+<td class="text-right"><p>2.8</p></td>
+<td class="text-right"><p>60</p></td>
+<td class="text-right"><p>25</p></td>
+</tr>
+<tr class="row-odd"><td><p>Novi Sad</p></td>
+<td class="text-right"><p>3.6</p></td>
+<td class="text-right"><p>45</p></td>
+<td class="text-right"><p>55</p></td>
+</tr>
+<tr class="row-even"><td><p>Niš</p></td>
+<td class="text-right"><p>2.4</p></td>
+<td class="text-right"><p>35</p></td>
+<td class="text-right"><p>30</p></td>
+</tr>
+<tr class="row-odd"><td><p>Kragujevac</p></td>
+<td class="text-right"><p>4.1</p></td>
+<td class="text-right"><p>90</p></td>
+<td class="text-right"><p>40</p></td>
+</tr>
+<tr class="row-even"><td><p>Subotica</p></td>
+<td class="text-right"><p>1.9</p></td>
+<td class="text-right"><p>20</p></td>
+<td class="text-right"><p>35</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>(a) Formulisati 0–1 model linearnog programiranja koji određuje koje data-centre treba nadograditi tako da se zadovolje zahtevi za kapacitetom uz minimalan trošak.</p></li>
+<li><p>(b) Rešiti model iz (a) i dati preporuku (koje data-centre izabrati), uz prikaz: ukupnog troška, ukupnog povećanja kapaciteta za S i U servere.</p></li>
+</ul>
+<br>
 </section>
 <section id="studije-slucaja">
 <h2>Studije slučaja</h2>
-<section id="id11">
-<h3>🧩</h3>
+<p>🧩 Morava Tekstil</p>
+<p>Kompanija <em>Morava Tekstil</em> donosi odluku o planu proizvodnje za naredni kvartal. Preduzeće proizvodi više različitih vrsta tkanina, koje se mogu proizvoditi interno ili kupovati na tržištu.</p>
+<p>Tokom kvartala fabrika radi 13 nedelja, 7 dana u nedelji i 24 sata dnevno. Na raspolaganju su dve vrste razboja:</p>
+<ul class="simple">
+<li><p><em>Dobi razboji</em>, koji mogu da proizvode sve tipove tkanina;</p></li>
+<li><p><em>Regularni razboji</em>, koji mogu da proizvode samo određene tipove tkanina.</p></li>
+</ul>
+<p>Brzina proizvodnje za svaku tkaninu i svaki tip razboja data je u tabeli. Ako su obe brzine jednake, tkanina se može proizvoditi na oba tipa razboja. Na raspolaganju je <em>80 dobi razboja</em> i <em>140 regularnih razboja</em>. Vreme potrebno za prelazak sa proizvodnje jedne tkanine na drugu je zanemarljivo.</p>
+<p>Pored interne proizvodnje, svaka tkanina se može *kupiti na tržištu po ceni po kvadratnom metru.</p>
+<p>Menadžment zahteva da se tražnja za svakom tkaninom u potpunosti zadovolji (bilo proizvodnjom, bilo kupovinom). Cilj je da se odredi:</p>
+<ul class="simple">
+<li><p>kako raspodeliti razboje po tkaninama,</p></li>
+<li><p>koje količine tkanina proizvoditi,</p></li>
+<li><p>koje količine kupovati na tržištu,</p></li>
+</ul>
+<p>tako da se minimizuju ukupni troškovi.</p>
+<p>Podaci</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>Tkanina</p></th>
+<th class="head text-right"><p>Tražnja (<span class="math notranslate nohighlight">\(m^2\)</span>)</p></th>
+<th class="head text-right"><p>Dobbi (<span class="math notranslate nohighlight">\(m^2/sat\)</span>)</p></th>
+<th class="head text-right"><p>Regular (<span class="math notranslate nohighlight">\(m^2/sat\)</span>)</p></th>
+<th class="head text-right"><p>Trošak fabrike (<span class="math notranslate nohighlight">\(dolar/m^2\)</span>)</p></th>
+<th class="head text-right"><p>Tržišna cena (<span class="math notranslate nohighlight">\(dolar/m^2\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>1</p></td>
+<td class="text-right"><p>18,000</p></td>
+<td class="text-right"><p>4.800</p></td>
+<td class="text-right"><p>0.000</p></td>
+<td class="text-right"><p>0.660</p></td>
+<td class="text-right"><p>0.85</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>2</p></td>
+<td class="text-right"><p>52,000</p></td>
+<td class="text-right"><p>4.800</p></td>
+<td class="text-right"><p>0.000</p></td>
+<td class="text-right"><p>0.560</p></td>
+<td class="text-right"><p>0.72</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>3</p></td>
+<td class="text-right"><p>48,000</p></td>
+<td class="text-right"><p>4.800</p></td>
+<td class="text-right"><p>0.000</p></td>
+<td class="text-right"><p>0.645</p></td>
+<td class="text-right"><p>0.88</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>4</p></td>
+<td class="text-right"><p>24,000</p></td>
+<td class="text-right"><p>4.800</p></td>
+<td class="text-right"><p>0.000</p></td>
+<td class="text-right"><p>0.555</p></td>
+<td class="text-right"><p>0.74</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>5</p></td>
+<td class="text-right"><p>78,500</p></td>
+<td class="text-right"><p>5.000</p></td>
+<td class="text-right"><p>5.000</p></td>
+<td class="text-right"><p>0.610</p></td>
+<td class="text-right"><p>0.78</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>6</p></td>
+<td class="text-right"><p>112,000</p></td>
+<td class="text-right"><p>3.900</p></td>
+<td class="text-right"><p>3.900</p></td>
+<td class="text-right"><p>0.620</p></td>
+<td class="text-right"><p>0.76</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>7</p></td>
+<td class="text-right"><p>125,000</p></td>
+<td class="text-right"><p>4.200</p></td>
+<td class="text-right"><p>4.200</p></td>
+<td class="text-right"><p>0.650</p></td>
+<td class="text-right"><p>0.82</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>8</p></td>
+<td class="text-right"><p>65,000</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>0.490</p></td>
+<td class="text-right"><p>0.62</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>9</p></td>
+<td class="text-right"><p>80,000</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>0.510</p></td>
+<td class="text-right"><p>0.72</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>10</p></td>
+<td class="text-right"><p>70,000</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>0.440</p></td>
+<td class="text-right"><p>0.61</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>11</p></td>
+<td class="text-right"><p>72,000</p></td>
+<td class="text-right"><p>3.800</p></td>
+<td class="text-right"><p>3.800</p></td>
+<td class="text-right"><p>0.650</p></td>
+<td class="text-right"><p>0.81</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>12</p></td>
+<td class="text-right"><p>85,000</p></td>
+<td class="text-right"><p>4.200</p></td>
+<td class="text-right"><p>4.200</p></td>
+<td class="text-right"><p>0.570</p></td>
+<td class="text-right"><p>0.76</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>13</p></td>
+<td class="text-right"><p>12,000</p></td>
+<td class="text-right"><p>4.500</p></td>
+<td class="text-right"><p>4.500</p></td>
+<td class="text-right"><p>0.500</p></td>
+<td class="text-right"><p>0.67</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>14</p></td>
+<td class="text-right"><p>400,000</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>5.300</p></td>
+<td class="text-right"><p>0.320</p></td>
+<td class="text-right"><p>0.47</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>15</p></td>
+<td class="text-right"><p>65,000</p></td>
+<td class="text-right"><p>4.200</p></td>
+<td class="text-right"><p>4.200</p></td>
+<td class="text-right"><p>0.510</p></td>
+<td class="text-right"><p>0.71</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<section id="zahtev">
+<h3>Zahtev</h3>
+<p>a) Formulisati <strong>model linearnog programiranja</strong> koji određuje:</p>
+<ul class="simple">
+<li><p>koliko svake tkanine proizvoditi na dobbi i regularnim razbojima,</p></li>
+<li><p>koliko svake tkanine kupiti na tržištu.</p></li>
+</ul>
+<p>b) Model mora da:</p>
+<ul class="simple">
+<li><p>zadovolji ukupnu tražnju za svakom tkaninom,</p></li>
+<li><p>poštuje raspoložive kapacitete dobbi i regularnih razboja,</p></li>
+<li><p>minimizuje <strong>ukupan trošak proizvodnje i kupovine</strong>.</p></li>
+</ul>
+<p>c) Rešiti model i dati preporuku menadžmentu.</p>
 </section>
 </section>
 </section>
@@ -1970,7 +2170,6 @@ Ukupno 15 promenljivih koje se odnose na količine prevezene robe prema različi
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mesoviti-problem-linearnog-programiranja">Mešoviti problem linearnog programiranja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#model-mlp">Model MLP</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Primer 1.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-2-budzetiranje">Primer 2.  <em>Budžetiranje</em></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-3-fiksni-troskovi">Primer 3. Fiksni troškovi</a></li>
@@ -2007,13 +2206,9 @@ Ukupno 15 promenljivih koje se odnose na količine prevezene robe prema različi
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">⚡️ Zadatak 1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">⚡️ Zadatak 2.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">🧩</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zahtev">Zahtev</a></li>
 </ul>
 </li>
 </ul>
