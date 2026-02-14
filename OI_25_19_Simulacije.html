@@ -224,8 +224,25 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_02_KNN.html">Algoritam k najbližih suseda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
 </ul>
 
     </div>
@@ -435,7 +452,46 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="monte-karlo-simulacije">
+  <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+a[href^="http://"],
+a[href^="https://"] {
+    color: blue !important;
+}
+
+/* stil za sve tabele */
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* дебља, јача линија испод заглавља */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* тања, светлија линија испод последњег реда */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="monte-karlo-simulacije">
 <h1>Monte Karlo simulacije</h1>
 <p><strong>Šta su Monte Karlo simulacije?</strong></p>
 <p>Monte Karlo simulacija, takođe poznata kao Monte Karlo metoda ili simulacija višestruke verovatnoće, je matematička tehnika koja se koristi za procenu mogućih ishoda neizvesnog događaja. Metodu Monte Karla izmislili su Džon fon Nojman i Stanislav Ulam tokom Drugog svetskog rata da bi poboljšali donošenje odluka u neizvesnim uslovima. Ime je dobio po poznatom kazino gradu, zvanom Monte Karlo, pošto je element slučajnosti jezgro modela modela, slično u igri rulet.</p>
@@ -687,35 +743,36 @@ Standardna devijacija: 6.10
 </div>
 <p>Rezultat je se poklapa sa onim što kaže teorija u slučaju uniformnih raspodela ostalih aukcionara, a to je da je najbolja straegija onoliko koliko vrednujemo predmet. Prednost simulacija je to što možemo koristiti i druge raspodele za koje teorija ne daje optimalan licit.</p>
 <div class="tip admonition">
-<p class="admonition-title">Primer 3. <em>Dan zaljubljenih</em></p>
-<p>Pretpostavimo da se tražnja za razglednicama na Dan zaljubljenih može opisati diskretnom slučajnom promenljivom:</p>
+<p class="admonition-title">Primer 3. <em>Sezonski kalendari</em></p>
+<p>Izdavačka kuća planira štampanje sezonskih kalendara za predstojeću godinu. Potražnja za kalendarima je neizvesna i može se opisati diskretnom slučajnom promenljivom sa raspodelom verovatnoća prikazanom u tabeli.</p>
 <div class="pst-scrollable-table-container"><table class="thin table table-center" id="id1">
-<caption><span class="caption-number">Tabela 9. </span><span class="caption-text">Raspodela verovatnoća tražnje</span></caption>
+<caption><span class="caption-number">Tabela 9. </span><span class="caption-text">Raspodela verovatnoća potražnje</span></caption>
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>Tražnja</p></th>
-<th class="head text-center"><p><span class="math notranslate nohighlight">\(10,000\)</span></p></th>
-<th class="head text-center"><p><span class="math notranslate nohighlight">\(20,000\)</span></p></th>
-<th class="head text-center"><p><span class="math notranslate nohighlight">\(40,000\)</span></p></th>
-<th class="head text-center"><p><span class="math notranslate nohighlight">\(60,000\)</span></p></th>
+<tr class="row-odd"><th class="head text-left"><p>Potražnja</p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(5\,000\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(8\,000\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(12\,000\)</span></p></th>
+<th class="head text-center"><p><span class="math notranslate nohighlight">\(15\,000\)</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>Verovatnoća</p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0.1\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0.20\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0.30\)</span></p></td>
 <td class="text-center"><p><span class="math notranslate nohighlight">\(0.35\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0.3\)</span></p></td>
-<td class="text-center"><p><span class="math notranslate nohighlight">\(0.25\)</span></p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0.15\)</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Čestitke se prodaju po 4<span class="math notranslate nohighlight">\(\$\)</span>, a varijabilni troškovi za proizvodnju jedne čestitke su 1.5<span class="math notranslate nohighlight">\(\$\)</span>. Neprodate čestitke se moraju ukloniti i cena te operacije je 0.2<span class="math notranslate nohighlight">\(\$\)</span> po čestitci. Koliko čestitki treba odštampati?</p>
+<p>Prodajna cena jednog kalendara iznosi 6 €, dok su varijabilni troškovi štampanja 2.5 € po primerku. Neprodati kalendari se nakon sezone recikliraju, pri čemu trošak reciklaže iznosi 0.4 € po komadu.</p>
+<p>Odrediti optimalnu količinu kalendara koju treba odštampati.</p>
 </div>
 <p><strong>Konstrukcija modela.</strong></p>
 <p>Prvo ćemo konstruisati funkciju koja računa profit za fiksirane vrednosti parametara.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">profit</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">vc</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span> <span class="mf">0.2</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">profit</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">vc</span> <span class="o">=</span> <span class="mf">2.5</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span> <span class="mf">0.4</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Funkcija računa profit u zavisnosti od tražnje i nabavne količine</span>
 <span class="sd">    </span>
@@ -739,12 +796,12 @@ Standardna devijacija: 6.10
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Testiranje 1</span>
-<span class="n">profit</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span> 
+<span class="n">profit</span><span class="p">(</span><span class="mi">12000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25000.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16400.0
 </pre></div>
 </div>
 </div>
@@ -752,12 +809,12 @@ Standardna devijacija: 6.10
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Testiranje 2</span>
-<span class="n">profit</span><span class="p">(</span><span class="mi">50000</span><span class="p">,</span> <span class="mi">30000</span><span class="p">)</span> 
+<span class="n">profit</span><span class="p">(</span><span class="mi">8000</span><span class="p">,</span> <span class="mi">12000</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>41000.0
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28000.0
 </pre></div>
 </div>
 </div>
@@ -765,14 +822,14 @@ Standardna devijacija: 6.10
 <p><strong>Generisanje uzorka i vrednosti za ispitivanje osetljivosti.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traznja</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">40000</span><span class="p">,</span> <span class="mi">60000</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">])</span> <span class="c1"># uzorak</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traznja</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">15000</span><span class="p">],</span> <span class="n">size</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">])</span> <span class="c1"># uzorak</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ponuda</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">,</span> <span class="mi">40000</span><span class="p">,</span> <span class="mi">60000</span><span class="p">]</span> <span class="c1"># Vrednosti ponude za testiranje osetljivosti</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ponuda</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">8000</span><span class="p">,</span> <span class="mi">12000</span><span class="p">,</span> <span class="mi">15000</span><span class="p">]</span> <span class="c1"># Vrednosti ponude za testiranje osetljivosti</span>
 </pre></div>
 </div>
 </div>
@@ -780,7 +837,7 @@ Standardna devijacija: 6.10
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">profit_multi</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="n">profit</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">ponuda</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">traznja</span><span class="p">]</span>
-<span class="n">df_profit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">profit_multi</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;p_10000&#39;</span><span class="p">,</span> <span class="s1">&#39;p_20000&#39;</span><span class="p">,</span> <span class="s1">&#39;p_40000&#39;</span><span class="p">,</span> <span class="s1">&#39;p_60000&#39;</span><span class="p">])</span>
+<span class="n">df_profit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">profit_multi</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;p_5000&#39;</span><span class="p">,</span> <span class="s1">&#39;p_8000&#39;</span><span class="p">,</span> <span class="s1">&#39;p_12000&#39;</span><span class="p">,</span> <span class="s1">&#39;p_15000&#39;</span><span class="p">])</span>
 <span class="n">df_profit</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -804,47 +861,47 @@ Standardna devijacija: 6.10
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>p_10000</th>
-      <th>p_20000</th>
-      <th>p_40000</th>
-      <th>p_60000</th>
+      <th>p_5000</th>
+      <th>p_8000</th>
+      <th>p_12000</th>
+      <th>p_15000</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>25000.0</td>
-      <td>50000.0</td>
-      <td>16000.0</td>
-      <td>-18000.0</td>
+      <td>17500.0</td>
+      <td>28000.0</td>
+      <td>16400.0</td>
+      <td>7700.0</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>25000.0</td>
-      <td>50000.0</td>
-      <td>100000.0</td>
-      <td>150000.0</td>
+      <td>17500.0</td>
+      <td>28000.0</td>
+      <td>16400.0</td>
+      <td>7700.0</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>25000.0</td>
-      <td>50000.0</td>
-      <td>100000.0</td>
-      <td>66000.0</td>
+      <td>17500.0</td>
+      <td>28000.0</td>
+      <td>42000.0</td>
+      <td>52500.0</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>25000.0</td>
-      <td>50000.0</td>
-      <td>16000.0</td>
-      <td>-18000.0</td>
+      <td>17500.0</td>
+      <td>8800.0</td>
+      <td>-2800.0</td>
+      <td>-11500.0</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>25000.0</td>
-      <td>50000.0</td>
-      <td>16000.0</td>
-      <td>-18000.0</td>
+      <td>17500.0</td>
+      <td>28000.0</td>
+      <td>16400.0</td>
+      <td>7700.0</td>
     </tr>
   </tbody>
 </table>
@@ -853,7 +910,7 @@ Standardna devijacija: 6.10
 <p><strong>Analiza rezultata.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_profit</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_profit</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -876,68 +933,68 @@ Standardna devijacija: 6.10
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>p_10000</th>
-      <th>p_20000</th>
-      <th>p_40000</th>
-      <th>p_60000</th>
+      <th>p_5000</th>
+      <th>p_8000</th>
+      <th>p_12000</th>
+      <th>p_15000</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>count</th>
       <td>10000.0</td>
-      <td>10000.000000</td>
-      <td>10000.000000</td>
-      <td>10000.000000</td>
+      <td>10000.00</td>
+      <td>10000.00</td>
+      <td>10000.00</td>
     </tr>
     <tr>
       <th>mean</th>
-      <td>25000.0</td>
-      <td>45808.400000</td>
-      <td>58336.000000</td>
-      <td>45596.400000</td>
+      <td>17500.0</td>
+      <td>24198.40</td>
+      <td>25472.64</td>
+      <td>19679.52</td>
     </tr>
     <tr>
       <th>std</th>
       <td>0.0</td>
-      <td>12589.421702</td>
-      <td>47877.530531</td>
-      <td>73471.246821</td>
+      <td>7651.43</td>
+      <td>17896.66</td>
+      <td>21534.93</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>25000.0</td>
-      <td>8000.000000</td>
-      <td>-26000.000000</td>
-      <td>-60000.000000</td>
+      <td>17500.0</td>
+      <td>8800.00</td>
+      <td>-2800.00</td>
+      <td>-11500.00</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>25000.0</td>
-      <td>50000.000000</td>
-      <td>16000.000000</td>
-      <td>-18000.000000</td>
+      <td>17500.0</td>
+      <td>28000.00</td>
+      <td>16400.00</td>
+      <td>7700.00</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>25000.0</td>
-      <td>50000.000000</td>
-      <td>100000.000000</td>
-      <td>66000.000000</td>
+      <td>17500.0</td>
+      <td>28000.00</td>
+      <td>42000.00</td>
+      <td>33300.00</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>25000.0</td>
-      <td>50000.000000</td>
-      <td>100000.000000</td>
-      <td>150000.000000</td>
+      <td>17500.0</td>
+      <td>28000.00</td>
+      <td>42000.00</td>
+      <td>33300.00</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>25000.0</td>
-      <td>50000.000000</td>
-      <td>100000.000000</td>
-      <td>150000.000000</td>
+      <td>17500.0</td>
+      <td>28000.00</td>
+      <td>42000.00</td>
+      <td>52500.00</td>
     </tr>
   </tbody>
 </table>
@@ -951,39 +1008,45 @@ Standardna devijacija: 6.10
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f7c2cb0f5a80b68e71d8421975ae9d5278555071b353ba34dc0e11ee6512b89d.png" src="_images/f7c2cb0f5a80b68e71d8421975ae9d5278555071b353ba34dc0e11ee6512b89d.png" />
+<img alt="_images/754fc603baf23560fcc2e5ad988be71c488ff820bd3df951d516c15c5796293a.png" src="_images/754fc603baf23560fcc2e5ad988be71c488ff820bd3df951d516c15c5796293a.png" />
 </div>
 </div>
 <p><strong>Zaključak.</strong>
 Zavisi od rizika:</p>
 <ul class="simple">
-<li><p>veća sklonost riziku  … štampanje 60000</p></li>
-<li><p>manja sklonost riziku  … štampanje 40000</p></li>
+<li><p>veća sklonost riziku  … štampanje 12000</p></li>
+<li><p>manja sklonost riziku  … štampanje 8000</p></li>
 </ul>
 <div class="tip admonition">
-<p class="admonition-title">Primer 3. <em>Dan zaljubljenih</em></p>
-<p><em>Sanatronics</em> je kompanija koja proizvodi medicinske uređaje za bolničke klinike. Inspirisani članovima porodice koji se bore sa kancerom, osnivači <em>Sanatronics</em>-a razvili su prototip novog uređaja koji ograničava izloženost medicinskih radnika u toku tretmana hemoterapijom dok pripremaju, administriraju i ukljanjaju ove opasne medikamente. Nov uređaj ima inovativni dizajn i potencijalno ozbiljnu mogućnost da pokrije veliki deo tržišta.</p>
-<p><em>Sanatronics</em> želi da analizira potencijal profita u prvoj godini. Zbog loše situacije sa gotovinom, mendžment je posebno oprezan u vezi mogućih gubitaka. <em>Sanatronics</em> je identifikovao ključne parametre u određivanju profita u toku prve godine: prodajna cena po jedinici (<span class="math notranslate nohighlight">\(p\)</span>), administrativni troškovi i troškovi reklamiranja u toku prve godine (<span class="math notranslate nohighlight">\(c_a\)</span>), troškovi rada po jedinici (<span class="math notranslate nohighlight">\(c_r\)</span>), troškovi za delove po jedinici (<span class="math notranslate nohighlight">\(c_d\)</span>) i tražnja (<span class="math notranslate nohighlight">\(d\)</span>) u toku prve godine. Posle sprovedenog istraživanja tržišta i finansijske analize, <em>Sanatronics</em> je procenio sa velikim nivoom sigurnosti da će prodajna cena biti 249<span class="math notranslate nohighlight">\(\$\)</span> po jedinici kao i da će administrativni toškovi i troškovi reklamiranja u toku prve godine iznositi ukupno 1,000,000<span class="math notranslate nohighlight">\(\$\)</span>. <em>Sanatronics</em> nije siguran o vrednostima troškova rada, delova i tražnje.</p>
-<p>Napraviti Monte Karlo simulaciju za problem <em>Sanatronics</em>-a pod sledećim pretpostavkama:</p>
+<p class="admonition-title">Primer 3. <em>Senzori</em></p>
+<p><em>AeroSense</em> je kompanija koja razvija senzorske sisteme za kontrolu kvaliteta vazduha u industrijskim pogonima. Nakon nekoliko incidenata u lokalnim fabrikama, tim <em>AeroSense</em>-a je napravio prototip uređaja koji u realnom vremenu detektuje opasne gasove i automatski šalje upozorenja službama bezbednosti. Rešenje je tehnički inovativno i ima potencijal da brzo osvoji deo tržišta.</p>
+<p>Menadžment želi da proceni raspodelu profita u prvoj godini poslovanja. Zbog ograničene gotovine, posebno ih zanima rizik od gubitka. Kao ključne faktore profita identifikovali su: prodajnu cenu po jedinici (<span class="math notranslate nohighlight">\(p\)</span>), fiksne administrativne i marketinške troškove u prvoj godini (<span class="math notranslate nohighlight">\(c_a\)</span>), troškove montaže po jedinici (<span class="math notranslate nohighlight">\(c_m\)</span>), troškove komponenti po jedinici (<span class="math notranslate nohighlight">\(c_k\)</span>) i godišnju tražnju (<span class="math notranslate nohighlight">\(d\)</span>).</p>
+<p>Na osnovu analize tržišta procenjeno je da će prodajna cena biti <span class="math notranslate nohighlight">\(p=319\$\)</span> po jedinici, a da će ukupni administrativni i marketinški troškovi u prvoj godini iznositi <span class="math notranslate nohighlight">\(c_a=1\,350\,000\$\)</span>. Međutim, <em>AeroSense</em> nije siguran u troškove montaže, troškove komponenti i obim tražnje.</p>
+<p>Napraviti Monte Karlo simulaciju za problem <em>AeroSense</em>-a pod sledećim pretpostavkama:</p>
 <ul class="simple">
-<li><p>Troškovi rada po jedinici (<span class="math notranslate nohighlight">\(c_r\)</span>) su slučajna promenljiva sa raspodelom
-$<span class="math notranslate nohighlight">\(c_r:\begin{pmatrix} 43 &amp; 44 &amp; 45 &amp; 46 &amp; 47 \\ 0.1 &amp; 0.2 &amp; 0.4 &amp; 0.2 &amp; 0.1 \end{pmatrix} \)</span>$</p></li>
-<li><p>Troškovi za delove po jedinici (<span class="math notranslate nohighlight">\(c_d\)</span>) su slučajna promenljiva sa raspodelom: <span class="math notranslate nohighlight">\(\mathcal{U}(80,100)\)</span></p></li>
-<li><p>Tražnja (<span class="math notranslate nohighlight">\(d\)</span>) u toku prve godine je slučajna promenljiva sa raspodelom: <span class="math notranslate nohighlight">\(\mathcal{N}(15000,4500)\)</span></p></li>
+<li><p>Troškovi montaže po jedinici (<span class="math notranslate nohighlight">\(c_m\)</span>) su diskretna slučajna promenljiva sa raspodelom<br />
+$<span class="math notranslate nohighlight">\(
+c_m:\begin{pmatrix}
+52 &amp; 54 &amp; 56 &amp; 58 &amp; 60 \\
+0.15 &amp; 0.25 &amp; 0.30 &amp; 0.20 &amp; 0.10
+\end{pmatrix}
+\)</span>$</p></li>
+<li><p>Troškovi komponenti po jedinici (<span class="math notranslate nohighlight">\(c_k\)</span>) su slučajna promenljiva sa raspodelom: <span class="math notranslate nohighlight">\(\mathcal{U}(95,120)\)</span></p></li>
+<li><p>Godišnja tražnja (<span class="math notranslate nohighlight">\(d\)</span>) je slučajna promenljiva sa raspodelom: <span class="math notranslate nohighlight">\(\mathcal{N}(18\,000,5\,200)\)</span></p></li>
 </ul>
 </div>
 <p><strong>Model.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sanatronics</span><span class="p">(</span><span class="n">c_r</span><span class="p">,</span> <span class="n">c_d</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">249</span><span class="p">,</span> <span class="n">c_a</span> <span class="o">=</span> <span class="mi">1000000</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">senzori</span><span class="p">(</span><span class="n">c_m</span><span class="p">,</span> <span class="n">c_k</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">319</span><span class="p">,</span> <span class="n">c_a</span> <span class="o">=</span> <span class="mi">1350000</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Funkcija računa profit u zavisnosti od cena rada po jedinici, troškova delova po jedinici i tražnje</span>
 <span class="sd">    </span>
 <span class="sd">    Promenljive:</span>
 <span class="sd">    p - prodajna cena </span>
 <span class="sd">    c_a - administrativni troškovi i troškovi reklamiranja</span>
-<span class="sd">    c_r - troškovi rada po jedinici</span>
-<span class="sd">    c_d - troškovi delova po jedinici</span>
+<span class="sd">    c_m - troškovi montaže po jedinici</span>
+<span class="sd">    c_k - troškovi komponenti po jedinici</span>
 <span class="sd">    d - tražnja</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
@@ -992,7 +1055,7 @@ $<span class="math notranslate nohighlight">\(c_r:\begin{pmatrix} 43 &amp; 44 &a
     <span class="c1"># Fiksni troškovi</span>
     <span class="n">FC</span> <span class="o">=</span> <span class="n">c_a</span> 
     <span class="c1">#Varijablini troškovi</span>
-    <span class="n">VC</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="p">(</span><span class="n">c_r</span><span class="o">+</span><span class="n">c_d</span><span class="p">)</span>
+    <span class="n">VC</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="p">(</span><span class="n">c_k</span><span class="o">+</span><span class="n">c_m</span><span class="p">)</span>
     
     <span class="c1">#Profit</span>
     <span class="n">P</span> <span class="o">=</span> <span class="n">R</span><span class="o">-</span><span class="n">VC</span><span class="o">-</span><span class="n">FC</span>
@@ -1005,12 +1068,12 @@ $<span class="math notranslate nohighlight">\(c_r:\begin{pmatrix} 43 &amp; 44 &a
 <h2>Testiranje</h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sanatronics</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">15000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senzori</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">15000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>890000
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1035000
 </pre></div>
 </div>
 </div>
@@ -1019,16 +1082,16 @@ $<span class="math notranslate nohighlight">\(c_r:\begin{pmatrix} 43 &amp; 44 &a
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span> <span class="c1"># Veličina uzorka</span>
-<span class="n">c_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">43</span><span class="p">,</span><span class="mi">48</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
-<span class="n">c_d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span><span class="n">n</span><span class="p">)</span>
-<span class="n">d</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">15000</span><span class="p">,</span><span class="mi">4500</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">c_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">52</span><span class="p">,</span><span class="mi">62</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="p">[</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+<span class="n">c_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span><span class="mi">120</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">d</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">18000</span><span class="p">,</span><span class="mi">5200</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sanatronics_profit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sanatronics</span><span class="p">(</span><span class="n">c_r</span><span class="p">,</span> <span class="n">c_d</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_senzori_profit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sanatronics</span><span class="p">(</span><span class="n">c_m</span><span class="p">,</span> <span class="n">c_k</span><span class="p">,</span> <span class="n">d</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1036,19 +1099,19 @@ $<span class="math notranslate nohighlight">\(c_r:\begin{pmatrix} 43 &amp; 44 &a
 <p><strong>Analiza rezultata.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_sanatronics_profit</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_senzori_profit</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>count    1.000000e+04
-mean     7.194105e+05
-std      5.179511e+05
-min     -1.138046e+06
-25%      3.723988e+05
-50%      7.169230e+05
-75%      1.060767e+06
-max      2.825412e+06
+mean     1.450151e+06
+std      8.256111e+05
+min     -1.872444e+06
+25%      8.898350e+05
+50%      1.439641e+06
+75%      2.002317e+06
+max      4.990693e+06
 dtype: float64
 </pre></div>
 </div>
@@ -1057,25 +1120,25 @@ dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">df_sanatronics_profit</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_senzori_profit</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">density</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Verovatnoća&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Profit u 100,000 $\$$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Profit u 100,000 $&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0574af5b9ce6a35a291ff52a9b3a6861662042fa6de60b8e9156f71477c46aa2.png" src="_images/0574af5b9ce6a35a291ff52a9b3a6861662042fa6de60b8e9156f71477c46aa2.png" />
+<img alt="_images/72173818f776c48bd72a4c313a5f8923a4f498567893700fa7e2d169296d905a.png" src="_images/72173818f776c48bd72a4c313a5f8923a4f498567893700fa7e2d169296d905a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">df_sanatronics_profit</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>  <span class="c1">#Verovatnoća da će profit biti manji od nule</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">df_senzori_profit</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="n">n</span>  <span class="c1">#Verovatnoća da će profit biti manji od nule</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.083
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0377)
 </pre></div>
 </div>
 </div>
@@ -1083,7 +1146,7 @@ dtype: float64
 </section>
 <section id="zakljucak">
 <h2>Zaključak</h2>
-<p>Očekivani profit od preko 700,000<span class="math notranslate nohighlight">\(\$\)</span> i jako mala verovatnoća gubitka sugerišu ulazak u posao.</p>
+<p>Očekivani profit od preko 1,450,000<span class="math notranslate nohighlight">\(\$\)</span> i jako mala verovatnoća gubitka sugerišu ulazak u posao.</p>
 <style>
 
 /* bold i veći brojevi */
@@ -1179,25 +1242,25 @@ Menadžment želi da proceni kretanje broja korisnika i prihoda tokom narednih 1
 <li><p>Dobijate 8 dolara na kraju svake igre.</p></li>
 </ul>
 <p>Dakle, dobijate novac ako je potreban broj bacanja manji od 8, i gubite novac ako je potrebno više od 8 bacanja. Evo nekoliko primera (gde <span class="math notranslate nohighlight">\(G\)</span> označava glavu i <span class="math notranslate nohighlight">\(P\)</span> označava pismo):</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<div class="pst-scrollable-table-container"><table class="table table-center">
 <thead>
-<tr class="row-odd"><th class="head text-center"><p>Događaj</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Događaj</p></th>
 <th class="head text-center"><p>Broj bacanja</p></th>
-<th class="head text-center"><p>Dobitak</p></th>
+<th class="head text-right"><p>Dobitak</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>GGG</p></td>
+<tr class="row-even"><td class="text-left"><p>GGG</p></td>
 <td class="text-center"><p>3</p></td>
-<td class="text-center"><p>5$</p></td>
+<td class="text-right"><p>5$</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>PGPPP</p></td>
+<tr class="row-odd"><td class="text-left"><p>PGPPP</p></td>
 <td class="text-center"><p>5</p></td>
-<td class="text-center"><p>3$</p></td>
+<td class="text-right"><p>3$</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>PGGPGPGPPPP</p></td>
+<tr class="row-even"><td class="text-left"><p>PGGPGPGPPPP</p></td>
 <td class="text-center"><p>11</p></td>
-<td class="text-center"><p>-3$</p></td>
+<td class="text-right"><p>-3$</p></td>
 </tr>
 </tbody>
 </table>
@@ -1253,6 +1316,55 @@ $<span class="math notranslate nohighlight">\(\begin{equation*} P\{X=d\}=\log(1+
 <li><p>Napravite funkciju koja simulira jednu igru. Ulazne parametre i izlazne parametre osmislite sami. Testirajte funkciju.</p></li>
 <li><p>Sad zamislite da igrači ponavljaju ovu igru sve dok jedan ne izgubi sav novac. Napravite Monte Karlo simulacije kako bi odredili da odredili očekivani dobitak prvog igrača.</p></li>
 </ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 11</p>
+<p>Knjižara drži na zalihama jedan naslov knjige. Dnevna tražnja je slučajna veličina sa sledećom diskretnom raspodelom:</p>
+<table style="width: 60%; margin: auto;">
+  <tr>
+    <th>Tražnja</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th>
+  </tr>
+  <tr>
+    <td>Verovatnoća </td><td>0.05</td><td>0.10</td><td>0.30</td><td>0.45</td><td>0.10</td>
+  </tr>
+</table>
+<p>Vreme isporuke (lead time) za dopunu zaliha iznosi 1 dan.
+Trošak naručivanja iznosi 10 dinara po narudžbini.<br />
+Trošak držanja zaliha iznosi 0.5 dinara po knjizi dnevno i računa se na osnovu stanja zaliha na kraju dana.</p>
+<p>Razmatraju se dve politike upravljanja zalihama:</p>
+<p>A) Naručiti 5 knjiga kada (trenutna zaliha + neisporučene narudžbine) padne ispod 8 knjiga.<br />
+B) Naručiti 8 knjiga kada (trenutna zaliha + neisporučene narudžbine) padne ispod 8 knjiga.</p>
+<p>Na početku prvog dana knjižara ima 8 knjiga na lageru i nema neisporučenih narudžbina.</p>
+<p>Za svaki dan simulacije važi sledeći redosled:</p>
+<ul class="simple">
+<li><p>Na početku dana stižu sve narudžbine naručene prethodnog dana.</p></li>
+<li><p>Realizuje se dnevna tražnja.</p></li>
+<li><p>Ako je tražnja veća od raspoložive zalihe, prodaje se koliko ima, a ostatak tražnje se gubi (lost sales).</p></li>
+<li><p>Na kraju dana obračunava se trošak držanja zaliha.</p></li>
+<li><p>Nakon toga se proverava politika i po potrebi se izdaje najviše jedna narudžbina, koja stiže narednog dana.</p></li>
+</ul>
+<p>Izvršiti simulaciju rada sistema tokom 100 dana za obe politike.<br />
+Izračunati ukupan trošak držanja zaliha, ukupan trošak naručivanja i ukupan trošak za svaku politiku.<br />
+Na osnovu rezultata simulacije preporučiti povoljniju politiku upravljanja zalihama.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 12</p>
+<p>Rešiti zadatak 11 ako je vreme isporuke (lead time) za dopunu zaliha iznosi 2 dana.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 13</p>
+<p>U igri <em>Black jack</em>, vrednosti karata se računaju na sledeći način:</p>
+<ul class="simple">
+<li><p>brojevi od 2 do 10 imaju istu vrednost kao i broj na karti,</p></li>
+<li><p>karte <em>žandar</em>, <em>dama</em> i <em>kralj</em> vrede po 10 poena,</p></li>
+<li><p><em>As</em> (A) može imati vrednost 1 ili 11, u zavisnosti od ukupnog zbira:
+ako bi vrednost 11 dovela do prelaska 21, as se računa kao 1.</p></li>
+</ul>
+<p>Na primer:</p>
+<div class="math notranslate nohighlight">
+\[ A + 9 = 20,\qquad A + 9 + 8 = 18,\qquad A + K = 21 \]</div>
+<p>Diler se drži strategije da izvlači nove karte sve dok ukupan zbir poena ne dostigne najviše 15, odnosno prestaje sa izvlačenjem kada je zbir 16 ili veći.</p>
+<p>Kolika je verovatnoća da će diler „preći 21“, tj. izgubiti jer je zbir njegovih karata veći od 21, ako se pridržava ove strategije?</p>
 </div>
 </section>
 </section>

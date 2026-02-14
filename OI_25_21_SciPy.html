@@ -224,8 +224,25 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_02_KNN.html">Algoritam k najbližih suseda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
 </ul>
 
     </div>
@@ -598,7 +615,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}  \min_x\, &amp;\,c
 </div>
 <p>Metod isporučuje objekat u obliku rečnika. U tabeli koja sledi su izlazni parametri i njihove značenje:</p>
 <div class="pst-scrollable-table-container"><table class="thin table table-center" id="id10">
-<caption><span class="caption-number">Tabela 12. </span><span class="caption-text">Značenje izlaznih parametara <code class="docutils literal notranslate"><span class="pre">linprog</span></code></span></caption>
+<caption><span class="caption-number">Tabela 12. </span><span class="caption-text">Značenje izlaznih parametara metoda <code class="docutils literal notranslate"><span class="pre">linprog</span></code></span></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parametar</p></th>
 <th class="head"><p>Značenje</p></th>
@@ -792,60 +809,62 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 </section>
 <section id="primer-3-selekcija-portfolija">
 <h3>Primer 3. <em>Selekcija portfolija</em></h3>
-<p>Razmotrimo sluchaj WMF kompanije, koja je konvertovala akcije u keš od 100,000$, i sada traži nove mogućnosti u koje bi investirala dati keš. Analitičari su proporučili da nove investicije budu u naftnoj industriji, industriji čelika ili vladine obveznice. Oni su identifikovali 5 mogućnosti za investiranje kao i projektovane godišnje stope prinosa. Te investicije kao i stope prinosa date su u sledećoj tabeli:</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<p>Razmotrimo slučaj kompanije <em>NovaCap</em>, koja je prodajom dela vlasničkog udela obezbedila 150,000 $ gotovine i želi da je uloži u nove investicione mogućnosti. Interni analitičari preporučuju ulaganja u tri oblasti: obnovljivi izvori energije, građevinski materijali i državne obveznice.</p>
+<p>Identifikovano je 5 konkretnih opcija ulaganja, zajedno sa projektovanim godišnjim stopama prinosa (u %), datim u tabeli:</p>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id11">
+<caption><span class="caption-number">Tabela 13. </span><span class="caption-text">Opcije ulaganja i projektovane stope prinosa</span></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Investicija</p></th>
 <th class="head text-right"><p>Projektovana stopa</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Atlantic Oil</p></td>
-<td class="text-right"><p>7.3</p></td>
+<tr class="row-even"><td class="text-left"><p>SolarEdge Renewables</p></td>
+<td class="text-right"><p>9.6</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Pacific Oil</p></td>
-<td class="text-right"><p>10.3</p></td>
+<tr class="row-odd"><td class="text-left"><p>WindRiver Energy</p></td>
+<td class="text-right"><p>8.4</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Midwest Steel</p></td>
-<td class="text-right"><p>6.4</p></td>
+<tr class="row-even"><td class="text-left"><p>StoneBuild Materials</p></td>
+<td class="text-right"><p>7.1</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Huber Steel</p></td>
-<td class="text-right"><p>7.5</p></td>
+<tr class="row-odd"><td class="text-left"><p>TitanCement Group</p></td>
+<td class="text-right"><p>6.7</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Government bonds</p></td>
-<td class="text-right"><p>4.5</p></td>
+<td class="text-right"><p>4.2</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Menadžment WMF kompanije postavio je sledeće preporuke u vezi investicija:</p>
+<p>Menadžment <em>NovaCap</em>-a postavio je sledeća pravila:</p>
 <ul class="simple">
-<li><p>Ne ulagati više od 50,000$ u bilo koju industrijsku granu</p></li>
-<li><p>Iznos investiran u vladine akcije mora iznositi najmanje 25% investicije u industriju čelika</p></li>
-<li><p>Investicija u Pacific Oil je visoko rizična, i ne treba da iznosi više od 60% ukupnih investicija u naftnu industriju</p></li>
+<li><p>Ne ulagati više od 70,000 $ u jednu industrijsku granu (obnovljivi izvori ili građevinski materijali).</p></li>
+<li><p>Iznos uložen u državne obveznice mora biti najmanje 30% od ukupnog iznosa uloženog u sektor građevinskih materijala.</p></li>
+<li><p>Investicija <em>SolarEdge Renewables</em> se smatra rizičnijom i ne sme preći 55% ukupnih ulaganja u sektor obnovljivih izvora energije.</p></li>
 </ul>
-<p>Preporučiti portfolio, odnosno, koje investicije odobrati i koje količine novca u njih uložiti, ako kompanija može da uloži 100, 000$</p>
+<p>Preporučiti portfelj, tj. odrediti koje investicije odabrati i koliki iznos uložiti u svaku od njih, ako kompanija može da investira ukupno 150,000 $.</p>
 <p><strong>Rešenje:</strong></p>
 <ul class="simple">
 <li><p>matematički model</p></li>
 </ul>
 <p>Neka je <span class="math notranslate nohighlight">\(x_i\)</span> - količina novca uložena u investiciju <span class="math notranslate nohighlight">\(i \in \{1,2,3,4,5\}\)</span> redom iz tabele.
 $<span class="math notranslate nohighlight">\(\begin{aligned}
-\max{0.073x_1 + 0.103x_2 + 0.064x_3 + 0.075x_4 + 0.045x_5}&amp; \\
-     \text{pri uslovima:}\,\, x_1 + x_2 + x_3 + x_4 + x_5 &amp;\le 100000 \\
-                                                x_1 + x_2 &amp;\le 50000 \\
-                                                x_3 + x_4 &amp;\le 50000 \\
-                                                      x_5 &amp;\ge 0.25(x_3 + x_4) \\
-                                                      x_2 &amp;\le 0.6(x_1+x_2)\\
+\max{0.096x_1 + 0.084x_2 + 0.071x_3 + 0.067x_4 + 0.042x_5}&amp; \\
+     \text{pri uslovima:}\,\, x_1 + x_2 + x_3 + x_4 + x_5 &amp;\le 150000 \\
+                                                x_1 + x_2 &amp;\le 70000 \\
+                                                x_3 + x_4 &amp;\le 70000 \\
+                                                      x_5 &amp;\ge 0.3(x_4 + x_5) \\
+                                                      x_2 &amp;\le 0.55(x_1+x_2)\\
                                                  \end{aligned}\)</span>$</p>
 <ul class="simple">
 <li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.073</span><span class="p">,</span> <span class="mf">0.103</span><span class="p">,</span> <span class="mf">0.064</span><span class="p">,</span> <span class="mf">0.075</span><span class="p">,</span> <span class="mf">0.045</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.096</span><span class="p">,</span> <span class="mf">0.084</span><span class="p">,</span> <span class="mf">0.071</span><span class="p">,</span> <span class="mf">0.067</span><span class="p">,</span> <span class="mf">0.042</span><span class="p">])</span>
 <span class="c1"># metod optimizuje samo problem minimuma, zato negativni znak u funkciji cilja</span>
-<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 <span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span> <span class="mi">50000</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -865,12 +884,12 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        message: Optimization terminated successfully. (HiGHS Status 7: Optimal)
         success: True
          status: 0
-            fun: -8000.0
-              x: [ 2.000e+04  3.000e+04  0.000e+00  4.000e+04  1.000e+04]
-            nit: 3
-          lower:  residual: [ 2.000e+04  3.000e+04  0.000e+00  4.000e+04
-                              1.000e+04]
-                 marginals: [ 0.000e+00  0.000e+00  1.100e-02  0.000e+00
+            fun: -8015.384615384615
+              x: [ 5.000e+04  0.000e+00  3.846e+04  0.000e+00  1.154e+04]
+            nit: 2
+          lower:  residual: [ 5.000e+04  0.000e+00  3.846e+04  0.000e+00
+                              1.154e+04]
+                 marginals: [ 0.000e+00  1.200e-02  0.000e+00  4.000e-03
                               0.000e+00]
           upper:  residual: [       inf        inf        inf        inf
                                     inf]
@@ -878,10 +897,10 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
                               0.000e+00]
           eqlin:  residual: []
                  marginals: []
-        ineqlin:  residual: [ 0.000e+00  0.000e+00  1.000e+04  0.000e+00
-                              0.000e+00]
-                 marginals: [-6.900e-02 -2.200e-02 -0.000e+00 -2.400e-02
-                             -3.000e-02]
+        ineqlin:  residual: [ 0.000e+00  0.000e+00  1.154e+04  0.000e+00
+                              2.750e+04]
+                 marginals: [-6.431e-02 -3.169e-02 -0.000e+00 -2.231e-02
+                             -0.000e+00]
  mip_node_count: 0
  mip_dual_bound: 0.0
         mip_gap: 0.0
@@ -892,7 +911,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <ul class="simple">
 <li><p>Interpretacija rezultata.</p></li>
 </ul>
-<p><strong>Rezultati:</strong> Optimalna vrednost portfolija je 8000. Treba uložiti 20000, 30000, 0, 40000, 10000 redom u investicije iz tabele. Svi resursi osim ulaganja u industriju čelika su maksimalno iskorišćeni.</p>
+<p><strong>Rezultati:</strong> Optimalna vrednost portfolija je 8015.38. Treba uložiti 50000, 38460, 0, 40000, 11540 redom u investicije iz tabele. Svi resursi osim ulaganja u građevinsku industriju su maksimalno iskorišćeni.</p>
 <br>
 </section>
 </section>
@@ -925,7 +944,7 @@ binarnih promenljivih (0 ili 1 — tipično za odluke).</p>
                             x,y &amp;\in\Bbb{Z} \end{aligned}\end{split}\]</div>
 <p>Zadatak ćemo rešiti metodom linprog specifikacijom parametra <code class="docutils literal notranslate"><span class="pre">integrality</span></code>. Naime, integrality je lista dužine jednake broju promenljivih u problemu, čije vrednosti ukazuju na tip svake promenljive.  Podrazumevana vrednost te liste su sve nule, odnosno da su sve promanljive realne. Ako se nekom elementu te liste dodeli 1, to znači da je ta promenljive celobrojna. Postoji i druge mogućnosti, koje se mogu videti preko <code class="docutils literal notranslate"><span class="pre">linprog?</span></code>.</p>
 <p>Na slici koja sledi je grafička interpretacija problema. Očigledno, problem ima optimalno rešenje 2 koje se postiže u tačkama (1,2) i (2,2).</p>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id12">
 <a class="reference internal image-reference" href="_images/mlp.png"><img alt="_images/mlp.png" src="_images/mlp.png" style="width: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Slika 17. </span><span class="caption-text">Grafička interpretacija problema (Izvor: Wikipedia)</span></p>
@@ -984,53 +1003,55 @@ binarnih promenljivih (0 ili 1 — tipično za odluke).</p>
 </section>
 <section id="primer-2-budzetiranje">
 <h3>Primer 2.  <em>Budžetiranje</em></h3>
-<p>Kompanija ICR razmatra investiranje u nekoliko projekata za koje je karakteristično da neophodan kapital varira u sledeće 4 godine. Suočen sa ograničenim kapitalom svake godine, menadžment želi da izabere najprofitabilnije projekte koje može da priušti. Procenjena NPV svakog projekta, zahtevi za kapitalom kao i dostupan kapital u toku 4 godine prikazan je u tabeli:</p>
-<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id12">
-<caption><span class="caption-number">Tabela 13. </span><span class="caption-text">Procenjena NPV svakog projekta, zahtevi za kapitalom kao i dostupan kapital u toku 4 godine</span></caption>
+<p>Ministarstvo razmatra realizaciju više kapitalnih infrastrukturnih projekata (izgradnja saobraćajnica, rekonstrukcija bolnica, digitalizacija javne uprave i energetska efikasnost), čija se dinamika ulaganja razlikuje tokom naredne četiri budžetske godine. Svaki projekat zahteva određena finansijska sredstva u svakoj godini implementacije, pri čemu se iznosi ulaganja razlikuju po godinama i projektima.</p>
+<p>S obzirom na to da su budžetska sredstva ograničena u svakoj pojedinačnoj godini, Ministarstvo mora da odabere takvu kombinaciju projekata koja donosi najveću ukupnu društveno-ekonomsku korist, merenu neto sadašnjom vrednošću (NPV), uz poštovanje godišnjih budžetskih ograničenja.</p>
+<p>Procene neto sadašnje vrednosti pojedinačnih projekata, njihovi godišnji zahtevi za budžetskim sredstvima, kao i raspoloživi budžet u svakoj od četiri godine, prikazani su u narednoj tabeli.</p>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id13">
+<caption><span class="caption-number">Tabela 14. </span><span class="caption-text">Procenjena NPV svakog projekta, zahtevi za kapitalom (u milionima evra) kao i dostupan kapital u toku 4 godine</span></caption>
 <thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-right"><p>Proširenje fabrike</p></th>
-<th class="head text-right"><p>Novo sladište</p></th>
-<th class="head text-right"><p>Nove mašine</p></th>
-<th class="head text-right"><p>Nov proizvod</p></th>
-<th class="head text-right"><p>Ukupan kapital</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Projekat</p></th>
+<th class="head text-right"><p>NPV</p></th>
+<th class="head text-right"><p>Godina 1</p></th>
+<th class="head text-right"><p>Godina 2</p></th>
+<th class="head text-right"><p>Godina 3</p></th>
+<th class="head text-right"><p>Godina 4</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Sadašnja vrednost</p></td>
-<td class="text-right"><p>90,000</p></td>
-<td class="text-right"><p>40,000</p></td>
-<td class="text-right"><p>10,000</p></td>
-<td class="text-right"><p>37,000</p></td>
-<td class="text-right"><p>Dostupno</p></td>
+<tr class="row-even"><td class="text-left"><p>A (Autoput)</p></td>
+<td class="text-right"><p>120</p></td>
+<td class="text-right"><p>40</p></td>
+<td class="text-right"><p>30</p></td>
+<td class="text-right"><p>20</p></td>
+<td class="text-right"><p>10</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Neophodan kapital, 1.g.</p></td>
-<td class="text-right"><p>15,000</p></td>
-<td class="text-right"><p>10,000</p></td>
-<td class="text-right"><p>10,000</p></td>
-<td class="text-right"><p>15,000</p></td>
-<td class="text-right"><p>40,000</p></td>
+<tr class="row-odd"><td class="text-left"><p>B (Bolnica)</p></td>
+<td class="text-right"><p>90</p></td>
+<td class="text-right"><p>20</p></td>
+<td class="text-right"><p>25</p></td>
+<td class="text-right"><p>15</p></td>
+<td class="text-right"><p>10</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Neophodan kapital, 2.g.</p></td>
-<td class="text-right"><p>20,000</p></td>
-<td class="text-right"><p>15,000</p></td>
+<tr class="row-even"><td class="text-left"><p>C (Digitalizacija)</p></td>
+<td class="text-right"><p>70</p></td>
+<td class="text-right"><p>15</p></td>
+<td class="text-right"><p>20</p></td>
+<td class="text-right"><p>20</p></td>
+<td class="text-right"><p>5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>D (Energetska efikasnost)</p></td>
+<td class="text-right"><p>60</p></td>
+<td class="text-right"><p>10</p></td>
+<td class="text-right"><p>15</p></td>
+<td class="text-right"><p>10</p></td>
+<td class="text-right"><p>10</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Raspoloživi budžet</p></td>
 <td class="text-right"><p></p></td>
-<td class="text-right"><p>10,000</p></td>
-<td class="text-right"><p>50,000</p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>Neophodan kapital, 3.g.</p></td>
-<td class="text-right"><p>25,000</p></td>
-<td class="text-right"><p>20,000</p></td>
-<td class="text-right"><p></p></td>
-<td class="text-right"><p>10,000</p></td>
-<td class="text-right"><p>40,000</p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>Neophodan kapital, 4.g.</p></td>
-<td class="text-right"><p>15,000</p></td>
-<td class="text-right"><p>5,000</p></td>
-<td class="text-right"><p>4,000</p></td>
-<td class="text-right"><p>10,000</p></td>
-<td class="text-right"><p>35,000</p></td>
+<td class="text-right"><p>70</p></td>
+<td class="text-right"><p>70</p></td>
+<td class="text-right"><p>55</p></td>
+<td class="text-right"><p>30</p></td>
 </tr>
 </tbody>
 </table>
@@ -1042,11 +1063,11 @@ binarnih promenljivih (0 ili 1 — tipično za odluke).</p>
 </ul>
 <p>Neka je <span class="math notranslate nohighlight">\(x_i \in \{0,1\}\)</span> - indikator da li je izabran projekat <span class="math notranslate nohighlight">\(i \in \{1,2,3,4\}\)</span> redom iz tabele.
 $<span class="math notranslate nohighlight">\(\begin{aligned}
-\max{90x_1+40x_2+10x_3+37x_4}&amp; \\
-\text{pri uslovima:}\,\, 15x_1+10x_2+10x_3+15x_4&amp;\le 40 \\
-                         20x_1+15x_2+      10x_4&amp;\le 50 \\
-                         25x_1+20x_2+     10x_4&amp;\le 40 \\
-                         15x_1+ 5x_2+  4x_3+10x_4&amp;\le 35\\
+\max{120x_1+90x_2+70x_3+60x_4}&amp; \\
+\text{pri uslovima:}\,\, 40x_1+20x_2+15x_3+10x_4&amp;\le 70 \\
+                         30x_1+25x_2+20x_3+15x_4&amp;\le 70 \\
+                         20x_1+15x_2+20x_3+10x_4&amp;\le 55 \\
+                         10x_1+10x_2+ 5x_3+10x_4&amp;\le 30\\
                          x_1,x_2,x_3,x_4&amp;\in\{0,1\}
 \end{aligned}\)</span>$</p>
 <ul class="simple">
@@ -1054,12 +1075,12 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">90</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">37</span><span class="p">])</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
-            <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
-            <span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
-            <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">40</span><span class="p">,</span><span class="mi">35</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">60</span><span class="p">])</span>
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">40</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">30</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">70</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1089,7 +1110,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-137.0, array([1., 0., 1., 1.]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-270.0, array([1., 1., 0., 1.]))
 </pre></div>
 </div>
 </div>
@@ -1097,66 +1118,122 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <ul class="simple">
 <li><p>Interpretacija rezultata:</p></li>
 </ul>
-<p>Treba budžetirati: Proširenje fabrike, nove mašine i nov proizvod. Neto efekat 137,000.</p>
+<p>Treba budžetirati: Autoput, bolnice i energetsku efikasnost. Neto efekat 237,000.</p>
 </section>
 <section id="primer-3-fiksni-troskovi">
 <h3>Primer 3. Fiksni troškovi</h3>
-<p>Posmatrajmo problem proizvodnje kompanije RMC. Ona koristi tri materijala kako bi proizvela tri proizvoda: aditiv za gorivo, bazu rastvarača i sredstvo za čišćenje tepiha. Profit po toni aditiva je <span class="math notranslate nohighlight">\(40\)</span>, po toni rastvarača <span class="math notranslate nohighlight">\(30\)</span> i <span class="math notranslate nohighlight">\(50\)</span> po toni sredstva za čišćenje tepiha. Za svaku tonu aditiva neophodno je <span class="math notranslate nohighlight">\(0.4t\)</span> materijala 1 i <span class="math notranslate nohighlight">\(0.6t\)</span> materijala 3. Za svaku tonu rastvarača neophodno je <span class="math notranslate nohighlight">\(0.5t\)</span> materijala 1, <span class="math notranslate nohighlight">\(0.2t\)</span> materijala 2 i <span class="math notranslate nohighlight">\(0.3t\)</span> materijala 3. Za svaku tonu sredstva za čišćenje neophodno je <span class="math notranslate nohighlight">\(0.6t\)</span> materijala 1, <span class="math notranslate nohighlight">\(0.1t\)</span> materijala 2 i <span class="math notranslate nohighlight">\(0.3t\)</span> materijala 3. RMC ima <span class="math notranslate nohighlight">\(20t\)</span> materijala 1, <span class="math notranslate nohighlight">\(5t\)</span> materijala 2 i <span class="math notranslate nohighlight">\(21t\)</span> materijala 3, a menadžment je zainteresovan za optimalan plan proizvodnje u sledećem periodu.</p>
-<p>U sledećoj tabeli dati su fiksni troškovi kao i maksimalne proizvodne mogućnosti kompanije RMC</p>
+<p>Državna agencija planira realizaciju javnih radova u narednom planskom periodu. Postoje tri moguće vrste radova:</p>
+<ol class="arabic simple">
+<li><p>Sanacija kolovoza (rad 1)</p></li>
+<li><p>Rekonstrukcija vodovodne mreže (rad 2)</p></li>
+<li><p>Održavanje javnih objekata (rad 3)</p></li>
+</ol>
+<p>Za svaku jedinicu realizovanog obima rada agencija ostvaruje neto korist (u n.j.), ali za pokretanje svake vrste radova postoji i fiksni trošak (npr. priprema tenderske dokumentacije, nadzor, uvod u posao). Svaka vrsta radova ima i maksimalni obim koji se može realizovati u periodu.</p>
+<p>Agencija raspolaže ograničenim resursima:</p>
+<ul class="simple">
+<li><p>R1: građevinski materijal</p></li>
+<li><p>R2: stručna radna snaga</p></li>
+<li><p>R3: građevinska mehanizacija</p></li>
+</ul>
+<p>Podaci o neto koristi, utrošku resursa po jedinici, fiksnim troškovima i maksimalnom obimu dati su u tabeli:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p>Proizvod</p></th>
-<th class="head text-center"><p>Fiksni troškovi</p></th>
-<th class="head text-center"><p>Maksimalna proizvodnja</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Vrsta radova</p></th>
+<th class="head text-right"><p>Neto korist po jedinici</p></th>
+<th class="head text-right"><p>R1 po jedinici</p></th>
+<th class="head text-right"><p>R2 po jedinici</p></th>
+<th class="head text-right"><p>R3 po jedinici</p></th>
+<th class="head text-right"><p>Fiksni trošak</p></th>
+<th class="head text-right"><p>Maksimalni obim</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Aditiv</p></td>
-<td class="text-center"><p>200</p></td>
-<td class="text-center"><p>50</p></td>
+<tr class="row-even"><td class="text-left"><p>1 Sanacija kolovoza</p></td>
+<td class="text-right"><p>60</p></td>
+<td class="text-right"><p>4</p></td>
+<td class="text-right"><p>0</p></td>
+<td class="text-right"><p>5</p></td>
+<td class="text-right"><p>220</p></td>
+<td class="text-right"><p>7</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Baza</p></td>
-<td class="text-center"><p>50</p></td>
-<td class="text-center"><p>25</p></td>
+<tr class="row-odd"><td class="text-left"><p>2 Rekonstrukcija vodovoda</p></td>
+<td class="text-right"><p>65</p></td>
+<td class="text-right"><p>3</p></td>
+<td class="text-right"><p>3</p></td>
+<td class="text-right"><p>2</p></td>
+<td class="text-right"><p>40</p></td>
+<td class="text-right"><p>6</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Sredstvo za č.</p></td>
-<td class="text-center"><p>400</p></td>
-<td class="text-center"><p>40</p></td>
+<tr class="row-even"><td class="text-left"><p>3 Održavanje javnih objekata</p></td>
+<td class="text-right"><p>80</p></td>
+<td class="text-right"><p>6</p></td>
+<td class="text-right"><p>2</p></td>
+<td class="text-right"><p>3</p></td>
+<td class="text-right"><p>300</p></td>
+<td class="text-right"><p>5</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>Raspoložive količine resursa u planskom periodu su:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Resurs</p></th>
+<th class="head text-right"><p>Raspoloživo</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>R1 građevinski materijal</p></td>
+<td class="text-right"><p>40</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>R2 stručna radna snaga</p></td>
+<td class="text-right"><p>12</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>R3 građevinska mehanizacija</p></td>
+<td class="text-right"><p>45</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Obimi radova budu celi brojevi (npr. broj deonica, broj objekata, broj zahvata).</p>
+<ol class="arabic simple">
+<li><p>Formulisati mešoviti celobrojni linearni model (MILP) za izbor obima radova koji maksimizira ukupnu neto korist umanjenu za fiksne troškove.</p></li>
+<li><p>Rešiti model i odrediti optimalan plan realizacije.</p></li>
+</ol>
 <p><strong>Rešenje:</strong></p>
 <ul class="simple">
 <li><p>Matematički model.</p></li>
 </ul>
-<p>Neka su <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> i <span class="math notranslate nohighlight">\(x_3\)</span> nepoznate količine koje treba proizvesti, <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span> i <span class="math notranslate nohighlight">\(y_3\)</span> indikatori postojanja fiksnih fiksnih troškova, tada na osnovu podataka imamo sledeći model:</p>
+<p>Neka su <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span> i <span class="math notranslate nohighlight">\(x_3\)</span> nepoznate količine resursa, <span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span> i <span class="math notranslate nohighlight">\(y_3\)</span> indikatori postojanja fiksnih troškova, tada na osnovu podataka imamo sledeći model:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-\max{40x_1+30x_2+50x_3-200y_1-50y_2-400y_3}&amp; \\
-\text{pri uslovima:}\,\, 0.4x_1+0.5x_2+0.6x_3&amp;\le 20 \\
-                                0.2x_2+0.1x_3&amp;\le 5 \\
-                         0.6x_1+0.3x_2+0.3x_3&amp;\le 21 \\
-                                          x_1&amp;\le 50y_1 \\
-                                          x_2&amp;\le 25y_2 \\
-                                          x_3&amp;\le 40y_3\\
-                               x_1, x_2, x_3 &amp;\ge 0 \\                 
-                                  y_1,y_2,y_3&amp;\in\{0,1\}
-\end{aligned}\end{split}\]</div>
+\[\begin{split}
+\begin{aligned}
+\max \; \big(60x_1+65x_2+80x_3-220y_1-40y_2-300y_3\big)\;&amp;\\
+\text{pri uslovima:}\qquad
+4x_1+3x_2+6x_3 \;&amp;\le 40\\
+3x_2+2x_3 \;&amp;\le 12\\
+5x_1+2x_2+3x_3 \;&amp;\le 45\\
+x_1 \;&amp;\le 7y_1\\
+x_2 \;&amp;\le 6y_2\\
+x_3 \;&amp;\le 5y_3\\
+x_1,x_2,x_3 \;&amp;\in \mathbb{Z}_{\ge 0}\\
+y_1,y_2,y_3 \;&amp;\in\{0,1\}
+\end{aligned}
+\end{split}\]</div>
 <ul class="simple">
 <li><p>Parametri modela koji se prosleđuju metodu <code class="docutils literal notranslate"><span class="pre">linprog</span></code></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="o">-</span><span class="mi">400</span><span class="p">])</span>   <span class="c1"># Funkcija cilja</span>
-<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>         <span class="c1"># matrica linearnih uslova</span>
-            <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-            <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">]])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">60</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">220</span><span class="p">,</span> <span class="o">-</span><span class="mi">40</span><span class="p">,</span> <span class="o">-</span><span class="mi">300</span><span class="p">])</span>   <span class="c1"># Funkcija cilja</span>
+<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>         <span class="c1"># matrica linearnih uslova</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]])</span>
             
-<span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>                <span class="c1"># gornja ograničenja linearnih uslova</span>
+<span class="n">b</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">40</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>                <span class="c1"># gornja ograničenja linearnih uslova</span>
 </pre></div>
 </div>
 </div>
@@ -1172,7 +1249,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <p>Tip promenljivih:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celobrojnost</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Prve tri su realne promenljive, a poslednje tri celobrojne</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celobrojnost</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># Sve promenljive su celobrojne</span>
 </pre></div>
 </div>
 </div>
@@ -1188,7 +1265,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-1350.0000000000002, array([25., 20., -0.,  1.,  1., -0.]))
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-360.0, array([ 6.,  4., -0.,  1.,  1., -0.]))
 </pre></div>
 </div>
 </div>
@@ -1196,7 +1273,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <ul class="simple">
 <li><p>Interpretacija rezultata.</p></li>
 </ul>
-<p>Maksimalni dnevni profit je 1350$ i postiže se ako proizvodimo 25 tona aditiva i 20 tona baze.</p>
+<p>Maksimalna korist je 360 mil evra i postiže se ako se sanira kolovoz i izvrši rekonstrukcija vodovoda.</p>
 <br>
 </section>
 </section>
@@ -1391,7 +1468,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 <li><p>Najvredniji eksponat galerije nalazi se u sobi 7. Vlasnik je nakon uvida u prvo rešenje zahtevao da se stvar revidira tako da soba broj 7 bude pokrivena sa bar dve kamere. Modifikujte vaš model u novoj ćeliji i odredite optimalni raspored i optimalni broj kamera u tom sluchaju.</p></li>
 </ul>
 <p>Skica galerija predstavljena je na sledeći način:</p>
-<figure class="align-center" id="id13">
+<figure class="align-center" id="id14">
 <a class="reference internal image-reference" href="_images/sobe.png"><img alt="_images/sobe.png" src="_images/sobe.png" style="width: 450px;" /></a>
 <figcaption>
 <p><span class="caption-number">Slika 18. </span><span class="caption-text">Skica galerije</span></p>

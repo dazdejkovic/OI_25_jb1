@@ -224,8 +224,25 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_02_KNN.html">Algoritam k najbližih suseda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
 </ul>
 
     </div>
@@ -485,7 +502,88 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="vizuelizacija-podataka-sa-matplotlib-om">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;style&gt;</span>
+
+<span class="s2">a[href^=&quot;http://&quot;],</span>
+<span class="s2">a[href^=&quot;https://&quot;] {</span>
+<span class="s2">    color: blue !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">/* stil za sve tabele */</span>
+<span class="s2">table {</span>
+<span class="s2">    margin-left: auto !important;</span>
+<span class="s2">    margin-right: auto !important;</span>
+<span class="s2">    width: auto !important;</span>
+<span class="s2">    max-width: none !important;</span>
+<span class="s2">    table-layout: auto !important;</span>
+<span class="s2">    border-collapse: collapse !important;</span>
+<span class="s2">    font-family: &quot;Segoe UI&quot;, &quot;Calibri&quot;, sans-serif !important;</span>
+<span class="s2">    font-size: 12px !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">th, td {</span>
+<span class="s2">    padding: 8px 20px !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">/* дебља, јача линија испод заглавља */</span>
+<span class="s2">tr:first-child th {</span>
+<span class="s2">    border-bottom: 2px solid #222 !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">/* тања, светлија линија испод последњег реда */</span>
+<span class="s2">tr:last-child td {</span>
+<span class="s2">    border-bottom: 1px solid #aaa !important;</span>
+<span class="s2">}</span>
+
+<span class="s2">&lt;/style&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+a[href^="http://"],
+a[href^="https://"] {
+    color: blue !important;
+}
+
+/* stil za sve tabele */
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* дебља, јача линија испод заглавља */
+tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* тања, светлија линија испод последњег реда */
+tr:last-child td {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="vizuelizacija-podataka-sa-matplotlib-om">
 <h1>Vizuelizacija podataka sa Matplotlib-om</h1>
 <p>U Pajtonu, jedan od najboljih paketa za grafičko prikazivanja podataka je <strong>matplotlib</strong>. Ako posetite <a class="reference external" href="https://www.matplotlib.org/gallery/index#gallery">Matplotlib galeriju</a> možete da vidite šta se sve može napraviti.</p>
 <section id="opsti-saveti-za-matplotlib">

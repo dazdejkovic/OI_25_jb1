@@ -1,0 +1,1199 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Nadgledano učenje &#8212; Operaciona istraživanja</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
+    <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=c801bd93" />
+    <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/linkovi-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/tabela-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ML_25_02_Nadgledano_ucenje';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="next" title="Naivni Bajesovi klasifikatori" href="ML_25_03_Naivni_Bajes.html" />
+    <link rel="prev" title="Uvod" href="ML_25_01_Uvod_1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="OI_25_00_uvod.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="OI_25_00_uvod.html">
+                    Uvod
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OI_25_17_NumPy.html">Uvod u NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_18_Matplotlib.html">Vizuelizacija podataka sa Matplotlib-om</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_19_Simulacije.html">Monte Karlo simulacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_20_Pandas.html">Uvod u analizu podataka - 🐼 Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_21_SciPy.html">Optimizacija u Pajtonu - 🧪 modul SciPy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Nadgledano učenje</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FML_25_02_Nadgledano_ucenje.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/ML_25_02_Nadgledano_ucenje.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Nadgledano učenje</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Nadgledano učenje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulazni-podaci">Ulazni podaci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izlazni-podaci">Izlazni podaci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-iz-analize-kreditnog-rizika">Primer iz analize kreditnog rizika</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primarne-primene-nadgledanog-ucenja">Primarne primene nadgledanog učenja</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-prepoznavanje-obrazaca">1. Klasifikacija (Prepoznavanje obrazaca)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresija-numericko-predvidanje">2. Regresija (Numeričko predviđanje)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-u-masinskom-ucenju">Klasifikacija u mašinskom učenju</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binarna-klasifikacija">1. Binarna klasifikacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viseklasna-klasifikacija">2. Višeklasna klasifikacija</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regresioni-zadaci-predvidanje-numerickih-vrednosti">Regresioni zadaci (Predviđanje numeričkih vrednosti)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticni-primeri-regresije">Praktični primeri regresije:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacija-prekomerno-prilagodavanje-i-nedovoljno-prilagodavanje">Generalizacija, prekomerno prilagođavanje i nedovoljno prilagođavanje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kljucni-principi">Ključni principi:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija">Klasifikacija</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prmeri-rada-klasifikacionih-modela">Prmeri rada klasifikacionih modela</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-binarna-odluka-procenjeni-rizik">Scenario 1: Binarna odluka (procenjeni rizik)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-viseklasna-klasifikacija-kreditni-rejting">Scenario 2: Višeklasna klasifikacija (Kreditni rejting)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmi-za-klasifikaciju">Algoritmi za klasifikaciju</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrike-za-evaluaciju-uspesnosti-klasifikacionih-modela">Metrike za evaluaciju uspešnosti klasifikacionih modela</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrica-konfuzije-engl-confusion-matrix">🔁 Matrica konfuzije (engl. Confusion Matrix)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-procena-kreditnog-rizika">💳 Primer: Procena kreditnog rizika</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mere-kvaliteta-klasifikacije">🧮 Mere kvaliteta klasifikacije</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacnost-engl-accuracy">✅ Tačnost (engl. Accuracy)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula">📐 Formula</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tumacenje">🧠 Tumačenje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ogranicenja">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preciznost-engl-precision">🎯 Preciznost (engl. Precision)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">📐 Formula</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">🧠 Tumačenje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#odziv-engl-recall-sensitivity">🔄 Odziv (engl. Recall/Sensitivity)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">📐 Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tumacenje-u-finansijama">🧠 Tumačenje u finansijama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-mera-engl-f1-score">⚖️ F1-mera (engl. F1-score)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">📐 Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">🧠 Tumačenje</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#f-beta-score">⚖️ <span class="math notranslate nohighlight">\(F_\beta\)</span>-score</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">📐 Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">🧠 Tumačenje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticni-znacaj-u-finansijskim-primenama">🏦 Praktični značaj u finansijskim primenama</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="nadgledano-ucenje">
+<h1>Nadgledano učenje</h1>
+<p><strong>Nadgledano učenje</strong> (engl. <em>supervised learning</em>) je tip mašinskog učenja u okviru kojeg algoritam uči na skupu podataka u kome su poznati i ulazni podaci i odgovarajući izlazni podaci (oznake).</p>
+<p>Podaci za obuku sastoje se od parova <strong>ulaz–izlaz</strong> (npr. karakteristika i oznaka), zbog čega se ovakvi skupovi podataka često nazivaju <strong>označenim skupovima podataka</strong> (<em>labeled datasets</em>).</p>
+<p>Cilj algoritma nadgledanog učenja jeste da nauči <strong>mapiranje (funkciju)</strong> koja povezuje ulazne podatke sa odgovarajućim izlazima. Model se obučava na skupu podataka u kome su za zadate ulazne vrednosti poznate tačne izlazne vrednosti (jedna ili više), kako bi se uočilo pravilo preslikavanja i model osposobio da precizno predvidi rezultate za nove, prethodno neviđene ulaze.</p>
+<p>Napomenimo da se polazi od pretpostavke da između ulaznih i izlaznih vrednosti postoji određena veza. Zadatak algoritma je da se trenira na postojećim podacima kako bi se ta veza identifikovala i iskoristila za predviđanje izlaznih vrednosti na osnovu novih ulaznih podataka.</p>
+<hr class="docutils" />
+<section id="ulazni-podaci">
+<h2>Ulazni podaci</h2>
+<p>Svaka instanca u posmatranom skupu podataka predstavljena je kao <strong>vektor ulaznih karakteristika</strong>, odnosno atributa ili promenljivih (engl. <em>features</em>).</p>
+<p>Ulazni podaci se tipično označavaju sa <span class="math notranslate nohighlight">\(x\)</span> i mogu se matematički zapisati u vektorskoj formi:</p>
+<div class="math notranslate nohighlight">
+\[
+x = (x_1, x_2, x_3, \ldots, x_n)
+\]</div>
+<p>gde svaka komponenta vektora predstavlja jednu karakteristiku.</p>
+</section>
+<hr class="docutils" />
+<section id="izlazni-podaci">
+<h2>Izlazni podaci</h2>
+<p>Izlazne vrednosti se najčešće označavaju simbolom <span class="math notranslate nohighlight">\(y\)</span> i predstavljaju <strong>ciljnu promenljivu</strong> (engl. <em>target variable</em>).</p>
+<p>U većini slučajeva <span class="math notranslate nohighlight">\(y\)</span> je jednodimenzionalna promenljiva, ali može biti i višedimenzionalna, u zavisnosti od prirode problema i tipa zadatka nadgledanog učenja.</p>
+<p>Postoje i situacije u kojima ni <span class="math notranslate nohighlight">\(x\)</span> ni <span class="math notranslate nohighlight">\(y\)</span> nisu predstavljeni numeričkim vrednostima, već mogu imati složenije strukture, kao što su:</p>
+<ul class="simple">
+<li><p>sekvence,</p></li>
+<li><p>grafovi,</p></li>
+<li><p>tekstualni podaci,</p></li>
+<li><p>ili drugi oblici koji zahtevaju posebne pristupe obrade i modelovanja.</p></li>
+</ul>
+<p>Tokom procesa treniranja modela mašinskog učenja, u okviru <strong>nadgledanog učenja</strong>, sistemu se obezbeđuju <strong>eksplicitni primeri za učenje</strong>, pri čemu su uz ulazne podatke dostupni i <strong>tačni izlazi</strong>. Ovaj proces je analogan situaciji u kojoj se učeniku prikazuju reprezentativni primeri uz jasno definisana objašnjenja, na osnovu kojih se postepeno formira razumevanje pravila i obrazaca.</p>
+</section>
+<section id="primer-iz-analize-kreditnog-rizika">
+<h2>Primer iz analize kreditnog rizika</h2>
+<p>Zamislite da se algoritam obučava da funkcioniše kao <strong>analitičar rizika</strong>, pri čemu se u potpunosti oslanja na unapred obeležene istorijske podatke. Ovi podaci, poznati kao <strong>direktni primeri obuke</strong>, sastoje se od parova:</p>
+<ul class="simple">
+<li><p><strong>Ulazni vektor</strong> – karakteristike klijenta (npr. primanja, zaduženja),</p></li>
+<li><p><strong>Izlaz / odgovor</strong> – ishod (da li je kredit <em>„Otplaćen“</em> ili <em>„Nije otplaćen“</em>).</p></li>
+</ul>
+<p>Model koristi ove <em>apriori</em> poznate informacije kako bi pronašao funkciju koja povezuje ulaze sa ispravnim izlazima. Podaci dati za obuku moraju biti <strong>veoma tačni i pouzdani</strong>, jer se mašina isključivo oslanja na ovo istorijsko iskustvo prilikom formiranja pravila.</p>
+<p>Od presudne je važnosti da podaci korišćeni za obuku budu <strong>izuzetno precizni i konzistentni</strong>. Ukoliko se modelu prezentuju netačne informacije, on <strong>nema sposobnost da samostalno prepozna</strong>. Ukratko:</p>
+<ul class="simple">
+<li><p>ako su podaci <strong>visokog kvaliteta</strong>, model će donositi <strong>pouzdane odluke</strong> o predviđanju rizika;</p></li>
+<li><p>ako su podaci <strong>netačni</strong>, performanse sistema biće direktno narušene.</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Napomena.</p>
+<p>Naziv <strong>nadgledano učenje (eng. <em>Supervised Learning</em>)</strong> potiče od analogije sa procesom učenja pod nadzorom učitelja. U ovom pristupu, algoritam se obučava na skupu podataka u kome su tačni izlazi, odnosno <strong>oznake (labele)</strong>, unapred poznati.</p>
+<p>Tokom procesa obučavanja, algoritam neprestano generiše predikcije na osnovu ulaznih podataka, nakon čega se dobijeni rezultati upoređuju sa poznatim tačnim odgovorima. Na osnovu uočenih grešaka vrši se korekcija modela, čime se poboljšava njegova sposobnost predviđanja.</p>
+<p>Ovaj <strong>iterativni proces učenja i ispravljanja grešaka</strong> nastavlja se sve dok algoritam ne dostigne željeni, odnosno zadovoljavajući nivo tačnosti i ukupnih performansi modela.</p>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Napomena.</p>
+<p><strong>Glavne karakteristike procesa:</strong></p>
+<ul class="simple">
+<li><p><strong>Obuka modela:</strong> Suština <strong>nadgledanog učenja</strong> je učenje na primerima: na osnovu datih parova formira se skup za obuku koji služi kao temelj za izgradnju modela kako bi naučio da samostalno predviđa rešenja za nove situacije.</p></li>
+<li><p><strong>Ljudski faktor:</strong> Glavni izazov je priprema i označavanje podataka (engl. labeling), što zahteva inicijalni ljudski angažman.</p></li>
+<li><p><strong>Automatizacija:</strong> Finalni rezultat je sistem koji precizno i brzo rešava zadatke koji bi manuelno bili spori ili praktično neizvodljivi.</p></li>
+</ul>
+<blockquote>
+<div><p><strong>Cilj:</strong> Ostvariti maksimalnu preciznost predviđanja na novim, neviđenim podacima.</p>
+</div></blockquote>
+</div>
+</section>
+</section>
+<section id="primarne-primene-nadgledanog-ucenja">
+<h1>Primarne primene nadgledanog učenja</h1>
+<p>U zavisnosti od tipa izlaza koji želimo da dobijemo, modele nadgledanog učenja delimo na dve glavne kategorije:</p>
+<section id="klasifikacija-prepoznavanje-obrazaca">
+<h2>1. Klasifikacija (Prepoznavanje obrazaca)</h2>
+<p>Model se obučava da svrstava opservacije u <strong>diskretne kategorije</strong> (klase). Njegov zadatak je da prepozna kojoj grupi određeni podatak pripada.</p>
+<ul class="simple">
+<li><p><strong>Primer:</strong> Klasifikacija elektronske pošte.</p></li>
+<li><p><strong>Pitanje:</strong> „Da li je ovaj mejl <em>spam</em> ili <em>regularna pošta</em>?“</p></li>
+<li><p><strong>Izlaz:</strong> Oznaka kategorije (npr. <code class="docutils literal notranslate"><span class="pre">0</span></code> ili <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">Spam</span></code> ili <code class="docutils literal notranslate"><span class="pre">Ham</span></code>).</p></li>
+</ul>
+</section>
+<section id="regresija-numericko-predvidanje">
+<h2>2. Regresija (Numeričko predviđanje)</h2>
+<p>Za razliku od klasifikacije, ovde model uči da predviđa <strong>kontinuirane numeričke vrednosti</strong>. Cilj je dobiti precizan broj na osnovu trendova u podacima.</p>
+<ul class="simple">
+<li><p><strong>Primer:</strong> Procena vrednosti nekretnina.</p></li>
+<li><p><strong>Pitanje:</strong> „Koliko će iznositi tržišna cena stana na osnovu njegove kvadrature i lokacije?“</p></li>
+<li><p><strong>Izlaz:</strong> Konkretan broj (npr. <code class="docutils literal notranslate"><span class="pre">125.500</span> <span class="pre">€</span></code>).</p></li>
+</ul>
+<hr class="docutils" />
+<blockquote>
+<div><p><strong>Ukratko:</strong> &gt; * <strong>Klasifikacija</strong> nam govori <strong>KOJOJ GRUPI</strong> nešto pripada.</p>
+<ul class="simple">
+<li><p><strong>Regresija</strong> nam govori <strong>KOLIKO</strong> nešto iznosi.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="klasifikacija-u-masinskom-ucenju">
+<h1>Klasifikacija u mašinskom učenju</h1>
+<p><strong>Klasifikacija</strong> je proces predviđanja diskretne oznake klase iz unapred definisanog skupa mogućih vrednosti. U zavisnosti od broja kategorija, klasifikacione zadatke delimo na dve osnovne grupe:</p>
+<section id="binarna-klasifikacija">
+<h2>1. Binarna klasifikacija</h2>
+<p>Ovo je poseban slučaj gde model bira između <strong>tačno dve klase</strong>. Najlakše ju je razumeti kao davanje odgovora na <strong>da/ne</strong> pitanja.</p>
+<ul class="simple">
+<li><p><strong>Primer:</strong> Detekcija neželjene pošte (Spam filter).</p></li>
+<li><p><strong>Pitanje modela:</strong> „Da li je ova poruka <em>spam</em>?“</p></li>
+<li><p><strong>Ishodi:</strong> * <code class="docutils literal notranslate"><span class="pre">Da</span></code> (Spam / Pozitivna klasa)</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Ne</span></code> (Legitimna pošta / Negativna klasa)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="viseklasna-klasifikacija">
+<h2>2. Višeklasna klasifikacija</h2>
+<p>Primenjuje se kada je potrebno izvršiti razvrstavanje između <strong>više od dve klase</strong>. Ovde model bira jednu oznaku iz šireg spektra mogućnosti (npr. prepoznavanje rukom pisanih cifara od 0 do 9).</p>
+<hr class="docutils" />
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Tip klasifikacije</p></th>
+<th class="head text-left"><p>Broj klasa</p></th>
+<th class="head text-left"><p>Primer pitanja</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Binarna</strong></p></td>
+<td class="text-left"><p>Tačno 2</p></td>
+<td class="text-left"><p>Da li je transakcija regularna ili sumnjiva?</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><strong>Višeklasna</strong></p></td>
+<td class="text-left"><p>&gt; 2</p></td>
+<td class="text-left"><p>U koju kategoriju kreditnog rizika spada klijent?</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>Napomena:</strong> Kod binarne klasifikacije često jednu klasu nazivamo „pozitivnom” (ona koju želimo da detektujemo), a drugu „negativnom”, bez obzira na njihovu semantičku vrednost. Pozitivna klasa je obično ona koja predstavlja prisustvo određenog stanja, događaja ili anomalije koju model treba da izoluje. Na primer, u zadacima detekcije neželjene pošte, pozitivna klasa se često odnosi na spam poruke. Izbor pozitivne klase nije univerzalan, već predstavlja subjektivnu odluku koja zavisi od oblasti primene.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="regresioni-zadaci-predvidanje-numerickih-vrednosti">
+<h1>Regresioni zadaci (Predviđanje numeričkih vrednosti)</h1>
+<p>Kod <strong>regresije</strong>, cilj je predvideti <strong>kontinuiranu numeričku vrednost</strong>. Glavna karakteristika regresije je da predviđena vrednost može biti bilo koji broj unutar određenog opsega.</p>
+<hr class="docutils" />
+<section id="prakticni-primeri-regresije">
+<h2>Praktični primeri regresije:</h2>
+<ol class="arabic simple">
+<li><p><strong>Predviđanje kretanja cena akcija</strong>
+U finansijama se regresija koristi za procenu budućih vrednosti akcija analizirajući istorijskih podataka i tržišne indikatore.</p>
+<ul class="simple">
+<li><p><strong>Ulaz (Karakteristike):</strong> indeksi volatilnosti, obim trgovanja (volume), kamatne stope, istorijske cene akcija, itd.</p></li>
+<li><p><strong>Izlaz:</strong> Cene akcije u određenom vremenskom trenutku u budućnosti.</p></li>
+</ul>
+</li>
+<li><p><strong>Optimizacija vremena isporuke:</strong></p>
+<ul class="simple">
+<li><p><strong>Ulaz (Karakteristike):</strong> razdaljina u kilometrima, broj mesta za pretovar, trenutni vremenski uslovi i mogućnosti transporta, itd.</p></li>
+<li><p><strong>Izlaz:</strong> Vreme isporuke izraženo u vremenskoj jedinici.</p></li>
+</ul>
+</li>
+</ol>
+<hr class="docutils" />
+<p>Najjednostavniji kriterijum za razlikovanje klasifikacije od regresije jeste provera <strong>kontinuiteta izlazne promenljive</strong>. Suština je u prirodi vrednosti koju model predviđa: ukoliko između mogućih ishoda postoji <strong>kontinualna veza</strong>, takav problem klasifikujemo kao regresioni zadatak. To znači da izlaz nije sveden na izolovane kategorije, već se kreće unutar neprekidnog opsega gde svaka međuvrednost ima svoje matematičko i logičko značenje. Nasuprot tome, kod klasifikacije tragamo za diskretnim granicama koje razdvajaju objekte u jasno definisane grupe.</p>
+</section>
+</section>
+<section id="generalizacija-prekomerno-prilagodavanje-i-nedovoljno-prilagodavanje">
+<h1>Generalizacija, prekomerno prilagođavanje i nedovoljno prilagođavanje</h1>
+<p>Glavni cilj <strong>nadgledanog učenja</strong> je razvoj modela koji može da donosi tačne zaključke nad novim, neviđenim podacima, tj. da uspešno <strong>generalizuje</strong>.</p>
+<section id="kljucni-principi">
+<h2>Ključni principi:</h2>
+<ul class="simple">
+<li><p><strong>Sposobnost generalizacije:</strong> Model treba da prepozna osnovni obrazac (pattern), a ne šum u podacima.</p></li>
+<li><p><strong>Evaluacija:</strong> Visoka tačnost na trening skupu nije merilo uspeha. Prava vrednost modela dokazuje se isključivo na <strong>test podacima</strong>.</p></li>
+<li><p><strong>Nedovoljno prilagođavanje:</strong> Javlja se kada je model suviše jednostavan da obuhvati ključne zakonitosti.</p></li>
+<li><p><strong>Kompleksnost vs. Jednostavnost:</strong> Složeni modeli su skloni preprilagođavanju (<em>overfitting</em>).</p></li>
+<li><p><strong>Cilj:</strong> Teži se izboru <strong>što jednostavnijeg modela</strong> koji obezbeđuje zadovoljavajuću preciznost i dobru generalizaciju.</p></li>
+</ul>
+<hr class="docutils" />
+<blockquote>
+<div><p>Što veću složenost dozvolimo modelu, to će on bolje predviđati na trening podacima.<br />
+Međutim, ako model postane previše složen, počinje da se preterano prilagođava pojedinačnim primerima iz trening skupa, zbog čega gubi sposobnost dobre <strong>generalizacije</strong> na novim podacima.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="klasifikacija">
+<h1>Klasifikacija</h1>
+<p><strong>Algoritmi klasifikacije</strong> su podvrsta nadgledanog učenja koji analiziraju <strong>označen skup podataka za treniranje</strong> sa ciljem da odrede <strong>funkciju</strong> koja preslikava <strong>ulazne podatke</strong> u <strong>kategorije ili klase</strong>. Ova funkcija omogućava <strong>predikciju klase</strong> novih podataka, koje algoritam <strong>ranije nije video</strong>.</p>
+<div class="note admonition">
+<p class="admonition-title">Šta ćemo saznati u ovom odeljku?</p>
+<ul class="simple">
+<li><p>Šta je zapravo klasifikacija?</p></li>
+<li><p>Uvod u probleme klasifikacije.</p></li>
+<li><p>Različite metodologije klasifikacije.</p></li>
+<li><p>Koji algoritmi klasifikacije se najčešće primenjuju i koje su njihove karakteristike?</p></li>
+<li><p>Evaluacija performansi klasifikacionih modela: matrica konfuzije, tačnost, preciznost, odziv, F1-score.</p></li>
+<li><p>Algoritmi k-najbližih suseda (k-NN): koncept i praktična primena.</p></li>
+<li><p>Šta je Naivni Bajesov klasifikator? Koncept i praktična primena.</p></li>
+<li><p>Šta su algoritmi stabala odlučivanja? Koncept i praktična primena.</p></li>
+<li><p>Šta su ansambl metode? Koncept i prednosti u klasifikaciji.</p></li>
+<li><p>Razumevanje razlika između stabla odlučivanja i metode slučajne šume.</p></li>
+<li><p>Razumevanje ključnih parametara i kriterijuma za izgradnju stabala odlučivanja.</p></li>
+<li><p>Šta je algoritam mašina potpornih vektora? Koncept i praktična primena.</p></li>
+</ul>
+</div>
+<p>U mašinskom učenju, <strong>klasifikacija</strong> je proces gde algoritmi svrstavaju nove podatke na osnovu njihovih <strong>atributa (karakteristika)</strong> u jednu od definisanih <strong>kategorija</strong>, koje se nazivaju <strong>oznake (engl. labels)</strong>. Problemi klasifikacije predstavljaju specifičnu formu <strong>nadgledanog učenja</strong>.</p>
+<p>U procesima klasifikacije, izlazna (<strong>ciljna</strong>) promenljiva <span class="math notranslate nohighlight">\(y\)</span> označava pripadnost određenoj <strong>klasi ili kategoriji</strong>. Formalno, možemo pretpostaviti da važi:</p>
+<div class="math notranslate nohighlight">
+\[
+y \in \{1, 2, \dots, C\}
+\]</div>
+<p>gde <span class="math notranslate nohighlight">\(C\)</span> predstavlja <strong>ukupan broj definisanih klasa</strong>.</p>
+<p>Kao i kod regresionih modela, <strong>ulazni podaci (atributi)</strong> mogu biti različitih tipova:</p>
+<ul class="simple">
+<li><p><strong>Numerički</strong> (npr. realne vrednosti, intenzitet piksela, fizička merenja)</p></li>
+<li><p><strong>Kategorički</strong> (npr. pol, tip zemljišta, nivo obrazovanja)</p></li>
+</ul>
+<p><strong>Klasifikacija</strong> predstavlja jednu od najznačajnijih i najšire zastupljenih oblasti <strong>mašinskog učenja</strong>, čiji je cilj da, učeći na primerima sa poznatim ishodima, predviđa <strong>kategoriju</strong> ili <strong>oznaku klase</strong> za nove instance. Klasifikacija predstavlja veštinu <strong>prepoznavanja obrazaca u podacima</strong> kako bi se donela informisana odluka o njihovoj pripadnosti određenim kategorijama.</p>
+<p>Primena <strong>klasifikacionih algoritama</strong> prožima brojne savremene servise, često neprimetno za korisnike, gde obavljaju zadatke poput:</p>
+<ul class="simple">
+<li><p>Automatskog filtriranja nepoželjne elektronske pošte</p></li>
+<li><p>Detekcije prevara u finansijskim transakcijama</p></li>
+<li><p>Procene kreditnog rizika</p></li>
+<li><p>Biometrijske identifikacije pri otključavanju pametnih uređaja</p></li>
+<li><p>Automatske kategorizacije i rangiranja sadržaja na digitalnim platformama</p></li>
+</ul>
+<p><strong>Tipovi problema klasifikacije</strong></p>
+<p>U zavisnosti od broja dostupnih kategorija (oznaka klasa) u skupu podataka, klasifikaciju najčešće delimo na <strong>binarnu</strong> (engl. Binary Classification), <strong>višeklasnu</strong> (engl. Multiclass Classification) i <strong>klasifikacija sa više oznaka</strong> (engl. Multi-label Classification).</p>
+<p><strong>Binarna klasifikacija</strong> je najjednostavniji oblik klasifikacije gde ciljna promenljiva <span class="math notranslate nohighlight">\(y\)</span> može poprimiti samo jednu od dve moguće vrednosti. Najčešće se formalno zapisuje kao <span class="math notranslate nohighlight">\(y \in \{0, 1\}\)</span> ili <span class="math notranslate nohighlight">\(y \in \{-1, 1\}\)</span>.</p>
+<p>Primeri:</p>
+<ul class="simple">
+<li><p>Detekcija spama: Da li je e-mail <em>Spam</em> ili <em>Nije spam</em>?</p></li>
+<li><p>Medicinska dijagnostika: Da li je nalaz <em>Pozitivan</em> ili <em>Negativan</em>?</p></li>
+<li><p>Odobravanje kredita: Da li se zahtev <em>Prihvata</em> ili <em>Odbija</em>?</p></li>
+</ul>
+<p><strong>Višeklasna klasifikacija</strong> je potrebno podatke svrstati u tri ili više međusobno isključivih kategorija, govorimo o višeklasnoj klasifikaciji. Ovde ciljna promenljiva poprima vrednost iz skupa <span class="math notranslate nohighlight">\(y \in \{1, 2, \dots, C\}\)</span>, gde je <span class="math notranslate nohighlight">\(C &gt; 2\)</span>.</p>
+<p>Primeri:</p>
+<ul class="simple">
+<li><p>Računarski vid: Prepoznavanje životinja na fotografiji (npr. <em>Mačka</em>, <em>Pas</em>, <em>Ptica</em>, <em>Medved</em>).</p></li>
+<li><p>Kategorizacija teksta: Automatsko svrstavanje vesti u rubrike (npr. <em>Politika</em>, <em>Sport</em>, <em>Ekonomija</em>, <em>Zabava</em>).</p></li>
+<li><p>Prepoznavanje rukopisa: Klasifikacija cifara od 0 do 9.</p></li>
+</ul>
+<p><strong>Klasifikacija sa više oznaka</strong> podrazumeva situaciju u kojoj jedan podatak istovremeno može biti dodeljen većem broju klasa, jer njegove karakteristike odgovaraju različitim kategorijama.</p>
+<p>Primeri:</p>
+<ul class="simple">
+<li><p>Kategorizacija vesti: Jedan članak može biti označen kao Politika, Ekonomija i Međunarodni odnosi istovremeno.</p></li>
+<li><p>Analiza slika: Fotografija može sadržati više oznaka, npr. Osoba, Priroda i More.</p></li>
+<li><p>Preporuka muzike: Jedna pesma može pripadati žanrovima Pop, Elektronska i Dance.</p></li>
+</ul>
+<section id="prmeri-rada-klasifikacionih-modela">
+<h2>Prmeri rada klasifikacionih modela</h2>
+<p>Princip rada klasifikacionih modela se može ilustrovati na primeru iz bankarskog sektora.<br />
+U okviru sistema za upravljanje rizicima, svakodnevno se analizira veliki broj zahteva za odobravanje kredita.<br />
+Za svaki zahtev neophodna je evaluacija kreditne sposobnosti klijenta, odnosno verovatnoću da će preuzete obaveze biti uredno izmirene.</p>
+<p>Razmotrićemo dva scenarija:</p>
+<section id="scenario-1-binarna-odluka-procenjeni-rizik">
+<h3>Scenario 1: Binarna odluka (procenjeni rizik)</h3>
+<p>Klijent podnosi zahtev za stambeni kredit, zadatak modela analizira njegove ključne atribute, kao što su:</p>
+<ul class="simple">
+<li><p>mesečna primanja</p></li>
+<li><p>kreditna istorija</p></li>
+<li><p>radni staž</p></li>
+</ul>
+<p>Na osnovu obrazaca identifikovanih u skupu za treniranje, model sprovodi binarnu klasifikaciju.<br />
+Klijent se mapira u jednu od dve diskretne kategorije:</p>
+<ul class="simple">
+<li><p><strong>Nizak rizik</strong> – odobravanje zahteva</p></li>
+<li><p><strong>Visok rizik</strong> – odbijanje zahteva</p></li>
+</ul>
+<p>Dakle, algoritmi klasifikacije preuzimaju zadatak da razdvoje dobre od loših platiša.</p>
+</section>
+<section id="scenario-2-viseklasna-klasifikacija-kreditni-rejting">
+<h3>Scenario 2: Višeklasna klasifikacija (Kreditni rejting)</h3>
+<p>U složenim finansijskim sistemima, odlučivanje se retko zasniva na binarnim ishodima;<br />
+umesto toga, klijenti se procenjuju kroz sistem kreditnog rejtinga, čime se problem svodi na višeklasnu klasifikaciju.</p>
+<p>Analizom finansijskih pokazatelja, kao što su profitabilnost, likvidnost i stabilnost prihoda, model razvrstava klijente u unapred definisane klase kreditnog rejtinga:</p>
+<ul class="simple">
+<li><p><strong>Klasa A</strong> – investicioni rang sa visokim nivoom sigurnosti i stabilnosti</p></li>
+<li><p><strong>Klasa B</strong> – špekulativni rang sa umerenim rizikom i većom osetljivošću na tržišne promene</p></li>
+<li><p><strong>Klasa C</strong> – visok rizik, sa povećanom verovatnoćom neizmirenja obaveza ili bankrota</p></li>
+</ul>
+<p>Preciznost ovakvog klasifikacionog modela ima neposredan uticaj na kapitalni bilans finansijskih institucija.<br />
+Na primer, pogrešna alokacija visokorizičnog klijenta u kategoriju investicionog ranga (Klasa A) može uzrokovati ozbiljne finansijske gubitke usled neizmirenja obaveza.</p>
+<p>U nastavku ovog poglavlja ćemo predstaviti ključne metrike za evaluaciju performansi i pouzdanosti ovakvih klasifikatora.</p>
+</section>
+</section>
+<section id="algoritmi-za-klasifikaciju">
+<h2>Algoritmi za klasifikaciju</h2>
+<p>Za rešavanje problema klasifikacije postoji širok spektar algoritama mašinskog učenja (machine learning algorithms).<br />
+Među najzastupljenijima su:</p>
+<ul class="simple">
+<li><p>Logistička regresija (engl. Logistic Regression)</p></li>
+<li><p>K-najbližih suseda (engl. K-Nearest Neighbors, k-NN)</p></li>
+<li><p>Stabla odlučivanja (engl. Decision Trees)</p></li>
+<li><p>Mašine sa potpornim vektorima (engl. Support Vector Machines, SVM)</p></li>
+<li><p>Naivni Bajes (engl. Naive Bayes)</p></li>
+<li><p>Ansambl metode (engl. Ensemble Methods)</p></li>
+<li><p>Slučajne šume (engl. Random Forest)</p></li>
+<li><p>Gradient Boosting (engl. Gradient Boosting Machines, GBM)</p></li>
+<li><p>Veštačke neuronske mreže (engl. Artificial Neural Networks, ANN)</p></li>
+<li><p>XGBoost (engl. Extreme Gradient Boosting)</p></li>
+<li><p>LightGBM (engl. Light Gradient Boosting Machine)</p></li>
+<li><p>Kombinacije ansambla (engl. Stacking / Voting Classifier)</p></li>
+</ul>
+<p>Izbor algoritma zavisi od specifičnosti problema, kao i od strukture, obima i kompleksnosti samih podataka, budući da svaki model ima svoje prednosti i mane.</p>
+</section>
+<section id="metrike-za-evaluaciju-uspesnosti-klasifikacionih-modela">
+<h2>Metrike za evaluaciju uspešnosti klasifikacionih modela</h2>
+<p>Evaluacija modela vrši se na osnovu njegove sposobnosti da <strong>tačno predvidi klasu novih, do tada neviđenih podataka</strong>.<br />
+Kod problema klasifikacije, kvalitet modela se ne može uvek pouzdano proceniti samo ukupnom tačnošću, naročito u slučajevima kada su klase <strong>neuravnotežene</strong>, što je česta pojava u finansijskim podacima.</p>
+<p>Zbog toga se koriste mere zasnovane na <strong>matrici konfuzije</strong> (engl. confusion matrix).</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="matrica-konfuzije-engl-confusion-matrix">
+<h1>🔁 Matrica konfuzije (engl. Confusion Matrix)</h1>
+<p>Matrica konfuzije se koristi za procenu performansi klasifikacionog modela mašinskog učenja.<br />
+Ona tabelarno sistematizuje broj tačnih i pogrešnih predviđanja. Na osnovu ovih podataka izračunavaju se ključne metrike za ocenu kvaliteta samog modela. i omogućava analizu uspešnosti klasifikacije.</p>
+<p>Za binarne klasifikacije, matrica konfuzije prikazuje četiri osnovna ishoda:</p>
+<ul class="simple">
+<li><p><strong>Istinski pozitivan (engl. True Positive, TP)</strong> – Model je predvideo pozitivno, a stvarno je pozitivno.</p></li>
+<li><p><strong>Istinski negativni (engl. True Negative, TN)</strong> – Model je predvideo negativno, a stvarno je negativno.</p></li>
+<li><p><strong>Lažno pozitivan (engl. False Positive, FP)</strong> – Model je predvideo pozitivno, a stvarno je negativno (greška tipa I).</p></li>
+<li><p><strong>Lažno negativan (engl. False Negative, FN)</strong> – Model je predvideo negativno, a stvarno je pozitivno (greška tipa II).</p></li>
+</ul>
+<p>Struktura matrice konfuzije na primeru binarnog klasifikatora prikazana je u narednoj tabeli.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Predviđeno pozitivno</p></th>
+<th class="head"><p>Predviđeno negativno</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Stvarno pozitivno</strong></p></td>
+<td><p>Istinski pozitivan (TP)</p></td>
+<td><p>Lažno negativan (FN)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stvarno negativno</strong></p></td>
+<td><p>Lažno pozitivan (FP)</p></td>
+<td><p>Istinski negativni (TN)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Matrica konfuzije omogućava detaljan uvid u tipove grešaka koje model pravi, kroz poređenje stvarnih i predviđenih klasa.</p>
+<section id="primer-procena-kreditnog-rizika">
+<h2>💳 Primer: Procena kreditnog rizika</h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p><strong>Predviđeno: Nizak rizik</strong></p></th>
+<th class="head"><p><strong>Predviđeno: Visok rizik</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Stvarno: Nizak rizik</strong></p></td>
+<td><p>Tačno pozitivni (TP)</p></td>
+<td><p>Lažno negativni (FN)</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Stvarno: Visok rizik</strong></p></td>
+<td><p>Lažno pozitivni (FP)</p></td>
+<td><p>Tačno negativni (TN)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+</section>
+</section>
+<section id="mere-kvaliteta-klasifikacije">
+<h1>🧮 Mere kvaliteta klasifikacije</h1>
+<p>Iz osnovnih vrednosti matrice konfuzije izvode se osnovne mere za evaluacije modela.</p>
+<hr class="docutils" />
+<section id="tacnost-engl-accuracy">
+<h2>✅ Tačnost (engl. Accuracy)</h2>
+<p><strong>Tačnost</strong> (engl. Accuracy) predstavlja osnovni indikator uspešnosti modela i definiše se kao definiše kao količnik broja ispravnih predviđanja i ukupnog broja instanci nad kojima je vršena klasifikacija.</p>
+<section id="formula">
+<h3>📐 Formula</h3>
+<p>U slučaju binarne klasifikacije, tačnost se izvodi iz elemenata matrice konfuzije primenom sledeće formule:</p>
+<div class="math notranslate nohighlight">
+\[\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}.\]</div>
+</section>
+<section id="tumacenje">
+<h3>🧠 Tumačenje</h3>
+<p>Tačnost predstavlja procenat ukupnih uzoraka koje je model ispravno klasifikovao, bez obzira na to kojoj klasi pripadaju.</p>
+<p>Drugim rečima, tačnost odgovara na pitanje:</p>
+<blockquote>
+<div><p>„Koliki je udeo ispravnih predviđanja modela u odnosu na ukupan broj analiziranih slučajeva?“</p>
+</div></blockquote>
+</section>
+<section id="ogranicenja">
+<h3>⚠️ Ograničenja</h3>
+<p>U slučaju neuravnoteženih klasa (engl. imbalanced classes), tj. kada jedna klasa ima mnogo više primera od druge, visoka tačnost može biti zavaravajuća. Problem nastaje jer klasa sa više primera može dominirati modelom. Ako model uvek predviđa samo dominantnu klasu, tačnost može biti veštački visoka, jer se manje zastupljene klase ne uzimaju u obzir, što stvara iluziju dobre performanse modela. Zbog toga je neophodno koristiti i druge metrike koje koje prate uspešnost i za manje zastupljene klase.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="preciznost-engl-precision">
+<h2>🎯 Preciznost (engl. Precision)</h2>
+<p><strong>Preciznost</strong> (engl. Precision) je mera koja pokazuje koliki deo instanci koje je model označio kao pozitivne zaista pripada pozitivnoj klasi. Drugim rečima, preciznost meri pouzdanost pozitivnih predikcija modela.</p>
+<section id="id1">
+<h3>📐 Formula</h3>
+<p>U slučaju binarne klasifikacije, preciznost se računa iz elemenata matrice konfuzije sledećom formulom:</p>
+<div class="math notranslate nohighlight">
+\[\text{Precision} = \frac{TP}{TP + FP}.\]</div>
+</section>
+<section id="id2">
+<h3>🧠 Tumačenje</h3>
+<p>Preciznost se odnosi na pouzdanost pozitivnih predikcija modela i pokazuje koliki deo instanci koje je model označio kao pozitivne zaista pripada toj klasi. Drugim rečima, odgovara na pitanje: „Koliki procenat predviđenih pozitivnih instanci je tačan?“ Visoka preciznost znači da model retko greši kada proglasi neki primer pozitivnim.</p>
+<p>Ova metrika dobija na značaju u scenarijima gde su posledice lažno pozitivnih grešaka kritične. Tipični primeri uključuju medicinsku dijagnostiku, gde pogrešna dijagnoza može dovesti do nepotrebnih medicinskih intervencija; sisteme za otkrivanje prevara, gde pogrešno blokiranje transakcija narušava profit; zatim i kod filtriranje neželjene pošte, gde greška nastaje kada važna poruka greškom bude klasifikovana kao neželjena.</p>
+</section>
+<section id="id3">
+<h3>⚠️ Ograničenja</h3>
+<p>Slično ograničenjima tačnosti u kontekstu neuravnoteženih klasa, niska preciznost ukazuje na to da model pravi veliki broj lažno pozitivnih predikcija, odnosno označava negativne instance kao pozitivne. Visoka preciznost ne znači nužno da model dobro prepoznaje celinu pozitivne klase. Naime, model može biti veoma „oprezan“ i postizati visoku preciznost tako što će označiti samo nekoliko najsigurnijih primera, ali po cenu propuštanja mnogih stvarno pozitivnih uzoraka. Iz tog razloga, neophodno je preciznost interpretirati u sprezi sa drugim metrikama.</p>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+<section id="odziv-engl-recall-sensitivity">
+<h1>🔄 Odziv (engl. Recall/Sensitivity)</h1>
+<p><strong>Odziv</strong> (engl. Recall ili Sensitivity) meri sposobnost modela da pravilno prepozna sve instance pozitivne klase. Drugim rečima, odziv pokazuje koliki deo stvarno pozitivnih instanci je model uspešno detektovao.</p>
+<section id="id4">
+<h2>📐 Formula</h2>
+<p>U slučaju binarne klasifikacije, odziv se računa iz elemenata matrice konfuzije sledećom formulom:</p>
+<div class="math notranslate nohighlight">
+\[\text{Recall} = \frac{TP}{TP + FN}.\]</div>
+</section>
+<section id="tumacenje-u-finansijama">
+<h2>🧠 Tumačenje u finansijama</h2>
+<p>Model sa visokim odzivom uspešno prepoznaje najveći deo stvarno pozitivnih uzoraka. Ova metrika postaje prioritetna u situacijama kada propuštanje pozitivnih instanci nosi visoke rizike ili troškove. Tipični primeri uključuju medicinsku dijagnostiku, gde je od ključnog značaja detektovati bolest u ranoj fazi, kao i sisteme za otkrivanje prevara, gde je primarni cilj identifikovati što veći broj sumnjivih aktivnosti.</p>
+<p>Odziv odgovara na pitanje:</p>
+<blockquote>
+<div><p><em>Od svih uzoraka koji su zaista pozitivni, koliki procenat je model uspeo da pronađe i tačno identifikuje?</em></p>
+</div></blockquote>
+</section>
+<section id="id5">
+<h2>⚠️ Ograničenja</h2>
+<p>Glavno ograničenje odziva je to što on ne uzima u obzir lažno pozitivne greške. To znači da model može imati visok odziv ako predviđa skoro sve pozitivne primere, ali pri tome pravi mnogo pogrešnih predikcija, što može dovesti do lažnog utiska o njegovoj efikasnosti. Zbog toga je preporučljivo koristiti odziv zajedno sa drugim metrikama.</p>
+<hr class="docutils" />
+</section>
+</section>
+<section id="f1-mera-engl-f1-score">
+<h1>⚖️ F1-mera (engl. F1-score)</h1>
+<p><strong>F1-mera</strong> je definisan kao harmonijska sredina preciznosti i odziva, i koristi se kada je potrebno postići balans između ova dva kriterijuma, čime se dobija objedinjena metrika koja istovremeno vrednuje pouzdanost pozitivnih predviđanja i sveobuhvatnost prepoznavanja pozitivnih instanci. Ova mera je naročito značajna u radu sa neuravnoteženim klasama, jer sprečava preciznost ili odziv da samostalno pruže nerealnu sliku o performansama modela.</p>
+<section id="id6">
+<h2>📐 Formula</h2>
+<p>Za binarnu klasifikaciju F1-mera se računa kao:</p>
+<div class="math notranslate nohighlight">
+\[\text{F1-mera} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}.\]</div>
+</section>
+<section id="id7">
+<h2>🧠 Tumačenje</h2>
+<p>Visok F1-mera ukazuje na to da model simultano postiže visoke performanse u obe ključne dimenzije: on precizno identifikuje pozitivne instance, dok istovremeno uspešno detektuje većinu njih. Drugim rečima, model je podjednako efikasan u izbegavanju pogrešnih klasifikacija i u pronalaženju svih relevantnih primera.</p>
+</section>
+</section>
+<section id="f-beta-score">
+<h1>⚖️ <span class="math notranslate nohighlight">\(F_\beta\)</span>-score</h1>
+<p><strong><span class="math notranslate nohighlight">\(F_\beta\)</span>-score</strong> je mera koja kombinuje preciznost i odziv u jednu jedinstvenu metriku, pri čemu parametar <span class="math notranslate nohighlight">\(\beta\)</span> omogućava kontrolu relativne važnosti odziva u odnosu na preciznost. F1-score je posebni slučaj kada je <span class="math notranslate nohighlight">\(\beta\)</span>= 1, što znači da preciznost i odziv imaju jednak značaj.</p>
+<section id="id8">
+<h2>📐 Formula</h2>
+<p><span class="math notranslate nohighlight">\(F_\beta\)</span>-score se računa sledećom formulom:</p>
+<div class="math notranslate nohighlight">
+\[
+F_\beta = (1 + \beta^2) \cdot \frac{\text{Precision} \cdot \text{Recall}}{(\beta^2 \cdot \text{Precision}) + \text{Recall}},
+\]</div>
+<p>gde je <span class="math notranslate nohighlight">\(\beta\)</span> predstavlja parametar koji određuje koliko je odziv važniji ili manje važan u odnosu na preciznost.</p>
+</section>
+<section id="id9">
+<h2>🧠 Tumačenje</h2>
+<ul class="simple">
+<li><p>Kada je ** <span class="math notranslate nohighlight">\(\beta= 1\)</span> **, F1-score daje jednak značaj preciznosti i odzivu, što predstavlja standardnu i najčešće korišćenu verziju.</p></li>
+<li><p>Kada je <strong><span class="math notranslate nohighlight">\(\beta &lt; 1\)</span></strong>, veći naglasak se stavlja na preciznost; model je strože kažnjen za lažno pozitivne predikcije nego za propuštanje stvarno pozitivnih instanci.</p></li>
+<li><p>Kada je <strong><span class="math notranslate nohighlight">\(\beta&gt; 1\)</span></strong>, veći naglasak se stavlja na odziv; model je strože kažnjen za propuštanje stvarno pozitivnih instanci nego za lažno pozitivne predikcije.</p></li>
+</ul>
+<p>Zahvaljujući ovoj fleksibilnosti, <span class="math notranslate nohighlight">\(F_\beta\)</span>-score je posebno pogodan za prilagođavanje modela specifičnim prioritetima problema.</p>
+</section>
+<section id="id10">
+<h2>⚠️ Ograničenja</h2>
+<p><span class="math notranslate nohighlight">\(F_\beta\)</span>-score, iako kombinuje dve važne metrike, ne odražava performanse modela po klasama pojedinačno kod ekstremno neuravnoteženih skupova podataka. U tim slučajevima može biti korisno kombinovati ga sa <strong>matricom konfuzije</strong> ili dodatnim metrikama poput <strong>ROC-AUC</strong>.</p>
+<p>Iako <span class="math notranslate nohighlight">\(F_\beta\)</span> mera kombinuje dve ključne metrike, on ne pruža uvid u performanse modela po pojedinačnim klasama kod ekstremno neuravnoteženih skupova podataka. U takvim situacijama korisno je koristiti ga zajedno sa drugim nabrojanim metrikama ili dodatnim metrikama poput <strong>ROC-AUC</strong>.</p>
+</section>
+</section>
+<section id="prakticni-znacaj-u-finansijskim-primenama">
+<h1>🏦 Praktični značaj u finansijskim primenama</h1>
+<p>U finansijskom sektoru, pravi izbor metrike evaluacije direktno utiče na <strong>upravljanje rizicima</strong> i <strong>profitabilnost institucije</strong>. Preciznost (Precision) se primenjuje u scenarijima gde bi <strong>lažna uzbuna</strong>, poput neosnovanog blokiranja kartice lojalnog klijenta, mogla narušiti reputaciju i korisničko iskustvo. Sa druge strane, odziv (Recall) postaje ključan kod detekcije kritičnih događaja, kao što su <strong>pranje novca</strong> ili <strong>kreditni defolt</strong>, gde propuštanje stvarno rizičnih slučajeva može imati znatno veće posledice od dodatne provere.</p>
+<p>Konačno, <strong>F1-score</strong> se nameće kao centralna mera u oblastima kao što su <strong>algoritamsko trgovanje</strong> i <strong>odobravanje kredita</strong>, jer omogućava balans između stroge selekcije profitabilnih prilika i sveobuhvatnog obuhvata tržišnih signala, sprečavajući model da postane previše konzervativan ili previše rizičan.</p>
+<hr class="docutils" />
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ML_25_01_Uvod_1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-title">Uvod</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ML_25_03_Naivni_Bajes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">напред</p>
+        <p class="prev-next-title">Naivni Bajesovi klasifikatori</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Nadgledano učenje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ulazni-podaci">Ulazni podaci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izlazni-podaci">Izlazni podaci</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-iz-analize-kreditnog-rizika">Primer iz analize kreditnog rizika</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#primarne-primene-nadgledanog-ucenja">Primarne primene nadgledanog učenja</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-prepoznavanje-obrazaca">1. Klasifikacija (Prepoznavanje obrazaca)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresija-numericko-predvidanje">2. Regresija (Numeričko predviđanje)</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-u-masinskom-ucenju">Klasifikacija u mašinskom učenju</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binarna-klasifikacija">1. Binarna klasifikacija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#viseklasna-klasifikacija">2. Višeklasna klasifikacija</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regresioni-zadaci-predvidanje-numerickih-vrednosti">Regresioni zadaci (Predviđanje numeričkih vrednosti)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticni-primeri-regresije">Praktični primeri regresije:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#generalizacija-prekomerno-prilagodavanje-i-nedovoljno-prilagodavanje">Generalizacija, prekomerno prilagođavanje i nedovoljno prilagođavanje</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kljucni-principi">Ključni principi:</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija">Klasifikacija</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prmeri-rada-klasifikacionih-modela">Prmeri rada klasifikacionih modela</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-1-binarna-odluka-procenjeni-rizik">Scenario 1: Binarna odluka (procenjeni rizik)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scenario-2-viseklasna-klasifikacija-kreditni-rejting">Scenario 2: Višeklasna klasifikacija (Kreditni rejting)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritmi-za-klasifikaciju">Algoritmi za klasifikaciju</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrike-za-evaluaciju-uspesnosti-klasifikacionih-modela">Metrike za evaluaciju uspešnosti klasifikacionih modela</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#matrica-konfuzije-engl-confusion-matrix">🔁 Matrica konfuzije (engl. Confusion Matrix)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-procena-kreditnog-rizika">💳 Primer: Procena kreditnog rizika</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mere-kvaliteta-klasifikacije">🧮 Mere kvaliteta klasifikacije</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tacnost-engl-accuracy">✅ Tačnost (engl. Accuracy)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formula">📐 Formula</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tumacenje">🧠 Tumačenje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ogranicenja">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preciznost-engl-precision">🎯 Preciznost (engl. Precision)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">📐 Formula</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">🧠 Tumačenje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#odziv-engl-recall-sensitivity">🔄 Odziv (engl. Recall/Sensitivity)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">📐 Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tumacenje-u-finansijama">🧠 Tumačenje u finansijama</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-mera-engl-f1-score">⚖️ F1-mera (engl. F1-score)</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">📐 Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">🧠 Tumačenje</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#f-beta-score">⚖️ <span class="math notranslate nohighlight">\(F_\beta\)</span>-score</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">📐 Formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">🧠 Tumačenje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">⚠️ Ograničenja</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticni-znacaj-u-finansijskim-primenama">🏦 Praktični značaj u finansijskim primenama</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan i Mladen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

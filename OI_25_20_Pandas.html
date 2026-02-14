@@ -66,6 +66,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_20_Pandas';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
@@ -222,8 +224,25 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_02_KNN.html">Algoritam k najbližih suseda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
 </ul>
 
     </div>
@@ -469,13 +488,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">⚡️ Zadatak 1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">⚡️ Zadatak 2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">⚡️ Zadatak 3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">⚡️ Zadatak 4.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restorani">🧩 Restorani</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studij-slucaja-2">🧩 Studijа slučaja 2.</a></li>
@@ -3210,7 +3223,7 @@ dtype: float64
 </table>
 </div></div></div>
 </div>
-<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id4">
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id2">
 <caption><span class="caption-number">Tabela 10. </span><span class="caption-text">Lista Python operatora i ekvivalentnih Pandas metoda</span></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Pyhon Operator</p></th>
@@ -4860,7 +4873,7 @@ dtype: float64
 <li><p>Koliko transakcija ima po korisniku?</p></li>
 </ul>
 <p>GroupBy nije samo filter ili sortiranje — to je način da agregiramo informacije i otkrijemo obrasce koji nisu vidljivi iz pojedinačnih redova.</p>
-<figure class="align-center" id="id5">
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="_images/groupby.png"><img alt="_images/groupby.png" src="_images/groupby.png" style="width: 350px;" /></a>
 <figcaption>
 <p><span class="caption-number">Slika 16. </span><span class="caption-text">Ilustracija grupne agregacije</span></p>
@@ -7900,12 +7913,12 @@ Name: Razlika, dtype: float64
 </section>
 <section id="zadaci-i-problemi">
 <h2>Zadaci i problemi</h2>
-<section id="id2">
-<h3>⚡️ Zadatak 1.</h3>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1.</p>
 <p>Imate restoran brze hrane i uradili ste neko istraživanje tržišta u pokušaju da bolje razumete svoje klijente. U slučajnom uzorku kupaca, imate prihod, pol i broj dana u nedelji kada osoba ide na brzu hranu. Koristite ove informacije da odredite kako pol i prihod utiču na učestalost kojom osoba izlazi da jede brzu hranu. Podaci se nalaze u datoteci <code class="docutils literal notranslate"><span class="pre">Pandas_Podaci/Mcdonalds.xlsx</span></code></p>
-</section>
-<section id="id3">
-<h3>⚡️ Zadatak 2.</h3>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2.</p>
 <p>Preduzeće <code class="docutils literal notranslate"><span class="pre">EcoPlast</span></code> prodaje svoje proizvode (boce i posude) u nekoliko regiona tokom godine. Podaci o prodaji sačuvani su u datoteci <code class="docutils literal notranslate"><span class="pre">Pandas_Podaci/EcoPlast.csv</span></code> koja sadrži sledeće kolone:</p>
 <ul class="simple">
 <li><ul>
@@ -7920,9 +7933,9 @@ Name: Razlika, dtype: float64
 <li><p>Napraviti pivot tabelu koja prikazuje ukupan prihod po regionima i mesecima kao i ukupne vrednosti po redovima i kolonama.</p></li>
 <li><p>Prikaži rezultate pivot tabele pomoću bar grafikona.</p></li>
 </ol>
-</section>
-<section id="zadatak-3">
-<h3>⚡️ Zadatak 3.</h3>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3.</p>
 <p>Datoteka <code class="docutils literal notranslate"><span class="pre">Pandas_Podaci/Makeupdb.xlsx</span></code> sadrži informacije o prodaji proizvoda za šminkanje. Za svaku transakciju, imamo sledeće informacije:
 Ime prodavca; Datum prodaje; Naziv proizvoda; Broj prodatih jedinica; Prihod od transakcije; Lokacija.</p>
 <p>Napravite pivot tabele da biste sastavili sledeće informacije:</p>
@@ -7930,17 +7943,42 @@ Ime prodavca; Datum prodaje; Naziv proizvoda; Broj prodatih jedinica; Prihod od 
 <li><p>Koji prodavac je ostvario najveći ukupan prihod od prodaje u 2004 godini?</p></li>
 <li><p>Za kojim proizvodom je najveća tražnja na lokaciji east u 2006 godini?</p></li>
 </ul>
-</section>
-<section id="zadatak-4">
-<h3>⚡️ Zadatak 4.</h3>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4.</p>
 <p>U eksel datoteci <code class="docutils literal notranslate"><span class="pre">Pandas_Podaci/izvoz_podaci.xlsx</span></code> nalaze se kvartalni podaci o izvozu (u milionima evra) po sektorima. Zahtevi:</p>
 <ol class="arabic simple">
 <li><p>Prikaži ukupan izvoz po godinama i sektorima</p></li>
 <li><p>Izračunaj prosečan izvoz po sektorima (bez obzira na godinu).</p></li>
 <li><p>Nađi kvartal u kome je Industrija imala najveći izvoz u 2023. godini.</p></li>
 </ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5.</p>
+<p>Podaci u rečniku:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="s2">&quot;Tačka&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;E&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">,</span> <span class="s2">&quot;H&quot;</span><span class="p">,</span> <span class="s2">&quot;J&quot;</span><span class="p">,</span> <span class="s2">&quot;I&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;X&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span>
+    <span class="s2">&quot;Y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">]}</span>
+</pre></div>
+</div>
+<p>predstavljaju dve numeričke promenljive <span class="math notranslate nohighlight">\(X\)</span> i <span class="math notranslate nohighlight">\(Y\)</span> (po jedna u svakoj koloni). Svaki red predstavlja jednu tačku <span class="math notranslate nohighlight">\((x_i, y_i)\)</span>.</p>
+<ul class="simple">
+<li><p>Idealno loša tačka je ona koja ima najmanje vrednosti obe promenljive:  <span class="math notranslate nohighlight">\((x_{\min}, y_{\min})\)</span></p></li>
+<li><p>Idealno dobra tačka je ona koja ima najveće vrednosti obe promenljive: <span class="math notranslate nohighlight">\((x_{\max}, y_{\max})\)</span></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Za svaku tačku <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> izračunaj Euklidsko rastojanje od idealno loše tačke:
+$<span class="math notranslate nohighlight">\(  d_i^{-} = \sqrt{(x_i - x_{\min})^2 + (y_i - y_{\min})^2} \)</span><span class="math notranslate nohighlight">\(
+Tačke koje su dalje od idealno loše tačke (imaju veće vrednosti \)</span>d_i^{-})$ smatraju se boljima.
+Na osnovu dobijenih vrednosti formiraj rang-listu (1 = najbolja tačka).</p></li>
+<li><p>Za svaku tačku <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> izračunaj Euklidsko rastojanje od idealno dobre tačke:
+$<span class="math notranslate nohighlight">\( d_i^{+} = \sqrt{(x_{\max} - x_i)^2 + (y_{\max} - y_i)^2} \)</span><span class="math notranslate nohighlight">\(
+Tačke koje su bliže idealno dobroj tački (imaju manje vrednosti \)</span>d_i^{+})$ smatraju se boljima.
+Na osnovu toga formiraj drugu rang-listu (1 = najbolja tačka).</p></li>
+<li><p>Da li se redosled tačaka poklapa u oba slučaja?</p></li>
+</ol>
+</div>
 <br>
-</section>
 </section>
 <section id="studije-slucaja">
 <h2>Studije slučaja</h2>
@@ -8074,13 +8112,7 @@ Ime prodavca; Datum prodaje; Naziv proizvoda; Broj prodatih jedinica; Prihod od 
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">⚡️ Zadatak 1.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">⚡️ Zadatak 2.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-3">⚡️ Zadatak 3.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-4">⚡️ Zadatak 4.</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restorani">🧩 Restorani</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studij-slucaja-2">🧩 Studijа slučaja 2.</a></li>

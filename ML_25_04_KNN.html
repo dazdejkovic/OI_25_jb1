@@ -68,12 +68,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'ML_25_02_KNN';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ML_25_04_KNN';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
     <link rel="search" title="Претрага" href="search.html" />
-    <link rel="next" title="Stabla odlučivanja" href="ML_25_03_Stabla_odlucivanja.html" />
-    <link rel="prev" title="Uvod" href="ML_25_01_Uvod_1.html" />
+    <link rel="next" title="Stabla odlučivanja" href="ML_25_05_Stabla_odlucivanja.html" />
+    <link rel="prev" title="Naivni Bajesovi klasifikatori" href="ML_25_03_Naivni_Bajes.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sr"/>
   </head>
@@ -224,8 +224,25 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+
+
+
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Algoritam k najbližih suseda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
 </ul>
 
     </div>
@@ -297,7 +314,7 @@
       
       
       
-      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FML_25_02_KNN.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FML_25_04_KNN.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Отворите издање"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -327,7 +344,7 @@
       
       
       
-      <li><a href="_sources/ML_25_02_KNN.ipynb" target="_blank"
+      <li><a href="_sources/ML_25_04_KNN.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Преузми изворну датотеку"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -473,49 +490,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
-
-<span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">&lt;style&gt;</span>
-
-<span class="s2">a[href^=&quot;http://&quot;],</span>
-<span class="s2">a[href^=&quot;https://&quot;] {</span>
-<span class="s2">    color: blue !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">/* stil za sve tabele */</span>
-<span class="s2">table {</span>
-<span class="s2">    margin-left: auto !important;</span>
-<span class="s2">    margin-right: auto !important;</span>
-<span class="s2">    width: auto !important;</span>
-<span class="s2">    max-width: none !important;</span>
-<span class="s2">    table-layout: auto !important;</span>
-<span class="s2">    border-collapse: collapse !important;</span>
-<span class="s2">    font-family: &quot;Segoe UI&quot;, &quot;Calibri&quot;, sans-serif !important;</span>
-<span class="s2">    font-size: 12px !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">th, td {</span>
-<span class="s2">    padding: 8px 20px !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">/* дебља, јача линија испод заглавља */</span>
-<span class="s2">tr:first-child th {</span>
-<span class="s2">    border-bottom: 2px solid #222 !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">/* тања, светлија линија испод последњег реда */</span>
-<span class="s2">tr:last-child td {</span>
-<span class="s2">    border-bottom: 1px solid #aaa !important;</span>
-<span class="s2">}</span>
-
-<span class="s2">&lt;/style&gt;</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+  <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
@@ -1161,16 +1136,16 @@ for Cancer Classification in Gene Expression Data”. <a class="reference extern
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ML_25_01_Uvod_1.html"
+       href="ML_25_03_Naivni_Bajes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">назад</p>
-        <p class="prev-next-title">Uvod</p>
+        <p class="prev-next-title">Naivni Bajesovi klasifikatori</p>
       </div>
     </a>
     <a class="right-next"
-       href="ML_25_03_Stabla_odlucivanja.html"
+       href="ML_25_05_Stabla_odlucivanja.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">напред</p>

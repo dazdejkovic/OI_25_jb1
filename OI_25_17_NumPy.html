@@ -224,8 +224,25 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_02_KNN.html">Algoritam k najbližih suseda</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
 </ul>
 
     </div>
@@ -3246,6 +3263,69 @@ Na primer:</p>
 <li><p>Ako je odgovor pod 2) tačan, poslati i poruku <code class="docutils literal notranslate"><span class="pre">Nešova</span> <span class="pre">ravnoteža</span> <span class="pre">je</span></code> <span class="math notranslate nohighlight">\((\hat i, \hat j)\)</span>`, gde su <span class="math notranslate nohighlight">\(\hat i\)</span>, <span class="math notranslate nohighlight">\(\hat j\)</span> indeksi vrste odnosno kolone u kojima se postiže jednakost.</p></li>
 </ol>
 <p><em>Savet:</em> Pokušajte da neke delove organizujete u formi funkcija koje će izvršavati te delove.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p><strong>Opis problema</strong></p>
+<p>Cilj je da se na osnovu uočenih osobina poruke odredi da li je poruka <em>SPAM</em> ili <em>NIJE SPAM</em>. <br> Klasifikacija se vrši primenom <em>Naivnog Bajesovog klasifikatora</em>, zasnovanog na Bajesovoj teoremi.</p>
+<p><strong>Osnovna pretpostavka Naivnog Bajesovog klasifikatora</strong></p>
+<p>Pretpostavlja se da su osobine <em>uslovno nezavisne kada je klasa poznata</em>. <br> Ako je poruka opisana vektorom osobina <span class="math notranslate nohighlight">\(X = (A, B, C)\)</span>, tada važi:
+$<span class="math notranslate nohighlight">\( P(A,B,C \mid y) = P(A\mid y)\,P(B\mid y)\,P(C\mid y).\)</span>$</p>
+<p><strong>Definicija osobina i klase</strong></p>
+<p>Poruke su opisane sa tri binarne osobine:</p>
+<ul class="simple">
+<li><p><em>A</em> – poruka sadrži reč <em>free</em></p></li>
+<li><p><em>B</em> – poruka sadrži link</p></li>
+<li><p><em>C</em> – poruka sadrži uzvičnike</p></li>
+</ul>
+<p>Svaka osobina može imati vrednost 0 ili 1. Klasa poruke je:</p>
+<ul class="simple">
+<li><p><em>y = 1</em> – SPAM</p></li>
+<li><p><em>y = 0</em> – NIJE SPAM</p></li>
+</ul>
+<p><strong>Trening podaci</strong></p>
+<p>Trening skup je dat u obliku <em>pandas DataFrame-a</em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s2">&quot;B&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+<p><strong>Test primer</strong></p>
+<p>Razmatra se nova poruka sa osobinama: <span class="math notranslate nohighlight">\( (A, B, C) = (1, 0, 1) \)</span>. Na osnovu trening podataka potrebno je odrediti kojoj klasi ova poruka pripada.</p>
+<p><strong>Laplace smoothing</strong></p>
+<p>Prilikom računanja uslovnih verovatnoća koristi se <em>Laplace smoothing</em> sa parametrom <span class="math notranslate nohighlight">\(\alpha = 1.\)</span> Za binarnu osobinu <span class="math notranslate nohighlight">\(X \in \{0,1\}\)</span> i klasu <span class="math notranslate nohighlight">\(
+y=c\)</span> uslovna verovatnoća se računa kao
+$<span class="math notranslate nohighlight">\( P(X=1 \mid y=c) = \frac{N_{1,c} + \alpha}{N_c + 2\alpha}. \)</span>$
+gde je:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N_{1,c}\)</span> broj primera u klasi <span class="math notranslate nohighlight">\(c\)</span> kod kojih je <span class="math notranslate nohighlight">\(X=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(N_c\)</span> ukupan broj primera u klasi <span class="math notranslate nohighlight">\(c\)</span><br />
+Za vrednost <span class="math notranslate nohighlight">\(X=0\)</span> važi
+$<span class="math notranslate nohighlight">\( P(X=0 \mid y=c) = 1 - P(X=1 \mid y=c) \)</span>$</p></li>
+</ul>
+<p><strong>Dodatna objašnjenja</strong></p>
+<p>Za test poruku <span class="math notranslate nohighlight">\( X = (A, B, C) \)</span> potrebno je:</p>
+<ol class="arabic simple">
+<li><p>Izračunati prior verovatnoće klasa <span class="math notranslate nohighlight">\(P(y=1)\)</span> i <span class="math notranslate nohighlight">\(P(y=0)\)</span>.</p></li>
+<li><p>Izračunati uslovne verovatnoće za svaku osobinu i svaku klasu.</p></li>
+<li><p>Izračunati ne-normalizovane posteriorne vrednosti <span class="math notranslate nohighlight">\( P(y=c)\,P(A\mid y=c)\,P(B\mid y=c)\,P(C\mid y=c), \quad c \in \{0,1\}\)</span>.</p></li>
+<li><p>Uporediti dobijene vrednosti i izabrati klasu sa većom vrednošću.</p></li>
+</ol>
+<p><strong>Zahtevi</strong></p>
+<ol class="arabic simple">
+<li><p>Iz DataFrame-a izračunati <span class="math notranslate nohighlight">\(P(y=1), \quad P(y=0)\)</span>.</p></li>
+<li><p>Izračunati <span class="math notranslate nohighlight">\(P(A=1\mid y=c), \quad P(B=1\mid y=c), \quad P(C=1\mid y=c), \quad c \in \{0,1\}. \)</span></p></li>
+<li><p>Izračunati posteriorne verovatnoće za test primer <span class="math notranslate nohighlight">\(P(y=1\mid A=1,B=0,C=1)\)</span> i <span class="math notranslate nohighlight">\(P(y=0\mid A=1,B=0,C=1)\)</span>.</p></li>
+<li><p>Doneti odluku o klasi test poruke.</p></li>
+</ol>
+<p><strong>Napomena</strong></p>
+<ul class="simple">
+<li><p>Dozvoljena je upotreba <em>pandas</em> i <em>NumPy</em> biblioteka.</p></li>
+<li><p>Nije dozvoljena upotreba gotovih klasifikatora (npr. <em>scikit-learn</em>).</p></li>
+</ul>
 </div>
 </section>
 </section>
