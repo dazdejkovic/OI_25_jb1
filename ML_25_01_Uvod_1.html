@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Uvod &#8212; Operaciona istraživanja</title>
+    <title>Uvod &#8212; Poslovno odlučivanje i mašinsko učenje</title>
   
   
   
@@ -165,8 +165,8 @@
       
     
     
-    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
-    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Poslovno odlučivanje i mašinsko učenje - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Poslovno odlučivanje i mašinsko učenje - Home"/>`);</script>
   
   
 </a></div>
@@ -243,7 +243,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_06_Ansambl_metode.html">Uvod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_06_Ansambl_metode.html">Ansambl metode</a></li>
 </ul>
 
     </div>
@@ -439,17 +439,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razumevanje-kljucne-terminologije-masinskog-ucenja">Razumevanje ključne  terminologije mašinskog učenja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod-u-inteligentne-sisteme-i-masinsko-ucenje">Uvod u inteligentne sisteme i mašinsko učenje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razumevanje-kljucne-terminologije-masinskog-ucenja">Razumevanje ključne  terminologije mašinskog učenja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prikaz-podele-na-trening-validacioni-i-test-skup">Prikaz podele na trening, validacioni i test skup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustracija-na-jos-jednom-primeru-finansijski-podaci">Ilustracija na još jednom primeru: Finansijski podaci</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-pristupa-u-masinskom-ucenju">Klasifikacija pristupa u mašinskom učenju</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pristup-poglavlja-i-uvod-u-koncepte">Pristup poglavlja i uvod u koncepte.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moguci-problemi-i-prepreke-u-procesu-masinskog-ucenja">Mogući problemi i prepreke u procesu mašinskog učenja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prekomerno-prilagodavanje-engl-overfitting"><em>Prekomerno prilagođavanje (engl. Overfitting)</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedovoljno-prilagodavanje-engl-underfitting"><em>Nedovoljno prilagođavanje (engl. Underfitting)</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biblioteke-za-masinsko-ucenje">Biblioteke za mašinsko učenje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moguci-problemi-i-prepreke-u-masinskom-ucenju">Mogući problemi i prepreke u mašinskom učenju</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prekomerno-prilagodavanje"><em>Prekomerno prilagođavanje</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedovoljno-prilagodavanje"><em>Nedovoljno prilagođavanje</em></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemi-koji-proizlaze-iz-gresaka-unutar-skupa-podataka">Problemi koji proizlaze iz grešaka unutar skupa podataka</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unakrsna-validacija">Unakrsna validacija</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priprema-i-obrada-podataka-za-modele-masinskog-ucenja">Priprema i obrada podataka za modele mašinskog učenja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hajde-da-proverimo-znanje-o-stablima-odlucivanja">Hajde da proverimo znanje o stablima odlučivanja! 🧠</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
 </ul>
             </nav>
         </div>
@@ -464,45 +470,60 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="uvod">
 <h1>Uvod</h1>
 <div class="note admonition">
-<p class="admonition-title">Šta ćemo saznati u ovom poglavlju? (ili Šta nas očekuje u ovom poglavlju)</p>
+<p class="admonition-title">Ciljevi</p>
 <ul class="simple">
-<li><p>Šta podrazumevamo pod <strong>veštačkom inteligencijom</strong>?</p></li>
-<li><p>Šta je <strong>mašinsko učenje</strong>?</p></li>
-<li><p>Pregled koncepta veštačke inteligencije.</p></li>
-<li><p><strong>Osnovni koncepti i pojmovi</strong> o kojima ćemo pričati.</p></li>
-<li><p><strong>Polazne ideje i ključni pojmovi</strong> u oblasti mašinskog učenja.</p></li>
-<li><p>Najčešće primene veštačke inteligencije i mašinskog učenja.</p></li>
-<li><p>Glavni pristupi u mašinskom učenju.</p></li>
-<li><p>Izazovi u mašinskom učenju.</p></li>
+<li><p>Upoznavanje sa pojmom i razvojem <strong>veštačke inteligencije</strong>.</p></li>
+<li><p>Razumevanje osnovnog koncepta <strong>mašinskog učenja</strong> kao poddiscipline veštačke inteligencije.</p></li>
+<li><p>Predstavljanje ključnih koncepata i terminologije iz oblasti veštačke inteligencije.</p></li>
+<li><p>Upoznavanje sa <strong>osnovnim konceptima i pojmovima</strong> mašinskog učenja.</p></li>
+<li><p>Upoznavanje sa <strong>polaznim idejama i fundamentalnim principima</strong> mašinskog učenja.</p></li>
+<li><p>Upoznavanje sa najčešćim primenama veštačke inteligencije i mašinskog učenja u praksi.</p></li>
+<li><p>Pregled glavnih pristupa u mašinskom učenju.</p></li>
+<li><p>Identifikovanje osnovnih izazova i ograničenja u primeni modela mašinskog učenja.</p></li>
 </ul>
 </div>
-<p>U današnje vreme, skoro pa i neprimetno, korisnici digitalnih tehnologija svakodnevno komuniciraju sa inteligentnim sistemima koji donose odluke, pružaju preporuke i prilagođavaju se njihovim individualnim navikama kao neizostavni deo svakodnevnice.</p>
-<p>Nakon uspešnog dana na poslu želite da se opustite uz muziku, a telefon vam predlaže novu pesmu koja vam se već na prvo slušanje izuzetno dopada. Pametni sistem u pozadini, analizirajući vašu istoriju slušanja, omiljene žanrove i izvođače, sam je zaključio koja pesma ima najveću verovatnoću da vam se svidi, i to bez vasih didatnih sugestija. U nastavku putovanja, navigacioni sistem daje preporuku za najefikasniju putanju kako biste izbegli zastoj. U toku voznje, auto je prepoznalo pešaka i automatski bezbednosni mehanizam aktivira kočnice, a vozilo usporava ili potpuno staje.</p>
-<p><em>Događaj koji je nagovestio  kako su računari počeli da kreiraju budućnost u mnogim oblastima .</em></p>
-<p>Iako potiče iz davnina, bogata istorija šaha svedoči o njegovom značajnom uticaju na razvoj intelektualnih i kognitivnih sposobnosti pojedinaca, usavršavanje taktičkog i strateškog planiranja, kao i sposobnosti donošenja ispravnih odluka. Da će u mnogim oblastima u budućnosti  računari dominirati možda je nagovestio događaj koji se odigrao u Njujorku u maja 1997. god. kada je računar pobedio tadašnjeg svetskog šampiona u šahu Garija Kasparova. Naime tada je ruski  velemajstoj G. Kasparov poražen u odlučujućoj partiji od računara Deep blue kompanije IBM, gde je jedan od inženjera te kompanije koji je sedeo sa druge strane stola naspram jednog od najboljih šahista sveta Kasparova, povlačio poteze koje mu sugerisao računar. Ovaj veliki događaj izazvao je veliku pažnju, iznenađenja i različite komentare. Čak je jedan  televizijski komentator bio toliko iznenađen da je to nazvao porazom čovečanstva. Mnogi su taj meč označili kao tehnoški izazov i novi put u budućnost nauke i svakodnevice.</p>
-<p>Ovo su samo neki od brojnih primera prisutnosti mašinskog učenja u svakodnevnim aktivnostima. Navedeni sistemi u sposobni da stiču znanje i formulišu izlazne zaključke i rešenja na osnovu učenja iz empirijskih podataka. Dok su ranije računari uglavnom izvršavali instrukcije koje im je čovek zadavao, u poslednjim decenijama oni dobijaju ulogu da sve češće samostalno stiču znanja i izvode zaključke direktno iz sirovih podataka.</p>
+<div class="note admonition">
+<p class="admonition-title">Ishodi učenja</p>
+<p>Po završetku ove nastavne jedinice student će biti sposoban da:</p>
+<ul class="simple">
+<li><p><strong>Definiše pojam veštačke inteligencije</strong> i objasni njen značaj u savremenom društvu.</p></li>
+<li><p><strong>Objasni šta je mašinsko učenje</strong> i kako se razlikuje od klasičnog programiranja.</p></li>
+<li><p>Prepozna i pravilno koristi <strong>osnovne pojmove i terminologiju</strong> iz oblasti <strong>veštačke inteligencije i mašinskog učenja</strong>.</p></li>
+<li><p>Opiše <strong>ključne ideje i principe</strong> na kojima se zasniva <strong>mašinsko učenje</strong>.</p></li>
+<li><p>Navede i objasni <strong>najčešće oblasti primene veštačke inteligencije i mašinskog učenja</strong>.</p></li>
+<li><p>Razlikuje <strong>glavne pristupe u mašinskom učenju</strong> (npr. <strong>nadgledano, nenadgledano i potkrepljujuće učenje</strong>).</p></li>
+<li><p>Identifikuje <strong>osnovne izazove u razvoju i primeni modela mašinskog učenja</strong>.</p></li>
+</ul>
+</div>
+<section id="uvod-u-inteligentne-sisteme-i-masinsko-ucenje">
+<h2>Uvod u inteligentne sisteme i mašinsko učenje</h2>
+<p>U današnje vreme, skoro pa i neprimetno, korisnici digitalnih tehnologija svakodnevno komuniciraju sa inteligentnim sistemima koji donose odluke, pružaju preporuke i prilagođavaju se njihovim individualnim navikama kao neizostavni deo svakodnevice.</p>
+<p>Nakon uspešnog dana na poslu želite da se opustite uz muziku, a telefon vam predlaže novu pesmu koja vam se već na prvo slušanje izuzetno dopada. Pametni sistem u pozadini, analizirajući vašu istoriju slušanja, omiljene žanrove i izvođače, sam zaključuje koja pesma ima najveću verovatnoću da vam se svidi, i to bez vaših dodatnih sugestija.</p>
+<p>U nastavku putovanja sa posla, navigacioni sistem daje preporuku za najefikasniju putanju kako biste izbegli zastoj. U toku vožnje, automobil prepoznaje pešaka i automatski bezbednosni mehanizam aktivira kočnice, a vozilo usporava ili potpuno staje.</p>
+<p>Savremeni primeri jasno pokazuju napredak inteligentnih sistema I koliko su ovakvi sistemi postali deo naše svakodnevice. Međutim, ideja da računari mogu donositi kompleksne odluke i nadmetati se sa ljudskim intelektom nije nastala preko noći. Jedan događaj s kraja XX veka simbolično je označio prekretnicu u razumevanju potencijala računara.</p>
+<hr class="docutils" />
+<p><strong>Događaj koji je nagovestio početak ere u kojoj računari aktivno kreiraju budućnost u mnogim oblastima.</strong></p>
+<p>Iako potiče iz davnina, bogata istorija šaha svedoči o njegovom značajnom uticaju na razvoj intelektualnih i kognitivnih sposobnosti pojedinaca, usavršavanje taktičkog i strateškog planiranja, kao i sposobnosti donošenja ispravnih odluka.</p>
+<p>Da će u mnogim oblastima u budućnosti računari dominirati možda je nagovestio događaj koji se odigrao u Njujorku, u maju 1997. godine, kada je računar pobedio tadašnjeg svetskog šampiona u šahu Garija Kasparova. Ruski velemajstor Gari Kasparov poražen je u odlučujućoj partiji od računara Deep Blue kompanije IBM, pri čemu je jedan od inženjera kompanije, sedeći naspram šahovske table, povlačio poteze koje mu je sugerisao računar.</p>
+<p>Ovaj događaj izazvao je veliku pažnju, iznenađenje i brojne komentare. Jedan televizijski komentator čak ga je nazvao „porazom čovečanstva“. Mnogi su taj meč označili kao tehnološki izazov i prekretnicu koja je otvorila novi put u budućnost nauke i svakodnevice. Za više informacija o ovom događaju i njegovom značaju za razvoj veštačke inteligencije, pogledajte
+<a class="reference external" href="https://www.ibm.com/history/deep-blue">ovde</a> ili <a class="reference external" href="https://www.ebsco.com/research-starters/sports-and-leisure/deep-blue-beats-kasparov-chess">ovde</a>.</p>
+<hr class="docutils" />
+<p>Ovo su samo neki od brojnih primera prisutnosti mašinskog učenja u svakodnevnim aktivnostima. Dok su ranije računari uglavnom izvršavali instrukcije koje im je čovek zadavao, u poslednjim decenijama sve češće preuzimaju ulogu sistema koji samostalno stiču znanje, analiziraju podatke i izvode zaključke i rešenja na osnovu učenja iz empirijskih podataka.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Koje su mogućnosti i granice mašinskog učenja, i kako ih mi možemo iskoristiti za unapređenje našeg znanja?</p>
 <p>Ovo poglavlje pruža uvod u ključne principe mašinskog učenja.
 Daje uvid u to kako se znanje može graditi iz podataka, kako se prepoznaju obrasci koji nisu uvek očigledni, i kako modeli greše, uče iz grešaka i postaju sve precizniji.</p>
 </div>
-<p>U savremenom okruženju u kojem je tehnološki razvoj brži nego ikada ranije i gde se svet neprestano menja, mašinsko učenje postaje izuzetno značajno u tehnološkoj revoluciji koja sve više oblikuje našu svakodnevicu. Mašinsko učenje omogućava računarima da samostalno uče iz dostupnih podataka, i da bez eksplicitnog programiranja rešavaju zadatke i donose odluke. Sa sve većim količinama podataka koji postaju dostupni u svakodnevnom aktivnostima, opravdano je očekivati da će pametna analiza podataka biti sve više prisutna i neophodna, ne samo u nauci, već i u širokom spektru profesionalnih i svakodnevnih zadataka.</p>
+<p>U savremenom okruženju, u kojem je tehnološki razvoj brži nego ikada ranije i gde se svet neprestano menja, <strong>mašinsko učenje</strong> postaje izuzetno značajno u okviru tehnološke revolucije koja sve više oblikuje našu svakodnevicu. Mašinsko učenje omogućava računarima da <strong>samostalno uče iz dostupnih podataka</strong> i da, bez eksplicitnog programiranja, rešavaju zadatke i donose odluke.</p>
+<p>Sa sve većim količinama podataka koje postaju dostupne u svakodnevnim aktivnostima, opravdano je očekivati da će <strong>analiza podataka</strong> biti sve prisutnija i neophodnija, ne samo u nauci već i u širokom spektru profesionalnih i svakodnevnih zadataka.</p>
 <div class="important admonition">
-<p class="admonition-title">Napomena.</p>
-<p>U ovom poglavlju upoznaćemo se sa nekoliko osnovnih pojmova iz mašinskog učenja koje ćete upoznati dok učite o veštačkoj inteligenciji. Razumevanje ovih osnovnih koncepata pomaže da bolje shvatimo kako funkcionišu sistemi mašinskog učenja. Pre nego što nastavite dalje sa čitanjem ostatka knjige, potrudite se da jasno shvatite ove koncepte i upoznate se sa osnovnim pojmovima.</p>
+<p class="admonition-title">Napomena</p>
+<p>U ovom poglavlju razmatraju se osnovni i ključni pojmovi koji su značajni za razumevanje principa, metoda i načina rada mašinskog učenja. Pre nego što nastavite dalje sa čitanjem ostatka knjige, potrudite se da jasno shvatite osnovne koncepte i pojmove.</p>
 </div>
-<p><strong>Veštačka inteligencija</strong> (engl. Artificial Intelligence, AI) predstavlja oblast računarstva koja se bavi razvojem sposobnosti mašina da oponašaju ljudsku inteligenciju i način razmišljanja, uključujući učenje, zaključivanje, donošenje odluka, rešavanje problema, itd. Usled mogućnosti efikasne obrade velikih skupova podataka sistemi veštačke inteligencije mogu vremenom unapređivati svoje performanse, ali i generisati novi sadržaj zasnovan na naučenim pravilnostima.Veštačka inteligencija ima za cilj razvoj računarskih sistema koji, zahvaljujući svojoj sposobnosti da brzo obrađuju velike količine podataka, mogu efikasno rešavati kompleksne zadatke, u nekim slučajevima premašujući i ljudske kognitivne sposobnosti. Koncept veštačke inteligencije vuče korene iz 20 veka, kada su postavljene ključne teorijske i praktične osnove za njen razvoj, povezane sa imenima Allana Taringa, Džona Makartija i drugih pionira. U poslednjim godinama veštačka inteligencija dobija sve veću popularnost i dinamičan razvoj, kao i sve veću primenu u naučnim istraživanjima, ali i široku u svakodnevnom životu, čineći osnovu mnogih funkcija, aplikacija, tehnologija i servisa koje svakodnevno koristimo. Zanimljivo je da je Turing još u svom pionirskom radu iz 1950. godine ukazao da učenje treba da bude ključni element svakog inteligentnog sistema: „Umesto da pokušamo da napravimo program koji simulira um odraslog čoveka, zašto ne bismo radije pokušali da napravimo onaj koji simulira um deteta? Ako bi taj program zatim bio podvrgnut odgovarajućem kursu obuke, dobili bismo mozak odraslog čoveka.”</p>
-<p><strong>Mašinsko učenje</strong> (engl. Machine learning, ML) je podgrana veštačke inteligencije, koje je kao disciplina proizašlo iz kombinovanja više različitih naučnih oblasti, prvenstveno statistike, računarstva i neuro-nauke, ali i optimizacije, teorije odlučivanja i teorije igara. Mašinsko učenje predstavlja oblast računarstva koja se bavi razvojem algoritama sposobnih da prepoznaju obrasce u podacima i uče iz njih, radi donošenja odluka zasnovanih na samim podacima. Početkom XXI veka, došlo je do značajnog unapređenja u razvoju veštačke inteligencije zahvaljujući razvoju novih tehnologija, pre svega napretku u računarskom hardveru, koji je omogućio veću brzinu obrade, veći kapacitet memorije i sposobnost da se obrađuju, skladište i analiziraju znatno veće količine podataka. Mašinsko učenje omogućava upravljanje složenim sistemima i automatsko učenje iz podataka, čime prevazilazi ograničenja tradicionalnih metoda i nadmašuje ljudske sposobnosti u određenim oblastima u kojima su do skoro računari bili manje uspešni u poređenju sa ljudima.</p>
-<p>Tom Mišel (engl. Tom M. Mitchell) u svojoj knjizi („Machine Learning”, 1997) dao je jednu od najpoznatijih definicija pojma mašinskog učenja, koja glasi: „Kažemo da računski program uči iz iskustva E u odnosu na skup zadataka T i meru performansi P ako se njegovo izvođenje zadataka iz T, merеnо pomoću P, poboljšava sa iskustvom E.” (engl. „A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”), gde je:</p>
-<ul class="simple">
-<li><p>T – zadatak (jedan ili više) za koji se program obučava;</p></li>
-<li><p>E – iskustvo, tj. skup podataka iz kojih program uči;</p></li>
-<li><p>P – mera učinka, tj. mera performanse progresa u učenju.</p></li>
-</ul>
-<p>Ilustrovano na primeru, Mitchellova definicija se može razumeti na sledeći način: zadatak (T) je da program prepozna da li je nova e-pošta neželjena (engl. spam) ili legitimna (engl. ham) poruka. Iskustvo (E) predstavlja obuku na velikom broju prethodno klasifikovanih mejlova kao neželjena ili legitimna pošta. Mera performansi (P) najčešće je tačnost (engl. accuracy) koja predstavlja procenat ukupno ispravno klasifikovanih primera na testu. Ako model vremenom postiže sve bolju tačnost P kako dobija više označenih primera E (Obeleženih E-mailova), možemo reći da uspešno uči da obavlja svoj zadatak klasifikacije T.
-Drugi primer bi mogao da bude sledeći: zadatak (T) podrazumeva igranje šaha, gde je cilj da sistem nauči kako da donosi optimalne poteze u različitim pozicijama na tabli. Mera performansi (P) izražava se kroz procenat dobijenih partija protiv različitih protivnika i služi za procenu uspešnosti naučenih strategija. Iskustvo učenja (E) ogleda se u velikom broju trening-partija, pri čemu kroz ponavljanje i analizu ishoda unapređuje svoje odluke i postaje sve uspešniji.</p>
-<p>Jedno od prvih pominjanja termina mašinsko učenje datira iz 1959. godine, kada je Artur Samjuel (engl. Arthur Samuel), tokom svog istraživačkog rada na računarskom programu za igru dama, uočio da se performanse programa poboljšavaju kroz iskustvo, pa je to zapažanje formulisao u definiciju mašinskog učenja: „Mašinsko učenje je oblast koja računarima daje sposobnost da uče bez eksplicitnog programiranja.“ (engl. „Machine learning is the field of study that gives computers the ability to learn without being explicitly programmed.”)</p>
-<p>Prema autoru Murphy-ju (videti Murphy (2012, strana xxvii)), „cilj mašinskog učenja je da razvije metode koje mogu automatski detektovati obrasce u podacima, a zatim da koriste otkrivene obrasce za predviđanje budućih podataka ili drugih ishoda od interesa.”</p>
+<p><strong>Veštačka inteligencija</strong> (engl. Artificial Intelligence, AI) predstavlja oblast računarstva koja se bavi razvojem sposobnosti mašina da oponašaju ljudsku inteligenciju i način razmišljanja, uključujući učenje, zaključivanje, donošenje odluka, rešavanje problema, itd. Usled mogućnosti efikasne obrade velikih skupova podataka sistemi veštačke inteligencije mogu vremenom unapređivati svoje performanse, ali i generisati novi sadržaj zasnovan na naučenim pravilnostima. Veštačka inteligencija ima za cilj razvoj računarskih sistema koji, zahvaljujući svojoj sposobnosti da brzo obrađuju velike količine podataka, mogu efikasno rešavati kompleksne zadatke, u nekim slučajevima premašujući i ljudske kognitivne sposobnosti.</p>
+<p>Koncept veštačke inteligencije vuče korene iz XX veka, kada su postavljene ključne teorijske i praktične osnove za njen razvoj, povezane sa imenima Alana Tjuring, Džona Mekartija i drugih pionira. Zanimljivo je da je Turing još u svom pionirskom radu iz 1950. godine ukazao da učenje treba da bude ključni element svakog inteligentnog sistema: „Umesto da pokušamo da napravimo program koji simulira um odraslog čoveka, zašto ne bismo radije pokušali da napravimo onaj koji simulira um deteta? Ako bi taj program zatim bio podvrgnut odgovarajućem kursu obuke, dobili bismo mozak odraslog čoveka.” Alan Tjuring (engl. Alan Mathison Turing) bio matematičar, logičar i kriptograf, ali i vizionar koji je mašine posmatrao kao entitete sposobne za učenje. U radu [1] postavio je čuveno pitanje <strong>„Mogu li mašine da misle?“</strong> i predložio koncept danas poznat kao Tjuringov test, kao operativni pristup proceni inteligencije mašina kroz komunikaciju, umesto kroz formalno definisanje inteligencije. Pored teorijskih osnova, Tjuring je postavio i praktične temelje oblasti. Razvio je prvi šahovski algoritam koji je, usled nedostatka računarske snage, samostalno simulirao (trošeći 30 minuta po potezu). Njegov vizionarski pristup sugerisao je da put ka veštačkoj inteligenciji vodi preko modela koji ’uče’: smatrao je da je lakše dizajnirati bazični program nalik dečijem umu i zatim ga postepeno edukovati, nego manuelno kodirati vrhunsku kognitivnu kompleksnost. Kao čovek koji je ’kumovao’ oblasti davši joj ime Artificial Intelligence, Džon Mekarti (engl. John McCarthy) je postavio pravce razvoja moderne nauke, [2]. Autor je programskog jezika Lisp, nezaobilaznog alata u ranom razvoju inteligentnih sistema, i vatreni zagovornik korišćenja logike kao primarnog sredstva za mašinsko zaključivanje. Pored nabrojanog, Mekarti je predvideo budućnost računarstva kroz koncept deljenja resursa (time-sharing), postavljajući time rane temelje za današnju cloud infrastrukturu.
+U poslednjim godinama veštačka inteligencija dobija sve veću popularnost i dinamičan razvoj, uz sve širu primenu u naučnim istraživanjima i svakodnevnom životu, predstavljajući osnovu mnogih savremenih funkcija, aplikacija i tehnologija koje svakodnevno koristimo.</p>
+<p><strong>Mašinsko učenje</strong> (engl. Machine learning, ML) je podgrana veštačke inteligencije, koje je kao disciplina proizašlo iz sinergije više različitih naučnih oblasti, prvenstveno statistike, računarstva i neuronauke, ali i optimizacije, teorije odlučivanja i teorije igara. Mašinsko učenje predstavlja oblast računarstva koja se bavi razvojem algoritama sposobnih da prepoznaju obrasce u podacima i uče iz njih, radi donošenja odluka zasnovanih na samim podacima. Početkom XXI veka, došlo je do značajnog unapređenja u razvoju veštačke inteligencije zahvaljujući razvoju novih tehnologija, pre svega napretku u računarskom hardveru, koji je omogućio veću brzinu obrade, veći kapacitet memorije i sposobnost da se obrađuju, skladište i analiziraju znatno veće količine podataka. Mašinsko učenje omogućava upravljanje složenim sistemima i automatsko učenje iz podataka, čime prevazilazi ograničenja tradicionalnih metoda i nadmašuje ljudske sposobnosti u određenim oblastima u kojima su do skoro računari bili manje uspešni u poređenju sa ljudima.</p>
 <p>Dok čovek stiče znanja i veštine kroz direktno, lično iskustvo, uključujući emocionalne i kontekstualne dimenzije, modeli mašinskog učenja uče isključivo iz analize ogromnih skupova podataka. Pogledajte ilustraciju na slici koja prikazuje ovu razliku.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/experience.PNG"><img alt="_images/experience.PNG" src="_images/experience.PNG" style="width: 400px;" /></a>
@@ -510,7 +531,17 @@ Drugi primer bi mogao da bude sledeći: zadatak (T) podrazumeva igranje šaha, g
 <p><span class="caption-number">Slika 19. </span><span class="caption-text">Mašinsko učenje iskustvo (Izvor: bigdata.black, ili <a class="reference external" href="https://dwbimaster.com/what-is-machine-learning/">https://dwbimaster.com/what-is-machine-learning/</a> )</span></p>
 </figcaption>
 </figure>
-<p>Algoritmi mašinsko učenja postaju zastupljeni u različitim industrijama i menjaju način poslovanja i organizacije sistema. Revoluciju pokreću revolucionarni napredak u algoritmima i sve veća dostupnost podataka što rezultira eksponencijalni napredak algoritama mašinskog učenja, kao i intenzivnu ekspanziju primene u različitim domenima.</p>
+<p>Tom Mišel (engl. Tom M. Mitchell) u svojoj knjizi („Machine Learning”, 1997) dao je jednu od najpoznatijih definicija pojma mašinskog učenja, koja glasi: „Kažemo da računski program uči iz iskustva E u odnosu na skup zadataka T i meru performansi P ako se njegovo izvođenje zadataka iz T, merеnо pomoću P, poboljšava sa iskustvom E.” (engl. „A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.”), gde je:</p>
+<ul class="simple">
+<li><p>T – zadatak (jedan ili više) za koji se program obučava;</p></li>
+<li><p>E – iskustvo, tj. skup podataka iz kojih program uči;</p></li>
+<li><p>P – mera učinka, tj. mera performanse progresa u učenju.</p></li>
+</ul>
+<p>Ilustrovano na primeru, Mitchellova definicija se može razumeti na sledeći način: zadatak (T) je da program prepozna da li je nova e-pošta neželjena (engl. spam) ili legitimna (engl. ham) poruka. Iskustvo (E) predstavlja obuku na velikom broju prethodno klasifikovanih mejlova kao neželjena ili legitimna pošta. Mera performansi (P) najčešće je tačnost (engl. accuracy) koja predstavlja procenat ukupno ispravno klasifikovanih primera na testu. Ako model vremenom postiže sve bolju tačnost P kako dobija više označenih primera E (označenih mejlova), možemo reći da uspešno uči da obavlja svoj zadatak klasifikacije T.
+Drugi primer bi mogao da bude sledeći: zadatak (T) podrazumeva igranje šaha, gde je cilj da sistem nauči kako da donosi optimalne poteze u različitim pozicijama na tabli. Mera performansi (P) izražava se kroz procenat dobijenih partija protiv različitih protivnika i služi za procenu uspešnosti naučenih strategija. Iskustvo učenja (E) ogleda se u velikom broju trening-partija, pri čemu kroz ponavljanje i analizu ishoda unapređuje svoje odluke i postaje sve uspešniji.</p>
+<p>Jedno od prvih pominjanja termina mašinsko učenje datira iz 1959. godine, kada je Artur Samjuel (engl. Arthur Samuel), tokom svog istraživačkog rada na računarskom programu za igru dama, uočio da se performanse programa poboljšavaju kroz iskustvo, pa je to zapažanje formulisao u definiciju mašinskog učenja: „Mašinsko učenje je oblast koja računarima daje sposobnost da uče bez eksplicitnog programiranja.“</p>
+<p>Prema autoru Marfiju ([3], strana xxvii), „cilj mašinskog učenja je da razvije metode koje mogu automatski detektovati obrasce u podacima, a zatim da koriste otkrivene obrasce za predviđanje budućih podataka ili drugih ishoda od interesa.”</p>
+<p>Algoritmi mašinskog učenja postaju zastupljeni u različitim industrijama i menjaju način poslovanja i organizacije sistema. Revoluciju pokreću revolucionarni napredak u algoritmima i sve veća dostupnost podataka što rezultira eksponencijalni napredak algoritama mašinskog učenja, kao i intenzivnu ekspanziju primene u različitim domenima.</p>
 <p>Mašinsko učenje ima širok dijapazon primene u različitim oblastima, obuhvatajući nauku, industriju i svakodnevne aktivnosti. Neki od primera delatnosti i aktivnosti u kojima se modeli mašinskog učenja uspešno primenjuju:</p>
 <ul class="simple">
 <li><p>Prepoznavanje objekata i identifikaciju lica na fotografijama i video zapisima, kao i obrada govora i razumevanje prirodnog jezika (na primer, u interakciji sa digitalnim asistentima poput Siri ili Alexa).</p></li>
@@ -520,41 +551,674 @@ Drugi primer bi mogao da bude sledeći: zadatak (T) podrazumeva igranje šaha, g
 <li><p>Analiza sentimenta.</p></li>
 <li><p>Kreiranje efikasnih sistema za preporuke sadržaja ili proizvoda (kao što su predlozi za gledanje na platformama za striming).</p></li>
 <li><p>Ekonomsko prognoziranje trendova na tržištu, analizu finansija i razumevanje ponašanja korisnika i kupaca.</p></li>
-<li><p>itd.</p></li>
 </ul>
-<p>U suštini, MU radi sve što uključuje pronaženje skrivenih obrazaca u velikim količinama podataka, a lista primena se širi svakog dana.
+<p>U suštini, mašinsko učenje radi sve što uključuje pronaženje skrivenih obrazaca u velikim količinama podataka, a lista primena se širi svakog dana.
 U svetu gde brzina i preciznost informacija mogu odlučiti o uspehu, mašinsko učenje postaje ključni saveznik kompanijama, institucijama, kao i pojedincima u poslovnim aktivnostima.</p>
 <p><strong>Zašto mašinsko učenje?</strong></p>
 <p>Postoji nekoliko činjenica koje opravdavaju potrebu za dublje interesovanje za mašinsko učenje i značaj bavljenja ovom temom.</p>
 <ul class="simple">
-<li><p>U eri eksplozije podataka, svaka naša digitalna akcija ostavlja trag sa potencijalno vrednim informacijama. Zbog ogromnog obima i neverovatne brzine kojom se podaci generišu, postaje jasno da su nam potrebni novi pristupi, sistemi mašinskog učenja koji efikasno prepoznaju skrivene obrasce i donose zaključke zasnovane na algoritamskom rasuđivanju. U takvom masivnom skupu podataka, uloga algoritami prepoznaju veze i korelacije između različitih varijabli ili događaja nisu očigledne. Umesto da se pravila unapred eksplicitno definišu, algoritam sam uči iz podataka, prilagođava se drugačijim situacijama i iz poruke u poruku, i što ih više ima, njegova preciznost i korisnost rastu.</p></li>
-<li><p>Postoje klase problema koje je teško rešiti u smislu da ljudi, čak i kada imaju jasno zadate ulazne i izlazne podatke, često ne mogu odmah prepoznati pravilo koje povezuje instanci ulaznih podataka i odgovarajućih željenih izlaznih vrednosti. Cilj je da mašine same otkriju ovu vezu između podataka, omogućavajući tačna predviđanja i za nove, neviđene podatke.</p></li>
-<li><p>Mašinsko učenje omogućava sistemima da prate nove informacije i samostalno se prilagođavaju, kontinuirano poboljšavajući performanse kako dobijaju više podataka što omogućava automatsko procesiranje i ubrzavanje proces analize.</p></li>
-<li><p>itd.</p></li>
+<li><p>U eri eksplozije podataka, svaka naša digitalna akcija ostavlja trag sa potencijalno vrednim informacijama. Zbog ogromnog obima i izuzetne brzine generisanja podataka, postaje jasno da su neophodni novi pristupi njihovoj analizi, pre svega sistemi mašinskog učenja koji mogu efikasno da prepoznaju skrivene obrasce i donose zaključke zasnovane na algoritamskom rasuđivanju. U tako masivnim skupovima podataka algoritmi imaju ključnu ulogu, jer omogućavaju otkrivanje veza i korelacija između različitih varijabli ili događaja koje na prvi pogled nisu očigledne.</p></li>
+<li><p>Umesto unapred eksplicitno definisanih pravila, algoritam uči direktno iz podataka, prilagođava se novim i različitim situacijama, a sa porastom količine dostupnih podataka njegova preciznost i upotrebna vrednost se dodatno povećavaju.</p></li>
+<li><p>Postoje klase problema koje je teško rešiti jer, iako su ulazni i izlazni podaci jasno definisani, pravilo koje povezuje pojedinačne ulazne instance sa odgovarajućim izlaznim vrednostima nije lako uočljivo. U takvim situacijama cilj je da mašine samostalno identifikuju tu vezu među podacima, čime se omogućava donošenje pouzdanih predviđanja i za nove, prethodno neviđene podatke.</p></li>
+<li><p>Mašinsko učenje omogućava sistemima da koriste nove informacije i prilagođavaju se, pri čemu se njihove performanse poboljšavaju sa povećanjem količine podataka, što omogućava automatsku i bržu analizu.</p></li>
 </ul>
-<p><strong>Veštačka inteligencija, mašinsko učenje, dubokog učenja, u čemu je razlika?</strong></p>
-<p>Iako su veštačka inteligencija, mašinsko učenje, duboko učenje i neuronske mreže usko povezane tehnologije, ovi termini se nekada upotrebljavaju kao sinonimi, što izaziva zabunu oko njihovih razlike zbog pogrešnog poistovećivanja. Slika daje pregled hijerarhijskog odnosa između pojmova: veštačka inteligencija je najširi skup, mašinsko učenje je podskup veštačke inteligencije, dalje dubinsko učenje je podskup mašinskog učenja, a neuronske mreže čine okosnicu algoritama dubokog učenja.</p>
-<p>Veštačka Inteligencija (VI) obuhvata sisteme i mašine projektovane da oponašaju ljudsku inteligenciju i izvršavaju kognitivne funkcije. Mašinsko učenje predstavlja poddisciplinsku oblast veštačke inteligencije koja se bavi razvojem algoritama i modela za učenje iz podataka, pri čemu računari ne dobijaju eksplicitne instrukcije za svaki korak, već samostalno uče iz iskustva i vremenom poboljšavaju svoje performanse u obavljanju zadataka. Duboko učenje predstavlja podskup mašinskog učenja i razlikuje se od njega po načinu na koji algoritmi uče i količini podataka koju koriste. Duboko učenje podrazumeva upotrebu struktura sa više skrivenih slojeva da bi se automatski izvlačile karakteristike direktno iz sirovih podataka.</p>
+<p><strong>Veštačka inteligencija, mašinsko učenje, duboko učenja, u čemu je razlika?</strong></p>
+<p>Iako su veštačka inteligencija, mašinsko učenje, duboko učenje i neuronske mreže usko povezane tehnologije, ovi termini se nekada upotrebljavaju kao sinonimi, što izaziva zabunu oko njihovih razlike zbog pogrešnog poistovećivanja. Slika ispod daje pregled hijerarhijskog odnosa između pojmova: veštačka inteligencija je najširi skup, mašinsko učenje je podskup veštačke inteligencije, dalje dubinsko učenje je podskup mašinskog učenja, a neuronske mreže čine okosnicu algoritama dubokog učenja.</p>
+<p>Veštačka inteligencija (VI) obuhvata sisteme i mašine projektovane da oponašaju ljudsku inteligenciju i izvršavaju kognitivne funkcije. Mašinsko učenje predstavlja poddisciplinsku oblast veštačke inteligencije koja se bavi razvojem algoritama i modela za učenje iz podataka, pri čemu računari ne dobijaju eksplicitne instrukcije za svaki korak, već samostalno uče iz iskustva i vremenom poboljšavaju svoje performanse u obavljanju zadataka. Duboko učenje predstavlja podskup mašinskog učenja i razlikuje se od njega po načinu na koji algoritmi uče i količini podataka koju koriste. Duboko učenje podrazumeva upotrebu struktura sa više skrivenih slojeva da bi se automatski izvlačile karakteristike direktno iz sirovih podataka.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/AiDiffML.PNG"><img alt="_images/AiDiffML.PNG" src="_images/AiDiffML.PNG" style="width: 500px;" /></a>
 <figcaption>
 <p><span class="caption-number">Slika 20. </span><span class="caption-text">Mašinsko učenje i iskustvo(Izvor: <a class="reference external" href="https://rachana3073.medium.com/deep-learning-48a77b25615a">https://rachana3073.medium.com/deep-learning-48a77b25615a</a>)</span></p>
 </figcaption>
 </figure>
-<p>Veštačka inteligencija je značajno promenila industrije, donoseći napredak u tehnologiji, nauci i svakodnevnom životu. Na osnovu njenih sposobnosti i funkcionalnosti veštačka inteligencija se može svrstati u tri kategorije: Uska ili slaba veštačka inteligencija (engl. Artificial Narrow Intelligence, ANI), Opšta ili jaka veštačka inteligencija (engl. Artificial General Intelligence, AGI) i Superinteligentna veštačka inteligencija (engl. Artificial Superintelligence, ASI). Sistemi slabe veštačke inteligencije specijalizovani su da uspešno izvrši strogo određene zadatke, pri čemu njihove mogućnosti ostaju ograničene isključivo na domen za koji su razvijeni. U osnovu modernih VI aplikacija koje svakodnevno koristimo je slaba VI. Ona stoji iza GPS mapa, sistema za preporuku na platformama za striming, pokreće virtuelne asistente (npr. Siri, Alexa), zatim pokreće prepoznavanje lica i automatizovano prevođenje, pa čak i najsloženiji sistemi, poput automobila bez vozača, oslanjaju se na ovaj tip VI. Jaka veštačka inteligencija predstavlja hipotetički nivo veštačke inteligencije koji bi bio sposoban da apstraktno razmišlja i simulira opšte kognitivne sposobnosti. U ovom kontekstu, opšta veštačka inteligencija podrazumevala bi da mašina može da obavlja zadatke na istom nivou kao čovek, dok bi veštačka superinteligencija prevazišla sve ljudske intelektualne sposobnosti. Ipak poslednja dva navedena oblika VI,opšta i superinteligencija, ne postoje izvan teorije, i predmet su istraživanja, i trenutno još uvek nedostižan cilj moderne nauke o računarstvu.</p>
+<p>Veštačka inteligencija je značajno promenila industrije, donoseći napredak u tehnologiji, nauci i svakodnevnom životu. Na osnovu svojih sposobnosti i funkcionalnosti, može se svrstati u tri osnovne kategorije: <strong>uska ili slaba veštačka inteligencija</strong> (engl. <em>Artificial Narrow Intelligence, ANI</em>), <strong>opšta ili jaka veštačka inteligencija</strong> (engl. <em>Artificial General Intelligence, AGI</em>) i <strong>superinteligentna veštačka inteligencija</strong> (engl. <em>Artificial Superintelligence, ASI</em>).</p>
+<p>Sistemi slabe veštačke inteligencije specijalizovani su za uspešno izvršavanje jasno definisanih zadataka, pri čemu su njihove mogućnosti ograničene na domen za koji su razvijeni. Većina savremenih aplikacija koje svakodnevno koristimo zasniva se upravo na ovom tipu inteligencije. Ona stoji iza GPS mapa, sistema za preporuku na platformama za striming, virtuelnih asistenata (npr. Siri, Alexa), sistema za prepoznavanje lica, automatizovanog prevođenja, kao i naprednih sistema poput autonomnih vozila.</p>
+<p>Jaka veštačka inteligencija predstavlja hipotetički nivo razvoja pri kojem bi sistem bio sposoban za apstraktno razmišljanje i simulaciju opštih kognitivnih sposobnosti. U tom smislu, opšta veštačka inteligencija podrazumevala bi sposobnost mašine da obavlja zadatke na nivou čoveka, dok bi superinteligencija prevazišla ljudske intelektualne kapacitete. Ipak, opšta i superinteligentna veštačka inteligencija za sada postoje isključivo u teoriji i predmet su intenzivnih istraživanja, predstavljajući još uvek nedostižan cilj savremene nauke o računarstvu.</p>
+</section>
 <section id="razumevanje-kljucne-terminologije-masinskog-ucenja">
 <h2>Razumevanje ključne  terminologije mašinskog učenja</h2>
 <p>Mašinsko učenje predstavlja metodu za transformaciju sirovih podataka u korisno znanje. U ovom delu definisaćemo ključne pojmove neophodne za dalje razumevanje i primenu obrađenih koncepata.</p>
-<p><strong>Algoritam</strong> je set pravila ili postupak koja se koristi za kreiranje modela iz ulaznih podataka, tj. niz pravila koja se primenjuju na skup podataka za obuku u cilju učenja obrazaca, analize podataka i dolaska do rešenja. <strong>Model</strong> je rezultat učenja algoritma iz podataka, i predstavlja naučenu matematičku strukturu koja prepoznaje obrasce i odnose u ulaznim podacima. Nakon obuke, model je spreman da samostalno donosi predikcije ili klasifikacije na neviđenim ulaznim podacima. Na primer, model koji je treniran na istorijskim cenama nekretnina može, na osnovu informacija o novoj nekretnini poput lokacije, kvadrature i starosti, proceniti njenu vrednost.</p>
-<p><strong>Baza podataka</strong> (engl. dataset) je osnovna kolekcija informacija koja služi za obuku modela mašinskog učenja. U takvom skupu, ulazni podaci se sastoje od <span class="math notranslate nohighlight">\(N\)</span> pojedinačnih instanci (observacija) (<span class="math notranslate nohighlight">\(s^{(1)}\)</span> do <span class="math notranslate nohighlight">\(s^{(N)}\)</span>), gde svaka instanca predstavlja konkretan primer za učenje. Svaku observaciju opisuju <strong>karakteristike</strong> (engl. features), iz kojih model uči da prepozna obrasce i donosi predviđanja. Ove karakteristike predstavljaju atribute posmatranih opservacija koje obično označavamo kao <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_n\)</span>. One mogu biti numeričke vrednosti (npr. cena, temperatura, kilogrami), kategorijski podaci (npr. oblik, boja), tekstualne karakteristike (modeli ih koriste nakon transformacije u numerički format) ili vremenske karakteristike (npr. datum, vreme). Karakteristike predstavljaju ulazne podatke (engl. input) za model, stoga su njihov kvalitet i relevantnost ključni faktori za performanse. Ove instance daju ulaz algoritmu, a njihov željeni izlaz ili kategorija (označena sa <span class="math notranslate nohighlight">\(y\)</span> u poslednjoj koloni) služi kao referenca za učenje. U obeleženim podacima, željeni izlaz uzorka naziva se <strong>oznaka</strong> (engl. label). <strong>Obuka</strong> (engl. Training) je proces kreiranja modela mašinskog učenja iz postojećih podataka. Nakon obuke, model sprovodi zaključivanje (engl. Inference) i primenjuje naučene obrasce da bi efikasno predvideo ishode novih, nepoznatih ulaznih podataka. Nakon obuke i validicije na nepoznatim podacima, model se integriše u realno, operativno okruženje ili aplikaciju kako bi aktivno donosio odluke i predviđao ishode u realnom vremenu, dakle sledi faza puštanja u rad (engl. deployment), čime se ostvaruje finalna realizacija modela.</p>
-<figure class="align-center" id="id3">
-<a class="reference internal image-reference" href="_images/PrimerBaze.PNG"><img alt="_images/PrimerBaze.PNG" src="_images/PrimerBaze.PNG" style="width: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Slika 21. </span><span class="caption-text">Primer Baze</span></p>
-</figcaption>
-</figure>
-<p>Rezultati modela su direktno uslovljeni kvalitetom ulaznih podataka, jer nerelevantne ulazne karakteristike ograničavaju potencijal učenja i dovodi do netačnih predikcija. Veoma važan proces je <strong>kreiranje karakteristika</strong> (engl. Feature engineering) čiji je cilj transformacije sirovih podataka u skup korisnih karakteristika (atributa) kako bi se generisale nove, informativne i smislene karakteristika iz sirovih podataka koje su informativne za proces učenja i poboljšavaju sposobnost modela da efikasno uči i generalizuje.</p>
-<p>Obuka algoritma se sprovodi na <strong>trening skupu</strong> koji predstavlja osnovni skup podataka (iskustva) iz kojeg algoritam uči i obuhvata najveći deo podataka (obično 60% do 80%). Samim tim, ovaj skup ima presudan uticaj na uspešnost celog procesa učenja. U samom procesu treniranja, model obrađuje podatke kako bi stekao uvid u relevantne obrasce i naučio da predviđa ciljnu vrednost. <strong>Validacioni skup</strong> (obično 10% do 20%) koristi se za fino podešavanje hiperparametara modela tokom faze obuke, kako bi se pronašla optimalnija konfiguracija modela. Proces validacije služi kao prelazna faza nakon procesa učenja, koji se vrši na trening skupu, i pre nego što model ide na završni ispit, koji se vrši na skupu za testiranje. Validacija performansi podrazumeva da se obučeni model pusti da predvidi rezultate za primere iz testnog skupa, a zatim se ta predviđanja uporede sa njihovim stvarnim, već poznatim vrednostima. Model ne uči iz validacionih podataka, već se trenira sa različitim kombinacijama hiperparametara, nakon čega se mere performanse svake kombinacije. <strong>Test skup</strong> (preostalih 10% do 20%) je deo podataka koji služi za objektivnu i konačnu evaluaciju performansi modela na neviđenim podacima. Ovaj skup pruža ključnu procenu performansi modela u realnim uslovima, odnosno njegove uspešnosti na podacima koje ranije nije video.</p>
+<p><strong>Algoritam</strong> je set pravila ili postupak koja se koristi za kreiranje modela iz ulaznih podataka, tj. niz pravila koja se primenjuju na skup podataka za obuku u cilju učenja obrazaca, analize podataka i dolaska do rešenja. <strong>Model</strong> je rezultat učenja algoritma iz podataka, i predstavlja naučenu matematičku strukturu koja prepoznaje obrasce i odnose u ulaznim podacima. Nakon obuke, model je spreman da samostalno donosi predikcije ili klasifikacije na nepoznatim ulaznim podacima. Na primer, model koji je treniran na istorijskim cenama nekretnina može, na osnovu informacija o novoj nekretnini poput lokacije, kvadrature i starosti, proceniti njenu vrednost.</p>
+<p><strong>Baza podataka</strong> (engl. dataset) je osnovna kolekcija informacija koja služi za obuku modela mašinskog učenja. U takvom skupu, ulazni podaci se sastoje od <span class="math notranslate nohighlight">\(N\)</span> pojedinačnih instanci (observacija) (<span class="math notranslate nohighlight">\(s^{(1)}\)</span> do <span class="math notranslate nohighlight">\(s^{(N)}\)</span>), gde svaka instanca predstavlja konkretan primer za učenje. Svaku observaciju opisuju <strong>karakteristike</strong> (engl. features), iz kojih model uči da prepozna obrasce i donosi predviđanja. Ove karakteristike predstavljaju atribute posmatranih opservacija koje obično označavamo kao <span class="math notranslate nohighlight">\(x_1, x_2, \dots, x_n\)</span>. One mogu biti numeričke vrednosti (npr. cena, temperatura, kilogrami), kategorijski podaci (npr. oblik, boja), tekstualne karakteristike (modeli ih koriste nakon transformacije u numerički format) ili vremenske karakteristike (npr. datum, vreme). Karakteristike predstavljaju ulazne podatke (engl. input) za model, stoga su njihov kvalitet i relevantnost ključni faktori za performanse. Ove instance daju ulaz algoritmu, a njihov željeni izlaz ili kategorija (označena sa <span class="math notranslate nohighlight">\(y\)</span> u poslednjoj koloni) služi kao referenca za učenje. U obeleženim podacima, željeni izlaz uzorka naziva se <strong>oznaka</strong> (engl. label). <strong>Obuka</strong> (engl. training) je proces kreiranja modela mašinskog učenja iz postojećih podataka. Nakon obuke, model sprovodi zaključivanje (engl. inference) i primenjuje naučene obrasce da bi efikasno predvideo ishode novih, nepoznatih ulaznih podataka. Nakon obuke i validicije na nepoznatim podacima, model se integriše u realno, operativno okruženje ili aplikaciju kako bi aktivno donosio odluke i predviđao ishode u realnom vremenu, dakle sledi faza puštanja u rad (engl. deployment), čime se ostvaruje finalna realizacija modela.</p>
+<p>Rezultati modela su direktno uslovljeni kvalitetom ulaznih podataka, jer nerelevantne ulazne karakteristike ograničavaju potencijal učenja i dovodi do netačnih predikcija. Veoma važan proces je <strong>kreiranje karakteristika</strong> (engl. feature engineering) čiji je cilj transformacije sirovih podataka u skup korisnih karakteristika (atributa) kako bi se generisale nove, informativne i smislene karakteristika iz sirovih podataka koje su informativne za proces učenja i poboljšavaju sposobnost modela da efikasno uči i generalizuje.</p>
+<p>Obuka algoritma se sprovodi na <strong>trening skupu</strong> koji predstavlja osnovni skup podataka (iskustva) iz kojeg algoritam uči i obuhvata najveći deo podataka (obično 60% do 80%). Samim tim, ovaj skup ima presudan uticaj na uspešnost celog procesa učenja. U samom procesu treniranja, model obrađuje podatke kako bi stekao uvid u relevantne obrasce i naučio da predviđa ciljnu vrednost. Posmatrajući različite primere podataka iz trening skupa, model uči koje su karakteristike važne. <strong>Validacioni skup</strong> (obično 10% do 20%) se koristi nakon treniranja modela, sa ciljem poboljšanja njegovih performansi. To je poseban deo podataka koji se ne koristi za učenje, već za fino podešavanje hiperparametara modela tokom faze obuke, kako bi se pronašla optimalna konfiguracija modela. Model se trenira sa različitim kombinacijama hiperparametara, a zatim se porede rezultati na validacionom skupu. Tako se bira ona kombinacija koja daje najbolje rezultate. Proces validacije služi kao prelazna faza nakon procesa učenja, koji se vrši na trening skupu, i pre nego što model ide na završni ispit, koji se vrši na skupu za testiranje. Validacija performansi podrazumeva da se obučeni model pusti da predvidi rezultate za primere iz testnog skupa, a zatim se ta predviđanja uporede sa njihovim stvarnim, već poznatim vrednostima. Model ne uči iz validacionih podataka, već se trenira sa različitim kombinacijama hiperparametara, nakon čega se mere performanse svake kombinacije. <strong>Test skup</strong> (preostalih 10% do 20%) je deo podataka koji služi za objektivnu i konačnu evaluaciju performansi modela na neviđenim podacima. Ovaj skup pruža ključnu procenu performansi modela u realnim uslovima, odnosno njegove uspešnosti na podacima koje ranije nije video. Test skup predstavlja potpuno nezavisan skup podataka koji je odvojen od trening i validacionog skupa.</p>
+<p><strong>Matematička notacija: Zašto koristimo X i y?</strong></p>
+<p>U mašinskom učenju se oslanjamo na standardnu matematičku konvenciju <span class="math notranslate nohighlight">\(f(X) = y\)</span>, gde su podaci ulaz u funkciju, a oznake izlaz. Prilikom pisanja koda, važno je poštovati sledeća pravila:</p>
+<ul class="simple">
+<li><p><strong>Veliko X</strong> – koristi se jer su podaci dvodimenzionalni niz, odnosno <strong>matrica</strong> koja sadrži sve karakteristike (features).</p></li>
+<li><p><strong>Malo y</strong> – koristi se jer su ciljne oznake jednodimenzionalni niz, odnosno <strong>vektor</strong> koji sadrži oznake.</p></li>
+</ul>
+<section id="prikaz-podele-na-trening-validacioni-i-test-skup">
+<h3>Prikaz podele na trening, validacioni i test skup</h3>
+<p>U cilju boljeg razumevanja procesa izgradnje i evaluacije modela mašinskog učenja, prikazaćemo kako se skup podataka deli na trening, validacioni i test skup, kao i koja je uloga svakog od njih. Najpre ćemo generisati veštački skup podataka sa dve ulazne promenljive kako bismo mogli grafički da prikažemo rezultate.</p>
+<p><em>Priprema radnog okruženja i uvoz biblioteka</em></p>
+<p>Pre same implementacije modela potrebno je učitati odgovarajuće softverske biblioteke. Pajton raspolaže bogatim skupom alata koji omogućavaju efikasnu obradu podataka, izvođenje numeričkih proračuna i grafički prikaz rezultata.</p>
+<p>Svaka od korišćenih biblioteka ima jasno definisanu ulogu u procesu mašinskog učenja, kao i u našem algoritmu za izgradnju drveta odlučivanja.</p>
+<ul class="simple">
+<li><p><strong>NumPy (<code class="docutils literal notranslate"><span class="pre">np</span></code>)</strong>: Osnovna biblioteka za efikasan rad sa višedimenzionalnim nizovima (arrays) i izvođenje brzih numeričkih i matematičkih operacija. Skraćenica <code class="docutils literal notranslate"><span class="pre">np</span></code> predstavlja standardnu konvenciju u Pajton zajednici. Iako se NumPy ponekad ne koristi direktno u kodu, biblioteka Pandas se u velikoj meri oslanja na njega u pozadini čineći rad sa nizovima i tabelarnim podacima znatno efikasnijim.</p></li>
+<li><p><strong>Matplotlib (<code class="docutils literal notranslate"><span class="pre">plt</span></code>)</strong>: Standardna biblioteka za grafički prikaz podataka, a u ovom slučaju je posebno korisna za vizuelni prikaz drveta odlučivanja. Skraćenica <code class="docutils literal notranslate"><span class="pre">plt</span></code> predstavlja standardnu konvenciju u Pajton zajednici.</p></li>
+<li><p><strong>Scikit-learn (<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>)</strong> Ova biblioteka omogućava jednostavnu implementaciju algoritma, pripremu podataka, obuku modela i evaluaciju performansi. U ovom kodu koristimo:</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> – Algoritam iz podmodula <code class="docutils literal notranslate"><span class="pre">linear_model</span></code> koji koristimo za obuku modela. On teži da pronađe optimalnu linearnu vezu između ulaznih karakteristika i ciljne promenljive minimizovanjem sume kvadrata odstupanja.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> – funkcija za podelu skupa podataka na obučavajući i testirajući podskup, čime omogućavamo validnu procenu modela.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metrics</span></code> – modul koji sadrži funkcije za preciznu evaluaciju performansi modela, uključujući:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">mean_squared_error</span></code> – funkcija koja izračunava prosečnu kvadratnu razliku između predviđenih i stvarnih vrednosti, gde niža vrednost ukazuje na veću preciznost modela.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r2_score</span></code> – koeficijent determinacije koji meri udeo varijanse ciljne promenljive koji je objašnjen modelom, pružajući uvid u kvalitet prilagođavanja podataka.</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_classification</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>U narednom koraku ćemo generisati sintetički skup podataka kako bismo kreirali kontrolisano okruženje za testiranje algoritma i jasnu vizuelizaciju rezultata.</p>
+<p>Ovaj sintetički skup podataka predstavlja dvodimenzionalni prostor sa jasno definisanim grupama tačaka. Pošto su sve karakteristike informativne, podaci su organizovani u dve kompaktne grupe koje se delimično preklapaju, što je idealno za testiranje granica odlučivanja algoritama klasifikacije.</p>
+<p><strong>Vizuelizacija podskupova podataka</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Training</span> <span class="pre">set</span></code> – služi kao osnova za obuku modela i omogućava mu da nauči kako da razlikuje različite kategorije podataka, tj. da prepozna granice između klasa.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Validation</span> <span class="pre">set</span></code> – ovaj skup služi za evaluaciju modela tokom procesa učenja kako bismo izvršili precizno podešavanje hiperparametara i odabrali najbolju verziju algoritma.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Test</span> <span class="pre">set</span></code> – izdvajamo kao skup potpuno novih primera koji nam omogućavaju objektivnu procenu stvarne tačnosti modela nakon završenog procesa učenja.</p></li>
+</ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">datasets.make_classification</span></code></strong> Ova funkcija se koristi za generisanje sintetičkog skupa podataka, što je idealno za testiranje algoritama klasifikacije i vizuelizaciju. U navedenom kodu parametri su podešeni na sledeći način:</p>
+<p><em>Parametri generisanja podataka</em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n_samples=600</span></code> – definiše ukupan broj generisanih primera u skupu podataka.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_features=2</span></code> – određuje ukupan broj karakteristika (kolona), što omogućava direktan prikaz podataka u dvodimenzionalnom prostoru.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_redundant=0</span></code> – označava da nema suvišnih karakteristika koje su izvedene kao linearne kombinacije drugih, čime se osigurava maksimalna informativnost dostupnih kolona.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_informative=2</span></code> – postavlja broj karakteristika koje su direktno povezane sa ciljnom klasom, što znači da obe kolone nose ključne informacije za proces klasifikacije.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_clusters_per_class=1</span></code> – grupiše podatke svake klase u jedan kompaktan klaster, čime se dobija jasnija struktura podataka pogodna za učenje modela.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> – obezbeđuje reproduktibilnost rezultata, garantujući da će generator uvek kreirati identičan skup podataka pri svakom pokretanju koda.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span>
+    <span class="n">n_samples</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="n">n_features</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">n_redundant</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="n">n_informative</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">n_clusters_per_class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Vizuelizacija skupa podataka (<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>)</strong> Ovaj segment koda koristi biblioteku <strong>Matplotlib</strong> za grafički prikaz distribucije generisanih podataka pre procesa podele. Korišćene funkcije imaju sledeće uloge:</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">plt.figure</span></code></strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">figsize=(6,</span> <span class="pre">5)</span></code> – definiše dimenzije figure (širinu i visinu), obezbeđujući pregledan i proporcionalan prikaz grafikona.</p></li>
+</ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code></strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">X[:,</span> <span class="pre">0],</span> <span class="pre">X[:,</span> <span class="pre">1]</span></code> – određuje koordinate tačaka na grafikonu, gde prva kolona matrice <span class="math notranslate nohighlight">\(X\)</span> predstavlja horizontalnu, a druga kolona vertikalnu osu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c=y</span></code> – parametar za bojenje tačaka na osnovu njihovih stvarnih klasa, što omogućava vizuelno razlikovanje kategorija podataka.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edgecolor='k'</span></code> – dodaje crnu ivicu oko svake tačke radi boljeg kontrasta i jasnijeg prikaza pojedinačnih uzoraka.</p></li>
+</ul>
+<p><strong>Labele i prikaz</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.title</span></code> – postavlja naslov grafikona koji jasno identifikuje trenutnu fazu analize podataka.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.xlabel</span></code> i <code class="docutils literal notranslate"><span class="pre">plt.ylabel</span></code> – dodeljuju nazive koordinatnim osama, identifikujući ih kao karakteristike (features) modela.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> – komanda koja generiše i finalno iscrtava grafikon u samom radnom okruženju.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ceo skup podataka (pre podele)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Feature 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Feature 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ea38c99bb0bfeb7e7220da9bcb5538a3ed0af90a052d3f3ad3b3237162f1e679.png" src="_images/ea38c99bb0bfeb7e7220da9bcb5538a3ed0af90a052d3f3ad3b3237162f1e679.png" />
+</div>
+</div>
+<p><strong>Podela podataka na tri skupa (<code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>)</strong> Pošto funkcija <code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> može da podeli podatke samo na dva dela u jednom koraku, koristimo dvostruku podelu kako bismo dobili trening, validacioni i test skup.</p>
+<p><strong>Prva faza: Izdvajanje test skupa</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">test_size=0.2</span></code> – Odvajamo 20% podataka koji će služiti kao <strong>finalni test skup</strong> (<code class="docutils literal notranslate"><span class="pre">X_test</span></code>, <code class="docutils literal notranslate"><span class="pre">y_test</span></code>). Ovi podaci ostaju potpuno netaknuti do samog kraja.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_temp,</span> <span class="pre">y_temp</span></code> – Predstavljaju <strong>privremene skupove</strong> koji sadrže preostalih 80% podataka. Naziv „temp” (temporary) koristimo jer ovi podaci još uvek nisu spremni za obuku; njih moramo još jednom podeliti kako bismo izvukli validacioni skup.</p></li>
+</ul>
+<p><strong>Druga faza: Kreiranje trening i validacionog skupa</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">test_size=0.25</span></code> – Iz privremenog skupa (<code class="docutils literal notranslate"><span class="pre">X_temp</span></code>) uzimamo 25% podataka za <strong>validacioni skup</strong> (<code class="docutils literal notranslate"><span class="pre">X_val</span></code>, <code class="docutils literal notranslate"><span class="pre">y_val</span></code>).</p></li>
+<li><p><em>Napomena:</em> 25% od preostalih 80% zapravo iznosi tačno 20% originalnog skupa, čime postižemo finalnu distribuciju od 60% za trening, 20% za validaciju i 20% za testiranje.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_train,</span> <span class="pre">y_train</span></code> – Predstavljaju konačni <strong>skup za obuku</strong> (60% originalnih podataka) na kojem model uči zakonitosti.</p></li>
+</ul>
+<p><strong>Parametar za ponovljivost</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> – Osigurava da se podaci uvek dele na identičan način pri svakom pokretanju koda, što omogućava doslednost rezultata tokom eksperimentisanja.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_temp</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_temp</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_val</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_val</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X_temp</span><span class="p">,</span> <span class="n">y_temp</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Logistička regresija (<code class="docutils literal notranslate"><span class="pre">LogisticRegression</span></code>)</strong> U ovom koraku vršimo inicijalizaciju modela i njegovu obuku na pripremljenim podacima. Proces se odvija kroz sledeće faze:</p>
+<p><strong>Obuka modela</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">=</span> <span class="pre">LogisticRegression()</span></code> – Kreiramo instancu modela logističke regresije, koji je standardni algoritam za probleme binarne klasifikacije.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.fit(X_train,</span> <span class="pre">y_train)</span></code> – Funkcija koja pokreće proces učenja. Model analizira povezanost između karakteristika iz <code class="docutils literal notranslate"><span class="pre">X_train</span></code> i pripadajućih klasa iz <code class="docutils literal notranslate"><span class="pre">y_train</span></code> kako bi definisao granicu odlučivanja.</p></li>
+</ul>
+<p><strong>Evaluacija tačnosti (<code class="docutils literal notranslate"><span class="pre">accuracy_score</span></code>)</strong>
+Nakon obuke, vršimo proveru performansi izračunavanjem tačnosti (procenta tačnih predviđanja) na sva tri skupa podataka:</p>
+<ul class="simple">
+<li><p><strong>Tačnost na trening skupu</strong> (<code class="docutils literal notranslate"><span class="pre">Accuracy</span> <span class="pre">train</span></code>) – Pokazuje koliko je dobro model naučio podatke koji su mu bili dostupni tokom obuke. Visoka vrednost ovde, uz nisku na ostalim skupovima, može ukazivati na preprilagođavanje (overfitting).</p></li>
+<li><p><strong>Tačnost na validacionom skupu</strong> (<code class="docutils literal notranslate"><span class="pre">Accuracy</span> <span class="pre">validation</span></code>) – Služi kao mera uspešnosti modela na podacima koje nije koristio za obuku, što nam pomaže u finom podešavanju modela.</p></li>
+<li><p><strong>Tačnost na test skupu</strong> (<code class="docutils literal notranslate"><span class="pre">Accuracy</span> <span class="pre">test</span></code>) – Predstavlja finalnu i najobjektivniju ocenu modela na potpuno nepoznatim podacima, dajući nam uvid u to kako će se model ponašati u realnoj primeni.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Treniranje modela</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Evaluacija</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tačnost (trening skup):&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tačnost (validacioni skup):&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_val</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tačnost (test skup):&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost (trening skup): 0.9666666666666667
+Tačnost (validacioni skup): 0.9916666666666667
+Tačnost (test skup): 0.9583333333333334
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\ProgramData\Anaconda3\lib\site-packages\sklearn\linear_model\logistic.py:433: FutureWarning: Default solver will be changed to &#39;lbfgs&#39; in 0.22. Specify a solver to silence this warning.
+  FutureWarning)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Funkcija za vizuelizaciju granice odlučivanja (<code class="docutils literal notranslate"><span class="pre">plot_decision_boundary</span></code>)</strong> Ova funkcija omogućava grafički prikaz načina na koji model deli prostor podataka na klase. Ona iscrtava obojene regione koji predstavljaju predviđanja modela, čime vizuelno identifikujemo „granicu odlučivanja”.</p>
+<p><strong>Defisanje granica i koordinatne mreže</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x_min,</span> <span class="pre">x_max</span></code> i <code class="docutils literal notranslate"><span class="pre">y_min,</span> <span class="pre">y_max</span></code> – određuju opseg grafikona na osnovu minimalnih i maksimalnih vrednosti karakteristika, uz mali dodatak prostora (±1) radi preglednosti.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.meshgrid</span></code> i <code class="docutils literal notranslate"><span class="pre">np.linspace</span></code> – generišu gustu mrežu od 200x200 tačaka koja prekriva ceo prostor grafikona. Svaka tačka na ovoj mreži će biti klasifikovana kako bi se dobila glatka površina u boji.</p></li>
+</ul>
+<p><strong>Predviđanje i oblikovanje podataka</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">model.predict</span></code> – dodeljuje klasu svakoj tački iz generisane mreže. Funkcije <code class="docutils literal notranslate"><span class="pre">np.c_</span></code> i <code class="docutils literal notranslate"><span class="pre">ravel()</span></code> pripremaju koordinate tačaka u format koji model može da procesira.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Z.reshape(xx.shape)</span></code> – transformiše niz predviđanja nazad u format mreže kako bi se mogao iscrtati kao neprekidna površina.</p></li>
+</ul>
+<p><strong>Iscrtavanje rezultata (<code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>)</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.contourf</span></code> – popunjava pozadinu grafikona bojama na osnovu predviđenih klasa. Parametar <code class="docutils literal notranslate"><span class="pre">alpha=0.3</span></code> postavlja providnost kako bi se jasno videli i sami podaci.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.scatter</span></code> – preko obojene pozadine iscrtava stvarne uzorke iz prosleđenog skupa, omogućavajući nam da vidimo gde model pravi tačna predviđanja, a gde greši.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.title</span></code>, <code class="docutils literal notranslate"><span class="pre">xlabel</span></code>, <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> – postavljaju naslov i nazive osa, što olakšava interpretaciju grafikona za različite skupove podataka.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_decision_boundary</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+    <span class="p">)</span>
+    
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">c_</span><span class="p">[</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Feature 1&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Feature 2&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Uporedni prikaz granica odlučivanja (<code class="docutils literal notranslate"><span class="pre">plt.subplot</span></code>)</strong>
+Ovaj segment koda omogućava istovremenu vizuelizaciju rezultata klasifikacije na sva tri podskupa podataka (trening, validacioni i test skup). Koristeći podgrafike, možemo direktno uporediti kako se model, obučen na jednom skupu, ponaša u susretu sa novim podacima.</p>
+<p><strong>Postavka figure i dimenzija</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.figure(figsize=(15,</span> <span class="pre">4))</span></code> – Inicijalizuje grafički prozor proširene širine (15 inča), što omogućava da se tri grafikona postave horizontalno jedan pored drugog bez preklapanja.</p></li>
+</ul>
+<p><strong>Organizacija podgrafika (<code class="docutils literal notranslate"><span class="pre">subplot</span></code>)</strong>
+Funkcija <code class="docutils literal notranslate"><span class="pre">plt.subplot(1,</span> <span class="pre">3,</span> <span class="pre">n)</span></code> deli figuru na mrežu od <strong>1 reda</strong> i <strong>3 kolone</strong>, a treći parametar određuje poziciju konkretnog grafikona:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.subplot(1,</span> <span class="pre">3,</span> <span class="pre">1)</span></code> – Pozicionira prvi grafik skroz levo i iscrtava granicu odlučivanja za <strong>trening skup</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.subplot(1,</span> <span class="pre">3,</span> <span class="pre">2)</span></code> – Pozicionira srednji grafik i prikazuje performanse na <strong>validacionom skupu</strong>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.subplot(1,</span> <span class="pre">3,</span> <span class="pre">3)</span></code> – Pozicionira desni grafik za finalni prikaz na <strong>test skupu</strong>.</p></li>
+</ul>
+<p><strong>Finalno oblikovanje</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.tight_layout()</span></code> – Automatski podešava razmak između podgrafika, osiguravajući da se naslovi i oznake osa ne preklapaju.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> – Finalizuje i prikazuje kompletnu figuru sa sva tri poređenja.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plot_decision_boundary</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="s2">&quot;Trening skup&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plot_decision_boundary</span><span class="p">(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">,</span> <span class="s2">&quot;Validacioni skup&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plot_decision_boundary</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="s2">&quot;Test skup&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/282f072a75cb7ae93659d53b8ed352a86dc73e1b5076c537d00de3e4b21f1dcf.png" src="_images/282f072a75cb7ae93659d53b8ed352a86dc73e1b5076c537d00de3e4b21f1dcf.png" />
+</div>
+</div>
+<p>Analiza odnosa između skupova podataka</p>
+<p>Vizuelni prikaz na grafikonima potvrđuje da je model uspešno generalizovao naučene obrasce, što se najbolje vidi kroz stabilnost granice odlučivanja na različitim podskupovima:</p>
+<p>Trening skup</p>
+<ul class="simple">
+<li><p>Predstavlja bazu od 60% podataka na kojima je model definisao svoju linearnu granicu razdvajanja.</p></li>
+<li><p>Služi kao polazna tačka za učenje gde model postavlja pravilo klasifikacije nastojeći da minimizuje grešku nad dostupnim primerima.</p></li>
+</ul>
+<p>Validacioni skup</p>
+<ul class="simple">
+<li><p>Sadrži uzorke koji nisu korišćeni za obuku, već za objektivnu proveru performansi tokom faze razvoja modela.</p></li>
+<li><p>Odnos sa trening skupom: Sličan raspored tačaka u odnosu na granicu odlučivanja potvrđuje da validacioni skup verno prati statističke karakteristike trening skupa, što ukazuje na to da je podela podataka izvršena bez pristrasnosti.</p></li>
+</ul>
+<p>Test skup</p>
+<ul class="simple">
+<li><p>Predstavlja finalnih 20% podataka koji su ostali potpuno skriveni od modela sve do samog kraja procesa.</p></li>
+<li><p>Ključni zaključak: Činjenica da naučena granica odlučivanja podjednako efikasno razdvaja klase i na test skupu jasan je dokaz da model nije preprilagođen (no overfitting). Model nije samo zapamtio trening podatke, već je naučio opšte pravilo koje uspešno primenjuje na potpuno nove primere.</p></li>
+</ul>
+<p>Rezime vizuelizacije</p>
+<p>Konzistentnost granice odlučivanja na sva tri grafikona ukazuje na stabilnost modela i njegovu doslednost u različitim skupovima podataka. Iako postoji prirodno preklapanje klasa u središnjem delu, model zadržava robusnost i visoku sposobnost generalizacije na svim nivoima podele podataka.</p>
+</section>
+<section id="ilustracija-na-jos-jednom-primeru-finansijski-podaci">
+<h3>Ilustracija na još jednom primeru: Finansijski podaci</h3>
+<p>Da bismo objektivno procenili rad modela, ne smemo koristiti iste podatke koje smo koristili za njegovo treniranje. Razlog je jednostavan: model bi mogao samo da „zapamti” ceo trening skup i uvek daje tačne odgovore, a da zapravo ne razume suštinu podataka.</p>
+<p>Koncept podele podataka na dva dela ilustrovaćemo na još jednom primeru. U ovom slučaju, generišemo sintetičku finansijsku bazu podataka koja simulira realne bankarske parametre za procenu kreditne sposobnosti.</p>
+<p>Ovaj skup podataka je dizajniran da bude pogodan za klasifikaciju (slično kao poznati IRIS dataset) i spreman je za demonstraciju procesa obuke i testiranja modela.</p>
+<p><strong>Struktura finansijskog skupa podataka:</strong></p>
+<p>📊 <strong>Klase (3 kategorije klijenata):</strong></p>
+<ul class="simple">
+<li><p><strong>Nizak rizik</strong> – klijenti sa stabilnim primanjima i urednom istorijom.</p></li>
+<li><p><strong>Srednji rizik</strong> – klijenti koji zahtevaju dodatne provere.</p></li>
+<li><p><strong>Visok rizik</strong> – klijenti sa visokom verovatnoćom neispunjavanja obaveza.</p></li>
+</ul>
+<p>📈 <strong>Karakteristike (4 feature-a):</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">godisnji_prihod</span></code> – iznos godišnjih primanja (u hiljadama €).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">procenat_zaduzenosti</span></code> – odnos mesečnih rata i ukupnih prihoda (%).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kreditni_skor</span></code> – numerička vrednost kreditne istorije.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">broj_kasnjenja</span></code> – evidentiran broj kašnjenja u otplatama.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># broj uzoraka po klasi</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="c1"># NIZAK RIZIK</span>
+<span class="n">nizak</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">80</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>   <span class="c1"># godisnji_prihod</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>    <span class="c1"># procenat_zaduzenosti</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">750</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>  <span class="c1"># kreditni_skor</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>      <span class="c1"># broj_kasnjenja</span>
+<span class="p">])</span>
+
+<span class="c1"># SREDNJI RIZIK</span>
+<span class="n">srednji</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">650</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># VISOK RIZIK</span>
+<span class="n">visok</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">550</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="n">n</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># Spajanje podataka</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">nizak</span><span class="p">,</span> <span class="n">srednji</span><span class="p">,</span> <span class="n">visok</span><span class="p">])</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;Nizak rizik&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span>
+    <span class="p">[</span><span class="s2">&quot;Srednji rizik&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span> <span class="o">+</span>
+    <span class="p">[</span><span class="s2">&quot;Visok rizik&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span>
+<span class="p">)</span>
+
+<span class="n">feature_names</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;godisnji_prihod&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;procenat_zaduzenosti&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kreditni_skor&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;broj_kasnjenja&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Niz <strong>X</strong> predstavlja niz karakteristika, pri čemu svaki red odgovara jednom klijentu, a svaka kolona jednoj karakteristici. Niz <strong>y</strong> predstavlja jednodimenzionalni niz koji sadrži oznake klasa, odnosno kategorije rizika klijenata.</p>
+<p>Prikazom prvih nekoliko redova vidimo da baza sadrži podatke za 150 klijenata. Svaki klijent je opisan kroz 4 finansijske karakteristike, dok promenljiva <code class="docutils literal notranslate"><span class="pre">kategorija_rizika</span></code> služi kao ciljna vrednost koju model treba da predvidi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finansijski_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">finansijski_df</span><span class="p">[</span><span class="s2">&quot;kategorija_rizika&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">finansijski_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   godisnji_prihod  procenat_zaduzenosti  kreditni_skor  broj_kasnjenja  \
+0        97.640523             15.522667     806.494521       -0.068242   
+1        84.001572             21.934512     709.567228        1.713343   
+2        89.787380             17.445974     711.885450       -0.744755   
+3       102.408932             14.096839     779.081901       -0.826439   
+4        98.675580             19.859089     714.806298       -0.098453   
+
+  kategorija_rizika  
+0       Nizak rizik  
+1       Nizak rizik  
+2       Nizak rizik  
+3       Nizak rizik  
+4       Nizak rizik  
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vizuelno prikazujemo distribuciju klasa pomoću histograma. Ovim prikazom potvrđujemo da su klase balansirane (ravnomerno zastupljene), što je ključno za stabilnu klasifikaciju i sprečavanje modela da favorizuje neku od kategorija rizika.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">finansijski_df</span><span class="p">[</span><span class="s2">&quot;kategorija_rizika&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Raspodela klasa u bazi&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Kategorija rizika&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Broj klijenata&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f5a391a0b1fa0d9b3b5f879c4f79b6b094ea7b357f0f628d73d2756e902aab37.png" src="_images/f5a391a0b1fa0d9b3b5f879c4f79b6b094ea7b357f0f628d73d2756e902aab37.png" />
+</div>
+</div>
+<p><strong>Vizuelna analiza podataka</strong></p>
+<p>Pre podele podataka na trening i test skup, važno je izvršiti <strong>eksploratornu analizu podataka (Exploratory Data Analysis)</strong>.<br />
+Jedan od najefikasnijih načina za vizuelno ispitivanje odnosa između numeričkih karakteristika jeste korišćenje <em>scatter matrix</em> prikaza. Scatter matrix nam omogućava da kroz vizuelni prikaz odnosa svih parova promenljivih uočimo koliko se klase preklapaju, kako su karakteristike međusobno povezane i da li postoje odstupanja u podacima.</p>
+<p>U našem finansijskom primeru, cilj je da proverimo da li se kategorije rizika mogu vizuelno razdvojiti na osnovu finansijskih pokazatelja.</p>
+<p>Ako su klase relativno dobro razdvojene već na grafiku, velika je verovatnoća da će model mašinskog učenja uspešno naučiti granice između njih.</p>
+<p><em>Vizuelizacija odnosa karakteristika (<code class="docutils literal notranslate"><span class="pre">scatter_matrix</span></code>)</em></p>
+<p>Funkcija <code class="docutils literal notranslate"><span class="pre">scatter_matrix</span></code> iz biblioteke <strong>Pandas</strong> koristi se za kreiranje matrice dijagrama rasejanja, koja omogućava istovremeni prikaz korelacija između svih numeričkih karakteristika u skupu podataka.</p>
+<p><strong>Parametri funkcije:</strong></p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">finansijski_df[feature_names]</span></code></strong> – definiše podskup podataka (matrica X) koji sadrži samo numeričke karakteristike koje želimo da analiziramo.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">c</span></code> (color)</strong> – parametar koji određuje boju tačaka. Ovde koristimo <code class="docutils literal notranslate"><span class="pre">.codes</span></code> iz kategorijalne promenljive <code class="docutils literal notranslate"><span class="pre">kategorija_rizika</span></code> kako bismo svakoj klasi (nizak, srednji, visok rizik) dodelili jedinstvenu brojčanu vrednost, a time i različitu boju na grafikonu.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">figsize=(15,</span> <span class="pre">15)</span></code></strong> – postavlja dimenzije čitave matrice grafikona, obezbeđujući da svi detalji budu jasno vidljivi.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">marker='o'</span></code></strong> – definiše oblik tačaka na grafikonu (u ovom slučaju krugovi).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">hist_kwds={'bins':</span> <span class="pre">20}</span></code></strong> – podešava histogram koji se nalazi na dijagonali matrice; <code class="docutils literal notranslate"><span class="pre">bins</span></code> određuje broj stubića, što utiče na nivo detalja prikaza distribucije svake karakteristike.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">s=60</span></code> (size)</strong> – određuje veličinu svake pojedinačne tačke na grafikonu.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">alpha=.8</span></code></strong> – kontroliše providnost tačaka, što pomaže u uočavanju gustine na mestima gde se veliki broj podataka preklapa.</p></li>
+</ul>
+<p><strong><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code></strong>
+Ova komanda iz biblioteke <strong>Matplotlib</strong> služi za finalno iscrtavanje generisane matrice u samom radnom okruženju.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pandas.plotting</span><span class="w"> </span><span class="kn">import</span> <span class="n">scatter_matrix</span>
+
+<span class="n">scatter_matrix</span><span class="p">(</span>
+    <span class="n">finansijski_df</span><span class="p">[</span><span class="n">feature_names</span><span class="p">],</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">finansijski_df</span><span class="p">[</span><span class="s2">&quot;kategorija_rizika&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">codes</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+    <span class="n">hist_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;bins&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2e422b75c49471fd20babfba004b2ffc89296eb0606a0c268ff6af1c322a97b0.png" src="_images/2e422b75c49471fd20babfba004b2ffc89296eb0606a0c268ff6af1c322a97b0.png" />
+</div>
+</div>
+<p><strong>Analiza finansijskog skupa podataka putem Scatter matrice</strong></p>
+<p>Vizuelizacija svih parova karakteristika pruža nam dubok uvid u strukturu baze pre nego što pristupimo obuci modela. Na osnovu generisanog prikaza, možemo izvući sledeće zaključke:</p>
+<p><em>Jasna razdvojivost grupa</em></p>
+<p>Podaci su grupisani u tri uočljiva klastera (ljubičasta, zelena i žuta boja) koji odgovaraju kategorijama rizika. Iako postoji blago preklapanje na granicama, klase su dovoljno razmaknute da model može efikasno da nauči pravila klasifikacije.</p>
+<p><em>Korelacije finansijskih parametara</em>
+Primećuju se jasne logičke zavisnosti između karakteristika:</p>
+<ul class="simple">
+<li><p>Prihod i zaduženost – uočljiva je negativna korelacija, gde klijenti sa većim prihodima uglavnom imaju manji procenat zaduženosti.</p></li>
+<li><p>Kreditni skor i kašnjenja – klijenti sa visokim kreditnim skorom imaju minimalan broj kašnjenja, dok grupa sa niskim skorom pokazuje učestale probleme u otplati.</p></li>
+</ul>
+<p><em>Distribucija i balansiranost</em>
+Histogrami na dijagonali matrice potvrđuju da su klase balansirane i da svaka kategorija rizika sadrži sličan broj uzoraka. Ovo je idealno za obuku jer sprečava model da postane pristrasan prema bilo kojoj grupi.</p>
+<p><em>Karakteristike klijentskih profila</em></p>
+<ul class="simple">
+<li><p>Nizak rizik (ljubičasta) – visoka primanja, stabilan kreditni skor i uredna istorija plaćanja.</p></li>
+<li><p>Srednji rizik (zelena) – prosečne vrednosti svih parametara sa umerenim varijacijama.</p></li>
+<li><p>Visok rizik (žuta) – niži prihodi uz visoku zaduženost i učestala kašnjenja, što ih jasno pozicionira na dnu skale kreditne sposobnosti.</p></li>
+</ul>
+<p>Dok <code class="docutils literal notranslate"><span class="pre">scatter_matrix</span></code> daje pregled svih parametara, naredni blok koda izoluje dva najvažnija faktora (kreditni skor i procenat zaduženosti) kako bismo preciznije videli granice između kategorija klijenata.</p>
+<p><strong>Objašnjenje logike koda:</strong></p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">plt.figure(figsize=(8,6))</span></code></strong> – Postavlja stabilan okvir grafikona koji je dovoljno veliki za jasnu analizu, ali kompaktan za prikaz u dokumentu.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">kategorija</span> <span class="pre">in</span> <span class="pre">...</span> <span class="pre">unique()</span></code></strong> – Ova petlja omogućava da svaku kategoriju rizika (Nizak, Srednji, Visok) iscrtamo odvojeno. Ovo je intuitivan pristup jer omogućava automatsko dodeljivanje različitih boja svakoj grupi.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">subset</span></code></strong> – Privremeni skup podataka koji u svakom krugu petlje sadrži samo klijente iz jedne specifične kategorije rizika.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">plt.scatter(...)</span></code></strong> – Pozicionira tačke na grafikonu. Ovde koristimo <code class="docutils literal notranslate"><span class="pre">kreditni_skor</span></code> za horizontalnu osu (X) i <code class="docutils literal notranslate"><span class="pre">procenat_zaduzenosti</span></code> za vertikalnu osu (Y).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">label=kategorija</span></code></strong> – Ključan korak koji povezuje ime kategorije sa njenom bojom, što omogućava kreiranje legende.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">plt.legend()</span></code></strong> – Prikazuje legendu na grafikonu, čime vizuelno objašnjavamo koja boja odgovara kojoj kategoriji rizika.</p></li>
+</ul>
+<p><strong>Zašto je ovaj prikaz intuitivan?</strong>
+Umesto da gledamo sve podatke odjednom, ovaj grafikon nam omogućava da testiramo logičku pretpostavku: <em>da li klijenti sa visokim kreditnim skorom zaista imaju manji procenat zaduženosti?</em> Vizuelno razdvajanje boja direktno potvrđuje da li se klase preklapaju ili čine jasno odvojene celine.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">kategorija</span> <span class="ow">in</span> <span class="n">finansijski_df</span><span class="p">[</span><span class="s2">&quot;kategorija_rizika&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="n">subset</span> <span class="o">=</span> <span class="n">finansijski_df</span><span class="p">[</span><span class="n">finansijski_df</span><span class="p">[</span><span class="s2">&quot;kategorija_rizika&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">kategorija</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+        <span class="n">subset</span><span class="p">[</span><span class="s2">&quot;kreditni_skor&quot;</span><span class="p">],</span>
+        <span class="n">subset</span><span class="p">[</span><span class="s2">&quot;procenat_zaduzenosti&quot;</span><span class="p">],</span>
+        <span class="n">label</span><span class="o">=</span><span class="n">kategorija</span>
+    <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Kreditni skor&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Procenat zaduženosti&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Vizuelno razdvajanje klasa&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/df183b890b35a10c0ae4e0a96d35ebd8746fbff31dcd5bca28f8774c79ddc350.png" src="_images/df183b890b35a10c0ae4e0a96d35ebd8746fbff31dcd5bca28f8774c79ddc350.png" />
+</div>
+</div>
+<p>Ispisujmoe broj redova i kolona za svaki podskup podataka, čime potvrđujemo da je podela pravilno izvršena i da se dimenzije ulaznih karakteristika podudaraju sa dimenzijama ciljnih oznaka.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X_train shape: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y_train shape: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X_test shape: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y_test shape: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">y_test</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>X_train shape: (112, 4)
+y_train shape: (112,)
+X_test shape: (38, 4)
+y_test shape: (38,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># kreiranje DataFrame-a od trening podataka</span>
+<span class="n">finansijski_dataframe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">feature_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za vizualizaciju trening podataka koristimo scatter matrix reprezentacija. Cilj je da proverimo da li struktura trening skupa odgovara strukturi celokupnog skupa podataka. Na osnovu grafičkog prikaza može se uočiti da su klase relativno dobro separisane, što je pogodno za problem klasifikacije.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grr</span> <span class="o">=</span> <span class="n">scatter_matrix</span><span class="p">(</span>
+    <span class="n">finansijski_dataframe</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">codes</span><span class="p">,</span>
+    <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span>
+    <span class="n">hist_kwds</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;bins&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">.8</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/91091204e1e4e67b129ad53499a39be55b68630a0b18265df30863a6d3be8f31.png" src="_images/91091204e1e4e67b129ad53499a39be55b68630a0b18265df30863a6d3be8f31.png" />
+</div>
+</div>
+<p>*Izgradnja modela: Algoritam k-najbližih suseda (engl. k-Nearest Neighbors, KNN)</p>
+<p>Sada prelazimo na samu izgradnju modela mašinskog učenja. Iako u biblioteci <strong>scikit-learn</strong> postoji mnogo algoritama za klasifikaciju, ovde ćemo koristiti <strong>k-Nearest Neighbors (k-najbližih suseda)</strong>, poznatiji kao <strong>KNN</strong>.</p>
+<p>Važno je napomenuti da ćemo se u ovom delu fokusirati na njegovu primenu, dok će sam princip rada i detaljni parametri KNN algoritma biti detaljno objašnjeni u kasnijim poglavljima.</p>
+<p>Suština ovog modela je veoma intuitivna: predviđanje za novi podatak se vrši tako što algoritam pronalazi tačku u trening skupu koja mu je najbliža, a zatim tu istu labelu dodeljuje novom podatku.</p>
+<p>Pre same obuke modela, učitavamo neophodne alate koji nam omogućavaju rad sa algoritmom, merenje uspeha i grafički prikaz rezultata:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code></strong> – predstavlja sam algoritam k-najbližih suseda (k-Nearest Neighbors). Njega ćemo koristiti za izgradnju modela koji na osnovu sličnosti podataka vrši klasifikaciju klijenata u kategorije rizika.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">accuracy_score</span></code></strong> – funkcija koja izračunava procenat tačnih predviđanja modela u odnosu na ukupan broj testiranih primera.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">confusion_matrix</span></code></strong> – matrica konfuzije koja nam detaljno prikazuje gde je model bio precizan, a gde je eventualno pomešao klase (npr. klijenta visokog rizika svrstao u srednji rizik).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">seaborn</span></code></strong> – napredna biblioteka izgrađena na Matplotlib-u, idealna za kreiranje modernih i informativnih statističkih grafikona (poput toplotnih mapa matrice konfuzije).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Izgradnja, obuka i predviđanje pomoću KNN modela</em></p>
+<p>U ovom delu fokusiraćemo se na praktičnu primenu algoritma kroz tri osnovna koraka, uz napomenu da će teorijska pozadina i optimizacija parametara biti detaljno obrađeni u narednim poglavljima.</p>
+<p>Svi modeli mašinskog učenja u <strong>scikit-learn</strong> biblioteci implementirani su kroz sopstvene klase. Algoritam klasifikacije k-najbližih suseda (k-nearest neighbors) realizovan je pomoću klase <strong>KNeighborsClassifier</strong> u modulu <em>neighbors</em>.</p>
+<p>Pre korišćenja modela potrebno je kreirati instancu klase, odnosno objekat modela. Tom prilikom se definišu parametri algoritma. Objekat <code class="docutils literal notranslate"><span class="pre">knn</span></code> enkapsulira algoritam koji se koristi za izgradnju modela na osnovu podataka za obuku, kao i algoritam za predviđanje novih, nepoznatih podataka. Takođe sadrži informacije koje algoritam ekstraktuje iz trening skupa. U slučaju <code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code> algoritma, objekat samo čuva skup podataka za obuku.</p>
+<p>Za treniranje modela na trening skupu koristi se metoda <code class="docutils literal notranslate"><span class="pre">fit</span></code> objekta <code class="docutils literal notranslate"><span class="pre">knn</span></code>, koja kao argumente prima NumPy niz <code class="docutils literal notranslate"><span class="pre">X_train</span></code> koji sadrži ulazne podatke za obuku i NumPy niz <code class="docutils literal notranslate"><span class="pre">y_train</span></code> koji sadrži odgovarajuće oznake klasa. Metoda <code class="docutils literal notranslate"><span class="pre">fit</span></code> vraća sam KNN objekat nakon izvršenog treniranja modela. clients</p>
+<p>Najvažniji parametar kod <strong>KNeighborsClassifier</strong> je broj suseda, koji u ovom primeru postavljamo na vrednost 3.</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code></strong> – inicijalizuje algoritam k-najbližih suseda (k-Nearest Neighbors) gde parametar <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> određuje koliko će okolnih tačaka model uzeti u obzir prilikom donošenja odluke o klasi novog podatka.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">knn.fit</span></code></strong> – pokreće proces obuke modela povezivanjem ulaznih finansijskih karakteristika sa njihovim odgovarajućim kategorijama rizika, čime model „uči” raspored podataka u prostoru.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">knn.predict</span></code></strong> – primenjuje naučene obrasce na nove klijente iz test skupa koje model ranije nije video, generišući predviđanja kategorije rizika na osnovu njihove sličnosti sa podacima iz obuke.</p></li>
+</ul>
+<p>Za generisanje predikcije koristi se metoda <code class="docutils literal notranslate"><span class="pre">predict</span></code> objekta k-najbližih suseda. Upravo tu dolazi do izražaja prethodno izdvojen test skup podataka. Ovi podaci nisu korišćeni prilikom izgradnje modela, ali za svaki primer u test skupu poznata je stvarna vrsta irisa.</p>
+<p>Stoga možemo napraviti predikciju za svaku instancu u test skupu i uporediti dobijeni rezultat sa stvarnom oznakom. Uspešnost modela može se proceniti izračunavanjem tačnosti (engl. accuracy), koja predstavlja udeo ispravno klasifikovanih uzoraka u ukupnom broju uzoraka.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kreiranje KNN modela</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Treniranje modela</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Predikcija na test skupu</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># računa se tačnost modela</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tačnost modela (accuracy): </span><span class="si">{:.2f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">accuracy</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tačnost modela (accuracy): 0.95
+</pre></div>
+</div>
+</div>
+</div>
+<p>Evaluacija modela izvršena je pomoću metode <code class="docutils literal notranslate"><span class="pre">score</span></code>, koja izračunava tačnost klasifikacije. Metoda je primenjena na test skup podataka i odgovarajuće oznake test skupa, pri čemu je dobijena tačnost od približno 95%. To znači da model pravilno klasifikuje klijente u 95% slučajeva na test skupu.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># računa se matrica konfuzije</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za grafički prikaz kvaliteta klasifikacionog modela koristi se matrica konfuzije. Matrica konfuzije omogućava analizu performansi modela poređenjem stvarnih i predikovanih klasa.</p>
+<p>Parametri:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">annot=True</span></code> omogućava prikaz numeričkih vrednosti unutar polja matrice.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">fmt='d'</span></code> definiše format prikaza vrednosti kao cele brojeve.</p></li>
+</ul>
+<p>Oznake osa definišu interpretaciju rezultata:</p>
+<ul class="simple">
+<li><p>Oznake na x-osi predstavljaju <strong>predikovane klase</strong>.</p></li>
+<li><p>Oznake na y-osi predstavljaju <strong>stvarne klase</strong>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span>
+            <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;d&#39;</span><span class="p">,</span>
+            <span class="n">xticklabels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Nizak rizik&quot;</span><span class="p">,</span> <span class="s2">&quot;Srednji rizik&quot;</span><span class="p">,</span> <span class="s2">&quot;Visok rizik&quot;</span><span class="p">],</span>
+            <span class="n">yticklabels</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Nizak rizik&quot;</span><span class="p">,</span> <span class="s2">&quot;Srednji rizik&quot;</span><span class="p">,</span> <span class="s2">&quot;Visok rizik&quot;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Predikovana klasa&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Stvarna klasa&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Matrica konfuzije - KNN klasifikator&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4a520e64ad84c50be4b6d4c57cb9087aa14241520460787262079bf8e9497db8.png" src="_images/4a520e64ad84c50be4b6d4c57cb9087aa14241520460787262079bf8e9497db8.png" />
+</div>
+</div>
+<p>Ovaj deo koda predstavlja osnovni pristup primeni algoritama mašinskog učenja korišćenjem biblioteke scikit-learn. Metode <code class="docutils literal notranslate"><span class="pre">fit</span></code>, <code class="docutils literal notranslate"><span class="pre">predict</span></code> i <code class="docutils literal notranslate"><span class="pre">score</span></code> predstavljaju standardni <strong>interfejs</strong> za nadgledane modele u scikit-learn biblioteci i omogućavaju treniranje, predikciju i evaluaciju modela.</p>
+<p>Savladavanjem ovih koncepta moguće je primeniti različite modele mašinskog učenja na širok spektar zadataka. U narednim delovima biće analizirani različiti tipovi nadgledanih modela dostupnih u scikit-learn biblioteci i njihova uspešna primena u rešavanju problema klasifikacije i predikcije.</p>
+</section>
 </section>
 <section id="klasifikacija-pristupa-u-masinskom-ucenju">
 <h2>Klasifikacija pristupa u mašinskom učenju</h2>
@@ -565,55 +1229,55 @@ U svetu gde brzina i preciznost informacija mogu odlučiti o uspehu, mašinsko u
 <li><p>učenje potkrepljivanjem (engl. reinforcement learning),</p></li>
 <li><p>polunadgledano učenje (engl. semisupervised learning).</p></li>
 </ul>
-<p>Svaki od ovih tipova učenja odlikuje se specifičnim pristupom korišćenju ulaznih podataka i povratnih informacija. Zapravo, u literaturi mašinsko učenje se najčešće deli na dve glavne kategorije: nadgledano i nenadgledano učenje. U širem kontekstu, u okviru osnovne podele mašinskog učenje mogu se i uvrstati i učenje potkrepljivanjem, kao i polunadgledano učenje, koji predstavljaju prelazne ili specifične oblike učenja u odnosu na pomenute osnovne kategorije.</p>
+<p>Svaki od ovih tipova učenja odlikuje se specifičnim pristupom korišćenju ulaznih podataka i povratnih informacija. Zapravo, u literaturi mašinsko učenje se najčešće deli na dve glavne kategorije: nadgledano i nenadgledano učenje. U širem kontekstu, u okviru osnovne podele mašinskog učenje mogu se i uvrstiti i učenje potkrepljivanjem, kao i polunadgledano učenje, koji predstavljaju prelazne ili specifične oblike učenja u odnosu na pomenute osnovne kategorije.</p>
 <ul class="simple">
-<li><p><strong>Nadgledano učenje</strong> podrazumeva obučavanje modela na označenim podacima kako bi se vršila klasifikacija ili predviđanje novih, nepoznatih podataka. Tipičan primer nadgledanog učenja je automatska klasifikacija elektronske pošte na legitimnu (eng. ham) i neželjenu (eng. spam) poštu.  Primer modela nadgledanog učenja može biti i predikcija cene nekretnine na osnovu karakteristika nekretnina (kao lokacija, kvadratura, spratnost, broj soba, godina izgradnje, itd.).</p></li>
+<li><p><strong>Nadgledano učenje</strong> podrazumeva obučavanje modela na označenim podacima kako bi se vršila klasifikacija ili predviđanje novih, nepoznatih podataka. Tipičan primer nadgledanog učenja je automatska klasifikacija elektronske pošte na legitimnu i neželjenu poštu.  Primer modela nadgledanog učenja može biti i predikcija cene nekretnine na osnovu karakteristika nekretnina (kao lokacija, kvadratura, spratnost, broj soba, godina izgradnje, itd.).</p></li>
 <li><p><strong>Nenadgledano učenje</strong> ima za cilj da identifikuje skrivene obrasce u podacima bez pripadajućih izlaza (oznaka); cilj je obično da se pronađe neka zanimljiva, skrivena struktura unutar samog skupa podataka.</p></li>
-<li><p><strong>Polunadzorovano učenje</strong> ima za cilj da osmisli algoritme koji mogu da kombinuje malu količinu podataka sa oznakama sa velikim skupovima neoznačenih podataka.</p></li>
+<li><p><strong>Polunadgledano učenje</strong> ima za cilj da osmisli algoritme koji mogu da kombinuje malu količinu podataka sa oznakama sa velikim skupovima neoznačenih podataka.</p></li>
 <li><p><strong>Učenje potkrepljivanjem</strong> podrazumeva da agent stiče znanje kroz interakciju sa okruženjem dobijajući povratnu informaciju u obliku nagrada ili kazni. Za učenje potkrepljivanjem bitan je niz akcija koje se moraju preduzeti u okruženju. Za razliku od drugih pristupa, ovde model deluje bez eksplicitnih ulaza, već uči kroz interakciju i povratnu informaciju (nagradu/kaznu).</p></li>
 </ul>
-<p>Druga osnova za klasifikacija mašinskog učenja je na osnovu načina obrade podataka kroz vreme, tj. na osnovu toga da li model uči kontinuirano iz neprekidnog toka pristiglih podataka ili ne, i ta podela je na paketno i online učenje.</p>
+<p>Druga osnova za klasifikaciju mašinskog učenja je na osnovu načina obrade podataka kroz vreme, tj. na osnovu toga da li model uči kontinuirano iz neprekidnog toka pristiglih podataka ili ne, i ta podela je na paketno i onlajn učenje.</p>
 <ul class="simple">
 <li><p><strong>Paketno učenje (engl. Batch Learning)</strong> podrazumeva da model mašinskog učenja ne može da uči postepeno. Umesto toga, mora se istovremeno obučavati na celom skupu raspoloživih podataka. Ovaj proces je često izuzetno zahtevan i dugotrajan (kako vremenski, tako i u pogledu računarskih resursa), on se obično sprovodi oflajn (van mreže), pa otuda i naziv oflajn učenje (engl. Offline Learning).</p></li>
-<li><p><strong>Online učenje (engl. Online Learning)</strong> omogućava sistemu da uči postepeno i kontinuirano. Obuka se odvija tako što se modelu sekvencijalno prikazuju primeri, bilo pojedinačno ili u malim grupama podataka koji se nazivaju mini-paketima (engl. mini-batches), pri čemu nema potrebe za ponovnim treniranjem celog sistema od nule. Zbog ove sposobnosti da se prilagođava novim podacima onlajn učenje je idealno rešenje za sisteme koji rade u realnom vremenu ili situacije u kojima podaci stalno pristižu i menjaju se.</p></li>
+<li><p><strong>Onlajn učenje (engl. Online Learning)</strong> omogućava sistemu da uči postepeno i kontinuirano. Obuka se odvija tako što se modelu sekvencijalno prikazuju primeri, bilo pojedinačno ili u malim grupama podataka koji se nazivaju mini-paketima (engl. mini-batches), pri čemu nema potrebe za ponovnim treniranjem celog sistema od nule. Zbog ove sposobnosti da se prilagođava novim podacima onlajn učenje je idealno rešenje za sisteme koji rade u realnom vremenu ili situacije u kojima podaci stalno pristižu i menjaju se.</p></li>
 </ul>
 <p>Paketno učenje obezbeđuje modelu visoku stabilnost i preciznost jer se obučava na celokupnom skupu podataka istovremeno. Glavna mana ovog pristupa je što je spor i da bi se sistem ažurirao novim podacima, neophodno je ponovo ga obučiti ispočetka na celom skupu podataka. Iako se taj proces obuke može automatizovati, obuka na kompletnim podacima zahteva značajne računarske resurse, naročito kod velikih skupova podataka.</p>
-<p>Nasuprot tome, onlajn učenje je fleksibilno i efikasno za rad u realnom vremenu, jer sistem uči postepeno iz novih dolaznih podataka. Mana ovog tipa učenja je to što je osetljivo na loš kvalitet dolaznih podataka, što može izazvati postepeno pogoršanje performansi. Važan parametar sistema za onlajn učenje je brzina učenja (learning rate). Ukoliko je brzina učenja visoka, vaš sistem će se brzo prilagođavati novim podacima, ali će postojati rizik da brzo zaboravlja stare podatke.</p>
+<p>Nasuprot tome, onlajn učenje je fleksibilno i efikasno za rad u realnom vremenu, jer sistem uči postepeno iz novih podataka. Mana ovog tipa učenja je to što je osetljivo na loš kvalitet dolaznih podataka, što može izazvati postepeno pogoršanje performansi. Važan parametar sistema za onlajn učenje je brzina učenja (learning rate). Ukoliko je brzina učenja visoka, vaš sistem će se brzo prilagođavati novim podacima, ali će postojati rizik da brzo zaboravlja stare podatke.</p>
 <p>Da bismo zaista razumeli kako modeli mašinskog učenja funkcionišu, i gde su im granice, neophodno je poznavanje osnovnih algoritama koji stoje u njihovoj pozadini.</p>
 </section>
-<section id="pristup-poglavlja-i-uvod-u-koncepte">
-<h2>Pristup poglavlja i uvod u koncepte.</h2>
-<p>U nastavku cilj je da čitaocima koji nemaju praktično iskustvo s algoritmima mašinskog učenja predstavi osnovne koncepte, pruži praktične alate i razvije intuiciju za rešavanje realnih problema, kao i praktičnu implementaciju modela koristeći programski jezik Python. Razmotrićemo širok spektar tehnika uključujući tehnike i nadgledanog i nenadgledanog učenja, od od osnovnih, standardnih i najčešće upotrebljivanih do naprednijih metoda. S obzirom na to da su u Python okruženju već razvijene biblioteke za mašinsko učenje, namenjene efikasnom radu sa velikim skupovima podataka i implementaciji kompleksnih algoritama, knjiga se fokusira isključivo na njihovu primenu.</p>
+<section id="biblioteke-za-masinsko-ucenje">
+<h2>Biblioteke za mašinsko učenje</h2>
+<p>U nastavku cilj je da čitaocima koji nemaju praktično iskustvo s algoritmima mašinskog učenja predstavimo osnovne koncepte, praktične alate i intuiciju za rešavanje realnih problema, kao i praktičnu implementaciju modela koristeći programski jezik Pajton. Razmotrićemo širok spektar tehnika uključujući tehnike i nadgledanog i nenadgledanog učenja, od od osnovnih, standardnih i najčešće upotrebljivanih do naprednijih metoda. S obzirom na to da su u Pajton okruženju već razvijene biblioteke za mašinsko učenje, namenjene efikasnom radu sa velikim skupovima podataka i implementaciji kompleksnih algoritama, knjiga se fokusira isključivo na njihovu primenu.</p>
 <ul class="simple">
-<li><p><em>Pandas</em> je biblioteka otvorenog koda za programski jezik Python, namenjena radu sa podacima, čiji je glavni cilj da pojednostavi njihovu obradu i analizu. Ona je nezaobilazan Python alat jer omogućava izuzetno efikasan rad sa strukturiranim podacima, kao što su tabele i vremenske serije, pomoću jednostavnih, ali moćnih struktura: DataFrame (za tabelarne podatke, slično bazama podataka ili Excelu) i Series (za jednodimenzionalne nizove). Pored toga, Pandas pruža bogat skup pratećih funkcija koje služe kao brz i efikasan način za učitavanje, čišćenje, transformisanje i manipulisanje podacima, podržavajući ključne operacije poput indeksiranja, poravnanja i spajanja skupova podataka.</p></li>
-<li><p><em>Scikit-Learn</em> (<a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>) je jedna od najkorišćenijihi izuzetno popularna Python biblioteka otvorenog koda za mašinsko učenje. Pogodna je i za početnike i za iskusne korisnike, jer pruža implementacije širokog spektra MU algoritama i predstavlja odličnu polaznu tačku za većinu projekata. Njena najveća prednost je dobar API i bogat skup funkcija koji obuhvata sve korake rada s podacima, od njihove pripreme i selekcije karakteristika do primene naprednih tehnika klasifikacije, regresije i klasterovanja. Dodatni plus je izvanredna kompatibilnost sa ključnim Python bibliotekama poput NumPy-a, Pandas-a i Matplotlib-a, što omogućava da se kompletan proces analize i modelovanja podataka obavi na jednom mestu.</p></li>
-<li><p><em>TensorFlow</em> je napredna biblioteka otvorenog koda razvijena od strane Google-a, primarno namenjena konstrukciji modela mašinskog i, posebno, modela dubokog učenja, uključujući i neuronske mreže. Njegova suština leži u efikasnom korišćenju tenzora (višedimenzionalnih nizova podataka) i računskih grafova za složene numeričke proračune. Zbog svoje skalabilnosti, TensorFlow arhitektura omogućava optimizaciju performansi u velikim distribuiranim sistemima, i izvršavanje na različitim platformama radi brzog obučavanja masivnih modela. Zbog ovih karakteristika, koristi se u naprednim projektima veštačke inteligencije, poput autonomnih vozila, obrade prirodnog jezika i prepoznavanja slika.</p></li>
+<li><p><em>Pandas</em> je biblioteka otvorenog koda za programski jezik Pajton, namenjena radu sa podacima, čiji je glavni cilj da pojednostavi njihovu obradu i analizu. Ona je nezaobilazan Pajton alat jer omogućava izuzetno efikasan rad sa strukturiranim podacima, kao što su tabele i vremenske serije, pomoću jednostavnih, ali moćnih struktura: DataFrame (za tabelarne podatke, slično bazama podataka ili Excelu) i Series (za jednodimenzionalne nizove). Pored toga, Pandas pruža bogat skup pratećih funkcija koje služe kao brz i efikasan način za učitavanje, čišćenje, transformisanje i manipulisanje podacima, podržavajući ključne operacije poput indeksiranja, poravnanja i spajanja skupova podataka.</p></li>
+<li><p><em>Scikit-Learn</em> (<a class="reference external" href="https://scikit-learn.org/stable/">https://scikit-learn.org/stable/</a>) je jedna od najkorišćenijihi izuzetno popularna Pajton biblioteka otvorenog koda za mašinsko učenje. Pogodna je i za početnike i za iskusne korisnike, jer pruža implementacije širokog spektra algoritama mašinskog učenja i predstavlja odličnu polaznu tačku za većinu projekata. Njena najveća prednost je dobar API i bogat skup funkcija koji obuhvata sve korake rada s podacima, od njihove pripreme i selekcije karakteristika do primene naprednih tehnika klasifikacije, regresije i klasterovanja. Dodatni plus je izvanredna kompatibilnost sa ključnim Pajton bibliotekama kao što su NumPy, Pandas i Matlotlib, što omogućava da se kompletan proces analize i modelovanja podataka obavi na jednom mestu.</p></li>
+<li><p><em>TensorFlow</em> je napredna biblioteka otvorenog koda razvijena od strane kompanije Google, primarno namenjena konstrukciji modela mašinskog i, posebno, modela dubokog učenja, uključujući i neuronske mreže. Njegova suština leži u efikasnom korišćenju tenzora (višedimenzionalnih nizova podataka) i računskih grafova za složene numeričke proračune. Zbog svoje skalabilnosti, TensorFlow arhitektura omogućava optimizaciju performansi u velikim distribuiranim sistemima, i izvršavanje na različitim platformama radi brzog obučavanja masivnih modela. Zbog ovih karakteristika, koristi se u naprednim projektima veštačke inteligencije, poput autonomnih vozila, obrade prirodnog jezika i prepoznavanja slika.</p></li>
 </ul>
 </section>
-<section id="moguci-problemi-i-prepreke-u-procesu-masinskog-ucenja">
-<h2>Mogući problemi i prepreke u procesu mašinskog učenja</h2>
+<section id="moguci-problemi-i-prepreke-u-masinskom-ucenju">
+<h2>Mogući problemi i prepreke u mašinskom učenju</h2>
 <p>Tokom obučavanja modela mašinskog učenja mogu se javiti različiti problemi koji utiču na sposobnost modela da vrši generalizaciju i tačna predviđanja nakon puštanja u rad. Najčešće su uzroci nezadovoljavajući ishoda u mašinskom učenju greške u podacima ili pogrešan izbor algoritma.</p>
 <p>U nastavku ćemo prvo razmotriti neke od najčešćih problema koji iz proizlaze ako odaberemo pogrešan algoritam za zadatak.</p>
-<section id="prekomerno-prilagodavanje-engl-overfitting">
-<h3><em>Prekomerno prilagođavanje (engl. Overfitting)</em></h3>
-<p>Overfitting je možda najčešći problem s kojim se susrećemo u mašinskom učenju, a događa se kada se model prekomerno prilagodi (engl. overfits) podacima, tako da prati pojedinačne detalje i šum iz skupa podataka. Međutim, ovo dovodi do problema jer zbog preteranog prilagođavanja modela podacima za treniranje, sposobnost modela da generalizuje na neviđene podatke je ograničena. Prekomerno prilagođavanje je tipično uzrokovano prevelikom kompleksnošću modela, što dovodi do niske pristrasnosti (engl. low bias=, što je očekivano jer model odgovara podacima za treniranje, ali i do visoke varijanse (engl. high variance). Visoka varijansa ukazuje na to da model memoriše podatke za treniranje umesto da uhvati opšte obrasce, što rezultira lošom sposobnošću generalizacije na neviđenim podacima.</p>
-<p>Predstavićemo jednostavan primer kroz priču/situaciju radi ilustracije fenomena prekomernog prilagođavanja u mašinskom učenju. Marko je kvantitativni trgovac koji je razvio izuzetno složen algoritam za trgovanje akcijama koji je postigao gotovo savršene rezultate na istorijskim podacima, ali je potpuno podbacio na novim, realnim tržišnim podacima. Model je bio previše prilagođen prošlosti i zapamtio je specifične obrasce‚, nasumične fluktuacije i šum iz prošlosti, umesto opštih principa, što je dovelo do gubitaka u stvarnom trgovanju. Algoritam, koji je bio podešen da reaguje na ekstremno specifične kombinacije cena i šuma koje su se pojavile u bazi za treniranje  modela, pa nije mogao da prepozna novi, opšti trend na tržištu. Kada je algoritam pušten na nove podatke, potpuno je zakazao i generisao gubitke. Ovo je jedan jasan primer overfittinga: model ima nizak bias i visoku varijansu, savršeno objašnjava podatke za treniranje, ali ne uspeva da generalizuje na nove podatke.</p>
+<section id="prekomerno-prilagodavanje">
+<h3><em>Prekomerno prilagođavanje</em></h3>
+<p>Prekomerno prilagođavanje (engl. overfitting) je možda najčešći problem s kojim se susrećemo u mašinskom učenju, a događa se kada se model prekomerno prilagodi podacima, tako da prati pojedinačne detalje i šum iz skupa podataka. Međutim, ovo dovodi do problema jer zbog preteranog prilagođavanja modela podacima za treniranje, sposobnost modela da donosi zaključke nad novim podacima je ograničena. Prekomerno prilagođavanje je tipično uzrokovano prevelikom kompleksnošću modela, što dovodi do niske pristrasnosti (engl. low bias), što je očekivano jer model odgovara podacima za treniranje, ali i do visoke varijanse. Kada model ima nisku pristrasnost, to znači da polazi od malog broja početnih pretpostavki i omogućava podacima da u velikoj meri određuju njegov oblik, zbog čega se dobro prilagođava strukturi skupa podataka. Takvi modeli obično ostvaruju veoma malu grešku na podacima na kojima su trenirani, ali istovremeno nose rizik od preprilagođavanja, jer se mogu previše prilagoditi trening podacima. Zbog toga se u praksi nastoji postići ravnoteža između niske pristrasnosti i varijanse, a taj odnos poznat je kao <strong>bias–variance tradeoff</strong>. Visoka varijansa ukazuje na to da model memoriše podatke za treniranje umesto da uhvati opšte obrasce, što rezultira lošom sposobnošću generalizacije na neviđenim podacima.</p>
+<p>Predstavićemo jednostavan primer kroz priču/situaciju radi ilustracije fenomena prekomernog prilagođavanja u mašinskom učenju. Marko je finansijski analitičar koji je razvio izuzetno složen algoritam za trgovanje akcijama koji je postigao gotovo savršene rezultate na istorijskim podacima, ali je potpuno podbacio na novim, realnim tržišnim podacima. Model je bio previše prilagođen prošlosti i zapamtio je specifične obrasce‚ nasumične fluktuacije i šum iz prošlosti, umesto opštih principa, što je dovelo do gubitaka u stvarnom trgovanju. Algoritam, koji je bio podešen da reaguje na ekstremno specifične kombinacije cena i šuma koje su se pojavile u bazi za treniranje  modela, pa nije mogao da prepozna novi, opšti trend na tržištu. Kada je algoritam pušten na nove podatke, potpuno je zakazao i generisao gubitke. Ovo je jedan jasan primer prekomernog prilagođavanja: model ima nisku pristrasnost i visoku varijansu, savršeno objašnjava podatke za treniranje, ali ne uspeva da generalizuje na nove podatke.</p>
 </section>
-<section id="nedovoljno-prilagodavanje-engl-underfitting">
-<h3><em>Nedovoljno prilagođavanje (engl. Underfitting)</em></h3>
+<section id="nedovoljno-prilagodavanje">
+<h3><em>Nedovoljno prilagođavanje</em></h3>
 <p>S druge strane, nedovoljno prilagođavanje (engl. underfitting) nastaje kada je model mašinskog učenja previše jednostavan ili kada model nije uspeo da nauči obrasce iz skupa za treniranje, uključujući ni osnovnu vezu između ulaznih i izlaznih varijabli. Zbog toga, dolazi do visoke pristrasnosti (engl. high bias), s lošim performansama modela na oba skupa: i na podacima za obuku i na podacima za testiranje.
-Radi lakšeg razumevanja, sledi kratka priča/situacija koja služi kao ilustracija koncepta nedovoljnog prilagođavanja. Marko, kvantitativni trgovac, želeći da razvije algoritam za trgovanje akcijama, izabrao je veoma jednostavan pristup kako bi izbegao složenost. Umesto kompleksnih analiza, definisao je samo jedno pravilo: kupi akciju ako je zabeležila rast u prethodna dva posmatrana perioda. Primenjen na veliki skup istorijskih podataka, model je pokazao slabe rezultate, jedva bolje od slučajnog pogađanja, jer je zbog prevelike jednostavnosti propustio da prepozna važne tržišne trendove i odnose. Testiranje na novim podacima pokazalo je da model ne pravi drastične greške, ali da je u praksi neefikasan. Zbog prevelike jednostavnosti nije uspeo da uhvati ključne tržišne zakonitosti i ostvari značajan profit, što ukazuje na visoku pristrasnost modela.</p>
+Radi lakšeg razumevanja, sledi kratka priča/situacija koja služi kao ilustracija koncepta nedovoljnog prilagođavanja. Marko, finansijski analitičar, želeći da razvije algoritam za trgovanje akcijama, izabrao je veoma jednostavan pristup kako bi izbegao složenost. Umesto kompleksnih analiza, definisao je samo jedno pravilo: kupi akciju ako je zabeležila rast u prethodna dva posmatrana perioda. Primenjen na veliki skup istorijskih podataka, model je pokazao slabe rezultate, jedva bolje od slučajnog pogađanja, jer je zbog prevelike jednostavnosti propustio da prepozna važne tržišne trendove i odnose. Testiranje na novim podacima pokazalo je da model ne pravi drastične greške, ali da je u praksi neefikasan. Zbog prevelike jednostavnosti nije uspeo da uhvati ključne tržišne zakonitosti i ostvari značajan profit, što ukazuje na visoku pristrasnost modela.</p>
 </section>
 <section id="problemi-koji-proizlaze-iz-gresaka-unutar-skupa-podataka">
 <h3>Problemi koji proizlaze iz grešaka unutar skupa podataka</h3>
-<p>Dalje ćemo se fokusirati na neke od najuobičajenih problema koji proizlaze iz grešaka unutar skupa podataka.</p>
+<p>U nastavku ćemo se fokusirati na neke od najuobičajenih problema koji proizlaze iz grešaka unutar skupa podataka.</p>
 <p><em>Nedovoljna količina raspoloživih podataka za obuku modela (engl. Data Scarcity)</em></p>
 <p>Većina algoritama mašinskog učenja zahteva veliku količinu podataka kako bi se uspešno uočili validne i relevantne obrasce. Model obučen na nedovoljnom obimu podataka suočava se sa značajnim izazovima: ne uspeva da formuliše generalizujuća pravila i postaje preterano osetljiv na šum u podacima i daje nestabilne i netačne rezultate u radu na novim podacima.</p>
-<p>Predstavićemo jednostavan primer kroz situaciju radi ilustracije problema nedovoljne količine podataka u mašinskom učenju. Marko, kvantitativni trgovac, razvijao je algoritam za predviđanje kretanja akcija nove kompanije. Izazov se sastojao u tome što je na raspolaganju imao podatke o cenama za samo dve sedmice, što predstavlja izuzetno ograničen skup za treniranje. U tom kratkom dvonedeljnom periodu dogodio se nasumičan skok cene (šum), nedostatak obimnijih podataka sprečio je model da ga ignoriše, pa ga je interpretirao kao ključno generalizujuće pravilo za predviđanje.</p>
-<p><em>Nereprezentativni podaci za obuku (engl. Non-representative Data)</em></p>
+<p>Predstavićemo jednostavan primer kroz situaciju radi ilustracije problema nedovoljne količine podataka u mašinskom učenju. Marko, finansijski analitičar, razvijao je algoritam za predviđanje kretanja akcija nove kompanije. Izazov se sastojao u tome što je na raspolaganju imao podatke o cenama za samo dve sedmice, što predstavlja izuzetno ograničen skup za treniranje. U tom kratkom dvonedeljnom periodu dogodio se nasumičan skok cene (šum), nedostatak obimnijih podataka sprečio je model da ga ignoriše, pa ga je interpretirao kao ključno generalizujuće pravilo za predviđanje.</p>
+<p><em>Nereprezentativni podaci za obuku (engl. non-representative Data)</em></p>
 <p>Kako bi model mašinskog učenja davao pouzdane prognoze, skup podataka za obuku mora reprezentovati realno okruženje u kojem će se model primenjivati. Ukoliko podaci ne obuhvataju sve relevantne situacije  ili daje preveliku težinu određenim  podskupovima, model postaje pristrasan i gubi na preciznosti, jer model nije u stanju da se adekvatno ponaša u susretu sa novim i drugačijim primerima.</p>
 <p>Predstavićemo jednostavan primer kroz situaciju radi ilustracije problema nereprezentativnih podataka u mašinskom učenju. Nakon što je uvideo važnost količine podataka, Marko, finansijski trgovac, je prikupio obiman skup podataka. Međutim, napravio je suštinsku grešku: algoritam za predviđanje kretanja akcija trenirao je isključivo na podacima iz perioda snažnog tržišnog rasta (tzv. „bull market”). Na osnovu tih podataka, model je usvojio zaključak da je neprekidan rast cena opšte i uvek važeće pravilo. Pošto tokom obuke nikada nije bio izložen primerima ekonomskog pada, model nije bio sposoban da prepozna rizike. Ovaj primer pokazuje da sama količina podataka ne obezbeđuje uspeh, nego da li ti podaci stvarno opisuju problem koji se rešava.</p>
-<p><em>Podaci loseg kvaliteta  (engl. Poor Data Quality</em></p>
+<p><em>Podaci loseg kvaliteta  (engl. Poor Data Quality)</em></p>
 <p>Ukoliko baza podataka sadrži šum, grešake, anomalije ili nedostajuće informacije, model nije u stanju da adekvatno uoči obrasce, pa su i rezultati slabiji. Upravo zbog toga veoma je važno očistiti ili ispraviti bazu podataka pre samog procesa treniranja.</p>
 <p>U nastavku sledi primer koji ilustruje kako podaci lošeg kvaliteta direktno narušavaju performanse modela u mašinskom učenju. Iako je Marko, finansijski trgovac, prikupio veliku količinu raznovrsnih podataka i očekivao siguran uspeh, podaci su dolazili iz nepouzdanih i neproverenih izvora. Trening skup je sadržao nedostajuće podatke, anomalije i šum, pa je algoritam počeo da prepoznaje obrasce koji zapravo ne postoje. Tada je Marko shvatio da model neće raditi dok ne uloži vreme učišćenje i pripremu podataka.</p>
 <p>Postoji još niz drugih razloga koji mogu uticati na obučavanje modela, ali su ovde izdvojeni i primerima ilustrovani oni koji se u praksi najčešće javljaju.</p>
@@ -621,26 +1285,27 @@ Radi lakšeg razumevanja, sledi kratka priča/situacija koja služi kao ilustrac
 </section>
 <section id="unakrsna-validacija">
 <h2>Unakrsna validacija</h2>
-<p>Jedna od tehnika za rešavanje problema prekomernog prilagođavanja (engl. overfitting) je korišćenje unakrsne validacije (engl. cross-validation).</p>
-<p>Unakrsna validacija predstavlja statistička tehnika u mašinskom učenju koja se primenjuje da obezbedi pouzdanije performanse modela i njegovu sposobnost generalizacije na neviđene podatke, sa ciljem da ublaži rizik od prekomernog prilagođavanja (engl. overfittinga). Posebno je korisna u situacijama kada skup podataka nije dovoljno velik da bi se obezbedila pouzdana i reprezentativna podela na trening i test skup, kao i kada treba odabrati jedan od nekoliko ponudjenih modela za konkretan problem, i tokom optimizacije i odabira najbolje kombinacije hiperparametara.</p>
-<p>Jedna od najčešće primenjivanih metoda unakrsne validacije je K-unakrsna validacija (engl. K-Fold Cross-Validation). Unakrsna validacija pruža pouzdaniju i stabilniju procenu performansi, i omogućava da se svi dostupni podaci iskoriste i za učenje i za proveru, čime se postiže veća robustnost. Postupak K-unakrsne validacije:</p>
+<p>Jedna od tehnika za rešavanje problema prekomernog prilagođavanja je korišćenje unakrsne validacije (engl. cross-validation).</p>
+<p>Unakrsna validacija predstavlja statističku tehniku u mašinskom učenju koja se primenjuje da obezbedi pouzdanije performanse modela i njegovu sposobnost generalizacije na nove podatke, sa ciljem da ublaži rizik od prekomernog prilagođavanja. Posebno je korisna u situacijama kada skup podataka nije dovoljno velik da bi se obezbedila pouzdana i reprezentativna podela na trening i test skup, kao i kada treba odabrati jedan od nekoliko ponuđenih modela za konkretan problem, i tokom optimizacije i odabira najbolje kombinacije hiperparametara.</p>
+<p>Jedna od najčešće primenjivanih metoda unakrsne validacije je K-unakrsna validacija (engl. K-Fold Cross-Validation). Unakrsna validacija pruža pouzdaniju i stabilniju procenu performansi, i omogućava da se svi dostupni podaci iskoriste i za učenje i za proveru, čime se postiže veća robustnost.</p>
+<p>Postupak K-unakrsne validacije:</p>
 <ol class="arabic simple">
-<li><p>Početni skup podataka se deli na <span class="math notranslate nohighlight">\(K\)</span> jednako velikih, disjunktnih (nepreklapajućih) podskupova (engl. fold).</p></li>
+<li><p>Početni skup podataka se deli na <span class="math notranslate nohighlight">\(K\)</span> jednako velikih, disjunktnih podskupova.</p></li>
 <li><p>Na osnovu ovih podskupova formira se <span class="math notranslate nohighlight">\(K\)</span> različitih parova skupova za treniranje i testiranje. Proces se odvija u <span class="math notranslate nohighlight">\(K\)</span> iteracija, pri čemu se jedan podskup koristi kao skup za testiranje, a preostalih <span class="math notranslate nohighlight">\(K-1\)</span> podskupova se spajaju i koriste kao skup za treniranje modela.</p></li>
 <li><p>Model se trenira na skupu za treniranje, a zatim se evaluacija modela obavlja isključivo na preostalom, neviđenom, skupu za testiranje. Ovim se dobija pojedinačna metrika performansi (npr. tačnost ili greška) za svaki podskup (fold).</p></li>
 <li><p>Konačna performansa modela je aritmetička sredina svih <span class="math notranslate nohighlight">\(K\)</span> pojedinačnih rezultata testiranja.</p></li>
 </ol>
-<p>Slika (preuzeta sa <a class="reference external" href="https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f">https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f</a>) ilustruje princip K-unakrsne validacije, prikazujući kako se skup podataka deli na više delova koji se naizmenično koriste za treniranje i testiranje modela.</p>
-<figure class="align-center" id="id4">
+<p>Slika (preuzeta sa sajta dostupnog <a class="reference external" href="https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f">ovde</a>) ilustruje princip K-unakrsne validacije, prikazujući kako se skup podataka deli na više delova koji se naizmenično koriste za treniranje i testiranje modela.</p>
+<figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="_images/CrossValidation.PNG"><img alt="_images/CrossValidation.PNG" src="_images/CrossValidation.PNG" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 22. </span><span class="caption-text">Unakrsna validacija (Izvor <a class="reference external" href="https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f">https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f</a>
+<p><span class="caption-number">Slika 21. </span><span class="caption-text">Unakrsna validacija (preuzeta sa sajta dostupnog <a class="reference external" href="https://python.plainenglish.io/cross-validation-in-machine-learning-enhancing-model-performance-with-confidence-39402f6ca60f">ovde</a>
 )</span></p>
 </figcaption>
 </figure>
-<p>Pored standardne K-unakrsne validacije, u praksi se koriste i Stratifikovana K-Fold unakrsna validacija (engl. Stratified K-Fold) i pojedinačno unakrsno testiranje (engl. Leave-One-Out Cross-Validation). Stratifikovana K-Fold validacija se koristi kod neuravnoteženih skupova podataka (engl. imbalanced datasets) jer obezbeđuje da proporcija klasa u svakom od <span class="math notranslate nohighlight">\(K\)</span> podskupova odgovara raspodeli u celom početnom skupu, što doprinosi robustnosti i pouzdanosti dobijene metrike performansi. Pojedinačno unakrsno testiranje je oblik unakrsne validaije kod koga se u svakoj iteraciji testira samo jedan primer, dok se ostali koriste za treniranje; iako pruža procenu sa malom pristrasnošću, zbog velike računske složenosti i varijanse retko se primenjuje na velikim skupovima podataka.</p>
-<p>U nastavku je dat ilustrativan primer K-unakrsne validacije u Python-u (korišćenjem biblioteke scikit-learn), gde se posmatra skup podataka koji predstavlja nekoliko kompanija. Cilj primera je da se prikaže mehanizam podele podataka na trening i test skupove, nezavisno od konkretnog prediktivnog modela.
-Detaljni primeri implementacije navedenih metoda validacije u programskom jeziku Python možete pronaći ovde : <a class="reference external" href="https://scikit-learn.org/stable/modules/cross_validation.html">https://scikit-learn.org/stable/modules/cross_validation.html</a></p>
+<p>Pored standardne K-unakrsne validacije, u praksi se koriste i stratifikovana K-Fold unakrsna validacija (engl. stratified K-Fold) i pojedinačno unakrsno testiranje (engl. Leave-One-Out Cross-Validation). Stratifikovana K-Fold validacija se koristi kod neuravnoteženih skupova podataka (engl. imbalanced datasets) jer obezbeđuje da proporcija klasa u svakom od <span class="math notranslate nohighlight">\(K\)</span> podskupova odgovara raspodeli u celom početnom skupu, što doprinosi robustnosti i pouzdanosti dobijene metrike performansi. Pojedinačno unakrsno testiranje je oblik unakrsne validaije kod koga se u svakoj iteraciji testira samo jedan primer, dok se ostali koriste za treniranje; iako pruža procenu sa malom pristrasnošću, zbog velike računske složenosti i varijanse retko se primenjuje na velikim skupovima podataka.</p>
+<p>U nastavku je dat ilustrativan primer K-unakrsne validacije u Pajtonu (korišćenjem biblioteke scikit-learn), gde se posmatra skup podataka koji predstavlja nekoliko kompanija. Cilj primera je da se prikaže mehanizam podele podataka na trening i test skupove, nezavisno od konkretnog prediktivnog modela.
+Detaljni primeri implementacije navedenih metoda validacije u programskom jeziku Pajton možete pronaći <a class="reference external" href="https://scikit-learn.org/stable/modules/cross_validation.html">ovde</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -671,9 +1336,143 @@ Test skup: [&#39;Kompanija C&#39; &#39;Kompanija D&#39;]
 </div>
 </div>
 </section>
-<section id="priprema-i-obrada-podataka-za-modele-masinskog-ucenja">
-<h2>Priprema i obrada podataka za modele mašinskog učenja</h2>
-<p>Predobrada predstavlja kritičan korak u pripremi podataka i obuhvata čišćenje skupa podataka i njegovo transformisanje, često kroz numeričko kodiranje, kako bi se osiguralo da su podaci u formatu koji ML algoritam može efikasno da obradi i interpretira.</p>
+<section id="hajde-da-proverimo-znanje-o-stablima-odlucivanja">
+<h2>Hajde da proverimo znanje o stablima odlučivanja! 🧠</h2>
+<p>Odgovorite na sledeća pitanja kako bi utvrdio svoje znanje.</p>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 1.</p>
+<ol class="arabic simple">
+<li><p>Šta suštinski definiše mašinsko učenje kao naučnu disciplinu?</p></li>
+</ol>
+<p>a) Oblast koja se bavi razvojem algoritama bez oslonca na analizu i procesiranje podataka.<br />
+b) Razvoj sistema sposobnih da identifikuju obrasce u podacima i optimizuju performanse bez eksplicitnih instrukcija za svaki korak.<br />
+c) Primarna fokusiranost na dugotrajno skladištenje velikih količina podataka.<br />
+d) Proces manuelne interpretacije korelacija unutar kompleksnih statističkih izvještaja.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">b</span><span class="p">)</span> <span class="n">Razvoj</span> <span class="n">sistema</span> <span class="n">sposobnih</span> <span class="n">da</span> <span class="n">identifikuju</span> <span class="n">obrasce</span> <span class="n">u</span> <span class="n">podacima</span> <span class="n">i</span> <span class="n">optimizuju</span> <span class="n">performanse</span> <span class="n">bez</span> <span class="n">eksplicitnih</span> <span class="n">instrukcija</span> <span class="n">za</span> <span class="n">svaki</span> <span class="n">korak</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 2.</p>
+<ol class="arabic simple" start="2">
+<li><p>Šta karakteriše nenadgledano učenje?</p></li>
+</ol>
+<p>a) Algoritam se oslanja na skupove podataka koji sadrže označene ciljne vrednosti.<br />
+b) Fokus modela je isključivo na validaciji performansi pomoću test skupa.<br />
+c) Algoritam analizira ulazne podatke koji nemaju prethodno definisane oznake ili klase.<br />
+d) Algoritam se oslanja na sistem kazni i nagrada kako bi optimizovao strategiju donošenja odluka u dinamičkom okruženju.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">c</span><span class="p">)</span> <span class="n">Algoritam</span> <span class="n">analizira</span> <span class="n">ulazne</span> <span class="n">podatke</span> <span class="n">koji</span> <span class="n">nemaju</span> <span class="n">prethodno</span> <span class="n">definisane</span> <span class="n">oznake</span> <span class="n">ili</span> <span class="n">klase</span><span class="o">.</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 3.</p>
+<ol class="arabic simple" start="3">
+<li><p>Koja je osnovna razlika između paketnog i onlajn učenja?</p></li>
+</ol>
+<p>a) Paketno učenje se koristi isključivo za rad sa malim skupovima podataka.<br />
+b) Onlajn učenje obrađuje podatke postepeno, dok paketno učenje trenira model na celom skupu odjednom.<br />
+c) Onlajn učenje je primenljivo isključivo kod problema binarne klasifikacije.<br />
+d) Paketno učenje eliminiše potrebu za empirijskim podacima.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">b</span><span class="p">)</span> <span class="n">Onlajn</span> <span class="n">učenje</span> <span class="n">obrađuje</span> <span class="n">podatke</span> <span class="n">postepeno</span><span class="p">,</span> <span class="n">dok</span> <span class="n">paketno</span> <span class="n">učenje</span> <span class="n">trenira</span> <span class="n">model</span> <span class="n">na</span> <span class="n">celom</span> <span class="n">skupu</span> <span class="n">odjednom</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 4.</p>
+<ol class="arabic simple" start="4">
+<li><p>Kada kažemo da je došlo do prekomernog prilagođavanja?</p></li>
+</ol>
+<p>a) Model pokazuje loše rezultate i na podacima za trening i na onima za proveru.<br />
+b) Model namerno ignoriše značajne podataka.<br />
+c) Model se previše prilagodi trening podacima i loše generalizuje na novim podacima.<br />
+d) Model koristi isuviše jednostavnu strukturu i nedovoljan broj parametara.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">c</span><span class="p">)</span> <span class="n">Model</span> <span class="n">se</span> <span class="n">previše</span> <span class="n">prilagodi</span> <span class="n">trening</span> <span class="n">podacima</span> <span class="n">i</span> <span class="n">loše</span> <span class="n">generalizuje</span> <span class="n">na</span> <span class="n">novim</span> <span class="n">podacima</span><span class="o">.</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 5.</p>
+<ol class="arabic simple" start="5">
+<li><p>Šta je online učenje?</p></li>
+</ol>
+<p>a) Učenje modela uz pomoć interneta.<br />
+b) Sposobnost modela da se adaptira i ažurira kako novi podaci pristižu.<br />
+c) Korištenje isključivo validacionog skupa podataka za proces obuke.<br />
+d) Smanjenje troškova kroz samo jedno inicijalno treniranje modela.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">b</span><span class="p">)</span> <span class="n">Sposobnost</span> <span class="n">modela</span> <span class="n">da</span> <span class="n">se</span> <span class="n">adaptira</span> <span class="n">i</span> <span class="n">ažurira</span> <span class="n">kako</span> <span class="n">novi</span> <span class="n">podaci</span> <span class="n">pristižu</span><span class="o">.</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 6.</p>
+<ol class="arabic simple" start="6">
+<li><p>Koja je uloga validacionog skupa podataka?</p></li>
+</ol>
+<p>a) Za finalnu procenu preciznosti modela.<br />
+b) Za evaluaciju različitih arhitektura i optimizaciju hiperparametara modela.<br />
+c) Za skladištenje informacija.<br />
+d) Za automatizovano brisanje grešaka u kodu.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">b</span><span class="p">)</span> <span class="n">Za</span> <span class="n">evaluaciju</span> <span class="n">različitih</span> <span class="n">arhitektura</span> <span class="n">i</span> <span class="n">optimizaciju</span> <span class="n">hiperparametara</span> <span class="n">modela</span><span class="o">.</span>   
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 7.</p>
+<ol class="arabic simple" start="7">
+<li><p>Koja je osnovna svrha test skupa?</p></li>
+</ol>
+<p>a) Inicijalna faza podešavanja težinskih koeficijenata algoritma.<br />
+b) Podešavanje optimalnih vrednosti hiperparametara kroz iteracije.<br />
+c) Smanjenje veličine podataka.<br />
+d) Konačna procena performansi modela na neviđenim podacima.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">d</span><span class="p">)</span> <span class="n">Konačna</span> <span class="n">procena</span> <span class="n">performansi</span> <span class="n">modela</span> <span class="n">na</span> <span class="n">neviđenim</span> <span class="n">podacima</span><span class="o">.</span>  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Kviz 8.</p>
+<ol class="arabic simple" start="8">
+<li><p>U čemu se ogleda suštinska razlika između validacionog i test skupa?</p></li>
+</ol>
+<p>a) Među njima ne postoji funkcionalna razlika.<br />
+b) Test skup se koristi za treniranje, dok se validacioni za testiranje.<br />
+c) Testni skup je jedini deo podataka koji se koristi tokom faze obuke algoritma.<br />
+d) Validacioni skup služi za razvoj i fino podešavanje modela, dok test skup služi za nepristrasnu finalnu evaluaciju.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Odgovor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">**</span><span class="n">Odgovor</span><span class="p">:</span><span class="o">**</span> <span class="n">d</span><span class="p">)</span> <span class="n">Validacioni</span> <span class="n">skup</span> <span class="n">služi</span> <span class="n">za</span> <span class="n">razvoj</span> <span class="n">i</span> <span class="n">fino</span> <span class="n">podešavanje</span> <span class="n">modela</span><span class="p">,</span> <span class="n">dok</span> <span class="n">test</span> <span class="n">skup</span> <span class="n">služi</span> <span class="n">za</span> <span class="n">nepristrasnu</span> <span class="n">finalnu</span> <span class="n">evaluaciju</span><span class="o">.</span>  
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="literatura">
+<h2>Literatura</h2>
+<p>[1] Turing, A. M. (1987). Computing machinery and intelligence (1950). Mind, 59(236), 33-60.<br />
+[2] McCarthy, J., Minsky, M. L., Rochester, N., &amp; Shannon, C. E. (2006). A proposal for the dartmouth summer research project on artificial intelligence, august 31, 1955. AI magazine, 27(4), 12-12.<br />
+[3] Murphy, K. P. (2012). Machine learning: a probabilistic perspective. MIT press.</p>
 </section>
 </section>
 
@@ -741,17 +1540,23 @@ Test skup: [&#39;Kompanija C&#39; &#39;Kompanija D&#39;]
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razumevanje-kljucne-terminologije-masinskog-ucenja">Razumevanje ključne  terminologije mašinskog učenja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod-u-inteligentne-sisteme-i-masinsko-ucenje">Uvod u inteligentne sisteme i mašinsko učenje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razumevanje-kljucne-terminologije-masinskog-ucenja">Razumevanje ključne  terminologije mašinskog učenja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prikaz-podele-na-trening-validacioni-i-test-skup">Prikaz podele na trening, validacioni i test skup</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ilustracija-na-jos-jednom-primeru-finansijski-podaci">Ilustracija na još jednom primeru: Finansijski podaci</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikacija-pristupa-u-masinskom-ucenju">Klasifikacija pristupa u mašinskom učenju</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pristup-poglavlja-i-uvod-u-koncepte">Pristup poglavlja i uvod u koncepte.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moguci-problemi-i-prepreke-u-procesu-masinskog-ucenja">Mogući problemi i prepreke u procesu mašinskog učenja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prekomerno-prilagodavanje-engl-overfitting"><em>Prekomerno prilagođavanje (engl. Overfitting)</em></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedovoljno-prilagodavanje-engl-underfitting"><em>Nedovoljno prilagođavanje (engl. Underfitting)</em></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biblioteke-za-masinsko-ucenje">Biblioteke za mašinsko učenje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#moguci-problemi-i-prepreke-u-masinskom-ucenju">Mogući problemi i prepreke u mašinskom učenju</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prekomerno-prilagodavanje"><em>Prekomerno prilagođavanje</em></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nedovoljno-prilagodavanje"><em>Nedovoljno prilagođavanje</em></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problemi-koji-proizlaze-iz-gresaka-unutar-skupa-podataka">Problemi koji proizlaze iz grešaka unutar skupa podataka</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unakrsna-validacija">Unakrsna validacija</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priprema-i-obrada-podataka-za-modele-masinskog-ucenja">Priprema i obrada podataka za modele mašinskog učenja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hajde-da-proverimo-znanje-o-stablima-odlucivanja">Hajde da proverimo znanje o stablima odlučivanja! 🧠</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
 </ul>
   </nav></div>
 
@@ -766,7 +1571,7 @@ Test skup: [&#39;Kompanija C&#39; &#39;Kompanija D&#39;]
   <div class="footer-item">
     
 <p class="component-author">
-Од стране Dragan i Mladen
+Од стране Dragan, Mladen i Dragana
 </p>
 
   </div>

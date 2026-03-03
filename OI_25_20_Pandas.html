@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Uvod u analizu podataka - 🐼 Pandas &#8212; Operaciona istraživanja</title>
+    <title>Uvod u analizu podataka - 🐼 Pandas &#8212; Poslovno odlučivanje i mašinsko učenje</title>
   
   
   
@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -165,8 +165,8 @@
       
     
     
-    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Operaciona istraživanja - Home"/>
-    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Operaciona istraživanja - Home"/>`);</script>
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Poslovno odlučivanje i mašinsko učenje - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Poslovno odlučivanje i mašinsko učenje - Home"/>`);</script>
   
   
 </a></div>
@@ -243,7 +243,7 @@
 
 <li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ML_25_06_Ansambl_metode.html">Uvod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_06_Ansambl_metode.html">Ansambl metode</a></li>
 </ul>
 
     </div>
@@ -484,7 +484,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">✍️ Zadatak 2.</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rešenje:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rešenje:</a></li>
 </ul>
 </li>
 </ul>
@@ -492,9 +492,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restorani">🧩 Restorani</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studij-slucaja-2">🧩 Studijа slučaja 2.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
 </ul>
             </nav>
         </div>
@@ -528,26 +528,20 @@ U stvarnom svetu, podaci retko dolaze u savršenom obliku. Najčešće dobijamo 
 <p>Pandas nije samo biblioteka za manipulaciju podacima — on je interfejs za dijalog sa podacima, gde možemo odmah da dobijemo odgovor na konkretno pitanje koje se pojavljuje u tekstu. U nastavku ćemo baš to raditi: učitavaćemo podatke i na svako pitanje odgovaraćemo brzo, precizno i programski, koristeći Pandas kao najprirodniji način da ispitamo skup podataka.</p>
 <section id="ciljevi-ishodi-ucenja-i-literatura">
 <h2>Ciljevi, ishodi učenja i literatura</h2>
-<p>🎯 Cilj ovog poglavlja su</p>
+<p>Cilj ovog poglavlja su</p>
 <ul class="simple">
-<li><p>da se studenti upoznaju sa procesom pripreme podataka: učitavanje dataset-a, pregled strukture, čišćenje i formiranje novog DataFrame-a spremnog za analizu.</p></li>
+<li><p>Da se studenti upoznaju sa procesom pripreme podataka: učitavanje dataset-a, pregled strukture, čišćenje i formiranje novog DataFrame-a spremnog za analizu.</p></li>
 <li><p>Uvesti pivot tabele kao alat za sumiranje i restrukturiranje pripremljenih podataka.</p></li>
 <li><p>Povezati pivot tabele sa konceptom <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> i principom Split–Apply–Combine u analizi podataka.</p></li>
 </ul>
-<p>✅ Posle časa student treba da bude sposoban da:</p>
+<p>Posle časa student treba da bude sposoban da:</p>
 <ul class="simple">
 <li><p>Samostalno pripremi podatke za pivot analizu — da učita dataset, doda kolone, spoji Series objekte i kreira konzistentan DataFrame.</p></li>
 <li><p>Primenjuje <code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code> na realnim datasetovima uz pravilno definisanje index, columns, values i aggfunc.</p></li>
 <li><p>Na osnovu pivot analize interpretira rezultate u realnom kontekstu (npr. razlike po polu, klasi, godini, gradu…).</p></li>
 </ul>
-<p>📚 Sadržaj materijala u ovom poglavlju je tipičan za uvod u Pandas i jasno je u duhu sledećih izvora:</p>
-<ul class="simple">
-<li><p>Pandas zvanična dokumentacija – User Guide:</p></li>
-<li><p>Wes McKinney – Python for Data Analysis (2nd edition), O’Reilly, 2017.</p></li>
-<li><p>Jake VanderPlas – Python Data Science Handbook, O’Reilly, 2016.</p></li>
-<li><p>Kaggle – “Titanic: Machine Learning from Disaster”.</p></li>
-<li><p>Javni skupovi podataka o rađanju (npr. US births).</p></li>
-</ul>
+<p>Sadržaj materijala u ovom poglavlju je tipičan za uvod u Pandas i jasno je u duhu sledećih izvora:
+<span id="id1">[<a class="reference internal" href="#id6" title="Wes McKinney. Python for Data Analysis: Data Wrangling with pandas, NumPy, and IPython. O'Reilly Media, 2 edition, 2017.">1</a>, <a class="reference internal" href="#id7" title="Jake VanderPlas. Python Data Science Handbook: Essential Tools for Working with Data. O'Reilly Media, 2016.">2</a>, <a class="reference internal" href="#id5" title="The pandas development team. Pandas: user guide. 2026. URL: https://pandas.pydata.org/docs/user_guide/.">3</a>, <a class="reference internal" href="#id8" title="Kaggle. Titanic: machine learning from disaster. 2012. URL: https://www.kaggle.com/c/titanic.">4</a>, <a class="reference internal" href="#id9" title="CDC National Center for Health Statistics. Us birth data. 2024. URL: https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm.">5</a>]</span></p>
 </section>
 <section id="instalacija-pandas-a">
 <h2>Instalacija Pandas-a</h2>
@@ -3224,8 +3218,8 @@ dtype: float64
 </table>
 </div></div></div>
 </div>
-<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id2">
-<caption><span class="caption-number">Tabela 10. </span><span class="caption-text">Lista Python operatora i ekvivalentnih Pandas metoda</span></caption>
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id10">
+<caption><span class="caption-text">Lista Python operatora i ekvivalentnih Pandas metoda</span></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Pyhon Operator</p></th>
 <th class="head text-left"><p>Pandas metod(i)</p></th>
@@ -4874,10 +4868,10 @@ dtype: float64
 <li><p>Koliko transakcija ima po korisniku?</p></li>
 </ul>
 <p>GroupBy nije samo filter ili sortiranje — to je način da agregiramo informacije i otkrijemo obrasce koji nisu vidljivi iz pojedinačnih redova.</p>
-<figure class="align-center" id="id3">
+<figure class="align-center" id="id11">
 <a class="reference internal image-reference" href="_images/groupby.png"><img alt="_images/groupby.png" src="_images/groupby.png" style="width: 350px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 16. </span><span class="caption-text">Ilustracija grupne agregacije</span></p>
+<p><span class="caption-text">Ilustracija grupne agregacije</span></p>
 </figcaption>
 </figure>
 <p>Iskoristimo sliku da pokažemo kako se princip praktično realizuje. Prvo učitajmo neophodne bibliteke i kreirajmo podatke:</p>
@@ -6963,7 +6957,7 @@ Name: Pon, dtype: object
 <li><p>Napravite novu kolonu “Razlika” koja će da pokazuje razliku između maksimalne temperature danju i maksimalne temperature noću.</p></li>
 <li><p>Prikažite srednju vrednost razlike temperatura za svaki grad.</p></li>
 </ol>
-<section id="id1">
+<section id="id2">
 <h4>Rešenje:</h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -7993,9 +7987,33 @@ Na osnovu toga formiraj drugu rang-listu (1 = najbolja tačka).</p></li>
 <li><p>Kakve zaklučke možete izvesti na osnovu prethodnih informacija?</p></li>
 </ul>
 </section>
-<section id="studij-slucaja-2">
-<h3>🧩 Studijа slučaja 2.</h3>
 </section>
+<section id="literatura">
+<h2>Literatura</h2>
+<div class="docutils container" id="id3">
+<div role="list" class="citation-list">
+<div class="citation" id="id6" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Wes McKinney. <em>Python for Data Analysis: Data Wrangling with pandas, NumPy, and IPython</em>. O'Reilly Media, 2 edition, 2017.</p>
+</div>
+<div class="citation" id="id7" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">2</a><span class="fn-bracket">]</span></span>
+<p>Jake VanderPlas. <em>Python Data Science Handbook: Essential Tools for Working with Data</em>. O'Reilly Media, 2016.</p>
+</div>
+<div class="citation" id="id5" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">3</a><span class="fn-bracket">]</span></span>
+<p>The pandas development team. Pandas: user guide. 2026. URL: <a class="reference external" href="https://pandas.pydata.org/docs/user_guide/">https://pandas.pydata.org/docs/user_guide/</a>.</p>
+</div>
+<div class="citation" id="id8" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">4</a><span class="fn-bracket">]</span></span>
+<p>Kaggle. Titanic: machine learning from disaster. 2012. URL: <a class="reference external" href="https://www.kaggle.com/c/titanic">https://www.kaggle.com/c/titanic</a>.</p>
+</div>
+<div class="citation" id="id9" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">5</a><span class="fn-bracket">]</span></span>
+<p>CDC National Center for Health Statistics. Us birth data. 2024. URL: <a class="reference external" href="https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm">https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm</a>.</p>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -8108,7 +8126,7 @@ Na osnovu toga formiraj drugu rang-listu (1 = najbolja tačka).</p></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zadatak-2">✍️ Zadatak 2.</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Rešenje:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Rešenje:</a></li>
 </ul>
 </li>
 </ul>
@@ -8116,9 +8134,9 @@ Na osnovu toga formiraj drugu rang-listu (1 = najbolja tačka).</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#restorani">🧩 Restorani</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#studij-slucaja-2">🧩 Studijа slučaja 2.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
 </ul>
   </nav></div>
 
@@ -8133,7 +8151,7 @@ Na osnovu toga formiraj drugu rang-listu (1 = najbolja tačka).</p></li>
   <div class="footer-item">
     
 <p class="component-author">
-Од стране Dragan i Mladen
+Од стране Dragan, Mladen i Dragana
 </p>
 
   </div>
