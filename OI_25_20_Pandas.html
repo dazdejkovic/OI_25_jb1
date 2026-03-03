@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
@@ -540,8 +540,7 @@ U stvarnom svetu, podaci retko dolaze u savršenom obliku. Najčešće dobijamo 
 <li><p>Primenjuje <code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code> na realnim datasetovima uz pravilno definisanje index, columns, values i aggfunc.</p></li>
 <li><p>Na osnovu pivot analize interpretira rezultate u realnom kontekstu (npr. razlike po polu, klasi, godini, gradu…).</p></li>
 </ul>
-<p>Sadržaj materijala u ovom poglavlju je tipičan za uvod u Pandas i jasno je u duhu sledećih izvora:
-<span id="id1">[<a class="reference internal" href="#id6" title="Wes McKinney. Python for Data Analysis: Data Wrangling with pandas, NumPy, and IPython. O'Reilly Media, 2 edition, 2017.">1</a>, <a class="reference internal" href="#id7" title="Jake VanderPlas. Python Data Science Handbook: Essential Tools for Working with Data. O'Reilly Media, 2016.">2</a>, <a class="reference internal" href="#id5" title="The pandas development team. Pandas: user guide. 2026. URL: https://pandas.pydata.org/docs/user_guide/.">3</a>, <a class="reference internal" href="#id8" title="Kaggle. Titanic: machine learning from disaster. 2012. URL: https://www.kaggle.com/c/titanic.">4</a>, <a class="reference internal" href="#id9" title="CDC National Center for Health Statistics. Us birth data. 2024. URL: https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm.">5</a>]</span></p>
+<p>Ovo poglavlje zasniva se na konceptima i primerima predstavljenim u sledećim izvorima <span id="id1">[<a class="reference internal" href="#id6" title="Wes McKinney. Python for Data Analysis: Data Wrangling with pandas, NumPy, and IPython. O'Reilly Media, 2 edition, 2017.">1</a>, <a class="reference internal" href="#id7" title="Jake VanderPlas. Python Data Science Handbook: Essential Tools for Working with Data. O'Reilly Media, 2016.">2</a>, <a class="reference internal" href="#id5" title="The pandas development team. Pandas: user guide. 2026. URL: https://pandas.pydata.org/docs/user_guide/.">3</a>, <a class="reference internal" href="#id8" title="Kaggle. Titanic: machine learning from disaster. 2012. URL: https://www.kaggle.com/c/titanic.">4</a>, <a class="reference internal" href="#id9" title="CDC National Center for Health Statistics. Us birth data. 2024. URL: https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm.">5</a>]</span>, uz dodatna objašnjenja i ilustracije prilagođene ekonomskim primenama.</p>
 </section>
 <section id="instalacija-pandas-a">
 <h2>Instalacija Pandas-a</h2>
@@ -3219,7 +3218,7 @@ dtype: float64
 </div></div></div>
 </div>
 <div class="pst-scrollable-table-container"><table class="thin table table-center" id="id10">
-<caption><span class="caption-text">Lista Python operatora i ekvivalentnih Pandas metoda</span></caption>
+<caption><span class="caption-number">Tabela 10. </span><span class="caption-text">Lista Python operatora i ekvivalentnih Pandas metoda</span></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Pyhon Operator</p></th>
 <th class="head text-left"><p>Pandas metod(i)</p></th>
@@ -4871,7 +4870,7 @@ dtype: float64
 <figure class="align-center" id="id11">
 <a class="reference internal image-reference" href="_images/groupby.png"><img alt="_images/groupby.png" src="_images/groupby.png" style="width: 350px;" /></a>
 <figcaption>
-<p><span class="caption-text">Ilustracija grupne agregacije</span></p>
+<p><span class="caption-number">Slika 16. </span><span class="caption-text">Ilustracija grupne agregacije</span></p>
 </figcaption>
 </figure>
 <p>Iskoristimo sliku da pokažemo kako se princip praktično realizuje. Prvo učitajmo neophodne bibliteke i kreirajmo podatke:</p>
