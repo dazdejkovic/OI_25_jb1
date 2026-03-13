@@ -187,7 +187,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="OI_25_00_uvod.html">
-                    Uvod
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
@@ -237,11 +237,7 @@
 
 
 <li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k-najbližih suseda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_25_06_Ansambl_metode.html">Ansambl metode</a></li>
 </ul>
@@ -439,7 +435,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-ishodi-ucenja-i-literatura">Ciljevi, ishodi učenja i literatura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-pandas-a">Instalacija Pandas-a</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod-u-pandas-objekte">Uvod u Pandas objekte</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objekat-series">Objekat Series</a></li>
@@ -506,29 +502,60 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="uvod-u-analizu-podataka-pandas">
+  <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+
+a[href^="http://"],
+a[href^="https://"] {
+    color: blue !important;
+}
+
+/* stil za sve tabele */
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* markdown tabela – zadrži staro ponašanje */
+table:not(.dataframe) tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* dataframe – samo pravo zaglavlje */
+table.dataframe thead tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* index kolona dataframe da ne bude bold */
+table.dataframe tbody th {
+    font-weight: normal !important;
+}
+
+/* linija ispod poslednjeg reda */
+tbody tr:last-child td,
+tbody tr:last-child th {
+    border-bottom: 1px solid #aaa !important;
+}
+
+</style>
+</div></div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="uvod-u-analizu-podataka-pandas">
 <h1>Uvod u analizu podataka - 🐼 Pandas</h1>
 <br>
-U stvarnom svetu, podaci retko dolaze u savršenom obliku. Najčešće dobijamo CSV datoteke sa pogrešnim zaglavljima, eksel tabele sa viškom praznina, API odgovore sa nepotrebnim poljima ili čitave tekstualne datoteke iz kojih treba izdvojiti informacije. Tu nastupa Pandas — moćna Pajtonova biblioteka koja omogućava praktično sve korake tipične data-analitike:
-<ul class="simple">
-<li><p>učitavanje podataka,</p></li>
-<li><p>pregled i razumevanje strukture,</p></li>
-<li><p>filtriranje, sortiranje i selektovanje,</p></li>
-<li><p>transformaciju i čišćenje,</p></li>
-<li><p>agregaciju i grupisanje,</p></li>
-<li><p>pripremu za vizuelizaciju i modeliranje.</p></li>
-</ul>
-<p>Možete ga zamisliti kao ekslel na steroidima, ali sa daleko više fleksibilnosti i automatizacije, koja omogućava da se i ogromni skupovi podataka analiziraju brzo i efikasno.</p>
-<p>Ključni pojmovi u Pandasu su:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code> – jednodimenzionalni niz podataka (kao kolona u tabeli),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> – dvodimenzionalna tabela slična Excel-u, ali mnogo moćnija.</p></li>
-</ul>
-<p>Pandas je danas standard u nauci o podacima, finansijskoj analizi, poslovnoj inteligenciji, ekonomiji, bankarstvu, statistici i istraživačkom radu. Gde god postoje podaci, verovatno je negde u blizini — Pandas.</p>
-<p>Pandas nije samo biblioteka za manipulaciju podacima — on je interfejs za dijalog sa podacima, gde možemo odmah da dobijemo odgovor na konkretno pitanje koje se pojavljuje u tekstu. U nastavku ćemo baš to raditi: učitavaćemo podatke i na svako pitanje odgovaraćemo brzo, precizno i programski, koristeći Pandas kao najprirodniji način da ispitamo skup podataka.</p>
-<section id="ciljevi-ishodi-ucenja-i-literatura">
-<h2>Ciljevi, ishodi učenja i literatura</h2>
-<p>Cilj ovog poglavlja su</p>
+<p>Cilj ovog poglavlja je</p>
 <ul class="simple">
 <li><p>Da se studenti upoznaju sa procesom pripreme podataka: učitavanje dataset-a, pregled strukture, čišćenje i formiranje novog DataFrame-a spremnog za analizu.</p></li>
 <li><p>Uvesti pivot tabele kao alat za sumiranje i restrukturiranje pripremljenih podataka.</p></li>
@@ -537,10 +564,29 @@ U stvarnom svetu, podaci retko dolaze u savršenom obliku. Najčešće dobijamo 
 <p>Posle časa student treba da bude sposoban da:</p>
 <ul class="simple">
 <li><p>Samostalno pripremi podatke za pivot analizu — da učita dataset, doda kolone, spoji Series objekte i kreira konzistentan DataFrame.</p></li>
-<li><p>Primenjuje <code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code> na realnim datasetovima uz pravilno definisanje index, columns, values i aggfunc.</p></li>
+<li><p>Primenjuje <code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code> na realnim skupovima podataka uz pravilno definisanje <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">columns</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> i <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code>.</p></li>
 <li><p>Na osnovu pivot analize interpretira rezultate u realnom kontekstu (npr. razlike po polu, klasi, godini, gradu…).</p></li>
 </ul>
-<p>Ovo poglavlje zasniva se na konceptima i primerima predstavljenim u sledećim izvorima <span id="id1">[<a class="reference internal" href="#id6" title="Wes McKinney. Python for Data Analysis: Data Wrangling with pandas, NumPy, and IPython. O'Reilly Media, 2 edition, 2017.">1</a>, <a class="reference internal" href="#id7" title="Jake VanderPlas. Python Data Science Handbook: Essential Tools for Working with Data. O'Reilly Media, 2016.">2</a>, <a class="reference internal" href="#id5" title="The pandas development team. Pandas: user guide. 2026. URL: https://pandas.pydata.org/docs/user_guide/.">3</a>, <a class="reference internal" href="#id8" title="Kaggle. Titanic: machine learning from disaster. 2012. URL: https://www.kaggle.com/c/titanic.">4</a>, <a class="reference internal" href="#id9" title="CDC National Center for Health Statistics. Us birth data. 2024. URL: https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm.">5</a>]</span>, uz dodatna objašnjenja i ilustracije prilagođene ekonomskim primenama.</p>
+<section id="uvod">
+<h2>Uvod</h2>
+<p>U stvarnom svetu, podaci retko dolaze u savršenom obliku. Najčešće dobijamo CSV datoteke sa pogrešnim zaglavljima, eksel tabele sa viškom praznina, API odgovore sa nepotrebnim poljima ili čitave tekstualne datoteke iz kojih treba izdvojiti informacije. Tu nastupa Pandas — moćna Pajtonova biblioteka koja omogućava praktično sve korake tipične data-analitike:</p>
+<ul class="simple">
+<li><p>učitavanje podataka,</p></li>
+<li><p>pregled i razumevanje strukture,</p></li>
+<li><p>filtriranje, sortiranje i selektovanje,</p></li>
+<li><p>transformaciju i čišćenje,</p></li>
+<li><p>agregaciju i grupisanje,</p></li>
+<li><p>pripremu za vizuelizaciju i modeliranje.</p></li>
+</ul>
+<p>Možete ga zamisliti i kao eksel, ali sa daleko više fleksibilnosti i automatizacije, koja omogućava da se i ogromni skupovi podataka analiziraju brzo i efikasno.</p>
+<p>Ključni pojmovi u Pandasu su:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code> – jednodimenzionalni niz podataka (kao kolona u tabeli),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> – dvodimenzionalna tabela slična Excel-u, ali mnogo moćnija.</p></li>
+</ul>
+<p>Pandas je danas standard u nauci o podacima, finansijskoj analizi, poslovnoj inteligenciji, ekonomiji, bankarstvu, statistici i istraživačkom radu. Gde god postoje podaci, verovatno je negde u blizini — Pandas.</p>
+<p>Pandas nije samo biblioteka za manipulaciju podacima — on je interfejs za dijalog sa podacima, gde možemo odmah da dobijemo odgovor na konkretno pitanje koje se pojavljuje u tekstu. U nastavku ćemo baš to raditi: učitavaćemo podatke i na svako pitanje odgovaraćemo brzo, precizno i programski, koristeći Pandas kao najprirodniji način da ispitamo skup podataka.</p>
+<p>Delovi ovog poglavlja zasnivaju se na konceptima i primerima predstavljenim u sledećim izvorima <span id="id1">[<a class="reference internal" href="#id6" title="Wes McKinney. Python for Data Analysis: Data Wrangling with pandas, NumPy, and IPython. O'Reilly Media, 2 edition, 2017.">1</a>, <a class="reference internal" href="#id7" title="Jake VanderPlas. Python Data Science Handbook: Essential Tools for Working with Data. O'Reilly Media, 2016.">2</a>, <a class="reference internal" href="#id5" title="The pandas development team. Pandas: user guide. 2026. URL: https://pandas.pydata.org/docs/user_guide/.">3</a>, <a class="reference internal" href="#id8" title="Kaggle. Titanic: machine learning from disaster. 2012. URL: https://www.kaggle.com/c/titanic.">4</a>, <a class="reference internal" href="#id9" title="CDC National Center for Health Statistics. Us birth data. 2024. URL: https://www.cdc.gov/nchs/data_access/vitalstatsonline.htm.">5</a>]</span>, uz dodatna objašnjenja i ilustracije prilagođene ekonomskim primenama.</p>
 </section>
 <section id="instalacija-pandas-a">
 <h2>Instalacija Pandas-a</h2>
@@ -3217,7 +3263,7 @@ dtype: float64
 </table>
 </div></div></div>
 </div>
-<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id10">
+<div class="pst-scrollable-table-container"><table class="thin table table-center" id="id14">
 <caption><span class="caption-number">Tabela 10. </span><span class="caption-text">Lista Python operatora i ekvivalentnih Pandas metoda</span></caption>
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Pyhon Operator</p></th>
@@ -4867,7 +4913,7 @@ dtype: float64
 <li><p>Koliko transakcija ima po korisniku?</p></li>
 </ul>
 <p>GroupBy nije samo filter ili sortiranje — to je način da agregiramo informacije i otkrijemo obrasce koji nisu vidljivi iz pojedinačnih redova.</p>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id15">
 <a class="reference internal image-reference" href="_images/groupby.png"><img alt="_images/groupby.png" src="_images/groupby.png" style="width: 350px;" /></a>
 <figcaption>
 <p><span class="caption-number">Slika 16. </span><span class="caption-text">Ilustracija grupne agregacije</span></p>
@@ -8080,7 +8126,7 @@ Na osnovu toga formiraj drugu rang-listu (1 = najbolja tačka).</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-ishodi-ucenja-i-literatura">Ciljevi, ishodi učenja i literatura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-pandas-a">Instalacija Pandas-a</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod-u-pandas-objekte">Uvod u Pandas objekte</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#objekat-series">Objekat Series</a></li>
