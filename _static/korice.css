@@ -1,0 +1,74 @@
+/* KORICE – uklanjanje sidebar-a */
+
+body[data-page-name="intro"] .bd-sidebar-primary {
+  display: none;
+}
+
+body[data-page-name="intro"] .bd-sidebar-secondary {
+  display: none;
+}
+
+/* uklanja gornju navigaciju */
+
+body[data-page-name="intro"] .bd-header {
+  display: none;
+}
+
+/* uklanja breadcrumbs */
+
+body[data-page-name="intro"] .bd-page-title {
+  display: none;
+}
+
+/* proširuje sadržaj na celu širinu */
+
+body[data-page-name="intro"] .bd-main .bd-content .bd-article-container {
+  max-width: 100%;
+}
+
+/* centriranje korica */
+
+.cover-page {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* naslov */
+
+.cover-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+/* podnaslov */
+
+.cover-subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+/* autor */
+
+.cover-author {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+/* institucija */
+
+.cover-affiliation {
+  font-size: 1.1rem;
+}
+
+/* godina */
+
+.cover-year {
+  margin-top: 2rem;
+  font-size: 1rem;
+}
