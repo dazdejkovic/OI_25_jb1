@@ -3,7 +3,6 @@ title: Poslovno odlučivanje i mašinsko učenje
 ---
 
 <style>
-
 /* sakriva levi meni */
 .bd-sidebar-primary {
   display: none;
@@ -13,6 +12,11 @@ title: Poslovno odlučivanje i mašinsko učenje
 .bd-main .bd-content {
   max-width: 900px;
   margin: auto;
+}
+
+/* sakriva automatski prikaz naslova stranice */
+h1 {
+  display: none;
 }
 
 /* naslovna strana */
@@ -58,9 +62,9 @@ title: Poslovno odlučivanje i mašinsko učenje
 .year {
   margin-top: 8px;
 }
-
 </style>
 
+# Poslovno odlučivanje i mašinsko učenje
 
 <div class="cover-page">
 
