@@ -1,7 +1,11 @@
+---
+title: Poslovno odlučivanje i mašinsko učenje
+---
+
 <div class="cover-page">
 
 <div style="text-align:center;">
-<img src="Slike/ekof.jpeg" style="width:140px;">
+<img src="Slike/ekof.jpeg" style="width:60px;">
 </div>
 
 <h1 class="cover-title">
