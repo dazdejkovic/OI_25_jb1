@@ -1,6 +1,8 @@
 <div class="cover-page">
 
-<img src="Slike/ekof.jpeg" class="cover-logo">
+<div style="text-align:center;">
+<img src="Slike/ekof.jpeg" style="width:140px;">
+</div>
 
 <h1 class="cover-title">
 Poslovno odlučivanje i mašinsko učenje
@@ -9,8 +11,6 @@ Poslovno odlučivanje i mašinsko učenje
 <p class="cover-subtitle">
 Primenom programskog jezika Pajton
 </p>
-
-<br>
 
 <p class="cover-author">
 Dragan Azdejković, Mladen Stamenković i Dragana Radojičić
@@ -26,4 +26,3 @@ Beograd, 2026
 </p>
 
 </div>
-
