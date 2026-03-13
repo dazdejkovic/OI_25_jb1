@@ -190,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -453,6 +458,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nekoliko-napomena-o-odnosu-float-i-int-tipa-brojeva">Nekoliko napomena o odnosu float i int tipa brojeva.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
         </div>
@@ -468,15 +474,12 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-
- /* ——— LINKOVI ——— */
 a[href^="http://"],
 a[href^="https://"] {
     color: blue !important;
 }
 
-
-/* ——— TABELE ——— */
+/* stil za sve tabele */
 table {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -492,18 +495,67 @@ th, td {
     padding: 8px 20px !important;
 }
 
-/* дебља, јача линија испод заглавља */
-tr:first-child th {
+/* markdown tabela – zadrži staro ponašanje */
+table:not(.dataframe) tr:first-child th {
     border-bottom: 2px solid #222 !important;
 }
 
-/* тања, светлија линија испод последњег реда */
-tr:last-child td {
+/* dataframe – samo pravo zaglavlje */
+table.dataframe thead tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* index kolona dataframe da ne bude bold */
+table.dataframe tbody th {
+    font-weight: normal !important;
+}
+
+/* linija ispod poslednjeg reda */
+tbody tr:last-child td,
+tbody tr:last-child th {
     border-bottom: 1px solid #aaa !important;
 }
 
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
 </style>
-</div></div>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="osnovni-elementi-pajton-jezika">
 <h1>Osnovni elementi Pajton jezika</h1>
@@ -961,13 +1013,63 @@ Za svaki tip podataka postoje pravila korišćenja kojim se bavi računar.</p>
 </ul>
 <div class="seealso admonition">
 <p class="admonition-title">Istraži</p>
-<p>Pokušaj da proveriš koji je tip vrednosti <code class="docutils literal notranslate"><span class="pre">None</span></code> tako što ćeš u Pythonu pokrenuti:</p>
+<p>Pokušaj da proveriš koji je tip vrednosti <code class="docutils literal notranslate"><span class="pre">None</span></code> tako što ćeš u Pajtonu pokrenuti:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Zabeleži šta dobiješ i razmisli zašto <code class="docutils literal notranslate"><span class="pre">None</span></code> postoji kao poseban tip.</p>
 </div>
+<br>
 </section>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1</p>
+<p>Napišite kod koji će izračunati vrednost sledećeg izraza:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+2{,}3^4 - \dfrac{1}{1+\dfrac{1}{3-1/3}}
+\end{equation*}\]</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2</p>
+<p>Za datu cifru <code class="docutils literal notranslate"><span class="pre">n</span></code>, napišite kod koji će izračunati vrednost izraza <span class="math notranslate nohighlight">\(n + nn + nnn\)</span>.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p>Pretpostavimo da je prosečno vreme potrebno da se izgovori jedan broj jednako <span class="math notranslate nohighlight">\(t = 0.8\)</span> sekundi.</p>
+<ol class="arabic simple">
+<li><p>Koliko je vremena potrebno da se izbroji od 1 do <span class="math notranslate nohighlight">\(1\,000\,000\)</span>?</p></li>
+<li><p>Koliko bi vremena bilo potrebno da se izbroji od 1 do <span class="math notranslate nohighlight">\(1\,000\,000\,000\)</span> (jedne milijarde)?</p></li>
+<li><p>Dobijene rezultate prikažite u:</p>
+<ul class="simple">
+<li><p>sekundama</p></li>
+<li><p>satima</p></li>
+<li><p>danima</p></li>
+<li><p>godinama</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4</p>
+<p>Pretpostavimo da je brzina internet veze 50 Mb/s.</p>
+<ol class="arabic simple">
+<li><p>Koliko vremena je potrebno da se preuzme fajl veličine 1 GB?</p></li>
+<li><p>Koliko vremena je potrebno da se preuzme film veličine 8 GB?</p></li>
+</ol>
+<p>Rezultat prikažite u minutima.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5</p>
+<p>Pretpostavimo da kamera snima video brzinom 30 slika u sekundi.</p>
+<ol class="arabic simple">
+<li><p>Koliko slika se snimi za 10 minuta?</p></li>
+<li><p>Ako je veličina jedne slike 2 MB, kolika je ukupna veličina
+snimljenog videa?</p></li>
+</ol>
+</div>
 </section>
 </section>
 
@@ -1046,6 +1148,7 @@ Za svaki tip podataka postoje pravila korišćenja kojim se bavi računar.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nekoliko-napomena-o-odnosu-float-i-int-tipa-brojeva">Nekoliko napomena o odnosu float i int tipa brojeva.</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>
 

@@ -188,26 +188,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -440,6 +445,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Još malo o stringovima i listama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-upper-i-lower">Metode <code class="docutils literal notranslate"><span class="pre">upper()</span></code> i <code class="docutils literal notranslate"><span class="pre">lower()</span></code>.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-split">Metod <code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-join">Metod <code class="docutils literal notranslate"><span class="pre">join()</span></code></a></li>
@@ -452,6 +458,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kopiranje-listi">Kopiranje listi</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -925,7 +935,85 @@ To znači:</p>
 </div>
 </div>
 </div>
+<br>
 </section>
+</section>
+<section id="zadaci-i-problemi">
+<h1>Zadaci i problemi</h1>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1</p>
+<p>Dodajte elemente liste <code class="docutils literal notranslate"><span class="pre">more_fruits</span></code> listi <code class="docutils literal notranslate"><span class="pre">fruits</span></code>, ako je:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">,</span> <span class="s2">&quot;cherry&quot;</span><span class="p">]</span>
+
+<span class="n">more_fruits</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span> <span class="s2">&quot;mango&quot;</span><span class="p">,</span> <span class="s2">&quot;grapes&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><em>Dodatno:</em> U Pajtonu postoje barem dve metode kojima biste mogli da rešite ovaj zadatak. Istražite koje metode su u pitanju, kao i koja je razlika u sintaksama koje se koriste. Uradite zadatak na što više načina.</p>
+<p><em>Savet:</em> Istražite kako možete da pregledate sve dostupne metode za određeni tip promenljive. Datа funkcija vam može biti od velikog značaja i u nastavku kursa, kako budemo prelazili sve više oblasti.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg koda? Pokušajte sami da razmislite o odgovoru pre nego što ukucate izraz u komandnoj liniji.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">[:]</span>
+<span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Operaciona&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="s1">&#39;istraživanja&#39;</span><span class="p">]</span>
+<span class="n">list2</span> <span class="o">=</span> <span class="n">list1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="n">bool1</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">bool2</span> <span class="o">=</span> <span class="nb">id</span><span class="p">(</span><span class="n">list1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">id</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">bool1</span><span class="p">,</span> <span class="n">bool2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ostavite odgovor sve i da nije tačan kasnije ćemo debatovati o njima.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p>Kreirajte listu <code class="docutils literal notranslate"><span class="pre">slova</span></code> koja će izdvojiti svako slovo unutar sledećeg stringa. Po završenom zadatku očisitite kod od „ne-karaktera”. Ova procedura nije primarna, rešite zadatak isprva ne obazirući se na taj deo pa tek onda krenite sa ovim.</p>
+<ol class="arabic simple">
+<li><p>Elemente date liste sortirajte prema abecednom redosledu.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Ekonomski fakultet Beograd pripada porodici fakulteta u sastavu Univerziteta u Beogradu, koji je rangiran među nekoliko najboljih u Centralnoj i Istočnoj Evropi. Od svog nastanka, 1937. godine do danas, Ekonomski fakultet je uspešno povezivao i usklađivao visokoškolsko obrazovanje iz oblasti ekonomije, poslovnog upravljanja i statistike sa savremenim zahtevima privrede i društva, idući ukorak sa svim važnim dostignućima ekonomske nauke.</span>
+
+<span class="s1">Od osnivanja na Ekonomskom fakultetu je diplomiralo preko 50 hiljada studenata, magistarske ili master studije završilo je preko 4 hiljade kandidata, dok je titulu doktora ekonomskih nauka u prethodnih više od osam decenija steklo blizu 850 kandidata. Danas je Ekonomski fakultet najveća i najeminentnija naučno-obrazovna institucija u Jugoistočnoj Evropi, u polju ekonomskih nauka, poslovnog upravljanja i statistike, sa preko 120 nastavnika i saradnika, kao i brojnim gostujućim profesorima iz zemlje i inostranstva.</span>
+<span class="s1">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Koristeći se dostupnim metodama, prebrojte koliko puta se pojavljuju slova <code class="docutils literal notranslate"><span class="pre">b</span></code> i <code class="docutils literal notranslate"><span class="pre">e</span></code> u datoj listi, a samim tim i u priloženom tekstu. Obratite pažnju na mala i velika slova!</p></li>
+<li><p>Kako bismo proverili da li se slovo <code class="docutils literal notranslate"><span class="pre">ž</span></code> pojavljuje u tekstu?</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4</p>
+<p>Dat je string <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;Ko</span> <span class="pre">drugome</span> <span class="pre">jamu</span> <span class="pre">kopa,</span> <span class="pre">sam</span> <span class="pre">u</span> <span class="pre">nju</span> <span class="pre">upada.&quot;</span></code>. Ispisati sve reči ovog stringa u okviru jedne liste, tako što će reči:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a) biti rangirane abedecnim redom
+b) biti rangirane po njihovoj dužini.
+</pre></div>
+</div>
+<p>Naknadno, reči liste povežite <code class="docutils literal notranslate"><span class="pre">-</span></code>, tj. ocekujemo sledeći output <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;Ko-drugome-jamu-kopa-sam-u-nju-upada.&quot;</span></code></p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5</p>
+<p>Omogućite korisniku da unese svoje ime, prezime, kao i grad i državu koju bi voleo da poseti u narednom periodu, redom. Testirajte svoj kod na jednom od članova vašeg tima. Neka ime države bude ispisano velikim slovima.</p>
+<p>Koristeći znanje f-stringova, ispišite linije koda koje će rezultovati sledećim output-om:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Output</span><span class="p">:</span> <span class="n">Ime</span> <span class="n">člana</span> <span class="n">tima</span> <span class="n">je</span> <span class="n">Marija</span> <span class="n">Novaković</span><span class="o">.</span> <span class="n">U</span> <span class="n">narednom</span> <span class="n">periodi</span> <span class="n">bi</span> <span class="n">voleo</span><span class="o">/</span><span class="n">la</span> <span class="n">da</span> <span class="n">poseti</span> <span class="n">Amsterdam</span><span class="p">,</span> <span class="n">HOLANDIJA</span><span class="o">.</span>
+</pre></div>
+</div>
+<p><em>Dodatno:</em> Koristeći odgovarajuću metodu, budite sigurni da su sve vlastite imenice ispisane velikim početnim slovom. Na primer, možda je korisnik slučajno svoje ime ispisao malim slovom. U svakom slučaju, želimo da ova greška u samom output-u bude ispravljena.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 6</p>
+<p>Data je visina studenata (u metrima): <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">[1.63,</span> <span class="pre">1.78,</span> <span class="pre">1.86,</span> <span class="pre">1.80,</span> <span class="pre">1.74,</span> <span class="pre">1.93,</span> <span class="pre">1.66,</span> <span class="pre">18.7,</span> <span class="pre">2.03,</span> <span class="pre">1.64,</span> <span class="pre">1.78,</span> <span class="pre">1.91,</span> <span class="pre">1.85,</span> <span class="pre">1.73,</span> <span class="pre">1.65,</span> <span class="pre">1.69,</span> <span class="pre">1.71,</span> <span class="pre">1.82,</span> <span class="pre">1.85,</span> <span class="pre">1.67]</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Nađite najmanju i najveću vrednost unutar liste. Da li vidite nešto čudno?</p></li>
+<li><p>Očigledno je došlo do greške prilikom unosa podataka. Verujemo da je umesto 18.7 trebalo da bude napisano 1.87. Upotrebom odgovarajuće metode, nađite indeks ovog broja, a zatim zamenite ovu vrednost brojem za koji verujemo da je trebao da bude unešen.</p></li>
+<li><p>Dodajte listi novi broj, tako da novi broj bude treći po redu. Broj koji dodajete mora da bude nasumično izabran u intervalu između najmanjeg i najveće vrednosti (nakon što smo ispravili grešku koja je nastala prilikom unosa). Savet: Da biste ovo uradili, potrebno je da importujete određeni modul. Istražite koji bi to modul bio najprikladniji za dati problem. Takođe, verujemo da svaki broj u zadatom intervalu ima istu verovatnoću da bude izabran.</p></li>
+<li><p>Sortirajte listu, tako da brojevi budu sortirani prema opadajućem redosledu.</p></li>
+<li><p>Nađite zbir i srednju vrednost novonastale liste, koristeći se metodama koje smo do sada naučili. Dobijene rezultate prikažite sa dve decimale. Bilo bi poželjno da iskoritite znanje f-stringova. U svakom slučaju, postoji još načina kako da svoj rezultat prikažete sa određenim, željenim brojem decimala. Istražite ih.</p></li>
+</ol>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -992,6 +1080,7 @@ To znači:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Još malo o stringovima i listama</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metode-upper-i-lower">Metode <code class="docutils literal notranslate"><span class="pre">upper()</span></code> i <code class="docutils literal notranslate"><span class="pre">lower()</span></code>.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-split">Metod <code class="docutils literal notranslate"><span class="pre">split()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-join">Metod <code class="docutils literal notranslate"><span class="pre">join()</span></code></a></li>
@@ -1004,6 +1093,10 @@ To znači:</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kopiranje-listi">Kopiranje listi</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

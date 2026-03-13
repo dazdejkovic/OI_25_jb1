@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Osnove Pajtona &#8212; Poslovno odlučivanje i mašinsko učenje</title>
+    <title>Deo I: Osnove programiranja u Pajtonu &#8212; Poslovno odlučivanje i mašinsko učenje</title>
   
   
   
@@ -74,7 +74,7 @@
     <link rel="index" title="Индекс" href="genindex.html" />
     <link rel="search" title="Претрага" href="search.html" />
     <link rel="next" title="Pajton okruženje" href="OI_25_02_Python_instalacija.html" />
-    <link rel="prev" title="Poslovno odlučivanje i mašinsko učenje" href="OI_25_00_uvod.html" />
+    <link rel="prev" title="Uvod" href="OI_25_00_uvod.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="sr"/>
   </head>
@@ -188,26 +188,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -428,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Osnove Pajtona</h1>
+    <h1>Deo I: Osnove programiranja u Pajtonu</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -442,20 +447,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="osnove-pajtona">
-<h1>Osnove Pajtona</h1>
-<br>
-<p><strong>Ciljevi učenja</strong> u ovom delu udžbenika:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="deo-i-osnove-programiranja-u-pajtonu">
+<h1>Deo I: Osnove programiranja u Pajtonu</h1>
+<p>U ovom delu udžbenika uvode se osnovni koncepti programiranja u programskom
+jeziku Pajton. Poseban naglasak stavljen je na razumevanje strukture programa,
+osnovnih tipova podataka, kontrolnih struktura i funkcija, kao i na osnovne
+elemente objektno orijentisanog programiranja.</p>
+<p><strong>Ishodi učenja.</strong> Nakon proučavanja ovog dela student će moći da:</p>
 <ul class="simple">
-<li><p>Razumevanje osnovnih koncepata programiranja u Pajtonu (promenljive, tipovi podataka, operatori).</p></li>
-<li><p>Upoznavanje sa strukturom i sintaksom Pajton jezika.</p></li>
-<li><p>Razvijanje sposobnosti samostalnog pisanja jednostavnih Pajton programa.</p></li>
-</ul>
-<p><strong>Ishodi učenja</strong>. Nakon ovog dela kursa student će biti sposoban da:</p>
-<ul class="simple">
-<li><p>piše osnovne Pajton programe koristeći promenljive, petlje, uslove i funkcije,</p></li>
-<li><p>razlikuje glavne tipove podataka i pravilno ih koristi,</p></li>
-<li><p>razume i primenjuje osnovne principe programskog razmišljanja i algoritamske logike.</p></li>
+<li><p>napiše jednostavne programe u Pajtonu koristeći osnovne kontrolne strukture,</p></li>
+<li><p>koristi osnovne tipove i strukture podataka u rešavanju problema,</p></li>
+<li><p>definiše i koristi funkcije u programima,</p></li>
+<li><p>razume i implementira jednostavne klase u okviru objektno orijentisanog pristupa.</p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -497,7 +500,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">назад</p>
-        <p class="prev-next-title">Poslovno odlučivanje i mašinsko učenje</p>
+        <p class="prev-next-title">Uvod</p>
       </div>
     </a>
     <a class="right-next"

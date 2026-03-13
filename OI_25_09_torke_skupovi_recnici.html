@@ -69,6 +69,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_09_torke_skupovi_recnici';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
@@ -188,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -451,6 +458,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osnovne-metode-na-objektima-tipa-recnik">Osnovne metode na objektima tipa rečnik</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
         </div>
@@ -921,7 +929,122 @@ document.write(`
 </div>
 </div>
 <p>Ono što u ovom trenutku treba da zapamtite da sve ove funkcije generišu iterabine objekte, ali to nisu liste ni taplovi.</p>
+<br>
 </section>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1</p>
+<p>Formirajte torku koja sadrži sledeće elemente:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Ispišite celu torku.</p></li>
+<li><p>Ispišite prvi element torke.</p></li>
+<li><p>Ispišite poslednji element torke.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2</p>
+<p>Formirajte skup koji sadrži sledeće brojeve</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Ispišite skup.</p></li>
+<li><p>Dodajte element 18 u skup.</p></li>
+<li><p>Proverite da li se broj 9 nalazi u skupu.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p>Data su dva skupa</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">}</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Odredite uniju skupova <span class="math notranslate nohighlight">\(A\)</span> i <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Odredite presek skupova <span class="math notranslate nohighlight">\(A\)</span> i <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+<li><p>Odredite razliku skupova <span class="math notranslate nohighlight">\(A\)</span> i <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4</p>
+<p>Formirajte rečnik koji sadrži sledeće podatke o proizvodu:</p>
+<ul class="simple">
+<li><p>naziv proizvoda</p></li>
+<li><p>cena proizvoda</p></li>
+<li><p>količina na stanju</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Ispišite ceo rečnik.</p></li>
+<li><p>Ispišite samo cenu proizvoda.</p></li>
+<li><p>Promenite cenu proizvoda.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5</p>
+<p>Data je sledeća struktura podataka</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ime&quot;</span><span class="p">:</span> <span class="s2">&quot;Ana&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;godine&quot;</span><span class="p">:</span> <span class="mi">21</span><span class="p">,</span>
+    <span class="s2">&quot;prosek&quot;</span><span class="p">:</span> <span class="mf">8.7</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>Ispišite vrednost ključa <code class="docutils literal notranslate"><span class="pre">&quot;ime&quot;</span></code>.</p></li>
+<li><p>Ispišite vrednost ključa <code class="docutils literal notranslate"><span class="pre">&quot;prosek&quot;</span></code>.</p></li>
+<li><p>Dodajte novi ključ <code class="docutils literal notranslate"><span class="pre">&quot;grad&quot;</span></code> sa proizvoljnom vrednošću.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5</p>
+<p>Date su dve torke <code class="docutils literal notranslate"><span class="pre">tup1</span> <span class="pre">=</span> <span class="pre">(1,</span> <span class="pre">3,</span> <span class="pre">5)</span></code> i <code class="docutils literal notranslate"><span class="pre">tup2</span> <span class="pre">=</span> <span class="pre">(2,</span> <span class="pre">4)</span></code>. Spojite ove dve torke u zajedničku torku <code class="docutils literal notranslate"><span class="pre">tup</span></code>.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 6</p>
+<p>Napišite kod pomoću kojeg ćete iz torke <code class="docutils literal notranslate"><span class="pre">torka</span> <span class="pre">=</span> <span class="pre">(55,</span> <span class="pre">26,</span> <span class="pre">41,</span> <span class="pre">88,</span> <span class="pre">7,</span> <span class="pre">90,</span> <span class="pre">62,</span> <span class="pre">98,</span> <span class="pre">95,</span> <span class="pre">29,55,</span> <span class="pre">62,</span> <span class="pre">98,</span> <span class="pre">71,</span> <span class="pre">72,</span> <span class="pre">78,</span> <span class="pre">50,</span> <span class="pre">62,</span> <span class="pre">20,</span> <span class="pre">77,</span> <span class="pre">33,</span> <span class="pre">27,</span> <span class="pre">87,</span> <span class="pre">83,</span> <span class="pre">65,</span> <span class="pre">47,</span> <span class="pre">24,</span> <span class="pre">65,</span> <span class="pre">42,</span> <span class="pre">78,7,</span> <span class="pre">53,</span> <span class="pre">48,</span> <span class="pre">97,</span> <span class="pre">82,</span> <span class="pre">44,</span> <span class="pre">98,</span> <span class="pre">53,</span> <span class="pre">50,</span> <span class="pre">82,</span> <span class="pre">18,</span> <span class="pre">16,</span> <span class="pre">22,</span> <span class="pre">14,</span> <span class="pre">23,</span> <span class="pre">11,</span> <span class="pre">86,</span> <span class="pre">90,</span> <span class="pre">12,</span> <span class="pre">42,26,</span> <span class="pre">55,</span> <span class="pre">93,</span> <span class="pre">55,</span> <span class="pre">24,</span> <span class="pre">6,</span> <span class="pre">41,</span> <span class="pre">26,</span> <span class="pre">44,</span> <span class="pre">54,</span> <span class="pre">88,</span> <span class="pre">97,</span> <span class="pre">93,</span> <span class="pre">5,</span> <span class="pre">42,</span> <span class="pre">47,</span> <span class="pre">34,</span> <span class="pre">18,</span> <span class="pre">67,</span> <span class="pre">47,</span> <span class="pre">37,13,</span> <span class="pre">78,</span> <span class="pre">59,</span> <span class="pre">64,</span> <span class="pre">46,</span> <span class="pre">13,</span> <span class="pre">74,</span> <span class="pre">48,</span> <span class="pre">73,</span> <span class="pre">56,</span> <span class="pre">75,</span> <span class="pre">32,</span> <span class="pre">96,</span> <span class="pre">40,</span> <span class="pre">74,</span> <span class="pre">97,</span> <span class="pre">32,</span> <span class="pre">24,</span> <span class="pre">32,</span> <span class="pre">91,79,</span> <span class="pre">51,</span> <span class="pre">12,</span> <span class="pre">73,</span> <span class="pre">61,</span> <span class="pre">3,</span> <span class="pre">17,</span> <span class="pre">9,</span> <span class="pre">63)</span></code>, imajući u vidu osobinu nemutabilnosti torki, na koji način ipak možemo izbrisati 24. element?</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 7</p>
+<p>Definišite string koji će se odnositi na vaše ime i prezime (na primer, <code class="docutils literal notranslate"><span class="pre">str1</span> <span class="pre">=</span> <span class="pre">'Jovana</span> <span class="pre">Mileusnić'</span></code>). Odredite sve različite karaktere u datom stringu.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 8</p>
+<p>Napišite   najkraći   kod   koji   će   kreirati   torku <code class="docutils literal notranslate"><span class="pre">ham</span> <span class="pre">=</span> <span class="pre">(0,</span> <span class="pre">3,</span> <span class="pre">6,</span> <span class="pre">9)</span></code> od   torke <code class="docutils literal notranslate"><span class="pre">spam</span> <span class="pre">=</span> <span class="pre">(0,1,2,3,4,5,6,7,8,9)</span></code>.</p>
+<ul class="simple">
+<li><p>Definišite skupove <code class="docutils literal notranslate"><span class="pre">set_spam</span></code> i <code class="docutils literal notranslate"><span class="pre">set_ham</span></code> koji sadrže elemente torki <code class="docutils literal notranslate"><span class="pre">spam</span></code> i <code class="docutils literal notranslate"><span class="pre">ham</span></code>, redom. Kako možemo da proverimo da li je tako definisan <code class="docutils literal notranslate"><span class="pre">set_ham</span></code> podskup <code class="docutils literal notranslate"><span class="pre">set_spam</span></code>? Analogno, da li je <code class="docutils literal notranslate"><span class="pre">set_spam</span></code> nadskup <code class="docutils literal notranslate"><span class="pre">set_ham</span></code>? Iako rezultati moraju biti identični, proverite šta će biti odgovor na postavljeno pitanje na oba načina.</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 9</p>
+<p>Kreirajte rečnik <code class="docutils literal notranslate"><span class="pre">d</span></code> koji ima ključeve <code class="docutils literal notranslate"><span class="pre">“A”</span></code>, <code class="docutils literal notranslate"><span class="pre">“B”</span></code>, <code class="docutils literal notranslate"><span class="pre">“C”</span></code> sa vrednostima <code class="docutils literal notranslate"><span class="pre">“a”</span></code>, <code class="docutils literal notranslate"><span class="pre">“b”</span></code>, <code class="docutils literal notranslate"><span class="pre">“c”</span></code>. Pokušajte da ovo uradite na više od jednog načina.</p>
+<ul class="simple">
+<li><p>Odštampajte sve ključeve u rečniku. Potom odštampajte sve vrednosti u rečniku.</p></li>
+<li><p>Kreirajte logičku promenljivu v koja proverava da li postoji ključ <code class="docutils literal notranslate"><span class="pre">“B”</span></code> u rečniku.</p></li>
+<li><p>Koji će biti ouput sledeće linije koda? <code class="docutils literal notranslate"><span class="pre">d['C':'D']</span></code></p></li>
+<li><p>Dodajte novi ključ <code class="docutils literal notranslate"><span class="pre">“D”</span></code> čija je vrednost <code class="docutils literal notranslate"><span class="pre">&quot;d&quot;</span></code>.</p></li>
+<li><p>Obrišite stavku iz rečnika čija je vrednost <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code>.</p></li>
+<li><p>Na koje sve načine možete da kreirate novi rečnik <code class="docutils literal notranslate"><span class="pre">d1</span></code> koji je kopija prvobitno definisanog rečnika <code class="docutils literal notranslate"><span class="pre">d</span></code>?</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 10</p>
+<p>Dve osobe žele zajedno da putuju, međutim imaju različitim destinacijama su dale ocene 1-5.</p>
+<ul class="simple">
+<li><p>Ocene prve osobe su: Španija - 5, Italija - 2, Maroko - 3, Kuba - 3, Grčka - 4.</p></li>
+<li><p>Ocene druge osobe su Crna Gora - 4, Grčka - 4, Rusija - 2, Portugal - 5, Španija - 4.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Napravite 2 rečnika za ove dve osobe, gde su ključevi države, a vrednosti ocene.</p></li>
+<li><p>Smislite jedan način kako bi se ove preferencije mogle agregirati.</p></li>
+<li><p>Napravite 3. rečnik koji će sadržati zajedničke željene destinacije i agregiratnu ocenu (<em>Savet</em>: pogledajte funkciju zip).</p></li>
+</ol>
+</div>
 </section>
 </section>
 
@@ -1000,6 +1123,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#osnovne-metode-na-objektima-tipa-recnik">Osnovne metode na objektima tipa rečnik</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>
 

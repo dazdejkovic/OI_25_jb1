@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -190,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -442,8 +447,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-i-ishodi-ucenja">Ciljevi i ishodi učenja</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura-i-dodatni-resursi">Literatura i dodatni resursi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-i-pokretanje">Instalacija i pokretanje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-ndarray-visedimenzionalni-niz">NumPy ndarray: višedimenzionalni niz</a><ul class="nav section-nav flex-column">
@@ -494,7 +497,6 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-
 a[href^="http://"],
 a[href^="https://"] {
     color: blue !important;
@@ -516,51 +518,81 @@ th, td {
     padding: 8px 20px !important;
 }
 
-/* дебља, јача линија испод заглавља */
-tr:first-child th {
+/* markdown tabela – zadrži staro ponašanje */
+table:not(.dataframe) tr:first-child th {
     border-bottom: 2px solid #222 !important;
 }
 
-/* тања, светлија линија испод последњег реда */
-tr:last-child td {
+/* dataframe – samo pravo zaglavlje */
+table.dataframe thead tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* index kolona dataframe da ne bude bold */
+table.dataframe tbody th {
+    font-weight: normal !important;
+}
+
+/* linija ispod poslednjeg reda */
+tbody tr:last-child td,
+tbody tr:last-child th {
     border-bottom: 1px solid #aaa !important;
 }
 
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
 </style>
-</div></div>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="uvod-u-numpy">
 <h1>Uvod u NumPy</h1>
-<section id="ciljevi-i-ishodi-ucenja">
-<h2>Ciljevi i ishodi učenja</h2>
-<p><strong>Ciljevi učenja</strong></p>
+<br>
+<p>NumPy (Numerical Python) predstavlja osnovnu biblioteku za numerička izračunavanja u programskom jeziku Pajton. Njena centralna struktura podataka je višedimenzionalni niz (<code class="docutils literal notranslate"><span class="pre">ndarray</span></code>), koji omogućava efikasan rad sa velikim skupovima numeričkih podataka i izvođenje vektorizovanih operacija bez potrebe za eksplicitnim petljama. NumPy je razvijen 2005. godine kao objedinjena evolucija ranijih biblioteka Numeric i Numarray i danas predstavlja temelj većine biblioteka za naučno računanje i analitiku u Pajtonu, kao što su SciPy, pandas, Matplotlib i Scikit-learn.</p>
+<p>U ovom delu biće predstavljeni osnovni koncepti rada sa NumPy nizovima, uključujući njihovo formiranje, manipulaciju dimenzijama, indeksiranje i primenu standardnih matematičkih funkcija. Posebna pažnja biće posvećena vektorizovanim operacijama, koje omogućavaju brzu obradu podataka i čine NumPy ključnim alatom u savremenoj analizi podataka.</p>
+<p><strong>Ishodi učenja:</strong>  Nakon proučavanja ovog poglavlja student će biti u stanju da:</p>
 <ul class="simple">
-<li><p>Razumevanje uloge biblioteke NumPy u Pajton ekosistemu i njenog značaja u radu sa numeričkim podacima.</p></li>
-<li><p>Savladavanje rada sa objektima tipa <code class="docutils literal notranslate"><span class="pre">ndarray</span></code>, njihovim atributima i načinima formiranja.</p></li>
-<li><p>Usvajanje koncepta vektorizovanih operacija i eliminisanja eksplicitnih petlji radi povećanja efikasnosti.</p></li>
-<li><p>Primena NumPy funkcija za generisanje slučajnih uzoraka, promenu dimenzionalnosti struktura podataka, broadcastovanje i osnovne statističke operacije.</p></li>
-</ul>
-<p><strong>Ishodi učenja</strong></p>
-<p>Nakon savladanog gradiva student će moći da:</p>
-<ul class="simple">
-<li><p>kreira, manipuliše i transformiše NumPy nizove različite dimenzionalnosti;</p></li>
-<li><p>primenjuje NumPy funkcije (<code class="docutils literal notranslate"><span class="pre">arange</span></code>, <code class="docutils literal notranslate"><span class="pre">linspace</span></code>, <code class="docutils literal notranslate"><span class="pre">reshape</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">mean</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">argmax</span></code>, itd.);</p></li>
+<li><p>kreira i transformiše NumPy nizove različitih dimenzija;</p></li>
+<li><p>primenjuje osnovne NumPy funkcije za generisanje i obradu nizova podataka;</p></li>
 <li><p>koristi indeksiranje, slicing i logičke maske nad nizovima;</p></li>
-<li><p>Generiše slučajne uzorke.</p></li>
+<li><p>primenjuje vektorizovane operacije i osnovne statističke funkcije nad nizovima;</p></li>
+<li><p>generiše slučajne uzorke koristeći odgovarajuće NumPy module.</p></li>
 </ul>
-</section>
-<section id="uvod">
-<h2>Uvod</h2>
-<p>NumPy je skraćenica za numerički Pajton (<em>Numerical Python</em>), osnovni paket za rad sa višedimenzionalnim nizovima (matricima) i vektorska izračunavanja. Ova biblioteka savršeno funkcioniše u kombinaciji sa ostalim popularnim bibliotekama kao što su SciPy, Matplotlib, pandas, and Scikit-learn što je čini i jednom od fundamentalnih biblioteka za napredna računanja u Pajtonu.</p>
-<p>U tekstu o NumPy modulu na portalu Medium kojem možete pristupiti <a class="reference external" href="https://medium.com/&#64;techwithjulles/introduction-to-numpy-definition-and-brief-history-db047e66a179">OVDE</a>, konstatuje se da je NumPy inicijalno razvio Travis Oliphant 2005. godine kao zamenu za biblioteku Numeric. Naredne godine, NumPy integrisan je sa drugom bibliotekom, Numarray, i nastaje, danas nezaobilazna biblioteka u svakom uvodu u analitiku u Pajtonu. Na zvaničnoj NumPy stranici, u tekstu dostupnom <a class="reference external" href="https://numpy.org/history/">OVDE</a> konstatuje se da je bibiloteka razvijana od grupe postdiplomaca i na ovoj stranici dostupne su i dodatne informacije o Numeric i Numarray bibliotekama.</p>
-<p>A šta nam to pruža NumPy:</p>
-<ul class="simple">
-<li><p>Standardne matematičke funkcije za brze operacije nad nizovima podataka bez pisanja petlji</p></li>
-<li><p>Alat za čitanje/upisivanje nizova podataka na disk i rad sa datotekama u memoriji</p></li>
-<li><p>Linearna algebra: matrice, determinante, polinomi</p></li>
-<li><p>Modul random za generisanje slučajnih brojeva iz različitih raspodela</p></li>
-</ul>
-</section>
 <section id="literatura-i-dodatni-resursi">
 <h2>Literatura i dodatni resursi</h2>
 <p>Kao i u svakom poglavlju, trudili smo se da pratimo nekoliko relevantnih resursa koje smo koristili prilikom pisanja ovog poglavlja. I vama ih preporučujemo ako želite dalje da istražujete mogućnosti ove biblioteke. Nekoliko najvažnijih mesta:</p>
@@ -3398,8 +3430,6 @@ $<span class="math notranslate nohighlight">\( P(X=0 \mid y=c) = 1 - P(X=1 \mid 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-i-ishodi-ucenja">Ciljevi i ishodi učenja</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura-i-dodatni-resursi">Literatura i dodatni resursi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacija-i-pokretanje">Instalacija i pokretanje</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-ndarray-visedimenzionalni-niz">NumPy ndarray: višedimenzionalni niz</a><ul class="nav section-nav flex-column">

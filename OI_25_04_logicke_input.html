@@ -69,6 +69,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'OI_25_04_logicke_input';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
     <link rel="index" title="Индекс" href="genindex.html" />
@@ -188,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -448,6 +455,7 @@ document.write(`
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#promena-tipa-promenljivih">Promena tipa promenljivih</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-input">Funkcija <code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
 
             </nav>
@@ -460,7 +468,94 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="logicke-promenljive">
+  <div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html">
+<style>
+a[href^="http://"],
+a[href^="https://"] {
+    color: blue !important;
+}
+
+/* stil za sve tabele */
+table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    font-family: "Segoe UI", "Calibri", sans-serif !important;
+    font-size: 12px !important;
+}
+
+th, td {
+    padding: 8px 20px !important;
+}
+
+/* markdown tabela – zadrži staro ponašanje */
+table:not(.dataframe) tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* dataframe – samo pravo zaglavlje */
+table.dataframe thead tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* index kolona dataframe da ne bude bold */
+table.dataframe tbody th {
+    font-weight: normal !important;
+}
+
+/* linija ispod poslednjeg reda */
+tbody tr:last-child td,
+tbody tr:last-child th {
+    border-bottom: 1px solid #aaa !important;
+}
+
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
+</style>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
+</div>
+<section id="logicke-promenljive">
 <h1>Logičke promenljive</h1>
 <p>Naredna važna klasa osnovnih tipova podataka su <em>logičke promenljive</em>. One će uzimati dve vrednosti - <code class="docutils literal notranslate"><span class="pre">True</span></code> i <code class="docutils literal notranslate"><span class="pre">False</span></code> i sugerisaće nam istinitost određene tvrdnje.</p>
 <div class="cell docutils container">
@@ -828,6 +923,107 @@ Kvadrat ovog broja je 144
 </div>
 </div>
 </div>
+<br>
+</section>
+<section id="zadaci-i-problemi">
+<h1>Zadaci i problemi</h1>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1</p>
+<p>Koristeći se ugrađenom funkcijom <code class="docutils literal notranslate"><span class="pre">input()</span></code>, pretpostavite da ćemo kao ulaz uneti cifru <code class="docutils literal notranslate"><span class="pre">n</span></code>. Napišite kod koji će izračunati vrednost sledećeg izraza:</p>
+<p><span class="math notranslate nohighlight">\(n + nn + nnn\)</span></p>
+<p>Testirajte kod na primeru broja 4. Očekivana vrednost datog izraza bi u tom slučaju bila 492, preciznije 4 + 44 + 444.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2</p>
+<p>Želimo da simuiramo igru ’<em>Pogodi moj broj</em>’. Igrač 1 unosi proizvoljno izbran broj između 1 i 10. Igrač 2 pogađa koji je to broj izabrao Igrač 1. Kreirajte logičku promenljivu koja će proveriti da li je igrač 2 zaista pogodio izabran broj svog saigrača.</p>
+<p>Testirajte svoj kod.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p>Napišite program koji od korisnika traži da unese broj.<br />
+Program treba da ispita da li je broj veći od 100 i da prikaže logičku vrednost tog uslova.</p>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Unesite</span> <span class="n">broj</span><span class="p">:</span> <span class="mi">120</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4</p>
+<p>Napišite program koji od korisnika traži da unese godinu rođenja.</p>
+<p>Program treba da proveri da li je osoba punoletna (pretpostavite da je trenutna godina 2026).</p>
+<p>Rezultat prikažite kao logičku vrednost.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5</p>
+<p>Napišite program koji od korisnika traži da unese temperaturu vazduha i da li pada kiša (<code class="docutils literal notranslate"><span class="pre">True</span></code> ili <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<p>Program treba da ispita da li su dobri uslovi za šetnju.</p>
+<p>Pretpostavite da su uslovi dobri ako:</p>
+<ul class="simple">
+<li><p>temperatura je između 18 i 28 stepeni, i</p></li>
+<li><p>ne pada kiša.</p></li>
+</ul>
+<p>Program treba da prikaže logičku vrednost odgovarajućeg uslova.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 6</p>
+<p>Napišite program koji od korisnika traži da unese tri broja.</p>
+<p>Program treba da proveri da li je bar jedan od brojeva negativan i da prikaže logičku vrednost odgovarajućeg izraza.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 7</p>
+<p>Kompanija razmatra prijave za stručnu praksu. Kandidat može biti primljen ako su ispunjeni sledeći uslovi.</p>
+<p>Od korisnika se traži da unese:</p>
+<ul class="simple">
+<li><p>prosečnu ocenu na studijama,</p></li>
+<li><p>broj položenih ispita,</p></li>
+<li><p>da li kandidat ima prethodno radno iskustvo (<code class="docutils literal notranslate"><span class="pre">True</span></code> ili <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p></li>
+</ul>
+<p>Kandidat se prima na praksu ako važi jedan od sledećih uslova:</p>
+<ul class="simple">
+<li><p>prosečna ocena je najmanje 9, ili</p></li>
+<li><p>položio je najmanje 8 ispita i ima prethodno radno iskustvo, ili</p></li>
+<li><p>prosečna ocena je najmanje 8 i kandidat nema prethodno radno iskustvo.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Formulišite odgovarajući logički izraz.</p></li>
+<li><p>Napišite Python program koji od korisnika uzima potrebne podatke i ispisuje logičku vrednost tog izraza.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak</p>
+<p>Mala Fermaova teorema kaže da za svaki ceo broj <span class="math notranslate nohighlight">\(a\)</span> i prost broj <span class="math notranslate nohighlight">\(p\)</span>
+važi:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+a^{p-1} \equiv 1 \pmod p
+\end{equation*}\]</div>
+<p>ako broj <span class="math notranslate nohighlight">\(a\)</span> nije deljiv sa <span class="math notranslate nohighlight">\(p\)</span>. (Ako <span class="math notranslate nohighlight">\(a^{p-1}\)</span> podelimo sa <span class="math notranslate nohighlight">\(p\)</span>, ostatak je uvek 1)</p>
+<ol class="arabic simple">
+<li><p>Napišite Pajton program koji od korisnika traži da unese dva broja:</p>
+<ul class="simple">
+<li><p>ceo broj <span class="math notranslate nohighlight">\(a\)</span></p></li>
+<li><p>prost broj <span class="math notranslate nohighlight">\(p\)</span></p></li>
+</ul>
+</li>
+<li><p>Program treba da izračuna vrednost izraza
+\begin{equation*}
+a^{p-1} \bmod p
+\end{equation*}</p></li>
+<li><p>Program treba da proveri da li je ostatak pri deljenu jednak 1 i da ispiše odgovarajuću poruku.</p></li>
+</ol>
+<p>Na primer, za:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+a = 2, \quad p = 7
+\end{equation*}\]</div>
+<p>važi</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+2^{6} = 64,\quad 64 \bmod 7 = 1
+\end{equation*}\]</div>
+<p>što potvrđuje Malu Fermaovu teoremu na ovom primeru.</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -902,6 +1098,7 @@ Kvadrat ovog broja je 144
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#promena-tipa-promenljivih">Promena tipa promenljivih</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-input">Funkcija <code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
 
   </nav></div>

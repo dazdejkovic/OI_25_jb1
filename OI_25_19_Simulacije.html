@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -190,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -442,8 +447,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testiranje">Testiranje</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakljucak">Zaključak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testiranje">Testiranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakljucak">Zaključak</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
@@ -460,7 +468,6 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-
 a[href^="http://"],
 a[href^="https://"] {
     color: blue !important;
@@ -482,32 +489,95 @@ th, td {
     padding: 8px 20px !important;
 }
 
-/* дебља, јача линија испод заглавља */
-tr:first-child th {
+/* markdown tabela – zadrži staro ponašanje */
+table:not(.dataframe) tr:first-child th {
     border-bottom: 2px solid #222 !important;
 }
 
-/* тања, светлија линија испод последњег реда */
-tr:last-child td {
+/* dataframe – samo pravo zaglavlje */
+table.dataframe thead tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* index kolona dataframe da ne bude bold */
+table.dataframe tbody th {
+    font-weight: normal !important;
+}
+
+/* linija ispod poslednjeg reda */
+tbody tr:last-child td,
+tbody tr:last-child th {
     border-bottom: 1px solid #aaa !important;
 }
 
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
 </style>
-</div></div>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="monte-karlo-simulacije">
 <h1>Monte Karlo simulacije</h1>
-<p><strong>Šta su Monte Karlo simulacije?</strong></p>
+<p>Simulacije omogućavaju analizu složenih sistema čak i kada analitičko rešavanje modela nije moguće.</p>
+<p>Simulacija predstavlja važan pristup analizi sistema u kojima postoji neizvesnost ili složena struktura međuzavisnosti između promenljivih. U takvim situacijama ponašanje sistema može se proučavati generisanjem velikog broja mogućih scenarija i analizom rezultata koji iz njih proizlaze.</p>
+<p>U ekonomiji i poslovnom odlučivanju simulacije se koriste za procenu rizika, analizu poslovnih procesa, planiranje resursa i modeliranje tržišnih pojava. Posebno značajno mesto ima Monte Karlo simulacija, koja se zasniva na ponovljenom generisanju slučajnih promenljivih i analizi distribucije dobijenih rezultata.</p>
+<p>Savremeni programski alati omogućavaju jednostavnu implementaciju simulacionih modela. Programski jezik Pajton, uz biblioteke kao što su NumPy, pandas i Matplotlib, predstavlja pogodno okruženje za izvođenje simulacionih eksperimenata i interpretaciju njihovih rezultata.</p>
+<p><strong>Ishodi učenja:</strong> Nakon proučavanja ovog poglavlja student će biti u stanju da:</p>
+<ul class="simple">
+<li><p>objasni osnovne ideje simulacionog modeliranja i Monte Karlo pristupa</p></li>
+<li><p>implementira jednostavne simulacije u programskom jeziku Pajton</p></li>
+<li><p>analizira i interpretira rezultate simulacionih eksperimenata u ekonomskim problemima</p></li>
+</ul>
+<section id="uvod">
+<h2>Uvod</h2>
 <p>Monte Karlo simulacija, takođe poznata kao Monte Karlo metoda ili simulacija višestruke verovatnoće, je matematička tehnika koja se koristi za procenu mogućih ishoda neizvesnog događaja. Metodu Monte Karla izmislili su Džon fon Nojman i Stanislav Ulam tokom Drugog svetskog rata da bi poboljšali donošenje odluka u neizvesnim uslovima. Ime je dobio po poznatom kazino gradu, zvanom Monte Karlo, pošto je element slučajnosti jezgro modela modela, slično u igri rulet.</p>
 <p>Od svog uvođenja, Monte Karlo metod je procenio uticaj rizika u mnogim scenarijima iz stvarnog života, kao što su veštačka inteligencija, cene akcija, predviđanje prodaje, upravljanje projektima i određivanje cena. On takođe pruža brojne prednosti u odnosu na prediktivne modele sa fiksnim ulazima, kao što je mogućnost sprovođenja analize osetljivosti ili izračunavanja korelacije inputa. Analiza osetljivosti omogućava donosiocima odluka da vide uticaj pojedinačnih inputa na dati ishod, a korelacija im omogućava da razumeju odnose između bilo koje ulazne promenljive.</p>
-<p><strong>Kako funkcioniše metod Monte Karlo?</strong> Za razliku od klasičnog modela predviđanja, gde imamo fiksirane ulazne vrednosti, Monte Karlo simulacija predviđa skup ishoda na osnovu vrednosti čija je karakteristika slučajnost. Drugim rečima, Monte Karlo simulacija gradi model mogućih rezultata korišćenjem raspodele verovatnoća, kao što je uniformna ili normalna raspodela, za bilo koju promenljivu koja ima inherentnu nesigurnost. Zatim ponovo i iznova izračunava rezultate, svaki put koristeći drugačiji skup slučajnih brojeva iz istih raspodela verovatnoća. U tipičnom Monte Karlo eksperimentu, ova vežba se može ponoviti hiljade puta da bi se proizveo veliki broj verovatnih ishoda.</p>
+<p>Za razliku od klasičnog modela predviđanja, gde imamo fiksirane ulazne vrednosti, Monte Karlo simulacija predviđa skup ishoda na osnovu vrednosti čija je karakteristika slučajnost. Drugim rečima, Monte Karlo simulacija gradi model mogućih rezultata korišćenjem raspodele verovatnoća, kao što je uniformna ili normalna raspodela, za bilo koju promenljivu koja ima inherentnu nesigurnost. Zatim ponovo i iznova izračunava rezultate, svaki put koristeći drugačiji skup slučajnih brojeva iz istih raspodela verovatnoća. U tipičnom Monte Karlo eksperimentu, ova vežba se može ponoviti hiljade puta da bi se proizveo veliki broj verovatnih ishoda.</p>
 <p>Monte Karlo simulacije se takođe koriste za dugoročna predviđanja zbog svoje tačnosti. Kako se broj ulaznih podataka povećava, raste i broj predviđanja, što vam omogućava da projektujete rezultate dalje u vremenu sa više tačnosti. Kada je Monte Karlo simulacija završena, ona daje raspodelu verovatnoća nad skupom ishoda.</p>
-<p><strong>Koji su osnovni koraci u primeni Monte Karlo metoda?</strong>  Bez obzira koji alat se koristi, Monte Karlo tehnika uključuja tri osnovna koraka:</p>
+<div class="important admonition">
+<p class="admonition-title">Koji su osnovni koraci u primeni Monte Karlo metoda?</p>
+<p>Bez obzira koji alat se koristi, Monte Karlo tehnika uključuja tri osnovna koraka:</p>
 <ul class="simple">
 <li><p>Postavite prediktivni model, identifikujući i zavisnu promenljivu koju treba predvideti i nezavisne promenljive (poznate i kao promenljive ulaza, rizika ili prediktora) koje će pokretati predviđanje.</p></li>
 <li><p>Odredite raspodele verovatnoća nezavisnih promenljivih. Koristite istorijske podatke i/ili subjektivnu procenu analitičara da biste definisali opseg verovatnih vrednosti i dodelili pondere verovatnoće za svaku.</p></li>
 <li><p>Pokrenite simulacije više puta, generišući nasumične vrednosti nezavisnih promenljivih. Uradite ovo dok se ne prikupi dovoljno rezultata da se napravi reprezentativan uzorak skoro beskonačnog broja mogućih kombinacija.</p></li>
 </ul>
+</div>
 <p>Možete pokrenuti onoliko Monte Karlo simulacija koliko želite tako što ćete modifikovati osnovne parametre koje koristite za simulaciju podataka. Međutim, takođe ćete želeti da izračunate opseg varijacije unutar uzorka tako što ćete izračunati varijansu i standardnu devijaciju, koje se obično koriste kao mere varijacije podataka. Obično se manja varijacija smatra boljom.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1027,14 +1097,16 @@ Zavisi od rizika:</p>
 <p>Menadžment želi da proceni raspodelu profita u prvoj godini poslovanja. Zbog ograničene gotovine, posebno ih zanima rizik od gubitka. Kao ključne faktore profita identifikovali su: prodajnu cenu po jedinici (<span class="math notranslate nohighlight">\(p\)</span>), fiksne administrativne i marketinške troškove u prvoj godini (<span class="math notranslate nohighlight">\(c_a\)</span>), troškove montaže po jedinici (<span class="math notranslate nohighlight">\(c_m\)</span>), troškove komponenti po jedinici (<span class="math notranslate nohighlight">\(c_k\)</span>) i godišnju tražnju (<span class="math notranslate nohighlight">\(d\)</span>).</p>
 <p>Na osnovu analize tržišta procenjeno je da će prodajna cena biti <span class="math notranslate nohighlight">\(p=319\$\)</span> po jedinici, a da će ukupni administrativni i marketinški troškovi u prvoj godini iznositi <span class="math notranslate nohighlight">\(c_a=1\,350\,000\$\)</span>. Međutim, <em>AeroSense</em> nije siguran u troškove montaže, troškove komponenti i obim tražnje.</p>
 <p>Napraviti Monte Karlo simulaciju za problem <em>AeroSense</em>-a pod sledećim pretpostavkama:</p>
-<ul class="simple">
-<li><p>Troškovi montaže po jedinici (<span class="math notranslate nohighlight">\(c_m\)</span>) su diskretna slučajna promenljiva sa raspodelom<br />
-$<span class="math notranslate nohighlight">\(
+<ul>
+<li><p>Troškovi montaže po jedinici (<span class="math notranslate nohighlight">\(c_m\)</span>) su diskretna slučajna promenljiva sa raspodelom</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 c_m:\begin{pmatrix}
 52 &amp; 54 &amp; 56 &amp; 58 &amp; 60 \\
 0.15 &amp; 0.25 &amp; 0.30 &amp; 0.20 &amp; 0.10
 \end{pmatrix}
-\)</span>$</p></li>
+\end{equation*}\]</div>
+</li>
 <li><p>Troškovi komponenti po jedinici (<span class="math notranslate nohighlight">\(c_k\)</span>) su slučajna promenljiva sa raspodelom: <span class="math notranslate nohighlight">\(\mathcal{U}(95,120)\)</span></p></li>
 <li><p>Godišnja tražnja (<span class="math notranslate nohighlight">\(d\)</span>) je slučajna promenljiva sa raspodelom: <span class="math notranslate nohighlight">\(\mathcal{N}(18\,000,5\,200)\)</span></p></li>
 </ul>
@@ -1069,7 +1141,7 @@ c_m:\begin{pmatrix}
 </div>
 </div>
 <section id="testiranje">
-<h2>Testiranje</h2>
+<h3>Testiranje</h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">senzori</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">15000</span><span class="p">)</span>
@@ -1149,34 +1221,13 @@ dtype: float64
 </div>
 </section>
 <section id="zakljucak">
-<h2>Zaključak</h2>
+<h3>Zaključak</h3>
 <p>Očekivani profit od preko 1,450,000<span class="math notranslate nohighlight">\(\$\)</span> i jako mala verovatnoća gubitka sugerišu ulazak u posao.</p>
-<style>
-
-/* bold i veći brojevi */
-.text_cell_render ol > li::marker {
-  font-weight: 900;
-  font-size: 1.7em;
-}
-
-/* VELIKI razmak između zadataka */
-.text_cell_render ol > li {
-  margin-top: 2.8em !important;
-  margin-bottom: 2.8em !important;
-  line-height: 1.45 !important;
-}
-
-/* PODLISTA — kompresovana */
-.text_cell_render ol > li > ul > li {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  line-height: 0.95 !important;
-}
-
-</style></section>
+</section>
+</section>
 <section id="zadaci-i-problemi">
 <h2>Zadaci i problemi</h2>
-<div class="tip admonition">
+<br><div class="tip admonition">
 <p class="admonition-title">Zadatak 1</p>
 <p>Kompanija Trayal u svrhu promocije nudi 1 evro za svakih započetih 100 kilometara ako životni vek nove gume bude ispod 30,000 kilometara. Menadžment kompanije veruje da je životni vek najnovije gume slučajna promenljiva raspodelom <span class="math notranslate nohighlight">\(\mathcal N (35000,5000^2)\)</span>. Primer: Neka je guma prešla 29356 kilometara. Kako je <span class="math notranslate nohighlight">\(30000-29356=644\)</span>, kompanija će nadoknaditi 7 evra.</p>
 <ul class="simple">
@@ -1274,8 +1325,9 @@ Menadžment želi da proceni kretanje broja korisnika i prihoda tokom narednih 1
 <div class="tip admonition">
 <p class="admonition-title">Zadatak 8</p>
 <p>Konstruišite simulacioni model koji generiše uzorak veličine 1000 iz uniformne raspodele <span class="math notranslate nohighlight">\(\mathcal{U}(0,1)\)</span>. Na osnovu tog uzorka, konstrišite uzorak koji pripada raspodeli <span class="math notranslate nohighlight">\(\mathcal{U}^4(0,1).\)</span></p>
-<p>Ako je <span class="math notranslate nohighlight">\(X\)</span> prva cifra u podatku iz <span class="math notranslate nohighlight">\(\mathcal{U}^4(0,1)\)</span>  proverite da li <span class="math notranslate nohighlight">\(X\)</span> zadovoljava Benfordovu raspodelu, odnosno:
-$<span class="math notranslate nohighlight">\(\begin{equation*} P\{X=d\}=\log(1+\frac1d)\text{, gde je}\,\, d\in\{1, 2, \ldots, 8,9\} \end{equation*}\)</span>$</p>
+<p>Ako je <span class="math notranslate nohighlight">\(X\)</span> prva cifra u podatku iz <span class="math notranslate nohighlight">\(\mathcal{U}^4(0,1)\)</span>  proverite da li <span class="math notranslate nohighlight">\(X\)</span> zadovoljava Benfordovu raspodelu, odnosno:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*} P\{X=d\}=\log(1+\frac1d)\text{, gde je}\,\, d\in\{1, 2, \ldots, 8,9\} \end{equation*}\]</div>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Zadatak 9</p>
@@ -1365,8 +1417,10 @@ Na osnovu rezultata simulacije preporučiti povoljniju politiku upravljanja zali
 ako bi vrednost 11 dovela do prelaska 21, as se računa kao 1.</p></li>
 </ul>
 <p>Na primer:</p>
-<div class="math notranslate nohighlight">
-\[ A + 9 = 20,\qquad A + 9 + 8 = 18,\qquad A + K = 21 \]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+A + 9 = 20,\qquad A + 9 + 8 = 18,\qquad A + K = 21
+\end{equation*}\]</div>
 <p>Diler se drži strategije da izvlači nove karte sve dok ukupan zbir poena ne dostigne najviše 15, odnosno prestaje sa izvlačenjem kada je zbir 16 ili veći.</p>
 <p>Kolika je verovatnoća da će diler „preći 21“, tj. izgubiti jer je zbir njegovih karata veći od 21, ako se pridržava ove strategije?</p>
 </div>
@@ -1437,8 +1491,11 @@ ako bi vrednost 11 dovela do prelaska 21, as se računa kao 1.</p></li>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testiranje">Testiranje</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zakljucak">Zaključak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testiranje">Testiranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zakljucak">Zaključak</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>

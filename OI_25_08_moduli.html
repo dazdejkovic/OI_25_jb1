@@ -190,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -442,6 +447,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduli</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komanda-import">Komanda <code class="docutils literal notranslate"><span class="pre">import</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-dir">Funkcija <code class="docutils literal notranslate"><span class="pre">dir()</span></code></a></li>
 </ul>
@@ -454,6 +460,10 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cemu-zaista-sluze-moduli">Čemu zaista služe moduli?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvozenje-modula-iz-eksternih-izvora">Uvoženje modula iz eksternih izvora</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -668,8 +678,144 @@ Da dobiješ tačan decimalni rezultat koristi <code class="docutils literal notr
 </pre></div>
 </div>
 <p>Za ovakve stvari uvek pogledajte veb stranice modula, npr za numpy se informacije nalaze <a href="https://numpy.org/install/" style="color:#1a73e8;"> OVDE </a>. Jednom instaliran modul, se uvozi sa <code class="docutils literal notranslate"><span class="pre">import</span></code> kao i svaki drugi.</p>
-<p>Modul da vidite kod u vidu prezentacije se nazive RISE i instalirali smo ga sa <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">RISE</span></code>.</p>
+<br>
 </section>
+</section>
+<section id="zadaci-i-problemi">
+<h1>Zadaci i problemi</h1>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">math</span></code>, napišite program koji:</p>
+<ol class="arabic simple">
+<li><p>Učitava poluprečnik kruga <span class="math notranslate nohighlight">\(r\)</span>,</p></li>
+<li><p>Izračunava površinu kruga: <span class="math notranslate nohighlight">\(P = \pi r^2\)</span></p></li>
+<li><p>Ispisuje dobijeni rezultat.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">random</span></code>, napišite program koji generiše:</p>
+<ol class="arabic simple">
+<li><p>Slučajan ceo broj između 1 i 100.</p></li>
+<li><p>Slučajan realan broj između 0 i 1.</p></li>
+</ol>
+<p>Ispišite oba broja.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p>Broj kombinacija na koji se mogu izvući 7 kuglica od 39 u igri LOTO je <span class="math notranslate nohighlight">\(\binom{39}{7}\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Upotrebite Pajtonovu funkciju <code class="docutils literal notranslate"><span class="pre">factorial</span></code> da izračunate <span class="math notranslate nohighlight">\(\binom{n}{k} = \frac{n!}{ k!( n-k)!}\)</span></p></li>
+<li><p>Kojom funkcijom se takođe može izračunati ova vrednost?</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">math</span></code>, napišite program koji:</p>
+<ol class="arabic simple">
+<li><p>učitava ugao <span class="math notranslate nohighlight">\(x\)</span> izražen u stepenima,</p></li>
+<li><p>izračunava: <span class="math notranslate nohighlight">\( \sin(x), \quad \cos(x) \)</span></p></li>
+</ol>
+<p>Napomena: funkcije u modulu <code class="docutils literal notranslate"><span class="pre">math</span></code> koriste <em>radijane</em>, pa je potrebno prethodno izvršiti odgovarajuću konverziju.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">math</span></code>, napišite program koji računa vrednost kapitala nakon <span class="math notranslate nohighlight">\(n\)</span> godina uz složenu kamatu.</p>
+<p>Program treba da učita:</p>
+<ul class="simple">
+<li><p>početni kapital <span class="math notranslate nohighlight">\(K\)</span>,</p></li>
+<li><p>godišnju kamatnu stopu <span class="math notranslate nohighlight">\(r\)</span>,</p></li>
+<li><p>broj godina <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ul>
+<p>Konačna vrednost kapitala računa se po formuli</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+K_n = K (1+r)^n
+\end{equation*}\]</div>
+<p>Program treba da prikaže dobijeni rezultat.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 6</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">math</span></code>, napišite program koji računa diskontovanu vrednost budućeg novčanog toka.</p>
+<p>Program treba da učita:</p>
+<ul class="simple">
+<li><p>buduću vrednost novčanog toka <span class="math notranslate nohighlight">\(F\)</span>,</p></li>
+<li><p>diskontnu stopu <span class="math notranslate nohighlight">\(r\)</span>,</p></li>
+<li><p>broj godina <span class="math notranslate nohighlight">\(n\)</span>.</p></li>
+</ul>
+<p>Sadašnja vrednost računa se po formuli</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+PV = \frac{F}{(1+r)^n}
+\end{equation*}\]</div>
+<p>Program treba da prikaže izračunatu sadašnju vrednost.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 7</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">random</span></code>, napišite program koji simulira dnevnu promenu cene akcije.</p>
+<p>Pretpostavimo da je početna cena akcije <span class="math notranslate nohighlight">\(P_0 = 100\)</span>.</p>
+<p>Program treba da generiše slučajnu dnevnu promenu cene u intervalu od <span class="math notranslate nohighlight">\(-2\)</span> do <span class="math notranslate nohighlight">\(2\)</span> i da izračuna novu cenu akcije.</p>
+<p>Nova cena računa se po formuli</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+P_1 = P_0 + \Delta P
+\end{equation*}\]</div>
+<p>gde je <span class="math notranslate nohighlight">\(\Delta P\)</span> slučajna promena cene.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 8</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">math</span></code>, napišite program koji računa elastičnost tražnje.</p>
+<p>Program treba da učita:</p>
+<ul class="simple">
+<li><p>početnu cenu <span class="math notranslate nohighlight">\(P_1\)</span> i novu cenu <span class="math notranslate nohighlight">\(P_2\)</span>,</p></li>
+<li><p>početnu traženu količinu <span class="math notranslate nohighlight">\(Q_1\)</span> i novu količinu <span class="math notranslate nohighlight">\(Q_2\)</span>.</p></li>
+</ul>
+<p>Elastičnost tražnje računa se po formuli</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+E = \frac{(Q_2-Q_1)/Q_1}{(P_2-P_1)/P_1}
+\end{equation*}\]</div>
+<p>Program treba da prikaže vrednost elastičnosti.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 9</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">random</span></code>, napišite program koji simulira dnevni prihod prodavnice.</p>
+<p>Pretpostavimo da je broj kupaca u toku dana slučajan broj između 50 i 150, a prosečna vrednost kupovine jednog kupca iznosi 1200 dinara.</p>
+<p>Ukupan dnevni prihod računa se po formuli</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+R = N \cdot C
+\end{equation*}\]</div>
+<p>gde je <span class="math notranslate nohighlight">\(N\)</span> broj kupaca, a <span class="math notranslate nohighlight">\(C\)</span> prosečna vrednost kupovine.</p>
+<p>Program treba da izračuna i prikaže ukupan prihod.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 10</p>
+<p>Koristeći modul <code class="docutils literal notranslate"><span class="pre">random</span></code>, napišite program koji simulira dnevni prihod prodavnice.</p>
+<p>Pretpostavimo da je broj kupaca u toku dana slučajan broj između 50 i 150, a prosečna vrednost kupovine jednog kupca iznosi 1200 dinara.</p>
+<p>Ukupan dnevni prihod računa se po formuli</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+R = N \cdot C
+\end{equation*}\]</div>
+<p>gde je <span class="math notranslate nohighlight">\(N\)</span> broj kupaca, a <span class="math notranslate nohighlight">\(C\)</span> prosečna vrednost kupovine.</p>
+<p>Program treba da izračuna i prikaže ukupan prihod.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 11</p>
+<p>Postoji modul koji vam može pomoći da u output-u ištampate vaš omiljeni <em>emoji</em>. Koji je to modul? Isprobajte ga.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 12</p>
+<p>Imamo sledeću listu podataka <code class="docutils literal notranslate"><span class="pre">lst</span> <span class="pre">=</span> <span class="pre">[2,5,3,2,8,3,9,4,2,5,6]</span></code>.</p>
+<p>Istražite moji modul nam može pomoći prilikom računanja deskriptivnih statistika ovakve strukture podataka. Izračunajte prosečnu vrednost, modus, medijanu, ali i standarnu devijaciju.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 13</p>
+<p>Pronađite modul koji će vam omogućiti da vaš datum rođenja tipa string pretvori u posebnu vrstu podata koja označava datum i vreme.</p>
+<p>Npr. da od ovakvog stringa <code class="docutils literal notranslate"><span class="pre">A=&quot;25-07-2000&quot;</span></code> napravite posebnu vrstu podataka koja se odnosi na datum kako biste mogli dalje da koristite dostupne operacije na njemu.</p>
+<p>Takođe, pronađite funkciju u datom modulu koja računa broj dana između današnjeg datuma i vašeg dana rođenja</p>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -736,6 +882,7 @@ Da dobiješ tačan decimalni rezultat koristi <code class="docutils literal notr
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Moduli</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#komanda-import">Komanda <code class="docutils literal notranslate"><span class="pre">import</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funkcija-dir">Funkcija <code class="docutils literal notranslate"><span class="pre">dir()</span></code></a></li>
 </ul>
@@ -748,6 +895,10 @@ Da dobiješ tačan decimalni rezultat koristi <code class="docutils literal notr
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cemu-zaista-sluze-moduli">Čemu zaista služe moduli?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvozenje-modula-iz-eksternih-izvora">Uvoženje modula iz eksternih izvora</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

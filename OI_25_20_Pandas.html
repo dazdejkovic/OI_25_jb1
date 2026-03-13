@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -190,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -513,7 +518,6 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-
 a[href^="http://"],
 a[href^="https://"] {
     color: blue !important;
@@ -556,26 +560,50 @@ tbody tr:last-child th {
     border-bottom: 1px solid #aaa !important;
 }
 
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
 </style>
-</div></div>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="uvod-u-analizu-podataka-pandas">
 <h1>Uvod u analizu podataka - 🐼 Pandas</h1>
 <br>
-<p>Cilj ovog poglavlja je</p>
-<ul class="simple">
-<li><p>Da se studenti upoznaju sa procesom pripreme podataka: učitavanje dataset-a, pregled strukture, čišćenje i formiranje novog DataFrame-a spremnog za analizu.</p></li>
-<li><p>Uvesti pivot tabele kao alat za sumiranje i restrukturiranje pripremljenih podataka.</p></li>
-<li><p>Povezati pivot tabele sa konceptom <code class="docutils literal notranslate"><span class="pre">GroupBy</span></code> i principom Split–Apply–Combine u analizi podataka.</p></li>
-</ul>
-<p>Posle časa student treba da bude sposoban da:</p>
-<ul class="simple">
-<li><p>Samostalno pripremi podatke za pivot analizu — da učita dataset, doda kolone, spoji Series objekte i kreira konzistentan DataFrame.</p></li>
-<li><p>Primenjuje <code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code> na realnim skupovima podataka uz pravilno definisanje <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">columns</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> i <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code>.</p></li>
-<li><p>Na osnovu pivot analize interpretira rezultate u realnom kontekstu (npr. razlike po polu, klasi, godini, gradu…).</p></li>
-</ul>
-<section id="uvod">
-<h2>Uvod</h2>
 <p>U stvarnom svetu, podaci retko dolaze u savršenom obliku. Najčešće dobijamo CSV datoteke sa pogrešnim zaglavljima, eksel tabele sa viškom praznina, API odgovore sa nepotrebnim poljima ili čitave tekstualne datoteke iz kojih treba izdvojiti informacije. Tu nastupa Pandas — moćna Pajtonova biblioteka koja omogućava praktično sve korake tipične data-analitike:</p>
 <ul class="simple">
 <li><p>učitavanje podataka,</p></li>
@@ -585,11 +613,18 @@ tbody tr:last-child th {
 <li><p>agregaciju i grupisanje,</p></li>
 <li><p>pripremu za vizuelizaciju i modeliranje.</p></li>
 </ul>
-<p>Možete ga zamisliti i kao eksel, ali sa daleko više fleksibilnosti i automatizacije, koja omogućava da se i ogromni skupovi podataka analiziraju brzo i efikasno.</p>
+<p><strong>Ishodi poglavlja:</strong>  Nakon proučavanja ovog poglavlja student će biti u stanju da:</p>
+<ul class="simple">
+<li><p>Samostalno pripremi podatke za pivot analizu — da učita dataset, doda kolone, spoji Series objekte i kreira konzistentan DataFrame.</p></li>
+<li><p>Primenjuje <code class="docutils literal notranslate"><span class="pre">pivot_table()</span></code> na realnim skupovima podataka uz pravilno definisanje <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">columns</span></code>, <code class="docutils literal notranslate"><span class="pre">values</span></code> i <code class="docutils literal notranslate"><span class="pre">aggfunc</span></code>.</p></li>
+<li><p>Na osnovu pivot analize interpretira rezultate u realnom kontekstu (npr. razlike po polu, klasi, godini, gradu…).</p></li>
+</ul>
+<section id="uvod">
+<h2>Uvod</h2>
 <p>Ključni pojmovi u Pandasu su:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Series</span></code> – jednodimenzionalni niz podataka (kao kolona u tabeli),</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> – dvodimenzionalna tabela slična Excel-u, ali mnogo moćnija.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> – dvodimenzionalna tabela slična ekselu, ali mnogo moćnija.</p></li>
 </ul>
 <p>Pandas je danas standard u nauci o podacima, finansijskoj analizi, poslovnoj inteligenciji, ekonomiji, bankarstvu, statistici i istraživačkom radu. Gde god postoje podaci, verovatno je negde u blizini — Pandas.</p>
 <p>Pandas nije samo biblioteka za manipulaciju podacima — on je interfejs za dijalog sa podacima, gde možemo odmah da dobijemo odgovor na konkretno pitanje koje se pojavljuje u tekstu. U nastavku ćemo baš to raditi: učitavaćemo podatke i na svako pitanje odgovaraćemo brzo, precizno i programski, koristeći Pandas kao najprirodniji način da ispitamo skup podataka.</p>

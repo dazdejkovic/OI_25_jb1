@@ -190,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -442,6 +447,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Stringovi</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeksiranje-stringova">Indeksiranje stringova</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isecanje-engl-slicing">Isecanje (engl. slicing)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacije-sa-stringovima">Operacije sa stringovima</a></li>
@@ -449,6 +455,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jedna-korisna-funkcija">Jedna korisna funkcija</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -463,15 +473,12 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-
- /* ——— LINKOVI ——— */
 a[href^="http://"],
 a[href^="https://"] {
     color: blue !important;
 }
 
-
-/* ——— TABELE ——— */
+/* stil za sve tabele */
 table {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -487,18 +494,67 @@ th, td {
     padding: 8px 20px !important;
 }
 
-/* дебља, јача линија испод заглавља */
-tr:first-child th {
+/* markdown tabela – zadrži staro ponašanje */
+table:not(.dataframe) tr:first-child th {
     border-bottom: 2px solid #222 !important;
 }
 
-/* тања, светлија линија испод последњег реда */
-tr:last-child td {
+/* dataframe – samo pravo zaglavlje */
+table.dataframe thead tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* index kolona dataframe da ne bude bold */
+table.dataframe tbody th {
+    font-weight: normal !important;
+}
+
+/* linija ispod poslednjeg reda */
+tbody tr:last-child td,
+tbody tr:last-child th {
     border-bottom: 1px solid #aaa !important;
 }
 
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
 </style>
-</div></div>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
 </div>
 <section id="stringovi">
 <h1>Stringovi</h1>
@@ -1077,7 +1133,58 @@ case.
 </div>
 </div>
 </div>
+<br>
 </section>
+</section>
+<section id="zadaci-i-problemi">
+<h1>Zadaci i problemi</h1>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1</p>
+<p>Dat je string <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;Operaciona</span> <span class="pre">istraživanja&quot;</span></code>.</p>
+<ol class="arabic simple">
+<li><p>Koristeći slajsing, u dva zasebna stringa, <code class="docutils literal notranslate"><span class="pre">s1</span></code> i <code class="docutils literal notranslate"><span class="pre">s2</span></code> izdvojite obe reči kursa</p></li>
+<li><p>Izdvojite peti, šesti i sedmi karakter iz stringa u string <code class="docutils literal notranslate"><span class="pre">s3</span></code></p></li>
+<li><p>Ispišite u string <code class="docutils literal notranslate"><span class="pre">s4</span></code> peti, šesti i sedmi karakter u obrnutom redosledu</p></li>
+<li><p>Koristeći operacije isecanja i nadovezivanja strinova, napravit string <code class="docutils literal notranslate"><span class="pre">ispravan_naziv_predmeta</span> <span class="pre">=</span> <span class="pre">&quot;Operaciona-istraživanja&quot;</span></code></p></li>
+</ol>
+<p>Rešenje svakog zahteva ispišite u zasebnoj ćeliji.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2</p>
+<p>Pokušajte da sledeću rečenicu ispišete u Python-u, tako da pozivom funkcije <code class="docutils literal notranslate"><span class="pre">print</span></code> dobijete sledeći output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>   Peter&#39;s sister&#39;s name&#39;s &quot;Anna&quot;
+</pre></div>
+</div>
+<p>Postoji ogroman broj rešenja. Pokušajte da date odgovor na barem tri načina. Svako rešenje ostavite u zasebnoj ćeliji.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p>U jednoj liniji koda pomoću funkcije <code class="docutils literal notranslate"><span class="pre">print</span></code> kreirajte sledeći izlaz:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I&#39;m&quot;</span>
+<span class="s2">&quot;&quot;</span><span class="n">learning</span><span class="s2">&quot;&quot;</span>
+<span class="sd">&quot;&quot;&quot;Python&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p><em>Dodatno:</em> Pokušajte da kod ispišete u sledećem formatu. Studenti koji uspeju da dobiju ovako definisan output će biti posebno nagrađeni.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;I&#39;m&quot;</span>
+    <span class="s2">&quot;&quot;</span><span class="n">learning</span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Python&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4</p>
+<p>Koristeći se metodom <code class="docutils literal notranslate"><span class="pre">input()</span></code>, dozvolite korisniku da unese proizvoljan string. Zatim definišite novu varijablu koja će izdvojiti posednji karakter (slovo) unetog stringa.</p>
+<p>Ukoliko pretpostavimo da je korisnik uneo string ’Operaciona istraživanja’, neka željeni output vašeg koda bude sledećeg formata:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Poslednji karakter unetog stringa je: &#39;a&#39;
+</pre></div>
+</div>
+<p>Obavezno testirajte vaš kod.</p>
+<ul class="simple">
+<li><p>Kako bismo došli do ove informacije, a da to nije putem negativne indeksacije? Koja je veza između dužine reči i indeksa poslednjeg karaktera stringa? Zapamtite da vi ne znate unapred koji će string korisnik uneti, te ni njegovu dužinu.</p></li>
+<li><p>I ovaj, kao i mnogi zadaci do kraja kursa, se mogu uraditi na više načina. Pokušajte da nam prikažete više od jednog rešenja kojim biste rešili ovaj zadatak.</p></li>
+</ul>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1144,6 +1251,7 @@ case.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Stringovi</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeksiranje-stringova">Indeksiranje stringova</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#isecanje-engl-slicing">Isecanje (engl. slicing)</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacije-sa-stringovima">Operacije sa stringovima</a></li>
@@ -1151,6 +1259,10 @@ case.
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jedna-korisna-funkcija">Jedna korisna funkcija</a></li>
 </ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
+</ul>
+
   </nav></div>
 
 </div></div>

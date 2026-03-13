@@ -190,26 +190,31 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    <no title>
+                    Poslovno odlučivanje i mašinsko učenje
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Poslovno odlučivanje i mašinsko učenje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Osnove Pajtona</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
 
 
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
 </ul>
 </details></li>
@@ -445,6 +450,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-naredbe">IF-ELSE naredbe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugnezdene-naredbe">Ugneždene naredbe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ternarni-operatori">Ternarni operatori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
         </div>
@@ -759,6 +765,99 @@ uslov istinit; u suprotnom izračunava se drugi izraz.</p>
 </div>
 <p>Ternarni operatori omogućavaju jednostavan način za grananje i mogu učiniti naš kod jasnijim. Videćemo uskoro
 njihovu ulogu u objašnjavajućim listama (<em>comprehension list</em>).</p>
+<br>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 1</p>
+<p>Napisati program koji rešava sledeći zadatak: Korisnik preko tastature unosi vrednost promenljih, <code class="docutils literal notranslate"><span class="pre">a</span></code> (float), <code class="docutils literal notranslate"><span class="pre">b</span></code>(float) i <code class="docutils literal notranslate"><span class="pre">operacija</span></code>(string) čije vrednosti mogu biti „sabiranje”, „oduzimanje”, „mnozenje”, „deljenje” ili „stepenovanje”.</p>
+<p>Program treba da izračuna <span class="math notranslate nohighlight">\(a+b\)</span>, <span class="math notranslate nohighlight">\(a-b\)</span>, <span class="math notranslate nohighlight">\(a\cdot b\)</span>, <span class="math notranslate nohighlight">\(a:b\)</span> ili <span class="math notranslate nohighlight">\(a^b\)</span> za odgovarajuće vrednosti promenljive <code class="docutils literal notranslate"><span class="pre">operacija</span></code></p>
+<p>Testirati program za:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">120</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">8</span></code>, <code class="docutils literal notranslate"><span class="pre">operacija</span> <span class="pre">=</span> <span class="pre">deljenje</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">-2</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">operacija</span> <span class="pre">=</span> <span class="pre">stepenovanje</span></code></p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2</p>
+<p>Program treba da učita broj poena koje je student ostvario na ispitu.</p>
+<p>Ako je broj poena veći ili jednak 51, student je položio ispit. U suprotnom slučaju student nije položio ispit.</p>
+<p>Program treba da ispiše odgovarajuću poruku.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 3</p>
+<p>Firma proizvodi i prodaje jedan proizvod. Funkcija tražnje za tim proizvodom data je izrazom</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+Q = 500 - 5p
+\end{equation*}\]</div>
+<p>gde je <span class="math notranslate nohighlight">\(p\)</span> cena proizvoda, a <span class="math notranslate nohighlight">\(Q\)</span> količina koja se može prodati na tržištu.</p>
+<p>Troškovi proizvodnje sastoje se od fiksnih troškova <span class="math notranslate nohighlight">\(F = 2000\)</span> i varijabilnog troška po jedinici <span class="math notranslate nohighlight">\(c = 20\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Napišite program koji učitava cenu proizvoda <span class="math notranslate nohighlight">\(p\)</span>.</p></li>
+<li><p>Izračunajte količinu koja se može prodati na tržištu.</p></li>
+<li><p>Izračunajte ukupan profit firme</p></li>
+</ol>
+<p>Program treba da prikaže odgovarajuću poruku.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 4</p>
+<p>Na tržištu su date funkcije tražnje i ponude</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\begin{aligned}
+Q_d &amp;= 120 - 2p\\
+Q_s &amp;= 20 + 3p
+\end{aligned}
+\end{equation*}\]</div>
+<p>Neka su varijablini troškovi <span class="math notranslate nohighlight">\(v_p = 10\)</span>, a fiksni <span class="math notranslate nohighlight">\(f_p=20\)</span>.</p>
+<ul class="simple">
+<li><p>Napišite program koji učitava cenu proizvoda <span class="math notranslate nohighlight">\(p\)</span> i za datu cenu izračunava profit.</p></li>
+</ul>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 5</p>
+<p>Banka odobrava kredit klijentima pod određenim uslovima.</p>
+<p>Program treba da učita:</p>
+<ul class="simple">
+<li><p>mesečni prihod klijenta <span class="math notranslate nohighlight">\(Y\)</span>,</p></li>
+<li><p>mesečnu ratu kredita <span class="math notranslate nohighlight">\(R\)</span>.</p></li>
+</ul>
+<p>Pretpostavimo da banka odobrava kredit samo ako rata kredita ne prelazi 40% mesečnog prihoda klijenta.</p>
+<ol class="arabic simple">
+<li><p>Izračunajte odnos rate i prihoda</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+u = \frac{R}{Y}
+\end{equation*}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Ako važi <span class="math notranslate nohighlight">\(u \le 0.4\)</span>, kredit može biti odobren.</p></li>
+<li><p>U suprotnom slučaju kredit ne može biti odobren.</p></li>
+</ol>
+<p>Program treba da ispiše odgovarajuću poruku.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 6</p>
+<p>Napišite program koji će ispisivati ocenu studenta u zavisnosti od broja poena na ispitu. Ocena se dobija na sledeći način:</p>
+<ul class="simple">
+<li><p>A+, ako je broj poena veći od 97,</p></li>
+<li><p>A, ako je broj poena veći od 93,</p></li>
+<li><p>A-, ako je broj poena veći od 90,</p></li>
+<li><p>B+, ako je broj poena veći od 87,</p></li>
+<li><p>B, ako je broj poena veći od 83,</p></li>
+<li><p>B-, ako je broj poena veći od 80,</p></li>
+<li><p>C+, ako je broj poena veći od 77,</p></li>
+<li><p>C, ako je broj poena veći od 73,</p></li>
+<li><p>C-, ako je broj poena veći od 70,</p></li>
+<li><p>D+, ako je broj poena veći od 67,</p></li>
+<li><p>D, ako je broj poena veći od 63,</p></li>
+<li><p>D-, ako je broj poena veći od 60,</p></li>
+<li><p>F, ako je broj poena manji od 60</p></li>
+</ul>
+<p>Omogućiti ulaz podataka sa tastature.</p>
+</div>
 </section>
 </section>
 
@@ -829,6 +928,7 @@ njihovu ulogu u objašnjavajućim listama (<em>comprehension list</em>).</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-naredbe">IF-ELSE naredbe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ugnezdene-naredbe">Ugneždene naredbe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ternarni-operatori">Ternarni operatori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>
 
