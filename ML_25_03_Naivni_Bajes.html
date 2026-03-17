@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -469,7 +469,6 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-
 a[href^="http://"],
 a[href^="https://"] {
     color: blue !important;
@@ -512,28 +511,63 @@ tbody tr:last-child th {
     border-bottom: 1px solid #aaa !important;
 }
 
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
 </style>
-</div></div>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="naivni-bajesovi-klasifikatori">
 <h1>Naivni Bajesovi klasifikatori</h1>
 <br>
-<br>
-<p>Cilj ovog poglavlja je da studenti:</p>
-<ol class="arabic simple">
-<li><p>Razumeju osnovni princip probabilističke klasifikacije zasnovane na Bajesovoj teoremi.</p></li>
-<li><p>Upoznaju strukturu i pretpostavke Naivnog Bajesovog klasifikatora.</p></li>
-<li><p>Ovladavaju osnovama primene Naivnog Bajesovog klasifikatora u analizi ekonomskih i poslovnih podataka.</p></li>
-</ol>
-<p>Po završetku ovog poglavlja student je sposoban da:</p>
-<ol class="arabic simple">
-<li><p>Objasni osnovni princip Naivnog Bajesovog klasifikatora.</p></li>
-<li><p>Primeni Naivni Bajesov metod za rešavanje jednostavnih problema klasifikacije nad ekonomskim i poslovnim podacima.</p></li>
-<li><p>Interpretira rezultate klasifikacije i oceni osnovne performanse modela.</p></li>
-</ol>
+Naivni Bajesov metod predstavlja jednostavan, ali izuzetno efikasan probabilistički model za klasifikaciju zasnovan na Bajesovoj teoremi. Osnovna ideja modela je procena verovatnoće pripadnosti određenoj klasi na osnovu posmatranih karakteristika.
+<p><strong>Ishodi učenja:</strong> Nakon savladavanja ovog poglavlja, student će biti u stanju da:</p>
+<ul class="simple">
+<li><p>objasni osnovni princip Naivnog Bajesovog metoda i njegovu vezu sa Bajesovom teoremom</p></li>
+<li><p>interpretira pretpostavku uslovne nezavisnosti i proceni njen uticaj na kvalitet modela</p></li>
+<li><p>primeni Naivni Bajesov klasifikator u tipičnim ekonomskim problemima</p></li>
+<li><p>analizira rezultate klasifikacije i donese odgovarajuće poslovne zaključke</p></li>
+</ul>
 <section id="uvod">
 <h2>Uvod</h2>
-<p>Naivni Bajesov klasifikator je generativni probabilistički model koji procenjuje zajedničku raspodelu verovatnoće atributa i klase i na osnovu Bajesove teoreme izračunava posteriornu verovatnoću klase za dati vektor atributa. Ključna pojednostavljujuća pretpostavka modela jeste da su atributi uslovno nezavisni unutar svake klase, što omogućava jednostavnu i efikasnu procenu verovatnoća.</p>
+<p>Ključna pretpostavka ovog pristupa jeste uslovna nezavisnost atributa, odnosno da su sve ulazne promenljive međusobno nezavisne kada je klasa poznata. Iako je ova pretpostavka u praksi često pojednostavljena, model se pokazuje izuzetno robustnim i daje dobre rezultate čak i u složenim realnim problemima.</p>
+<p>Zahvaljujući svojoj jednostavnosti, brzini i interpretabilnosti, Naivni Bajesov metod nalazi široku primenu u ekonomiji i poslovnoj analitici, posebno u zadacima kao što su klasifikacija klijenata, detekcija prevara i analiza tekstualnih podataka.</p>
+<p>Naivni Bajesov klasifikator je generativni probabilistički model koji procenjuje zajedničku raspodelu verovatnoće atributa i klase i na osnovu Bajesove teoreme izračunava posteriornu verovatnoću klase za dati vektor atributa.</p>
 <p><strong>Glavne karakteristike</strong></p>
 <ul class="simple">
 <li><p><em>Probabilistička osnova:</em> Model izračunava verovatnoću pripadnosti određenoj klasi.</p></li>
@@ -636,17 +670,21 @@ tbody tr:last-child th {
 <section id="naivni-bajesov-klasifikator">
 <h2>Naivni Bajesov klasifikator</h2>
 <p>Naivni Bajesov klasifikator zasniva se na Bajesovoj teoremi, koja omogućava izračunavanje verovatnoće da posmatranje pripada određenoj klasi na osnovu poznatih atributa.</p>
-<p>Ako je instanca opisana vektorom atributa <span class="math notranslate nohighlight">\(x=(x_1,x_2,\dots,x_n)\)</span>, Bajesova teorema daje verovatnoću da posmatranje pripada klasi <span class="math notranslate nohighlight">\(C_k\)</span>:
-$<span class="math notranslate nohighlight">\( P(C_k \mid x)=\frac{P(C_k)P(x \mid C_k)}{P(x)}.\)</span>$</p>
-<p>U klasifikaciji nas zanima <em>koja klasa ima najveću verovatnoću</em> za posmatrane atribute. Pošto je <span class="math notranslate nohighlight">\(P(x)\)</span> isto za sve klase, dovoljno je uporediti izraz
-$<span class="math notranslate nohighlight">\(P(C_k)P(x \mid C_k).\)</span>$</p>
+<p>Ako je instanca opisana vektorom atributa <span class="math notranslate nohighlight">\(x=(x_1,x_2,\dots,x_n)\)</span>, Bajesova teorema daje verovatnoću da posmatranje pripada klasi <span class="math notranslate nohighlight">\(C_k\)</span>:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*} P(C_k \mid x)=\frac{P(C_k)P(x \mid C_k)}{P(x)}.\end{equation*}\]</div>
+<p>U klasifikaciji nas zanima <em>koja klasa ima najveću verovatnoću</em> za posmatrane atribute. Pošto je <span class="math notranslate nohighlight">\(P(x)\)</span> isto za sve klase, dovoljno je uporediti izraz</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}P(C_k)P(x \mid C_k).\end{equation*}\]</div>
 <p>Problem je što je direktno računanje verovatnoće <span class="math notranslate nohighlight">\(P(x \mid C_k)\)</span> složeno kada postoji mnogo atributa.
 Zbog toga Naivni Bajesov klasifikator uvodi pretpostavku <em>uslovne nezavisnosti atributa</em>. To znači da se pretpostavlja da su atributi međusobno nezavisni kada je klasa poznata.</p>
-<p>Zahvaljujući prethodnoj pretpostavci, tražena verovatnoća se može zapisati kao proizvod pojedinačnih verovatnoća:
-$<span class="math notranslate nohighlight">\(P(x \mid C_k)=P(x_1 \mid C_k),P(x_2 \mid C_k)\dots P(x_n \mid C_k).\)</span><span class="math notranslate nohighlight">\(
-U praksi se zato za svaku klasu izračuna
-\)</span><span class="math notranslate nohighlight">\( P(C_k),P(x_1 \mid C_k),P(x_2 \mid C_k)\dots P(x_n \mid C_k),\)</span>$
-a instanca se dodeljuje onoj klasi za koju je ova vrednost najveća.</p>
+<p>Zahvaljujući prethodnoj pretpostavci, tražena verovatnoća se može zapisati kao proizvod pojedinačnih verovatnoća:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}P(x \mid C_k)=P(x_1 \mid C_k),P(x_2 \mid C_k)\dots P(x_n \mid C_k).\end{equation*}\]</div>
+<p>U praksi se zato za svaku klasu izračuna</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}P(C_k),P(x_1 \mid C_k),P(x_2 \mid C_k)\dots P(x_n \mid C_k),\end{equation*}\]</div>
+<p>a instanca se dodeljuje onoj klasi za koju je ova vrednost najveća.</p>
 <div class="important admonition">
 <p class="admonition-title">Algoritam Bajesovog klasifikatora</p>
 <ol class="arabic simple">
@@ -685,17 +723,17 @@ Ovaj model se primenjuje u slučajevima kada su atributi neprekidne promenljive,
 <p>Za novu instancu <span class="math notranslate nohighlight">\(\tilde{x}\)</span>, model primenjuje funkciju gustine verovatnoće normalne raspodele kako bi procenio verovatnoću da posmatrana vrednost pripada određenoj klasi klasi <span class="math notranslate nohighlight">\(C_k\)</span>:</p>
 </li>
 </ul>
-<div class="math notranslate nohighlight">
-\[p(\tilde{x} \mid C_k) = \frac{1}{\sqrt{2 \pi \sigma_{c_k}^2}} e^{-\frac{(\tilde{x} - {\mu_{c_k})^2}}{2 \sigma_{c_k}^2}}.\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}p(\tilde{x} \mid C_k) = \frac{1}{\sqrt{2 \pi \sigma_{c_k}^2}} e^{-\frac{(\tilde{x} - {\mu_{c_k})^2}}{2 \sigma_{c_k}^2}}.\end{equation*}\]</div>
 <p>Gausov naivni Bajes se široko primenjuje zbog jednostavne implementacije i dobrih performansi na manjim skupovima podataka. Njegova snaga najviše dolazi do izražaja kod atributa koji prate normalnu raspodelu, kao što su starost, cena ili biološki markeri. Upravo zato se ovaj model uspešno primenjuje u oblastima poput finansijske analize, biometrije i medicinske dijagnostike, itd.</p>
 <ul>
 <li><p><strong>Multinomni (Multinomial) naivni Bajes</strong><br />
 Multinomijalni model nudi rešenje za klasifikaciju podataka koji nisu numerički (poput teksta ili kategorija), tako što ih transformiše u formate pogodne za statističku obradu. Koristi se za rad sa diskretnim podacima, npr. kada radimo sa tekstualnim podacima, pa atributi kvantifikuju pojavljivanje reči. Ovaj model se primenjuje u slučajevima kada atributi predstavljaju frekvencije ili broj pojavljivanja elementa u posmatranom skupu. Sam naziv modela reflektuje njegove ključne karakteristike: termin „naivni” odnosi se na pretpostavku o međusobnoj nezavisnosti atributa (poput reči u tekstu), dok „multinomijalni” ukazuje na to da model uzima u obzir učestalost njihovog pojavljivanja. Klasifikacija se vrši na osnovu poređenja frekvencija reči u različitim grupama. Izračunavanje verovatnoće pripadnosti poruke određenoj klasi u ovom modelu direktno se oslanja na multinomijalnu raspodelu:
-$<span class="math notranslate nohighlight">\(p(x \mid C_k) = \frac{\left(\sum_i x_i\right)!}{\prod_i x_i!} \prod_i p_{ki}^{\,x_i}.\)</span>$
+\begin{equation*}p(x \mid C_k) = \frac{\left(\sum_i x_i\right)!}{\prod_i x_i!} \prod_i p_{ki}^{,x_i}.\end{equation*}
 Multinomijalni Naivni Bajes omogućava izuzetno brzu klasifikaciju teksta. Upravo ga ta efikasnost čini jednim od najpraktičnijih rešenja za širok spektar aplikacija u okviru veštačke inteligencije i mašinskog učenja. Njegova praktična vrednost najviše dolazi do izražaja u sferi obrade prirodnih jezika, gde se uspešno primenjuje za filtriranje nepoželjne elektronske pošte (spam-a), analizu sentimenta u recenzijama korisnika, kao i za automatsko razvrstavanje novinskih članaka ili obimne pravne dokumentacije u tematske kategorije.</p></li>
 <li><p><strong>Bernulijev (Bernoulli) naivni Bajes</strong></p>
 <p>Ovaj model se primenjuje u slučajevima kada su atributi binarne prirode, odnosno kada označavaju prisustvo ili odsustvo određene karakteristike. Tipično se koristi za binarnu klasifikaciju teksta zasnovanu na prisustvu ili odsustvu specifičnih termina unutar dokumenta, reč se u dokumentu ili pojavljuje ili ne. Dok multinomijalni model prati kvantitet, Bernulijev model se fokusira na samu pojavu termina ili odsustvo instance. Upravo zbog toga što modeluje i ono one koji nisu prisutni u datoj tekstu, ovaj model se pokazao kao izuzetno rešenje za klasifikaciju kratkih formi, poput naslova ili kratkih poruka. Neka je <span class="math notranslate nohighlight">\(x_i\)</span> logička promenljiva koja označava prisustvo ili odsustvo <span class="math notranslate nohighlight">\(i\)</span>-te reči iz rečnika, i neka je <span class="math notranslate nohighlight">\(p_{ki}\)</span> verovatnoća da klasa <span class="math notranslate nohighlight">\(C_k\)</span> generiše termin <span class="math notranslate nohighlight">\(w_i\)</span>, tada:
-$<span class="math notranslate nohighlight">\(p(x \mid C_k) = \prod_{i=1}^{n} p_{ki}^{\,x_i} (1 - p_{ki})^{(1 - x_i)}.\)</span>$
+\begin{equation*}p(x \mid C_k) = \prod_{i=1}^{n} p_{ki}^{,x_i} (1 - p_{ki})^{(1 - x_i)}.\end{equation*}
 Bernulijev naivni Bajes odlikuje niz prednosti: jednostavan je za implementaciju, algoritamska efikasanost omogućava veliku brzinu rada čak i pri obradi visokodimenzionalnih podataka, robusan na malim uzorcima i minimalnim memorijskim zahtevima. U obradi prirodnog jezika, on se izdvaja kao pouzdano rešenje koje često prevazilazi očekivanja u pogledu tačnosti predikcije i neretko parira znatno kompleksnijim metodama.</p>
 </li>
 </ul>
@@ -734,15 +772,16 @@ Bernulijev naivni Bajes odlikuje niz prednosti: jednostavan je za implementaciju
 <h2>Procena <em>a priori</em> verovatnoća</h2>
 <p>Procena <em>a priori</em> je jedan od prvih koraka u okviru ovog algoritma. A priori verovatnoća klase <span class="math notranslate nohighlight">\(C_k\)</span> označava se kao <span class="math notranslate nohighlight">\(P(C_k)\)</span> i računa se kao količnik broja uzoraka te klase i ukupnog broja uzoraka u skupu.</p>
 <p>U praksi se <em>a priori</em> verovatnoće najčešće procenjuju na osnovu <em>učestalosti klasa u trening skupu</em>. Verovatnoća klase <span class="math notranslate nohighlight">\(C_k\)</span> dobija se deljenjem broja uzoraka te klase sa ukupnim brojem uzoraka:</p>
-<div class="math notranslate nohighlight">
-\[P(C_k) = \frac{N_k}{N},\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}P(C_k) = \frac{N_k}{N},\end{equation*}\]</div>
 <p>gde je:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(N_k\)</span>: broj uzoraka koji pripadaju klasi <span class="math notranslate nohighlight">\(C_k\)</span> u trening skupu.</p></li>
 <li><p><span class="math notranslate nohighlight">\(N\)</span>: ukupan broj uzoraka u trening skupu.</p></li>
 </ul>
-<p>Jedan od najvećih izazova ovog pristupa je pojava instance koja postoji u test setu, ali se nikada nije pojavila u trening setu za određenu klasu, ili kod malog broja uzoraka ili neuravnoteženih klasa. Rešenje je <em>Laplasovo poravnanje</em> (engl. Laplace smoothing), prema kome se verovatnoća <span class="math notranslate nohighlight">\(P(C_k) \)</span> računa kao:
-$<span class="math notranslate nohighlight">\(P(C_k) = \frac{N_k + \alpha}{N + \alpha K},\)</span>$</p>
+<p>Jedan od najvećih izazova ovog pristupa je pojava instance koja postoji u test setu, ali se nikada nije pojavila u trening setu za određenu klasu, ili kod malog broja uzoraka ili neuravnoteženih klasa. Rešenje je <em>Laplasovo poravnanje</em> (engl. Laplace smoothing), prema kome se verovatnoća <span class="math notranslate nohighlight">\(P(C_k) \)</span> računa kao:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}P(C_k) = \frac{N_k + \alpha}{N + \alpha K},\end{equation*}\]</div>
 <p>gde je:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\alpha\)</span>: parametar poravnanja (obično <span class="math notranslate nohighlight">\(\alpha = 1\)</span>),</p></li>

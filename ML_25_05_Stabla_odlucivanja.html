@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -451,42 +451,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jednostavan-primer">Jednostavan primer</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-iz-prakse-primena-stabla-odlucivanja-u-upravljanju-projektima">Primer iz prakse: Primena stabla odlučivanja u upravljanju projektima</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izbor-atributa-u-stablu-odlucivanja">Izbor atributa u stablu odlučivanja</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cart-algoritam-classification-and-regression-trees">CART algoritam (Classification and Regression Trees)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kljucne-specifikacije-cart-algoritma">Ključne specifikacije CART algoritma:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kriterijumi-grananja-i-optimizacija">Kriterijumi grananja i optimizacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamika-izgradnje-stabla-rekurzivno-particionisanje">Dinamika izgradnje stabla: Rekurzivno particionisanje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izbor-atributa-u-stablu-odlucivanja">Izbor atributa u stablu odlučivanja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koraci-algoritma-stabla-odlucivanja">Koraci algoritma stabla odlučivanja</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kljucni-parametri-u-scikit-learn-decision-tree">Ključni parametri u scikit-learn (Decision Tree)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orezivanje-stabala-odlucivanja">Orezivanje stabala odlučivanja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacija-velicine-stabla-i-horizon-efekat">Optimizacija veličine stabla i „Horizon” efekat</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-horizonta-the-horizon-effect">Problem „horizonta” (<em>The Horizon Effect</em>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategija-resavanja">Strategija rešavanja</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#principi-i-kriterijumi-selektivnog-orezivanja">Principi i kriterijumi selektivnog orezivanja</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#princip-rada-pre-orezivanja">Princip rada pre-orezivanja</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#najcesce-tehnike-pre-orezivanja">Najčešće tehnike pre-orezivanja</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#princip-rada-post-orezivanje">Princip rada post-orezivanje</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tehnike-post-orezivanja">Tehnike post-orezivanja</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-algoritma-stabla-odlucivanja">Prednosti i mane algoritma stabla odlučivanja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-algoritma-stabla-odlucivanja">Prednosti algoritma stabla odlučivanja</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mane-algoritma-stabla-odlucivanja">Mane algoritma stabla odlučivanja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orezivanje-stabala-odlucivanja">Orezivanje stabala odlučivanja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-stabala-odlucivanja">Prednosti i mane stabala odlučivanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti">Prednosti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mane">Mane</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primene-stabala-odlucivanja">Primene stabala odlučivanja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfiguracija-i-obuka-stabala-odlucivanja-u-scikit-learn-okruzenju">Konfiguracija i obuka stabala odlučivanja u scikit-learn okruženju</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opis-baze">Opis baze</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zanimljivost-zasto-bas-random-state-42">💡 Zanimljivost: Zašto baš <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tehnicka-uloga-reproduktivnost">🔧 Tehnička uloga: reproduktivnost</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specificno-kulturolosko-poreklo">🌍 Specifično kulturološko poreklo</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolika-u-zajednici">🤝 Simbolika u zajednici</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zanimljivost-zasto-bas-random-state-42">💡 Zanimljivost: Zašto baš <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vizuelizacija-strukture-stabla-odlucivanja">Vizuelizacija strukture stabla odlučivanja.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hajde-da-proverimo-znanje-o-stablima-odlucivanja">Hajde da proverimo znanje o stablima odlučivanja! 🧠</a></li>
@@ -505,7 +485,6 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html">
 <style>
-
 a[href^="http://"],
 a[href^="https://"] {
     color: blue !important;
@@ -527,439 +506,230 @@ th, td {
     padding: 8px 20px !important;
 }
 
-/* дебља, јача линија испод заглавља */
-tr:first-child th {
+/* markdown tabela – zadrži staro ponašanje */
+table:not(.dataframe) tr:first-child th {
     border-bottom: 2px solid #222 !important;
 }
 
-/* тања, светлија линија испод последњег реда */
-tr:last-child td {
+/* dataframe – samo pravo zaglavlje */
+table.dataframe thead tr:first-child th {
+    border-bottom: 2px solid #222 !important;
+}
+
+/* index kolona dataframe da ne bude bold */
+table.dataframe tbody th {
+    font-weight: normal !important;
+}
+
+/* linija ispod poslednjeg reda */
+tbody tr:last-child td,
+tbody tr:last-child th {
     border-bottom: 1px solid #aaa !important;
 }
 
+/* caption */
+caption,
+.table-caption,
+p.caption,
+div.caption,
+figcaption {
+    text-align: center !important;
+    font-weight: bold !important;
+}
 </style>
-</div></div>
+</div><script type="application/javascript">
+function promeniTableUTabela() {
+    const selectors = [
+        "caption",
+        ".table-caption",
+        "p.caption",
+        "div.caption",
+        "figcaption",
+        ".caption-number"
+    ];
+
+    document.querySelectorAll(selectors.join(",")).forEach(function(el) {
+        if (el.innerHTML.includes("Table")) {
+            el.innerHTML = el.innerHTML.replace(/\bTable\b/g, "Tabela");
+        }
+    });
+}
+
+promeniTableUTabela();
+
+/* ako se notebook kasnije rerenderuje */
+const observer = new MutationObserver(function() {
+    promeniTableUTabela();
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+</script></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="stabla-odlucivanja">
 <h1>Stabla odlučivanja</h1>
+<br>
+Stabla odlučivanja (engl. decision tree) predstavljaju jedan od najčešće korišćenih modela u nadgledanom mašinskom učenju za klasifikaciju i regresiju. Zasniva se na sekvencijalnom donošenju odluka kroz *if/else* pravila, čime se podaci postepeno dele na homogenije grupe i formira interpretabilan model. Ovakav pristup omogućava jednostavnu analizu i primenu u ekonomskim problemima kao što su procena rizika, segmentacija i predikcija.
+<p>U ovom delu biće predstavljeni osnovni koncepti stabala odlučivanja, uključujući proces izgradnje stabla, kriterijume grananja i interpretaciju modela. Posebna pažnja biće posvećena primeni u klasifikacionim i regresionim zadacima, kao i praktičnoj implementaciji u Pajton okruženju.</p>
+<p><strong>Ishodi učenja</strong>: Nakon proučavanja ovog poglavlja student će biti u stanju da:</p>
+<ul class="simple">
+<li><p>razume princip rada stabala odlučivanja u okviru nadgledanog učenja;</p></li>
+<li><p>objasni proces grananja i formiranja homogenih grupa podataka;</p></li>
+<li><p>primeni modele stabala za klasifikaciju i regresiju u ekonomskim problemima;</p></li>
+<li><p>interpretira strukturu stabla i značaj atributa u modelu;</p></li>
+<li><p>implementira osnovne modele stabala koristeći odgovarajuće Pajton biblioteke.</p></li>
+</ul>
 <section id="uvod">
 <h2>Uvod</h2>
-<p>Algoritam <strong>stabla odlučivanja</strong> (engl. decision tree) ubraja se u jedan od najzastupljenijih pristupa klasifikacije. Zasniva se na <strong>induktivnom zaključivanju</strong> i uspešno se primenjuje u brojnim domenima, kako za <strong>klasifikacione</strong>, tako i za <strong>regresione zadatke</strong>.</p>
-<p>Koncept ovog pristupa zasniva se na postavljanju niza pitanja <em>ako/inače</em> (engl. if/else), koja u krajnjem ishodu vode ka donošenju odluke, čime se imitira ljudski proces odlučivanja. Stabla odlučivanja razvrstavaju podatke u grupe (kategorije) tako što analiziraju njihove ključne osobine kroz niz jednostavnih pitanja. Podaci se postepeno dele na manje podskupove sa ujednačenijim karakteristikama, pri čemu se u svakoj fazi razdvajanje vrši na osnovu tačke grananja (postavljenog pitanja ili uslova).</p>
 <p>Naziv <em>stablo odlučivanja</em> proistekao je iz njihove strukture, čiji prikaz podseća na oblik stabla. Stablo odlučivanja može se posmatrati kao složena hijerarhijska struktura koja se sastoji od više međusobno povezanih elemenata:</p>
 <ul class="simple">
-<li><p><strong>korenski čvor</strong> (<em>engl. root node</em>) je početni čvor stabla odlučivanja, sadrži ceo početni skup i izvršava prvu podelu podataka,</p></li>
-<li><p><strong>unutrašnji čvorovi</strong> (<em>engl. internal nodes</em>) predstavljaju testove grananja u odnosu na odredjenu karakteristiku, i nalaze se između korenskog čvora i listova,</p></li>
-<li><p><strong>listovi</strong> (<em>engl. leaves</em>) predstavljaju konačne klase ili predikcije, to su krajnji čvorovi u kojima se grananje stabla završava,</p></li>
-<li><p><strong>grane</strong> (<em>engl. branches</em>) predstavljaju moguće vrednosti izabrane karakteristike, pri čemu se primeri razvrstavaju u podskupove u skladu sa tim vrednostima,</p></li>
-<li><p><strong>atribut odluke</strong> (<em>eng. decision attribute</em>) je karakteristika koja se koristi da se postavi kriterijum podele u čvoru.</p></li>
+<li><p><em>korenski čvor</em> (<em>engl. root node</em>) je početni čvor stabla odlučivanja, sadrži ceo početni skup i izvršava prvu podelu podataka,</p></li>
+<li><p><em>unutrašnji čvorovi</em> (<em>engl. internal nodes</em>) predstavljaju testove grananja u odnosu na odredjenu karakteristiku, i nalaze se između korenskog čvora i listova,</p></li>
+<li><p><em>listovi</em> (<em>engl. leaves</em>) predstavljaju konačne klase ili predikcije, to su krajnji čvorovi u kojima se grananje stabla završava,</p></li>
+<li><p><em>grane</em> (<em>engl. branches</em>) predstavljaju moguće vrednosti izabrane karakteristike, pri čemu se primeri razvrstavaju u podskupove u skladu sa tim vrednostima,</p></li>
+<li><p><em>atribut odluke</em> (<em>eng. decision attribute</em>) je karakteristika koja se koristi da se postavi kriterijum podele u čvoru.</p></li>
 </ul>
 <p>Korenski čvor predstavlja polaznu tačku stabla, jer sadrži ceo skup podataka i izvršava prvu podelu prema definisanom kriterijumu. Unutrašnji čvorovi predstavljaju tačke daljeg razdvajanja podataka prema vrednostima izabranih atributa. Grane povezuju čvorove i prikazuju ishode odluka, vodeći ka narednom čvoru sa sledećim testom ili ka listu, koji predstavlja krajnji ishod, tj. finalnu klasu ili predikciju.</p>
-<p>Svaki primer prolazi putanju koja počinje u korenskom čvoru pa na osnovu vrednosti atributa, kreće se niz stablo sve dok ne dostigne list, koji određuje njegovu konačnu klasu. Na ovaj način korisniku se pruža pregledan i intuitivan uvid u logiku donošenja odluka, dok <strong>vizuelna prezentacija procesa odlučivanja</strong> omogućava lako sagledavanje svih mogućih scenarija i njihovih ishoda.</p>
+<p>Svaki primer kreće od korenskog čvora i, na osnovu vrednosti atributa, prolazi kroz stablo do lista koji određuje njegov ishod. Ovakva struktura omogućava jasan i intuitivan uvid u proces odlučivanja, jer se složeni podaci prevode u niz jednostavnih pravila. Putanja od lista ka korenu daje obrazloženje odluke, pa se model može predstaviti skupom pravila tipa ako–onda (if–then).</p>
 <p>U zavisnosti od tipa ciljne promenljive, razlikuju se dve osnovne vrste stabala odlučivanja:</p>
 <ul class="simple">
-<li><p><strong>Klasifikaciona stabla</strong>, kod kojih je ciljna promenljiva kategorijska i uzima vrednosti iz konačnog skupa. Listovi predstavljaju odgovarajuće klase, dok grane odražavaju niz uslova nad atributima koji vode do određene klasne oznake.</p></li>
-<li><p><strong>Regresiona stabla</strong>, koja se primenjuju kada je ciljna promenljiva <strong>kontinuirane prirode</strong>. Njihov cilj je predviđanje numeričke vrednosti, koja se najčešće određuje kao <strong>prosečna vrednost posmatranja</strong> koja pripadaju tom listu.</p></li>
+<li><p><em>Klasifikaciona stabla</em>, kod kojih je ciljna promenljiva kategorijska i uzima vrednosti iz konačnog skupa. Listovi predstavljaju odgovarajuće klase, dok grane odražavaju niz uslova nad atributima koji vode do određene klasne oznake.</p></li>
+<li><p><em>Regresiona stabla</em>, koja se primenjuju kada je ciljna promenljiva neeprekidne prirode. Njihov cilj je predviđanje numeričke vrednosti, koja se najčešće određuje kao prosečna vrednost posmatranja koja pripadaju tom listu.</p></li>
 </ul>
-<p>Stabla odlučivanja se veoma često i uspešno primenjuju u <strong>operacionim istraživanjima</strong>, a njihova vizuelna reprezentacija je posebno svrsishodna jer značajno olakšava <strong>preglednost i razumevanje složenih scenarija donošenja odluka</strong>.</p>
-<p>Snaga ovog modela leži u njegovoj intuitivnosti: on prevodi kompleksne podatke u preglednu strukturu pravila, omogućavajući nam da pratimo logički put od polaznih informacija do konačnog zaključka. Obrazloženje za svaku konkretnu odluku dobija se rekonstrukcijom putanje od pripadajućeg lista unazad do korena, pri čemu se u svakom čvoru jasno iščitava razlog parcijalnog izbora. Zahvaljujući ovoj strukturi, svakom stablu se jednoznačno može pripisati skup pravila tipa <strong>’ako – onda’</strong> (if – then).</p>
 <section id="jednostavan-primer">
 <h3>Jednostavan primer</h3>
-<p>Na slici 1 ilustrativno je prikazana struktura stabla odlučivanja. Prilikom svakog grananja, podaci unutar novonastalih particija postaju sve homogeniji u odnosu na ciljnu promenljivu. Izbor korenog čvora, redosled odlučivanja u internim čvorovima, kao i granične vrednosti odluka imaju informativni karakter i ne odgovaraju stvarnom modelu.</p>
+<p>Na slici 1. je primer stabla odlučivanja u kome se odluka o odobravanju kredita donosi postepenim grananjem na osnovu kreditne istorije, prihoda i nivoa zaduženosti.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="_images/DrvoStruktura.png"><img alt="_images/DrvoStruktura.png" src="_images/DrvoStruktura.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/DrvoStruktura.png"><img alt="_images/DrvoStruktura.png" src="_images/DrvoStruktura.png" style="width: 600px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 22. </span><span class="caption-text">Slika 1. Primer strukture stabla odlučivanja.</span></p>
+<p><span class="caption-number">Slika 22. </span><span class="caption-text">Primer strukture stabla odlučivanja.</span></p>
 </figcaption>
 </figure>
 <p>Svaki list stabla dodeljuje klasu koja je najzastupljenija među trening uzorcima koji su u njega dospeli, dok se novi uzorak, na osnovu vrednosti svojih karakteristika, vodi kroz grane stabla do lista koji predstavlja predikciju njegove klase.</p>
-<p>Koncept stabla odlučivanja zasnovan je na vizuelnom prikazu logičkih pravila modela. Kroz hijerarhijsku strukturu, stablo vrši <strong>sukcesivnu dekompoziciju podataka</strong>, razvrstavajući ih u precizno definisane particije. Slika ilustruje kako se svakim korakom povećava unutrašnja sličnost podataka, čime se direktno olakšava precizno predviđanje ciljne promenljive.</p>
-<p>Za isti skup podataka može se konstruisati veliki broj različitih stabala odlučivanja, pa je tokom treniranja potrebno pronaći najbolju strukturu stabla. U tom procesu algoritam u svakom čvoru bira onu karakteristiku koja omogućava najčistiju podelu podataka na podskupove. Podskup se smatra čistijim ukoliko u njemu dominiraju instance koje pripadaju istoj klasi. U tom cilju, tokom procesa treniranja stabla odlučivanja primenjuje se <strong>CART (Classification and Regression Trees)</strong> algoritam, .</p>
 <p>Smanjenje nehomogenosti duž putanje od korena do lista ogleda se u postepenom razdvajanju podataka na sve homogenije podskupove. Ovaj proces, ilustrovan na slici 2, pokazuje kako se svakom narednom podelom povećava čistoća čvorova sve do formiranja listova.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/Homogenost.PNG"><img alt="_images/Homogenost.PNG" src="_images/Homogenost.PNG" style="width: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Slika 23. </span><span class="caption-text">Slika 2. Primer strukture stabla odlučivanja.</span></p>
+<p><span class="caption-number">Slika 23. </span><span class="caption-text">Primer strukture stabla odlučivanja.</span></p>
 </figcaption>
 </figure>
 </section>
 </section>
-<section id="primer-iz-prakse-primena-stabla-odlucivanja-u-upravljanju-projektima">
-<h2>Primer iz prakse: Primena stabla odlučivanja u upravljanju projektima</h2>
-<p>Predstavićemo primer koji ilustruje funkcionisanje sistema zasnovanog na pravilima. Zamislimo finansijsku instituciju koja svakodnevno donosi odluke o plasmanu kapitala i želi da automatizuje taj proces. Cilj je optimizacija odnosa prinosa i rizika u okviru budžetskih ograničenja, uz striktno poštovanje eksterne regulative i internih politika.</p>
-<p>Kao mapa u procesu rasuđivanja, koristi se stablo odlučivanja, pri čemu proces odlučivanja započinje pitanjem korenom čvoru:</p>
-<ul class="simple">
-<li><p><strong>„Da li procena prinosa investicije ukazuje na vrednost iznad minimalno prihvatljivog praga?”</strong></p></li>
-</ul>
-<blockquote>
-<div><p>Ukoliko je odgovor potvrdan, postavlja se sledeće pitanje:<br />
-<strong>„Da li je procenjeni nivo rizika prihvatljiv?”</strong></p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Ukoliko jeste, prelazi se na naredno pitanje:<br />
-<strong>„Da li se investicija može brzo i lako unovčiti?”</strong></p>
-<ul>
-<li><p>Ukoliko jeste, investicija se odobri.</p></li>
-<li><p>Ukoliko nije, investicija se odbija.</p></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<div><p>Ako očekivani prinos nije iznad minimalnog praga, analizira se alternativa:<br />
-<strong>„Da li je investicija važna za ostvarenje dugoročnih ciljeva portfelja?”</strong></p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Ukoliko da, investicija se uslovno prihvata uz dodatne mere kontrole rizika.</p></li>
-<li><p>Ukoliko ne, investicija se odbacuje.</p></li>
-</ul>
-<p>Svaka grana stabla prikazuje jedan mogući scenario finansijskog odlučivanja, a listovi stabla sadrže konačne odluke: ‘odobri’, ‘odbija’ ili ‘uslovno prihvata uz dodatne mere kontrole rizika’. Na ovaj način, složen proces upravljanja investicijama razlaže se na jednostavne, logički povezane i pregledne korake.</p>
-<blockquote>
-<div><h3 class="rubric" id="algoritmi-stabala-odlucivanja-mogu-se-podeliti-prema-razlicitim-strukturnim-i-funkcionalnim-osobinama"><strong>Algoritmi stabala odlučivanja mogu se podeliti prema različitim strukturnim i funkcionalnim osobinama</strong></h3>
-<ol class="arabic simple">
-<li><p><strong>Fleksibilno odlučivanje</strong>: Podrška za univarijatne i multivarijatne testove omogućava precizno modelovanje grananja.</p></li>
-<li><p><strong>Višestruki ishodi</strong>: Čvorovi se mogu deliti na dva ili više podstabala u zavisnosti od rezultata testa.</p></li>
-<li><p><strong>Podrška za mešovite tipove podataka</strong>: Robusnost pri radu sa mešovitim tipovima karakteristika (numeričke/kategoričke) bez teške pretobrade.</p></li>
-<li><p><strong>Univerzalna klasifikacija</strong>: Jednako efikasna primena na binarnim i višeklasnim problemima.</p></li>
-</ol>
-</div></blockquote>
-</section>
 <section id="izbor-atributa-u-stablu-odlucivanja">
 <h2>Izbor atributa u stablu odlučivanja</h2>
-<p>Iako je struktura stabla intuitivna, nameće se nekoliko pitanja kao ključni izazovi u izgradnji stabla:</p>
+<p>U kontekstu ekonomskih primena (npr. odobravanje kredita, procena rizika, segmentacija klijenata), ključno pitanje je na osnovu kog kriterijuma se podaci dele u stablu odlučivanja. Izbor atributa određuje kako će se posmatrane jedinice razvrstati u različite grupe i direktno utiče na kvalitet odluka.</p>
+<p>Cilj je da svaka podela dovede do što jasnijeg razdvajanja – na primer, da se klijenti podele na rizične i nerizične. Drugim rečima, želi se da u svakom čvoru preovlađuje jedna grupa, kako bi odluke bile jednostavne i pouzdane.</p>
+<p>Algoritam to postiže tako što automatski bira atribut koji najbolje razlikuje podatke, koristeći mere nečistoće. Najčešće korišćene su:</p>
 <ul class="simple">
-<li><p>Kako odrediti atribut na kojem će se izvršiti početno razdvajanje celokupnog skupa podataka?</p></li>
-<li><p>Kako odrediti hijerarhiju internih čvorova, tj. kako se bira redosled atributa na svakom nivou kako bi razdvajanje bilo maksimalno efektivno?</p></li>
-<li><p>Kako odrediti kriterijum razdvajanja na svakom koraku?</p></li>
+<li><p>Ginijev indeks – meri verovatnoću da će posmatrana jedinica biti pogrešno klasifikovana. Niža vrednost znači da u čvoru dominira jedna grupa, pa je podela kvalitetnija.</p></li>
+<li><p>Entropija – meri neizvesnost u podacima. Niža vrednost znači da su podaci uređeniji i lakši za klasifikaciju.</p></li>
+<li><p>Informacioni dobitak – pokazuje koliko neka podela smanjuje neizvesnost; veća vrednost znači bolju podelu.</p></li>
 </ul>
-<p>Izbor atributa (engl. attribute selection) je proces koji podrazumeva odbir korenskog čvora, redosleda internih čvorova i kriterijuma odlučivanja. Od odabra atributa za podelu skupa podataka zavisi kvalitet podele koji se meri koristeći nečistoću (engl. impurity) ciljne promenljive u novonastalim čvorovima.</p>
-<p>Algoritmi teže ka tome da svakom podelom (granjanjem) podataka povećaju <strong>čistoću</strong> podataka, odnosno da dobijene grupe učine što homogenijim. Grananjem koje počinje od korena i nastavlja se kroz interne čvorove, podaci se razvrstavaju tako da u završnim ’listovima’ preovlađuju pripadnici iste klase. Upravo je ta čistoća grupa glavni putokaz algoritmu pri određivanju najboljih granica za donošenje odluka.</p>
+<p>Nije neophodno poznavati njihove formule — dovoljno je razumeti da sve ove mere teže smanjenju neizvesnosti i povećanju homogenosti grupa.</p>
+<p>U praksi, ovaj proces je u potpunosti implementiran u bibliotekama kao što je <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, gde se izbor atributa i način grananja kontrolišu kroz parametre modela. Na primer:</p>
 <ul class="simple">
-<li><p><strong>Visoka nečistoća</strong> znači da podela atributa nije uspela da ’pročisti’ podatke. Novi (potmoci) čvorovi i dalje imaju sličan odnos klasa kao i početni (roditeljski) čvor, pa se proces učenja ne smatra uspešnim.</p></li>
-<li><p><strong>Niska nečistoća</strong> znači da je čvor ’čistiji’ — u njemu preovlađuju pripadnici iste klase, što olakšava donošenje konačne odluke ili predviđanja.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">criterion</span></code> određuje kako se meri kvalitet podele (npr. <code class="docutils literal notranslate"><span class="pre">gini</span></code> ili <code class="docutils literal notranslate"><span class="pre">entropy</span></code>),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code> ograničava dubinu stabla i složenost odluka,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code> i <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code> sprečavaju da se formiraju čvorovi na osnovu premalo podataka,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">splitter</span></code> definiše način izbora podele.</p></li>
 </ul>
-<p>Suština pronalaženja najboljeg razdvajanja leži u odabiru onog atributa koji će maksimalno ’pročistiti’ rezultujuće grupe (decu čvorove) u odnosu na početni skup podataka.</p>
-<p>Neke od poznatih mera nečistoće su:</p>
-<ul class="simple">
-<li><p><strong>Entropija (engl. Entropy)</strong></p></li>
-<li><p><strong>Informacioni dobitak (engl. Information Gain)</strong></p></li>
-<li><p><strong>Gini indeks (engl. Gini Index)</strong></p></li>
-</ul>
-<hr class="docutils" />
-<ul class="simple">
-<li><p><strong>Entropija</strong> se koristi za merenje stepena neizvesnosti ili neuređenosti u podacima. U kontekstu stabala odlučivanja, ona nam govori koliko su podaci unutar jednog čvora izmešani (heterogeni). Ona potiče iz teorije informacija i služi da se precizno izračuna koliko nam informacija pruža određena promenljiva. Neka je <span class="math notranslate nohighlight">\(S\)</span> skup podataka koji sadrži primere iz <span class="math notranslate nohighlight">\(c\)</span> različitih klasa. Entropija skupa <span class="math notranslate nohighlight">\(S\)</span>, označena sa <span class="math notranslate nohighlight">\(H(S)\)</span>, definiše se sledećim izrazom: $<span class="math notranslate nohighlight">\(H(S) = - \sum_{i=1}^{c} p_i \log_2(p_i)\)</span><span class="math notranslate nohighlight">\( gde \)</span>p_i<span class="math notranslate nohighlight">\( predstavlja verovatnoću pojave klase \)</span>i<span class="math notranslate nohighlight">\( u skupu \)</span>S<span class="math notranslate nohighlight">\(, odnosno udeo primera koji pripadaju toj klasi u ukupnom broju posmatranja. Uočimo da, ukoliko svi primeri u čvoru pripadaju istoj klasi, tj. ako za neko \)</span>i<span class="math notranslate nohighlight">\( važi \)</span>p_i = 1$, entropija je jednaka 0, što ukazuje na potpunu homogenost podataka. Nasuprot tome, entropija dostiže maksimalnu vrednost kada su klase ravnomerno raspoređene.  Pošto entropija predstavlja meru <strong>nehomogenosti</strong> posmatranog skupa podataka: manje vrednosti su poželjnije, vrednost 0 označava idealno potpuno homogeno stanje, tj. svi primeri u čvoru pripadaju istoj klasi, dok veće vrednosti entropije ukazuju na veću mešovitost i slabiju razdvojenost klasa. U kontekstu mašinskog učenja, entropija kvantifikuje stepen mešavine klasa unutar jednog čvora:</p></li>
-</ul>
-<ul class="simple">
-<li><p><strong>Niska entropija</strong>: Ukazuje na visok stepen <strong>homogenosti</strong> skupa, gde većina primera pripada istoj klasi (u idealnom slučaju, čvor je „čist”).</p></li>
-<li><p><strong>Visoka entropija</strong>: Ukazuje na <strong>heterogenost</strong> ili veliku raznolikost klasa, što znači da je skup podataka u tom čvoru mešovit i nepredvidiv.</p></li>
-</ul>
-<ul class="simple">
-<li><p><strong>Informacioni dobitak</strong> meri koliko dodatnih „informacija” o ciljnoj promenljivoj dobijamo poznavanje određe promenljive, tj. koliko nam poznavanje određene promenljive pomaže da smanjimo neizvesnost oko ciljne promenljive. Drugim rečima, on predstavlja smanjenje entropije koje se postiže nakon što se podaci podele na osnovu određenog atributa, [Dash i Liu, 1999]. Izračunava se kao razlika između entropije roditeljskog čvora i ponderisanog proseka entropija svih dece čvorova: $<span class="math notranslate nohighlight">\(IG(S, A)=H(S) - H(S|A)= H(S) - \sum_{v \in Vrednosti(A)} \frac{|S_v|}{|S|} H(S_v),\)</span><span class="math notranslate nohighlight">\( gde je \)</span>H(S)<span class="math notranslate nohighlight">\( entropija roditeljskog čvora, \)</span>A<span class="math notranslate nohighlight">\(  atribut na osnovu kojeg se vrši podela, \)</span>|S_v| / |S|<span class="math notranslate nohighlight">\( udeo uzoraka koji odlaze u dete čvor \)</span>v<span class="math notranslate nohighlight">\( u odnosu na ukupan broj uzoraka. U svakom koraku, algoritam bira onaj atribut \)</span>A<span class="math notranslate nohighlight">\( koji **maksimizuje \)</span>IG(S, A)$**, jer on pruža najviše informacija o ciljnoj promenljivoj. Informaciona dobit se definiše kao razlika između entropije roditeljskog čvora i ponderisanog zbira entropija njegovih grana. Ponderi su proporcionalni broju uzoraka u svakoj grani, što omogućava da doprinos svake grane bude u skladu sa veličinom podataka koje sadrži.</p></li>
-<li><p><strong>Gini indeks</strong> meri stepen heterogenosti podataka unutar čvorova i predstavlja verovatnoću da se nasumično izabran element iz skupa pogrešno klasifikuje. Ovo je jedan od najčešće korišćenih kriterijuma za identifikaciju optimalnih podela. Gini nečistoća skupa podataka <span class="math notranslate nohighlight">\(S\)</span> matematički se izražava sledećom formulom:
-$<span class="math notranslate nohighlight">\(Gini(S) = 1 - \sum_{i=1}^{c} p_i^2,\)</span><span class="math notranslate nohighlight">\(
-gde su elementi formule definisani na sledeći način: \)</span>c<span class="math notranslate nohighlight">\( predstavlja ukupan broj klasa u posmatranom skupu podataka (npr. kod binarne klasifikacije \)</span>c = 2<span class="math notranslate nohighlight">\(), \)</span>p_i<span class="math notranslate nohighlight">\( označava proporciju pojavljivanja primera koji pripadaju klasi \)</span>i$ u odnosu na ukupan broj primera u čvoru.
-Vrednost Gini nečistoće direktno odražava stepen homogenosti čvora: što je ona niža, to je čvor homogeniji, što ukazuje na jasnu dominaciju jedne klase. Baš kao i kod entropije, minimalna vrednost 0 označava savršeno ’čist’ čvor, u kojem svi primeri pripadaju isključivo jednoj kategoriji.</p></li>
-</ul>
-<hr class="docutils" />
-<p>Cilj algoritma je da kroz proces grananja kontinuirano smanjuje nečistoću čvorova. Rezultat ovog procesa je:</p>
-<ul class="simple">
-<li><p><strong>Veća homogenost:</strong> Svako novo razdvajanje uzoraka teži da bude „čistije” u odnosu na prethodno.</p></li>
-<li><p><strong>Formiranje strukture:</strong> Grananje u korenskom ili internim čvorovima stvara grane i podstabla koja vode ka listovima sa visokom zastupljenošću jedne klase.</p></li>
-</ul>
-<blockquote>
-<div><p><strong>Ključni princip:</strong> Najbolja podela je ona koja donosi najveći pad vrednosti funkcije nečistoće (poput entropije, informacionog dobitka ili Gini indeksa) u dobijenim novonastalim podskupovima.</p>
-</div></blockquote>
-<p>Na osnovu vrednosti izračunatih pomoću nevednih mera, algoritmi za izgradnju stabala donose odluku o tome koji će atribut i koja konkretna vrednost biti iskorišćeni za narednu podelu podataka.</p>
-<p>Ovaj proces karakterišu sledeće stavke:</p>
-<ul class="simple">
-<li><p>Iterativna izgradnja: Stablo se formira sukcesivno, korak po korak.</p></li>
-<li><p>Optimalno razdvajanje: Svaki novi čvor se postavlja sa ciljem da što efikasnije razgraniči klase unutar skupa podataka.</p></li>
-<li><p>Preciznost modela: Kvalitet svake pojedinačne podele kumulativno doprinosi većoj preciznosti klasifikacije celokupnog modela.</p></li>
-</ul>
-</section>
-<section id="cart-algoritam-classification-and-regression-trees">
-<h2>CART algoritam (Classification and Regression Trees)</h2>
-<p>Postoji više algoritama za izgradnju stabala odlučivanja, među kojima je najrasprostranjeniji <strong>CART</strong> (engl. Classification and Regression Trees), prepoznatljiv po svojoj jednostavnosti i efikasnosti. Ovim algoritmom se gradi binarno stablo, koje se može primenjivati i na kategoričke i na neprekidne prediktore.</p>
-<section id="kljucne-specifikacije-cart-algoritma">
-<h3>Ključne specifikacije CART algoritma:</h3>
-<ul class="simple">
-<li><p><strong>Dualna primena</strong>:<br />
-CART se uspešno koristi za probleme <strong>klasifikacije</strong> (predviđanje diskretnih klasa) i <strong>regresije</strong> (predviđanje kontinuiranih vrednosti).</p></li>
-<li><p><strong>Binarna struktura</strong>:<br />
-Za razliku od nekih drugih algoritama (npr. ID3), CART uvek generiše <strong>binarna stabla</strong>, pri čemu se svaki roditeljski čvor deli na tačno dva deteta.</p></li>
-<li><p><strong>Univerzalnost podataka</strong>:<br />
-Algoritam direktno podržava rad sa <strong>numeričkim i kategorijskim</strong> nezavisnim promenljivama.</p></li>
-</ul>
-<hr class="docutils" />
-</section>
-<section id="kriterijumi-grananja-i-optimizacija">
-<h3>Kriterijumi grananja i optimizacija</h3>
-<p>Suština CART algoritma leži u pronalaženju optimalnog „reza“ koji najbolje razdvaja podatke. Izbor matematičke metrike zavisi isključivo od prirode ciljne promenljive:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Tip zadatka</p></th>
-<th class="head"><p>Kriterijum podele</p></th>
-<th class="head"><p>Cilj</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Klasifikacija</p></td>
-<td><p>Gini indeks</p></td>
-<td><p>Maksimizacija čistoće čvorova</p></td>
-</tr>
-<tr class="row-odd"><td><p>Regresija</p></td>
-<td><p>Smanjenje varijanse (MSE)</p></td>
-<td><p>Minimizacija kvadratne greške</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Mnogi moderni algoritmi koji kombinuju više modela u jedan (ansambli), poput slučajnih šuma (engl. Random Forest) i gradijentnog bustinga (engl. Gradient Boosting), zasnovani su upravo na arhitekturi i principima CART stabala.</p>
-</section>
-<section id="dinamika-izgradnje-stabla-rekurzivno-particionisanje">
-<h3>Dinamika izgradnje stabla: Rekurzivno particionisanje</h3>
-<p>Proces obučavanja stabla odlučivanja zasniva se na algoritmu koji polazi od celovitog skupa podataka i pripadajućih klasnih oznaka. Izgradnja modela odvija se kroz nekoliko ključnih faza:</p>
-<ul class="simple">
-<li><p><strong>Hijerarhijski pristup odozgo nadole</strong> (engl. Top-down): Algoritam počinje od korenskog čvora koji sadrži sve instance za obuku, a zatim progresivno raščlanjuje podatke na sve manje podskupove.</p></li>
-<li><p><strong>Rekurzivna podela:</strong> Proces se ponavlja (rekurzivno) nad svakim novonastalim čvorom, sve dok se ne ispune uslovi za zaustavljanje ili dok podaci ne postanu potpuno homogeni.</p></li>
-<li><p><strong>Pohlepna strategija</strong> (engl. Greedy approach): Algoritmi stabala odlučivanja su po prirodi „pohlepni”. To znači da u svakom koraku, počevši od korena, biraju trenutno najbolju podelu podataka (lokalni optimum) bez mogućnosti naknadne revizije ili vraćanja na prethodne korake (<em>no backtracking</em>).</p></li>
-</ul>
-</section>
+<p>Na taj način, iako algoritam automatski bira najbolje atribute, korisnik može da utiče na ponašanje modela i prilagodi ga konkretnom ekonomskom problemu.</p>
+<p>Suština: izbor atributa u stablu odlučivanja predstavlja kombinaciju automatskog učenja iz podataka i kontrolisanog podešavanja modela, sa ciljem donošenja jasnih i interpretabilnih odluka.</p>
 <section id="koraci-algoritma-stabla-odlucivanja">
 <h3>Koraci algoritma stabla odlučivanja</h3>
-<p>Kroz hijerarhijski sistem odlučivanja, algoritam stabla odlučivanja vrši stalnu segmentaciju podataka, težeći tome da svaki sledeći podnivo bude homogeniji od prethodnog.</p>
-<p>Postupak formiranja stabla podrazumeva:</p>
-<ol class="arabic simple">
-<li><p><strong>Izbor korenog čvora</strong><br />
-U početnom koraku svi uzorci trening skupa smeštaju se u koreni čvor stabla.</p></li>
-<li><p><strong>Izbor optimalnog atributa za podelu</strong><br />
-Za svaki karakteristiku i sve moguće vrednosti praga izračunava se mera kvaliteta podele, a kao kriterijum bira se podela koja ostvaruje najveće smanjenje nečistoće skupa podataka.</p></li>
-<li><p><strong>Podela skupa podataka na osnovu karakteristike</strong><br />
-Skup podataka se deli na podskupove prema izabranoj karakteristici i odgovarajućem pragu, tako da se maksimizuje kvalitet podele, odnosno postiže najveće smanjenje nečistoće prema izabranom kriterijumu.</p></li>
-<li><p><strong>Rekurzivna izgradnja stabla</strong><br />
-Postupak grananja se ponavlja na svakom novom čvoru koristeći iste korake selekcije i podele. Ovaj krug se vrti za svaki deo podataka sve dok ne dođemo do nekog od unapred postavljenih ograničenja. Najčešća ograničenja (kriterijumi zaustavljanja) su:</p></li>
-</ol>
+<p>Stablo odlučivanja gradi se postepeno, počevši od celokupnog skupa podataka. U svakom koraku bira se atribut i prag koji najbolje razdvajaju podatke, čime se formiraju sve homogeniji podskupovi.</p>
+<p>Proces se ponavlja nad novim čvorovima sve dok se ne ispune uslovi za zaustavljanje, kao što su:</p>
 <ul class="simple">
-<li><p><strong>Homogenost podataka</strong><br />
-Svi uzorci u čvoru pripadaju istoj klasi (čvor postaje čist).</p></li>
-<li><p><strong>Maksimalna dubina</strong> (engl. Maximum Depth)<br />
-Dostignut je unapred definisan maksimalni broj nivoa stabla.</p></li>
-<li><p><strong>Minimalni broj uzoraka</strong></p>
-<ul>
-<li><p>za grananje (engl. Min Samples Split): Broj uzoraka u čvoru je manji od minimalnog broja potrebnog za dalju podelu.</p></li>
-<li><p>u listu (engl. Min Samples Leaf): Podela bi rezultirala listom sa manjim brojem uzoraka od dozvoljenog minimuma.</p></li>
+<li><p>dostignuta maksimalna dubina stabla (<code class="docutils literal notranslate"><span class="pre">max_depth</span></code>),</p></li>
+<li><p>nedovoljan broj podataka za dalju podelu (<code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>, <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>),</p></li>
+<li><p>ili dovoljno homogeni podaci u čvoru.</p></li>
 </ul>
-</li>
-<li><p><strong>Ograničenje broja listova</strong> (engl. Maximum Leaf Nodes)<br />
-Dostignut je maksimalni dozvoljeni broj krajnjih čvorova (listova).</p></li>
-<li><p><strong>Nedovoljan informacioni dobitak</strong><br />
-Dalja podela ne donosi značajno poboljšanje kvaliteta modela ili je informacioni dobitak ispod zadatog praga.</p></li>
+<p>Na kraju, svaki list stabla predstavlja konačnu odluku:</p>
+<ul class="simple">
+<li><p>kod klasifikacije – dominantnu klasu (npr. odobriti/odbiti kredit),</p></li>
+<li><p>kod regresije – prosečnu vrednost ciljne promenljive.</p></li>
 </ul>
-<ol class="arabic simple" start="5">
-<li><p><strong>Formiranje listova</strong><br />
-Nakon završetka obuke, svaki list predstavlja onu klasu kojoj pripada većina uzoraka u njemu. Kada klasifikujemo novi podatak, on prolazi kroz stablo prateći odgovarajuće grane dok ne stigne do lista koji određuje njegovu pripadnost određenoj klasi.Kod regresionih stabala, novi podatak prolazi kroz stablo do lista koji daje konačnu regresionu predikciju najčešće dobijenu kao prosečna vrednost ciljne promenljive uzoraka koji se u njemu nalaze.</p></li>
-</ol>
+<p>U praksi, ovaj proces je automatizovan u biblioteci <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, gde korisnik podešava ključne parametre koji kontrolišu rast i složenost stabla pomoću parametara kao što su <code class="docutils literal notranslate"><span class="pre">max_depth</span></code> i <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code>.</p>
+</section>
+<section id="kljucni-parametri-u-scikit-learn-decision-tree">
+<h3>Ključni parametri u scikit-learn (Decision Tree)</h3>
+<p>U biblioteci <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, rast i ponašanje stabla odlučivanja kontrolišu se kroz nekoliko osnovnih parametara:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">criterion</span></code><br />
+određuje kako se meri kvalitet podele (npr. <code class="docutils literal notranslate"><span class="pre">gini</span></code> ili <code class="docutils literal notranslate"><span class="pre">entropy</span></code> kod klasifikacije)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code><br />
+maksimalna dubina stabla (kontroliše složenost modela)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code><br />
+minimalan broj uzoraka potreban da bi se čvor dalje delio</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code><br />
+minimalan broj uzoraka koji mora ostati u svakom listu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_leaf_nodes</span></code><br />
+maksimalan broj završnih čvorova (listova)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">min_impurity_decrease</span></code><br />
+podela se vrši samo ako dovoljno poboljšava kvalitet modela</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">splitter</span></code><br />
+način izbora podele (<code class="docutils literal notranslate"><span class="pre">best</span></code> ili <code class="docutils literal notranslate"><span class="pre">random</span></code>)</p></li>
+</ul>
+<p>Ovi parametri omogućavaju kontrolu balansa između tačnosti i jednostavnosti modela, što je posebno važno u ekonomskim primenama gde je interpretacija rezultata ključna.</p>
 </section>
 </section>
 <section id="orezivanje-stabala-odlucivanja">
 <h2>Orezivanje stabala odlučivanja</h2>
-<section id="optimizacija-velicine-stabla-i-horizon-efekat">
-<h3>Optimizacija veličine stabla i „Horizon” efekat</h3>
-<p>Jedno od ključnih pitanja u algoritmima stabala odlučivanja je određivanje <strong>optimalne veličine finalnog stabla</strong>. Pronalaženje balansa je izazovno iz nekoliko razloga:</p>
+<p>Jedan od ključnih problema kod stabala odlučivanja je balans između previše složenog i previše jednostavnog modela:</p>
 <ul class="simple">
-<li><p><strong>Rizik prevelikog stabla:</strong> Stablo sa prevelikim brojem grana vodi ka <strong>prenaučenosti (<em>overfitting</em>)</strong>. Model postaje previše prilagođen trening podacima i gubi sposobnost generalizacije na nove, neviđene uzorke.</p></li>
-<li><p><strong>Rizik premalog stabla:</strong> Suviše jednostavno stablo može propustiti ključne strukturne informacije i zakonitosti unutar prostora podataka (tzv. <em>underfitting</em>).</p></li>
+<li><p>preveliko stablo → <em>prenaučenost</em> (model „uči napamet“ podatke),</p></li>
+<li><p>premalo stablo → <em>nedovoljno učenje</em> (propušta važne obrasce).</p></li>
+</ul>
+<p>Zbog toga se primenjuje <em>orezivanje (pruning)</em>, čiji je cilj uklanjanje suvišnih grana i dobijanje jednostavnijeg i stabilnijeg modela.</p>
+<p>U praksi se koriste dva pristupa:</p>
+<ul class="simple">
+<li><p><em>pre-orezivanje</em> – ograničava rast stabla tokom izgradnje pomoću parametara kao što su<br />
+<code class="docutils literal notranslate"><span class="pre">max_depth</span></code>, <code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>, <code class="docutils literal notranslate"><span class="pre">min_samples_leaf</span></code></p></li>
+<li><p><em>post-orezivanje</em> – stablo se prvo izgradi, a zatim se uklanjaju grane koje ne doprinose tačnosti</p></li>
+</ul>
+<p>U biblioteci <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, orezivanje se najčešće postiže upravo kroz ove parametre, dok se dodatno može koristiti i <code class="docutils literal notranslate"><span class="pre">ccp_alpha</span></code> za kontrolu složenosti stabla.</p>
+<p>Suština: cilj je dobiti što jednostavnije stablo koje zadržava dobru tačnost i omogućava lako tumačenje rezultata.</p>
+</section>
+<section id="prednosti-i-mane-stabala-odlucivanja">
+<h2>Prednosti i mane stabala odlučivanja</h2>
+<p>Stabla odlučivanja su popularan alat u ekonomskim primenama jer nude jednostavan i intuitivan način donošenja odluka.</p>
+<section id="prednosti">
+<h3>Prednosti</h3>
+<ul class="simple">
+<li><p><em>interpretabilnost</em> – model se lako tumači kroz if–then pravila</p></li>
+<li><p><em>jednostavna primena</em> – zahteva minimalnu pripremu podataka</p></li>
+<li><p><em>rad sa različitim tipovima podataka</em> – podržava numeričke i kategorijske varijable</p></li>
+<li><p><em>automatski izbor važnih varijabli</em> – algoritam sam bira najrelevantnije atribute</p></li>
 </ul>
 </section>
-<hr class="docutils" />
-<section id="problem-horizonta-the-horizon-effect">
-<h3>Problem „horizonta” (<em>The Horizon Effect</em>)</h3>
-<p>Tokom izgradnje stabla odlučivanja teško je unapred odrediti optimalan trenutak za zaustavljanje rasta. Ova pojava, poznata kao <strong>efekat horizonta</strong> odnosi se na nemogućnost da se u datom koraku proceni da li će dodavanje čvora koji trenutno deluje beznačajno u narednoj fazi dovesti do značajnog smanjenja ukupne greške modela, (za više pogledajte Hastie).</p>
-</section>
-<section id="strategija-resavanja">
-<h3>Strategija rešavanja</h3>
-<p>Kako bi se prevazišao efekat horizonta, uobičajena praksa u nauci o podacima podrazumeva:</p>
-<ol class="arabic simple">
-<li><p><strong>Potpuni rast:</strong> Stablu se dozvoljava da raste sve dok svaki čvor ne sadrži veoma mali broj instanci.</p></li>
-<li><p><strong>Orezivanje (<em>Pruning</em>):</strong> Naknadno se uklanjaju oni čvorovi i grane koji ne doprinose značajnom povećanju informativne vrednosti ili preciznosti modela.</p></li>
-</ol>
-<blockquote>
-<div><p><strong>Zaključak:</strong> Umesto nagađanja kada stati, model se prvo maksimalno razvije, a zatim se „pametno” skraćuje kako bi se zadržala samo suštinska pravila odlučivanja.</p>
-</div></blockquote>
-<p>Orezivanje stabala odlučivanja (engl. Pruning) je postupak <strong>uklanjanja suvišnih grana i čvorova u stablu odlučivanja</strong>.<br />
-Cilj ove metode je smanjenje složenost modela i prekomernog prilagođavanja modela trening podacima.</p>
-<p>Time sprečavamo model da:</p>
+<section id="mane">
+<h3>Mane</h3>
 <ul class="simple">
-<li><p>„Uči napamet“ šum i specifične detalje iz trening skupa.</p></li>
-<li><p>Kreira previše kompleksne putanje koje nisu reprezentativne za nove, neviđene podatke.
-Da bi se osiguralo da orezivanje ne narušava kvalitet modela, preciznost se najčešće meri pomoću <strong>unakrsne validacije (<em>cross-validation</em>)</strong>.</p></li>
+<li><p><em>prenaučenost</em> – model može previše da se prilagodi podacima</p></li>
+<li><p><em>nestabilnost</em> – male promene u podacima mogu promeniti strukturu stabla</p></li>
+<li><p><em>slabija tačnost</em> – pojedinačno stablo često daje lošije rezultate od složenijih modela</p></li>
 </ul>
-<p>Postoji mnoštvo tehnika orezivanja koje se primarno razlikuju po <strong>metrikama</strong> koje koriste za optimizaciju performansi (npr. greška klasifikacije, <em>Gini</em> nečistoća ili entropija).</p>
-<blockquote>
-<div><p><strong>Cilj:</strong> Pronaći najjednostavnije moguće stablo koje zadržava maksimalnu tačnost na validacionom setu podataka. Takođe, ovim se model pojednostavljuje i ubrzava proces njegove implementacije (deployment).</p>
-</div></blockquote>
-<section id="principi-i-kriterijumi-selektivnog-orezivanja">
-<h4>Principi i kriterijumi selektivnog orezivanja</h4>
-<p>U samom procesu orezivanja uklanjaju se samo one grane koje više ne doprinose kvalitetu modela, ali cilj redukcije strukture je da se performanse modela očuvaju ili dodatno unaprede.</p>
-<p><strong>Ključni elementi procesa:</strong></p>
-<ul class="simple">
-<li><p><strong>Kriterijumi:</strong> Kroz strogo definisane kriterijume eliminišu se grane koje ne doprinose preciznosti ili aktivno narušavaju performanse modela.</p></li>
-<li><p>**Fleksibilnost modela: Izbor algoritma i metrika omogućava podešavanje orezivanja specifičnom skupu podataka i problema koji se rešava.</p></li>
-</ul>
-<blockquote>
-<div><p><strong>Suština:</strong> Orezivanje nije nasumično skraćivanje stabla, već fina kalibracija i precizna optimizacija: uklanjanje šuma radi kristalizacije ključnih zakonitosti u podacima.</p>
-</div></blockquote>
-<p>Postoje dva glavna tipa orezivanja:</p>
-<ol class="arabic simple">
-<li><p><strong>Pre-orezivanje (engl. Pre-pruning)</strong> – ovaj postupak ograničava rast stabla same izgradnje definisanjem parametara poput maksimalne dubine (<code class="docutils literal notranslate"><span class="pre">max_depth</span></code>) ili minimalnog broja uzoraka potrebnih za podelu čvora (<code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code>).</p></li>
-<li><p><strong>Post-orezivanje (engl. Post-pruning)</strong> – stablo se prvo razvija do svoje maksimalne kompleksnosti, nakon čega se retroaktivno uklanjaju grane i čvorovi koji ne doprinose značajnom povećanju preciznosti pri testiranju na novim podacima.</p></li>
-</ol>
-<p><strong>Ishod:</strong> redukcija strukturne složenosti modela uz optimizaciju njegove prediktivne moći na nepoznatim podacima. Primenom orezivanja postižemo sledeće prednosti:</p>
-<ul class="simple">
-<li><p><strong>Smanjenje prenaučenosti (<em>Overfitting</em>):</strong> Eliminacijom podela (<em>splitova</em>) uzrokovanih šumom u podacima, model postaje stabilniji i manje „uči šum napamet”.</p></li>
-<li><p><strong>Bolja sposobnost generalizacije:</strong> Značajno poboljšava performanse i pouzdanost modela pri radu sa novim, nepoznatim podacima.</p></li>
-<li><p><strong>Pojednostavljena struktura:</strong> Redukuje nepotrebnu kompleksnost stabla, čineći ga kompaktnijim i efikasnijim.</p></li>
-<li><p><strong>Veća interpretabilnost:</strong> Manje stablo je lakše vizuelno pratiti, što olakšava razumevanje i tumačenje logike pravila odlučivanja.</p></li>
-<li><p><strong>Efikasnije treniranje i predviđanje:</strong> Optimizuje proces učenja i značajno ubrzava fazu <strong>inferencije</strong> (izvršavanja predviđanja).</p></li>
-</ul>
-</section>
-<section id="princip-rada-pre-orezivanja">
-<h4>Princip rada pre-orezivanja</h4>
-<ul class="simple">
-<li><p>Inicijalizacija: Izgradnja stabla započinje od korenskog čvora na osnovu trening podataka.</p></li>
-<li><p>Evaluacija uslova: Na svakom čvoru algoritam proverava da li potencijalna podela zadovoljava unapred definisane kriterijume.</p></li>
-<li><p>Grananje čvora: Ukoliko podela dovodi do značajnog smanjenja nečistoće i poštuje zadana ograničenja, čvor se deli na potomne čvorove.</p></li>
-<li><p>Formiranje lista: Ako kriterijumi nisu ispunjeni, čvor se proglašava završnim (listom).</p></li>
-<li><p>Kontrola složenosti: Parametri kao što su maksimalna dubina stabla ili minimalan broj uzoraka po čvoru ograničavaju dalji rast.</p></li>
-<li><p>Rano zaustavljanje: Proces izgradnje se prekida pre nego što stablo postane previše složeno.</p></li>
-<li><p>Konačni rezultat: Dobijeno stablo ostaje relativno plitko i lako interpretabilno.</p></li>
-</ul>
-<p>Proces pre-orezivanja je efikasan jer ne zahteva analizu celokupnog skupa podataka u svakom koraku, ali nosi rizik preuranjenog orezivanja pre nego što se razmotre sve relevantne informacije, što može dovesti do gubitka ključnih zakonitosti u podacima. Upravo se ovaj nedostatak naziva efekat horizonta (engl. Horizon Effect), to je situacija u kojoj algoritam „ne vidi“ da bi jedna naizgled beznačajna podela u sledećem koraku mogla dovesti do veoma važnih otkrića i značajnog smanjenja greške.</p>
-</section>
-<section id="najcesce-tehnike-pre-orezivanja">
-<h4>Najčešće tehnike pre-orezivanja</h4>
-<ol class="arabic simple">
-<li><p><strong>Maksimalna dubina (<em>Maximum Depth</em>)</strong><br />
-Postavlja granicu broja nivoa u stablu, čime se ograničava složenost modela i formiranje predugačkih putanja odlučivanja.</p></li>
-<li><p><strong>Minimalan broj uzoraka za podelu (<em>Minimum Samples per Split</em>)</strong><br />
-Definiše najmanji broj instanci koji čvor mora sadržati da bi se uopšte razmatrao za dalju podelu, čime se izbegavaju nepouzdane odluke zasnovane na malim uzorcima.</p></li>
-<li><p><strong>Minimalan broj uzoraka u listu (<em>Minimum Samples per Leaf</em>)</strong><br />
-Obezbeđuje da svaki list stabla sadrži dovoljan broj podataka, što smanjuje osetljivost modela na šum i ekstremne vrednosti.</p></li>
-<li><p><strong>Maksimalan broj karakteristika (<em>Maximum Features</em>)</strong><br />
-Umesto da algoritam u svakom čvoru ispituje sve dostupne atribute pri svakom grananju i bira najbolju moguću podelu, on razmatra samo podskup atributa. Dakle, ograničava broj atributa koje algoritam sme da razmatra prilikom svake podele čvora u stablu odlučivanja.</p></li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="princip-rada-post-orezivanje">
-<h4>Princip rada post-orezivanje</h4>
-<p><strong>Post-orezivanje</strong> je pristup kod koga se stablu odlučivanja najpre dopušta da se u potpunosti izgradi, odnosno da dostigne maksimalnu složenost. Nakon toga se uklanjaju grane koje ne doprinose značajno tačnosti i opštoj prediktivnoj moći modela.</p>
-<ul class="simple">
-<li><p><strong>Kada se primenjuje:</strong> Primenjuje se nakon što je stablo u potpunosti formirano.</p></li>
-<li><p><strong>Kriterijum odlučivanja:</strong> Orezivanje se vrši na osnovu performansi na validacionom ili test skupu podataka.</p></li>
-<li><p><strong>Ishod:</strong> Dobija se uravnoteženo stablo sa poboljšanom sposobnošću generalizacije.</p></li>
-<li><p><strong>Pouzdanost:</strong> Obično pruža veću prediktivnu stabilnost modela.</p></li>
-</ul>
-<p>Koraci:</p>
-<ol class="arabic simple">
-<li><p><strong>Potpuna izgradnja:</strong> Stablo se prvo gradi do kraja koristeći trening skup podataka.</p></li>
-<li><p><strong>Bez ograničenja:</strong> Kreiraju se sve moguće podele, bez unapred definisanih ograničenja na dubinu ili složenost.</p></li>
-<li><p><strong>Evaluacija:</strong> Evaluacija modela izgrađenog stablom procenjuje se na validacionom skupu podataka.</p></li>
-<li><p><strong>Identifikacija neefikasnih grana</strong> Identifikuju se delovi stabla koji ne doprinose poboljšanju preciznosti predviđanja.</p></li>
-<li><p><strong>Orezivanje stabla:</strong> Nepotrebna podstabla se uklanjaju i zamenjuju jednostavnijim listovima.</p></li>
-<li><p><strong>Finalni model:</strong> Konačno stablo je jednostavnije strukture.</p></li>
-</ol>
-</section>
-<section id="tehnike-post-orezivanja">
-<h4>Tehnike post-orezivanja</h4>
-<p>Kada se proces izgradnje stabla završi, primenjuju se metode post-orezivanja radi naknadne procene značaja čvorova, a najzastupljenije metode su:</p>
-<ol class="arabic simple">
-<li><p><strong>Orezivanje zasnovano na složenosti troška (engl. Cost-Complexity Pruning, CCP)</strong><br />
-Ova tehnika je zasnovana na kazni tako što se koristi parametar penalizacije <span class="math notranslate nohighlight">\(\alpha\)</span> (alpha) koji kažnjava model za preveliku složenost stabla, tj. za svaki dodatni list. Ukoliko eliminacija podstabla ne povećava značajno grešku, a smanjuje složenost modela, tada je odluka da se to stablo ukloni.</p></li>
-<li><p><strong>Orezivanje uz smanjenje greške (engl. Reduced Error Pruning, REP)</strong><br />
-Uklanja grane čije uklanjanje ne dovodi do poboljšanja tačnosti na validacionom skupu. Ova metoda predstavlja jednu od najintuitivnijih i najjednostavnijih metoda post-orezivanja, a zasniva se na direktnoj proveri performansi modela pomoću eksterne validacije. Proces funkcioniše tako što se svaki unutrašnji čvor privremeno zamenjuje najčešćom klasom svojih podređenih čvorova (pretvara se u list). Ovakva promena se zadr
-žava ukoliko takvo stablo zadrži ili poboljša tačnost na validacionom skupu podataka.</p></li>
-<li><p><strong>Minimalno smanjenje nečistoće (engl. Minimum Impurity Decrease)</strong><br />
-Orezivanje čvorova kod kojih je smanjenje nečistoće zanemarljivo, jer ne doprinosi značajnom poboljšanju modela.
-Ova metoda definiše prag (engl. threshold), i čvor se grana samo ukoliko ta podela obezbeđuje smanjenje nečistoće (mereno putem Gini indeksa, entropije ili varijanse) veće ili jednako ovoj unapred definisanoj vrednosti. Ukoliko nijedna dostupna podela ne može da obezbedi toliki dobitak u „čistoći” podataka, proces grananja se na tom mestu zaustavlja i čvor postaje list.</p></li>
-<li><p><strong>Minimalna veličina lista (engl. Minimum Leaf Size)</strong><br />
-Ova tehnika definiše najmanji dopušteni broj instanci koje jedan list treba da sadrži. Podela čvora će biti dozvoljena isključivo pod uslovom da oba nova čvora (levi i desni) sadrže barem onoliki broj uzoraka koji je veći ili jednak zadatoj graničnoj vrednosti.</p></li>
-<li><p><strong>Pesimistično orezivanje greške (engl. Pessimistic Error Pruning)</strong>
-Ova metoda koristi samo skup podataka, pa je pogodna jer štedi podatke i vreme. Ideja metode je da dodaje malu kaznu (najčešće 0,5 po listu) na broj grešaka u treningu kako bi simulirao realnije uslove. Ako podstablo nakon ove korekcije pravi više grešaka nego što bi pravio jedan običan list, to podstablo se uklanja kao suvišno.</p></li>
-</ol>
-</section>
-</section>
-</section>
-<section id="prednosti-i-mane-algoritma-stabla-odlucivanja">
-<h2>Prednosti i mane algoritma stabla odlučivanja</h2>
-<blockquote>
-<div><h3 class="rubric" id="prednosti">🟢 Prednosti</h3>
-<ul class="simple">
-<li><p><strong>Interpretabilnost</strong>: Model je lako objasniti krajnjem korisniku.</p></li>
-<li><p><strong>Fleksibilnost</strong>: Uspešno obrađuje i numeričke i kategoričke podatke.</p></li>
-<li><p><strong>Jednostavnost</strong>: Zahteva minimalnu pripremu (čišćenje) podataka.</p></li>
-</ul>
-</div></blockquote>
-<blockquote>
-<div><h3 class="rubric" id="nedostaci">🔴 Nedostaci</h3>
-<ul class="simple">
-<li><p><strong>Prenaučenost</strong>: Sklonost ka preteranom prilagođavanju šumu u podacima.</p></li>
-<li><p><strong>Nestabilnost</strong>: Hijerarhijska priroda stabla znači da mala promena u korenu menja ceo model.</p></li>
-<li><p><strong>Slabija generalizacija</strong>: Često daju lošije rezultate u poređenju sa ansambl metodama.</p></li>
-</ul>
-</div></blockquote>
-<section id="prednosti-algoritma-stabla-odlucivanja">
-<h3>Prednosti algoritma stabla odlučivanja</h3>
-<p>Zbog niza karakterističnih prednosti, stabla odlučivanja zauzimaju značajno mesto među algoritmima mašinskog učenja i uspešno se primenjuju u različitim poslovnim i naučnim kontekstima:</p>
-<ul class="simple">
-<li><p><strong>Interpretibilnost i jednostavnost:</strong> Model se odlikuje visokom intuitivnošću i jednostavnom vizuelizacijom, dok je proces donošenja odluka transparentan i lako razumljiv.</p></li>
-<li><p><strong>Zahteva malo pripreme podataka:</strong> Pre primene algoritma stabla odlučivanja nije neophodna složena priprema i obrada podataka, kao što su normalizacija ili standardizacija karakteristika.</p></li>
-<li><p><strong>Rad sa različitim tipovima podataka:</strong> Jedna od prednosti modela je mogućnost rada sa numeričkim i kategoričkim atributima bez potrebe za dodatnim transformacijama i kreiranja pomoćnih (engl. dummy) promenljivih.</p></li>
-<li><p><strong>Robustnost na ekstremne vrednosti:</strong> Zbog načina grananja koji se oslanja na pragove atributa, a ne na mere rastojanja, stabla odlučivanja pokazuju dobru otpornost na ekstremne vrednosti u podacima.</p></li>
-<li><p><strong>Prirodna selekcija atributa:</strong> U procesu formiranja stabla, algoritam samostalno prepoznaje atribute na osnovu njihovog doprinosa smanjenju nečistoće, čime se irelevantni atributi isključuju iz modela.</p></li>
-<li><p><strong>Koristi model bele kutije (Eksplicitna logika):</strong> Odluke se donose na osnovu eksplicitnih if–then pravila, što model čini lako razumljivim i posebno pogodnim za medicinske i finansijske primene.</p></li>
-<li><p><strong>Validacija modela:</strong><br />
-Model se može proveriti primenom statističkih testova, što omogućava procenu njegove pouzdanosti i kvaliteta.</p></li>
-<li><p><strong>Robusnost:</strong><br />
-Algoritam zadržava dobre performanse čak i kada su njegove osnovne pretpostavke delimično narušene u odnosu na stvarni proces generisanja podataka.</p></li>
-<li><p><strong>Rad sa velikim skupovima podataka:</strong><br />
-Efikasno se primenjuje na velikim skupovima podataka, pri čemu se i obimne analize mogu sprovesti korišćenjem standardnih računarskih resursa u razumnom vremenskom okviru.</p></li>
-</ul>
-</section>
-<section id="mane-algoritma-stabla-odlucivanja">
-<h3>Mane algoritma stabla odlučivanja</h3>
-<p>Pored mnogobrojnih i vaznih prednosti koje imaju, stabla odlucivanja imaju i određene mane:</p>
-<ul class="simple">
-<li><p><strong>Problem preprilagođavanja</strong>  
-  Stabla odlučivanja imaju sklonost ka preprilagođavanju jer mogu vrlo lako da se previše prilagode jer imaju tendenciju da se granaju sve dok nne počnu da modeluju i nasumični šum u trening podacima, posebno u slučajevima bez definisanja restriktivnih parametara (npr. maksimalna dubina ili minimalan broj uzoraka u čvorovima).</p></li>
-<li><p><strong>Favorizovanje atributa sa više vrednosti</strong>  
-  Standardni kriterijumi selekcije teže da favorizuje atribute koji poseduju veći broj vrednosti. Zbog toga stablo često bira takve atribute kao ključne za grananje, jer one veštački maksimizuju čistotu čvorova, iako oni možda nemaju suštinski značaj za model.</p></li>
-<li><p><strong>Visoka osetljivost na podatke</strong>  
-  Model je osetljiv i na male promene u trening skupu koje mogu dovesti do značajnih razlika u strukturi stabla, čime se otežava njegova sposobnost generalizacije.</p></li>
-<li><p><strong>Superiornost ansambl pristupa</strong>  
-  Pojedinačna stabla odlučivanja obično ostvaruju slabiju tačnost predviđanja u poređenju sa složenijim ansambl-modelima (o kojima će biti reči u narednim poglavljima), koji objedinjavanjem više modela postižu bolje ukupne performanse.</p></li>
-<li><p><strong>Osetljivost na šum i anomalne vrednosti u podacima (engl. outliere)</strong>  
- Prisustvo šuma ili anomalnih vrednosti u podacima može dovesti do neadekvatnog grananja stabla i uticati na tačnost modela.</p></li>
-<li><p><strong>Visoka računarska zahtevnost</strong>  
-Izgradnja modela zahteva značajne resurse kada su u pitanju obimni podaci ili podaci sa mnogo varijabli.</p></li>
-<li><p><strong>Skalabilnost</strong>  
-Pojedinačna stabla odlučivanja mogu imati ograničenu primenu kod veoma velikih skupova podataka, jer broj mogućih struktura stabla raste eksponencijalno sa brojem karakteristika, što značajno usporava obučavanje modela.</p></li>
-</ul>
+<p>Suština: stabla odlučivanja su veoma korisna kada je važna interpretacija i donošenje odluka, ali je često potrebno kontrolisati njihovu složenost ili koristiti naprednije metode za bolju tačnost.</p>
 </section>
 </section>
 <section id="primene-stabala-odlucivanja">
 <h2>Primene stabala odlučivanja</h2>
-<p>Stabla odlučivanja predstavljaju moćan i pouzdan alat za donošenje složenih odluka u različitim oblastima primene.</p>
-<p><strong>Medicina i dijagnostika:</strong><br />
-Stabla odlučivanja u medicini funkcionišu kao digitalni dijagnostički putevi koji sistematizuju simptome pacijenta. Polazeći od početnih simptoma, algoritam kroz niz logičkih pitanja i odluka, postepeno sužava skup mogućih uzroka dok se ne identifikuje dijagnoza.</p>
-<p><strong>Bankarstvo i upravljanje rizikom:</strong><br />
-U bankarskom sektoru, stabla odlučivanja se koriste za automatizaciju procesa odobravanja kredita. Takođe, ovi modeli analizom obrazaca transakcija u realnom vremenu prepoznaju pokušaje prevara i sumnjive aktivnosti. Uz to, oni omogućavaju bankama da na vreme uoče rizik od odlaska korisnika i da pametnije organizuju naplatu potraživanja.</p>
-<p><strong>Marketing i prodaja:</strong><br />
-Stabla odlučivanja pomažu marketinškim timovima da precizno segmentišu kupce na osnovu njihovih navika i interesovanja. Ovakvo profilisanje omogućava kreiranje personalizovanih marketinških strategija, čime se povećava efikasnost prodaje i dugoročna lojalnost kupaca.</p>
-<p><strong>Optimizacija proizvodnje i kontrola kvaliteta</strong>
-Primena stabala odlučivanja u proizvodnji omogućava automatsko prepoznavanje neispravnih proizvoda na osnovu tehničkih parametara. Time se podiže nivo kvaliteta uz smanjenje troškova.</p>
-<p><strong>Sistemi za preporuke</strong>
-Onlajn prodajne platforme primenjuju stabla odlučivanja kako bi korisnicima preporučile proizvode u skladu sa njihovim interesovanjima. Analizom istorije kupovine i obrazaca ponašanja, ovi algoritmi omogućavaju kreiranje personalizovanu interakciju sa korisnicima, čime se postiže veća prodajna efikasnost.</p>
-<p><strong>Tehnička podrška i rešavanje problema (engl. Troubleshooting)</strong>
-Interaktivna stabla odlučivanja u korisničkim centrima usmeravaju agente, kao i same korisnike, kroz strukturisan niz pitanja radi brze identifikacije greške. Ovaj pristup se efikasno koristi za identifikaciju različitih vrsta kvarova, od hardverskih neispravnosti do softverskih grešaka, čime se ubrzava obrada reklamacija i unapređuje kvalitet korisničke podrške.</p>
+<p>Stabla odlučivanja predstavljaju praktičan alat za donošenje odluka u različitim ekonomskim i poslovnim kontekstima.</p>
+<p><em>Medicina i dijagnostika</em><br />
+Koriste se za sistematizaciju simptoma i donošenje dijagnostičkih odluka kroz niz jednostavnih pitanja.</p>
+<p><em>Bankarstvo i upravljanje rizikom</em><br />
+Primena uključuje odobravanje kredita, otkrivanje prevara i procenu rizika klijenata.</p>
+<p><em>Marketing i prodaja</em><br />
+Omogućavaju segmentaciju kupaca i kreiranje personalizovanih ponuda, što povećava efikasnost prodaje.</p>
+<p><em>Proizvodnja i kontrola kvaliteta</em><br />
+Koriste se za identifikaciju neispravnih proizvoda i unapređenje procesa proizvodnje.</p>
+<p><em>Sistemi za preporuke</em><br />
+Na osnovu ponašanja korisnika predlažu proizvode i usluge, čime se povećava angažovanost i prodaja.</p>
+<p><em>Tehnička podrška</em><br />
+Pomažu u rešavanju problema kroz strukturisan niz pitanja, čime se ubrzava dijagnostika i podrška korisnicima.</p>
+<p>Suština: stabla odlučivanja su posebno korisna u situacijama gde je potrebno doneti jasne, transparentne i brzo primenljive odluke.</p>
 </section>
 <section id="konfiguracija-i-obuka-stabala-odlucivanja-u-scikit-learn-okruzenju">
 <h2>Konfiguracija i obuka stabala odlučivanja u scikit-learn okruženju</h2>
@@ -1081,33 +851,12 @@ Interaktivna stabla odlučivanja u korisničkim centrima usmeravaju agente, kao 
 </tbody>
 </table>
 </div>
-<p><strong>Ciljna varijabla (klasifikacija rizika):</strong></p>
+<p><em>Ciljna promenljiva (klasifikacija rizika):</em></p>
 <ul class="simple">
-<li><p><strong>1 (Nizak rizik):</strong> klijent sa stabilnim kreditnim profilom i minimalnim stepenom rizika.</p></li>
-<li><p><strong>2 (Visok rizik):</strong> klijent sa povišenim stepenom rizika i potencijalnom nesolventnošću.</p></li>
+<li><p>1 (Nizak rizik): klijent sa stabilnim kreditnim profilom i minimalnim stepenom rizika.</p></li>
+<li><p>2 (Visok rizik): klijent sa povišenim stepenom rizika i potencijalnom nesolventnošću.</p></li>
 </ul>
 <p><em>Priprema radnog okruženja i uvoz biblioteka</em></p>
-<p>Pre same implementacije modela potrebno je učitati odgovarajuće softverske biblioteke. Python raspolaže bogatim skupom alata koji omogućavaju efikasnu obradu podataka, izvođenje numeričkih proračuna i grafički prikaz rezultata.</p>
-<p>Svaka od korišćenih biblioteka ima jasno definisanu ulogu u procesu mašinskog učenja, kao i u našem algoritmu za izgradnju drveta odlučivanja.</p>
-<ul class="simple">
-<li><p><strong>Pandas (<code class="docutils literal notranslate"><span class="pre">pd</span></code>)</strong>: Primarna biblioteka za rad sa tabelarnim podacima (DataFrames). Koristi se za učitavanje podataka (na primer iz <code class="docutils literal notranslate"><span class="pre">.csv</span></code> datoteka), njihovo čišćenje i efikasnu manipulaciju tabelarnim strukturama. Skraćenica <code class="docutils literal notranslate"><span class="pre">pd</span></code> predstavlja standardnu konvenciju u Python zajednici.</p></li>
-<li><p><strong>NumPy (<code class="docutils literal notranslate"><span class="pre">np</span></code>)</strong>: Osnovna biblioteka za efikasan rad sa višedimenzionalnim nizovima (arrays) i izvođenje brzih numeričkih i matematičkih operacija. Skraćenica <code class="docutils literal notranslate"><span class="pre">np</span></code> predstavlja standardnu konvenciju u Python zajednici. Iako se NumPy ponekad ne koristi direktno u kodu, biblioteka Pandas se u velikoj meri oslanja na njega u pozadini čineći rad sa nizovima i tabelarnim podacima znatno efikasnijim.</p></li>
-<li><p><strong>Matplotlib (<code class="docutils literal notranslate"><span class="pre">plt</span></code>)</strong>: Standardna biblioteka za grafički prikaz podataka, a u ovom slučaju je posebno korisna za vizuelni prikaz drveta odlučivanja. Skraćenica <code class="docutils literal notranslate"><span class="pre">plt</span></code> predstavlja standardnu konvenciju u Python zajednici.</p></li>
-<li><p><strong>Scikit-learn (<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>)</strong>: Najznačajnija biblioteka za klasično mašinsko učenje, iz koje u ovom koraku koristimo:</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code>: Algoritam za izgradnju modela stabla odlučivanja.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>: Alat za podelu podataka na podskupove za obuku i testiranje.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">metrics</span></code>: Funkcije za preciznu evaluaciju performansi (tačnost, preciznost, odziv) obučenog modela.</p></li>
-</ul>
-</li>
-</ul>
-<p><strong>Scikit-learn (<code class="docutils literal notranslate"><span class="pre">sklearn</span></code>)</strong> Ova biblioteka omogućava jednostavnu implementaciju algoritma, pripremu podataka, obuku modela i evaluaciju performansi. U ovom kodu koristimo:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> – algoritam za izgradnju modela stabla odlučivanja, koji automatski uči pravila iz podataka i deli ih na grane i listove.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> – funkcija za podelu skupa podataka na obučavajući i testirajući podskup, čime omogućavamo validnu procenu modela.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">metrics</span></code> – modul koji sadrži funkcije za preciznu evaluaciju performansi modela, uključujući tačnost (accuracy), preciznost (precision), odziv (recall) i F1-score.</p></li>
-</ul>
-<p>Scikit-learn takođe podržava skaliranje podataka, enkodiranje kategorijskih varijabli i mnoge druge tehnike koje olakšavaju pripremu podataka za mašinsko učenje.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -1326,24 +1075,6 @@ Ukoliko se u zagradama navede broj, prikazuju se prvih onoliko redova koliko je 
 </div></div></div>
 </div>
 <p>Kada pozovemo <code class="docutils literal notranslate"><span class="pre">baza.describe()</span></code> dobijamo statistički sažetak numeričkih kolona skupa podataka:</p>
-<ul class="simple">
-<li><p><strong>count</strong>: Broj ne-nedostajućih vrednosti u koloni.</p></li>
-<li><p><strong>mean</strong>: Srednja vrednost (prosek) kolone.</p></li>
-<li><p><strong>std</strong>: Standardna devijacija (koliko se vrednosti prosečno udaljavaju od srednje vrednosti).</p></li>
-<li><p><strong>min</strong>: Najmanja vrednost u koloni.</p></li>
-<li><p><strong>25%</strong>: Donji kvartil (prva četvrtina podataka).</p></li>
-<li><p><strong>50%</strong>: Medijana (srednja vrednost).</p></li>
-<li><p><strong>75%</strong>: Gornji kvartil (treća četvrtina podataka).</p></li>
-<li><p><strong>max</strong>: Najveća vrednost u koloni.</p></li>
-</ul>
-<blockquote>
-<div><p>Napomena: Standardna metoda <code class="docutils literal notranslate"><span class="pre">describe()</span></code> analizira isključivo <strong>numeričke kolone</strong>. Kako biste dobili uvid i u <strong>kategoričke podatke</strong>, koristite argument <code class="docutils literal notranslate"><span class="pre">include='all'</span></code>, što dodatno vraća:</p>
-<ul class="simple">
-<li><p><strong>unique</strong> – broj jedinstvenih vrednosti u koloni</p></li>
-<li><p><strong>top</strong> – najčešća vrednost (moda)</p></li>
-<li><p><strong>freq</strong> – frekfencija ponavljanja najčešće vrednosti</p></li>
-</ul>
-</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baza</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -1473,9 +1204,6 @@ Ukoliko se u zagradama navede broj, prikazuju se prvih onoliko redova koliko je 
 </div></div></div>
 </div>
 <p>Pozovanje metode<code class="docutils literal notranslate"><span class="pre">.info()</span></code> jedan je od prvih koraka u analizi podataka. Njenim pozivanjem dobijamo izveštaj o strukturi posmatranog skupa podataka, uključujući tip objekta, opsega indeksa, broj redova, listu kolona, broj popunjenih vrednosti za svaki atribut (što nam omogućava odentifikaciju nedostajućih vrednosti), tip podataka svake kolone, količinu memorije koju zauzima skup podataka.</p>
-<blockquote>
-<div><p>Metod <code class="docutils literal notranslate"><span class="pre">.info()</span></code> je koristan za brzu proveru nedostajućih vrednosti i tipova podataka u skupu podataka.</p>
-</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baza</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -1515,11 +1243,11 @@ memory usage: 164.1+ KB
 </div>
 <p><em>Binarizacija ciljne klase; Razdvajanje podataka na ulazne atribute i izlazne labele</em></p>
 <ol class="arabic simple">
-<li><p><strong>Binarizacija ciljne klase</strong>: U posmatranoj bazi ciljna promenljiva uzima vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar kreditni rizik) i <code class="docutils literal notranslate"><span class="pre">2</span></code> (loš kreditni rizik). Koristeci metodu <code class="docutils literal notranslate"><span class="pre">.map()</span></code> izvršićemo prekodiranje ovih vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar klijent), i <code class="docutils literal notranslate"><span class="pre">2</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (rizičan klijent) radi usklađivanja sa standardima binarne klasifikacije.</p></li>
-<li><p><strong>Razdvajanje na ulazne atribute i izlazne labele</strong>:</p>
+<li><p>Binarizacija ciljne klase: U posmatranoj bazi ciljna promenljiva uzima vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar kreditni rizik) i <code class="docutils literal notranslate"><span class="pre">2</span></code> (loš kreditni rizik). Koristeci metodu <code class="docutils literal notranslate"><span class="pre">.map()</span></code> izvršićemo prekodiranje ovih vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar klijent), i <code class="docutils literal notranslate"><span class="pre">2</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (rizičan klijent) radi usklađivanja sa standardima binarne klasifikacije.</p></li>
+<li><p>Razdvajanje na ulazne atribute i izlazne labele:</p>
 <ul class="simple">
-<li><p><strong>Matrica atributa (<code class="docutils literal notranslate"><span class="pre">X</span></code>)</strong>: Izdvajanjem kolone „<code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> iz skupa podataka formiramo matricu atributa (nezavisnih promenljivih). Ovi podaci predstavljaju ulazne parametre (<span class="math notranslate nohighlight">\(X\)</span>) na osnovu kojih model uči da prepoznaje obrasce i donosi predviđanja.</p></li>
-<li><p><strong>Izlazna labela (<code class="docutils literal notranslate"><span class="pre">y</span></code>)</strong>: Kolona <code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> se izdvaja kao <strong>zavisna promenljiva</strong>, odnosno ciljni vektor (<span class="math notranslate nohighlight">\(y\)</span>), čija se vrednost predviđa na osnovu ulaznih podataka. U kontekstu mašinskog učenja, ovaj vektor predstavlja „labelu” ili tačan odgovor na osnovu kojeg model uči da prepoznaje obrasce i vrši klasifikaciju novih primera.</p></li>
+<li><p>Matrica atributa (<code class="docutils literal notranslate"><span class="pre">X</span></code>): Izdvajanjem kolone „<code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> iz skupa podataka formiramo matricu atributa (nezavisnih promenljivih). Ovi podaci predstavljaju ulazne parametre (<span class="math notranslate nohighlight">\(X\)</span>) na osnovu kojih model uči da prepoznaje obrasce i donosi predviđanja.</p></li>
+<li><p>Izlazna labela (<code class="docutils literal notranslate"><span class="pre">y</span></code>): Kolona <code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> se izdvaja kao zavisna promenljiva, odnosno ciljni vektor (<span class="math notranslate nohighlight">\(y\)</span>), čija se vrednost predviđa na osnovu ulaznih podataka. U kontekstu mašinskog učenja, ovaj vektor predstavlja „labelu” ili tačan odgovor na osnovu kojeg model uči da prepoznaje obrasce i vrši klasifikaciju novih primera.</p></li>
 </ul>
 </li>
 </ol>
@@ -1599,19 +1327,15 @@ memory usage: 164.1+ KB
 </tbody>
 </table>
 </div>
-<blockquote>
-<div><blockquote>
-<div><p><strong>Napomena:</strong> Proces optimizacije ovih parametara, poznat kao <strong>fino podešavanje</strong> (<em>hyperparameter tuning</em>), od presudnog je značaja za postizanje optimalnog balansa između <strong>pristrasnosti</strong> (<em>bias</em>) i <strong>varijanse</strong> modela. Cilj je pronaći konfiguraciju koja omogućava modelu da nauči relevantne obrasce iz podataka, a da pritom izbegne preprilagođavanje (<em>overfitting</em>) ili nedovoljno učenje (<em>underfitting</em>).</p>
-</div></blockquote>
-</div></blockquote>
+<p><strong>Napomena:</strong> Proces optimizacije ovih parametara, poznat kao <em>fino podešavanje</em> (<em>hyperparameter tuning</em>), od presudnog je značaja za postizanje optimalnog balansa između <em>pristrasnosti</em> (<em>bias</em>) i <em>varijanse</em> modela. Cilj je pronaći konfiguraciju koja omogućava modelu da nauči relevantne obrasce iz podataka, a da pritom izbegne preprilagođavanje (<em>overfitting</em>) ili nedovoljno učenje (<em>underfitting</em>).</p>
 <p><em>Inicijalizacija i obučavanje modela 1</em></p>
-<p>Proces započinje inicijalizacijom <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> modela uz primenu <strong>strukturne regularizacije</strong> kroz sledeće hiperparametre:</p>
+<p>Proces započinje inicijalizacijom <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> modela uz primenu <em>strukturne regularizacije</em> kroz sledeće hiperparametre:</p>
 <ul class="simple">
-<li><p><strong>Kriterijum (<code class="docutils literal notranslate"><span class="pre">criterion=&quot;gini&quot;</span></code>)</strong>: Za evaluaciju čistoće čvorova koristi se <em>Gini indeks</em>.</p></li>
-<li><p><strong>Dubina (<code class="docutils literal notranslate"><span class="pre">max_depth=4</span></code>)</strong>: Stablo je ograničeno na četiri nivoa.</p></li>
-<li><p><strong>Minimalni list (<code class="docutils literal notranslate"><span class="pre">min_samples_leaf=20</span></code>)</strong>: Osigurava da svaki terminalni čvor sadrži bar 20 uzoraka.</p></li>
+<li><p>Kriterijum (<code class="docutils literal notranslate"><span class="pre">criterion=&quot;gini&quot;</span></code>): Za evaluaciju čistoće čvorova koristi se <em>Gini indeks</em>.</p></li>
+<li><p>Dubina (<code class="docutils literal notranslate"><span class="pre">max_depth=4</span></code>): Stablo je ograničeno na četiri nivoa.</p></li>
+<li><p>Minimalni list (<code class="docutils literal notranslate"><span class="pre">min_samples_leaf=20</span></code>): Osigurava da svaki terminalni čvor sadrži bar 20 uzoraka.</p></li>
 </ul>
-<p>Nakon obučavanja na skupu <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, vrši se predikcija nad testnim podacima. Kvalitet klasifikacije se evaluira putem metrike <strong>tačnosti</strong> i detaljnog <strong>izveštaja o performansama</strong> (preciznost, odziv i F1-skor).</p>
+<p>Nakon obučavanja na skupu <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, vrši se predikcija nad testnim podacima. Kvalitet klasifikacije se evaluira putem metrike <em>tačnosti</em> i detaljnog <em>izveštaja o performansama</em> (preciznost, odziv i F1-skor).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">doGini</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
@@ -1645,14 +1369,14 @@ weighted avg       0.69      0.71      0.70       300
 </div>
 </div>
 <p><em>Inicijalizacija i obučavanje modela 2</em></p>
-<p>U ovom koraku instanciramo alternativni model <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> kod kojeg je primarni kriterijum za podelu čvorova <strong>informaciona entropija</strong> (<code class="docutils literal notranslate"><span class="pre">criterion=&quot;entropy&quot;</span></code>).</p>
+<p>U ovom koraku instanciramo alternativni model <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> kod kojeg je primarni kriterijum za podelu čvorova informaciona entropija (<code class="docutils literal notranslate"><span class="pre">criterion=&quot;entropy&quot;</span></code>).</p>
 <ul class="simple">
-<li><p><strong>Kriterijum (<code class="docutils literal notranslate"><span class="pre">criterion=&quot;entropy&quot;</span></code>)</strong>: Za evaluaciju kvaliteta podele koristi se <em>informaciona entropija</em>, koja meri stepen neodređenosti (nereda) unutar čvorova.</p></li>
-<li><p><strong>Dubina (<code class="docutils literal notranslate"><span class="pre">max_depth=4</span></code>)</strong>: Zadržano je isto ograničenje dubine kako bi se obezbedila uporedivost rezultata sa prethodnim modelom.</p></li>
-<li><p><strong>Minimalni list (<code class="docutils literal notranslate"><span class="pre">min_samples_leaf=20</span></code>)</strong>: Parametar koji obezbeđuje da svaki list sadrži statistički značajan broj uzoraka, sprečavajući nastanak previše specifičnih pravila.</p></li>
+<li><p>Kriterijum (<code class="docutils literal notranslate"><span class="pre">criterion=&quot;entropy&quot;</span></code>): Za evaluaciju kvaliteta podele koristi se informaciona entropija, koja meri stepen neodređenosti (nereda) unutar čvorova.</p></li>
+<li><p>Dubina (<code class="docutils literal notranslate"><span class="pre">max_depth=4</span></code>): Zadržano je isto ograničenje dubine kako bi se obezbedila uporedivost rezultata sa prethodnim modelom.</p></li>
+<li><p>Minimalni list (<code class="docutils literal notranslate"><span class="pre">min_samples_leaf=20</span></code>): Parametar koji obezbeđuje da svaki list sadrži statistički značajan broj uzoraka, sprečavajući nastanak previše specifičnih pravila.</p></li>
 </ul>
-<p>Model se obučava na trening podacima, nakon čega se vrši predikcija nad testnim skupom. Poređenjem <strong>tačnosti</strong> i <strong>klasifikacionog izveštaja</strong> sa Gini modelom utvrđuje se uticaj izbora mere čistoće na finalne performanse klasifikatora.</p>
-<p>Nakon obučavanja na skupu <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, vrši se predikcija nad testnim podacima. Kvalitet klasifikacije se evaluira putem metrike <strong>tačnosti</strong> i detaljnog <strong>izveštaja o performansama</strong> (preciznost, odziv i F1-skor).</p>
+<p>Model se obučava na trening podacima, nakon čega se vrši predikcija nad testnim skupom. Poređenjem tačnosti i klasifikacionog izveštaja sa Gini modelom utvrđuje se uticaj izbora mere čistoće na finalne performanse klasifikatora.</p>
+<p>Nakon obučavanja na skupu <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, vrši se predikcija nad testnim podacima. Kvalitet klasifikacije se evaluira putem metrike tačnosti i detaljnog izveštaja o performansama (preciznost, odziv i F1-skor).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_entropy</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
@@ -1689,26 +1413,20 @@ weighted avg       0.69      0.71      0.70       300
 <section id="zanimljivost-zasto-bas-random-state-42">
 <h3>💡 Zanimljivost: Zašto baš <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>?</h3>
 <p>U oblasti mašinskog učenja, parametar <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> postao je nezvanični standard među programerima.</p>
-<section id="tehnicka-uloga-reproduktivnost">
-<h4>🔧 Tehnička uloga: reproduktivnost</h4>
-<p>Glavna svrha ovog parametra je <strong>obezbeđivanje identičnih rezultata</strong> pri svakom pokretanju koda.<br />
-Parametar <code class="docutils literal notranslate"><span class="pre">random_state</span></code> može imati bilo koju celobrojnu vrednost (ne nužno 42), ali je ključno da se <strong>ista vrednost koristi pri svakom izvršavanju koda</strong>, kako bi rezultati bili uporedivi.</p>
+<p>Tehnička uloga: reproduktivnost
+Glavna svrha ovog parametra je <em>obezbeđivanje identičnih rezultata</em> pri svakom pokretanju koda. Parametar <code class="docutils literal notranslate"><span class="pre">random_state</span></code> može imati bilo koju celobrojnu vrednost (ne nužno 42), ali je ključno da se ista vrednost koristi pri svakom izvršavanju koda, kako bi rezultati bili uporedivi.</p>
 <p>Algoritmi koji u svom radu koriste elemente slučajnosti, poput podele podataka ili inicijalizacije stabla, daće iste ishode ukoliko je fiksirana ista početna vrednost slučajnosti (engl. <em>seed</em>). U suprotnom, svako pokretanje modela može dovesti do manjih razlika u performansama, što otežava debagovanje i pouzdano poređenje modela.</p>
-</section>
-<section id="specificno-kulturolosko-poreklo">
-<h4>🌍 Specifično kulturološko poreklo</h4>
-<p>Zanimljivo je da se izbor broja <strong>42</strong> često povezuje sa romanom <em>Vodič kroz galaksiju za autostopere</em> Daglasa Adamsa, u kojem superračunar, nakon višemilionskog računanja, identifikuje broj 42 kao odgovor na takozvano <em>„ultimativno pitanje života, univerzuma i svega ostalog“</em>.</p>
-</section>
-<section id="simbolika-u-zajednici">
-<h4>🤝 Simbolika u zajednici</h4>
-<p>Korišćenje vrednosti <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> vremenom je postao deo specifičnog <strong>geek humora</strong> koji povezuje programersku zajednicu širom sveta.</p>
+<p>Specifično kulturološko poreklo
+Zanimljivo je da se izbor broja 42 često povezuje sa romanom <em>Vodič kroz galaksiju za autostopere</em> Daglasa Adamsa, u kojem superračunar, nakon višemilionskog računanja, identifikuje broj 42 kao odgovor na takozvano <em>„ultimativno pitanje života, univerzuma i svega ostalog“</em>.</p>
+<p>Simbolika u zajednici
+Korišćenje vrednosti <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> vremenom je postao deo specifičnog <em>geek humora</em> koji povezuje programersku zajednicu širom sveta.</p>
 <p><em>Analiza rezultata . Poređenje posmatrana dva modela.</em></p>
-<p>Izbor između <strong>Gini indeksa</strong> i <strong>informacione entropije</strong> direktno utiče na topologiju stabla i način na koji se donose odluke o grananju. Na osnovu prikazane tabele i rezultata modela, možemo izvući sledeće zaključke:</p>
+<p>Izbor između Ginijevog indeksa i informacione entropije direktno utiče na topologiju stabla i način na koji se donose odluke o grananju. Na osnovu prikazane tabele i rezultata modela, možemo izvući sledeće zaključke:</p>
 <ul class="simple">
-<li><p><strong>Računarska efikasnost i stabilnost</strong>: Gini indeks je numerički jednostavniji, jer ne zahteva upotrebu logaritamskih funkcija, što ga čini bržim i stabilnijim u većini praktičnih primena. Takođe, ima tendenciju da brže izdvoji dominantnu klasu u zaseban čvor.</p></li>
-<li><p><strong>Informaciona vrednost i preciznost</strong>: Entropija pruža detaljniji uvid u raspodelu informacija unutar čvora. Iako zahteva više računarskih resursa, može biti korisnija pri identifikaciji suptilnih obrazaca u složenijim skupovima podataka, uz nešto veći rizik od preprilagođavanja modela.</p></li>
+<li><p>Računarska efikasnost i stabilnost: Gini indeks je numerički jednostavniji, jer ne zahteva upotrebu logaritamskih funkcija, što ga čini bržim i stabilnijim u većini praktičnih primena. Takođe, ima tendenciju da brže izdvoji dominantnu klasu u zaseban čvor.</p></li>
+<li><p>Informaciona vrednost i preciznost: Entropija pruža detaljniji uvid u raspodelu informacija unutar čvora. Iako zahteva više računarskih resursa, može biti korisnija pri identifikaciji suptilnih obrazaca u složenijim skupovima podataka, uz nešto veći rizik od preprilagođavanja modela.</p></li>
 </ul>
-<p>U praksi su razlike u performansama modela često zanemarljive, zbog čega se <strong>Gini indeks</strong> najčešće koristi kao podrazumevana opcija, dok se <strong>entropija</strong> razmatra kao alternativni izbor u slučajevima kada je potrebna detaljnija analiza distribucije klasa.</p>
+<p>U praksi su razlike u performansama modela često zanemarljive, zbog čega se Ginijev indeks najčešće koristi kao podrazumevana opcija, dok se entropija razmatra kao alternativni izbor u slučajevima kada je potrebna detaljnija analiza distribucije klasa.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Kriterijum</p></th>
@@ -1717,25 +1435,25 @@ Parametar <code class="docutils literal notranslate"><span class="pre">random_st
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>Gini</strong></p></td>
+<tr class="row-even"><td><p><em>Gini</em></p></td>
 <td><p>brži, stabilniji</p></td>
 <td><p>manje osetljiv na retke klase</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Entropy</strong></p></td>
+<tr class="row-odd"><td><p><em>Entropy</em></p></td>
 <td><p>teorijski informativniji</p></td>
 <td><p>sporiji, sklon prenaučavanju</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<ul class="simple">
-<li><p>Vizuelizacija strukture stabla odlučivanja.*</p></li>
-</ul>
+</section>
+<section id="vizuelizacija-strukture-stabla-odlucivanja">
+<h3>Vizuelizacija strukture stabla odlučivanja.</h3>
 <p>Radi bolje interpretacije logike po kojoj model donosi odluke, grafički prikazujemo generisano stablo odlučivanja. Ova Ovakav prikaz omogućava uvid u najvažnije atribute i granične vrednosti koji se koriste prilikom podele čvorova.</p>
 <ul class="simple">
-<li><p><strong>Dimenzije slike (<code class="docutils literal notranslate"><span class="pre">figsize=(18,</span> <span class="pre">10)</span></code>)</strong>: Podešene su veće dimenzije slike kako bi struktura stabla i tekstualni sadržaj u čvorovima bili jasno i pregledno prikazani.</p></li>
-<li><p><strong>Mapiranje atributa i klasa</strong>: Radi lakšeg razumevanja značenja atributa i klasa, mapiranje se vrši u jasan i razumljiv kontekst primenom parametara <code class="docutils literal notranslate"><span class="pre">feature_names</span></code> i <code class="docutils literal notranslate"><span class="pre">class_names</span></code>.</p></li>
-<li><p><strong>Vizuelna i logička preglednost</strong>: Kako bi naglasili dominantnu klasu koristimo parametar <code class="docutils literal notranslate"><span class="pre">filled=True</span></code>, dok za jasnoću hijerarhijske strukture stabla koristimo parametar <code class="docutils literal notranslate"><span class="pre">rounded=True</span></code>.</p></li>
+<li><p>Dimenzije slike (<code class="docutils literal notranslate"><span class="pre">figsize=(18,</span> <span class="pre">10)</span></code>): Podešene su veće dimenzije slike kako bi struktura stabla i tekstualni sadržaj u čvorovima bili jasno i pregledno prikazani.</p></li>
+<li><p>Mapiranje atributa i klasa: Radi lakšeg razumevanja značenja atributa i klasa, mapiranje se vrši u jasan i razumljiv kontekst primenom parametara <code class="docutils literal notranslate"><span class="pre">feature_names</span></code> i <code class="docutils literal notranslate"><span class="pre">class_names</span></code>.</p></li>
+<li><p>Vizuelna i logička preglednost: Kako bi naglasili dominantnu klasu koristimo parametar <code class="docutils literal notranslate"><span class="pre">filled=True</span></code>, dok za jasnoću hijerarhijske strukture stabla koristimo parametar <code class="docutils literal notranslate"><span class="pre">rounded=True</span></code>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1769,7 +1487,6 @@ Parametar <code class="docutils literal notranslate"><span class="pre">random_st
 </div>
 </div>
 </div>
-</section>
 </section>
 </section>
 <section id="hajde-da-proverimo-znanje-o-stablima-odlucivanja">
@@ -1976,42 +1693,22 @@ d) Algoritama sklonih greškama u klasifikaciji sa velikim brojem klasa</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jednostavan-primer">Jednostavan primer</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-iz-prakse-primena-stabla-odlucivanja-u-upravljanju-projektima">Primer iz prakse: Primena stabla odlučivanja u upravljanju projektima</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izbor-atributa-u-stablu-odlucivanja">Izbor atributa u stablu odlučivanja</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cart-algoritam-classification-and-regression-trees">CART algoritam (Classification and Regression Trees)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kljucne-specifikacije-cart-algoritma">Ključne specifikacije CART algoritma:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kriterijumi-grananja-i-optimizacija">Kriterijumi grananja i optimizacija</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dinamika-izgradnje-stabla-rekurzivno-particionisanje">Dinamika izgradnje stabla: Rekurzivno particionisanje</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#izbor-atributa-u-stablu-odlucivanja">Izbor atributa u stablu odlučivanja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#koraci-algoritma-stabla-odlucivanja">Koraci algoritma stabla odlučivanja</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kljucni-parametri-u-scikit-learn-decision-tree">Ključni parametri u scikit-learn (Decision Tree)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orezivanje-stabala-odlucivanja">Orezivanje stabala odlučivanja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizacija-velicine-stabla-i-horizon-efekat">Optimizacija veličine stabla i „Horizon” efekat</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-horizonta-the-horizon-effect">Problem „horizonta” (<em>The Horizon Effect</em>)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strategija-resavanja">Strategija rešavanja</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#principi-i-kriterijumi-selektivnog-orezivanja">Principi i kriterijumi selektivnog orezivanja</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#princip-rada-pre-orezivanja">Princip rada pre-orezivanja</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#najcesce-tehnike-pre-orezivanja">Najčešće tehnike pre-orezivanja</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#princip-rada-post-orezivanje">Princip rada post-orezivanje</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tehnike-post-orezivanja">Tehnike post-orezivanja</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-algoritma-stabla-odlucivanja">Prednosti i mane algoritma stabla odlučivanja</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-algoritma-stabla-odlucivanja">Prednosti algoritma stabla odlučivanja</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mane-algoritma-stabla-odlucivanja">Mane algoritma stabla odlučivanja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orezivanje-stabala-odlucivanja">Orezivanje stabala odlučivanja</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-stabala-odlucivanja">Prednosti i mane stabala odlučivanja</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti">Prednosti</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mane">Mane</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primene-stabala-odlucivanja">Primene stabala odlučivanja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfiguracija-i-obuka-stabala-odlucivanja-u-scikit-learn-okruzenju">Konfiguracija i obuka stabala odlučivanja u scikit-learn okruženju</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opis-baze">Opis baze</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zanimljivost-zasto-bas-random-state-42">💡 Zanimljivost: Zašto baš <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tehnicka-uloga-reproduktivnost">🔧 Tehnička uloga: reproduktivnost</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#specificno-kulturolosko-poreklo">🌍 Specifično kulturološko poreklo</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simbolika-u-zajednici">🤝 Simbolika u zajednici</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zanimljivost-zasto-bas-random-state-42">💡 Zanimljivost: Zašto baš <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vizuelizacija-strukture-stabla-odlucivanja">Vizuelizacija strukture stabla odlučivanja.</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hajde-da-proverimo-znanje-o-stablima-odlucivanja">Hajde da proverimo znanje o stablima odlučivanja! 🧠</a></li>
