@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -452,7 +452,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kako-funkcionisu-ansambl-metode">Kako funkcionišu ansambl metode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-ogranicenja-ansambl-metoda">Prednosti i ograničenja ansambl metoda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slucajne-sume">Slučajne šume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slucajne-sume">Slučajne šume</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rangiranje-znacaja-atributa">Rangiranje značaja atributa</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-nasumicnih-suma-random-forest">Prednosti i mane nasumičnih šuma (<em>random forest</em>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfiguracija-i-obuka-algoritma-slucajne-sume-u-scikit-learn-okruzenju">Konfiguracija i obuka algoritma slučajne šume u scikit-learn okruženju</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
@@ -605,7 +608,7 @@ Modeli se treniraju redom, tako da svaki naredni pokušava da ispravi greške pr
 </ul>
 <p>Ansambl metode zahtevaju više računarskih resursa, ali u praksi često daju značajno bolje rezultate od pojedinačnih modela, zbog čega imaju široku primenu u ekonomiji i poslovnoj analizi.</p>
 <div class="pst-scrollable-table-container"><table class="table table-center" id="id14">
-<caption><span class="caption-text">Razlike između bagging-a i boosting-a</span></caption>
+<caption><span class="caption-number">Tabela 18. </span><span class="caption-text">Razlike između bagging-a i boosting-a</span></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Karakteristika</p></th>
 <th class="head"><p>Bagging</p></th>
@@ -727,6 +730,24 @@ pri svakom grananju koristi se samo deo dostupnih promenljivih</p></li>
 <p>Najčešće je dovoljno podesiti broj stabala i dubinu stabla, dok ostali parametri mogu ostati na podrazumevanim vrednostima.</p>
 <p>Veći broj stabala obično daje bolje rezultate, ali povećava vreme izračunavanja.</p>
 </div>
+<section id="rangiranje-znacaja-atributa">
+<h3>Rangiranje značaja atributa</h3>
+<p>Rangiranje značaja atributa u algoritmu slučajnih šuma može se sprovesti prema pristupu Breimana <span id="id1">[<a class="reference internal" href="#id13" title="Leo Breiman. Random forests. Machine Learning, 45(1):5–32, 2001. doi:10.1023/A:1010933404324.">1</a>]</span>, a sama metodologija je i integrisana u standardnoj <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> biblioteci.
+Procedura evaluacije značaja atributa u skupu podataka <span class="math notranslate nohighlight">\(D_n = \{(X_i, Y_i)\}_{i=1}^n\)</span> sprovodi se kroz sledeće faze:</p>
+<ol class="arabic simple">
+<li><p>Obučavanje modela: Inicijalni korak podrazumeva fitovanje modela slučajnih šuma.</p></li>
+<li><p>Evidencija greške: Za svaku instancu registruje se <em>out-of-bag (OOB)</em> greška.</p></li>
+<li><p>Agregacija rezultata: Izračuna se prosečna vrednost dobijenih grešaka u okviru ansambla.</p></li>
+</ol>
+<p>Merenje značaja <span class="math notranslate nohighlight">\(j\)</span>-tog obeležja (atributa) procenjuje se kroz sledeći postupak:</p>
+<ol class="arabic simple">
+<li><p>Permutacija vrednosti: Vrednosti posmatranog <span class="math notranslate nohighlight">\(j\)</span>-tog obeležja se nasumično permutuju unutar skupa podataka za obučavanje, čime se narušava njegova stvarna veza sa ciljnom promenljivom.</p></li>
+<li><p>Rekalkulacija greške: Na ovako izmenjenom (perturbovanom) skupu podataka ponovo se izračunava out-of-bag (OOB) greška.</p></li>
+<li><p>Izračunavanje vrednosti značaja (Importance Score): Mera značaja <span class="math notranslate nohighlight">\(j\)</span>-tog obeležja dobija se kao prosečna vrednost ovih razlika u OOB greškama pre i nakon permutacije, na nivou svih stabala u ansamblu.</p></li>
+<li><p>Normalizacija: Radi obezbeđivanja uporedivosti, ovaj rezultat se normalizuje standardnom devijacijom uočenih razlika.</p></li>
+</ol>
+<p><em>Suština:</em> Što je veći porast greške nakon permutacije obeležja, to je taj atribut značajniji za prediktivnu moć modela.</p>
+</section>
 </section>
 <section id="prednosti-i-mane-nasumicnih-suma-random-forest">
 <h2>Prednosti i mane nasumičnih šuma (<em>random forest</em>)</h2>
@@ -1873,22 +1894,6 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 <img alt="_images/8508e2804d9c8a15f5089af4e33a851bec90de9f141dd2e27b59d37f89735b75.png" src="_images/8508e2804d9c8a15f5089af4e33a851bec90de9f141dd2e27b59d37f89735b75.png" />
 </div>
 </div>
-<p><strong>Rangiranje značaja atributa</strong></p>
-<p>Rangiranje značaja atributa u algoritmu slučajnih šuma može se sprovesti prema pristupu Breimana <span id="id1">[<a class="reference internal" href="#id13" title="Leo Breiman. Random forests. Machine Learning, 45(1):5–32, 2001. doi:10.1023/A:1010933404324.">1</a>]</span>, a sama metodologija je i integrisana u standardnoj <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> biblioteci.
-Procedura evaluacije značaja atributa u skupu podataka <span class="math notranslate nohighlight">\(D_n = \{(X_i, Y_i)\}_{i=1}^n\)</span> sprovodi se kroz sledeće faze:</p>
-<ol class="arabic simple">
-<li><p>Obučavanje modela: Inicijalni korak podrazumeva fitovanje modela slučajnih šuma.</p></li>
-<li><p>Evidencija greške: Za svaku instancu registruje se <em>out-of-bag (OOB)</em> greška.</p></li>
-<li><p>Agregacija rezultata: Izračuna se prosečna vrednost dobijenih grešaka u okviru ansambla.</p></li>
-</ol>
-<p>Merenje značaja <span class="math notranslate nohighlight">\(j\)</span>-tog obeležja (atributa) procenjuje se kroz sledeći postupak:</p>
-<ol class="arabic simple">
-<li><p>Permutacija vrednosti: Vrednosti posmatranog <span class="math notranslate nohighlight">\(j\)</span>-tog obeležja se nasumično permutuju unutar skupa podataka za obučavanje, čime se narušava njegova stvarna veza sa ciljnom promenljivom.</p></li>
-<li><p>Rekalkulacija greške: Na ovako izmenjenom (perturbovanom) skupu podataka ponovo se izračunava out-of-bag (OOB) greška.</p></li>
-<li><p>Izračunavanje vrednosti značaja (Importance Score): Mera značaja <span class="math notranslate nohighlight">\(j\)</span>-tog obeležja dobija se kao prosečna vrednost ovih razlika u OOB greškama pre i nakon permutacije, na nivou svih stabala u ansamblu.</p></li>
-<li><p>Normalizacija: Radi obezbeđivanja uporedivosti, ovaj rezultat se normalizuje standardnom devijacijom uočenih razlika.</p></li>
-</ol>
-<p><em>Suština:</em> Što je veći porast greške nakon permutacije obeležja, to je taj atribut značajniji za prediktivnu moć modela.</p>
 </section>
 <section id="literatura">
 <h2>Literatura</h2>
@@ -1964,7 +1969,10 @@ Procedura evaluacije značaja atributa u skupu podataka <span class="math notran
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kako-funkcionisu-ansambl-metode">Kako funkcionišu ansambl metode</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-ogranicenja-ansambl-metoda">Prednosti i ograničenja ansambl metoda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slucajne-sume">Slučajne šume</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#slucajne-sume">Slučajne šume</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rangiranje-znacaja-atributa">Rangiranje značaja atributa</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-nasumicnih-suma-random-forest">Prednosti i mane nasumičnih šuma (<em>random forest</em>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfiguracija-i-obuka-algoritma-slucajne-sume-u-scikit-learn-okruzenju">Konfiguracija i obuka algoritma slučajne šume u scikit-learn okruženju</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
