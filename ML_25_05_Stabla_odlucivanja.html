@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -470,6 +470,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hajde-da-proverimo-znanje-o-stablima-odlucivanja">Hajde da proverimo znanje o stablima odlučivanja! 🧠</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
             </nav>
         </div>
@@ -1620,7 +1621,84 @@ d) Algoritama sklonih greškama u klasifikaciji sa velikim brojem klasa</p>
 </div>
 </div>
 </div>
-<p>Liteartura</p>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<br><div class="tip admonition">
+<p class="admonition-title">Zadatak 1 - Kreditni rizik</p>
+<p>Skup podatak neophodan za ovaj zadatak se nalazi na sledećem linku [<a class="reference external" href="https://drive.google.com/file/d/1AofWwPEAgZcC88ttyG81bBA0VhIXYrPr/view?">https://drive.google.com/file/d/1AofWwPEAgZcC88ttyG81bBA0VhIXYrPr/view?</a>]</p>
+<p>Ovaj skup podataka predstavlja pojednostavljeni model procene kreditnog rizika fizičkih lica u bankarskom sektoru. Cilj je klasifikacija klijenata prema nivou rizičnosti na osnovu njihovih socio-ekonomskih karakteristika i kreditnog opterećenja.</p>
+<p>Skup sadrži 120 opservacija, gde svaka opservacija predstavlja jednog klijenta. Podaci su sintetički generisani, ali su strukturirani tako da odražavaju realne odnose koji se uočavaju u praksi bankarskog odlučivanja.</p>
+<p><em>Struktura podataka</em>. U skupu se nalazi pet ulaznih promenljivih (features) i jedna ciljna promenljiva (target):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">income</span></code> - Mesečni prihod klijenta (u evrima). Viši prihodi obično ukazuju na veću sposobnost otplate kredita.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">age</span></code> - Starost klijenta (u godinama). Može imati indirektan uticaj kroz stabilnost prihoda i radni status.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">loan_amount</span></code> - Iznos kredita koji klijent traži. Veći iznosi povećavaju potencijalni rizik.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">employment_years</span></code> - Broj godina radnog iskustva. Veća stabilnost zaposlenja obično smanjuje kreditni rizik.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">existing_loans</span> </code>- Broj postojećih kredita. Veći broj zaduženja povećava finansijski pritisak.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">credit_risk</span></code> - Kategorijalna promenljiva koja predstavlja nivo kreditnog rizika:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">low</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">high</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p>Ekonomska interpretacija: Kreditni rizik je određen kombinacijom faktora koji odražavaju odnos između zaduženosti i sposobnosti otplate. Ključni odnos u ovom skupu je implicitno definisan kroz:</p>
+<ul class="simple">
+<li><p>odnos iznosa kredita i prihoda</p></li>
+<li><p>nivo postojećeg zaduženja</p></li>
+<li><p>stabilnost zaposlenja</p></li>
+</ul>
+<p>Klijenti sa visokim odnosom duga i prihoda, većim brojem kredita i kraćim radnim stažom imaju veću verovatnoću da budu klasifikovani kao rizični.</p>
+<p><em>Tip problema</em>. Ovaj skup podataka predstavlja primer problema nadgledanog učenja:</p>
+<ul class="simple">
+<li><p>tip zadatka: klasifikacija</p></li>
+<li><p>broj klasa: 3 (low, medium, high)</p></li>
+</ul>
+<p>priroda promenljivih: numeričke + jedna kategorijalna ciljna promenljiva</p>
+<p><strong>Zahtevi:</strong></p>
+<ol class="arabic simple">
+<li><p>Učitaj skup podataka.</p></li>
+<li><p>Istraži distribucije promenljivih i odnose između njih.</p></li>
+<li><p>Podeli podatke na trening i test skup.</p></li>
+<li><p>Izgradi model stabla odlučivanja.</p></li>
+<li><p>Evaluiraj tačnost modela.</p></li>
+<li><p>Interpretiraj koje promenljive najviše utiču na procenu rizika.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2 - Analiza potražnje proizvoda</p>
+<p>Skup podatak neophodan za ovaj zadatak se nalazi na sledećem linku [<a class="reference external" href="https://drive.google.com/file/d/1uozylpxsziVW_2_41lVPcI7OtvTsZYhI/view?usp=sharing">https://drive.google.com/file/d/1uozylpxsziVW_2_41lVPcI7OtvTsZYhI/view?usp=sharing</a>]</p>
+<p>Kompanija koja posluje na konkurentnom tržištu želi da bolje razume faktore koji utiču na potražnju za njenim proizvodima. U cilju unapređenja poslovne strategije, prikupljeni su podaci o karakteristikama proizvoda i njihovoj tržišnoj uspešnosti.</p>
+<p>Za svaki proizvod poznati su podaci o ceni, ulaganjima u marketing, starosti proizvoda, broju konkurenata i oceni kvaliteta. Na osnovu ovih informacija, proizvod je klasifikovan u jednu od tri kategorije potražnje:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">low</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">medium</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">high</span></code></p></li>
+</ul>
+<p><em>Podaci</em>. Skup podataka sadrži sledeće promenljive:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">price</span></code> – cena proizvoda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">marketing_spend</span></code> – ulaganja u marketing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">product_age</span></code> – starost proizvoda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">competitors</span></code> – broj konkurenata</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rating</span></code> – ocena proizvoda</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">demand_level</span></code> – nivo potražnje</p></li>
+</ul>
+<p>Na osnovu datog skupa podataka:</p>
+<ol class="arabic simple">
+<li><p>Učitaj podatke i prikaži osnovne informacije o skupu podataka.</p></li>
+<li><p>Podeli podatke na trening i test skup.</p></li>
+<li><p>Izgradi Random Forest klasifikacioni model za predviđanje promenljive <code class="docutils literal notranslate"><span class="pre">demand_level</span></code>.</p></li>
+<li><p>Izvrši predikciju nad test skupom.</p></li>
+<li><p>Oceni model korišćenjem odgovarajućih metrika klasifikacije.</p></li>
+<li><p>Analiziraj značaj promenljivih u modelu.</p></li>
+<li><p>Interpretiraj dobijene rezultate u ekonomskom kontekstu.</p></li>
+<li><p>Na osnovu analize, predloži konkretne mere za povećanje potražnje proizvoda.</p></li>
+</ol>
+</div>
+<p>Literatura</p>
 <p>Hastie, Trevor; Tibshirani, Robert; Friedman, Jerome (2001). The Elements of Statistical Learning. Springer. pp. 269–272. ISBN 0-387-95284-5.</p>
 </section>
 </section>
@@ -1712,6 +1790,7 @@ d) Algoritama sklonih greškama u klasifikaciji sa velikim brojem klasa</p>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hajde-da-proverimo-znanje-o-stablima-odlucivanja">Hajde da proverimo znanje o stablima odlučivanja! 🧠</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 </ul>
   </nav></div>
 

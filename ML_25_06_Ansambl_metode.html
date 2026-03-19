@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -458,6 +458,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-nasumicnih-suma-random-forest">Prednosti i mane nasumičnih šuma (<em>random forest</em>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfiguracija-i-obuka-algoritma-slucajne-sume-u-scikit-learn-okruzenju">Konfiguracija i obuka algoritma slučajne šume u scikit-learn okruženju</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
 </ul>
             </nav>
@@ -1894,6 +1895,148 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 <img alt="_images/8508e2804d9c8a15f5089af4e33a851bec90de9f141dd2e27b59d37f89735b75.png" src="_images/8508e2804d9c8a15f5089af4e33a851bec90de9f141dd2e27b59d37f89735b75.png" />
 </div>
 </div>
+<br>
+</section>
+<section id="zadaci-i-problemi">
+<h2>Zadaci i problemi</h2>
+<br><div class="tip admonition">
+<p class="admonition-title">Zadatak 1 - Zadovoljstvo zaposlenih</p>
+<p>Jedna srednje velika kompanija suočava se sa povećanim odlaskom zaposlenih, što dovodi do rasta troškova zapošljavanja i obuke novih radnika. Menadžment želi da identifikuje ključne faktore koji utiču na odluku zaposlenih da napuste firmu, kako bi mogao da unapredi politiku zadržavanja kadrova.</p>
+<p>Na raspolaganju je skup podataka koji sadrži informacije o zaposlenima, uključujući nivo plate, dužinu rada u kompaniji, zadovoljstvo poslom, prekovremeni rad, mogućnosti napredovanja i udaljenost od mesta stanovanja.</p>
+<p>Skup podatak neophodan za ovaj zadatak se nalazi na sledećem linku [<a class="reference external" href="https://drive.google.com/file/d/1mq_D1WS_l-xjPcJFz-68ITV3k_ExGCvD/view?usp=sharing">https://drive.google.com/file/d/1mq_D1WS_l-xjPcJFz-68ITV3k_ExGCvD/view?usp=sharing</a>]</p>
+<p>Za svakog zaposlenog poznato je da li je napustio kompaniju:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> – zaposleni je ostao</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> – zaposleni je otišao</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="id15">
+<caption><span class="caption-text">Opis promenljivih u skupu podataka:</span></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Promenljiva</p></th>
+<th class="head"><p>Tip promenljive</p></th>
+<th class="head"><p>Opis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>salary</p></td>
+<td><p>numerička</p></td>
+<td><p>mesečna plata zaposlenog (u evrima); viši nivoi plate mogu smanjiti verovatnoću odlaska</p></td>
+</tr>
+<tr class="row-odd"><td><p>years_in_company</p></td>
+<td><p>numerička</p></td>
+<td><p>broj godina provedenih u kompaniji; duži staž često ukazuje na veću lojalnost</p></td>
+</tr>
+<tr class="row-even"><td><p>job_satisfaction</p></td>
+<td><p>ordinalna</p></td>
+<td><p>nivo zadovoljstva poslom (skala 1–5); niže vrednosti povećavaju verovatnoću odlaska</p></td>
+</tr>
+<tr class="row-odd"><td><p>overtime</p></td>
+<td><p>kategorijalna</p></td>
+<td><p>indikator prekovremenog rada (1 = da, 0 = ne); učestali prekovremeni rad može povećati rizik odlaska</p></td>
+</tr>
+<tr class="row-even"><td><p>promotion_last_3y</p></td>
+<td><p>kategorijalna</p></td>
+<td><p>indikator unapređenja u poslednje tri godine (1 = da, 0 = ne); izostanak napredovanja može povećati odlazak</p></td>
+</tr>
+<tr class="row-odd"><td><p>distance_to_work</p></td>
+<td><p>numerička</p></td>
+<td><p>udaljenost od mesta stanovanja do posla (u km); veća udaljenost može povećati nezadovoljstvo</p></td>
+</tr>
+<tr class="row-even"><td><p>left_company</p></td>
+<td><p>kategorijalna</p></td>
+<td><p>ciljna promenljiva (1 = zaposleni otišao, 0 = ostao)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Zahtevi:</strong></p>
+<ol class="arabic simple">
+<li><p>Podeli podatke na trening i test skup.</p></li>
+<li><p>Izgradi Random Forest klasifikacioni model za predviđanje promenljive left_company.</p></li>
+<li><p>Izvrši predikciju nad test skupom.</p></li>
+<li><p>Oceni model korišćenjem confusion matrix i tačnosti.</p></li>
+<li><p>Odredi značaj promenljivih u modelu.</p></li>
+<li><p>Na osnovu rezultata odgovori:</p>
+<ul class="simple">
+<li><p>koji faktori najviše utiču na odlazak zaposlenih?</p></li>
+<li><p>da li plata ima presudan uticaj?</p></li>
+<li><p>kako zadovoljstvo poslom utiče na odluku o odlasku?</p></li>
+</ul>
+</li>
+<li><p>Predloži konkretne mere koje menadžment može preduzeti kako bi smanjio odlazak zaposlenih.</p></li>
+</ol>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Zadatak 2 - Predviđanje potrošnje</p>
+<p>Jedna finansijska institucija želi da predvidi nivo potrošnje domaćinstava na osnovu njihovih socio-ekonomskih karakteristika. Ta procena je važna za planiranje kreditnih proizvoda i procenu kreditne sposobnosti.</p>
+<p>Na raspolaganju je skup podataka koji sadrži informacije o prihodima, veličini domaćinstva, obrazovanju, tipu naselja i štednji. Cilj je predvideti ukupnu mesečnu potrošnju domaćinstva.</p>
+<p>Skup podatak neophodan za ovaj zadatak se nalazi na sledećem linku [<a class="reference external" href="https://drive.google.com/file/d/1uozylpxsziVW_2_41lVPcI7OtvTsZYhI/view?usp=sharing">https://drive.google.com/file/d/1uozylpxsziVW_2_41lVPcI7OtvTsZYhI/view?usp=sharing</a>]</p>
+<div class="pst-scrollable-table-container"><table class="table table-center" id="id16">
+<caption><span class="caption-text">Opis promenljivih u skupu podataka:</span></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Promenljiva</p></th>
+<th class="head"><p>Tip promenljive</p></th>
+<th class="head"><p>Opis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>income</p></td>
+<td><p>numerička</p></td>
+<td><p>mesečni prihod domaćinstva (u evrima)</p></td>
+</tr>
+<tr class="row-odd"><td><p>household_size</p></td>
+<td><p>numerička</p></td>
+<td><p>broj članova domaćinstva</p></td>
+</tr>
+<tr class="row-even"><td><p>education_level</p></td>
+<td><p>kategorijalna</p></td>
+<td><p>nivo obrazovanja (0, 1, 2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>urban</p></td>
+<td><p>kategorijalna</p></td>
+<td><p>tip naselja (1 = urbano, 0 = ruralno)</p></td>
+</tr>
+<tr class="row-even"><td><p>savings</p></td>
+<td><p>numerička</p></td>
+<td><p>ukupna štednja domaćinstva</p></td>
+</tr>
+<tr class="row-odd"><td><p>consumption</p></td>
+<td><p>numerička</p></td>
+<td><p>ukupna mesečna potrošnja (ciljna promenljiva)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Zahtevi:</strong></p>
+<ol class="arabic simple">
+<li><p>Podeli podatke na trening i test skup.</p></li>
+<li><p>Izgradi Random Forest regresioni model za predviđanje promenljive consumption.</p></li>
+<li><p>Izvrši predikciju nad test skupom.</p></li>
+<li><p>Evaluiraj model koristeći:</p>
+<ul class="simple">
+<li><p>MAE</p></li>
+<li><p>RMSE</p></li>
+</ul>
+</li>
+<li><p>Odredi značaj promenljivih u modelu.</p></li>
+<li><p>Interpretiraj rezultate i odgovori:</p>
+<ul class="simple">
+<li><p>koji faktor najviše utiče na potrošnju?</p></li>
+<li><p>da li je odnos između prihoda i potrošnje linearan?</p></li>
+</ul>
+</li>
+<li><p>Predloži kako bi banka mogla koristiti ovaj model u praksi.</p></li>
+</ol>
+<p><em>Dodatni zahtevi:</em></p>
+<ol class="arabic simple" start="8">
+<li><p>Izgradi i linearni regresioni model nad istim podacima.</p></li>
+<li><p>Uporedi performanse modela (Random Forest vs linearna regresija).</p></li>
+<li><p>Grafički prikaži odnos između stvarnih i predviđenih vrednosti za oba modela.</p></li>
+<li><p>Diskutuj u kojim situacijama ansambl modeli daju bolje rezultate od linearnih modela.</p></li>
+<li><p>(Napredno) Izgradi Gradient Boosting model i uporedi ga sa Random Forest modelom.</p></li>
+</ol>
+<p>Napomena: Ansambl modeli zasnovani na stablima odlučivanja omogućavaju hvatanje nelinearnih odnosa između promenljivih, što ih čini posebno pogodnim za ekonomske podatke gde linearni modeli često nisu dovoljni.</p>
+</div>
 </section>
 <section id="literatura">
 <h2>Literatura</h2>
@@ -1975,6 +2118,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-nasumicnih-suma-random-forest">Prednosti i mane nasumičnih šuma (<em>random forest</em>)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konfiguracija-i-obuka-algoritma-slucajne-sume-u-scikit-learn-okruzenju">Konfiguracija i obuka algoritma slučajne šume u scikit-learn okruženju</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#literatura">Literatura</a></li>
 </ul>
   </nav></div>
