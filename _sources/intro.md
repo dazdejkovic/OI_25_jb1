@@ -79,8 +79,8 @@ Primenom programskog jezika Pajton
 <div class="cover-authors">
 
 Dragan Azdejković  
+Dragana Radojičić i
 Mladen Stamenković  
-Dragana Radojičić
 
 </div>
 

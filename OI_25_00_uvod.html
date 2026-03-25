@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -236,16 +236,6 @@
 <li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
 
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k-najbližih suseda</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
@@ -422,9 +412,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -440,17 +428,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Садржај </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-i-ishodi">Ciljevi i ishodi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zasto-pajton">Zašto Pajton?</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -463,25 +440,17 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="uvod">
 <h1>Uvod</h1>
 <br>
-<p>Materijali u ovoj knjizi obuhvataju sadržaje predmeta Operaciona istraživanja i Mašinsko učenje, povezane kroz jedinstveni implementacioni okvir zasnovan na programskom jeziku Pajton, sa posebnim naglaskom na primene u ekonomiji i poslovnoj analitici.</p>
-<p>Prvi deo knjige su osnove Pajtona.</p>
-<p>Predmet drugog dela su dodatne bibliteke Pajtona kao što su Numpy, Pandas, Matplotlib i Scipy koje će nam pomoći u rešavanju raznih problema iz Operacionih istraživanja.</p>
-<p>Treći deo pokriva osnove mašinskog učenja.</p>
-<p>Sastavni deo nekih poglavlja su zadaci i problemi, kao i testovi za proveru znanja.</p>
-<section id="ciljevi-i-ishodi">
-<h2>Ciljevi i ishodi</h2>
-<br>
-<p>Prvi dva dela ovog udžbenika pružaju uvod u programiranje u Pajtonu za studente ekonomije bez prethodnog iskustva. Fokus je na primeni analitičkih alata za obradu i analizu podataka, simulacije poslovnih procesa i učenje osnovnih optimizacionih metoda relevantnih za odlučivanje u ekonomskom kontekstu. Treći deo udžbenika će studentima ekonomije približiti osnovne koncepte i metode mašinskog učenja, sa posebnim naglaskom na njihovu primenu u analizi ekonomskih i poslovnih podataka. Pored razumevanja principa na kojima se zasnivaju savremeni algoritmi učenja iz podataka, cilj je i da se razvije sposobnost kritičkog sagledavanja mogućnosti i ograničenja ovih metoda u ekonomskim istraživanjima i poslovnoj praksi.</p>
-<p>Nakon završetka modula, studenti će biti sposobni da samostalno pišu Pajton skripte, koriste ključne biblioteke za rad sa podacima, analiziraju realne ekonomske podatke i primenjuju optimizacione i simulacione tehnike u praktičnim poslovnim situacijama. Nakon proučavanja trećeg dela ovog udžbenika student će biti u stanju da razume osnovne ideje mašinskog učenja i razlikuje ključne pristupe poput nadgledanog i nenadgledanog učenja. Takođe će moći da primeni osnovne metode mašinskog učenja na ekonomske skupove podataka i da interpretira dobijene rezultate u kontekstu ekonomskih i poslovnih problema.</p>
-<section id="zasto-pajton">
-<h3>Zašto Pajton?</h3>
-<p>Pajton je trenutno jedan od najpopularnijih programskih jezika u oblasti analize podataka.
-Za razliku od jezika R, Python je jezik opšte namene i omogućava široki spektar primena van statistike: razvoj aplikacija, automatizaciju, rad sa bazama podataka, optimizaciju itd.
-Python je besplatan (open source) i javno dostupan.
-Postoji velika i aktivna zajednica korisnika koja obezbeđuje dokumentaciju, biblioteke i edukativne resurse.
-Python je jednostavan za učenje i čitanje, što ga čini pogodnim za početnike.</p>
-</section>
-</section>
+<p>U savremenom poslovnom i ekonomskom okruženju, donošenje odluka sve više se oslanja na analizu podataka, kvantitativne modele i algoritamske pristupe. Organizacije se suočavaju sa kompleksnim problemima koji uključuju ograničene resurse, neizvesnost i dinamične promene, zbog čega intuitivno odlučivanje često nije dovoljno. U takvim uslovima, sposobnost da se problemi formalizuju, analiziraju i reše uz pomoć računarskih alata postaje ključna kompetencija.</p>
+<p>Knjiga pred vama predstavlja doprinos autora da znanja iz oblasti analitike, operacionih istraživanja i mašinskog učenja, pojmova koji su danas sveprisutni u poslovanju, približe studentima i omoguće prvi korak u njihovom savladavanju. Napravljena je primarno kao udžbenik za dva predmeta na osnovnim studijama: Operaciona istraživanja i Mašinsko učenje. Osnovna ideja je da ova dva predmeta predstavljaju jednu celinu koja uvodi studente u svet rešavanja poslovnih problema pomoću savremenih analitičkih alata.</p>
+<p>Poseban naglasak stavljen je na povezivanje teorijskih koncepata sa praktičnom implementacijom, čime se omogućava prelazak od apstraktnih modela ka konkretnim rešenjima. Cilj knjige nije samo da prikaže kako se problemi rešavaju, već i da radi na razvoju kompetencija povezanih sa razumevanjem rezultata. Šta je to što kao budući menadžer ili analitičar treba prepoznati u podacima i koji su ključni uvidi za donošenje odluka i izveštavanje. Razvoj veštačke inteligencije dodatno je unapredio ove pristupe i učinio ih dostupnijim i primenljivijim nego ikada ranije. Sposobnost kritičkog razumevanja problema i kreiranje uvida predstavljaju kompetencije budućnosti.</p>
+<p>Operaciona istraživanja predstavljaju disciplinu koja pruža metodološki okvir za rešavanje ovakvih problema, kroz razvoj matematičkih modela i optimizacionih tehnika. Istovremeno, savremeni razvoj tehnologije omogućio je da se ovi modeli implementiraju i primenjuju uz pomoć programskih jezika i specijalizovanih biblioteka, čime se značajno proširuje njihov praktični domet. Pajton se u tom kontekstu izdvojio kao jedan od najvažnijih alata za analizu podataka, optimizaciju i razvoj modela.</p>
+<p>Mašinsko učenje predstavlja prirodno proširenje ovakvog analitičkog pristupa, sa fokusom na otkrivanje obrazaca u podacima i izgradnju modela koji mogu da predviđaju buduće događaje ili ponašanja. Za razliku od klasičnih optimizacionih modela, koji polaze od jasno definisane strukture problema, metode mašinskog učenja uče iz podataka i omogućavaju donošenje odluka u uslovima visoke neizvesnosti i kompleksnosti. Njihova primena danas obuhvata širok spektar oblasti, od procene kreditnog rizika (čemu je posvećena i jedna studija slučaja), preko segmentacije korisnika, do preporuka proizvoda i automatizovanog odlučivanja.</p>
+<p>Knjiga je organizovana u tri međusobno povezane celine. U prvom delu obrađuju se osnovni koncepti programiranja u Pajtonu, uključujući strukture podataka, funkcije, rad sa datotekama, upravljanje greškama i dajemo osnove objektno orijentisanog programiranja. Ovaj deo postavlja neophodne temelje za dalji rad i omogućava čitaocu da stekne sigurnost u pisanju, ali pre svega u razumevanju koda.</p>
+<p>Drugi deo knjige fokusiran je na primenu Pajtona u operacionim istraživanjima i analizi podataka. Obrađuju se ključne biblioteke kao što su NumPy, pandas i Matplotlib, kao i alati za rešavanje optimizacionih problema u okviru biblioteke SciPy. Posebna pažnja posvećena je Monte Karlo simulacijama kao pristupu modeliranju neizvesnosti i analizi kompleksnih sistema, jer ovu temu smatramo izuzetno važnom, a nedovoljno zastupljenom u silabusima predmeta koje studenti Ekonomskog fakulteta u Beogradu do tada slušaju.</p>
+<p>Treći deo knjige uvodi čitaoca u oblast mašinskog učenja, sa fokusom na nadgledano učenje i osnovne algoritme klasifikacije, uključujući naivne Bajesove klasifikatore, k-najbližih suseda, stabla odlučivanja i ansambl metode. Ovaj deo proširuje analitički okvir knjige ka prediktivnom modeliranju i savremenim pristupima obradi podataka.</p>
+<p>Kroz ovako strukturisan pristup, knjiga omogućava postepeni razvoj znanja. Krećemo od osnovnih programerskih veština, preko modeliranja i optimizacije, do primene metoda mašinskog učenja. Na taj način čitalac stiče kompetencije neophodne za rešavanje realnih problema i donošenje odluka zasnovanih na podacima.</p>
+<p>Na kraju, moramo da istaknemo da smo veoma ponosni na naš pokušaj da znanja iz ovih oblasti postanu dostupna i široj publici. Knjiga je pisana u Jupyter Book formatu, i svi fajlovi dostupni su studentima i široj javnosti, te je ovo naš mali doprinos konceptu otvorenog koda i celokupnoj zajednici. Digitalni format knjige omogućava i njeno kontinuirano unapređenje i usavršavanje. Nadamo se da će u godinama koje dolaze knjiga biti dopunjavana novim studijama slučaja i savremenim temama, i da će predstavljati polaznu tačku za sve koji žele da započnu svoje istraživanje u oblasti analitike. Za sve predloge i sugestije za unapređenje knjige, čitaoci su dobrodošli da kontaktiraju autore.
+Autori</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -493,16 +462,16 @@ Python je jednostavan za učenje i čitanje, što ga čini pogodnim za početnik
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -539,24 +508,6 @@ Python je jednostavan za učenje i čitanje, što ga čini pogodnim za početnik
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Садржај
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-i-ishodi">Ciljevi i ishodi</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zasto-pajton">Zašto Pajton?</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -566,7 +517,7 @@ Python je jednostavan za učenje i čitanje, što ga čini pogodnim za početnik
   <div class="footer-item">
     
 <p class="component-author">
-Од стране Dragan Azdejković, Mladen Stamenković i Dragana Radojičić
+Од стране Dragan Azdejković, Dragana Radojičić i Mladen Stamenković
 </p>
 
   </div>

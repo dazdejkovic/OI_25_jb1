@@ -1,0 +1,2351 @@
+
+<!DOCTYPE html>
+
+
+<html lang="sr" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Regularni izrazi - Uparivanje šablona sa regularnim izrazima &#8212; Poslovno odlučivanje i mašinsko učenje</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
+    <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
+    <link rel="stylesheet" type="text/css" href="_static/linkovi.css?v=78ed62f8" />
+    <link rel="stylesheet" type="text/css" href="_static/tabela.css?v=c801bd93" />
+    <link rel="stylesheet" type="text/css" href="_static/vezba.css?v=2beb7130" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/korice-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/linkovi-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/tabela-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/vezba-checkpoint.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/translations.js?v=3c3b4542"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'OI_26_01_Regularni_izrazi';</script>
+    <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
+    <link rel="index" title="Индекс" href="genindex.html" />
+    <link rel="search" title="Претрага" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="sr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/ekof.jpeg" class="logo__image only-light" alt="Poslovno odlučivanje i mašinsko učenje - Home"/>
+    <script>document.write(`<img src="_static/ekof.jpeg" class="logo__image only-dark" alt="Poslovno odlučivanje i mašinsko učenje - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Poslovno odlučivanje i mašinsko učenje
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Uvod</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OI_25_00_uvod.html">Uvod</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_05_stringovi.html">Stringovi</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_06_liste_uvod.html">Liste</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_07_stringovi_liste_napredno.html">Još malo o stringovima i listama</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="OI_25_17_NumPy.html">Uvod u NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_18_Matplotlib.html">Vizuelizacija podataka sa Matplotlib-om</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_19_Simulacije.html">Monte Karlo simulacije</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_20_Pandas.html">Uvod u analizu podataka - 🐼 Pandas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OI_25_21_SciPy.html">Optimizacija u Pajtonu - 🧪 modul SciPy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo III - Mašinsko učenje</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ML_25_01_Uvod_1.html">Uvod</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_02_Nadgledano_ucenje.html">Nadgledano učenje</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="ML_25_03_Naivni_Bajes.html">Naivni Bajesovi klasifikatori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_04_KNN.html">Algoritam k-najbližih suseda</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_05_Stabla_odlucivanja.html">Stabla odlučivanja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ML_25_06_Ansambl_metode.html">Ansambl metode</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Изворно спремиште"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FOI_26_01_Regularni_izrazi.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Отворите издање"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/OI_26_01_Regularni_izrazi.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Преузми изворну датотеку"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Испис у ПДФ"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Режим целог екрана"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Regularni izrazi - Uparivanje šablona sa regularnim izrazima</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Садржај </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pronalazenje-obrazaca-teksta-bez-regularnih-izraza">Pronalaženje obrazaca teksta bez regularnih izraza</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pronalazenje-obrazaca-teksta-sa-regularnim-izrazima">Pronalaženje obrazaca teksta sa regularnim izrazima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-regex-objekata">Kreiranje Regex objekata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-regex-objekata">Uparivanje Regex objekata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pregled-podudaranja-regularnih-izraza">Pregled podudaranja regularnih izraza</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jos-o-uparivanju-sablona-sa-regularnim-izrazima">Još o uparivanju šablona sa regularnim izrazima</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupisanje-sa-zagradama">Grupisanje sa zagradama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povezivanje-vise-grupa-sa-cevovodom-pipe">Povezivanje više grupa sa cevovodom (pipe)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opciono-uparivanje-sa-znakom-pitanja">Opciono uparivanje sa znakom pitanja</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nula-ili-vise-uparivanja-sa-zvezdicom">Nula ili više uparivanja sa zvezdicom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jedno-ili-vise-uparivanja-sa-plusom">Jedno ili više uparivanja sa plusom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-specifican-broj-puta-sa-zagradama">Uparivanje specifičan broj puta sa zagradama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pohlepno-i-nepohlepno-podudaranje">Pohlepno i nepohlepno podudaranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-findall">Metod <code class="docutils literal notranslate"><span class="pre">findall()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klase-karaktera">Klase karaktera</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruisanje-sopstvenih-klasa-karaktera">Konstruisanje sopstvenih klasa karaktera</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteri-dolar-i-kvacica">Karakteri <code class="docutils literal notranslate"><span class="pre">$</span></code> (dolar) i <code class="docutils literal notranslate"><span class="pre">^</span></code> (kvačica)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-tacka-karakter">Wildcard <code class="docutils literal notranslate"><span class="pre">.</span></code>(tačka) karakter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-svega-sa-tacka-zvezda">Uparivanje svega sa tačka-zvezda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-nove-linije-sa-tackastim-karakterom">Uparivanje nove linije sa tačkastim karakterom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pregled-regeks-simbola">Pregled Regeks simbola</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-osetljivo-na-velicinu-slova">Uparivanje osetljivo na veličinu slova</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zamena-stringova-metodom-sub">Zamena stringova metodom <code class="docutils literal notranslate"><span class="pre">sub()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upravljanje-slozenim-regeksima">Upravljanje složenim regeksima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kombinovanje-re-igonorecase-re-dotall-i-re-verbose">Kombinovanje <code class="docutils literal notranslate"><span class="pre">re.IGONORECASE</span></code>, <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> i <code class="docutils literal notranslate"><span class="pre">re.VERBOSE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projekat-ekstraktor-telefonskog-broja-i-e-mail-adrese">Projekat: Ekstraktor telefonskog broja i e-mail adrese</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-1-kreiranje-regeksa-sa-broj-telefona">Korak 1: Kreiranje regeksa sa broj telefona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-2-kreiranje-regeksa-za-e-mail-adrese">Korak 2: Kreiranje regeksa za e-mail adrese</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-3-pronalazenje-svih-uparivanja-sa-tekstom-u-skladistu-clipbordu">Korak 3: Pronalaženje svih uparivanja sa tekstom u skladištu (Clipbordu)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-4-spajanje-uparenog-u-string-za-clipboard">Korak 4: Spajanje uparenog u string za Clipboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pokretanje-programa">Pokretanje programa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideje-za-slican-program">Ideje za sličan program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumarum">Sumarum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticna-pitanja">Praktična pitanja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticni-projekti">Praktični projekti</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detekcija-datuma">Detekcija datuma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detekcija-jakog-passworda">Detekcija jakog passworda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-verzija-metoda-strip">Regex verzija metoda <code class="docutils literal notranslate"><span class="pre">strip()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="regularni-izrazi-uparivanje-sablona-sa-regularnim-izrazima">
+<h1>Regularni izrazi - Uparivanje šablona sa regularnim izrazima</h1>
+<p>Možda ste upoznati sa pretraživanjem teksta pritiskom na CTRL-F i unošenjem reči koje tražite. <em>Regularni izrazi</em> idu jedan korak dalje: omogućavaju vam da odredite <em>obrazac</em> teksta za pretragu. Možda ne znate tačan telefonski broj preduzeća, ali ako živite u Srbiji, znate da će to biti tri cifre, zatim crtica, a zatim još sedam cifara (eventualno razdvojenih crticama). Ovako, kao čovek, znate telefonski broj kad ga vidite: 064-555-1234 je telefonski broj, ali 4.155.551.234 nije.</p>
+<p>Takođe prepoznajemo i razne druge tekstualne obrasce svakog dana: adrese e-pošte imaju &#64; simbole u sredini, srpski brojevi socijalnog osiguranja imaju devet cifara i dve crtice, URL adrese veb lokacija često imaju tačke i kose crte, naslovi vesti koriste velika slova, hashtagovi na društvenim mrežama počinju sa # i ne sadrže razmake, i još mnogo toga.</p>
+<p>Regularni izrazi su korisni, ali malo onih koji nisu programeri znaju za njih iako većina modernih uređivača teksta i procesora za obradu teksta, kao što su Microsoft Word ili OpenOffice, imaju funkcije i pronalaženja i zamene koje mogu pretraživati na osnovu regularnih izraza. Regularni izrazi uštede vreme, ne samo za korisnike softvera, već i za programere. U stvari, pisac ove tehnike Cory Doctorow tvrdi da bismo trebali učiti regularne izraze čak i pre programiranja:</p>
+<p>Poznavanje regularnih izraza može značiti razliku između rešavanja problema u 3 koraka i rešavanja u 3.000 koraka. Neki problemi koji se mogu rešiti sa nekoliko pritiskanja tastera mogu drugim ljudima trajati dane zamornog rada sklonog greškama.</p>
+<p>U ovom poglavlju naučićemo da pišemo programe za pronalaženje tekstualnih obrazaca bez upotrebe regularnih izraza, a zatim ćemo videti kako koristiti regularne izraze kako bi kod bio znatno manje obiman. Pokazaću vam osnove podudaranja sa regularnim izrazima, a zatim ću preći na neke moćnije funkcije, kao što su zamena stringa i stvaranje sopstvenih klasa znakova. Konačno, na kraju poglavlja napisaćete program koji može automatski da izdvoji brojeve telefona i adrese e-pošte iz bloka teksta.</p>
+<section id="pronalazenje-obrazaca-teksta-bez-regularnih-izraza">
+<h2>Pronalaženje obrazaca teksta bez regularnih izraza</h2>
+<p>Recimo da želite da pronađete američki telefonski broj u stringu. Znate obrazac ako ste iz Srbije: tri broja, crtica, tri broja, crtica i četiri broja.
+Evo primera: 415-555-4242. Koristimo funkciju nazvanu <code class="docutils literal notranslate"><span class="pre">is_phone_number()</span></code> da proverimo da li se string podudara sa ovim šablonom, vraćajući True ili False.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">is_phone_number</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">text</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
+         <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Da li je 415-555-4242 telefonski broj?&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_phone_number</span><span class="p">(</span><span class="s1">&#39;415-555-4242&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Da li je 415-555-4242 telefonski broj?
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Da li je Petar Petrović telefonski broj?&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">is_phone_number</span><span class="p">(</span><span class="s1">&#39;Moshi moshi&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Da li je Petar Petrović telefonski broj?
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako želite da pronađete telefonski broj u većem stringu, moraćete da dodate još više koda da biste pronašli obrazac telefonskog broja:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;Pozovi me sutra na broj telefona 415-555-1011. Moj broj telefona u kancelariji je 415-555-9999.&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">message</span><span class="p">)):</span>
+    <span class="n">chunk</span> <span class="o">=</span> <span class="n">message</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">12</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">is_phone_number</span><span class="p">(</span><span class="n">chunk</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pronađen broj telefona: &#39;</span> <span class="o">+</span> <span class="n">chunk</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gotovo&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pronađen broj telefona: 415-555-1011
+Pronađen broj telefona: 415-555-9999
+Gotovo
+</pre></div>
+</div>
+</div>
+</div>
+<p>Iako je string u poruci u ovom primeru kratak, on bi mogao biti dugačak milion znakova, a program bi i dalje radio za manje od sekunde. Sličan program koji
+pronalazi brojeve telefona pomoću regularnih izraza takođe bi se pokrenuo za manje od sekunde, ali regularni izrazi ubrzavaju pisanje ovih programa.</p>
+<section id="pronalazenje-obrazaca-teksta-sa-regularnim-izrazima">
+<h3>Pronalaženje obrazaca teksta sa regularnim izrazima</h3>
+<p>Prethodni program za pronalaženje telefonskog broja funkcioniše, ali koristi mnogo koda da bi uradio nešto ograničeno: funkcija <code class="docutils literal notranslate"><span class="pre">is_phone_number()</span></code> ima 17 redova,
+ali može pronaći samo jedan obrazac brojeva telefona. Šta je sa brojem telefona formatiranim poput 415.555.4242 ili (415) 555-4242? Šta ako telefonski broj ima
+dodatak, na primer 415-555-4242 x99? Funkcija <code class="docutils literal notranslate"><span class="pre">is_phone_number()</span></code> neće uspeti da ih potvrdi. Možete dodati još koda za ove dodatne obrasce, ali postoji lakši način.</p>
+<p>Regularni izrazi, skraćeno nazvani <em>regexes</em>, opisi su obrasca teksta. Na primer, a <code class="docutils literal notranslate"><span class="pre">\d</span></code> u regularnom izrazu označava cifreni znak - to jest bilo koji pojedinačni broj od 0 do 9. Redovni izraz <code class="docutils literal notranslate"><span class="pre">\d\d\d-\d\d\d-\d\d\d\d</span></code> koristi Pithon za podudaranje sa istim tekstualnim obrascem kao i prethodna funkcija <code class="docutils literal notranslate"><span class="pre">is_phone_number()</span></code>: string od tri broja, crtica, još tri broja, još jedna crtica i četiri broja. Bilo koji drugi string ne bi se podudarao sa <code class="docutils literal notranslate"><span class="pre">\d\d\d-\d\d\d-\d\d\d\d</span></code> regularnim izrazom.</p>
+<p>Ali regularni izrazi mogu biti mnogo sofisticiraniji. Na primer, dodavanje mesta 3 u zagradama ({3}) nakon uzorka je kao da kažete: „Poravnajte ovaj obrazac tri puta. Dakle, nešto kraći regularni izraz <code class="docutils literal notranslate"><span class="pre">\d{3}-\d{3}-\d{4}</span></code> takođe se podudara sa ispravnim formatom telefonskog broja.</p>
+</section>
+</section>
+<section id="kreiranje-regex-objekata">
+<h2>Kreiranje Regex objekata</h2>
+<p>Sve regex funkcije u Pythonu se nalaze u modulu <code class="docutils literal notranslate"><span class="pre">re</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako se prosledi vrednost stringa koji predstavlja vaš regularni izraz funkciji <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code> ona vraća objekat <code class="docutils literal notranslate"><span class="pre">Regex</span></code> šablona (ili jednostavno <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekat).</p>
+<p>Da biste kreirali <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekat koji se podudara sa uzorkom (šablonom) telefonskog broja, unesite sledeće:
+(Zapamtite da <code class="docutils literal notranslate"><span class="pre">\d</span></code> znači „cifreni znak“, a <code class="docutils literal notranslate"><span class="pre">\d\d\d-\d\d\d-\d\d\d\d</span></code> je regularni izraz za obrazac telefonskog broja.)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phone_num_regex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sada <code class="docutils literal notranslate"><span class="pre">phone_number_regex</span></code> promenljiva sadrži <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekat.</p>
+<section id="uparivanje-regex-objekata">
+<h3>Uparivanje Regex objekata</h3>
+<p>Metoda <code class="docutils literal notranslate"><span class="pre">search()</span></code> <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekta pretražuje string koji mu je prosleđen za bilo koje podudaranje sa regularnim izrazom. Metoda <code class="docutils literal notranslate"><span class="pre">search()</span></code> će vratiti None ako
+obrazac regularnog izraza nije pronađen u stringu. Ako je obrazac pronađen, metoda <code class="docutils literal notranslate"><span class="pre">search()</span></code> vraća objekt <code class="docutils literal notranslate"><span class="pre">Match</span></code>, koji ima metodu <code class="docutils literal notranslate"><span class="pre">group()</span></code> koja će vratiti
+stvarni podudarni tekst iz pretraživanog stringa. (Ubrzo ću objasniti grupe.) Na primer, unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">phoneNumRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Moj broj telefona je 062-555-4242.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Pronađen broj telefona: &#39;</span> <span class="o">+</span> <span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pronađen broj telefona: 062-555-4242
+</pre></div>
+</div>
+</div>
+</div>
+<p>Promenljiva <code class="docutils literal notranslate"><span class="pre">mo</span></code> je ime za <code class="docutils literal notranslate"><span class="pre">Match</span></code> objekte. Ovaj primer možda izgleda komplikovano na početku, ali je mnogo kraći od prethodno napisanih programa.</p>
+<p>Ovde prosleđujemo željeni obrazac <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code> i rezultirajući <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekat čuvamo u <code class="docutils literal notranslate"><span class="pre">phoneNumRegex</span></code>. Zatim pozivamo <code class="docutils literal notranslate"><span class="pre">search()</span></code> na <code class="docutils literal notranslate"><span class="pre">phoneNumRegex</span></code> i prenosimo
+<code class="docutils literal notranslate"><span class="pre">search()</span></code> string za koji želimo da ispitamo podudaranje tokom pretraživanja. Rezultat pretrage čuva se u promenljivoj <code class="docutils literal notranslate"><span class="pre">mo</span></code>. U ovom primeru znamo da će se naš
+obrazac naći u stringu, pa znamo da će se vratiti objekt <code class="docutils literal notranslate"><span class="pre">Match</span></code>. Znajući da <code class="docutils literal notranslate"><span class="pre">mo</span></code> sadrži objekt podudaranja, a ne null vrednost None, možemo pozvati <code class="docutils literal notranslate"><span class="pre">group()</span></code> na
+<code class="docutils literal notranslate"><span class="pre">mo</span></code> da vratimo podudaranje. Pisanje <code class="docutils literal notranslate"><span class="pre">mo.group()</span></code> unutar našeg poziva funkcije <code class="docutils literal notranslate"><span class="pre">print()</span></code> prikazuje celo podudaranje, 415-555-4242.</p>
+</section>
+<section id="pregled-podudaranja-regularnih-izraza">
+<h3>Pregled podudaranja regularnih izraza</h3>
+<p>Iako postoji nekoliko koraka za upotrebu regularnih izraza u Pithonu, svaki korak je prilično jednostavan</p>
+<ol class="arabic simple">
+<li><p>Uvezite regex modul sa <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">re</span></code>.</p></li>
+<li><p>Stvorite <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekat pomoću funkcije <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code>. (Ne zaboravite da koristite sirovi string.)</p></li>
+<li><p>Prenesite string koji želite da pretražite metodi <code class="docutils literal notranslate"><span class="pre">search()</span></code> <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekta. Ona vraća objekt podudaranje <code class="docutils literal notranslate"><span class="pre">Match</span></code>.</p></li>
+<li><p>Pozovite metod <code class="docutils literal notranslate"><span class="pre">group()</span></code> objekta <code class="docutils literal notranslate"><span class="pre">Match</span></code> da biste vratili string stvarnog podudarnog teksta.</p></li>
+</ol>
+</section>
+</section>
+<section id="jos-o-uparivanju-sablona-sa-regularnim-izrazima">
+<h2>Još o uparivanju šablona sa regularnim izrazima</h2>
+<p>Sada kada znate osnovne korake za kreiranje i pronalaženje objekata regularnih izraza pomoću Pithona, spremni ste da isprobate neke od njihovih moćnijih mogućnosti
+usklađivanja uzoraka/šablona.</p>
+<section id="grupisanje-sa-zagradama">
+<h3>Grupisanje sa zagradama</h3>
+<p>Recimo da želite da odvojite pozivni broj od ostatka telefonskog broja. Dodavanjem zagrada stvoriće se grupe u regularnom izrazu: <code class="docutils literal notranslate"><span class="pre">(\d\d\d)-(\d\d\d-\d\d\d\d)</span></code>.
+Tada možete koristiti metodu objekta podudaranja <code class="docutils literal notranslate"><span class="pre">group()</span></code> da biste uzeli odgovarajući tekst iz samo jedne grupe.</p>
+<p>Prvi skup zagrada u nizu regularnog izraza biće grupa 1. Drugi skup biće grupa 2. Prenošenjem celog broja 1 ili 2 na metodu objekta podudaranja <code class="docutils literal notranslate"><span class="pre">group()</span></code> možete da
+preuzmete različite delove podudarnog teksta. Prosleđivanje 0 ili ništa metodi <code class="docutils literal notranslate"><span class="pre">group()</span></code> vratiće ceo podudarni tekst. Unesimo sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d\d\d)-(\d\d\d-\d\d\d\d)&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">phoneNumRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Moj broj telefona je 065-555-4242.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;065&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;555-4242&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;065-555-4242&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;065-555-4242&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako želite da preuzmete sve grupe odjednom, koristite metodu <code class="docutils literal notranslate"><span class="pre">groups()</span></code> - obratite pažnju na oblik množine za ime.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;065&#39;, &#39;555-4242&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">provajder</span><span class="p">,</span> <span class="n">glavniBroj</span> <span class="o">=</span> <span class="n">mo</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">provider</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>065
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">glavniBroj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>555-4242
+</pre></div>
+</div>
+</div>
+</div>
+<p>Budući da <code class="docutils literal notranslate"><span class="pre">mo.groups()</span></code> vraća više vrednosti, trikom višestrukog dodeljivanja možete da dodelite svaku vrednost zasebnoj promenljivoj, kao u prethodnom redu.</p>
+<p>Zagrade imaju posebno značenje u regularnim izrazima, ali šta radite ako treba da podudarite zagradu u svom tekstu? Na primer, možda telefonski brojevi kojima
+pokušavate da se podudaraju imaju pozivni broj u zagradama. U ovom slučaju morate da izbegnete znakove ( i ) pomoću kose crte. Unesite sledeće</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\(\d\d\d\)) (\d\d\d-\d\d\d\d)&#39;</span><span class="p">)</span>
+<span class="n">mo</span> <span class="o">=</span> <span class="n">phoneNumRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Moj broj telefona je (060) 555-4242.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;(060)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;555-4242&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Znakovi za izlazak <code class="docutils literal notranslate"><span class="pre">(</span></code> i <code class="docutils literal notranslate"><span class="pre">)</span></code> u sirovom stringu prosleđenom u <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code> podudaraće se sa stvarnim znakovima u zagradama. U regularnim izrazima, sledeći znakovi
+imaju posebna značenja: <code class="docutils literal notranslate"> <span class="pre">.</span>&#160; <span class="pre">^</span>&#160; <span class="pre">$</span>&#160; <span class="pre">*</span>&#160; <span class="pre">+</span>&#160; <span class="pre">?</span>&#160; <span class="pre">{</span>&#160; <span class="pre">}</span>&#160; <span class="pre">[</span>&#160; <span class="pre">]</span>&#160; <span class="pre">\</span>&#160; <span class="pre">|</span>&#160; <span class="pre">(</span>&#160; <span class="pre">)</span></code></p>
+<p>Ako želite da otkrijete ove znakove kao deo svog tekstualnog obrasca, morate da ih ispisujete kosom crtom: </br> .  \^  \$  \*  \+  \?  \{  \}  \[  …</p>
+<p>Obavezno dvaput proverite da li ste u regularnom izrazu pogrešno napisali zagrade <code class="docutils literal notranslate"><span class="pre">\(</span></code> i <code class="docutils literal notranslate"><span class="pre">\)</span></code> i zagrade <code class="docutils literal notranslate"><span class="pre">(</span></code> i <code class="docutils literal notranslate"><span class="pre">)</span></code>. Ako dobijete poruku o grešci o „nedostajućim“ ili „neuravnoteženim zagradama“, možda ste zaboravili da uključite zatvarajući nepregrađene zagrade za grupu, kao u ovom primeru:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\(Zagrade\)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">error</span><span class="g g-Whitespace">                                     </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">20</span><span class="o">-</span><span class="mi">051679312224</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\(Parentheses\)&#39;</span><span class="p">)</span>
+
+<span class="nn">~\anaconda3\lib\re.py</span> in <span class="ni">compile</span><span class="nt">(pattern, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span> <span class="k">def</span><span class="w"> </span><span class="nf">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">251</span>     <span class="s2">&quot;Compile a regular expression pattern, returning a Pattern object.&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">252</span>     <span class="k">return</span> <span class="n">_compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span> 
+<span class="g g-Whitespace">    </span><span class="mi">254</span> <span class="k">def</span><span class="w"> </span><span class="nf">purge</span><span class="p">():</span>
+
+<span class="nn">~\anaconda3\lib\re.py</span> in <span class="ni">_compile</span><span class="nt">(pattern, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">302</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">sre_compile</span><span class="o">.</span><span class="n">isstring</span><span class="p">(</span><span class="n">pattern</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span>         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;first argument must be string or compiled pattern&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">304</span>     <span class="n">p</span> <span class="o">=</span> <span class="n">sre_compile</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">305</span>     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">flags</span> <span class="o">&amp;</span> <span class="n">DEBUG</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">306</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_cache</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">_MAXCACHE</span><span class="p">:</span>
+
+<span class="nn">~\anaconda3\lib\sre_compile.py</span> in <span class="ni">compile</span><span class="nt">(p, flags)</span>
+<span class="g g-Whitespace">    </span><span class="mi">762</span>     <span class="k">if</span> <span class="n">isstring</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">763</span>         <span class="n">pattern</span> <span class="o">=</span> <span class="n">p</span>
+<span class="ne">--&gt; </span><span class="mi">764</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">sre_parse</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">765</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span>         <span class="n">pattern</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="nn">~\anaconda3\lib\sre_parse.py</span> in <span class="ni">parse</span><span class="nt">(str, flags, state)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span> 
+<span class="g g-Whitespace">    </span><span class="mi">947</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">948</span>         <span class="n">p</span> <span class="o">=</span> <span class="n">_parse_sub</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">flags</span> <span class="o">&amp;</span> <span class="n">SRE_FLAG_VERBOSE</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">949</span>     <span class="k">except</span> <span class="n">Verbose</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">950</span>         <span class="c1"># the VERBOSE flag was switched on inside the pattern.  to be</span>
+
+<span class="nn">~\anaconda3\lib\sre_parse.py</span> in <span class="ni">_parse_sub</span><span class="nt">(source, state, verbose, nested)</span>
+<span class="g g-Whitespace">    </span><span class="mi">441</span>     <span class="n">start</span> <span class="o">=</span> <span class="n">source</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">442</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">443</span>         <span class="n">itemsappend</span><span class="p">(</span><span class="n">_parse</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">verbose</span><span class="p">,</span> <span class="n">nested</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">444</span>                            <span class="ow">not</span> <span class="n">nested</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">items</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">445</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">sourcematch</span><span class="p">(</span><span class="s2">&quot;|&quot;</span><span class="p">):</span>
+
+<span class="nn">~\anaconda3\lib\sre_parse.py</span> in <span class="ni">_parse</span><span class="nt">(source, state, verbose, nested, first)</span>
+<span class="g g-Whitespace">    </span><span class="mi">834</span>             <span class="n">p</span> <span class="o">=</span> <span class="n">_parse_sub</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">sub_verbose</span><span class="p">,</span> <span class="n">nested</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">835</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">source</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">836</span>                 <span class="k">raise</span> <span class="n">source</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;missing ), unterminated subpattern&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">837</span>                                    <span class="n">source</span><span class="o">.</span><span class="n">tell</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">838</span>             <span class="k">if</span> <span class="n">group</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="ne">error</span>: missing ), unterminated subpattern at position 0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poruka o grešci govori vam da postoji početna zagrada u indeksu 0 stringa <code class="docutils literal notranslate"><span class="pre">'r(\</span> <span class="pre">(zagrade</span> <span class="pre">\)'</span></code> kojem nedostaju odgovarajuće zagrade u zatvaranju.</p>
+</section>
+<section id="povezivanje-vise-grupa-sa-cevovodom-pipe">
+<h3>Povezivanje više grupa sa cevovodom (pipe)</h3>
+<p>Karakter <code class="docutils literal notranslate"><span class="pre">|</span></code> naziva se cev/lula. Možete ga koristiti bilo gde gde želite da se podudara sa jednim od mnogih izraza. Na primer, regularni izraz <code class="docutils literal notranslate"><span class="pre">r'Batman|Tina</span> <span class="pre">Fei'</span></code> podudaraće se sa <code class="docutils literal notranslate"><span class="pre">'Batman'</span></code> ili <code class="docutils literal notranslate"><span class="pre">'Tina</span> <span class="pre">Fei'</span></code>.</p>
+<p>Kada se i <code class="docutils literal notranslate"><span class="pre">Batman</span></code> i <code class="docutils literal notranslate"><span class="pre">Tina</span> <span class="pre">Fei</span></code> pojave u pretraživanom stringu, prva pojava odgovarajućeg teksta vratiće se kao objekt Match. Unesimo sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">heroRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Batman|Tina Fey&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">heroRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Batman and Tina Fey&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">=</span> <span class="n">heroRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Tina Fey and Batman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Tina Fey&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Primedba:</em> Možemo pronaći sva podudaranja metodom <code class="docutils literal notranslate"><span class="pre">findall()</span></code>, ali o tome kasnije.</p>
+<p>Takođe možete koristiti cev da utvrdite podudaranje sa jednim od nekoliko obrazaca kao deo vašeg regularnog izraza. Na primer, recimo da želite da pronađete podudaranje sa bilo  kojim stringom „Batman“, „Batmobile“, „Batcopter“ i „Batbat“. Budući da svi ovi nizovi počinju sa Bat, bilo bi lepo kada biste taj prefiks mogli odrediti samo jednom. To se može uraditi pomoću zagrada. Unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(man|mobile|copter|bat)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Batmobile lost a wheel&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batmobile&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;mobile&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poziv metode <code class="docutils literal notranslate"><span class="pre">mo.group()</span></code> vraća puni podudarni tekst <code class="docutils literal notranslate"><span class="pre">'Batmobile'</span></code>, dok <code class="docutils literal notranslate"><span class="pre">mo.group(1)</span></code> vraća samo deo podudarnog teksta unutar prve grupe zagrada, <code class="docutils literal notranslate"><span class="pre">'mobile'</span></code>.
+Upotrebom znaka lule i grupisanjem zagrada možete odrediti nekoliko alternativnih obrazaca za koje želite da se vaš regularni izraz podudara.</p>
+<p>Ako tražite podudaranje sa stvarnim znakom cevi, izbegnite ga kosom crtom, poput <code class="docutils literal notranslate"><span class="pre">\|</span></code>.</p>
+</section>
+<section id="opciono-uparivanje-sa-znakom-pitanja">
+<h3>Opciono uparivanje sa znakom pitanja</h3>
+<p>Ponekad postoji obrazac za koji želite da se podudara samo opciono. Odnosno, regularni izraz treba da pronađe podudaranje bez obzira na to da li je taj deo teksta
+tamo. Znak ? označava grupu koja mu prethodi kao opcioni deo šablona. Na primer, ako unesemo sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)?man&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batwoman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Deo <code class="docutils literal notranslate"><span class="pre">(wo)?</span></code> deo regularnog izraza znači da je obrazac <code class="docutils literal notranslate"><span class="pre">wo</span></code> neobavezna grupa. Redovni izraz će odgovarati tekstu koji sadrži nula instanci ili jednu instancu <code class="docutils literal notranslate"><span class="pre">wo</span></code>.
+Zbog toga se regularni izraz podudara i sa „Batwoman“ i „Batman“.</p>
+<p>Koristeći raniji primer broja telefona, možete da naterate regularni izraz da traži brojeve telefona koji imaju ili nemaju pozivni broj. Unesimo sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d\d\d-)?\d\d\d-\d\d\d\d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">phoneRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;My number is 415-555-4242&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;415-555-4242&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">=</span> <span class="n">phoneRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;My number is 555-4242&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;555-4242&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Znak <code class="docutils literal notranslate"><span class="pre">?</span></code> možete zamisliti kao što je rečeno: „Uparite nijednu ili jednu grupu koja prethodi ovom znaku pitanja.“</p>
+<p>Ako vam treba podudaranje stvarnog znaka pitanja, to činite se sa <code class="docutils literal notranslate"><span class="pre">\?</span></code>.</p>
+</section>
+<section id="nula-ili-vise-uparivanja-sa-zvezdicom">
+<h3>Nula ili više uparivanja sa zvezdicom</h3>
+<p>Znak <code class="docutils literal notranslate"><span class="pre">*</span></code> (zvezdica) znači „podudaranje nula ili više puta“ - grupa koja prethodi zvezdici može se pojaviti bilo koji broj puta u tekstu. Može biti potpuno odsutan ili ponavljati iznova i iznova. Pogledajmo ponovo primer Betmena.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)*man&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batwoman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo3</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwowowowoman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo3</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batwowowowoman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Za „Batman“, <code class="docutils literal notranslate"><span class="pre">(wo)*</span></code> deo regularnog izraza podudara se sa nula instanci <code class="docutils literal notranslate"><span class="pre">wo</span></code> u stringu; za „Batwoman“, <code class="docutils literal notranslate"><span class="pre">(wo)*</span></code> se podudara sa jednom instancom <code class="docutils literal notranslate"><span class="pre">wo</span></code>; a za „Batwowowowoman“, <code class="docutils literal notranslate"><span class="pre">(wo)*</span></code> odgovara četiri slučaja <code class="docutils literal notranslate"><span class="pre">wo</span></code>.</p>
+<p>Ako trebate podudarati stvarni znak zvezde, prefiksu zvezde u regularnom izrazu dodajte kosu kosu crtu, <code class="docutils literal notranslate"><span class="pre">\*</span></code>.</p>
+</section>
+<section id="jedno-ili-vise-uparivanja-sa-plusom">
+<h3>Jedno ili više uparivanja sa plusom</h3>
+<p>Dok <code class="docutils literal notranslate"><span class="pre">*</span></code> znači „podudaranje nula ili više puta“, <code class="docutils literal notranslate"><span class="pre">+</span></code> (ili plus) znači „podudaranje jednom ili više puta“. Za razliku od zvezde, koja ne zahteva da se njena grupa pojavljuje u podudarnom stringu, grupa koja prethodi plusu mora se pojaviti najmanje jednom. Nije neobavezna. Unesite sledeće i uporedite regeksima sa zvezdom u prethodnom odeljku:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">batRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Bat(wo)+man&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwoman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batwoman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batwowowowoman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Batwowowowoman&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">batRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;The Adventures of Batman&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Regex <code class="docutils literal notranslate"><span class="pre">Bat(wo)+</span></code> se neće podudarati sa stringom „The Adventures of Batman“, jer je za znak plus potreban bar jedno pojavljivanje <code class="docutils literal notranslate"><span class="pre">wo</span></code>.</p>
+<p>Ako trebate podudarati sa stvarnim znakom plusa, prefiksujte znak plus sa kosom crtom: <code class="docutils literal notranslate"><span class="pre">\+</span></code>.</p>
+</section>
+<section id="uparivanje-specifican-broj-puta-sa-zagradama">
+<h3>Uparivanje specifičan broj puta sa zagradama</h3>
+<p>Ako imate grupu koju želite da ponovite određeni broj puta, sledite grupu u svom regularnom izrazu sa brojem u zagradama. Na primer, regularni izraz <code class="docutils literal notranslate"><span class="pre">(Ha){3}</span></code> će se
+podudarati sa stringom „HaHaHa“, ali se neće podudarati sa „HaHa“, jer poslednji ima samo dva ponavljanja iz grupe (Ha).</p>
+<p>Umesto jednog broja, možete odrediti opseg tako što ćete između zagrada napisati minimum, zarez i maksimum. Na primer, regularni izraz <code class="docutils literal notranslate"><span class="pre">(Ha){3,5}</span></code> će se podudarati
+sa „HaHaHa“, „HaHaHaHa“ i „HaHaHaHaHa“.</p>
+<p>Takođe možete izostaviti prvi ili drugi broj u zagradama da biste ostavili minimum ili maksimum bez ograničenja. Na primer, <code class="docutils literal notranslate"><span class="pre">(Ha){3,}</span></code> će se podudarati sa tri ili
+više primeraka grupe (Ha), dok će se <code class="docutils literal notranslate"><span class="pre">(Ha){,5}</span></code> podudarati sa nula do pet primeraka. Zagrade mogu pomoći da vaši regularni izrazi budu kraći. Ova dva regularna
+izraza se podudaraju sa identičnim obrascima:</p>
+<p><code class="docutils literal notranslate"><span class="pre">(Ha){3}</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">(Ha)(Ha)(Ha)</span></code></p>
+<p>I ova dva regularna izraza se takođe podudaraju sa identičnim obrascima:</p>
+<p><code class="docutils literal notranslate"><span class="pre">(Ha){3,5}</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">((Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha))|((Ha)(Ha)(Ha)(Ha)(Ha))</span></code></p>
+<p>Unesimo sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="n">haRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(Ha)</span><span class="si">{3}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">haRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;HaHaHa&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HaHaHa&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">=</span> <span class="n">haRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Ha&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ovde se <code class="docutils literal notranslate"><span class="pre">(Ha){3}</span></code> podudara sa „HaHaHa“, ali ne i sa „Ha“. Pošto se ne podudara sa „Ha“, <code class="docutils literal notranslate"><span class="pre">search()</span></code> vraća <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</section>
+<section id="pohlepno-i-nepohlepno-podudaranje">
+<h3>Pohlepno i nepohlepno podudaranje</h3>
+<p>Budući da se <code class="docutils literal notranslate"><span class="pre">(Ha){3,5}</span></code> može podudarati sa tri, četiri ili pet primeraka <code class="docutils literal notranslate"><span class="pre">Ha</span></code> u nizu ’HaHaHaHaHa’, možda se pitate zašto poziv objekta <code class="docutils literal notranslate"><span class="pre">Match</span></code> u <code class="docutils literal notranslate"><span class="pre">group()</span></code>
+u prethodnom primeru zagrade vraća ’HaHaHaHaHa’ umesto kraće mogućnosti. Na kraju, „HaHaHa“ i „HaHaHaHa“ su takođe važeća podudaranja regularnog izraza <code class="docutils literal notranslate"><span class="pre">(Ha){3,5}</span></code>.</p>
+<p>Pithonovi regularni izrazi su podrazumevano pohlepni, što znači da će se u dvosmislenim situacijama podudarati sa najdužim mogućim stringom. Nepohlepna
+(takođe nazvana lenja) zagrada, koja se podudara sa najkraćim mogućim stringom, ima završnu zagradu praćenu znakom pitanja.</p>
+<p>Unesite sledeće i uočite razliku između pohlepnih i ne pohlepnih oblika zagrada koje pretražuju isti string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greedyHaRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(Ha){3,5}&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span> <span class="o">=</span> <span class="n">greedyHaRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;HaHaHaHaHa&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo1</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HaHaHaHaHa&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nongreedyHaRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(Ha){3,5}?&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span> <span class="o">=</span> <span class="n">nongreedyHaRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;HaHaHaHaHa&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo2</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HaHaHa&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imajte na umu da upitnik može imati dva značenja u regularnim izrazima: proglašavanje ne pohlepnog podudaranja ili označavanje opcionalne grupe. Ova značenja su
+potpuno nepovezana.</p>
+</section>
+<section id="metod-findall">
+<h3>Metod <code class="docutils literal notranslate"><span class="pre">findall()</span></code></h3>
+<p>Pored metode <code class="docutils literal notranslate"><span class="pre">search()</span></code>, Regex objekti imaju i metod <code class="docutils literal notranslate"><span class="pre">findall()</span></code>. Dok će <code class="docutils literal notranslate"><span class="pre">search()</span></code> vratiti objekt podudaranja prvog podudarnog teksta u pretraživanom string,
+metod <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vratit će stringove svakog podudaranja u pretraživanom stringu. Da biste videli kako <code class="docutils literal notranslate"><span class="pre">search()</span></code> vraća objekt podudaranja samo na prvoj instanci
+podudarnog teksta, unesite sledeće u radnu ćeliju:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span> <span class="o">=</span> <span class="n">phoneNumRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;415-555-9999&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>S druge strane, <code class="docutils literal notranslate"><span class="pre">findall()</span></code> neće vratiti objekt <code class="docutils literal notranslate"><span class="pre">Match</span></code> već listu stringova - <em>sve dok u regularnom izrazu nema grupa</em>. Svaki string na listi je deo pretraživanog
+teksta koji se podudara sa regularnim izrazom. U interaktivn ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span><span class="p">)</span> <span class="c1"># nema grupa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;415-555-9999&#39;, &#39;212-555-0000&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ako u regularnom izrazu postoje grupe, tada će <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vratiti listu n-torki. Svaka n-torka predstavlja pronađeno podudaranje, a njene stavke su usklađeni
+stringovi za svaku grupu u regularnom izrazu. Da biste videli funkciju <code class="docutils literal notranslate"><span class="pre">findall()</span></code>, u interaktivnu ćeliju unesite sledeće (imajte na umu da regularni izraz
+koji se kompajlira sada ima grupe u zagradama):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d\d\d)-(\d\d\d)-(\d\d\d\d)&#39;</span><span class="p">)</span> <span class="c1"># ima grupa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneNumRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;415&#39;, &#39;555&#39;, &#39;9999&#39;), (&#39;212&#39;, &#39;555&#39;, &#39;0000&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Da rezimiramo šta metoda <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vraća, upamtite sledeće:</p>
+<ul class="simple">
+<li><p>Kada se pozove regularni izraz bez grupa, kao što je <code class="docutils literal notranslate"><span class="pre">\d\d\d-\d\d\d-\d\d\d\d</span></code>, metoda <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vraća listu uparenih stringova, kao što je <code class="docutils literal notranslate"><span class="pre">['415-555-9999',</span> <span class="pre">'212-555-0000']</span></code>.</p></li>
+<li><p>Kada se pozove na regularni izraz koji ima grupe, kao što je <code class="docutils literal notranslate"><span class="pre">(\d\d\d)-(\d\d\d)-(\d\d\d\d)</span></code>, metoda <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vraća listu nizova (po jedan niz za svaku grupu), kao što je <code class="docutils literal notranslate"><span class="pre">[('415',</span> <span class="pre">'555',</span> <span class="pre">'9999'),</span> <span class="pre">('212',</span> <span class="pre">'555',</span> <span class="pre">'0000')]</span></code>.</p></li>
+</ul>
+</section>
+<section id="klase-karaktera">
+<h3>Klase karaktera</h3>
+<p>U ranijem primeru regularnog izraza telefonskog broja saznali ste da <code class="docutils literal notranslate"><span class="pre">\d</span></code> može predstavljati bilo koju numeričku cifru. Odnosno, <code class="docutils literal notranslate"><span class="pre">\d</span></code> je skraćenica za regularni
+izraz <code class="docutils literal notranslate"><span class="pre">(0|1|2|3|4|5|6|7|8|9)</span></code>. Postoji mnogo takvih stenografskih klasa znakova, kako je prikazano u tabeli 7-1.</p>
+<p>Skraćeni kodovi za uobičajene klase karaktera</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Skraćenica za klasu karaktera</p></th>
+<th class="head text-left"><p>Reprezentuje</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong>\d</strong></p></td>
+<td class="text-left"><p>Bilo koja numerička cifra od 0 do 9</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>\D</strong></p></td>
+<td class="text-left"><p>Bilo koji karakter koji <em>nije</em> numerička cifra od 0 do 9</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>\w</strong></p></td>
+<td class="text-left"><p>Bilo koje slovo, numerička cifra ili karakter za indeks _  (Shvatite kao karaktere kojim formiramo reči)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>\W</strong></p></td>
+<td class="text-left"><p>Bilo koji karakter koji <em>nije</em> slovo, numerička cifra ili karakter za indeks _</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong>\s</strong></p></td>
+<td class="text-left"><p>Bilo koji razmak (belina), tabulator ili karakter za kraj reda (Shvatite kao znakovi za razmak)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong>\S</strong></p></td>
+<td class="text-left"><p>Bilo koji karakter koji <em>nije</em> razmak (belina), tabulator ili karakter za kraj reda</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Klase znakova su lepe za skraćivanje regularnih izraza. Klasa znakova <code class="docutils literal notranslate"><span class="pre">[0-5]</span></code> podudaraće se samo sa brojevima od 0 do 5; ovo je mnogo kraće od kucanja
+<code class="docutils literal notranslate"><span class="pre">(0|1|2|3|4|5)</span></code>. Imajte na umu da <code class="docutils literal notranslate"><span class="pre">\d</span></code> odgovara ciframa, a <code class="docutils literal notranslate"><span class="pre">\w</span></code> podudara se sa ciframa, slovima i donjim crtama, to ne postoji stenografska klasa znakova koja se
+podudara samo sa slovima. (Iako možete da koristite klasu znakova <code class="docutils literal notranslate"><span class="pre">[a-zA-Z]</span></code>, kao što je objašnjeno u nastavku.)</p>
+<p>Na primer, u interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xmasRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+\s\w+&#39;</span><span class="p">)</span>  <span class="c1">#cifra 1+ puta, praznina, tipografski znak 1+ puta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xmasRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;12 drummers&#39;,
+ &#39;11 pipers&#39;,
+ &#39;10 lords&#39;,
+ &#39;9 ladies&#39;,
+ &#39;8 maids&#39;,
+ &#39;7 swans&#39;,
+ &#39;6 geese&#39;,
+ &#39;5 rings&#39;,
+ &#39;4 birds&#39;,
+ &#39;3 hens&#39;,
+ &#39;2 doves&#39;,
+ &#39;1 partridge&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Regularni izraz <code class="docutils literal notranslate"><span class="pre">\d+\s\w+</span></code> poklapa se sa tekstom koji ima jednu ili više numeričkih cifara (<code class="docutils literal notranslate"><span class="pre">\d+</span></code>), a iza njega sledi razmak (<code class="docutils literal notranslate"><span class="pre">\s</span></code>), praćeni jednim ili više slova/cifara/donjih crta (<code class="docutils literal notranslate"><span class="pre">\w+</span></code>). Metoda <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vraća sve podudarajuće stringove regularnog izraza na listi.</p>
+</section>
+<section id="konstruisanje-sopstvenih-klasa-karaktera">
+<h3>Konstruisanje sopstvenih klasa karaktera</h3>
+<p>Postoje slučajevi kada želite da podudarite/uparite skup znakova, ali stenografske klase znakova (<code class="docutils literal notranslate"><span class="pre">\d</span></code>, <code class="docutils literal notranslate"><span class="pre">\w</span></code>, <code class="docutils literal notranslate"><span class="pre">\s</span></code>, i tako dalje) su preširoke. Možete da definišete sopstvenu klasu znakova pomoću uglastih zagrada. Na primer, klasa znakova <code class="docutils literal notranslate"><span class="pre">[aeiouAEIOU]</span></code> podudaraće se sa bilo kojim samoglasnikom, malim i velikim.</p>
+<p>Unesite sledeće u interaktivnu ćeliju:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vowelRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[aeiouAEIOU]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vowelRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;RoboCop eats baby food. BABY FOOD.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;o&#39;, &#39;o&#39;, &#39;o&#39;, &#39;e&#39;, &#39;a&#39;, &#39;a&#39;, &#39;o&#39;, &#39;o&#39;, &#39;A&#39;, &#39;O&#39;, &#39;O&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Opsege slova ili brojeva možete da dodate i pomoću crtice. Na primer, klasa znakova <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9]</span></code> će odgovarati svim malim slovima, velikim slovima i brojevima.</p>
+<p>Imajte na umu da se u uglastim zagradama normalni simboli regularnih izraza ne tumače kao takvi. To znači da ne morate da izbegnete znakove <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>,<code class="docutils literal notranslate"><span class="pre">?</span></code> ili <code class="docutils literal notranslate"><span class="pre">(</span></code> <code class="docutils literal notranslate"><span class="pre">)</span></code> sa prethodnom kosom kosom crtom. Na primer, klasa znakova <code class="docutils literal notranslate"><span class="pre">[0-5.]</span></code> podudaraće se sa ciframa od 0 do 5 i tačkom. Ne morate to pisati kao <code class="docutils literal notranslate"><span class="pre">[0-5</span> <span class="pre">\.]</span></code>.</p>
+<p>Postavljanjem znaka <code class="docutils literal notranslate"><span class="pre">^</span></code>(kvačica) odmah nakon uvodne zagrade klase znakova, možete da napravite <em>negativnu klasu karaktera</em>. Negativna klasa znakova podudaraće se sa svim znakovima koji nisu u klasi znakova. Na primer, u interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">consonantRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^aeiouAEIOU]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">consonantRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;RoboCop eats baby food. BABY FOOD.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;R&#39;,
+ &#39;b&#39;,
+ &#39;C&#39;,
+ &#39;p&#39;,
+ &#39; &#39;,
+ &#39;t&#39;,
+ &#39;s&#39;,
+ &#39; &#39;,
+ &#39;b&#39;,
+ &#39;b&#39;,
+ &#39;y&#39;,
+ &#39; &#39;,
+ &#39;f&#39;,
+ &#39;d&#39;,
+ &#39;.&#39;,
+ &#39; &#39;,
+ &#39;B&#39;,
+ &#39;B&#39;,
+ &#39;Y&#39;,
+ &#39; &#39;,
+ &#39;F&#39;,
+ &#39;D&#39;,
+ &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sada, umesto uparivanja svakog samoglasnika, uparuje se svaki karakter koji nije samoglasnik.</p>
+</section>
+<section id="karakteri-dolar-i-kvacica">
+<h3>Karakteri <code class="docutils literal notranslate"><span class="pre">$</span></code> (dolar) i <code class="docutils literal notranslate"><span class="pre">^</span></code> (kvačica)</h3>
+<p>Možete koristiti kvačicu (<code class="docutils literal notranslate"><span class="pre">^</span></code>) na početku regularnog izraza da naznačite da se podudaranje mora dogoditi na početku traženog teksta. Isto tako, na kraj regularnog izraza možete staviti znak dolar (<code class="docutils literal notranslate"><span class="pre">$</span></code>) da biste označili da string mora da se završava datim šablonom regularnog izraza. A možete zajedno koristiti <code class="docutils literal notranslate"><span class="pre">^</span></code> i <code class="docutils literal notranslate"><span class="pre">$</span></code> da biste označili da ceo string mora odgovarati regularnom izrazu - to jest, nije dovoljno da se podudaranje desi na nekom delu stringa.</p>
+<p>Na primer, regularni izraz <code class="docutils literal notranslate"><span class="pre">r'^</span> <span class="pre">Hello'</span></code> podudara se sa stringovima koji počinju sa ’Hello’. Unesite sledeće u interaktivnu ćeliju:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beginsWithHello</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beginsWithHello</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(0, 5), match=&#39;Hello&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beginsWithHello</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;He said hello.&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Regularni izraz <code class="docutils literal notranslate"><span class="pre">r'\d$'</span></code> podudara se sa stringovima koji se završavaju numeričkim znakom od 0 do 9. Unesite sledeće u interaktivnu ćeliju:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">endsWithNumber</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">endsWithNumber</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Your number is 42&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(16, 17), match=&#39;2&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">endsWithNumber</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Your number is forty two.&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Regularni izraz <code class="docutils literal notranslate"><span class="pre">r'^\d+$'</span></code> podudara se sa stringovima koji počinju i završavaju se jednim ili više numeričkih znakova. U interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wholeStringIsNum</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\d+$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wholeStringIsNum</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;1234567890&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;re.Match object; span=(0, 10), match=&#39;1234567890&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wholeStringIsNum</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;12345xyz67890&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wholeStringIsNum</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;12 34567890&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Poslednja dva poziva <code class="docutils literal notranslate"><span class="pre">search()</span></code> u prethodnom primeru pokazuju kako se ceo string mora podudarati sa regularnim izrazom ako se koriste <code class="docutils literal notranslate"><span class="pre">^</span></code> i <code class="docutils literal notranslate"><span class="pre">$</span></code>.</p>
+<p>Uvek mešam značenja ova dva simbola, pa koristim mnemotehniku „Šargarepa košta dolar“ da se podsetim da je kvačica prvom mestu, a znak dolara na poslednjem mestu.</p>
+</section>
+<section id="wildcard-tacka-karakter">
+<h3>Wildcard <code class="docutils literal notranslate"><span class="pre">.</span></code>(tačka) karakter</h3>
+<p>Znak za tačku (<code class="docutils literal notranslate"><span class="pre">.</span></code>) u regularnom izrazu naziva se zamenljivim znakom i podudaraće se sa bilo kojim znakom, osim sa novom linijom. Na primer, u interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;.at&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;The cat in the hat sat on the flat mat.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;cat&#39;, &#39;hat&#39;, &#39;sat&#39;, &#39;lat&#39;, &#39;mat&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Imajte na umu da će se znak za tačku podudarati sa samo jednim znakom. Da biste napravili podudaranje sa stvarnom tačkom koristite <code class="docutils literal notranslate"><span class="pre">\.</span></code> (escape character <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+</section>
+<section id="uparivanje-svega-sa-tacka-zvezda">
+<h3>Uparivanje svega sa tačka-zvezda</h3>
+<p>Ponekad ćete želeti da uparujete/podudarate sa svim i svačim. Na primer, recimo da želite da se podudaranje sa stringom „Prezime:“, praćeno bilo kojim tekstom, zatim „Prezime:“, a zatim ponovo bilo šta. Tada može da se koristi tačka-zvezdu (<code class="docutils literal notranslate"><span class="pre">.*</span></code>) da se kaže za to „bilo šta“. Zapamtite da tačkasti znak znači „bilo koji pojedinačni znak osim novog reda “, a zvezdasti znak znači„ nula ili više prethodnog znaka “. U interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nameRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Ime: (.*) Prezime: (.*)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span> <span class="o">=</span> <span class="n">nameRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Ime: Dragan Prezime: Azdejković&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Dragan&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Azdejković&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tačka-zvezda koristi pohlepni režim: Uvek će pokušati da uskladi što više teksta. Da se podudara sa bilo kojim tekst na nepohlepni način, koristite tačku, zvezdicu
+i znak pitanja (. *?). Kao kod zagrada, znak pitanja govori Pithonu da se podudara na ne-pohlepan način.</p>
+<p>U interaktivnu ćeliju unesite sledeće da biste videli razliku između pohlepnih i ne pohlepnih verzija:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nongreedyRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.*?&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span> <span class="o">=</span> <span class="n">nongreedyRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;&lt;Piletina&gt; za ručak.&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&lt;Piletina&gt;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greedyRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&lt;.*&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span> <span class="o">=</span> <span class="n">greedyRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;&lt;Piletina&gt; za ručak.&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mo</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&lt;Piletina&gt; za ručak.&gt;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oba regeksa se približno prevode u „Podudaraju se zagrada ugla otvaranja, praćena bilo čime, a zatim zatvarajući ugaona zagrada“, ali string <code class="docutils literal notranslate"><span class="pre">'&lt;Piletina&gt;</span> <span class="pre">za</span> <span class="pre">ručak.&gt;'</span></code> ima dva moguća podudaranja za zatvaranje ugaonih zagrada. U ne pohlepnoj verziji regularnog izraza, Pithon podudara sa najkraćim mogućim stringom: <code class="docutils literal notranslate"><span class="pre">'&lt;Piletina&gt;'</span></code>. U pohlepnoj verziji Pithon se podudara sa najdužim mogućim nizom: <code class="docutils literal notranslate"><span class="pre">'&lt;Piletina&gt;</span> <span class="pre">za</span> <span class="pre">ručak.&gt;'</span></code>.</p>
+</section>
+<section id="uparivanje-nove-linije-sa-tackastim-karakterom">
+<h3>Uparivanje nove linije sa tačkastim karakterom</h3>
+<p>Tačka-zvezda će se podudarati sa svim osim sa novom linijom. Predajom <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> kao drugog argumenta <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code>, možete učiniti da se tačkasti znak podudara
+sa svim znakovima, uključujući i znak novog reda.</p>
+<p>U interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noNewlineRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;.*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noNewlineRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Serve the public trust.</span><span class="se">\n</span><span class="s1">Protect the innocent.</span><span class="se">\n</span><span class="s1">Uphold the law.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newlineRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;.*&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">newlineRegex</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Serve the public trust.</span><span class="se">\n</span><span class="s1">Protect the innocent.</span><span class="se">\n</span><span class="s1">Uphold the law.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Regeks <code class="docutils literal notranslate"><span class="pre">noNewlineRegex</span></code>, koji nema prosleđeno <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> metodu <code class="docutils literal notranslate"><span class="pre">re.compile</span></code>, uparivaće sve da prvog znaka za novu liniju, dok <code class="docutils literal notranslate"><span class="pre">noNewlineRegex</span></code>, koji ima
+prosleđeno <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> metodu <code class="docutils literal notranslate"><span class="pre">re.compile</span></code>, uparivaće sve. To je razlog zašto pozivanjem <code class="docutils literal notranslate"><span class="pre">newlineRegex.search()</span></code> uparuje ceo string uključujući i karakter
+za kraj reda.</p>
+</section>
+<section id="pregled-regeks-simbola">
+<h3>Pregled Regeks simbola</h3>
+<p>Ovo poglavlje pokrivalo je puno notacija, pa evo kratkog pregleda onoga šta ste naučili o osnovnoj sintaksi regularnog izraza:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">?</span></code> zahteva podudaranje nula ili jednom sa grupom koja prethodi.</p></li>
+<li><p>Znak <code class="docutils literal notranslate"><span class="pre">*</span></code> zahteva podudaranje nula ili više puta sa grupom koja prethodi.</p></li>
+<li><p>Znak <code class="docutils literal notranslate"><span class="pre">+</span></code> zahteva podudaranje jednom ili više puta sa grupom koja prethodi.</p></li>
+<li><p>Oznaka <code class="docutils literal notranslate"><span class="pre">{n}</span></code> zahteva podudaranje tačno <span class="math notranslate nohighlight">\(n\)</span> puta sa grupom koja prethodi.</p></li>
+<li><p>Oznaka <code class="docutils literal notranslate"><span class="pre">{n</span> <span class="pre">,}</span></code> zahteva podudaranje najmanje <span class="math notranslate nohighlight">\(n\)</span> puta sa grupom koja prethodi.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{,</span> <span class="pre">m}</span></code> zahteva podudaranje najviše <span class="math notranslate nohighlight">\(m\)</span> puta sa grupom koja prethodi.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{n,</span> <span class="pre">m}</span></code> zahteva podudaranje najmanje <span class="math notranslate nohighlight">\(n\)</span> i najviše <span class="math notranslate nohighlight">\(m\)</span> puta sa grupom koja prethodi.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{n,</span> <span class="pre">m}?</span></code> ili *? ili +? izvršava ne pohlepno podudaranje prethodne grupe.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">^spam</span></code> znači da string mora počinjati sa <code class="docutils literal notranslate"><span class="pre">spam</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">spam\$</span></code> znači da se string mora završiti sa <code class="docutils literal notranslate"><span class="pre">spam</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.</span></code> podudara se sa bilo kojim znakom, osim znakova za novi red.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\d</span></code>, <code class="docutils literal notranslate"><span class="pre">\w</span></code> i <code class="docutils literal notranslate"><span class="pre">\s</span></code> odgovaraju cifri, slovu ili razmaku, odnosno.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\D</span></code>, <code class="docutils literal notranslate"><span class="pre">\W</span></code> i <code class="docutils literal notranslate"><span class="pre">\S</span></code> odgovaraju bilo čemu osim cifri, slovu ili razmaku znak.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[abc]</span></code> se podudara sa bilo kojim znakom između zagrada (poput <em>a</em>, <em>b</em> ili <em>c</em>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[^abc]</span></code> se podudara sa bilo kojim znakom koji nije između zagrada.</p></li>
+</ul>
+</section>
+<section id="uparivanje-osetljivo-na-velicinu-slova">
+<h3>Uparivanje osetljivo na veličinu slova</h3>
+<p>Obično se regularni izrazi podudaraju s tekstom sa tačnim slovima koje navedete. Na primer, sledeći regularni izrazi se podudaraju sa potpuno različitim stringovima:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">regex1</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;RoboCop&#39;</span><span class="p">)</span>
+<span class="n">regex2</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;ROBOCOP&#39;</span><span class="p">)</span>
+<span class="n">regex3</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;robOcop&#39;</span><span class="p">)</span>
+<span class="n">regex4</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;RobocOp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ali ponekad vam je stalo samo da se slova podudaraju, ne brinući da li su velika ili mala. Da biste učinili da vaš regeks ne razlikuje velika i mala slova, možete
+dodati <code class="docutils literal notranslate"><span class="pre">re.IGNORECASE</span></code> ili <code class="docutils literal notranslate"><span class="pre">re.I</span></code> kao drugi argument u <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code>. U interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robocop</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;robocop&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">I</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robocop</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;RoboCop is part man, part machine, all cop.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;RoboCop&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robocop</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;ROBOCOP protects the innocent.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ROBOCOP&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robocop</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;Al, why does your programming book talk about robocop so much?&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;robocop&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="zamena-stringova-metodom-sub">
+<h3>Zamena stringova metodom <code class="docutils literal notranslate"><span class="pre">sub()</span></code></h3>
+<p>Regularni izrazi mogu ne samo da pronađu tekstualne obrasce, već mogu i zameniti novi tekst umesto tih obrazaca. Metodi <code class="docutils literal notranslate"><span class="pre">sub()</span></code> za Regeks objekte prosleđuju se dva
+argumenta. Prvi argument je string koji zamenjuje bilo koja podudaranja. Drugi je string za regularni izraz. Metoda <code class="docutils literal notranslate"><span class="pre">sub()</span></code> vraća string sa primenjenim zamenama.</p>
+<p>Na primer, u interaktivnu ćeliju unesite sledeće:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namesRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Agent \w+&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">namesRegex</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;CENSORED&#39;</span><span class="p">,</span> <span class="s1">&#39;Agent Alice gave the secret documents to Agent Bob.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;CENSORED gave the secret documents to CENSORED.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ponekad ćete možda morati da koristite sam tekst koji se podudara kao deo zamene. U prvom argumentu za <code class="docutils literal notranslate"><span class="pre">sub()</span></code> možete otkucati <code class="docutils literal notranslate"><span class="pre">\1</span></code>, <code class="docutils literal notranslate"><span class="pre">\2</span></code>, <code class="docutils literal notranslate"><span class="pre">\3</span></code> i tako dalje, što
+znači „Unesite tekst grupe 1, 2, 3 i tako dalje, u zamenu.“</p>
+<p>Na primer, recimo da želite da cenzurišete imena tajnih agenata tako što ćete prikazati samo prva slova njihovih imena. Da biste to uradili, možete koristiti
+regularni izraz <code class="docutils literal notranslate"><span class="pre">Agent</span></code>, <code class="docutils literal notranslate"><span class="pre">(\w)\w*</span></code>, i predati <code class="docutils literal notranslate"><span class="pre">r'\1****'</span></code> kao prvi argument <code class="docutils literal notranslate"><span class="pre">sub()</span></code>. <code class="docutils literal notranslate"><span class="pre">\1</span></code> u tom stringu biće zamenjen bilo kojim tekstom koji se podudara sa
+grupom 1 - to jest, <code class="docutils literal notranslate"><span class="pre">(\w)</span></code> grupom regularnog izraza.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agentNamesRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Agent (\w)\w*&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agentNamesRegex</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\1****&#39;</span><span class="p">,</span> <span class="s1">&#39;Agent Alice told Agent Carol that Agent Eve knew Agent Bob was a double agent.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;A**** told C**** that E**** knew B**** was a double agent.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="upravljanje-slozenim-regeksima">
+<h3>Upravljanje složenim regeksima</h3>
+<p>Regularni izrazi su u redu ako je obrazac teksta koji treba da se podudara jednostavan. Ali podudaranje složenih tekstualnih obrazaca može zahtevati dugačke,
+zamršene regularne izraze. To možete ublažiti rekavši funkciji <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code> da zanemari razmake i komentare unutar stringa regularnog izraza. Ovaj „opširan režim“
+može se omogućiti dodavanjem promenljive <code class="docutils literal notranslate"><span class="pre">re.VERBOSE</span></code> kao drugog argumenta u <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code>.</p>
+<p>Sada umesto ovako čitljivog regularnog izraza:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;((\d</span><span class="si">{3}</span><span class="s1">|\(\d</span><span class="si">{3}</span><span class="s1">\))?(\s|-|\.)?\d</span><span class="si">{3}</span><span class="s1">(\s|-|\.)\d</span><span class="si">{4}</span><span class="s1">(\s*(ext|x|ext.)\s*\d{2,5})?)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>regularni izraz možete proširiti na više redova sa komentarima poput ovog:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phoneRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;&#39;(</span>
+<span class="s1">     (\d</span><span class="si">{3}</span><span class="s1">|\(\d</span><span class="si">{3}</span><span class="s1">\))?            # area code</span>
+<span class="s1">     (\s|-|\.)?                    # separator</span>
+<span class="s1">     \d</span><span class="si">{3}</span><span class="s1">                         # first 3 digits</span>
+<span class="s1">     (\s|-|\.)                     # separator</span>
+<span class="s1">     \d</span><span class="si">{4}</span><span class="s1">                         # last 4 digits</span>
+<span class="s1">    (\s*(ext|x|ext.)\s*\d{2,5})?   # extension</span>
+<span class="s1">     )&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obratite pažnju na to kako prethodni primer koristi sintaksu sa trostrukim navodnicima (<code class="docutils literal notranslate"><span class="pre">'''</span></code>) za stvaranje višerednog stringa, tako da možete proširiti definiciju regularnog izraza na više linija, čineći ga mnogo čitljivijim.</p>
+<p>Pravila za komentare unutar stringa regularnog izraza ista su kao i kod regularnog Pithona: simbol # i sve nakon njega do kraja reda se zanemaruju. Takođe, dodatni razmaci unutar višerednog stringa za regularni izraz ne smatraju se delom šablona teksta koji treba podudarati. Ovo vam omogućava da organizujete regularni izraz tako da ga je lakše čitati.</p>
+</section>
+<section id="kombinovanje-re-igonorecase-re-dotall-i-re-verbose">
+<h3>Kombinovanje <code class="docutils literal notranslate"><span class="pre">re.IGONORECASE</span></code>, <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> i <code class="docutils literal notranslate"><span class="pre">re.VERBOSE</span></code></h3>
+<p>Šta ako želite da koristite <code class="docutils literal notranslate"><span class="pre">re.VERBOSE</span></code> za pisanje komentara u svoj regularni izraz, ali takođe želite da koristite <code class="docutils literal notranslate"><span class="pre">re.IGNORECASE</span></code> da biste zanemarili upotrebu
+velikih slova? Nažalost, funkcija <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code> uzima samo jednu vrednost kao drugi argument. Ovo ograničenje možete zaobići kombinovanjem promenljivih
+<code class="docutils literal notranslate"><span class="pre">re.IGNORECASE</span></code>, <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> i <code class="docutils literal notranslate"><span class="pre">re.VERBOSE</span></code> koristeći znak cevi (|), koji je u ovom kontekstu poznat kao bitni ili operator.</p>
+<p>Dakle, ako želite regularni izraz koji ne razlikuje velika i mala slova i uključuje nove redove koji se podudaraju sa tačkastim znakom, formirali biste svoj poziv
+<code class="docutils literal notranslate"><span class="pre">re.compile()</span></code> ovako:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someRegexValue</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Uključivanje sve tri opcije kao drugi argument bi izgleadalo ovako:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">someRegexValue</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ova sintaksa je pomalo staromodna i potiče iz ranih verzija Pithona. Detalji bitnih operatora su izvan opsega ove knjige, ali potražite resurse na
+<a class="reference external" href="https://nostarch.com/automatestuff2/">https://nostarch.com/automatestuff2/</a> za više informacija. Takođe možete proslediti druge opcije za drugi argument; oni su neuobičajeni,
+ali više o njima možete pročitati i u resursima.</p>
+</section>
+</section>
+<section id="projekat-ekstraktor-telefonskog-broja-i-e-mail-adrese">
+<h2>Projekat: Ekstraktor telefonskog broja i e-mail adrese</h2>
+<p>Recimo da imate dosadan zadatak da pronađete svaki telefonski broj i adresu e-pošte na dugoj veb stranici ili dokumentu. Ako ručno skrolujete po stranici, možda ćete na kraju potrošiti duže vreme. Ali ako biste imali program koji bi mogao pretraživati brojeve telefona i adrese e-pošte u tekstu, možete jednostavno pritisnuti CTRL-A da biste izabrali sav tekst, pritisnite CTRL-C da biste ga kopirali u privremeno skladište ili datoteku, a zatim pokreniti program. Rezultate sa brojevima telefona i adresama e-pošte koje pronađete možete sačuvati u posebnoj datoteci ili skladištu.</p>
+<p>Kad god se bavite novim projektom, može biti primamljivo zaroniti pravo u pisanje koda. Ali najčešće je najbolje napraviti korak unazad i razmotriti širu sliku. Preporučujem da prvo napravite plan na visokom nivou za ono što vaš program treba da uradi. Ne razmišljajte još o stvarnom kodu - o tome možete brinuti kasnije.
+Trenutno se držite širokih poteza.</p>
+<p>Na primer, ekstraktor brojeva telefona i adrese e-pošte moraće da uradi sledeće:</p>
+<ol class="arabic simple">
+<li><p>Skiniti tekst iz skladišta.</p></li>
+<li><p>Pronaći sve brojeve telefona i adrese e-pošte u tekstu.</p></li>
+<li><p>Zalepiti ih u skladište ili sačuvati u datoteci.</p></li>
+</ol>
+<p>Sada možete početi da razmišljate o tome kako bi ovo moglo funkcionisati u kodu. Kod će morati uraditi sledeće:</p>
+<ol class="arabic simple">
+<li><p>Koristite <code class="docutils literal notranslate"><span class="pre">piperclip</span></code> modul da kopirate i nalepite stringove.</p></li>
+<li><p>Napravite dva regularna izraza, jedan za podudaranje brojeva telefona i drugi za podudaranje adresa e-pošte.</p></li>
+<li><p>Pronađite sva podudaranja, ne samo prvi match, sa oba regeksa.</p></li>
+<li><p>Uredno formatirajte podudarne stringove u jedan string za lepljenje.</p></li>
+<li><p>Prikazati neku vrstu poruke ako u tekstu nisu pronađena podudaranja.</p></li>
+</ol>
+<p>Ova lista je poput mape puta za projekat. Dok pišete kod, možete se posebno usredsrediti na svaki od ovih koraka. Svaki korak je prilično jasan i izražen je stvarima koje već znate kako da radite u Pithonu.</p>
+<section id="korak-1-kreiranje-regeksa-sa-broj-telefona">
+<h3>Korak 1: Kreiranje regeksa sa broj telefona</h3>
+<p>Prvo morate da kreirate regularni izraz za traženje telefonskih brojeva. Napravite novu datoteku, unesite sledeće i sačuvajte je kao <em><a class="reference external" href="http://phoneAndEmail.py">phoneAndEmail.py</a></em>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># phoneAndEmail.py - Pronalazi brojeve telefona i e-mail adrese u skladištu (eng. clipboard).</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyperclip</span><span class="o">,</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="n">phoneRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;&#39;(</span>
+<span class="s1">    (\d</span><span class="si">{3}</span><span class="s1">|\(\d</span><span class="si">{3}</span><span class="s1">\))?                # area code</span>
+<span class="s1">    (\s|-|\.)?                        # separator</span>
+<span class="s1">    (\d</span><span class="si">{3}</span><span class="s1">)                           # first 3 digits</span>
+<span class="s1">    (\s|-|\.)                         # separator</span>
+<span class="s1">    (\d</span><span class="si">{4}</span><span class="s1">)                           # last 4 digits</span>
+<span class="s1">    (\s*(ext|x|ext.)\s*(\d{2,5}))?    # extension</span>
+<span class="s1">    )&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">VERBOSE</span><span class="p">)</span>
+
+<span class="c1"># TODO: Create email regex.</span>
+
+<span class="c1"># TODO: Find matches in clipboard text.</span>
+
+<span class="c1"># TODO: Copy results to the clipboard.</span>
+</pre></div>
+</div>
+<p>TODO komentari su samo kostur programa. Oni će biti zamenjeni dok pišete stvarni kod.</p>
+<p>Telefonski broj započinje opcionim pozivnim brojem, pa se grupa pozivnog broja prati znakom pitanja. Budući da pozivni broj može biti samo tri cifre (to jest, <code class="docutils literal notranslate"><span class="pre">\d{3}</span></code>) ili tri cifre u zagradama (to jest, <code class="docutils literal notranslate"><span class="pre">\(\d{3}\)</span></code>), trebali biste imati cev koja spaja te delove. U ovaj deo višerednog stringa možete dodati komentar regularnog izraza # Pozivni broj,  kako biste se setili sa čim <code class="docutils literal notranslate"><span class="pre">(\d{3}|\(\d{3}\))</span></code>? treba da se podudara.</p>
+<p>Znak za razdvajanje broja telefona može biti razmak (<code class="docutils literal notranslate"><span class="pre">\s</span></code>), crtica (<code class="docutils literal notranslate"><span class="pre">-</span></code>) ili tačka (<code class="docutils literal notranslate"><span class="pre">.</span></code>), pa bi ovi delovi takođe trebalo da budu spojeni cevima. Sledećih nekoliko delova regularnog izraza je jednostavan: tri cifre, zatim još jedan separator, a zatim četiri cifre. Poslednji deo je opciono proširenje koje se sastoji od bilo kog broja razmaka praćenih ext, x ili ext., Nakon čega slede dve do pet cifara.</p>
+<p>NAPOMENA: Lako je pomešati u regularnim izrazima koji sadrže grupe sa zagradama () i pregradnim zagradama <code class="docutils literal notranslate"><span class="pre">\(</span></code> <code class="docutils literal notranslate"><span class="pre">\)</span></code>. Ne zaboravite da dvaput proverite da li koristite ispravnu ako se prikaže poruka o grešci „missing), unterminated subpattern“.</p>
+</section>
+<section id="korak-2-kreiranje-regeksa-za-e-mail-adrese">
+<h3>Korak 2: Kreiranje regeksa za e-mail adrese</h3>
+<p>Takođe će vam trebati regularni izraz koji se može uparivati adrese e-pošte. Neka vaš program izgleda ovako:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># phoneAndEmail.py - Finds phone numbers and email addresses on the clipboard.</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyperclip</span><span class="o">,</span><span class="w"> </span><span class="nn">re</span>
+
+<span class="n">phoneRegex</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;&#39;&#39;(</span>
+<span class="s1">--snip--</span>
+
+<span class="s1"># Create email regex.</span>
+<span class="s1">emailRegex = re.compile(r&#39;&#39;&#39;</span><span class="p">(</span>
+  <span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">zA</span><span class="o">-</span><span class="n">Z0</span><span class="o">-</span><span class="mf">9.</span><span class="n">_</span><span class="o">%+-</span><span class="p">]</span><span class="o">+</span>      <span class="c1"># username</span>
+  <span class="o">@</span>                      <span class="c1"># @ symbol</span>
+  <span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">zA</span><span class="o">-</span><span class="n">Z0</span><span class="o">-</span><span class="mf">9.</span><span class="o">-</span><span class="p">]</span><span class="o">+</span>         <span class="c1"># domain name</span>
+  <span class="p">(</span>\<span class="o">.</span><span class="p">[</span><span class="n">a</span><span class="o">-</span><span class="n">zA</span><span class="o">-</span><span class="n">Z</span><span class="p">]{</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">})</span>      <span class="c1"># dot-something</span>
+  <span class="p">)</span><span class="s1">&#39;&#39;&#39;, re.VERBOSE)</span>
+
+<span class="s1"> # TODO: Find matches in clipboard text.</span>
+
+<span class="s1"> # TODO: Copy results to the clipboard.</span>
+</pre></div>
+</div>
+<p>Korisnički deo adrese e-pošte je jedan ili više znakova koji mogu biti bilo koji od sledećih: mala i velika slova, brojevi, tačka, donja crta, znak procenta, znak plusa ili crtica. Sve ovo možete staviti u klasu znakova: <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9</span> <span class="pre">._%</span> <span class="pre">+</span> <span class="pre">-]</span></code>.</p>
+<p>Domen i korisničko ime odvojeni su znakom <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>. Ime domena ima nešto manje popustljivu klasu znakova sa samo slovima, brojevima, tačkama i crticama: <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9.-]</span></code>. I poslednji će biti „dot-com“ deo (tehnički poznat kao domen najvišeg nivoa), koji zaista može biti tačka-bilo šta. Ovo je između dva i četiri znaka.</p>
+<p>Format adresa e-pošte ima puno čudnih pravila. Ovaj regularni izraz neće se podudarati sa svakom mogućom važećom adresom e-pošte, ali će se podudarati sa gotovo svakom tipičnom adresom e-pošte sa kojom ćete se susresti.</p>
+</section>
+<section id="korak-3-pronalazenje-svih-uparivanja-sa-tekstom-u-skladistu-clipbordu">
+<h3>Korak 3: Pronalaženje svih uparivanja sa tekstom u skladištu (Clipbordu)</h3>
+<p>Sada kada ste naveli regularne izraze za brojeve telefona i adrese e-pošte, možete da dozvolite Pithon-ovom re modulu da izvrši težak posao pronalaženja svih
+podudaranja u skladištu. Funkcija <code class="docutils literal notranslate"><span class="pre">piperclip.paste()</span></code> će dobiti vrednost stringa teksta u privremenu memoriju, a regeks metoda <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vratiće listu nizova.</p>
+<p>Neka vaš program izgleda ovako:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find matches in clipboard text.</span>
+<span class="n">text</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">pyperclip</span><span class="o">.</span><span class="n">paste</span><span class="p">())</span>
+
+<span class="c1">#A</span>
+<span class="n">matches</span> <span class="o">=</span> <span class="p">[]</span>  
+<span class="c1">#B</span>
+<span class="k">for</span> <span class="n">groups</span> <span class="ow">in</span> <span class="n">phoneRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">phoneNum</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">groups</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">groups</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">groups</span><span class="p">[</span><span class="mi">5</span><span class="p">]])</span>
+    <span class="k">if</span> <span class="n">groups</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+        <span class="n">phoneNum</span> <span class="o">+=</span> <span class="s1">&#39; x&#39;</span> <span class="o">+</span> <span class="n">groups</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
+        <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">phoneNum</span><span class="p">)</span>
+<span class="c1">#C</span>
+<span class="k">for</span> <span class="n">groups</span> <span class="ow">in</span> <span class="n">emailRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>       
+</pre></div>
+</div>
+<p>Za svako podudaranje postoji po jedan niz, a svaki niz sadrži stringove za svaku grupu u regularnom izrazu. Imajte na umu da se grupa 0 podudara sa celim regularnim izrazom, tako da je grupa sa indeksom 0 ona koja vas zanima.</p>
+<p>Kao što vidite, podudaranja ćete sačuvati u promenljivoj listi koja se zove <code class="docutils literal notranslate"><span class="pre">matches</span></code> (deo <code class="docutils literal notranslate"><span class="pre">#A</span></code>). Počinje kao prazna lista i ulazimo u petlju. Za adrese e-pošte dodajete grupu 0 svakog podudaranja  u listu (deo <code class="docutils literal notranslate"><span class="pre">#C</span></code>). Za podudarne brojeve telefona ne želite da dodate samo grupu 0.</p>
+<p>Iako program otkriva telefonske brojeve u nekoliko formata, želite da dodati telefonski broj bude u jednom, standardnom formatu. Promenljiva <code class="docutils literal notranslate"><span class="pre">phoneNum</span></code> sadrži string izgrađen od grupa 1, 3, 5 i 8 podudarnog teksta (deo <code class="docutils literal notranslate"><span class="pre">#B</span></code>). (Ove grupe su pozivni broj, prve tri cifre, poslednje četiri cifre i ekstenzija.)</p>
+</section>
+<section id="korak-4-spajanje-uparenog-u-string-za-clipboard">
+<h3>Korak 4: Spajanje uparenog u string za Clipboard</h3>
+<p>Sada kada imate adrese e-pošte i brojeve telefona kao listu nizova u podudaranjima, želite da ih stavite u clipboard. Funkcija <code class="docutils literal notranslate"><span class="pre">piperclip.copy()</span></code> uzima samo jednu vrednost stringa, a ne listu stringova, pa na podudaranjima pozivate metodu <code class="docutils literal notranslate"><span class="pre">join()</span></code>.</p>
+<p>Da bismo olakšali uvid u to kako program radi, odštampajmo sve terme koje pronađete na ekranu. Ako nisu pronađeni brojevi telefona ili adrese e-pošte, program to treba da saopšti korisniku.</p>
+<p>Neka vaš program izgleda ovako:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="n">phoneAndEmail</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span> <span class="n">Finds</span> <span class="n">phone</span> <span class="n">numbers</span> <span class="ow">and</span> <span class="n">email</span> <span class="n">addresses</span> <span class="n">on</span> <span class="n">the</span> <span class="n">clipboard</span><span class="o">.</span>
+
+<span class="o">--</span><span class="n">snip</span><span class="o">--</span>
+<span class="k">for</span> <span class="n">groups</span> <span class="ow">in</span> <span class="n">emailRegex</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+     <span class="n">matches</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">groups</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Copy results to the clipboard.</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">matches</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">pyperclip</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Copied to clipboard:&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">matches</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No phone numbers or email addresses found.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pokretanje-programa">
+<h3>Pokretanje programa</h3>
+<p>Na primer, otvorite veb pregledač na stranici <a class="reference external" href="https://nostarch.com/contactus/">https://nostarch.com/contactus/</a>, pritisnite CTRL-A da biste izabrali sav tekst na stranici i pritisnite CTRL-C da
+biste ga kopirali na clipboard. Kada pokrenete ovaj program, izlaz će izgledati otprilike ovako:</p>
+</section>
+</section>
+<section id="ideje-za-slican-program">
+<h2>Ideje za sličan program</h2>
+<p>Identifikovanje obrazaca teksta (i eventualna zamena metodom <code class="docutils literal notranslate"><span class="pre">sub()</span></code>) ima mnogo različitih potencijalnih primena. Na primer, mogli biste:</p>
+<ul class="simple">
+<li><p>da pronađete URL adrese veb lokacija koje počinju sa http:// ili https://.</p></li>
+<li><p>Čistite datume u različitim formatima datuma (kao što su 14.3.2019, 14.03.2019 i 2015/3/19) tako što će ih zameniti datumima u jednom standardnom formatu.</p></li>
+<li><p>Ukloniti osetljive informacije kao što su brojevi socijalnog osiguranja ili brojevi kreditnih kartica.</p></li>
+<li><p>Pronaći uobičajene greške u kucanju, kao što su više razmaka između reči, slučajno ponovljene reči ili više znakova uskličnika na kraj rečenica. To su dosadne !!</p></li>
+</ul>
+<section id="sumarum">
+<h3>Sumarum</h3>
+<p>Iako računar može brzo da pretražuje tekst, mora mu se tačno reći šta treba tražiti. Regularni izrazi vam omogućavaju da odredite obrazac znakova koje tražite,
+a ne tačan sam tekst. U stvari, neke aplikacije za obradu teksta i proračunske tabele pružaju funkcije pronađi i zameni koje ti omogućavaju pretragu pomoću
+regularnih izraza.</p>
+<p>Modul <code class="docutils literal notranslate"><span class="pre">re</span></code> koji dolazi sa Pithonom omogućava vam kompajliranje Regex objekata. Ovi objekti imaju nekoliko metoda: <code class="docutils literal notranslate"><span class="pre">search()</span></code> za pronalaženje pojedinačnog
+podudaranja, <code class="docutils literal notranslate"><span class="pre">findall()</span></code> za pronalaženje svih podudarnih instanci i <code class="docutils literal notranslate"><span class="pre">sub()</span></code> za pronalaženje i zamenu teksta.</p>
+<p>Više možete saznati u službenoj Pithon dokumentaciji na <a class="reference external" href="https://docs.python.org/3/librari/re.html">https://docs.python.org/3/librari/re.html</a>. Još jedan koristan resurs je veb stranica sa vodičima
+<a class="reference external" href="https://www.regular-expressions.info/">https://www.regular-expressions.info/</a>.</p>
+</section>
+<section id="prakticna-pitanja">
+<h3>Praktična pitanja</h3>
+<ol class="arabic simple">
+<li><p>Koja je funkcija koja stvara <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekte?</p></li>
+<li><p>Zašto se sirovi stringovi često koriste prilikom kreiranja <code class="docutils literal notranslate"><span class="pre">Regex</span></code> objekata?</p></li>
+<li><p>Šta vraća metoda <code class="docutils literal notranslate"><span class="pre">search()</span></code>?</p></li>
+<li><p>Kako iz objekta <code class="docutils literal notranslate"><span class="pre">Match</span></code> dobijete stvarne stringove koji se podudaraju sa šablonom?</p></li>
+<li><p>U regularnom izrazu kreiranom od <code class="docutils literal notranslate"><span class="pre">r'(\d\d\d)-(\d\d\d-\d\d\d\d)'</span></code>, šta obuhvata grupa 0? Grupa 1? Grupa 2?</p></li>
+<li><p>Zagrade i tačke imaju specifična značenja u sintaksi regularnog izraza. Kako biste naveli da želite da se regularni izraz podudara sa stvarnim zagradama i znakovima tačke?</p></li>
+<li><p>Metoda <code class="docutils literal notranslate"><span class="pre">findall()</span></code> vraća listu nizova ili listu nizova od stringova. Zbog čega se vraća jedno ili drugo?</p></li>
+<li><p>Šta znači | znak u regularnim izrazima?</p></li>
+<li><p>Koje dve stvari radi ? znak u regularnim izrazima?</p></li>
+<li><p>Koja je razlika između znakova + i * u regularnim izrazima?</p></li>
+<li><p>Koja je razlika između {3} i {3,5} u regularnim izrazima?</p></li>
+<li><p>Šta označavaju klase karaktera <code class="docutils literal notranslate"><span class="pre">\d</span></code>, <code class="docutils literal notranslate"><span class="pre">\w</span></code> i <code class="docutils literal notranslate"><span class="pre">\s</span></code> u regularnim izrazima?</p></li>
+<li><p>Šta označavaju klase karatera <code class="docutils literal notranslate"><span class="pre">\D</span></code>, <code class="docutils literal notranslate"><span class="pre">\W</span></code> i <code class="docutils literal notranslate"><span class="pre">\S</span></code> u regularnim izrazima?</p></li>
+<li><p>Koja je razlika između <code class="docutils literal notranslate"><span class="pre">.*</span></code> i <code class="docutils literal notranslate"><span class="pre">.*?</span></code>?</p></li>
+<li><p>Koja je sintaksa klase znakova koja se podudara sa svim brojevima i malim slovima?</p></li>
+<li><p>Kako praviš da regularni izraz ne razlikuje velika i mala slova?</p></li>
+<li><p>Sa čime se karakter <code class="docutils literal notranslate"><span class="pre">.</span></code> normalno podudara? Šta se podudara ako se <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> preda kao drugi argument za <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code>?</p></li>
+<li><p>Ako je <code class="docutils literal notranslate"><span class="pre">numRegex</span> <span class="pre">=</span> <span class="pre">re.compile</span> <span class="pre">(r'\d+')</span></code>, šta će vratiti <code class="docutils literal notranslate"><span class="pre">numRegex.sub</span> <span class="pre">('Ks',</span> <span class="pre">'12</span> <span class="pre">bubnjara,</span> <span class="pre">11</span> <span class="pre">lula,</span> <span class="pre">pet</span> <span class="pre">prstenova,</span> <span class="pre">3</span> <span class="pre">kokoši</span> <span class="pre">')</span></code>?</p></li>
+<li><p>Šta vam omogućava dodavanje <code class="docutils literal notranslate"><span class="pre">re.VERBOSE</span></code> kao drugog argumenta za <code class="docutils literal notranslate"><span class="pre">re.compile()</span></code>?</p></li>
+<li><p>Kako biste napisali regularni izraz koji odgovara broju i zapetama za svake tri cifre? Mora odgovarati sledećem: ’42’, ’1,234’, ’6,368,745’,  ali ne i sledećem:
+’12, 34,567 ’(koja ima samo dve cifre između zareza), ’ 1234 ’(kojoj nedostaju zarezi)</p></li>
+<li><p>Kako biste napisali regularni izraz koji se podudara sa punim imenom nekoga ko se preziva Vatanabe? Možete pretpostaviti da će prvo ime koje dolazi pre njega uvek biti jedna reč koja počinje velikim slovom. Redovni izraz mora odgovarati sledećem: ’Haruto Vatanabe’, ’Alice Vatanabe’, ’RoboCop Vatanabe’, ali ne i sledećem: ’haruto Vatanabe’ (gde ime nije napisano velikim slovom), ’Mr. Vatanabe ’(gde prethodna reč ima neslovni karakter), ’ Vatanabe ’(bez imena), ’ Haruto vatanabe ’(gde Vatanabe nije napisana velikim slovom)</p></li>
+<li><p>Kako biste napisali regularni izraz koji se podudara sa rečenicom u kojoj je prva reč Alice, Bob ili Carol; druga reč je ili jede, ljubimce ili baca; treća reč su jabuke, mačke ili lopte; a rečenica se završava tačkom? Ovaj regularni izraz ne bi trebalo da razlikuje velika i mala slova. Mora se podudarati sa sledećim: ’Alice jede jabuke.’, ’Bob maci mačke.’,  ’Carol baca lopte’, ’Alice baca jabuke.’, ’BOB JE MAČKA’, ali ne i sledeće: ’RoboCop jede jabuke.’, ’ALICE BACA NOGU.’,
+’Carol jede 7 mačaka’.</p></li>
+</ol>
+</section>
+</section>
+<section id="prakticni-projekti">
+<h2>Praktični projekti</h2>
+<p>Kao vežbanje, napišite programe koji će uraditi sledeće zadatke.</p>
+<section id="detekcija-datuma">
+<h3>Detekcija datuma</h3>
+<p>Napišite regularni izraz koji može otkriti datume u formatu DD/MM/GGGG. Pretpostavimo da se dani kreću od 01 do 31, meseci od 01 do 12, a godine od 1000 do 2999.
+Imajte na umu da ako je dan ili mesec jednocifren, imaće vodeću nulu.</p>
+<p>Regularni izraz ne mora da otkriva tačne dane za svaki mesec ili za prestupnu godinu; prihvatiće nepostojeće datume poput 31/02/2020 ili 31/04/2021. Zatim te
+stringove sačuvajte u promenljive sa imenom mesec, dan i godina i napišite dodatni kod koji može otkriti da li je to valjani datum. April, jun, septembar i novembar
+imaju 30 dana, februar 28 dana, a ostatak meseci 31 dan. Februar ima 29 dana u prestupnoj godini. Prestupne godine su svake godine ravnomerno deljive sa 4,
+osim godina ravnomerno deljivih sa 100, osim ako je godina takođe ravnomerno deljiva sa 400. Obratite pažnju kako ovaj proračun onemogućava pravljenje regularnog
+izraza razumne veličine koji može otkriti valjani datum.</p>
+</section>
+<section id="detekcija-jakog-passworda">
+<h3>Detekcija jakog passworda</h3>
+<p>Napišite funkciju koja koristi regularne izraze kako bi bila sigurna da je string lozinke koji je prosleđen jak. Jaka lozinka je definisana kao lozinka koja ima
+najmanje osam znakova, sadrži velika i mala slova i ima najmanje jednu cifru. Možda ćete trebati da testirate string na osnovu višestrukih regularnih izraza da
+biste potvrdili njegovu snagu.</p>
+</section>
+<section id="regex-verzija-metoda-strip">
+<h3>Regex verzija metoda <code class="docutils literal notranslate"><span class="pre">strip()</span></code></h3>
+<p>Napišite funkciju koja uzima string i radi isto što i string metoda <code class="docutils literal notranslate"><span class="pre">strip()</span></code>. Ako se ne dodaju drugi argumenti osim stringa za uklanjanje, razmaci će se ukloniti
+s početka i kraja stringa. U suprotnom, znakovi navedeni u drugom argumentu funkcije biće uklonjeni iz stringa.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Садржај
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pronalazenje-obrazaca-teksta-bez-regularnih-izraza">Pronalaženje obrazaca teksta bez regularnih izraza</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pronalazenje-obrazaca-teksta-sa-regularnim-izrazima">Pronalaženje obrazaca teksta sa regularnim izrazima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kreiranje-regex-objekata">Kreiranje Regex objekata</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-regex-objekata">Uparivanje Regex objekata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pregled-podudaranja-regularnih-izraza">Pregled podudaranja regularnih izraza</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jos-o-uparivanju-sablona-sa-regularnim-izrazima">Još o uparivanju šablona sa regularnim izrazima</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grupisanje-sa-zagradama">Grupisanje sa zagradama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#povezivanje-vise-grupa-sa-cevovodom-pipe">Povezivanje više grupa sa cevovodom (pipe)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#opciono-uparivanje-sa-znakom-pitanja">Opciono uparivanje sa znakom pitanja</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nula-ili-vise-uparivanja-sa-zvezdicom">Nula ili više uparivanja sa zvezdicom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jedno-ili-vise-uparivanja-sa-plusom">Jedno ili više uparivanja sa plusom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-specifican-broj-puta-sa-zagradama">Uparivanje specifičan broj puta sa zagradama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pohlepno-i-nepohlepno-podudaranje">Pohlepno i nepohlepno podudaranje</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metod-findall">Metod <code class="docutils literal notranslate"><span class="pre">findall()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#klase-karaktera">Klase karaktera</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#konstruisanje-sopstvenih-klasa-karaktera">Konstruisanje sopstvenih klasa karaktera</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#karakteri-dolar-i-kvacica">Karakteri <code class="docutils literal notranslate"><span class="pre">$</span></code> (dolar) i <code class="docutils literal notranslate"><span class="pre">^</span></code> (kvačica)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-tacka-karakter">Wildcard <code class="docutils literal notranslate"><span class="pre">.</span></code>(tačka) karakter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-svega-sa-tacka-zvezda">Uparivanje svega sa tačka-zvezda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-nove-linije-sa-tackastim-karakterom">Uparivanje nove linije sa tačkastim karakterom</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pregled-regeks-simbola">Pregled Regeks simbola</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uparivanje-osetljivo-na-velicinu-slova">Uparivanje osetljivo na veličinu slova</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zamena-stringova-metodom-sub">Zamena stringova metodom <code class="docutils literal notranslate"><span class="pre">sub()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upravljanje-slozenim-regeksima">Upravljanje složenim regeksima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kombinovanje-re-igonorecase-re-dotall-i-re-verbose">Kombinovanje <code class="docutils literal notranslate"><span class="pre">re.IGONORECASE</span></code>, <code class="docutils literal notranslate"><span class="pre">re.DOTALL</span></code> i <code class="docutils literal notranslate"><span class="pre">re.VERBOSE</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projekat-ekstraktor-telefonskog-broja-i-e-mail-adrese">Projekat: Ekstraktor telefonskog broja i e-mail adrese</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-1-kreiranje-regeksa-sa-broj-telefona">Korak 1: Kreiranje regeksa sa broj telefona</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-2-kreiranje-regeksa-za-e-mail-adrese">Korak 2: Kreiranje regeksa za e-mail adrese</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-3-pronalazenje-svih-uparivanja-sa-tekstom-u-skladistu-clipbordu">Korak 3: Pronalaženje svih uparivanja sa tekstom u skladištu (Clipbordu)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korak-4-spajanje-uparenog-u-string-za-clipboard">Korak 4: Spajanje uparenog u string za Clipboard</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pokretanje-programa">Pokretanje programa</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ideje-za-slican-program">Ideje za sličan program</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sumarum">Sumarum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticna-pitanja">Praktična pitanja</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticni-projekti">Praktični projekti</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detekcija-datuma">Detekcija datuma</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#detekcija-jakog-passworda">Detekcija jakog passworda</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regex-verzija-metoda-strip">Regex verzija metoda <code class="docutils literal notranslate"><span class="pre">strip()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Од стране Dragan Azdejković, Dragana Radojičić i Mladen Stamenković
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
