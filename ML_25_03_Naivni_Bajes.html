@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -216,14 +216,15 @@
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_26_01_Regularni_izrazi.html">Regularni izrazi</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
 <ul class="nav bd-sidenav">
@@ -437,7 +438,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-i-ishodi-ucenja">Ciljevi i ishodi učenja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naivni-bajesov-klasifikator-kao-model-uslovne-verovatnoce">Naivni Bajesov klasifikator kao model uslovne verovatnoće</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procena-a-priori-verovatnoca">Procena <em>a priori</em> verovatnoća</a></li>
@@ -547,41 +547,44 @@ observer.observe(document.body, {
 <h1>Naivni Bajesovi klasifikatori</h1>
 <br>
 Naivni Bajesov metod predstavlja jednostavan, ali izuzetno efikasan probabilistički model za klasifikaciju zasnovan na Bajesovoj teoremi. Osnovna ideja modela je procena verovatnoće pripadnosti određenoj klasi na osnovu posmatranih karakteristika.
-<section id="ciljevi-i-ishodi-ucenja">
-<h2>Ciljevi i ishodi učenja</h2>
-<p><strong>Ciljevi učenja</strong></p>
-<ul class="simple">
-<li><p>upoznavanje studenata sa osnovnim principima Naivnog Bajesovog algoritma</p></li>
-<li><p>upoznavanje sa pretpostavkom uslovne nezavisnosti između obeležja i njenim implikacijama u praksi</p></li>
-<li><p>razumevanje različitih varijanti Naivnog Bajesovog klasifikatora (npr. Gaussian, Multinomial, Bernoulli)</p></li>
-<li><p>sticanje uvida u prednosti i ograničenja algoritma u odnosu na druge klasifikacione metode</p></li>
-<li><p>upoznavanje sa primenom algoritma u realnim problemima.</p></li>
-</ul>
-<p><strong>Ishodi učenja:</strong> Nakon savladavanja ovog poglavlja, student će biti u stanju da:</p>
+<p><strong>Ishodi učenja</strong>: Nakon proučavanja ovog poglavlja student će biti u stanju da:</p>
 <ul class="simple">
 <li><p>objasni osnovni princip Naivnog Bajesovog metoda i njegovu vezu sa Bajesovom teoremom</p></li>
 <li><p>interpretira pretpostavku uslovne nezavisnosti</p></li>
-<li><p>primeni Naivni Bajesov klasifikator u tipičnim ekonomskim problemima</p></li>
+<li><p>primeni Naivni Bajesov klasifikator</p></li>
 <li><p>analizira rezultate klasifikacije i donese odgovarajuće zaključke.</p></li>
 </ul>
-</section>
 <section id="uvod">
 <h2>Uvod</h2>
 <p>Ključna pretpostavka ovog pristupa jeste uslovna nezavisnost atributa, odnosno da su sve ulazne promenljive međusobno nezavisne kada je klasa poznata. Iako je ova pretpostavka u praksi često pojednostavljena, model se pokazuje izuzetno robustnim i daje dobre rezultate čak i u složenim realnim problemima.</p>
 <p>Zahvaljujući svojoj jednostavnosti, brzini i interpretabilnosti, Naivni Bajesov metod nalazi široku primenu u ekonomiji i poslovnoj analitici, posebno u zadacima kao što su klasifikacija klijenata, detekcija prevara i analiza tekstualnih podataka.</p>
-<p>Naivni Bajesov klasifikator je generativni probabilistički model koji procenjuje zajedničku raspodelu verovatnoće atributa i klase i na osnovu Bajesove teoreme izračunava posteriornu verovatnoću klase za dati vektor atributa.</p>
-<p><strong>Glavne karakteristike</strong></p>
-<ul class="simple">
-<li><p><em>Probabilistička osnova:</em> Model izračunava verovatnoću pripadnosti određenoj klasi.</p></li>
-<li><p><em>Uslovna nezavisnost:</em> Pretpostavlja se da vrednost jednog atributa ne utiče na verovatnoću drugog, što značajno pojednostavljuje proračun.</p></li>
-<li><p><em>Efikasnost:</em> Zahvaljujući jednostavnosti, ovi modeli su veoma brzi za treniranje i primenu.</p></li>
-</ul>
+<hr class="docutils" />
+<p>Ova porodica modela nosi naziv <em>Naivni Bajes</em> upravo zbog <em>pretpostavke o nezavisnosti atributa</em>, koja je u realnim uslovima često nerealna. Iako se oslanjaju na moćnu Bajesovu teoremu, smatraju se „naivnim” jer svaku karakteristiku podataka tretiraju kao potpuno izolovan faktor u odnosu na ciljnu klasu. Drugim rečima, Naivni Bajesov klasifikator polazi od pretpostavke da je pojava određene osobine u okviru neke klase nezavisna od pojave bilo koje druge osobine.</p>
 <p>Na primer, u proceni kreditnog rizika klijenta, faktori kao što su <em>visina mesečnih prihoda</em>, <em>istorija otplate dugova</em> i <em>trenutna zaduženost</em> posmatraju se kao međusobno nezavisni pokazatelji koji utiču na verovatnoću da klijent pripada grupi niskog ili visokog rizika. Slično tome, u filtriranju neželjene elektronske pošte (<em>spam</em>), pojavljivanje reči poput <em>„besplatno“</em>, <em>„nagrada“</em> ili <em>„kliknite ovde“</em> tretira se kao skup nezavisnih signala koji povećavaju verovatnoću da poruka bude klasifikovana kao spam. Iako se ove reči često pojavljuju zajedno i mogu biti međusobno povezane, Naivni Bajesov model ih posmatra kao <em>nezavisne atribute</em>, što u praksi često daje veoma dobre rezultate klasifikacije. Iako se zasnivaju na naivnim i pojednostavljenim pretpostavkama, Naivni Bajesovi klasifikatori su u praksi pokazali visok stepen efikasnosti u brojnim složenim realnim primenama.</p>
-<p>Ova porodica modela nosi naziv <em>Naivni Bajes</em> upravo zbog <em>pretpostavke o potpunoj nezavisnosti atributa</em>, koja je u realnim uslovima često nerealna. Iako se oslanjaju na moćnu Bajesovu teoremu, smatraju se „naivnim” jer svaku karakteristiku podataka tretiraju kao potpuno izolovan faktor u odnosu na ciljnu klasu. Drugim rečima, Naivni Bajesov klasifikator polazi od pretpostavke da je pojava određene osobine u okviru neke klase nezavisna od pojave bilo koje druge osobine.</p>
-<p>Preciznije, Naivni Bajes pretpostavlja da su svi atributi <strong>nezavisni pod uslovom poznate klase</strong>, što znači da su obeležja nezavisna kada je unapred data vrednost ciljne promenljive. Označimo atribute sa <span class="math notranslate nohighlight">\(X_1, X_2, \dots, X_n\)</span>. Pretpostavka uslovne nezavisnosti znači da svaki atribut doprinosi verovatnoći pripadnosti instanci određenoj klasi (<span class="math notranslate nohighlight">\(C\)</span>) nezavisno od ostalih atributa, pod uslovom da je klasa poznata:</p>
+<p>Naivni Bajes pretpostavlja da su atributi <span class="math notranslate nohighlight">\(X_1, X_2, \dots, X_n\)</span> nezavisni pod uslovom poznate klase, što znači da svaki atribut doprinosi verovatnoći pripadnosti instanci klasi nezavisno od ostalih:</p>
 <div class="math notranslate nohighlight">
 \[P(X_1, X_2, \dots, X_n \mid C) = P(X_1 \mid C) \cdot P(X_2 \mid C) \cdot \dots \cdot P(X_n \mid C).\]</div>
-<p>Zahvaljujući ovoj pretpostavci, Naivni Bajes je jednostavan za implementaciju i razumevanje. Uprkos naivnoj prirodi i pojednostavljenim pretpostavkama, ovi klasifikatori su se u praksi pokazali izuzetno efikasnim u brojnim složenim realnim situacijama.</p>
+<hr class="docutils" />
+<p><strong>Glavne karakteristike</strong></p>
+<ul class="simple">
+<li><p><em>Probabilistička osnova:</em> Model procenjuje verovatnoću pripadnosti svakoj od mogućih klasa.</p></li>
+<li><p><em>Uslovna nezavisnost:</em> Pretpostavlja se da su svi atributi uslovno međusobno nezavisni kada je klasa poznata.</p></li>
+<li><p><em>Efikasnost:</em> Zahvaljujući jednostavnosti, ovi modeli su veoma brzi za treniranje i primenu.</p></li>
+</ul>
+<p><strong>Bajesova teorema</strong></p>
+<p>Naivni Bajesov klasifikator zasniva se na Bajesovoj teoremi, koja omogućava izračunavanje verovatnoće da posmatranje pripada određenoj klasi na osnovu poznatih atributa.</p>
+<p>U kontekstu klasifikacije, Bajesova teorema nam omogućava da izračunamo verovatnoću pripadnosti određenoj klasi na osnovu poznatih atributa pomoću sledeće formule:</p>
+<div class="math notranslate nohighlight">
+\[P(Y \mid X) = \frac{P(X \mid Y) \cdot P(Y)}{P(X)},\]</div>
+<p>gde su:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Y\)</span> je klasa (ciljna promenljiva koju predviđamo),</p></li>
+<li><p><span class="math notranslate nohighlight">\(X\)</span> je skup atributa (obeležja/karakteristike podataka),</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(Y \mid X)\)</span> je verovatnoća klase <span class="math notranslate nohighlight">\(Y\)</span> uslovljena atributima <span class="math notranslate nohighlight">\(X\)</span> (posterior),</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(X \mid Y)\)</span> je verovatnoća pojave atributa uz poznatu klasu,</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(Y)\)</span> je verovatnoća klase pre razmatranja podataka (a priori).</p></li>
+</ul>
+<p>Suština korišćenja Bajesove teoreme je transformaciju jednačine u alternativne verovatnoće, čime se dobijaju metrike pogodnije za modelovanje.</p>
 <div class="tip admonition">
 <p class="admonition-title">Primer 1. Klasifikacija bankarskih transakcija</p>
 <p>U cilju ilustracije primene klasifikacionih algoritama, razmotrićemo primer iz bankarskog sektora. Zadatak je da se na osnovu dostupnih atributa utvrdi da li je reč o normalnoj transakciji (<span class="math notranslate nohighlight">\(N\)</span>) ili prevari (<span class="math notranslate nohighlight">\(P\)</span>).</p>
@@ -664,23 +667,10 @@ Naivni Bajesov metod predstavlja jednostavan, ali izuzetno efikasan probabilisti
 </ul>
 <p>Kako je <span class="math notranslate nohighlight">\( 0.194 &gt; 0.05\)</span>, nova transakcija se klasifikuje kao <em>prevara</em>.</p>
 </div>
-<p><strong>Bajesova teorema</strong></p>
-<p>Naivni Bajesov klasifikator zasniva se na Bajesovoj teoremi, koja omogućava izračunavanje verovatnoće da posmatranje pripada određenoj klasi na osnovu poznatih atributa.</p>
-<p>U kontekstu klasifikacije, Bajesova teorema nam omogućava da izračunamo verovatnoću pripadnosti određenoj klasi na osnovu poznatih atributa pomoću sledeće formule:</p>
-<div class="math notranslate nohighlight">
-\[P(Y \mid X) = \frac{P(X \mid Y) \cdot P(Y)}{P(X)},\]</div>
-<p>gde su:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(Y\)</span> je klasa (ciljna promenljiva koju predviđamo),</p></li>
-<li><p><span class="math notranslate nohighlight">\(X\)</span> je skup atributa (obeležja/karakteristike podataka),</p></li>
-<li><p><span class="math notranslate nohighlight">\(P(Y \mid X)\)</span> je verovatnoća klase <span class="math notranslate nohighlight">\(Y\)</span> uslovljena atributima <span class="math notranslate nohighlight">\(X\)</span> (posterior),</p></li>
-<li><p><span class="math notranslate nohighlight">\(P(X \mid Y)\)</span> je verovatnoća pojave atributa uz poznatu klasu,</p></li>
-<li><p><span class="math notranslate nohighlight">\(P(Y)\)</span> je verovatnoća klase pre razmatranja podataka (a priori).</p></li>
-</ul>
-<p>Suština korišćenja Bajesove teoreme je transformaciju jednačine u alternativne verovatnoće, čime se dobijaju metrike pogodnije za modelovanje.</p>
 </section>
 <section id="naivni-bajesov-klasifikator-kao-model-uslovne-verovatnoce">
 <h2>Naivni Bajesov klasifikator kao model uslovne verovatnoće</h2>
+<p>Naivni Bajesov klasifikator je generativni probabilistički model koji procenjuje zajedničku raspodelu verovatnoće atributa i klase i na osnovu Bajesove teoreme izračunava posteriornu verovatnoću klase za dati vektor atributa.</p>
 <p>Ako je instanca opisana vektorom atributa <span class="math notranslate nohighlight">\(x=(x_1,x_2,\dots,x_n)\)</span>, Bajesova teorema izračunava verovatnoću pripadnosti klasi <span class="math notranslate nohighlight">\(C_k\)</span> za svako <span class="math notranslate nohighlight">\(k \in \{1, \dots, K\}\)</span> na sledeći način:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*} P(C_k \mid x)=\frac{P(C_k)P(x \mid C_k)}{P(x)}.\end{equation*}\]</div>
@@ -692,22 +682,18 @@ Naivni Bajesov metod predstavlja jednostavan, ali izuzetno efikasan probabilisti
 <div class="math notranslate nohighlight">
 \[\hat{y} = \arg\max_{C_k \in \{C_1, \dots, C_K\}} P(C_k) P(x \mid C_k).\]</div>
 <p>Koristimo operaciju <strong>argmax</strong> kako bismo identifikovali predviđenu klasu <span class="math notranslate nohighlight">\(\hat{y}\)</span> kao argument za koji je izračunata verovatnoća <span class="math notranslate nohighlight">\(P(C_k) P(x \mid C_k)\)</span> najveća.</p>
-<p>Primena lančanog pravila verovatnoće omogućava razlaganje zajedničke verovatnoće na proizvod uslovnih verovatnoća:
-\begin{aligned}
-p(C_k, x_1, \dots, x_n) &amp;= p(C_k) , p(x_1, \dots, x_n \mid C_k) \
-&amp;= p(C_k) , p(x_1 \mid C_k) , p(x_2, \dots, x_n \mid C_k, x_1) \
-&amp;= p(C_k) , p(x_1 \mid C_k) , p(x_2 \mid C_k, x_1) , p(x_3, \dots, x_n \mid C_k, x_1, x_2) \
-&amp;= p(C_k) , p(x_1 \mid C_k) , p(x_2 \mid C_k, x_1) \dots p(x_n \mid C_k, x_1, x_2, \dots, x_{n-1}).
-\end{aligned}</p>
+<p>Primena lančanog pravila verovatnoće omogućava razlaganje zajedničke verovatnoće na proizvod uslovnih verovatnoća:</p>
+<div class="math notranslate nohighlight">
+\[p(C_k, x_1, \dots, x_n)= p(C_k) \, p(x_1, \dots, x_n \mid C_k)= \cdots =p(C_k) \, p(x_1 \mid C_k) \, p(x_2 \mid C_k, x_1) \dots p(x_n \mid C_k, x_1, x_2, \dots, x_{n-1}).\]</div>
 <p>Ova dekompozicija značajno pojednostavljuje model, a uz pretpostavku uslovne nezavisnosti atributa dolazi se do krajnje jednostavnog naivnog Bajesovog modela.</p>
 <p><strong>Naivna Bajesovska pretpostavka</strong><br />
-Pretpostavimo da je svaka karakteristika <span class="math notranslate nohighlight">\(x_i\)</span> <strong>uslovno nezavisna</strong> od svih ostalih karakteristika <span class="math notranslate nohighlight">\( x_j\)</span> za <span class="math notranslate nohighlight">\(j \neq i\)</span>, pod uslovom da je poznata kategorija <span class="math notranslate nohighlight">\(C\)</span>. Ova pretpostavka predstavlja temelj naivnog Bajesovog modela, jer dozvoljava razlaganje zajedničke verovatnoće na jednostavan proizvod pojedinačnih uslovnih verovatnoća. Pa se uz pretpostavku o <strong>uslovnoj nezavisnosti atributa</strong>, uslovna raspodela po promenljivoj klase <span class="math notranslate nohighlight">\(C\)</span>h može se izraziti kao proizvod pojedinačnih uslovnih verovatnoća pomnoženih sa prior verovatnoćom klase:</p>
+Pretpostavimo da je svaka karakteristika <span class="math notranslate nohighlight">\(x_i\)</span> <strong>uslovno nezavisna</strong> od svih ostalih karakteristika <span class="math notranslate nohighlight">\( x_j\)</span> za <span class="math notranslate nohighlight">\(j \neq i\)</span>, pod uslovom da je poznata kategorija <span class="math notranslate nohighlight">\(C_k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}p(x_i \mid C_k, x_j) = p(x_i \mid C_k) \\
 p(x_i \mid C_k, x_j, x_k) = p(x_i \mid C_k) \\
 p(x_i \mid C_k, x_j, x_k, x_l) = p(x_i \mid C_k)\end{split}\]</div>
 <p>i tako dalje, za sve <span class="math notranslate nohighlight">\(i \neq j, k, l\)</span>.</p>
-<p>Na osnovu prethodnih koraka, matematičku strukturu modela naivnog Bajesovog klasifikatora možemo definisati na sledeći način:</p>
+<p>Uz pretpostavku o <em>uslovnoj nezavisnosti atributa</em>, matematičku strukturu modela naivnog Bajesovog klasifikatora možemo definisati na sledeći način:</p>
 <div class="math notranslate nohighlight">
 \[p(C_k \mid x_1, \dots, x_n) \propto p(C_k, x_1, \dots, x_n) = p(C_k) \, p(x_1 \mid C_k) \, p(x_2 \mid C_k) \, p(x_3 \mid C_k) \cdots = p(C_k) \prod_{i=1}^{n} p(x_i \mid C_k).\]</div>
 <p>Koristimo simbol proporcionalnosti <span class="math notranslate nohighlight">\(\propto\)</span> jer se u proračunu oslanjamo na aproksimaciju; kao što je ranije istaknuto, imenilac <span class="math notranslate nohighlight">\(P(x)\)</span> je fiksiran za datu instancu podataka, on ne utiče na relativni poredak aposteriornih verovatnoća <span class="math notranslate nohighlight">\(P(C_k \mid x)\)</span>, a samim tim ni na izbor optimalne klase.</p>
@@ -722,7 +708,7 @@ p(x_i \mid C_k, x_j, x_k, x_l) = p(x_i \mid C_k)\end{split}\]</div>
 <p class="admonition-title">Algoritam Bajesovog klasifikatora</p>
 <ol class="arabic simple">
 <li><p>Izračunavanje a priori verovatnoće za svaku klasu: <span class="math notranslate nohighlight">\(P(C_k)\)</span></p></li>
-<li><p>Izračunavanje verovatnoće atributa uz poznatu klasu (likelihood) za svako obeležje:  <span class="math notranslate nohighlight">\(P(X_i \mid C_k)\)</span></p></li>
+<li><p>Izračunavanje verovatnoće atributa uz poznatu klasu za svako obeležje:  <span class="math notranslate nohighlight">\(P(X_i \mid C_k)\)</span></p></li>
 <li><p>Množenje verovatnoće atributa sa prior verovatnoćom kako bi se dobila posteriorna verovatnoća: <span class="math notranslate nohighlight">\(P(C_k \mid X_1, X_2, \dots, X_n)\)</span></p></li>
 <li><p>Izbor klase sa najvećom verovatnoćom kao konačne odluke klasifikatora.</p></li>
 </ol>
@@ -752,31 +738,37 @@ p(x_i \mid C_k, x_j, x_k, x_l) = p(x_i \mid C_k)\end{split}\]</div>
 <p><strong>Tipovi naivnog Bajesovog klasifikatora</strong></p>
 <p>Postoji više varijanti naivnog Bajesovog klasifikatora, koje se međusobno razlikuju u zavisnosti od pretpostavljene distribucije ulaznih podataka i od tipa obeležja (neprekidna, diskretna ili binarna).</p>
 <ul>
-<li><p><strong>Gausov naivni Bajes</strong> (engl. Naive Gaussian Bayes classifier)
+<li><p><strong>Gausov naivni Bajes</strong>
 Ovaj model se primenjuje u slučajevima kada su atributi neprekidne promenljive, koje prate normalnu (Gausovu) raspodelu unutar svake klase. Važno je naglasiti da je ovaj model zasnovan na pretpostavci o podacima da svaki atribut potiče iz uslovne Gausove raspodele karakteristične za odgovarajuću klasu. Gausov Naivni Bajess pristupa analizi tako što podatke prvo grupiše prema klasama. Zasvaku klasu <span class="math notranslate nohighlight">\(c\)</span> vrši procena parametara normalne raspodele: izračunava se srednja vrednost <span class="math notranslate nohighlight">\(\mu_c\)</span> i varijansa <span class="math notranslate nohighlight">\(\sigma_c^2\)</span>. Ovi parametri nam omogućavaju da definišemo Gaussovu funkciju gustine za svaku klasu.</p>
 <p>Za novu instancu <span class="math notranslate nohighlight">\(\tilde{x}\)</span>, model primenjuje funkciju gustine verovatnoće normalne raspodele kako bi procenio verovatnoću da posmatrana vrednost pripada određenoj klasi klasi <span class="math notranslate nohighlight">\(C_k\)</span>:</p>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight">
+<div class="math notranslate nohighlight">
 \[\begin{equation*}p(\tilde{x} \mid C_k) = \frac{1}{\sqrt{2 \pi \sigma_{c_k}^2}} e^{-\frac{(\tilde{x} - {\mu_{c_k})^2}}{2 \sigma_{c_k}^2}}.\end{equation*}\]</div>
-<p>Gausov naivni Bajes se široko primenjuje zbog jednostavne implementacije i dobrih performansi na manjim skupovima podataka. Njegova snaga najviše dolazi do izražaja kod atributa koji prate normalnu raspodelu, kao što su starost, cena ili biološki markeri. Upravo zato se ovaj model uspešno primenjuje u oblastima poput finansijske analize, biometrije i medicinske dijagnostike, itd.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Gausov naivni Bajes se široko primenjuje zbog jednostavne implementacije i dobrih performansi na manjim skupovima podataka. Njegova snaga najviše dolazi do izražaja kod atributa koji prate normalnu raspodelu, kao što su starost, cena ili biološki markeri. Upravo zato se ovaj model uspešno primenjuje u oblastima poput finansijske analize, biometrije i medicinske dijagnostike, itd. 
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Multinomijalni (Multinomial) naivni Bajes</strong><br />
+Multinomijalni model nudi rešenje za klasifikaciju podataka koji nisu numerički (poput teksta ili kategorija), tako što ih transformiše u formate pogodne za statističku obradu. Koristi se za rad sa diskretnim podacima, npr. kada radimo sa tekstualnim podacima, pa atributi kvantifikuju pojavljivanje reči. Ovaj model se primenjuje u slučajevima kada atributi predstavljaju frekvencije ili broj pojavljivanja elementa u posmatranom skupu. Sam naziv modela reflektuje njegove ključne karakteristike: termin „naivni” odnosi se na pretpostavku o međusobnoj nezavisnosti atributa (poput reči u tekstu), dok „multinomijalni” ukazuje na to da model uzima u obzir učestalost njihovog pojavljivanja. Klasifikacija se vrši na osnovu poređenja frekvencija reči u različitim grupama. Izračunavanje verovatnoće pripadnosti poruke određenoj klasi u ovom modelu direktno se oslanja na multinomijalnu raspodelu:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{equation*}p(x \mid C_k) = \frac{\left(\sum_i x_i\right)!}{\prod_i x_i!} \prod_i p_{ki}^{\,x_i}.\end{equation*}\]</div>
+<p>Multinomijalni Naivni Bajes omogućava izuzetno brzu klasifikaciju teksta. Upravo ga ta efikasnost čini jednim od najpraktičnijih rešenja za širok spektar aplikacija u okviru veštačke inteligencije i mašinskog učenja. Njegova praktična vrednost najviše dolazi do izražaja u sferi obrade prirodnih jezika, gde se uspešno primenjuje za filtriranje nepoželjne elektronske pošte (spam-a), analizu sentimenta u recenzijama korisnika, kao i za automatsko razvrstavanje novinskih članaka ili obimne pravne dokumentacije u tematske kategorije.</p>
 <ul>
-<li><p><strong>Multinomni (Multinomial) naivni Bajes</strong><br />
-Multinomijalni model nudi rešenje za klasifikaciju podataka koji nisu numerički (poput teksta ili kategorija), tako što ih transformiše u formate pogodne za statističku obradu. Koristi se za rad sa diskretnim podacima, npr. kada radimo sa tekstualnim podacima, pa atributi kvantifikuju pojavljivanje reči. Ovaj model se primenjuje u slučajevima kada atributi predstavljaju frekvencije ili broj pojavljivanja elementa u posmatranom skupu. Sam naziv modela reflektuje njegove ključne karakteristike: termin „naivni” odnosi se na pretpostavku o međusobnoj nezavisnosti atributa (poput reči u tekstu), dok „multinomijalni” ukazuje na to da model uzima u obzir učestalost njihovog pojavljivanja. Klasifikacija se vrši na osnovu poređenja frekvencija reči u različitim grupama. Izračunavanje verovatnoće pripadnosti poruke određenoj klasi u ovom modelu direktno se oslanja na multinomijalnu raspodelu:
-\begin{equation*}p(x \mid C_k) = \frac{\left(\sum_i x_i\right)!}{\prod_i x_i!} \prod_i p_{ki}^{,x_i}.\end{equation*}
-Multinomijalni Naivni Bajes omogućava izuzetno brzu klasifikaciju teksta. Upravo ga ta efikasnost čini jednim od najpraktičnijih rešenja za širok spektar aplikacija u okviru veštačke inteligencije i mašinskog učenja. Njegova praktična vrednost najviše dolazi do izražaja u sferi obrade prirodnih jezika, gde se uspešno primenjuje za filtriranje nepoželjne elektronske pošte (spam-a), analizu sentimenta u recenzijama korisnika, kao i za automatsko razvrstavanje novinskih članaka ili obimne pravne dokumentacije u tematske kategorije.</p></li>
 <li><p><strong>Bernulijev (Bernoulli) naivni Bajes</strong></p>
-<p>Ovaj model se primenjuje u slučajevima kada su atributi binarne prirode, odnosno kada označavaju prisustvo ili odsustvo određene karakteristike. Tipično se koristi za binarnu klasifikaciju teksta zasnovanu na prisustvu ili odsustvu specifičnih termina unutar dokumenta, reč se u dokumentu ili pojavljuje ili ne. Dok multinomijalni model prati kvantitet, Bernulijev model se fokusira na samu pojavu termina ili odsustvo instance. Upravo zbog toga što modeluje i ono one koji nisu prisutni u datoj tekstu, ovaj model se pokazao kao izuzetno rešenje za klasifikaciju kratkih formi, poput naslova ili kratkih poruka. Neka je <span class="math notranslate nohighlight">\(x_i\)</span> logička promenljiva koja označava prisustvo ili odsustvo <span class="math notranslate nohighlight">\(i\)</span>-te reči iz rečnika, i neka je <span class="math notranslate nohighlight">\(p_{ki}\)</span> verovatnoća da klasa <span class="math notranslate nohighlight">\(C_k\)</span> generiše termin <span class="math notranslate nohighlight">\(w_i\)</span>, tada:
-\begin{equation*}p(x \mid C_k) = \prod_{i=1}^{n} p_{ki}^{,x_i} (1 - p_{ki})^{(1 - x_i)}.\end{equation*}
-Bernulijev naivni Bajes odlikuje niz prednosti: jednostavan je za implementaciju, algoritamska efikasanost omogućava veliku brzinu rada čak i pri obradi visokodimenzionalnih podataka, robusan na malim uzorcima i minimalnim memorijskim zahtevima. U obradi prirodnog jezika, on se izdvaja kao pouzdano rešenje koje često prevazilazi očekivanja u pogledu tačnosti predikcije i neretko parira znatno kompleksnijim metodama.</p>
+<p>Ovaj model se primenjuje u slučajevima kada su atributi binarne prirode, odnosno kada označavaju prisustvo ili odsustvo određene karakteristike. Tipično se koristi za binarnu klasifikaciju teksta zasnovanu na prisustvu ili odsustvu specifičnih termina unutar dokumenta, reč se u dokumentu ili pojavljuje ili ne. Dok multinomijalni model prati kvantitet, Bernulijev model se fokusira na samu pojavu termina ili odsustvo instance. Upravo zbog toga što modeluje i ono one koji nisu prisutni u datoj tekstu, ovaj model se pokazao kao izuzetno rešenje za klasifikaciju kratkih formi, poput naslova ili kratkih poruka. Neka je <span class="math notranslate nohighlight">\(x_i\)</span> logička promenljiva koja označava prisustvo ili odsustvo <span class="math notranslate nohighlight">\(i\)</span>-te reči iz rečnika, i neka je <span class="math notranslate nohighlight">\(p_{ki}\)</span> verovatnoća da klasa <span class="math notranslate nohighlight">\(C_k\)</span> generiše termin <span class="math notranslate nohighlight">\(w_i\)</span>, tada:</p>
 </li>
 </ul>
+<div class="math notranslate nohighlight">
+\[ \begin{equation*}p(x \mid C_k) = \prod_{i=1}^{n} p_{ki}^{\,x_i} (1 - p_{ki})^{(1 - x_i)}.\end{equation*}\]</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Bernulijev naivni Bajes odlikuje niz prednosti: jednostavan je za implementaciju, algoritamska efikasanost omogućava veliku brzinu rada čak i pri obradi visokodimenzionalnih podataka, robusan na malim uzorcima i minimalnim memorijskim zahtevima. U obradi prirodnog jezika, on se izdvaja kao pouzdano rešenje koje često prevazilazi očekivanja u pogledu tačnosti predikcije i neretko parira znatno kompleksnijim metodama.
+</pre></div>
+</div>
 <p>Koju ćemo varijantu algoritma primeniti, uslovljeno je samim karakterom podataka i statističkom distribucijom atributa uključenih u proces obučavanja.</p>
 <p><em>Implementacija naivnog Bajesovog klasifikatora u Scikit-learn</em></p>
 <p>U okviru biblioteke <em>Scikit-learn</em>, postoje već gotove implementacije za sva tri nabrojana Bajesovog klasifikatora, naime: implementacija <em>GaussianNB</em> za Gausov naivni Bajes, implementacija <em>BernoulliNB</em> za Multinomni naivni Bajes i implementacija <em>MultinomialNB</em> za Bernulijev naivni Bajes. Dok je GaussianNB univerzalan za numeričke podatke, BernoulliNB i MultinomialNB se prvenstveno koriste u klasifikaciji tekstualnih podataka.</p>
 <p>Osnovna razlika između varijanti naivnog Bajesovog algoritma proističe iz načina na koji modeli interpretiraju ulazne atribute. BernoulliNB se fokusira na binarnu prisutnost obeležja, tj. na prisustvo ili odsustvo karakteristike. MultinomialNB uzima u obzir intenzitet ili broj ponavljanja svakog obeležja, model izračunava prosečnu vrednost za svaki atribut po klasama. GaussianNB je prilagođen složenijim distribucijama, i pored prosečne vrednosti, on skladišti i standardnu devijaciju svakog obeležja po klasama.</p>
-<p><em>Napomena o diskretizaciji (Bining)</em></p>
-<p>U radu sa kontinuiranim atributima, često se kontinuirani podaci pretvaraju u kategorije (engl. binning) kako bi se mogli koristiti kao binarne varijable. Iako neki izvori tvrde da je to obavezno za Naive Bayes, to je zapravo zabluda. Glavni nedostatak ove prakse je potencijalno odbacivanje značajnih informacija koje su sadržane u originalnim, kontinuiranim distribucijama.</p>
 <p><em>Razlika između Naivnih Bajesovih modela</em></p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -801,6 +793,8 @@ Bernulijev naivni Bajes odlikuje niz prednosti: jednostavan je za implementaciju
 </tbody>
 </table>
 </div>
+<p><em>Napomena o diskretizaciji</em></p>
+<p>U radu sa kontinuiranim atributima, često se kontinuirani podaci pretvaraju u kategorije (engl. binning) kako bi se mogli koristiti kao binarne varijable. Iako neki izvori tvrde da je to obavezno za Naive Bayes, to je zapravo zabluda. Glavni nedostatak ove prakse je potencijalno odbacivanje značajnih informacija koje su sadržane u originalnim, kontinuiranim distribucijama.</p>
 </section>
 <section id="procena-a-priori-verovatnoca">
 <h2>Procena <em>a priori</em> verovatnoća</h2>
@@ -984,15 +978,13 @@ Uprkos svojoj jednostavnosti i ’naivnim’ pretpostavkama na kojima počiva, o
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 400 entries, 0 to 399
 Data columns (total 5 columns):
- #   Column           Non-Null Count  Dtype 
----  ------           --------------  ----- 
- 0   User ID          400 non-null    int64 
- 1   Gender           400 non-null    object
- 2   Age              400 non-null    int64 
- 3   EstimatedSalary  400 non-null    int64 
- 4   Purchased        400 non-null    int64 
+User ID            400 non-null int64
+Gender             400 non-null object
+Age                400 non-null int64
+EstimatedSalary    400 non-null int64
+Purchased          400 non-null int64
 dtypes: int64(4), object(1)
-memory usage: 15.8+ KB
+memory usage: 15.7+ KB
 </pre></div>
 </div>
 </div>
@@ -1279,13 +1271,13 @@ Nakon izvršenih promena u okviru predobrade, ponovo pozivamo funkciju <code cla
 <p>Numeričko kodiranje omogućava konverziju kategoričkih podataka u brojeve.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">LabelEncoder()</span></code>: Inicijalizuje objekat zadužen za mapiranje tekstualnih kategorija u celobrojne vrednosti.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">le.fit_transform(df_net['Gender'])</span></code>:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">le.fit_transform(baza['Gender'])</span></code>:</p>
 <ul>
 <li><p>metoda <code class="docutils literal notranslate"><span class="pre">fit</span></code> identifikuje jedinstvene kategorije u koloni <code class="docutils literal notranslate"><span class="pre">Gender</span> <span class="pre">(Male,</span> <span class="pre">Female)</span></code>,</p></li>
 <li><p>metoda <code class="docutils literal notranslate"><span class="pre">transform</span></code> svakoj kategoriji dodeljuje odgovarajuću numeričku oznaku (npr. <code class="docutils literal notranslate"><span class="pre">Female</span></code> → <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">Male</span></code> → <code class="docutils literal notranslate"><span class="pre">1</span></code>).</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df_net[Gender]</span> <span class="pre">=</span> <span class="pre">...</span></code>: Rezultat transformacije vraćamo nazad u kolonu <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, čime smo trajno ažurirali tabelu za potrebe modeliranja.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">baza[Gender]</span> <span class="pre">=</span> <span class="pre">...</span></code>: Rezultat transformacije vraćamo nazad u kolonu <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, čime smo trajno ažurirali tabelu za potrebe modeliranja.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1310,10 +1302,10 @@ Nakon izvršenih promena u okviru predobrade, ponovo pozivamo funkciju <code cla
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1c3f72a5ef0&gt;
 </pre></div>
 </div>
-<img alt="_images/8f627b18e25daa68cc261356f95b0352764da5309b8a39615a18e98cd0fd5687.png" src="_images/8f627b18e25daa68cc261356f95b0352764da5309b8a39615a18e98cd0fd5687.png" />
+<img alt="_images/4e95c64fdbb96e3d5f9d7ba56e43ab99a5d3ecf0a35bf8be03e91968a18fe671.png" src="_images/4e95c64fdbb96e3d5f9d7ba56e43ab99a5d3ecf0a35bf8be03e91968a18fe671.png" />
 </div>
 </div>
 <p>Matrica korelacije pokazuje da atribut <code class="docutils literal notranslate"><span class="pre">Gender</span></code> ne ostvaruje značajnu korelaciju sa ostalim atributima, pa ga možemo isključiti iz daljeg procesa modeliranja.</p>
@@ -1394,8 +1386,8 @@ Nakon izvršenih promena u okviru predobrade, ponovo pozivamo funkciju <code cla
 <p>U ovom koraku koristeći poziciono indeksiranje, preciznije metodu <code class="docutils literal notranslate"><span class="pre">.iloc</span></code> iz biblioteke <em>pandas</em>, vršimo podelu kompletnog skupa  na: ulazne (nezavisne) promenljive <span class="math notranslate nohighlight">\(X\)</span>, koje služe kao ulazni parametri za obučavanje modela i na osnovu kojih model uči kako da klasifikuje nove, nepoznate uzorke, i zavisnu ciljnu promenljivu <span class="math notranslate nohighlight">\(y\)</span>.
 <em>Objašnjenje:</em></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">df_net.iloc[:,</span> <span class="pre">:-1]</span></code>: selektuje sve redove i sve kolone osim poslednje kako bi se izdvojile nezavisne promenljive.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">df_net.iloc[:,</span> <span class="pre">-1]</span></code>: selektuje sve redove i samo poslednju kolonu kako bi se izdvojila zavisna promenljiva.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">baza.iloc[:,</span> <span class="pre">:-1]</span></code>: selektuje sve redove i sve kolone osim poslednje kako bi se izdvojile nezavisne promenljive.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">baza.iloc[:,</span> <span class="pre">-1]</span></code>: selektuje sve redove i samo poslednju kolonu kako bi se izdvojila zavisna promenljiva.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">.values</span></code>: pretvara  strukturu podataka u <em>NumPy niz</em> kako bi se osigurala kompatibilnost sa bibliotekom <em>scikit-learn</em>.</p></li>
 </ul>
 <div class="cell docutils container">
@@ -1408,9 +1400,8 @@ Nakon izvršenih promena u okviru predobrade, ponovo pozivamo funkciju <code cla
 </div>
 <p><em>Podela na trening i test skup</em></p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>: funkcija koja deli ulazne podatke na trening i test podskup, čime omogućava objektivnu procenu performansi modela.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">train_test_split</span></code>: funkcija koja deli ulazne podatke na trening i test podskup, vraća četiri podskupa <code class="docutils literal notranslate"><span class="pre">X_train,</span> <span class="pre">X_test,</span> <span class="pre">y_train,</span> <span class="pre">y_test</span></code>.</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">X_train,</span> <span class="pre">X_test,</span> <span class="pre">y_train,</span> <span class="pre">y_test</span></code>: funkcija vraća četiri podskupa kako bi se razdvojio proces učenja od procesa evaluacije.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">X_train</span></code> i <code class="docutils literal notranslate"><span class="pre">y_train</span></code> čine trening skup na kojem model „uči“ obrasce iz podataka; <code class="docutils literal notranslate"><span class="pre">X_train</span></code> predstavlja skup nezavisnih promenljivih, dok je <code class="docutils literal notranslate"><span class="pre">y_train</span></code> skup zavisnih promenljivih (stvarne ciljne vrednosti) koje mu odgovaraju.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">X_test</span></code> i <code class="docutils literal notranslate"><span class="pre">y_test</span></code> služe za proveru preciznosti modela na neviđenim podacima; na osnovu <code class="docutils literal notranslate"><span class="pre">X_test</span></code> skupa model vrši predviđanja, koja se potom porede sa stvarnim ishodima u <code class="docutils literal notranslate"><span class="pre">y_test</span></code> skupu.</p></li>
 </ul>
@@ -1428,14 +1419,14 @@ Nakon izvršenih promena u okviru predobrade, ponovo pozivamo funkciju <code cla
 <p><em>Standardizacija numeričkih varijabli</em></p>
 <p>Iako naivni Bajes tretira svaki atribut nezavisno, standardizacija osigurava da atributi sa prirodno većim numeričkim vrednostima ne dominiraju vizuelno ili računski nad ostalima, čime se postiže stabilnije učenje i lakša interpretacija modela. Standardizacijom se numerički podaci transformišu tako da je srednja vrednost 0, a standardna devijacija 1, što obezbeđuje uporedivost svih karakteristika u skupu.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">sc</span> <span class="pre">=</span> <span class="pre">StandardScaler()</span></code> – inicijalizuje se objekat klase <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> pod nazivom <code class="docutils literal notranslate"><span class="pre">sc</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X_train</span> <span class="pre">=</span> <span class="pre">sc.fit_transform(X_train)</span></code> – ova operacija kombinuje dva koraka:</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">sc</span> <span class="pre">=</span> <span class="pre">StandardScaler()</span></code>: inicijalizuje se objekat klase <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> pod nazivom <code class="docutils literal notranslate"><span class="pre">sc</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_train</span> <span class="pre">=</span> <span class="pre">sc.fit_transform(X_train)</span></code>: ova operacija kombinuje dva koraka:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">fit</span></code> identifikuje aritmetičku sredinu i standardnu devijaciju trening skupa.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">transform</span></code> koristi te parametre kako bi modifikovao <code class="docutils literal notranslate"><span class="pre">X_train</span></code> i doveo vrednosti na zajedničku skalu.</p></li>
 </ul>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X_test</span> <span class="pre">=</span> <span class="pre">sc.transform(X_test)</span></code> – nad testnim skupom se vrši transformacija isključivo na osnovu parametara (srednje vrednosti i devijacije) koji su prethodno izračunati na trening skupu, čime se sprečava „curenje” informacija iz testnog u trening skup.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_test</span> <span class="pre">=</span> <span class="pre">sc.transform(X_test)</span></code>: nad testnim skupom se vrši transformacija isključivo na osnovu parametara (srednje vrednosti i devijacije) koji su prethodno izračunati na trening skupu, čime se sprečava „curenje” informacija iz testnog u trening skup.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1447,18 +1438,18 @@ Nakon izvršenih promena u okviru predobrade, ponovo pozivamo funkciju <code cla
 </div>
 </div>
 <p><em>Treniranje modela</em></p>
-<p>Prvo inicijalizujemo model klase <code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code> pod nazivom <code class="docutils literal notranslate"><span class="pre">classifier</span></code>. Pozivom metode <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> na trening skupu (<code class="docutils literal notranslate"><span class="pre">X_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>), model prolazi kroz fazu obuke tokom koje uči da povezuje atribute sa ciljnom promenljivom.</p>
+<p>Prvo inicijalizujemo model klase <code class="docutils literal notranslate"><span class="pre">GaussianNB</span></code> pod nazivom <code class="docutils literal notranslate"><span class="pre">klasifikator</span></code>. Pozivom metode <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> na trening skupu (<code class="docutils literal notranslate"><span class="pre">X_train</span></code>, <code class="docutils literal notranslate"><span class="pre">y_train</span></code>), model prolazi kroz fazu obuke tokom koje uči da povezuje atribute sa ciljnom promenljivom.</p>
 <p>U ovoj fazi klasifikator identifikuje strukturu i zakonitosti u podacima, čime se formira model spreman za pouzdano predviđanje nad novim, neviđenim instancama.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">klasifikator</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">klasifikator</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
      
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB()
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB(priors=None, var_smoothing=1e-09)
 </pre></div>
 </div>
 </div>
@@ -1471,7 +1462,7 @@ Nakon izvršenih promena u okviru predobrade, ponovo pozivamo funkciju <code cla
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">klasifikator</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">y_pred</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y_test</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">),</span> <span class="mi">1</span><span class="p">)),</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1593,18 +1584,18 @@ Ova metrika posmatra ceo skup podataka kao jedinstvenu celinu. Zasniva se na uku
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Classification Report: </span><span class="se">\n</span><span class="si">{</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Izveštaj o klasifikaciji: </span><span class="se">\n</span><span class="si">{</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="w"> </span><span class="n">y_pred</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classification Report: 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Izveštaj o klasifikaciji: 
               precision    recall  f1-score   support
 
            0       0.88      0.88      0.88        58
            1       0.83      0.83      0.83        42
 
-    accuracy                           0.86       100
+   micro avg       0.86      0.86      0.86       100
    macro avg       0.86      0.86      0.86       100
 weighted avg       0.86      0.86      0.86       100
 </pre></div>
@@ -1637,8 +1628,8 @@ weighted avg       0.86      0.86      0.86       100
 </div>
 </div>
 </div>
-<p><em>Vizuelizacija mreže tačaka</em><br />
-U nastavku se kreira mreža tačaka koja pokriva celokupan koordinatni sistem kako bi model za svaku tačku predvideo pripadnost određenoj klasi. Matrice <code class="docutils literal notranslate"><span class="pre">X1</span></code> i <code class="docutils literal notranslate"><span class="pre">X2</span></code> redstavljaju sve moguće kombinacije vrednosti prve i druge osobine, kao što su starost i procenjena plata. Korišćenjem izraza <code class="docutils literal notranslate"><span class="pre">X_set[:,</span> <span class="pre">0]</span></code> i <code class="docutils literal notranslate"><span class="pre">X_set[:,</span> <span class="pre">1]</span></code> pristupamo vrednostima ovih karakteristika u skupu podataka.</p>
+<p><em>Vizuelizacija mreže tačaka</em></p>
+<p>U nastavku se kreira mreža tačaka koja pokriva celokupan koordinatni sistem kako bi model za svaku tačku predvideo pripadnost određenoj klasi. Matrice <code class="docutils literal notranslate"><span class="pre">X1</span></code> i <code class="docutils literal notranslate"><span class="pre">X2</span></code> redstavljaju sve moguće kombinacije vrednosti prve i druge osobine, kao što su starost i procenjena plata. Korišćenjem izraza <code class="docutils literal notranslate"><span class="pre">X_set[:,</span> <span class="pre">0]</span></code> i <code class="docutils literal notranslate"><span class="pre">X_set[:,</span> <span class="pre">1]</span></code> pristupamo vrednostima ovih karakteristika u skupu podataka.</p>
 <ul class="simple">
 <li><p>Proširenjem opsega na obe ose (<code class="docutils literal notranslate"><span class="pre">-10/+10</span></code> za prvu osobinu i <code class="docutils literal notranslate"><span class="pre">-1000/+1000</span></code> za drugu) kreiramo dovoljno prostora da se jasno iscrta granica odlučivanja.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">np.arange(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code>: kreira niz vrednosti sa zadatim korakom i zadatim početnom i krajnjom tačkom.</p></li>
@@ -1659,7 +1650,7 @@ Ova funkcija vizuelizuje granice klasifikacije tako što boji pozadinu grafikona
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">X1.ravel(),</span> <span class="pre">X2.ravel()</span></code>: pretvaraju dvodimenzionalne matrice u jednodimenzionalne nizove kako bi se kreirala lista svih koordinata u prostoru.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">sc.transform(...)</span></code>: skalira tačke mreže kroz isti proces skaliranja kao i podaci za obuku, jer je model obučen na skaliranim podacima.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">classifier.predict(...).reshape(X1.shape)</span></code>: model predviđa klasu za svaku tačku, a <code class="docutils literal notranslate"><span class="pre">reshape</span></code> reoblikuju u format matrice koji odgovara dimenzijama grafikona.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">klasifikator.predict(...).reshape(X1.shape)</span></code>: model predviđa klasu za svaku tačku, a <code class="docutils literal notranslate"><span class="pre">reshape</span></code> reoblikuju u format matrice koji odgovara dimenzijama grafikona.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">0.8</span></code> – kontroliše intenzitet providnosti</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cmap</span> <span class="pre">=</span> <span class="pre">ListedColormap(...)</span></code>: definiše boje; crvena za klasu 0, zelena za klasu 1.</p></li>
 </ul>
@@ -1684,7 +1675,7 @@ Dok <code class="docutils literal notranslate"><span class="pre">contourf</span>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">X2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X1</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">klasifikator</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">X2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X1</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
              <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">((</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">X1</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X1</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X2</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
@@ -1702,13 +1693,19 @@ Dok <code class="docutils literal notranslate"><span class="pre">contourf</span>
 <img alt="_images/af273432f0261eb87202b24db5cac642c53a9e17b07a6bd5daf46da4f5cc6bc9.png" src="_images/af273432f0261eb87202b24db5cac642c53a9e17b07a6bd5daf46da4f5cc6bc9.png" />
 </div>
 </div>
+<p>Vizuelizacija granice odlučivanja prikazuje kako je klasifikator podelio prostor obeležja:</p>
+<ul class="simple">
+<li><p>crvena zona obuhvata deo površine koji klasifikator označava kao klasu 0 (korisnik nije izvršio kupovinu)</p></li>
+<li><p>zelena zona obuhvata deo površine koji klasifikator označava kao klasu 1 (korisnik je izvršio kupovinu)</p></li>
+</ul>
+<p>Na grafiku se primećuje da pojedine zelene tačke pripadaju crvenoj zoni i obrnuto, što predstavlja instance koje je model pogrešno predvideo. Ipak, na osnovu opšteg prikaza vidimo da je klasifikator većinu tačaka ispravno klasifikovao, uspešno prateći trendove u podacima.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize prediction results on test set</span>
 <span class="n">X_set</span><span class="p">,</span> <span class="n">y_set</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span> <span class="n">y_test</span>
 <span class="n">X1</span><span class="p">,</span> <span class="n">X2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="n">X_set</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">10</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">X_set</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span>
                      <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span> <span class="o">=</span> <span class="n">X_set</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">stop</span> <span class="o">=</span> <span class="n">X_set</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">X2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X1</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X1</span><span class="p">,</span> <span class="n">X2</span><span class="p">,</span> <span class="n">klasifikator</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">sc</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X1</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">X2</span><span class="o">.</span><span class="n">ravel</span><span class="p">()])</span><span class="o">.</span><span class="n">T</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">X1</span><span class="o">.</span><span class="n">shape</span><span class="p">),</span>
              <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.75</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">((</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;green&#39;</span><span class="p">)))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">X1</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X1</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">X2</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X2</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
@@ -1924,7 +1921,6 @@ d) Normalizacija podataka</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ciljevi-i-ishodi-ucenja">Ciljevi i ishodi učenja</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#naivni-bajesov-klasifikator-kao-model-uslovne-verovatnoce">Naivni Bajesov klasifikator kao model uslovne verovatnoće</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procena-a-priori-verovatnoca">Procena <em>a priori</em> verovatnoća</a></li>

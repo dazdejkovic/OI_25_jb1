@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -200,7 +200,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo I - Osnove Pajtona</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="OI_25_01_Osnove.html">Deo I: Osnove programiranja u Pajtonu</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="OI_25_02_Python_instalacija.html">Pajton okruženje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_03_Elementi_Pajtona.html">Osnovni elementi Pajton jezika</a></li>
 <li class="toctree-l2"><a class="reference internal" href="OI_25_04_logicke_input.html">Logičke promenljive</a></li>
@@ -216,14 +216,15 @@
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_26_01_Regularni_izrazi.html">Regularni izrazi</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funkcije</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
 <ul class="nav bd-sidenav">
@@ -1779,11 +1780,6 @@ gde je <span class="math notranslate nohighlight">\(m\)</span> masa osobe u kilo
     <span class="k">return</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ako imate </span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s1"> kilograma i visoki ste </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s1"> metra, Vaš indeks telesne mase je </span><span class="si">{</span><span class="n">bmi</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 
 <span class="n">bmi</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ako imate 78.0 kilograma i visoki ste 1.67 metra, Vaš indeks telesne mase je 28.0.
 </pre></div>
 </div>
 </div>

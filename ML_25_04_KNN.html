@@ -32,10 +32,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/captions.css?v=af2bca21" />
     <link rel="stylesheet" type="text/css" href="_static/korice.css?v=c2bbcade" />
@@ -216,14 +216,15 @@
 <li class="toctree-l2"><a class="reference internal" href="OI_25_08_moduli.html">Moduli</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="OI_25_09_torke_skupovi_recnici.html">Torke, skupovi i rečnici</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OI_26_01_Regularni_izrazi.html">Regularni izrazi</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_10_naredbe_grananja.html">Naredbe grananja</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_11_petlje.html">Petlje</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_12_funkcije.html">Funkcije</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_14_rad_sa_datotekama.html">Rad sa datotekama</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_15_upravljanje_greskama.html">Upravljanje greškama</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OI_25_16_klase.html">Klase</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Deo II - Primena Pajtona u Operacionim istraživanjima</span></p>
 <ul class="nav bd-sidenav">
@@ -438,19 +439,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-iz-prakse-optimizacija-logistickih-resursa-pomocu-knn-algoritma">Primer iz prakse: Optimizacija logističkih resursa pomoću KNN algoritma</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metrike-udaljenosti">Metrike udaljenosti</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skaliranje-podataka-za-knn-standardizacija-i-normalizacija">SKALIRANJE PODATAKA ZA KNN: STANDARDIZACIJA I NORMALIZACIJA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skaliranje-podataka-za-knn-standardizacija-i-normalizacija">Skaliranje podataka za KNN: standardizacija i normalizacija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analiza-parametra-k-i-njegova-uloga-u-stabilnosti-modela">Analiza parametra <span class="math notranslate nohighlight">\(k\)</span> i njegova uloga u stabilnosti modela</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tezinski-ponderisani-knn-algoritam">Težinski (ponderisani) KNN algoritam</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-knn-algoritma">Prednosti i mane KNN algoritma</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-knn-algoritma">Prednosti KNN algoritma</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mane-knn-algoritma">Mane KNN algoritma</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritam-k-najblizih-suseda-za-problem-klasifikacije">Algoritam k-najbližih suseda za problem klasifikacije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-knn-algoritma">Prednosti i mane KNN algoritma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticna-implementacija-knn-algoritma-pomocu-scikit-learn-biblioteke">Praktična implementacija KNN algoritma pomoću <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> biblioteke</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predvidanje-i-evaluacija-performansi-modela">Predviđanje i evaluacija performansi modela</a></li>
@@ -556,31 +549,14 @@ observer.observe(document.body, {
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="algoritam-k-najblizih-suseda">
 <h1>Algoritam k-najbližih suseda</h1>
-<div class="note admonition">
-<p class="admonition-title">Ciljevi</p>
+<p>Algoritam k-najbližih suseda predstavlja jednostavnu i intuitivnu metodu u nadgledanom učenju koja donosi odluke na osnovu sličnosti između podataka. Zasniva se na pretpostavci da slični primeri imaju slične izlazne vrednosti, pa se novi primer klasifikuje ili procenjuje prema njegovim najbližim susedima u prostoru karakteristika.</p>
+<p><strong>Ishodi učenja</strong>: Nakon proučavanja ovog poglavlja student će biti u stanju da:</p>
 <ul class="simple">
-<li><p>Upoznati osnovni princip rada algoritma <strong>k-najbližih suseda (k-NN)</strong>.</p></li>
-<li><p>Objasniti koncept <strong>sličnosti</strong> i značaj <strong>mere rastojanja</strong> u procesu klasifikacije i regresije.</p></li>
-<li><p>Predstaviti uticaj parametra <strong>k</strong> na performanse modela.</p></li>
-<li><p>Analizirati prednosti i ograničenja algoritma.</p></li>
-<li><p>Prikazati primenu algoritma u <strong>klasifikacionim</strong> i <strong>regresionim</strong> zadacima.</p></li>
-<li><p>Upoznati postupak implementacije algoritma korišćenjem biblioteke <strong>scikit-learn</strong>.</p></li>
-<li><p>Razumeti značaj <strong>normalizacije podataka</strong> u radu algoritma k-NN.</p></li>
+<li><p>Objasni princip rada algoritma k-najbližih suseda.</p></li>
+<li><p>Implementira algoritma k-najbližih suseda na konkretnom skupu podataka u programskom jeziku Pajton.</p></li>
+<li><p>Izvrši evaluaciju modela korišćenjem odgovarajućih metrika evaluacije.</p></li>
+<li><p>Prepozna situacije u kojima je algoritam k-najbližih suseda pogodan, kao i njegove potencijalne nedostatke.</p></li>
 </ul>
-</div>
-<div class="note admonition">
-<p class="admonition-title">Ishodi učenja</p>
-<p>Po završetku ove nastavne jedinice student će biti sposoban da:</p>
-<ul class="simple">
-<li><p>Objasni princip rada algoritma <strong>k-najbližih suseda</strong>.</p></li>
-<li><p>Definiše i primeni različite <strong>mere rastojanja</strong> (npr. Euklidsko rastojanje) u zavisnosti od problema.</p></li>
-<li><p>Izabere odgovarajuću vrednost parametra <strong>k</strong> i obrazloži njen uticaj na model.</p></li>
-<li><p>Primeni algoritam k-NN na konkretnom skupu podataka za <strong>klasifikaciju</strong> ili <strong>regresiju</strong>.</p></li>
-<li><p>Izvrši evaluaciju modela korišćenjem odgovarajućih <strong>metrika evaluacije</strong>.</p></li>
-<li><p>Prepozna situacije u kojima je algoritam k-NN pogodan, kao i njegove potencijalne nedostatke (osetljivost na <strong>dimenzionalnost</strong> i <strong>skaliranje podataka</strong>).</p></li>
-<li><p>Implementira k-NN model u programskom jeziku <strong>Python</strong> koristeći biblioteku <strong>scikit-learn</strong>.</p></li>
-</ul>
-</div>
 <section id="uvod">
 <h2>Uvod</h2>
 <p>Algoritam <span class="math notranslate nohighlight">\(k\)</span>-najbližih suseda (engl. <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, KNN) predstavlja jedan od najjednostavnijih i najčešće korišćenih metoda nadgledanog učenja. Osnovni princip KNN algoritma klasifikacije zasniva se na određivanju pripadnosti posmatrane instance na osnovu njegove prostorne bliskosti sa već poznatim primerima, zapravo algoritam pronalazi <span class="math notranslate nohighlight">\(k\)</span> najbližih primera iz skupa za učenje, koji su mu najbliži u smislu izabrane metrike, i posmatranoj instanci pridružuje klasu koja se najčešće javlja medu tih <span class="math notranslate nohighlight">\(k\)</span> najbližih suseda.</p>
@@ -594,13 +570,12 @@ suseda <span class="math notranslate nohighlight">\(k\)</span> predstavlja klju�
 samostalno izračunava tokom procesa obuke, hiperparametre mi zadajemo pre početka učenja. Pravilnim
 podešavanjem vrednosti <span class="math notranslate nohighlight">\(k\)</span> postiže se optimalan balans između tačnosti na poznatim podacima i sposobnosti
 uopštavanja (generalizacije) na nove, neviđene primere.</p>
-<section id="primer-iz-prakse-optimizacija-logistickih-resursa-pomocu-knn-algoritma">
-<h3>Primer iz prakse: Optimizacija logističkih resursa pomoću KNN algoritma</h3>
+<p><strong>Primer iz prakse: Optimizacija logističkih resursa pomoću KNN algoritma</strong></p>
 <p>U jednoj logističkoj kompaniji svakodnevno je potrebno odrediti optimalan broj vozila koja se šalju u različite delove grada, kako bi se minimizovali troškovi uz istovremeno ispunjenje svih zahteva kupaca. Odluke se donose na osnovu istorijskih podataka koji sadrže informacije o prethodnim radnim danima. Svaki pojedinačni dan prikazan je u formi vektora karakteristika koji sadrži sledeće atribute: dan u nedelji, vremenske uslove (kiša, sneg ili sunčano), ukupan broj primljenih porudžbina i saobraćajne parametre (poput nivoa zagušenja), dok je ciljna promenljiva optimalan broj angažovanih vozila zabeležen tog specifičnog dana. Na osnovu ovih vektora, algoritam meri sličnost nove situacije sa podacima iz prošlosti. Svaka karakteristika (poput vremena ili gužve) posmatra se kao jedna koordinata, pa se podaci prikazuju kao tačke u prostoru i izračunava se njihova udaljenost. Kada se u sistem unese novi radni dan (npr. kišni utorak sa velikim brojem porudžbina i saobraćajnim gužvama), algoritam k-najbližih suseda automatski generiše predviđanje kroz sledeće tri ključne faze:</p>
 <ol class="arabic simple">
-<li><p><strong>Pronalaženje najsličnijih primera (identifikacija suseda)</strong> Algoritam analizira bazu podataka kako bi identifikovao <span class="math notranslate nohighlight">\(k\)</span> istorijskih dana čije karakteristike (vreme, gužva, broj porudžbina) matematički najviše odgovaraju trenutnim uslovima.</p></li>
-<li><p><strong>Analiza odabranih suseda</strong> Sistem pristupa podacima o broju vozila koja su bila angažovana tokom tih <span class="math notranslate nohighlight">\(k\)</span> identifikovanih, najsličnijih dana iz prošlosti.</p></li>
-<li><p><strong>Izračunavanje konačnog ishoda (predviđanje)</strong> Na osnovu vrednosti dobijenih od suseda, algoritam generiše finalnu procenu. To se postiže izračunavanjem <strong>aritmetičke sredine</strong> (kod regresije, za dobijanje tačnog broja vozila) ili određivanjem <strong>najučestalije kategorije</strong> (kod klasifikacije).</p></li>
+<li><p>Identifikacija suseda: algoritam analizira bazu podataka kako bi identifikovao <span class="math notranslate nohighlight">\(k\)</span> istorijskih dana čije karakteristike (vreme, gužva, broj porudžbina) matematički najviše odgovaraju trenutnim uslovima.</p></li>
+<li><p>Analiza odabranih suseda: sistem pristupa podacima o broju vozila koja su bila angažovana tokom tih <span class="math notranslate nohighlight">\(k\)</span> identifikovanih, najsličnijih dana iz prošlosti.</p></li>
+<li><p>Predviđanje: Na osnovu vrednosti dobijenih od suseda, algoritam generiše finalnu procenu. To se postiže izračunavanjem aritmetičke sredine (kod regresije, za dobijanje tačnog broja vozila) ili određivanjem najučestalije kategorije (kod klasifikacije).</p></li>
 </ol>
 <div class="note admonition">
 <p class="admonition-title">Ključni aspekti konfiguracije KNN algoritma</p>
@@ -611,9 +586,7 @@ uopštavanja (generalizacije) na nove, neviđene primere.</p>
 <li><p>Optimizacija parametra <span class="math notranslate nohighlight">\(k\)</span>: Koliki je optimalan broj suseda koje treba razmatrati? Pronalaženje prave vrednosti parametra <span class="math notranslate nohighlight">\(k\)</span> ključno je za postizanje balansa između stabilnosti modela i njegove osetljivosti na bitne lokalne promene u podacima.</p></li>
 </ul>
 </div>
-</section>
-<section id="metrike-udaljenosti">
-<h3>Metrike udaljenosti</h3>
+<p><strong>Metrike udaljenosti</strong></p>
 <p>Da bi algoritam identifikovao susede, neophodno je precizno izmeriti prostorno rastojanje između novog podatka i ostatka skupa podataka. U zavisnosti od prirode problemai tipa podataka, primenjuju se različite matematičke metrike udaljenosti:</p>
 <ul class="simple">
 <li><p>Euklidska udaljenost (engl. Euclidean distance) je najčešće korišćena mera, i meri najkraće (pravolinijsko) rastojanje između dve tačke u prostoru. Naziv je dobila po starogrčkom matematičaru Euklidu, koji se smatra utemeljivačem geometrije. Primena ove metrike najefikasnija je na numeričkim podacima, neophodno je osigurati da su podaci pravilno skalirani, jer bi u suprotnom promenljive sa većim brojčanim rasponima neopravdano dominirale u izračunavanju udaljenosti. Euklidska udaljenost za dve tačke <span class="math notranslate nohighlight">\(P = (p_1, p_2, \dots, p_n)\)</span> i <span class="math notranslate nohighlight">\(Q = (q_1, q_2, \dots, q_n)\)</span> u <span class="math notranslate nohighlight">\(n\)</span>-dimenzionalnom prostoru, se određuje kao koren sume kvadrata razlika njihovih koordinata:</p></li>
@@ -634,14 +607,14 @@ uopštavanja (generalizacije) na nove, neviđene primere.</p>
 <p><em>Realni primeri i interpretacija mera rastojanja</em></p>
 <p>Izbor metrike rastojanja direktno utiče na način na koji KNN algoritam definiše sličnost između podataka. U nastavku su prikazani intuitivni primeri tri najčešće korišćene mere distance.</p>
 <ol class="arabic simple">
-<li><p><strong>Euklidska udaljenost – „vazdušna linija“</strong></p></li>
+<li><p><em>Euklidska udaljenost – „vazdušna linija“</em></p></li>
 </ol>
 <p><em>Primer:</em> Zamislimo let drona između dve tačke u gradu.</p>
 <ul class="simple">
 <li><p>Lokacija A: 2 km istočno, 3 km severno</p></li>
 <li><p>Lokacija B: 5 km istočno, 7 km severno.</p></li>
 </ul>
-<p>Dron se kreće pravolinijski, najkraćom mogućom putanjom, bez ograničenja putnom mrežom. Ovo rastojanje predstavlja <strong>Euklidsku udaljenost</strong>, odnosno direktnu geometrijsku distancu između dve tačke u prostoru:</p>
+<p>Dron se kreće pravolinijski, najkraćom mogućom putanjom, bez ograničenja putnom mrežom. Ovo rastojanje predstavlja Euklidsku udaljenost, odnosno direktnu geometrijsku distancu između dve tačke u prostoru:</p>
 <div class="math notranslate nohighlight">
 \[
 d = \sqrt{(5 - 2)^2 + (7 - 3)^2} = 5.
@@ -650,7 +623,7 @@ d = \sqrt{(5 - 2)^2 + (7 - 3)^2} = 5.
 <p>👉 <em>Primena:</em> Koristi se kada želimo da merimo najkraće rastojanje u kontinualnom prostoru, na primer u obradi slika, prepoznavanju lica ili analizi fizičkih koordinata.</p>
 <hr class="docutils" />
 <ol class="arabic simple" start="2">
-<li><p><strong>Menhetn udaljenost – kretanje po mreži (L1 norma)</strong></p></li>
+<li><p><em>Menhetn udaljenost – kretanje po mreži (L1 norma)</em></p></li>
 </ol>
 <p><em>Primer:</em> Posmatrajmo kretanje taksi vozila kroz grad sa ortogonalno raspoređenim ulicama. Vozilo ne može da se kreće dijagonalno, već se pomera duž osa. Pretpostavimo da je početna tačka <span class="math notranslate nohighlight">\(A(0,0)\)</span>, ako je kretanje na primer prvo 3 km ka istoku, pa 4 km ka severu, onda je krajnja tačka <span class="math notranslate nohighlight">\(B(3,4)\)</span>, tada:</p>
 <div class="math notranslate nohighlight">
@@ -662,7 +635,7 @@ Menhetn udaljenost predstavlja zbir apsolutnih razlika po svakoj koordinati i po
 <p>👉 <em>Primena:</em> Često se koristi u logistici, planiranju ruta i u situacijama gde su atributi međusobno nezavisni i gde promena po jednoj osi ne utiče na drugu.</p>
 <hr class="docutils" />
 <ol class="arabic simple" start="3">
-<li><p><strong>Minkovski udaljenost – opšti matematički okvir</strong></p></li>
+<li><p><em>Minkovski udaljenost – opšti matematički okvir</em></p></li>
 </ol>
 <p><em>Primer:</em> Pretpostavimo da želimo da izmerimo sličnost između dva klijenta banke na osnovu sledećih karakteristika: godine starosti, godišnji prihod (u hiljadama €), broj kupovina karticom mesečno. Posmatramo dva klijenta banke pri čemu Klijent A ima 30 godina, godišnji prihod od 50 hiljada evra i u proseku 20 kupovina mesečno, dok Klijent B ima 40 godina, godišnji prihod od 80 hiljada evra i obavlja oko 10 kupovina mesečno. Podatke o klijentima zapisujemo u obliku vektora: <span class="math notranslate nohighlight">\(A = (30, 50, 20)\)</span>  i <span class="math notranslate nohighlight">\(B = (40, 80, 10)\)</span>. Računanje Minkovskijeve udaljenosti za <span class="math notranslate nohighlight">\(p=3\)</span> možemo zapisati u jednoj formuli:</p>
 <div class="math notranslate nohighlight">
@@ -704,11 +677,10 @@ d(A,B)=\left(|30-40|^3+|50-80|^3+|20-10|^3\right)^{\frac{1}{3}} = \sqrt[3]{10^3+
 </table>
 </div>
 <blockquote>
-<div><p><strong>Zaključak:</strong> U KNN algoritmu izbor metrike određuje koje će instance biti prepoznate kao najbliže. Neadekvatan izbor distance može dovesti do pogrešnog povezivanja primera, što se direktno odražava na tačnost predviđanja.</p>
+<div><p>Zaključak: U KNN algoritmu izbor metrike određuje koje će instance biti prepoznate kao najbliže. Neadekvatan izbor distance može dovesti do pogrešnog povezivanja primera, što se direktno odražava na tačnost predviđanja.</p>
 </div></blockquote>
-</section>
 <section id="skaliranje-podataka-za-knn-standardizacija-i-normalizacija">
-<h3>SKALIRANJE PODATAKA ZA KNN: STANDARDIZACIJA I NORMALIZACIJA</h3>
+<h3>Skaliranje podataka za KNN: standardizacija i normalizacija</h3>
 <p>Algoritam <span class="math notranslate nohighlight">\(k\)</span>-najbližih suseda klasifikuje podatke na osnovu udaljenosti, pa je zbog toga potrebno skaliranje i priprema podataka pre primene modela.</p>
 <hr class="docutils" />
 <p>Kada se koriste atributi sa različitim opsezima vrednosti (npr. starost u godinama i godišnji prihod u evrima), atribut sa većim numeričkim rasponom može dominantno uticati na izračunavanje udaljenosti. Na primer, razlika od 1000 evra u prihodu može imati veći uticaj nego razlika od 50 godina u starosti, zbog čega model može zanemariti značaj starosti u predikciji. Skaliranje podataka eliminiše problem različitih opsega atributa tako što ih transformiše na približno istu skalu vrednosti.</p>
@@ -733,40 +705,40 @@ z = \frac{x - \mu}{\sigma},
 x_{new} = \frac{x - x_{min}}{x_{max} - x_{min}},
 \]</div>
 <p>gde je <span class="math notranslate nohighlight">\(x_{min}\)</span> najmanja vrednost posmatranog obeležja u skupu podataka, a <span class="math notranslate nohighlight">\(x_{max}\)</span> najveća vrednost posmatranog obeležja u skupu podataka.</p>
-<p><strong>Kada koristiti?</strong></p>
+<p>Kada koristiti?</p>
 <ul class="simple">
 <li><p>Kada ne znamo distribuciju podataka.</p></li>
 <li><p>Kada radimo sa algoritmima koji zahtevaju strogo definisane granice.</p></li>
 <li><p>Kada u podacima nema značajnih outliera.</p></li>
 <li><p>Kod KNN algoritma kada želimo jednostavno skaliranje u isti opseg.</p></li>
 </ul>
-<hr class="docutils" />
 </section>
+<hr class="docutils" />
 <section id="analiza-parametra-k-i-njegova-uloga-u-stabilnosti-modela">
 <h3>Analiza parametra <span class="math notranslate nohighlight">\(k\)</span> i njegova uloga u stabilnosti modela</h3>
 <p>Uspešnost ovog algoritma zavisi od odabira parametra <span class="math notranslate nohighlight">\(k\)</span>, odnosno koliko treba da iznosi broj suseda sa kojim ćemo porediti instancu. Kada je <span class="math notranslate nohighlight">\(k\)</span> veoma malo, model postaje osetljiv na šum i ekstremne vrednosti u podacima, pa se postiže visoka varijansa, a niska pristrasnost, što dovodi do prekomernog uklapanja. Umesto da prepozna opšta pravila, algoritam se previše fokusira na svaki pojedinačni podatak. Sa druge strane, veće vrednosti parametra <span class="math notranslate nohighlight">\(k\)</span>  umanjuju uticaj šuma na proces klasifikacije, ali dovode do slabljenja oštrine granica između klasa ([6]). Ovakva konfiguracija rezultira niskom varijansom uz povećanu pristrasnost, što može dovesti do prevelike generalizacije modela i potencijalnog gubitka preciznosti pri prepoznavanju finijih detalja u podacima. Da bi se odabrala odgovarajuća vrednost ovog parametra, koristi se proces podešavanja parametara (engl. parameter tuning). Procedura je da se algoritam izvršava više puta za različitim vrednostima parametra <span class="math notranslate nohighlight">\(k\)</span>, i bira se ono <span class="math notranslate nohighlight">\(k\)</span> koje dovodi do najmanje greške. Neretko se u praksi kao početna vrednost za <span class="math notranslate nohighlight">\(k\)</span> uzima kvadratni koren broja podataka u skupu. Iako se u praksi se veoma često koristi mali broj suseda (<span class="math notranslate nohighlight">\(k=3\)</span> ili <span class="math notranslate nohighlight">\(k=5\)</span>), neophodno je izvršiti fino podešavanje ovog parametra. Poseban slučaj u kojem se predviđa da je klasa jednaka klasi najbližeg uzorka iz skupa za treniranje (tj. kada je <span class="math notranslate nohighlight">\(k = 1\)</span>) naziva se algoritam najbližeg suseda.Kod binarne klasifikacije se sugeriše korišćenje neparnog broja suseda kako bi se eliminisala mogućnost nerešenog rezultata pri glasanju. U praksi se često koristi bootstrap metod za određivanje optimalne vrednosti parametra <span class="math notranslate nohighlight">\(k\)</span>, [7].</p>
 <p><strong>Unakrsna validacija u izboru optimalnog parametra <span class="math notranslate nohighlight">\(k\)</span> kod KNN algoritma</strong></p>
 <p>Umesto da podatke samo jednom podelimo na deo za učenje i deo za test, ideja unakrsne validacije je da sve dostupne podatke iskoristimo i za treniranje i za testiranje modela. Na taj način dobijamo:</p>
 <ul class="simple">
-<li><p><strong>Pouzdaniju procenu:</strong> Rezultati su stabilniji jer ne zavise od jedne srećne (ili nesrećne) podele podataka.</p></li>
-<li><p><strong>Bolji izbor parametra <span class="math notranslate nohighlight">\(k\)</span>:</strong> Pomaže nam da precizno odredimo koja vrednost parametra <span class="math notranslate nohighlight">\(k\)</span> u KNN algoritmu daje najbolje rezultate.</p></li>
-<li><p><strong>Veću robusnost:</strong> Smanjuje se rizik da model nauči podatke napamet (preprilagođavanje), čime se osigurava njegova bolja primena u praksi.</p></li>
+<li><p>Pouzdaniju procenu: Rezultati su stabilniji jer ne zavise od jedne srećne (ili nesrećne) podele podataka.</p></li>
+<li><p>Bolji izbor parametra <span class="math notranslate nohighlight">\(k\)</span>: Pomaže nam da precizno odredimo koja vrednost parametra <span class="math notranslate nohighlight">\(k\)</span> u KNN algoritmu daje najbolje rezultate.</p></li>
+<li><p>Veću robusnost: Smanjuje se rizik da model nauči podatke napamet (preprilagođavanje), čime se osigurava njegova bolja primena u praksi.</p></li>
 </ul>
-<p><em>Osnovna ideja</em><br />
-Osnovni princip unakrsne validacije je podela skupa podataka na više podskupova. Proces se odvija kroz iteracije:</p>
+<p><em>Osnovna ideja</em></p>
+<p>Osnovni princip unakrsne validacije je podela skupa podataka na više podskupova. Proces se odvija kroz iteracije:</p>
 <ul class="simple">
-<li><p>Model se <strong>trenira</strong> na jednom delu podataka.</p></li>
-<li><p>Preostali deo se koristi za <strong>testiranje</strong> (validaciju).</p></li>
+<li><p>Model se trenira na jednom delu podataka.</p></li>
+<li><p>Preostali deo se koristi za testiranje (validaciju).</p></li>
 <li><p>Postupak se ponavlja više puta, pri čemu svaki podskup bar jednom dobije ulogu testnog skupa.</p></li>
-<li><p>K-unakrsne validacija*<br />
-Početni skup podataka se deli na <span class="math notranslate nohighlight">\(K\)</span> jednako velikih, disjunktnih podskupova.</p></li>
 </ul>
+<p><em>K-unakrsne validacija</em></p>
+<p>Početni skup podataka se deli na <span class="math notranslate nohighlight">\(K\)</span> jednako velikih, disjunktnih podskupova.</p>
 <ol class="arabic simple">
 <li><p>U svakom ciklusu, <span class="math notranslate nohighlight">\(K-1\)</span> podskupova se koristi za treniranje, dok se jedan podskup koristi kao skup za testiranje.</p></li>
 <li><p>Konačna performansa modela se računa kao prosečna vrednost svih <span class="math notranslate nohighlight">\(K\)</span> iteracija.</p></li>
 </ol>
-<p><em>Izbor optimalnog parametra <span class="math notranslate nohighlight">\(k\)</span></em>
-Prilikom podešavanja KNN algoritma, postupak unakrsne validacije se ponavlja za različite kandidate iz skupa vrednosti parametra <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p><em>Izbor optimalnog parametra <span class="math notranslate nohighlight">\(k\)</span></em></p>
+<p>Prilikom podešavanja KNN algoritma, postupak unakrsne validacije se ponavlja za različite kandidate iz skupa vrednosti parametra <span class="math notranslate nohighlight">\(k\)</span>.</p>
 <ul class="simple">
 <li><p>Vrednost koja daje <em>najbolje prosečne performanse</em> (npr. najveću tačnost ili <span class="math notranslate nohighlight">\(F_1\)</span>-skor) bira se kao optimalna.</p></li>
 <li><p>Ovaj pristup je ključan jer značajno smanjuje rizik od preprilagođavanja i omogućava stabilniju procenu generalizacione sposobnosti algoritma na novim podacima.</p></li>
@@ -778,28 +750,28 @@ Prilikom podešavanja KNN algoritma, postupak unakrsne validacije se ponavlja za
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Karakteristika</p></th>
-<th class="head text-left"><p><strong>k-Nearest Neighbors (KNN)</strong></p></th>
-<th class="head text-left"><p><strong>k-Means</strong></p></th>
+<th class="head text-left"><p>Algoritam <span class="math notranslate nohighlight">\(k\)</span>-najbližih suseda</p></th>
+<th class="head text-left"><p>Klasterizacija metodom k-srednjih vrednosti</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><strong>Tip učenja</strong></p></td>
+<tr class="row-even"><td class="text-left"><p>Tip učenja</p></td>
 <td class="text-left"><p>Nadgledano</p></td>
 <td class="text-left"><p>Nenadgledano</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Različite vrste problema</strong></p></td>
+<tr class="row-odd"><td class="text-left"><p>Različite vrste problema</p></td>
 <td class="text-left"><p>Klasifikacija ili regresija</p></td>
 <td class="text-left"><p>Klasterovanje (grupisanje podataka)</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><strong>Značenje parametra <span class="math notranslate nohighlight">\(k\)</span></strong></p></td>
+<tr class="row-even"><td class="text-left"><p>Značenje parametra <span class="math notranslate nohighlight">\(k\)</span></p></td>
 <td class="text-left"><p>Broj suseda koji učestvuju u klasifikaciji</p></td>
 <td class="text-left"><p>Broj grupa (klastera) koje želimo formirati</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Zahtevi za podacima</strong></p></td>
+<tr class="row-odd"><td class="text-left"><p>Zahtevi za podacima</p></td>
 <td class="text-left"><p>Radi sa označenim podacima</p></td>
 <td class="text-left"><p>Radi sa neoznačenim podacima</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><strong>Faza učenja</strong></p></td>
+<tr class="row-even"><td class="text-left"><p>Faza učenja</p></td>
 <td class="text-left"><p>metoda lenjog učenja</p></td>
 <td class="text-left"><p>Iterativno pronalazi centroide grupa</p></td>
 </tr>
@@ -807,7 +779,7 @@ Prilikom podešavanja KNN algoritma, postupak unakrsne validacije se ponavlja za
 <td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><strong>Način učenja</strong></p></td>
+<tr class="row-even"><td class="text-left"><p>Način učenja</p></td>
 <td class="text-left"><p>Nadgledano</p></td>
 <td class="text-left"><p>Nenadgledano</p></td>
 </tr>
@@ -823,11 +795,9 @@ Prilikom podešavanja KNN algoritma, postupak unakrsne validacije se ponavlja za
 <li><p>Primene većinskog glasanja radi dodele finalne klase.</p></li>
 </ul>
 <blockquote>
-<div><p><strong>Napomena:</strong> Zbog ovakvog pristupa, k-NN je izuzetno fleksibilan, ali zahteva značajnu memoriju i procesorsku snagu pri radu sa velikim setovima podataka, jer mora da „pretraži” celu bazu pri svakoj predikciji.</p>
+<div><p>Napomena: Zbog ovakvog pristupa, k-NN je izuzetno fleksibilan, ali zahteva značajnu memoriju i procesorsku snagu pri radu sa velikim setovima podataka, jer mora da „pretraži” celu bazu pri svakoj predikciji.</p>
 </div></blockquote>
-</section>
-<section id="tezinski-ponderisani-knn-algoritam">
-<h3>Težinski (ponderisani) KNN algoritam</h3>
+<p><strong>Težinski (ponderisani) KNN algoritam</strong></p>
 <p>U standardnoj verziji KNN algoritma, svi izabrani susedi imaju jednak uticaj na konačnu odluku, nezavisno od njihove udaljenosti od posmatrane instance. Nasuprot tome, kod težinski (ponderisani) KNN algoritam (engl. Weighted kNN) bliži susedi doprinose proseku više nego oni udaljeniji, polazeći od pretpostavke da su bliži susedi informativniji i sličniji posmatranoj instanci koju treba tek klasifikovati. Izazov kod standardnog KNN algoritma, gde se klasa posmatrane instance određuje većinskom glasanjem, nastaje pri neravnomernoj distribuciji klasa. Ukoliko je jedna klasa znatno zastupljenija od drugih, ona može nadvladati ostale unutar skupa od <span class="math notranslate nohighlight">\(k\)</span> suseda, pa nove instance imaju veću verovatnoću da budu klasifikovani upravo u tu klasu. Kod ovakvih situacija kao rešenje primenjuje se težinsko glasanje (engl. weighted voting), koje polazi od pretpostavke da susedi na manjoj udaljenosti imaju veći uticaj na donošenje odluke.</p>
 <ol class="arabic simple">
 <li><p>Metoda inverznog rastojanja (engl. Inverse Distance Weighting)
@@ -843,38 +813,32 @@ Ovu metodu koristimo kada želimo da maksimalno damo prednost najbližim tačkam
 <section id="prednosti-i-mane-knn-algoritma">
 <h2>Prednosti i mane KNN algoritma</h2>
 <p>Iako spada među najjednostavnije algoritme mašinskog učenja i ne zahteva unapred definisane pretpostavke o raspodeli podataka, KNN poseduje niz prednosti, ali i određene mane koje treba imati na umu prilikom njegove primene.</p>
-<section id="prednosti-knn-algoritma">
-<h3>Prednosti KNN algoritma</h3>
+<p><strong>Prednosti KNN algoritma</strong></p>
 <ul class="simple">
-<li><p><strong>Jednostavnost i intuitivnost</strong><br />
+<li><p>Jednostavnost i intuitivnost<br />
 Algoritam je konceptualno intuitivan i jednostavan za implementaciju.</p></li>
-<li><p><strong>Odsustvo faze treniranja</strong><br />
+<li><p>Odsustvo faze treniranja<br />
 Kao „lenji“ algoritam (engl. lazy learner), ne zahteva posebnu fazu učenja, već koristi ceo skup podataka tokom predviđanja.</p></li>
-<li><p><strong>Multifunkcionalnost</strong><br />
+<li><p>Multifunkcionalnost<br />
 Koristiti se i za probleme klasifikacije, i za probleme regresije.</p></li>
-<li><p><strong>Sposobnost učenja lokalne strukture</strong><br />
+<li><p>Sposobnost učenja lokalne strukture<br />
 Izuzetno je efikasan u prepoznavanju kompleksnih obrazaca jer se odluke donose na osnovu lokalnog susedstva, a ne na osnovu globalnih pretpostavki o podacima.</p></li>
 </ul>
-</section>
-<section id="mane-knn-algoritma">
-<h3>Mane KNN algoritma</h3>
+<p><strong>Mane KNN algoritma</strong></p>
 <ul class="simple">
-<li><p><strong>Visoka računarska složenost</strong><br />
+<li><p>Visoka računarska složenost<br />
 Izračunavanje rastojanja između instanci može biti računarski veoma zahtevno kada se radi sa velikim skupovima podataka.</p></li>
-<li><p><strong>Osetljivost na izbor parametra k</strong><br />
+<li><p>Osetljivost na izbor parametra <span class="math notranslate nohighlight">\(k\)</span><br />
 Izbor premalog <span class="math notranslate nohighlight">\(k\)</span> može dovesti do prekomernog prilagođavanja, dok preveliko <span class="math notranslate nohighlight">\(k\)</span> može zamagliti granice između klasa, tj. dovesti do nedovoljnog prilagođavanja modela.</p></li>
-<li><p><strong>Zavisnost od metrike rastojanja</strong><br />
+<li><p>Zavisnost od metrike rastojanja<br />
 Performanse algoritma direktno zavise od odgovarajuće distance.</p></li>
-<li><p><strong>Osetljivost na skalu podataka</strong><br />
+<li><p>Osetljivost na skalu podataka<br />
 Pošto se algoritam oslanja na rastojanja, neophodna je standardizacija ili normalizacija kako bi se sprečilo da promenljive sa većim opsezima vrednosti nepravedno dominiraju modelom.</p></li>
-<li><p><strong>Osetljivost na šum i ekstremne vrednosti</strong><br />
-Prisustvo šuma i ekstremnih vrednosti (engl. outliers) u skupu podataka može značajno narušiti performanse modela, jer oni neposredno menjaju geometriju susedstva, što dovodi do pogrešne klasifikacije instanci.</p></li>
+<li><p>Osetljivost na šum i ekstremne vrednosti<br />
+Prisustvo šuma i autlajera u skupu podataka može značajno narušiti performanse modela, jer oni neposredno menjaju geometriju susedstva, što dovodi do pogrešne klasifikacije instanci.</p></li>
 </ul>
-</section>
-</section>
-<section id="algoritam-k-najblizih-suseda-za-problem-klasifikacije">
-<h2>Algoritam k-najbližih suseda za problem klasifikacije</h2>
-<p><strong>Ulazni podaci:</strong></p>
+<p><strong>Algoritam k-najbližih suseda za problem klasifikacije</strong></p>
+<p><em>Ulazni podaci:</em></p>
 <ul class="simple">
 <li><p>Skup podataka za treniranje</p>
 <ul>
@@ -885,19 +849,19 @@ Prisustvo šuma i ekstremnih vrednosti (engl. outliers) u skupu podataka može z
 <li><p>Test primer <span class="math notranslate nohighlight">\( x \)</span></p></li>
 <li><p>Broj najbližih suseda <span class="math notranslate nohighlight">\(k\)</span></p></li>
 </ul>
-<p><strong>Izlaz:</strong></p>
+<p><em>Izlaz:</em></p>
 <ul class="simple">
 <li><p>Predviđena klasa <span class="math notranslate nohighlight">\(y\)</span> za primer <span class="math notranslate nohighlight">\(x\)</span></p></li>
 </ul>
 <hr class="docutils" />
-<p><strong>Procedura:</strong></p>
-<p><strong>for</strong> <span class="math notranslate nohighlight">\(i = 1\)</span> <strong>to</strong> <span class="math notranslate nohighlight">\(m\)</span> <strong>do</strong><br />
+<p><em>Procedura:</em></p>
+<p>for <span class="math notranslate nohighlight">\(i = 1\)</span> to <span class="math notranslate nohighlight">\(m\)</span> do<br />
   izračunaj rastojanje  <span class="math notranslate nohighlight">\(d(x_i, x)\)</span><br />
-<strong>end for</strong></p>
+end for</p>
 <p>Odredi skup indeksa <span class="math notranslate nohighlight">\(I\)</span> koji sadrži <span class="math notranslate nohighlight">\(k\)</span> indeksa <span class="math notranslate nohighlight">\(i\)</span> za koje se dobijaju najmanje vrednosti <span class="math notranslate nohighlight">\(d(x_i, x)\)</span></p>
-<p><strong>return</strong> klasu <span class="math notranslate nohighlight">\(y\)</span> koja se najčešće pojavljuje u skupu <span class="math notranslate nohighlight">\(\{ y_i \mid i \in I \}\)</span></p>
+<p>return klasu <span class="math notranslate nohighlight">\(y\)</span> koja se najčešće pojavljuje u skupu <span class="math notranslate nohighlight">\(\{ y_i \mid i \in I \}\)</span></p>
 <blockquote>
-<div><p><strong>Napomena:</strong> Pošto KNN koristi rastojanja, obavezno je izvršiti <strong>normalizaciju ili standardizaciju</strong> podataka pre primene algoritma kako bi se sprečilo da promenljive sa većim opsegom vrednosti dominiraju rezultatom.</p>
+<div><p><strong>Napomena:</strong> Pošto KNN koristi rastojanja, obavezno je izvršiti normalizaciju ili standardizaciju podataka pre primene algoritma kako bi se sprečilo da promenljive sa većim opsegom vrednosti dominiraju rezultatom.</p>
 </div></blockquote>
 </section>
 <section id="prakticna-implementacija-knn-algoritma-pomocu-scikit-learn-biblioteke">
@@ -1475,8 +1439,8 @@ Prvi korak u ovom procesu je podela početnog skupa podataka na dve disjunktne c
 </div>
 <p><strong>Ciljna varijabla (klasifikacija rizika):</strong></p>
 <ul class="simple">
-<li><p><strong>1 (Nizak rizik):</strong> klijent sa stabilnim kreditnim profilom i minimalnim stepenom rizika.</p></li>
-<li><p><strong>2 (Visok rizik):</strong> klijent sa povišenim stepenom rizika i potencijalnom nesolventnošću.</p></li>
+<li><p><em>1 (Nizak rizik):</em> klijent sa stabilnim kreditnim profilom i minimalnim stepenom rizika.</p></li>
+<li><p><em>2 (Visok rizik):</em> klijent sa povišenim stepenom rizika i potencijalnom nesolventnošću.</p></li>
 </ul>
 <p><em>Priprema radnog okruženja i učitavanje biblioteka</em></p>
 <p>Pre same implementacije modela potrebno je učitati odgovarajuće softverske biblioteke. U nastavku se učitavaju sve biblioteke neophodne za rad, zajedno sa njihovim skraćenim nazivima, koji će se koristiti radi jednostavnijeg i preglednijeg pozivanja njihovih funkcija i atributa tokom implementacije.</p>
@@ -1722,21 +1686,21 @@ Ukoliko se u zagradama navede broj, prikazuju se prvih onoliko redova koliko je 
 </div>
 <p>Kada pozovemo <code class="docutils literal notranslate"><span class="pre">baza.describe()</span></code> dobijamo statistički sažetak numeričkih kolona skupa podataka:</p>
 <ul class="simple">
-<li><p><strong>count</strong>: Broj ne-nedostajućih vrednosti u koloni.</p></li>
-<li><p><strong>mean</strong>: Srednja vrednost (prosek) kolone.</p></li>
-<li><p><strong>std</strong>: Standardna devijacija (koliko se vrednosti prosečno udaljavaju od srednje vrednosti).</p></li>
-<li><p><strong>min</strong>: Najmanja vrednost u koloni.</p></li>
-<li><p><strong>25%</strong>: Donji kvartil (prva četvrtina podataka).</p></li>
-<li><p><strong>50%</strong>: Medijana (srednja vrednost).</p></li>
-<li><p><strong>75%</strong>: Gornji kvartil (treća četvrtina podataka).</p></li>
-<li><p><strong>max</strong>: Najveća vrednost u koloni.</p></li>
+<li><p><em>count</em>: Broj ne-nedostajućih vrednosti u koloni.</p></li>
+<li><p><em>mean</em>: Srednja vrednost (prosek) kolone.</p></li>
+<li><p><em>std</em>: Standardna devijacija (koliko se vrednosti prosečno udaljavaju od srednje vrednosti).</p></li>
+<li><p><em>min</em>: Najmanja vrednost u koloni.</p></li>
+<li><p><em>25%</em>: Donji kvartil (prva četvrtina podataka).</p></li>
+<li><p><em>50%</em>: Medijana (srednja vrednost).</p></li>
+<li><p><em>75%</em>: Gornji kvartil (treća četvrtina podataka).</p></li>
+<li><p><em>max</em>: Najveća vrednost u koloni.</p></li>
 </ul>
 <blockquote>
-<div><p>Napomena: Standardna metoda <code class="docutils literal notranslate"><span class="pre">describe()</span></code> analizira isključivo <strong>numeričke kolone</strong>. Kako biste dobili uvid i u <strong>kategoričke podatke</strong>, koristite argument <code class="docutils literal notranslate"><span class="pre">include='all'</span></code>, što dodatno vraća:</p>
+<div><p>Napomena: Standardna metoda <code class="docutils literal notranslate"><span class="pre">describe()</span></code> analizira isključivo numeričke kolone. Kako biste dobili uvid i u <em>kategoričke podatke</em>, koristite argument <code class="docutils literal notranslate"><span class="pre">include='all'</span></code>, što dodatno vraća:</p>
 <ul class="simple">
-<li><p><strong>unique</strong> – broj jedinstvenih vrednosti u koloni</p></li>
-<li><p><strong>top</strong> – najčešća vrednost (moda)</p></li>
-<li><p><strong>freq</strong> – frekfencija ponavljanja najčešće vrednosti</p></li>
+<li><p><em>unique</em> – broj jedinstvenih vrednosti u koloni</p></li>
+<li><p><em>top</em> – najčešća vrednost (moda)</p></li>
+<li><p><em>freq</em> – frekfencija ponavljanja najčešće vrednosti</p></li>
 </ul>
 </div></blockquote>
 <div class="cell docutils container">
@@ -1912,11 +1876,11 @@ memory usage: 164.2+ KB
 </div>
 <p><em>Binarizacija ciljne klase; Razdvajanje podataka na ulazne atribute i izlazne labele</em></p>
 <ol class="arabic simple">
-<li><p><strong>Binarizacija ciljne klase</strong>: U posmatranoj bazi ciljna promenljiva uzima vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar kreditni rizik) i <code class="docutils literal notranslate"><span class="pre">2</span></code> (loš kreditni rizik). Koristeci metodu <code class="docutils literal notranslate"><span class="pre">.map()</span></code> izvršićemo prekodiranje ovih vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar klijent), i <code class="docutils literal notranslate"><span class="pre">2</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (rizičan klijent) radi usklađivanja sa standardima binarne klasifikacije.</p></li>
-<li><p><strong>Razdvajanje na ulazne atribute i izlazne labele</strong>:</p>
+<li><p><em>Binarizacija ciljne klase</em>: U posmatranoj bazi ciljna promenljiva uzima vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar kreditni rizik) i <code class="docutils literal notranslate"><span class="pre">2</span></code> (loš kreditni rizik). Koristeci metodu <code class="docutils literal notranslate"><span class="pre">.map()</span></code> izvršićemo prekodiranje ovih vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar klijent), i <code class="docutils literal notranslate"><span class="pre">2</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (rizičan klijent) radi usklađivanja sa standardima binarne klasifikacije.</p></li>
+<li><p><em>Razdvajanje na ulazne atribute i izlazne labele</em>:</p>
 <ul class="simple">
-<li><p><strong>Matrica atributa (<code class="docutils literal notranslate"><span class="pre">X</span></code>)</strong>: Izdvajanjem kolone „<code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> iz skupa podataka formiramo matricu atributa (nezavisnih promenljivih). Ovi podaci predstavljaju ulazne parametre (<span class="math notranslate nohighlight">\(X\)</span>) na osnovu kojih model uči da prepoznaje obrasce i donosi predviđanja.</p></li>
-<li><p><strong>Izlazna labela (<code class="docutils literal notranslate"><span class="pre">y</span></code>)</strong>: Kolona <code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> se izdvaja kao <strong>zavisna promenljiva</strong>, odnosno ciljni vektor (<span class="math notranslate nohighlight">\(y\)</span>), čija se vrednost predviđa na osnovu ulaznih podataka. U kontekstu mašinskog učenja, ovaj vektor predstavlja „labelu” ili tačan odgovor na osnovu kojeg model uči da prepoznaje obrasce i vrši klasifikaciju novih primera.</p></li>
+<li><p><em>Matrica atributa (<code class="docutils literal notranslate"><span class="pre">X</span></code>)</em>: Izdvajanjem kolone „<code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> iz skupa podataka formiramo matricu atributa (nezavisnih promenljivih). Ovi podaci predstavljaju ulazne parametre (<span class="math notranslate nohighlight">\(X\)</span>) na osnovu kojih model uči da prepoznaje obrasce i donosi predviđanja.</p></li>
+<li><p><em>Izlazna labela (<code class="docutils literal notranslate"><span class="pre">y</span></code>)</em>: Kolona <code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> se izdvaja kao zavisna promenljiva, odnosno ciljni vektor (<span class="math notranslate nohighlight">\(y\)</span>), čija se vrednost predviđa na osnovu ulaznih podataka. U kontekstu mašinskog učenja, ovaj vektor predstavlja „labelu” ili tačan odgovor na osnovu kojeg model uči da prepoznaje obrasce i vrši klasifikaciju novih primera.</p></li>
 </ul>
 </li>
 </ol>
@@ -1950,7 +1914,7 @@ memory usage: 164.2+ KB
 <p class="admonition-title">Razlika između nove i starije verzije ’scikit-learn’</p>
 <p>:class: seealso
 Napomena o argumentu <code class="docutils literal notranslate"><span class="pre">as_frame</span></code> u <code class="docutils literal notranslate"><span class="pre">fetch_openml()</span></code></p>
-<p>U novijim verzijama biblioteke <strong>scikit-learn</strong>, funkcija <code class="docutils literal notranslate"><span class="pre">fetch_openml()</span></code> podržava argument <code class="docutils literal notranslate"><span class="pre">as_frame=True</span></code>, koji omogućava da se podaci odmah učitaju u <strong>Pandas DataFrame</strong> i Series:</p>
+<p>U novijim verzijama biblioteke scikit-learn, funkcija <code class="docutils literal notranslate"><span class="pre">fetch_openml()</span></code> podržava argument <code class="docutils literal notranslate"><span class="pre">as_frame=True</span></code>, koji omogućava da se podaci odmah učitaju u Pandas DataFrame i Series:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;credit-g&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">baza</span><span class="o">.</span><span class="n">data</span>
@@ -1962,15 +1926,15 @@ Napomena o argumentu <code class="docutils literal notranslate"><span class="pre
 <ul>
 <li><p>Parametar <code class="docutils literal notranslate"><span class="pre">test_size=0.3</span></code> razdavaja skup podataka tako da će 30% podataka biti sačuvano za testiranje, dok će se 70% koristiti za obuku modela.</p></li>
 <li><p>Parametar <code class="docutils literal notranslate"><span class="pre">random_state</span></code> se koristi kako bi svaki put kada iznova pokrenemo kod podela podataka na trening i test skup bila uvek ista, što takođe omogućava reproduktivnost. Ovakva fiksna podela je korisna jer osigurava  korišćenje istog skupa treniranje i istog skupa za testiranje, čime postižemo da su rezultati različitih verzija modela direktno uporedivi. Napomenimo da se umesto <code class="docutils literal notranslate"><span class="pre">42</span></code> može se koristiti bilo koji drugi broj, i naravno dobijammo drugačiju podelu podataka. U sekciji „Stabla odlučivanja” možete pročitati zanimljivost zašto se baš <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> često pojavljuje.</p></li>
-<li><p>Drugim rečima, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> <strong>fiksira generator slučajnih brojeva</strong> koji se koristi za nasumičnu podelu skupa, pa su rezultati predvidljivi i ponovljivi.</p></li>
+<li><p>Drugim rečima, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> fiksira generator slučajnih brojeva koji se koristi za nasumičnu podelu skupa, pa su rezultati predvidljivi i ponovljivi.</p></li>
 <li><p>Korišćenjem parametra <code class="docutils literal notranslate"><span class="pre">stratify</span></code>, obezbeđujemo da distribucija klasa u skupu za testiranje održava identične proporcije klasa kakve postoje u izvornoj populaciji podataka.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code> je alat iz biblioteke <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> koji vrši skaliranje, tj. koji numeričke podatke transformiše tako da njihova srednja vrednost bude <span class="math notranslate nohighlight">\(0\)</span>, a standardna devijacija <span class="math notranslate nohighlight">\(1\)</span>. Kako koristi metrike rastojanja algoritam KNN je osetljiv na skalu ulaznih podataka, pa je neophodno izvršiti standardizaciju kako bi svi atributi imali ravnomeran doprinos u odlučivanju</p></li>
 <li><p>Nakon standardizacije, primenjuje se metoda <code class="docutils literal notranslate"><span class="pre">fit_transform</span></code> nad trenažnim podacima (<code class="docutils literal notranslate"><span class="pre">X_train</span></code>). Ovaj korak je dvostruk:</p>
 <blockquote>
-<div><p><strong>Fit faza:</strong> Algoritam analizira skup za treniranje kako bi izračunao aritmetičku sredinu (<span class="math notranslate nohighlight">\(\mu\)</span>) i standardnu devijaciju (<span class="math notranslate nohighlight">\(\sigma\)</span>) za svaku karakteristiku;</p>
+<div><p>Fit faza: Algoritam analizira skup za treniranje kako bi izračunao aritmetičku sredinu (<span class="math notranslate nohighlight">\(\mu\)</span>) i standardnu devijaciju (<span class="math notranslate nohighlight">\(\sigma\)</span>) za svaku karakteristiku;</p>
 </div></blockquote>
 <blockquote>
-<div><p><strong>Faza transformacije:</strong> Koristeći ove parametre, vrši se matematička transformacija podataka tako da se svako obeležje svede na standardnu normalnu raspodelu.
+<div><p>Faza transformacije: Koristeći ove parametre, vrši se matematička transformacija podataka tako da se svako obeležje svede na standardnu normalnu raspodelu.
 Na skupu za testiranje primenjuje metodu <code class="docutils literal notranslate"><span class="pre">.transform()</span></code>primenjujući srednju vrednost i varijansu koje su naučena na skupu za treniranje. Ovde ne koristimo <code class="docutils literal notranslate"><span class="pre">fit</span></code> jer u realnim uslovima testni podaci su nepoznati.</p>
 </div></blockquote>
 </li>
@@ -1993,24 +1957,24 @@ Na skupu za testiranje primenjuje metodu <code class="docutils literal notransla
 <p><em>Inicijalizacija i obuka KNN modela</em></p>
 <p>Kreiramo instancu klase <code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code> uz definisanje ključnih hiperparametara:</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">n_neighbors=5</span></code></strong>: Određujemo da će model donositi odluku na osnovu 5 najbližih suseda. U ovom koraku ćemo eksperimentalno postaviti vrednost parametra <span class="math notranslate nohighlight">\(k=5\)</span> kako bismo demonstrirali rad algoritma i analizirali njegove performanse na konkretnom primeru. Detaljnija analiza uticaja parametra <span class="math notranslate nohighlight">\(k\)</span> na ponašanje modela, kao i metode za izbor njegove optimalne vrednosti, biće razmatrane u nastavku.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">n_neighbors=5</span></code>: Određujemo da će model donositi odluku na osnovu 5 najbližih suseda. U ovom koraku ćemo eksperimentalno postaviti vrednost parametra <span class="math notranslate nohighlight">\(k=5\)</span> kako bismo demonstrirali rad algoritma i analizirali njegove performanse na konkretnom primeru. Detaljnija analiza uticaja parametra <span class="math notranslate nohighlight">\(k\)</span> na ponašanje modela, kao i metode za izbor njegove optimalne vrednosti, biće razmatrane u nastavku.</p>
 <ul>
 <li><p>Biramo neparan broj kako bismo smanjili verovatnoću „nerešenog” ishoda pri glasanju između dve klase.</p></li>
-<li><p><strong>Šta se dešava ako je ipak nerešeno?</strong> U situacijama sa više klasa (npr. rezultat glasanja je <span class="math notranslate nohighlight">\(2:2:1\)</span>), ili kada je broj suseda paran (<span class="math notranslate nohighlight">\(2:2\)</span>), <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> biblioteka najčešće rešava problem na jedan od dva načina:</p>
+<li><p><em>Šta se dešava ako je ipak nerešeno?</em> U situacijama sa više klasa (npr. rezultat glasanja je <span class="math notranslate nohighlight">\(2:2:1\)</span>), ili kada je broj suseda paran (<span class="math notranslate nohighlight">\(2:2\)</span>), <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> biblioteka najčešće rešava problem na jedan od dva načina:</p>
 <ol class="arabic simple">
-<li><p><strong>Težinsko glasanje:</strong> Ako je podešen parametar <code class="docutils literal notranslate"><span class="pre">weights='distance'</span></code>, prednost dobija klasa čiji su susedi fizički bliži upitnoj tački.</p></li>
-<li><p><strong>Redosled klasa:</strong> Ako su težine jednake (<code class="docutils literal notranslate"><span class="pre">uniform</span></code>), algoritam obično bira klasu koja se prva pojavljuje u redosledu (najčešće ona sa manjim indeksom ili koja je prva u labelama).</p></li>
+<li><p><em>Težinsko glasanje:</em> Ako je podešen parametar <code class="docutils literal notranslate"><span class="pre">weights='distance'</span></code>, prednost dobija klasa čiji su susedi fizički bliži upitnoj tački.</p></li>
+<li><p><em>Redosled klasa:</em> Ako su težine jednake (<code class="docutils literal notranslate"><span class="pre">uniform</span></code>), algoritam obično bira klasu koja se prva pojavljuje u redosledu (najčešće ona sa manjim indeksom ili koja je prva u labelama).</p></li>
 </ol>
 </li>
 </ul>
 </li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">metric=&quot;euclidean&quot;</span></code></strong>: Koristimo <strong>Euklidsku udaljenost</strong> kao standardnu metriku za izračunavanje prostorne bliskosti između tačaka. S obzirom na to da smo prethodno skalirali podatke, ova metrika će dati stabilne i pouzdane rezultate.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">metric=&quot;euclidean&quot;</span></code>: Koristimo Euklidsku udaljenost kao standardnu metriku za izračunavanje prostorne bliskosti između tačaka. S obzirom na to da smo prethodno skalirali podatke, ova metrika će dati stabilne i pouzdane rezultate.</p></li>
 </ul>
 <p><em>Treniranje modela (<code class="docutils literal notranslate"><span class="pre">.fit</span></code> metod)</em>
 Pozivom metode <code class="docutils literal notranslate"><span class="pre">.fit(X_train_scaled,</span> <span class="pre">y_train)</span></code>, model se obučava na standardizovanom trenažnom skupu:</p>
 <ol class="arabic simple">
-<li><p><strong>Mapiranje podataka:</strong> Za razliku od algoritama koji uče složene matematičke funkcije, KNN je tzv. <strong>„lenji učenik”</strong> (<em>lazy learner</em>). On u ovoj fazi jednostavno skladišti (indeksira) trenažne primere i njihove labele (<code class="docutils literal notranslate"><span class="pre">y_train</span></code>) u memoriju.</p></li>
-<li><p><strong>Spremnost za predviđanje:</strong> Nakon izvršavanja ove linije koda, klasifikator je spreman da na osnovu memorisanih podataka analizira nove, testne uzorke i dodeli im odgovarajuću klasu.</p></li>
+<li><p>Mapiranje podataka: Za razliku od algoritama koji uče složene matematičke funkcije, KNN je tzv. lenji učenik (engl. lazy learner). On u ovoj fazi jednostavno skladišti (indeksira) trenažne primere i njihove labele (<code class="docutils literal notranslate"><span class="pre">y_train</span></code>) u memoriju.</p></li>
+<li><p>Spremnost za predviđanje: Nakon izvršavanja ove linije koda, klasifikator je spreman da na osnovu memorisanih podataka analizira nove, testne uzorke i dodeli im odgovarajuću klasu.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2832,10 +2796,10 @@ forceTheme('sk-container-id-1');</script></body></div></div>
 <ol class="arabic simple">
 <li><p>Izračunavanje rastojanja između test uzorka i svakog pojedinačnog primera iz trening skupa.</p></li>
 <li><p>Pronalaženje <span class="math notranslate nohighlight">\(k\)</span> najsrodnijih suseda na osnovu prethodno izračunatih distanci.</p></li>
-<li><p>Finalna klasifikacija se vrši putem <strong>većinskog glasanja</strong>, gde klasa koja je najzastupljenija među susedima određuje pripadnost novog podatka.</p></li>
+<li><p>Finalna klasifikacija se vrši putem <em>većinskog glasanja</em>, gde klasa koja je najzastupljenija među susedima određuje pripadnost novog podatka.</p></li>
 </ol>
 <blockquote>
-<div><p><strong>Napomena:</strong> Iako je k-NN izuzetno fleksibilan, njegova priroda nosi određene izazove pri radu sa velikim skupovima podataka:
+<div><p>Napomena: Iako je k-NN izuzetno fleksibilan, njegova priroda nosi određene izazove pri radu sa velikim skupovima podataka:
 - Memorijska zahtevnost: Model mora da čuva čitav skup podataka u memoriji.
 - Računarska složenost: Pri svakoj novoj predikciji, algoritam mora da „pretraži” bazu i izračuna udaljenosti, što zahteva značajnu procesorsku snagu.</p>
 </div></blockquote>
@@ -2882,8 +2846,8 @@ Rastojanja do suseda: [[4.92640798 4.97689824 5.18098496 5.21376189 5.64843548]]
 <p><em>Kako model donosi odluku?</em>
 U ovom koraku vršimo uvid u „glasačko telo” našeg algoritma:</p>
 <ol class="arabic simple">
-<li><p><strong>Analiza suseda:</strong> Identifikovali smo klase za 5 primera iz trening skupa koji su najsličniji našem test primeru.</p></li>
-<li><p><strong>Finalna predikcija:</strong> Model agregira ove vrednosti i dodeljuje klasu koja se najčešće pojavljuje među susedima.</p></li>
+<li><p>Analiza suseda: Identifikovali smo klase za 5 primera iz trening skupa koji su najsličniji našem test primeru.</p></li>
+<li><p>Finalna predikcija: Model agregira ove vrednosti i dodeljuje klasu koja se najčešće pojavljuje među susedima.</p></li>
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2923,19 +2887,19 @@ Name: Klasa, dtype: int64
 <section id="predvidanje-i-evaluacija-performansi-modela">
 <h3>Predviđanje i evaluacija performansi modela</h3>
 <p>Nakon što je model usvojio obrasce iz trenažnih podataka, prelazimo na završnu fazu: testiranje na novim podacima. Ovaj proces nam služi za eksternu evaluaciju, jer nam omogućava da kvantifikujemo performanse klasifikatora u realnim uslovima primene.</p>
-<p><strong>Generisanje predikcija (<code class="docutils literal notranslate"><span class="pre">.predict</span></code>)</strong>
+<p><em>Generisanje predikcija (<code class="docutils literal notranslate"><span class="pre">.predict</span></code>)</em>
 „Primenom metode <code class="docutils literal notranslate"><span class="pre">.predict(X_test_scaled)</span></code>, klasifikator vrši evaluaciju testnih uzoraka identifikacijom <span class="math notranslate nohighlight">\(k=5\)</span> prostorno najbližih instanci u trenažnom skupu. Konačna klasifikacija svakog primera, na osnovu većine glasova, dodeljuje mu labelu ( „dobar” ili „rizičan” klijent).</p>
 <p>Metrika ukupne tačnosti (engl. Accuracy)
 Funkcija <code class="docutils literal notranslate"><span class="pre">accuracy_score</span></code> nam daje najbrži uvid u performanse modela. Ona predstavlja procenat tačno klasfikovanih instanci.</p>
 <blockquote>
-<div><p><strong>Napomena:</strong> Iako je tačnost koristan indikator, ona može biti varljiva kod nebalansiranih skupova podataka, zbog čega je neophodna detaljnija analiza.</p>
+<div><p>Napomena: Iako je tačnost koristan indikator, ona može biti varljiva kod nebalansiranih skupova podataka, zbog čega je neophodna detaljnija analiza.</p>
 </div></blockquote>
 <p><em>Izveštaj o klasifikaciji (engl. Classification Report)</em></p>
 <p>Za dublje razumevanje performansi, koristimo <code class="docutils literal notranslate"><span class="pre">classification_report</span></code>, koji dekomponuje uspeh modela po svakoj klasi posebno kroz tri ključna indikatora:</p>
 <ul class="simple">
-<li><p><strong>Preciznost (engl. Precision) :</strong> Pokazuje koliko je model pouzdan kada klijenta označi kao rizičnog.</p></li>
-<li><p><strong>Odziv (engl. Recall):</strong> Pokazuje sposobnost modela da identifikuje sve stvarne rizične klijente u skupu podataka.</p></li>
-<li><p><strong>F1 -skor (engl. F1-score):</strong> Predstavlja harmonijsku sredinu preciznosti i odziva, pružajući balansiranu ocenu kvaliteta klasifikacije.</p></li>
+<li><p>Preciznost (engl. Precision): Pokazuje koliko je model pouzdan kada klijenta označi kao rizičnog.</p></li>
+<li><p>Odziv (engl. Recall): Pokazuje sposobnost modela da identifikuje sve stvarne rizične klijente u skupu podataka.</p></li>
+<li><p>F1-skor (engl. F1-score): Predstavlja harmonijsku sredinu preciznosti i odziva, pružajući balansiranu ocenu kvaliteta klasifikacije.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2964,51 +2928,51 @@ weighted avg       0.69      0.72      0.70       300
 </div>
 </div>
 </div>
-<p>**  📊 Interpretacija rezultata. Evaluacija uspešnosti klasifikacionog modela.**</p>
-<p>Iako ukupna tačnost modela iznosi <strong>72,33%</strong>, za pravilnu interpretaciju performansi potrebno je analizirati metrike <strong>precision</strong> i <strong>recall</strong>, koje pružaju detaljniji uvid u ponašanje klasifikatora.</p>
+<p><strong>Interpretacija rezultata. Evaluacija uspešnosti klasifikacionog modela.</strong></p>
+<p>Iako ukupna tačnost modela iznosi 72,33%, za pravilnu interpretaciju performansi potrebno je analizirati metrike precision i recall, koje pružaju detaljniji uvid u ponašanje klasifikatora.</p>
 <blockquote>
-<div><p><strong>Preciznost (engl. Precision)</strong> predstavlja meru pouzdanosti pozitivnih predikcija.<br />
+<div><p><em>Preciznost</em> predstavlja meru pouzdanosti pozitivnih predikcija.<br />
 Pokazuje koliki procenat primera koje je model označio kao pripadajuće određenoj klasi zaista i pripada toj klasi.</p>
 </div></blockquote>
 <ul class="simple">
 <li><p>Vrednosti precision kreću su 0.56 za klasu rizičnih klijenata i 0.76 za klasu kreditno sposobnih klijenata.</p></li>
-<li><p>Ponderisani prosek iznosi <strong>0.70</strong>.</p></li>
+<li><p>Ponderisani prosek iznosi 0.70.</p></li>
 <li><p>To znači da je približno 70% svih pozitivnih predikcija modela tačno.</p></li>
 </ul>
 <blockquote>
-<div><p><strong>Odziv (engl. Recall)</strong> meri sposobnost modela da prepozna stvarne primere određene klase.<br />
+<div><p><em>Odziv</em> meri sposobnost modela da prepozna stvarne primere određene klase.<br />
 Ova metrika pokazuje koliki procenat stvarnih primera model uspešno identifikuje.</p>
 </div></blockquote>
 <ul class="simple">
 <li><p>Vrednosti recall kreću se od 0.36 za klasu rizičnih klijenata i 0.88 za klasu kreditno sposobnih klijenata.</p></li>
-<li><p>Ponderisani prosek iznosi <strong>0.72</strong>.</p></li>
+<li><p>Ponderisani prosek iznosi 0.72.</p></li>
 <li><p>To znači da model u proseku prepoznaje oko 72% stvarnih primera.</p></li>
 </ul>
-<p>Makro proseci (<strong>precision = 0.66</strong>, <strong>recall = 0.62</strong>) ukazuju da performanse nisu potpuno ujednačene, dok ponderisani proseci (<strong>precision = 0.70</strong>, <strong>recall = 0.72</strong>) odražavaju ukupno ponašanje modela na celokupnom skupu podataka.</p>
 <hr class="docutils" />
 <blockquote>
-<div><p><strong>Podrška (engl. support)</strong> predstavlja broj primera klase u skupu za testiranje, što svakako utiče na rezultate klasifikacije, i iz dobijenih rezultatat u tabeli mozemo zakljuciti:
+<div><p><em>Podrška</em> predstavlja broj primera klase u skupu za testiranje, što svakako utiče na rezultate klasifikacije, i iz dobijenih rezultatat u tabeli mozemo zakljuciti:
 Disbalans klasa: Uočava se značajan disbalans klasa unutar skupa: dok je kategorija dobrih platiša zastupljena sa 210 primera, rizična grupa obuhvata svega 90 uzoraka, što ukazuje na jasan odnos od 2,3 : 1 u korist pozitivnih primera.</p>
 </div></blockquote>
 <blockquote>
 <div><p>Pristrasnost KNN modela: Zbog mehanizma odlučivanja koji se oslanja na sličnost sa najbližim susedima, KNN model je pristrasan ka brojnijoj klasi. Dominacija podataka o pouzdanim platišama osigurava njihov visok odziv, ali direktno uzrokuje niže performanse u detekciji loših platiša, jer model retko pronalazi dovoljno „loših“ suseda za ispravnu klasifikaciju.</p>
 </div></blockquote>
 <blockquote>
-<div><p><strong>Makro F1-skor naspram Težinskog F1-skor</strong> Makro i težinski prosek se posmatraju zajedno kako bi se utvrdilo da li model ravnomerno ostvaruje dobre rezultate nad svim klasama.</p>
+<div><p><em>Makro F1-skor naspram Težinskog F1-skor</em> Makro i težinski prosek se posmatraju zajedno kako bi se utvrdilo da li model ravnomerno ostvaruje dobre rezultate nad svim klasama.</p>
 </div></blockquote>
 <blockquote>
-<div><p><strong>Makro F1-skor (engl. Macro F1-score)</strong> predstavlja aritmetičku sredinu F1-skorova svih klasa, pri čemu se svakoj klasi daje jednaka važnost, bez obzira na broj primera.
-* Vrednost <strong>0.63</strong> ukazuje da performanse modela nisu ujednačene između klasa.
+<div><p><em>Makro F1-skor</em> predstavlja aritmetičku sredinu F1-skorova svih klasa, pri čemu se svakoj klasi daje jednaka važnost, bez obzira na broj primera.
+* Vrednost 0.63 ukazuje da performanse modela nisu ujednačene između klasa.
 * Ova metrika je osetljiva na slabije rezultate kod manje zastupljene klase.
 * Niža vrednost sugeriše da model ima poteškoće u ravnomernom prepoznavanju svih klasa.</p>
 </div></blockquote>
 <blockquote>
-<div><p><strong>Težinski F1-skor (engl. Weighted F1-score)</strong> uzima u obzir broj primera po klasi (support), pa su zastupljenije klase snažnije ponderisane u konačnom rezultatu.
-* Vrednost <strong>0.70</strong> pokazuje bolje ukupne performanse modela kada se uzme u obzir distribucija podataka.
+<div><p><em>Težinski F1-skor</em> uzima u obzir broj primera po klasi (support), pa su zastupljenije klase snažnije ponderisane u konačnom rezultatu.
+* Vrednost 0.70 pokazuje bolje ukupne performanse modela kada se uzme u obzir distribucija podataka.
 * Viša vrednost u odnosu na Macro F1-score ukazuje da model postiže bolje rezultate na dominantnijoj klasi.</p>
 </div></blockquote>
+<p>Makro proseci (<em>precision = 0.66</em>, <em>recall = 0.62</em>) ukazuju da performanse nisu potpuno ujednačene, dok ponderisani proseci (<em>precision = 0.70</em>, <em>recall = 0.72</em>) odražavaju ukupno ponašanje modela na celokupnom skupu podataka.</p>
 <hr class="docutils" />
-<p>** 🎓 Zaključak**</p>
+<p><strong>Zaključak</strong></p>
 <ul class="simple">
 <li><p>Model pokazuje relativno uravnotežen odnos između precision i recall metrika na agregatnom nivou.</p></li>
 <li><p>Prisutan je prostor za optimizaciju, u zavisnosti od toga da li je u primeni važnija pouzdanost pozitivnih predikcija (preciznost) ili potpunost detekcije stvarnih primera (odziv).</p></li>
@@ -3057,9 +3021,9 @@ Disbalans klasa: Uočava se značajan disbalans klasa unutar skupa: dok je kateg
 </div>
 <p>Nakon evaluacije performansi modela za svaku definisanu vrednost parametra <span class="math notranslate nohighlight">\(k\)</span> iz skupa kandidata, sledi identifikacija vrednosti <span class="math notranslate nohighlight">\(k\)</span> koja najbolje balansira između nedovoljnog i prekomernog prilagođavanja modela.</p>
 <ul class="simple">
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.argmax(cv_scores)</span></code></strong>: Ova funkcija pronalazi indeks (poziciju) na kojoj se nalazi najveća vrednost u nizu rezultata unakrsne validacije.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">optimalno_k</span> <span class="pre">=</span> <span class="pre">k_vrednosti[...]</span></code></strong>: Koristeći pronađeni indeks, iz našeg početnog skupa kandidata izvlačimo konkretnu vrednost parametra <span class="math notranslate nohighlight">\(k\)</span> koja je ostvarila najbolji rezultat.</p></li>
-<li><p><strong><code class="docutils literal notranslate"><span class="pre">max(UnakrsnaValidacija_tacnosti)</span></code></strong>: Izračunava i prikazuje kolika je bila ta maksimalna postignuta preciznost (tačnost) tokom procesa validacije.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.argmax(cv_scores)</span></code>: Ova funkcija pronalazi indeks (poziciju) na kojoj se nalazi najveća vrednost u nizu rezultata unakrsne validacije.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optimalno_k</span> <span class="pre">=</span> <span class="pre">k_vrednosti[...]</span></code>: Koristeći pronađeni indeks, iz našeg početnog skupa kandidata izvlačimo konkretnu vrednost parametra <span class="math notranslate nohighlight">\(k\)</span> koja je ostvarila najbolji rezultat.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max(UnakrsnaValidacija_tacnosti)</span></code>: Izračunava i prikazuje kolika je bila ta maksimalna postignuta preciznost (tačnost) tokom procesa validacije.</p></li>
 </ul>
 <p>Literatura</p>
 <p>[1] Jaskowiak, P. A.; Campello, R. J. G. B. “Comparing Correlation Coefficients as Dissimilarity Measures
@@ -3140,19 +3104,11 @@ for Cancer Classification in Gene Expression Data”. <a class="reference extern
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uvod">Uvod</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-iz-prakse-optimizacija-logistickih-resursa-pomocu-knn-algoritma">Primer iz prakse: Optimizacija logističkih resursa pomoću KNN algoritma</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metrike-udaljenosti">Metrike udaljenosti</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skaliranje-podataka-za-knn-standardizacija-i-normalizacija">SKALIRANJE PODATAKA ZA KNN: STANDARDIZACIJA I NORMALIZACIJA</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skaliranje-podataka-za-knn-standardizacija-i-normalizacija">Skaliranje podataka za KNN: standardizacija i normalizacija</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analiza-parametra-k-i-njegova-uloga-u-stabilnosti-modela">Analiza parametra <span class="math notranslate nohighlight">\(k\)</span> i njegova uloga u stabilnosti modela</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tezinski-ponderisani-knn-algoritam">Težinski (ponderisani) KNN algoritam</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-knn-algoritma">Prednosti i mane KNN algoritma</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-knn-algoritma">Prednosti KNN algoritma</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mane-knn-algoritma">Mane KNN algoritma</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#algoritam-k-najblizih-suseda-za-problem-klasifikacije">Algoritam k-najbližih suseda za problem klasifikacije</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prednosti-i-mane-knn-algoritma">Prednosti i mane KNN algoritma</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prakticna-implementacija-knn-algoritma-pomocu-scikit-learn-biblioteke">Praktična implementacija KNN algoritma pomoću <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> biblioteke</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#studije-slucaja">Studije slučaja</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predvidanje-i-evaluacija-performansi-modela">Predviđanje i evaluacija performansi modela</a></li>
