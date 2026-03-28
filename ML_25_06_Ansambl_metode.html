@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 
 
-<html lang="sr" data-content_root="./" >
+<html lang="en" data-content_root="./" >
 
   <head>
     <meta charset="utf-8" />
@@ -52,7 +52,7 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
   <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="_static/documentation_options.js?v=986fb68f"></script>
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
@@ -62,7 +62,6 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
-    <script src="_static/translations.js?v=3c3b4542"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -73,11 +72,11 @@
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ML_25_06_Ansambl_metode';</script>
     <script src="_static/sr_cyr2lat_ui.js?v=88fb0d47"></script>
-    <link rel="index" title="Индекс" href="genindex.html" />
-    <link rel="search" title="Претрага" href="search.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Stabla odlučivanja" href="ML_25_05_Stabla_odlucivanja.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="sr"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -176,9 +175,9 @@
 
  <script>
  document.write(`
-   <button class="btn search-button-field search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Претрага</span>
+    <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
    </button>
  `);
@@ -298,7 +297,7 @@
       
       <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Изворно спремиште"
+   title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -315,7 +314,7 @@
       
       <li><a href="https://github.com/dazdejkovic/OI_25_jb1.git/issues/new?title=Issue%20on%20page%20%2FML_25_06_Ansambl_metode.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Отворите издање"
+   title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -336,7 +335,7 @@
 
 
 <div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Преузмите ову страницу">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
@@ -345,7 +344,7 @@
       
       <li><a href="_sources/ML_25_06_Ansambl_metode.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Преузми изворну датотеку"
+   title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -363,7 +362,7 @@
       <li>
 <button onclick="window.print()"
   class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Испис у ПДФ"
+  title="Print to PDF"
   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
@@ -383,7 +382,7 @@
 
 <button onclick="toggleFullScreen()"
   class="btn btn-sm btn-fullscreen-button"
-  title="Режим целог екрана"
+  title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
@@ -409,7 +408,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Претрага" aria-label="Претрага" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -433,7 +432,7 @@ document.write(`
         <div id="jb-print-toc">
             
             <div>
-                <h2> Садржај </h2>
+                <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -550,7 +549,7 @@ observer.observe(document.body, {
 </script></div>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="ansambl-metode">
-<h1>Ansambl metode</h1>
+<h1>Ansambl metode<a class="headerlink" href="#ansambl-metode" title="Link to this heading">#</a></h1>
 <p>Ansambl metode zasnivaju se na ideji da se, umesto jednog modela, koristi više pojedinačnih modela koji su objedinjeni u jedinstven ansambl. Kombinovanjem većeg broja pouzdanih modela smanjuje se uticaj grešaka i postižu se veća tačnost i stabilnost, jer se njihovim zajedničkim delovanjem poništavaju nezavisne ili slabo povezane greške.</p>
 <p><strong>Ishodi učenja:</strong> Nakon savladavanja ovog poglavlja, student će biti u stanju da:</p>
 <ul class="simple">
@@ -560,7 +559,7 @@ observer.observe(document.body, {
 <li><p>interpretira rezultate modela i proceni njihov doprinos poboljšanju tačnosti predikcije</p></li>
 </ul>
 <section id="uvod">
-<h2>Uvod</h2>
+<h2>Uvod<a class="headerlink" href="#uvod" title="Link to this heading">#</a></h2>
 <p>Ansambl metode predstavljaju tehnike mašinskog učenja koje kombinuju više modela kako bi se dobile preciznije i stabilnije predikcije. Ideja je jednostavna: umesto da se oslonimo na jedan model, koristimo više njih i objedinjavamo njihove rezultate. U praksi, ovakav pristup smanjuje greške i daje pouzdanija predviđanja na novim podacima.</p>
 <div class="seealso admonition">
 <p class="admonition-title">Ideja ansambl učenja</p>
@@ -591,7 +590,7 @@ Modeli se treniraju redom, tako da svaki naredni pokušava da ispravi greške pr
 <p>Na kraju, svi analitičari zajedno donose konačnu odluku, ali veći uticaj imaju oni koji su bili uspešniji. Ovo odgovara ideji <em>boosting</em>-a: modeli se treniraju redom i svaki naredni pokušava da popravi prethodne.</p>
 </div>
 <section id="varijansa-i-pristrasnost">
-<h3>Varijansa i pristrasnost</h3>
+<h3>Varijansa i pristrasnost<a class="headerlink" href="#varijansa-i-pristrasnost" title="Link to this heading">#</a></h3>
 <p>Važan izazov u mašinskom učenju je ravnoteža između pristrasnosti (<em>bias</em>) i varijanse (<em>variance</em>). Jednostavni modeli mogu biti previše grubi (<em>underfitting</em>), dok složeni modeli mogu previše da se prilagode podacima (<em>overfitting</em>). Ansambl metode pomažu da se postigne bolji balans između ova dva problema.</p>
 <p>Osnovna razlika između pristupa može se sažeti ovako:</p>
 <ul class="simple">
@@ -600,7 +599,7 @@ Modeli se treniraju redom, tako da svaki naredni pokušava da ispravi greške pr
 </ul>
 <p>Ansambl metode zahtevaju više računarskih resursa, ali u praksi često daju značajno bolje rezultate od pojedinačnih modela, zbog čega imaju široku primenu u ekonomiji i poslovnoj analizi.</p>
 <div class="pst-scrollable-table-container"><table class="table table-center" id="id14">
-<caption><span class="caption-number">Tabela 18. </span><span class="caption-text">Razlike između bagging-a i boosting-a</span></caption>
+<caption><span class="caption-number">Table 18 </span><span class="caption-text">Razlike između bagging-a i boosting-a</span><a class="headerlink" href="#id14" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Karakteristika</p></th>
 <th class="head"><p>Bagging</p></th>
@@ -638,7 +637,7 @@ Modeli se treniraju redom, tako da svaki naredni pokušava da ispravi greške pr
 </section>
 </section>
 <section id="kako-funkcionisu-ansambl-metode">
-<h2>Kako funkcionišu ansambl metode</h2>
+<h2>Kako funkcionišu ansambl metode<a class="headerlink" href="#kako-funkcionisu-ansambl-metode" title="Link to this heading">#</a></h2>
 <p>Ansambl metode kombinuju više modela kako bi dobile bolji rezultat. Iako postoje različiti pristupi, osnovne ideje su sledeće:</p>
 <ul class="simple">
 <li><p>više modela umesto jednog<br />
@@ -657,7 +656,7 @@ kod nekih metoda (npr. <em>boosting</em>) novi modeli pokušavaju da isprave gre
 <p>U praksi, sve ove ideje su već implementirane u bibliotekama kao što je <em>scikit-learn</em>, tako da korisnik najčešće podešava parametre, dok se sama logika ansambla izvršava automatski.</p>
 </section>
 <section id="prednosti-i-ogranicenja-ansambl-metoda">
-<h2>Prednosti i ograničenja ansambl metoda</h2>
+<h2>Prednosti i ograničenja ansambl metoda<a class="headerlink" href="#prednosti-i-ogranicenja-ansambl-metoda" title="Link to this heading">#</a></h2>
 <p>Ansambl metode donose niz značajnih koristi u analizi podataka i izgradnji prediktivnih modela:</p>
 <ul class="simple">
 <li><p>Veća tačnost predviđanja. Kombinovanjem više modela postiže se bolja preciznost nego kod pojedinačnih modela.</p></li>
@@ -680,7 +679,7 @@ kod nekih metoda (npr. <em>boosting</em>) novi modeli pokušavaju da isprave gre
 </ul>
 </section>
 <section id="slucajne-sume">
-<h2>Slučajne šume</h2>
+<h2>Slučajne šume<a class="headerlink" href="#slucajne-sume" title="Link to this heading">#</a></h2>
 <p>Nasumične šume (<em>random forest</em>) su metoda koja kombinuje veliki broj stabala odlučivanja kako bi se dobila preciznija i stabilnija predikcija.</p>
 <p>Osnovna ideja zasniva se na dva jednostavna koraka:</p>
 <ol class="arabic simple">
@@ -723,7 +722,7 @@ pri svakom grananju koristi se samo deo dostupnih promenljivih</p></li>
 <p>Veći broj stabala obično daje bolje rezultate, ali povećava vreme izračunavanja.</p>
 </div>
 <section id="rangiranje-znacaja-atributa">
-<h3>Rangiranje značaja atributa</h3>
+<h3>Rangiranje značaja atributa<a class="headerlink" href="#rangiranje-znacaja-atributa" title="Link to this heading">#</a></h3>
 <p>Rangiranje značaja atributa u algoritmu slučajnih šuma može se sprovesti prema pristupu Breimana <span id="id1">[<a class="reference internal" href="#id13" title="Leo Breiman. Random forests. Machine Learning, 45(1):5–32, 2001. doi:10.1023/A:1010933404324.">1</a>]</span>, a sama metodologija je i integrisana u standardnoj <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> biblioteci.
 Procedura evaluacije značaja atributa u skupu podataka <span class="math notranslate nohighlight">\(D_n = \{(X_i, Y_i)\}_{i=1}^n\)</span> sprovodi se kroz sledeće faze:</p>
 <ol class="arabic simple">
@@ -742,7 +741,7 @@ Procedura evaluacije značaja atributa u skupu podataka <span class="math notran
 </section>
 </section>
 <section id="prednosti-i-mane-nasumicnih-suma-random-forest">
-<h2>Prednosti i mane nasumičnih šuma (<em>random forest</em>)</h2>
+<h2>Prednosti i mane nasumičnih šuma (<em>random forest</em>)<a class="headerlink" href="#prednosti-i-mane-nasumicnih-suma-random-forest" title="Link to this heading">#</a></h2>
 <p>Nasumične šume su veoma popularan model jer daju dobre rezultate u praksi, ali imaju i određena ograničenja.</p>
 <p><em>Prednosti:</em></p>
 <ul class="simple">
@@ -758,7 +757,7 @@ Procedura evaluacije značaja atributa u skupu podataka <span class="math notran
 </ul>
 </section>
 <section id="konfiguracija-i-obuka-algoritma-slucajne-sume-u-scikit-learn-okruzenju">
-<h2>Konfiguracija i obuka algoritma slučajne šume u scikit-learn okruženju</h2>
+<h2>Konfiguracija i obuka algoritma slučajne šume u scikit-learn okruženju<a class="headerlink" href="#konfiguracija-i-obuka-algoritma-slucajne-sume-u-scikit-learn-okruzenju" title="Link to this heading">#</a></h2>
 <p>Za ilustraciju rada <em>slučajne šume</em> koristićemo isti skup podataka kao i kod stabla odlučivanja <em>German Credit Dataset</em> (detalje o bazi možete pronaći <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/statlog+(german+credit+data)">ovde</a>). Ova baza je posebno pogodna jer kombinuje numeričke i kategoričke podatke koji direktno utiču na donošenje odluka.</p>
 <p>Podsetimo se ključnih detalja o bazi:</p>
 <ul class="simple">
@@ -1203,8 +1202,8 @@ memory usage: 164.1+ KB
 <li><p>Binarizacija ciljne klase: U posmatranoj bazi ciljna promenljiva uzima vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar kreditni rizik) i <code class="docutils literal notranslate"><span class="pre">2</span></code> (loš kreditni rizik). Koristeci metodu <code class="docutils literal notranslate"><span class="pre">.map()</span></code> izvršićemo prekodiranje ovih vrednosti <code class="docutils literal notranslate"><span class="pre">1</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (dobar klijent), i <code class="docutils literal notranslate"><span class="pre">2</span></code> u <code class="docutils literal notranslate"><span class="pre">1</span></code> (rizičan klijent) radi usklađivanja sa standardima binarne klasifikacije.</p></li>
 <li><p>Razdvajanje na ulazne atribute i izlazne labele:</p>
 <ul class="simple">
-<li><p>Matrica atributa (<code class="docutils literal notranslate"><span class="pre">X</span></code>): Izdvajanjem kolone „<code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> iz skupa podataka formiramo matricu atributa (nezavisnih promenljivih). Ovi podaci predstavljaju ulazne parametre (<span class="math notranslate nohighlight">\(X\)</span>) na osnovu kojih model uči da prepoznaje obrasce i donosi predviđanja.</p></li>
-<li><p>Izlazna labela (<code class="docutils literal notranslate"><span class="pre">y</span></code>): Kolona <code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> se izdvaja kao zavisna promenljiva, odnosno ciljni vektor (<span class="math notranslate nohighlight">\(y\)</span>), čija se vrednost predviđa na osnovu ulaznih podataka. U kontekstu mašinskog učenja, ovaj vektor predstavlja „labelu” ili tačan odgovor na osnovu kojeg model uči da prepoznaje obrasce i vrši klasifikaciju novih primera.</p></li>
+<li><p>Matrica atributa (<code class="docutils literal notranslate"><span class="pre">X</span></code>): Izdvajanjem kolone “<code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> iz skupa podataka formiramo matricu atributa (nezavisnih promenljivih). Ovi podaci predstavljaju ulazne parametre (<span class="math notranslate nohighlight">\(X\)</span>) na osnovu kojih model uči da prepoznaje obrasce i donosi predviđanja.</p></li>
+<li><p>Izlazna labela (<code class="docutils literal notranslate"><span class="pre">y</span></code>): Kolona <code class="docutils literal notranslate"><span class="pre">&quot;Klasa&quot;</span></code> se izdvaja kao zavisna promenljiva, odnosno ciljni vektor (<span class="math notranslate nohighlight">\(y\)</span>), čija se vrednost predviđa na osnovu ulaznih podataka. U kontekstu mašinskog učenja, ovaj vektor predstavlja “labelu” ili tačan odgovor na osnovu kojeg model uči da prepoznaje obrasce i vrši klasifikaciju novih primera.</p></li>
 </ul>
 </li>
 </ol>
@@ -1286,7 +1285,7 @@ Stepen neuravnoteženosti klasa: [1.         2.33333333]
 <li><p><code class="docutils literal notranslate"><span class="pre">train_test_split</span></code> – funkcija koja nasumično deli ulazne podatke na <em>trening</em> i <em>test</em> podskup, čime omogućava objektivnu procenu performansi modela.</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">X_train,</span> <span class="pre">X_test,</span> <span class="pre">y_train,</span> <span class="pre">y_test</span></code> – funkcija vraća četiri podskupa kako bi se razdvojio proces učenja od procesa evaluacije.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">X_train</span></code> i <code class="docutils literal notranslate"><span class="pre">y_train</span></code> čine trening skup na kojem model „uči“ obrasce iz podataka, gde je <em>X_train</em> skup nezavisnih promenljivih, a <em>y_train</em> skup zavisnih promenljivih (stvarne ciljne vrednosti ko je kupio proizvod) koji odgovaraju ’X_train’ skupu.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X_train</span></code> i <code class="docutils literal notranslate"><span class="pre">y_train</span></code> čine trening skup na kojem model „uči“ obrasce iz podataka, gde je <em>X_train</em> skup nezavisnih promenljivih, a <em>y_train</em> skup zavisnih promenljivih (stvarne ciljne vrednosti ko je kupio proizvod) koji odgovaraju ‘X_train’ skupu.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">X_test</span></code> i <code class="docutils literal notranslate"><span class="pre">y_test</span></code> koriste se za proveru koliko je model precizan na podacima koje ranije nije video, gde je <em>X_test</em> skup nezavisnih promenljivih na osnovu ovih podataka model vrši predviđanja, a <em>y_test</em> skup zavisnih promenljivih (stvarni ishodi za testni skup.).</p></li>
 </ul>
 </li>
@@ -1889,7 +1888,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 <br>
 </section>
 <section id="zadaci-i-problemi">
-<h2>Zadaci i problemi</h2>
+<h2>Zadaci i problemi<a class="headerlink" href="#zadaci-i-problemi" title="Link to this heading">#</a></h2>
 <br><div class="tip admonition">
 <p class="admonition-title">Zadatak 1 - Zadovoljstvo zaposlenih</p>
 <p>Jedna srednje velika kompanija suočava se sa povećanim odlaskom zaposlenih, što dovodi do rasta troškova zapošljavanja i obuke novih radnika. Menadžment želi da identifikuje ključne faktore koji utiču na odluku zaposlenih da napuste firmu, kako bi mogao da unapredi politiku zadržavanja kadrova.</p>
@@ -1901,7 +1900,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 <li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> – zaposleni je otišao</p></li>
 </ul>
 <div class="pst-scrollable-table-container"><table class="table table-center" id="id15">
-<caption><span class="caption-number">Tabela 19. </span><span class="caption-text">Opis promenljivih u skupu podataka:</span></caption>
+<caption><span class="caption-number">Table 19 </span><span class="caption-text">Opis promenljivih u skupu podataka:</span><a class="headerlink" href="#id15" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Promenljiva</p></th>
 <th class="head"><p>Tip promenljive</p></th>
@@ -1963,7 +1962,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 <p>Na raspolaganju je skup podataka koji sadrži informacije o prihodima, veličini domaćinstva, obrazovanju, tipu naselja i štednji. Cilj je predvideti ukupnu mesečnu potrošnju domaćinstva.</p>
 <p>Skup podatak neophodan za ovaj zadatak se nalazi na sledećem linku [<a class="reference external" href="https://drive.google.com/file/d/1uozylpxsziVW_2_41lVPcI7OtvTsZYhI/view?usp=sharing">https://drive.google.com/file/d/1uozylpxsziVW_2_41lVPcI7OtvTsZYhI/view?usp=sharing</a>]</p>
 <div class="pst-scrollable-table-container"><table class="table table-center" id="id16">
-<caption><span class="caption-number">Tabela 20. </span><span class="caption-text">Opis promenljivih u skupu podataka:</span></caption>
+<caption><span class="caption-number">Table 20 </span><span class="caption-text">Opis promenljivih u skupu podataka:</span><a class="headerlink" href="#id16" title="Link to this table">#</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Promenljiva</p></th>
 <th class="head"><p>Tip promenljive</p></th>
@@ -2030,7 +2029,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 </div>
 </section>
 <section id="literatura">
-<h2>Literatura</h2>
+<h2>Literatura<a class="headerlink" href="#literatura" title="Link to this heading">#</a></h2>
 <div class="docutils container" id="id2">
 <div role="list" class="citation-list">
 <div class="citation" id="id13" role="doc-biblioentry">
@@ -2077,7 +2076,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">назад</p>
+        <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Stabla odlučivanja</p>
       </div>
     </a>
@@ -2093,7 +2092,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Садржај
+    <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
@@ -2125,7 +2124,7 @@ F1 score za klasu klijente niskog rizika (dobre klijente): 0.8496732026143791
   <div class="footer-item">
     
 <p class="component-author">
-Од стране Dragan Azdejković, Dragana Radojičić i Mladen Stamenković
+By Dragan Azdejković, Dragana Radojičić i Mladen Stamenković
 </p>
 
   </div>
