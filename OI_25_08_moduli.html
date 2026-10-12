@@ -462,8 +462,8 @@ document.write(`
                   
   <section id="moduli">
 <h1>Moduli</h1>
-<p>Zamisli da želiš da izračunaš vrednosti kao što su <span class="math notranslate nohighlight">\(𝑒^{2.5}\)</span> ili <span class="math notranslate nohighlight">\(\ln 3.45\)</span>.</p>
-<p>Pajton bez ikakvih dodataka ume da sabira, množi, ili radi sa celim i realnim brojevima — ali ne zna sam od sebe šta su eksponencijalna funkcija, prirodni logaritam, trigonometrijske funkcije i slično. Drugim rečima: osnovni Python je namerno “mršav”.</p>
+<p>Zamislite da treba da izračunate vrednosti kao što su <span class="math notranslate nohighlight">\(𝑒^{2.5}\)</span> ili <span class="math notranslate nohighlight">\(\ln 3.45\)</span>.</p>
+<p>Pajton bez ikakvih dodataka ume da sabira, množi, ili radi sa celim i realnim brojevima ali ne zna sam od sebe šta su eksponencijalna funkcija, prirodni logaritam, trigonometrijske funkcije i slično.</p>
 <p>Da bi znao da izračuna</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">**</span><span class="mf">2.5</span>
 <span class="n">ln</span><span class="p">(</span><span class="mf">3.45</span><span class="p">)</span>
@@ -482,7 +482,7 @@ Module shvatite kao biblioteke u kojima se nalazi niz funkcija koje će nam olak
 </div>
 </div>
 </div>
-<p>Pokretanjem ove komande naglasili smo programu da želimo da koristimo ovaj modul i interpreter traži <code class="docutils literal notranslate"><span class="pre">math.py</span></code> u listi predefinisanih direktorijuma (trenutni direktorijum, i par sistemskih).</p>
+<p>Pokretanjem komande <code class="docutils literal notranslate"><span class="pre">import</span></code> naglasili smo programu da želimo da koristimo ovaj modul i interpreter traži <code class="docutils literal notranslate"><span class="pre">math.py</span></code> u listi predefinisanih direktorijuma (trenutni direktorijum, i par sistemskih).</p>
 <p>Ako se modul ne nalazi u listi predefisnisanih direktorijuma, onda prvo morate da ga instalirate (sačuvate u memoriji na disku) modul kako biste pokrenuli</p>
 <p>Pomoću <code class="docutils literal notranslate"><span class="pre">help(math)</span></code> možemo da proverimo koje sve funkcije su nam dostupne u okviru ovog modula</p>
 <div class="cell docutils container">
@@ -574,7 +574,7 @@ Module shvatite kao biblioteke u kojima se nalazi niz funkcija koje će nam olak
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -586,7 +586,7 @@ Module shvatite kao biblioteke u kojima se nalazi niz funkcija koje će nam olak
 </div>
 <p>Na ovaj način uvoze se sva imena osim onih koja počinju sa donjom crtom (_). Iako na prvi pogled najbolja opcija, savet je da ne koristite ovu mogućnost, jer ona uvodi nepoznati skup imena u interpreter, možda skrivajući neke stvari koje ste već definisali.</p>
 <p>Još jedan razlog je što na ovaj način imamo i slabo čitljiv kod, jedna od važnih stvari prilikom rada u bilo kom programu.</p>
-<p>Ubacivanje modula u Python nosi sa sobom standardne skraćenice koje se koriste. Tako imamo:</p>
+<p>Ubacivanje modula u Pajton nosi sa sobom standardne skraćenice koje se koriste. Tako imamo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 </pre></div>
@@ -626,7 +626,7 @@ Module shvatite kao biblioteke u kojima se nalazi niz funkcija koje će nam olak
 </section>
 <section id="cemu-zaista-sluze-moduli">
 <h2>Čemu zaista služe moduli?</h2>
-<p>Pogledajte ovo:</p>
+<p>Pogledajte sledeću liniju koda:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mf">.1</span> <span class="o">+</span> <span class="mf">.2</span><span class="p">)</span>
@@ -639,8 +639,8 @@ Module shvatite kao biblioteke u kojima se nalazi niz funkcija koje će nam olak
 </div>
 </div>
 </div>
-<p>Python ne može tačno da predstavi neke decimalne brojeve u binarnom sistemu, pa <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.2</span></code> nije tačno.
-Da dobiješ tačan decimalni rezultat koristi <code class="docutils literal notranslate"><span class="pre">Decimal</span></code> iz <code class="docutils literal notranslate"><span class="pre">decimal</span></code> modula.</p>
+<p>Pajton ne može tačno da predstavi neke decimalne brojeve u binarnom sistemu, pa <code class="docutils literal notranslate"><span class="pre">0.1</span> <span class="pre">+</span> <span class="pre">0.2</span></code> nije tačno.
+Jedan od mogućih načina da dobijete tačan decimalni rezultat koristi <code class="docutils literal notranslate"><span class="pre">Decimal</span></code> iz <code class="docutils literal notranslate"><span class="pre">decimal</span></code> modula.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span>
@@ -813,16 +813,16 @@ R = N \cdot C
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               

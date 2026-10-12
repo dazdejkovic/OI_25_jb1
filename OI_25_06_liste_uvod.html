@@ -488,7 +488,7 @@ Elementi su indeksirani od nule, mogu biti različitih tipova, a lista se zapisu
 </div>
 </div>
 <p>Promenljiva <code class="docutils literal notranslate"><span class="pre">a</span></code> bila je lista celih brojeva.</p>
-<p>Lista može biti sastavljena od proizvoljnih tipova podataka, sastavljena i od mešovitih tipova podataka, nemamo nikakvih ograničenja. Element liste može biti i liste.</p>
+<p>Lista može biti sastavljena od proizvoljnih tipova podataka, sastavljena i od mešovitih tipova podataka, nemamo nikakvih ograničenja. Element liste može biti i lista.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;operaciona istraživanja&quot;</span><span class="p">,</span> <span class="s2">&quot;EKOF&quot;</span><span class="p">,</span> <span class="s2">&quot;OI&quot;</span><span class="p">]</span>
@@ -1032,16 +1032,16 @@ Naša druga lista je:  [0, 1, 7, 3, 4, 5]
 <p>U informaciju sa slike se možemo uveriti i sami:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
-<span class="n">var2</span> <span class="o">=</span> <span class="n">var1</span>
-<span class="n">var3</span> <span class="o">=</span> <span class="n">var1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">promenljiva_1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">promenljiva_2</span> <span class="o">=</span> <span class="n">promenljiva_1</span>
+<span class="n">promenljiva_3</span> <span class="o">=</span> <span class="n">promenljiva_1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adrese listi: &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">var1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">var2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">var3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adrese listi: &quot;</span><span class="p">,</span> <span class="nb">id</span><span class="p">(</span><span class="n">promenljiva_1</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">promenljiva_2</span><span class="p">),</span> <span class="nb">id</span><span class="p">(</span><span class="n">promenljiva_3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adrese listi:  2474516399168 2474516399168 2474516399168
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Adrese listi:  2409030422080 2409030422080 2409030422080
 </pre></div>
 </div>
 </div>
@@ -1072,7 +1072,7 @@ Naša druga lista je:  [0, 1, 7, 3, 4, 5] sa adresom  1298629627648
 </section>
 <section id="jos-malo-o-vezi-stringova-i-listi">
 <h2>Još malo o vezi stringova i listi</h2>
-<p>Podaci koje dobijemo često će inicijalno u Pajtonu biti uvezeni kao string. Lista omogućava lakše baratanje - npr., lakše je baratati pasusom teksta koji je predstavljen kao lista reči nego jedan string u kojem nemamo nikakve preciznije informacije. Jako korisno će biti da tekst koji imamo u stringu prevedemo u listu. Očekivano, postoji metoda koja to radi:</p>
+<p>Podaci koje dobijemo često će inicijalno u Pajtonu biti uvezeni kao string. Lista omogućava lakše baratanje. Na primer, lakše je baratati pasusom teksta koji je predstavljen kao lista reči nego jedan string u kojem nemamo nikakve preciznije informacije. Jako korisno će biti da tekst koji imamo u stringu prevedemo u listu. Očekivano, postoji metoda koja to radi i koju definišemo ispod.</p>
 <section id="metoda-split">
 <h3>Metoda <code class="docutils literal notranslate"><span class="pre">split()</span></code></h3>
 <p>Metoda za stringove koja pretvara string u listu reči:</p>
@@ -1202,16 +1202,16 @@ Naša druga lista je:  [0, 1, 7, 3, 4, 5] sa adresom  1298629627648
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               

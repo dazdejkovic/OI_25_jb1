@@ -826,7 +826,7 @@ linku </a> možete pogledati zvaničnu dokumentaciju o f-stringovima.</p></li>
 <section id="kopiranje-listi">
 <h2>Kopiranje listi</h2>
 <p>Najveći deo priče o kopiranju listi preuzet je iz knjige <a href="https://www.tomasbeuzen.com/python-programming-for-data-science/README.html" style="color:#1a73e8;"> Python Programming for Data Science </a> . Veoma je zanimljiva jer ćemo na predmetu pokriti najveći deo tema koje se nalaze u njoj pa je možete baš često koristiti i vraćati joj se.</p>
-<p>Podestimo se: Ako se jednoj promenljivoj tipa liste dodeli druga lista, onda one dele isti memorijski prostor. Videli smo da se taj problem može prevaziće primenom metoda listi <code class="docutils literal notranslate"><span class="pre">copy</span></code>.</p>
+<p>Podsetimo se: Ako se jednoj promenljivoj tipa liste dodeli druga lista, onda one dele isti memorijski prostor. Videli smo da se taj problem može prevaziće primenom metoda listi <code class="docutils literal notranslate"><span class="pre">copy</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
@@ -863,7 +863,7 @@ To znači:</p>
 <li><p>napravi se nova lista u memoriji,</p></li>
 <li><p>elementi se samo referenciraju, ne kopiraju dubinski.</p></li>
 </ul>
-<p>Drugim rečima, <code class="docutils literal notranslate"><span class="pre">copy()</span></code> kopira strukturu liste, ali ne i objekte unutar nje.</p>
+<p>Drugim rečima, <code class="docutils literal notranslate"><span class="pre">copy()</span></code> kopira strukturu liste, ali ne i objekte unutar nje. Ovo ćemo prikazati koristeći slike knjige koju takođe preporučujemo vašoj pažnji. Poglavlje gde autor govori o ovom problemu nalazi se <a class="reference external" href="https://www.tomasbeuzen.com/python-programming-for-data-science/chapters/chapter4-style-scripts-imports.html">OVDE</a>.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/lista_shallow_copy.png"><img alt="_images/lista_shallow_copy.png" src="_images/lista_shallow_copy.png" style="width: 400px;" /></a>
 <figcaption>
@@ -1011,16 +1011,16 @@ b) biti rangirane po njihovoj dužini.
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               

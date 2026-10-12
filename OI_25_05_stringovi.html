@@ -439,7 +439,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacije-sa-stringovima">Operacije sa stringovima</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jedna-korisna-funkcija">Jedna korisna funkcija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jedna-korisna-funkcija-duzina-stringa">Jedna korisna funkcija: dužina stringa</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
@@ -544,13 +544,13 @@ observer.observe(document.body, {
 </div>
 <section id="stringovi">
 <h1>Stringovi</h1>
-<p>String (tip <code class="docutils literal notranslate"><span class="pre">str</span></code>) je niz znakova u Pajtonu — tekstualni podatak koji može da sadrži slova, cifre, razmake, simbole i čak emoji.
+<p>String (tip <code class="docutils literal notranslate"><span class="pre">str</span></code>) je niz znakova u Pajtonu, tekstualni podatak koji može da sadrži slova, cifre, razmake, simbole.
 String se uvek piše između navodnika: jednostrukih ’ ’ ili dvostrukih „ „.</p>
 <div class="important admonition">
 <p class="admonition-title">String</p>
-<p>String je nepromenljiva (immutable) sekvenca Unicode karaktera u Pajtonu.
-Nepromjenljiv (immutable) znači da se sadržaj stringa ne može menjati nakon što je napravljen. Svaka „promena“ stvara novi string.
-Unicode znači da Pajton podržava sve svetske jezike, dijakritike (č, ć, ž…), emoji itd.</p>
+<p>String je nepromenljiva, nemutabilna (immutable) sekvenca Unicode karaktera u Pajtonu.
+Nepromjenljiv tj. nemutabilan znači da se sadržaj stringa ne može menjati nakon što je napravljen. Svaka „promena“ stvara novi string.
+Unicode znači da Pajton podržava sve svetske jezike, dijakritike (č, ć, ž…), emotikone itd.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,7 +610,6 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 <li><p>That was Peter’s book.</p></li>
 <li><p>What do you do? „He doesn’t know”, she replied.</p></li>
 </ul>
-<p>Još jedna opcija je i da iskoristite obrnutu kosu crtu (eng. <em>backslash</em>) \ pre apostrofa</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">=</span> <span class="s2">&quot;That was Peter&#39;s book.&quot;</span>
@@ -624,19 +623,16 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 </div>
 </div>
-<p>Naravno, postoji uvek više načina kako da ispravno napišemo isti string.</p>
+<p>Naravno, postoji uvek više načina kako da ispravno napišemo isti string. Još jedna opcija je i da iskoristite obrnutu kosu crtu (eng. <em>backslash</em>) \ pre apostrofa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string2</span> <span class="o">=</span> <span class="s2">&quot;That was Peter&#39;s book.&quot;</span>
-<span class="n">string2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string2</span> <span class="o">=</span> <span class="s1">&#39;That was Peter</span><span class="se">\&#39;</span><span class="s1">s book.&#39;</span>
+<span class="n">string2</span> 
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">string3</span> <span class="o">=</span> <span class="s1">&#39;That was Peter</span><span class="se">\&#39;</span><span class="s1">s book.&#39;</span>
-<span class="n">string3</span> 
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;That was Peter&#39;s book.&quot;
 </pre></div>
 </div>
 </div>
@@ -695,7 +691,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 </div>
 </div>
-<p>Naravno, ako pokušamo da pristupimo nepostojećem indeksu, Python interpreter će prijaviti grešku</p>
+<p>Naravno, ako pokušamo da pristupimo nepostojećem indeksu, Pajton interpreter će prijaviti grešku</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span>
@@ -750,7 +746,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </section>
 <section id="isecanje-engl-slicing">
 <h2>Isecanje (engl. slicing)</h2>
-<p>Dok se indeksiranje koristi kako bi izdvojili pojedinačni karakter, isecanje (često se kaže i slajsing) nam omogućava da dobijemo podstring. Izuzetno važan način koji ćemo takođe nadalje koristiti često.</p>
+<p>Dok se indeksiranje koristi kako bi izdvojili pojedinačni karakter, isecanje (kaže i slajsing) nam omogućava da dobijemo podstring. Izuzetno važan način koji ćemo nadalje koristiti često.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
@@ -817,7 +813,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 <p>Vreme je za kviz</p>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 1.</p>
-<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg koda:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
 </pre></div>
@@ -831,7 +827,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 2.</p>
-<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg koda:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
@@ -901,10 +897,10 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 </div>
 </div>
-<p>Ovo je verovatno i prva naprednija stvar koju smo spomenuli. Igrajte se sa ovim opcijama da dobro razumete kako funkcionišu.</p>
+<p>Igrajte se sa ovim opcijama da dobro razumete kako funkcionišu.</p>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 3.</p>
-<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg koda:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
@@ -918,7 +914,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 4.</p>
-<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg koda:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
 <span class="n">word</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
@@ -932,7 +928,7 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 <div class="hint admonition">
 <p class="admonition-title">Kviz 5.</p>
-<p>Šta će biti izlaz pokretanjem sledećeg koda:</p>
+<p>Šta će biti izlaz prilikom pokretanja sledećeg koda:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
 <span class="n">word</span><span class="p">[:</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
@@ -1030,8 +1026,8 @@ Ovo je najlakša opcija kada nam treba string u više redova.
 </div>
 </section>
 </section>
-<section id="jedna-korisna-funkcija">
-<h2>Jedna korisna funkcija</h2>
+<section id="jedna-korisna-funkcija-duzina-stringa">
+<h2>Jedna korisna funkcija: dužina stringa</h2>
 <p>Ugrađena funkcija <code class="docutils literal notranslate"><span class="pre">len()</span></code> vraća dužinu stringa</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1101,24 +1097,6 @@ case.
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>s.capitalize<span class="o">?</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Red">Signature:</span> s.capitalize()
-<span class=" -Color -Color-Red">Docstring:</span>
-Return a capitalized version of the string.
-
-More specifically, make the first character have upper case and the rest lower
-case.
-<span class=" -Color -Color-Red">Type:</span>      builtin_function_or_method
-</pre></div>
-</div>
-</div>
-</div>
 <br>
 </section>
 </section>
@@ -1182,16 +1160,16 @@ case.
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "conda-base-py"
         },
         kernelOptions: {
-            name: "python3",
+            name: "conda-base-py",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'conda-base-py'</script>
 
                 </article>
               
@@ -1243,7 +1221,7 @@ case.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operacije-sa-stringovima">Operacije sa stringovima</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jedna-korisna-funkcija">Jedna korisna funkcija</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jedna-korisna-funkcija-duzina-stringa">Jedna korisna funkcija: dužina stringa</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#zadaci-i-problemi">Zadaci i problemi</a></li>
